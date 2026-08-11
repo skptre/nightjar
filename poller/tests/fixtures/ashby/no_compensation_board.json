@@ -1,0 +1,107 @@
+{
+  "jobs": [
+    {
+      "id": "f6a7b8c9-d0e1-2345-abcd-456789012345",
+      "title": "Senior Frontend Engineer",
+      "department": "Engineering",
+      "team": "Web",
+      "employmentType": "FullTime",
+      "location": "Remote",
+      "shouldDisplayCompensationOnJobPostings": false,
+      "secondaryLocations": [],
+      "publishedAt": "2026-03-10T08:00:00.000+00:00",
+      "isListed": true,
+      "isRemote": true,
+      "workplaceType": "Remote",
+      "address": {
+        "postalAddress": {
+          "addressCountry": "United States"
+        }
+      },
+      "jobUrl": "https://jobs.ashbyhq.com/noco/f6a7b8c9-d0e1-2345-abcd-456789012345",
+      "applyUrl": "https://jobs.ashbyhq.com/noco/f6a7b8c9-d0e1-2345-abcd-456789012345/application",
+      "descriptionHtml": "<p>Build the next generation of our web platform using React and TypeScript.</p>",
+      "descriptionPlain": "Build the next generation of our web platform using React and TypeScript.",
+      "compensation": {
+        "compensationTierSummary": null,
+        "scrapeableCompensationSalarySummary": null,
+        "compensationTiers": [],
+        "summaryComponents": []
+      }
+    },
+    {
+      "id": "a7b8c9d0-e1f2-3456-bcde-567890123456",
+      "title": "DevOps Engineer",
+      "department": "Engineering",
+      "team": "Infrastructure",
+      "employmentType": "FullTime",
+      "location": "Austin, TX",
+      "shouldDisplayCompensationOnJobPostings": false,
+      "secondaryLocations": [
+        {
+          "location": "Denver, CO",
+          "address": {
+            "postalAddress": {
+              "addressRegion": "CO",
+              "addressCountry": "USA",
+              "addressLocality": "Denver"
+            }
+          }
+        }
+      ],
+      "publishedAt": "2026-04-22T13:45:00.000+00:00",
+      "isListed": true,
+      "isRemote": false,
+      "workplaceType": "Hybrid",
+      "address": {
+        "postalAddress": {
+          "addressRegion": "TX",
+          "addressCountry": "USA",
+          "addressLocality": "Austin"
+        }
+      },
+      "jobUrl": "https://jobs.ashbyhq.com/noco/a7b8c9d0-e1f2-3456-bcde-567890123456",
+      "applyUrl": "https://jobs.ashbyhq.com/noco/a7b8c9d0-e1f2-3456-bcde-567890123456/application",
+      "descriptionHtml": "<p>Manage our cloud infrastructure on AWS. Terraform and Kubernetes experience required.</p>",
+      "descriptionPlain": "Manage our cloud infrastructure on AWS. Terraform and Kubernetes experience required.",
+      "compensation": {
+        "compensationTierSummary": null,
+        "scrapeableCompensationSalarySummary": null,
+        "compensationTiers": [],
+        "summaryComponents": []
+      }
+    },
+    {
+      "id": "b8c9d0e1-f2a3-4567-cdef-678901234567",
+      "title": "Technical Program Manager",
+      "department": "Engineering",
+      "team": "Program Management",
+      "employmentType": "FullTime",
+      "location": "San Francisco, CA",
+      "shouldDisplayCompensationOnJobPostings": false,
+      "secondaryLocations": [],
+      "publishedAt": "2026-06-01T10:00:00.000+00:00",
+      "isListed": true,
+      "isRemote": false,
+      "workplaceType": "Onsite",
+      "address": {
+        "postalAddress": {
+          "addressRegion": "CA",
+          "addressCountry": "USA",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "jobUrl": "https://jobs.ashbyhq.com/noco/b8c9d0e1-f2a3-4567-cdef-678901234567",
+      "applyUrl": "https://jobs.ashbyhq.com/noco/b8c9d0e1-f2a3-4567-cdef-678901234567/application",
+      "descriptionHtml": "<p>Drive cross-functional engineering programs. Strong communication skills needed.</p>",
+      "descriptionPlain": "Drive cross-functional engineering programs. Strong communication skills needed.",
+      "compensation": {
+        "compensationTierSummary": null,
+        "scrapeableCompensationSalarySummary": null,
+        "compensationTiers": [],
+        "summaryComponents": []
+      }
+    }
+  ],
+  "apiVersion": "2024-01-01"
+}

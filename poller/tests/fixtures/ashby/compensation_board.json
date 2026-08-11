@@ -1,0 +1,326 @@
+{
+  "jobs": [
+    {
+      "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "title": "Software Engineer, Backend",
+      "department": "Engineering",
+      "team": "Platform",
+      "employmentType": "FullTime",
+      "location": "New York, NY",
+      "shouldDisplayCompensationOnJobPostings": true,
+      "secondaryLocations": [
+        {
+          "location": "San Francisco, CA",
+          "address": {
+            "postalAddress": {
+              "addressRegion": "CA",
+              "addressCountry": "USA",
+              "addressLocality": "San Francisco"
+            }
+          }
+        }
+      ],
+      "publishedAt": "2026-06-15T14:30:00.000+00:00",
+      "isListed": true,
+      "isRemote": false,
+      "workplaceType": "Onsite",
+      "address": {
+        "postalAddress": {
+          "addressRegion": "NY",
+          "addressCountry": "USA",
+          "addressLocality": "New York"
+        }
+      },
+      "jobUrl": "https://jobs.ashbyhq.com/testco/a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "applyUrl": "https://jobs.ashbyhq.com/testco/a1b2c3d4-e5f6-7890-abcd-ef1234567890/application",
+      "descriptionHtml": "<h1>About the Role</h1><p>We are looking for a backend engineer to join our platform team. You will build scalable services &amp; APIs.</p><p>Requirements: 3+ years of experience with Python or Go.</p>",
+      "descriptionPlain": "About the Role\nWe are looking for a backend engineer to join our platform team. You will build scalable services & APIs.\nRequirements: 3+ years of experience with Python or Go.",
+      "compensation": {
+        "compensationTierSummary": "$150K – $200K • Offers Equity",
+        "scrapeableCompensationSalarySummary": "$150K - $200K",
+        "compensationTiers": [
+          {
+            "id": "tier-001",
+            "tierSummary": "$150K – $200K • Offers Equity",
+            "title": null,
+            "additionalInformation": null,
+            "components": [
+              {
+                "id": "comp-001",
+                "summary": "$150K – $200K",
+                "compensationType": "Salary",
+                "interval": "1 YEAR",
+                "currencyCode": "USD",
+                "minValue": 150000,
+                "maxValue": 200000
+              },
+              {
+                "id": "comp-002",
+                "summary": "Offers Equity",
+                "compensationType": "EquityPercentage",
+                "interval": "NONE",
+                "currencyCode": null,
+                "minValue": null,
+                "maxValue": null
+              }
+            ]
+          }
+        ],
+        "summaryComponents": [
+          {
+            "compensationType": "Salary",
+            "interval": "1 YEAR",
+            "currencyCode": "USD",
+            "minValue": 150000,
+            "maxValue": 200000
+          },
+          {
+            "compensationType": "EquityPercentage",
+            "interval": "NONE",
+            "currencyCode": null,
+            "minValue": null,
+            "maxValue": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "title": "Machine Learning Engineer",
+      "department": "Engineering",
+      "team": "ML",
+      "employmentType": "FullTime",
+      "location": "San Francisco, CA",
+      "shouldDisplayCompensationOnJobPostings": true,
+      "secondaryLocations": [],
+      "publishedAt": "2026-07-01T09:00:00.000+00:00",
+      "isListed": true,
+      "isRemote": false,
+      "workplaceType": "Onsite",
+      "address": {
+        "postalAddress": {
+          "addressRegion": "CA",
+          "addressCountry": "USA",
+          "addressLocality": "San Francisco"
+        }
+      },
+      "jobUrl": "https://jobs.ashbyhq.com/testco/b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "applyUrl": "https://jobs.ashbyhq.com/testco/b2c3d4e5-f6a7-8901-bcde-f12345678901/application",
+      "descriptionHtml": "<p>Join our ML team to build production machine learning systems. Experience with PyTorch required.</p>",
+      "descriptionPlain": "Join our ML team to build production machine learning systems. Experience with PyTorch required.",
+      "compensation": {
+        "compensationTierSummary": "$180K – $250K • Offers Equity",
+        "scrapeableCompensationSalarySummary": "$180K - $250K",
+        "compensationTiers": [
+          {
+            "id": "tier-002",
+            "tierSummary": "$180K – $250K • Offers Equity",
+            "title": null,
+            "additionalInformation": null,
+            "components": [
+              {
+                "id": "comp-003",
+                "summary": "$180K – $250K",
+                "compensationType": "Salary",
+                "interval": "1 YEAR",
+                "currencyCode": "USD",
+                "minValue": 180000,
+                "maxValue": 250000
+              },
+              {
+                "id": "comp-004",
+                "summary": "Offers Equity",
+                "compensationType": "EquityPercentage",
+                "interval": "NONE",
+                "currencyCode": null,
+                "minValue": null,
+                "maxValue": null
+              }
+            ]
+          }
+        ],
+        "summaryComponents": [
+          {
+            "compensationType": "Salary",
+            "interval": "1 YEAR",
+            "currencyCode": "USD",
+            "minValue": 180000,
+            "maxValue": 250000
+          },
+          {
+            "compensationType": "EquityPercentage",
+            "interval": "NONE",
+            "currencyCode": null,
+            "minValue": null,
+            "maxValue": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "title": "Product Designer",
+      "department": "Design",
+      "team": "Product",
+      "employmentType": "FullTime",
+      "location": "Remote (US)",
+      "shouldDisplayCompensationOnJobPostings": false,
+      "secondaryLocations": [],
+      "publishedAt": "2026-05-20T11:15:00.000+00:00",
+      "isListed": true,
+      "isRemote": true,
+      "workplaceType": "Remote",
+      "address": {
+        "postalAddress": {
+          "addressCountry": "United States"
+        }
+      },
+      "jobUrl": "https://jobs.ashbyhq.com/testco/c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "applyUrl": "https://jobs.ashbyhq.com/testco/c3d4e5f6-a7b8-9012-cdef-123456789012/application",
+      "descriptionHtml": "<p>We need a product designer who can ship beautiful, intuitive interfaces. Figma expertise required.</p>",
+      "descriptionPlain": "We need a product designer who can ship beautiful, intuitive interfaces. Figma expertise required.",
+      "compensation": {
+        "compensationTierSummary": null,
+        "scrapeableCompensationSalarySummary": null,
+        "compensationTiers": [],
+        "summaryComponents": []
+      }
+    },
+    {
+      "id": "d4e5f6a7-b8c9-0123-defa-234567890123",
+      "title": "Software Engineering Intern, Summer 2027",
+      "department": "Engineering",
+      "team": "Growth",
+      "employmentType": "Intern",
+      "location": "New York, NY",
+      "shouldDisplayCompensationOnJobPostings": true,
+      "secondaryLocations": [
+        {
+          "location": "San Francisco, CA",
+          "address": {
+            "postalAddress": {
+              "addressRegion": "CA",
+              "addressCountry": "USA",
+              "addressLocality": "San Francisco"
+            }
+          }
+        },
+        {
+          "location": "Miami, FL",
+          "address": {
+            "postalAddress": {
+              "addressRegion": "FL",
+              "addressCountry": "USA",
+              "addressLocality": "Miami"
+            }
+          }
+        }
+      ],
+      "publishedAt": "2026-08-01T16:00:00.000+00:00",
+      "isListed": true,
+      "isRemote": false,
+      "workplaceType": "Onsite",
+      "address": {
+        "postalAddress": {
+          "addressRegion": "NY",
+          "addressCountry": "USA",
+          "addressLocality": "New York"
+        }
+      },
+      "jobUrl": "https://jobs.ashbyhq.com/testco/d4e5f6a7-b8c9-0123-defa-234567890123",
+      "applyUrl": "https://jobs.ashbyhq.com/testco/d4e5f6a7-b8c9-0123-defa-234567890123/application",
+      "descriptionHtml": "<p>Join us for a summer internship! Must be authorized to work in the United States. Graduating in 2027 or 2028.</p>",
+      "descriptionPlain": "Join us for a summer internship! Must be authorized to work in the United States. Graduating in 2027 or 2028.",
+      "compensation": {
+        "compensationTierSummary": "$60/hr",
+        "scrapeableCompensationSalarySummary": "$60/hr",
+        "compensationTiers": [
+          {
+            "id": "tier-003",
+            "tierSummary": "$60/hr",
+            "title": null,
+            "additionalInformation": null,
+            "components": [
+              {
+                "id": "comp-005",
+                "summary": "$60/hr",
+                "compensationType": "Salary",
+                "interval": "1 HOUR",
+                "currencyCode": "USD",
+                "minValue": 60,
+                "maxValue": 60
+              }
+            ]
+          }
+        ],
+        "summaryComponents": [
+          {
+            "compensationType": "Salary",
+            "interval": "1 HOUR",
+            "currencyCode": "USD",
+            "minValue": 60,
+            "maxValue": 60
+          }
+        ]
+      }
+    },
+    {
+      "id": "e5f6a7b8-c9d0-1234-efab-345678901234",
+      "title": "Data Scientist",
+      "department": "Data",
+      "team": "Analytics",
+      "employmentType": "FullTime",
+      "location": "New York, NY",
+      "shouldDisplayCompensationOnJobPostings": true,
+      "secondaryLocations": [],
+      "publishedAt": null,
+      "isListed": true,
+      "isRemote": false,
+      "workplaceType": "Onsite",
+      "address": {
+        "postalAddress": {
+          "addressRegion": "NY",
+          "addressCountry": "USA",
+          "addressLocality": "New York"
+        }
+      },
+      "jobUrl": "https://jobs.ashbyhq.com/testco/e5f6a7b8-c9d0-1234-efab-345678901234",
+      "applyUrl": "https://jobs.ashbyhq.com/testco/e5f6a7b8-c9d0-1234-efab-345678901234/application",
+      "descriptionHtml": "<h2>Data Scientist</h2><p>Analyze data &amp; build models. SQL &amp; Python required.</p>",
+      "descriptionPlain": "Data Scientist\nAnalyze data & build models. SQL & Python required.",
+      "compensation": {
+        "compensationTierSummary": "$130K – $170K",
+        "scrapeableCompensationSalarySummary": "$130K - $170K",
+        "compensationTiers": [
+          {
+            "id": "tier-004",
+            "tierSummary": "$130K – $170K",
+            "title": null,
+            "additionalInformation": null,
+            "components": [
+              {
+                "id": "comp-006",
+                "summary": "$130K – $170K",
+                "compensationType": "Salary",
+                "interval": "1 YEAR",
+                "currencyCode": "USD",
+                "minValue": 130000,
+                "maxValue": 170000
+              }
+            ]
+          }
+        ],
+        "summaryComponents": [
+          {
+            "compensationType": "Salary",
+            "interval": "1 YEAR",
+            "currencyCode": "USD",
+            "minValue": 130000,
+            "maxValue": 170000
+          }
+        ]
+      }
+    }
+  ],
+  "apiVersion": "2024-01-01"
+}

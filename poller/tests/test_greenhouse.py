@@ -8,11 +8,8 @@ import pytest
 
 from poller.exceptions import SourceFetchError, SourceParseError
 from poller.models import Company, SourceConfig, compute_posting_id
-from poller.sources.greenhouse import (
-    GreenhouseAdapter,
-    _html_to_plaintext,
-    _unescape_html,
-)
+from poller.normalize import html_to_plaintext, unescape_html
+from poller.sources.greenhouse import GreenhouseAdapter
 from poller.tests.conftest import MockTransport, json_response, make_mock_client
 
 FIXTURES = Path(__file__).parent / "fixtures" / "greenhouse"
@@ -244,7 +241,7 @@ class TestNullPostedAt:
 
 class TestHtmlEntityDecoding:
     def test_single_encoded_entities_unescaped(self) -> None:
-        result = _html_to_plaintext("&lt;p&gt;Hello &amp; world&lt;/p&gt;")
+        result = html_to_plaintext("&lt;p&gt;Hello &amp; world&lt;/p&gt;")
         assert "&amp;" not in result
         assert "&lt;" not in result
         assert "&gt;" not in result
@@ -253,14 +250,14 @@ class TestHtmlEntityDecoding:
         assert "world" in result
 
     def test_double_encoded_ampersand(self) -> None:
-        result = _html_to_plaintext(
+        result = html_to_plaintext(
             "&lt;p&gt;Assess &amp;amp; combine data.&lt;/p&gt;"
         )
         assert "&amp;" not in result
         assert "Assess & combine data." in result
 
     def test_double_encoded_quotes(self) -> None:
-        result = _html_to_plaintext(
+        result = html_to_plaintext(
             '&lt;p&gt;&amp;amp;quot;big data&amp;amp;quot; systems&lt;/p&gt;'
         )
         assert "&amp;" not in result
@@ -268,12 +265,12 @@ class TestHtmlEntityDecoding:
         assert '"big data"' in result
 
     def test_nbsp_decoded(self) -> None:
-        result = _html_to_plaintext("&lt;p&gt;Hello&amp;nbsp;world&lt;/p&gt;")
+        result = html_to_plaintext("&lt;p&gt;Hello&amp;nbsp;world&lt;/p&gt;")
         assert "&nbsp;" not in result
         assert "&amp;" not in result
 
     def test_no_html_tags_survive(self) -> None:
-        result = _html_to_plaintext(
+        result = html_to_plaintext(
             "&lt;h3&gt;Title&lt;/h3&gt;\n&lt;p&gt;Body text.&lt;/p&gt;"
         )
         assert "<" not in result
@@ -282,18 +279,18 @@ class TestHtmlEntityDecoding:
         assert "Body text." in result
 
     def test_whitespace_collapsed(self) -> None:
-        result = _html_to_plaintext(
+        result = html_to_plaintext(
             "&lt;p&gt;Hello&lt;/p&gt;\n\n&lt;p&gt;World&lt;/p&gt;"
         )
         assert "  " not in result
 
     def test_content_capped_at_5000(self) -> None:
         long_content = "&lt;p&gt;" + "x" * 6000 + "&lt;/p&gt;"
-        result = _html_to_plaintext(long_content)
+        result = html_to_plaintext(long_content)
         assert len(result) <= 5000
 
     def test_empty_content_returns_empty(self) -> None:
-        result = _html_to_plaintext("")
+        result = html_to_plaintext("")
         assert result == ""
 
     def test_fixture_entity_encoded_board_fully_decoded(self) -> None:
@@ -327,17 +324,17 @@ class TestHtmlEntityDecoding:
 
 class TestUnescapeHtml:
     def test_single_pass(self) -> None:
-        assert _unescape_html("&amp;") == "&"
+        assert unescape_html("&amp;") == "&"
 
     def test_double_encoding(self) -> None:
-        assert _unescape_html("&amp;amp;") == "&"
+        assert unescape_html("&amp;amp;") == "&"
 
     def test_triple_encoding(self) -> None:
-        assert _unescape_html("&amp;amp;amp;") == "&"
+        assert unescape_html("&amp;amp;amp;") == "&"
 
     def test_already_clean(self) -> None:
-        assert _unescape_html("hello world") == "hello world"
+        assert unescape_html("hello world") == "hello world"
 
     def test_mixed_entities(self) -> None:
-        result = _unescape_html("&lt;p&gt;a &amp;amp; b&lt;/p&gt;")
+        result = unescape_html("&lt;p&gt;a &amp;amp; b&lt;/p&gt;")
         assert result == "<p>a & b</p>"

@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING, Any
 
 from poller.exceptions import SourceParseError
 from poller.models import Company, Posting, RawPosting, SourceConfig, compute_posting_id
+from poller.normalize import clean_title, normalize_location, normalize_locations
 from poller.sources.base import SourceAdapter
 
 logger = logging.getLogger(__name__)
@@ -35,18 +36,18 @@ def _format_compensation(job: dict[str, Any]) -> str | None:
 
 
 def _extract_locations(job: dict[str, Any]) -> list[str]:
-    locations: list[str] = []
+    raw_locations: list[str] = []
 
     primary = job.get("location", "")
     if primary:
-        locations.append(primary)
+        raw_locations.append(primary)
 
     for sec in job.get("secondaryLocations", []):
         loc = sec.get("location", "")
         if loc:
-            locations.append(loc)
+            raw_locations.append(loc)
 
-    return locations
+    return normalize_locations(raw_locations)
 
 
 class AshbyAdapter(SourceAdapter):
@@ -91,7 +92,7 @@ class AshbyAdapter(SourceAdapter):
         return raw_postings
 
     def _parse_job(self, job: dict[str, Any], company: Company) -> RawPosting:
-        location = job.get("location", "") or ""
+        location = normalize_location(job.get("location", "") or "")
         description = job.get("descriptionPlain", "") or ""
 
         return RawPosting(
@@ -119,9 +120,9 @@ class AshbyAdapter(SourceAdapter):
             id=posting_id,
             company=company.name,
             company_slug=company.slug,
-            title=raw.title.strip(),
-            location=raw.location,
-            locations=raw.locations,
+            title=clean_title(raw.title),
+            location=normalize_location(raw.location),
+            locations=normalize_locations(raw.locations),
             url=raw.url,
             source="ashby",
             source_job_id=raw.source_job_id,

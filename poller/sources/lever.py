@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING, Any
 
 from poller.exceptions import SourceParseError
 from poller.models import Company, Posting, RawPosting, SourceConfig, compute_posting_id
+from poller.normalize import clean_title, normalize_location, normalize_locations
 from poller.sources.base import SourceAdapter
 
 logger = logging.getLogger(__name__)
@@ -78,10 +79,11 @@ class LeverAdapter(SourceAdapter):
 
     def _parse_job(self, job: dict[str, Any], company: Company) -> RawPosting:
         categories = job.get("categories", {}) or {}
-        location = categories.get("location", "") or ""
+        location = normalize_location(categories.get("location", "") or "")
         all_locations = categories.get("allLocations", []) or []
         if not all_locations and location:
             all_locations = [location]
+        all_locations = normalize_locations(all_locations)
 
         created_at = job.get("createdAt")
         posted_at: str | None = None
@@ -114,9 +116,9 @@ class LeverAdapter(SourceAdapter):
             id=posting_id,
             company=company.name,
             company_slug=company.slug,
-            title=raw.title.strip(),
-            location=raw.location,
-            locations=raw.locations,
+            title=clean_title(raw.title),
+            location=normalize_location(raw.location),
+            locations=normalize_locations(raw.locations),
             url=raw.url,
             source="lever",
             source_job_id=raw.source_job_id,

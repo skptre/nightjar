@@ -1,0 +1,226 @@
+# Nightjar company registry — the actual asset.
+# Anyone can PR new companies. Keep alphabetical within each section.
+# Phase 1 seed: ~30 companies across Greenhouse, Lever, Ashby.
+
+# ── Greenhouse ──────────────────────────────────────────────────────
+
+- slug: airtable
+  name: Airtable
+  tags: [saas, productivity, sf]
+  sources:
+    - type: greenhouse
+      board_token: airtable
+
+- slug: anduril
+  name: Anduril Industries
+  tags: [defense, hardware, la]
+  sources:
+    - type: greenhouse
+      board_token: andurilindustries
+  high_priority: true
+
+- slug: anthropic
+  name: Anthropic
+  tags: [ai, safety, sf]
+  sources:
+    - type: greenhouse
+      board_token: anthropic
+  high_priority: true
+
+- slug: brex
+  name: Brex
+  tags: [fintech, sf]
+  sources:
+    - type: greenhouse
+      board_token: brex
+
+- slug: cockroachlabs
+  name: Cockroach Labs
+  tags: [database, infrastructure, nyc]
+  sources:
+    - type: greenhouse
+      board_token: cockroachlabs
+
+- slug: coinbase
+  name: Coinbase
+  tags: [crypto, fintech, remote]
+  sources:
+    - type: greenhouse
+      board_token: coinbase
+
+- slug: datadog
+  name: Datadog
+  tags: [observability, infrastructure, nyc]
+  sources:
+    - type: greenhouse
+      board_token: datadog
+
+- slug: discord
+  name: Discord
+  tags: [social, gaming, sf]
+  sources:
+    - type: greenhouse
+      board_token: discord
+
+- slug: dropbox
+  name: Dropbox
+  tags: [saas, productivity, remote]
+  sources:
+    - type: greenhouse
+      board_token: dropbox
+
+- slug: duolingo
+  name: Duolingo
+  tags: [edtech, consumer, pittsburgh]
+  sources:
+    - type: greenhouse
+      board_token: duolingo
+
+- slug: figma
+  name: Figma
+  tags: [design, saas, sf]
+  sources:
+    - type: greenhouse
+      board_token: figma
+  high_priority: true
+
+- slug: gitlab
+  name: GitLab
+  tags: [devtools, remote]
+  sources:
+    - type: greenhouse
+      board_token: gitlab
+
+- slug: mongodb
+  name: MongoDB
+  tags: [database, infrastructure, nyc]
+  sources:
+    - type: greenhouse
+      board_token: mongodb
+
+- slug: robinhood
+  name: Robinhood
+  tags: [fintech, consumer, menlo-park]
+  sources:
+    - type: greenhouse
+      board_token: robinhood
+
+- slug: scaleai
+  name: Scale AI
+  tags: [ai, data, sf]
+  sources:
+    - type: greenhouse
+      board_token: scaleai
+
+- slug: stripe
+  name: Stripe
+  tags: [fintech, payments, sf]
+  sources:
+    - type: greenhouse
+      board_token: stripe
+  high_priority: true
+
+- slug: vercel
+  name: Vercel
+  tags: [devtools, frontend, remote]
+  sources:
+    - type: greenhouse
+      board_token: vercel
+
+- slug: watershed
+  name: Watershed
+  tags: [climate, saas, sf]
+  sources:
+    - type: greenhouse
+      board_token: watershed
+
+# ── Lever ───────────────────────────────────────────────────────────
+
+- slug: lever
+  name: Lever
+  tags: [hr-tech, saas, sf]
+  sources:
+    - type: lever
+      board_token: lever
+
+- slug: palantir
+  name: Palantir
+  tags: [defense, data, nyc]
+  sources:
+    - type: lever
+      board_token: palantir
+  high_priority: true
+
+- slug: spotify
+  name: Spotify
+  tags: [music, consumer, remote]
+  sources:
+    - type: lever
+      board_token: spotify
+
+# ── Ashby ───────────────────────────────────────────────────────────
+
+- slug: ashby
+  name: Ashby
+  tags: [hr-tech, saas, sf]
+  sources:
+    - type: ashby
+      board_token: ashby
+
+- slug: benchling
+  name: Benchling
+  tags: [biotech, saas, sf]
+  sources:
+    - type: ashby
+      board_token: benchling
+
+- slug: cohere
+  name: Cohere
+  tags: [ai, nlp, toronto]
+  sources:
+    - type: ashby
+      board_token: cohere
+
+- slug: cursor
+  name: Cursor
+  tags: [ai, devtools, sf]
+  sources:
+    - type: ashby
+      board_token: cursor
+  high_priority: true
+
+- slug: linear
+  name: Linear
+  tags: [devtools, saas, remote]
+  sources:
+    - type: ashby
+      board_token: linear
+
+- slug: neon
+  name: Neon
+  tags: [database, infrastructure, remote]
+  sources:
+    - type: ashby
+      board_token: neon
+
+- slug: notion
+  name: Notion
+  tags: [productivity, saas, sf]
+  sources:
+    - type: ashby
+      board_token: notion
+
+- slug: plaid
+  name: Plaid
+  tags: [fintech, api, sf]
+  sources:
+    - type: ashby
+      board_token: plaid
+
+- slug: ramp
+  name: Ramp
+  tags: [fintech, nyc]
+  sources:
+    - type: ashby
+      board_token: ramp
+  high_priority: true

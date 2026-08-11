@@ -9,15 +9,6 @@ if TYPE_CHECKING:
 
 
 class SourceAdapter(ABC):
-    """Base class for all ATS source adapters.
-
-    Contract:
-    - fetch() returns list[RawPosting] on success. Empty list means the board
-      has zero jobs — a valid state.
-    - fetch() raises SourceFetchError on any network/API failure. Returning []
-      to signal an error violates the contract.
-    - normalize() converts a single RawPosting into a Posting.
-    """
 
     @abstractmethod
     async def fetch(

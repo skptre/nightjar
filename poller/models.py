@@ -25,6 +25,7 @@ class Posting:
     posted_at: str | None
     first_seen_at: str
     last_seen_at: str
+    description_text: str = ""
     closed_at: str | None = None
     compensation: str | None = None
     merged_from: list[str] = field(default_factory=list)
@@ -45,6 +46,7 @@ class Posting:
             "first_seen_at": self.first_seen_at,
             "last_seen_at": self.last_seen_at,
             "closed_at": self.closed_at,
+            "description_text": self.description_text,
         }
         if self.compensation is not None:
             d["compensation"] = self.compensation
@@ -68,6 +70,7 @@ class Posting:
             posted_at=d.get("posted_at"),
             first_seen_at=d["first_seen_at"],
             last_seen_at=d["last_seen_at"],
+            description_text=d.get("description_text", ""),
             closed_at=d.get("closed_at"),
             compensation=d.get("compensation"),
             merged_from=list(d.get("merged_from", [])),

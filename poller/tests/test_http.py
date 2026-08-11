@@ -1,73 +1,30 @@
 from __future__ import annotations
 
+import json
 import time
-from typing import Any
 
 import httpx
 import pytest
 
 from poller.exceptions import SourceFetchError
-from poller.http import USER_AGENT, RateLimitedClient
-
-
-class MockTransport(httpx.AsyncBaseTransport):
-    def __init__(self, responses: list[httpx.Response]) -> None:
-        self._responses = list(responses)
-        self._call_count = 0
-        self.requests: list[httpx.Request] = []
-
-    async def handle_async_request(self, request: httpx.Request) -> httpx.Response:
-        self.requests.append(request)
-        if self._call_count < len(self._responses):
-            resp = self._responses[self._call_count]
-        else:
-            resp = self._responses[-1]
-        self._call_count += 1
-        resp.stream = httpx.ByteStream(resp.content)
-        return resp
-
-
-def _json_response(
-    data: Any, status: int = 200, headers: dict[str, str] | None = None,
-) -> httpx.Response:
-    import json
-
-    body = json.dumps(data).encode()
-    hdrs = {"content-type": "application/json"}
-    if headers:
-        hdrs.update(headers)
-    return httpx.Response(status_code=status, headers=hdrs, content=body)
-
-
-def _html_response(body: str = "<html>Error</html>", status: int = 200) -> httpx.Response:
-    return httpx.Response(
-        status_code=200,
-        headers={"content-type": "text/html"},
-        content=body.encode(),
-    )
-
-
-async def _make_client_with_transport(
-    transport: MockTransport,
-) -> RateLimitedClient:
-    client = RateLimitedClient()
-    client._client = httpx.AsyncClient(
-        transport=transport,
-        timeout=httpx.Timeout(5.0),
-        headers={"User-Agent": USER_AGENT},
-    )
-    return client
+from poller.http import USER_AGENT
+from poller.tests.conftest import (
+    MockTransport,
+    html_response,
+    json_response,
+    make_mock_client,
+)
 
 
 class TestRetryLogic:
     @pytest.mark.asyncio
     async def test_429_twice_then_200(self) -> None:
         transport = MockTransport([
-            _json_response({"error": "rate limited"}, status=429),
-            _json_response({"error": "rate limited"}, status=429),
-            _json_response({"jobs": []}),
+            json_response({"error": "rate limited"}, status=429),
+            json_response({"error": "rate limited"}, status=429),
+            json_response({"jobs": []}),
         ])
-        client = await _make_client_with_transport(transport)
+        client = await make_mock_client(transport)
         result = await client.get_json("https://api.example.com/jobs")
         assert result == {"jobs": []}
         assert len(transport.requests) == 3
@@ -76,11 +33,11 @@ class TestRetryLogic:
     @pytest.mark.asyncio
     async def test_500_three_times_raises(self) -> None:
         transport = MockTransport([
-            _json_response({"error": "server error"}, status=500),
-            _json_response({"error": "server error"}, status=500),
-            _json_response({"error": "server error"}, status=500),
+            json_response({"error": "server error"}, status=500),
+            json_response({"error": "server error"}, status=500),
+            json_response({"error": "server error"}, status=500),
         ])
-        client = await _make_client_with_transport(transport)
+        client = await make_mock_client(transport)
         with pytest.raises(SourceFetchError, match="HTTP 500 after 3 attempts"):
             await client.get_json(
                 "https://api.example.com/jobs",
@@ -93,14 +50,14 @@ class TestRetryLogic:
     @pytest.mark.asyncio
     async def test_429_with_retry_after_header(self) -> None:
         transport = MockTransport([
-            _json_response(
+            json_response(
                 {"error": "rate limited"},
                 status=429,
                 headers={"Retry-After": "0.1"},
             ),
-            _json_response({"ok": True}),
+            json_response({"ok": True}),
         ])
-        client = await _make_client_with_transport(transport)
+        client = await make_mock_client(transport)
         result = await client.get_json("https://api.example.com/jobs")
         assert result == {"ok": True}
         assert len(transport.requests) == 2
@@ -109,9 +66,9 @@ class TestRetryLogic:
     @pytest.mark.asyncio
     async def test_4xx_no_retry(self) -> None:
         transport = MockTransport([
-            _json_response({"error": "not found"}, status=404),
+            json_response({"error": "not found"}, status=404),
         ])
-        client = await _make_client_with_transport(transport)
+        client = await make_mock_client(transport)
         with pytest.raises(SourceFetchError, match="HTTP 404"):
             await client.get_json(
                 "https://api.example.com/jobs",
@@ -126,10 +83,10 @@ class TestRateLimiting:
     @pytest.mark.asyncio
     async def test_same_host_has_delay(self) -> None:
         transport = MockTransport([
-            _json_response({"a": 1}),
-            _json_response({"b": 2}),
+            json_response({"a": 1}),
+            json_response({"b": 2}),
         ])
-        client = await _make_client_with_transport(transport)
+        client = await make_mock_client(transport)
 
         start = time.monotonic()
         await client.get_json("https://api.example.com/first")
@@ -142,11 +99,11 @@ class TestRateLimiting:
 
     @pytest.mark.asyncio
     async def test_different_hosts_no_delay(self) -> None:
-        transport_a = MockTransport([_json_response({"a": 1})])
-        transport_b = MockTransport([_json_response({"b": 2})])
+        transport_a = MockTransport([json_response({"a": 1})])
+        transport_b = MockTransport([json_response({"b": 2})])
 
-        client_a = await _make_client_with_transport(transport_a)
-        client_b = await _make_client_with_transport(transport_b)
+        client_a = await make_mock_client(transport_a)
+        client_b = await make_mock_client(transport_b)
 
         start = time.monotonic()
         await client_a.get_json("https://api-a.example.com/first")
@@ -161,8 +118,8 @@ class TestRateLimiting:
 class TestUserAgent:
     @pytest.mark.asyncio
     async def test_user_agent_present(self) -> None:
-        transport = MockTransport([_json_response({"ok": True})])
-        client = await _make_client_with_transport(transport)
+        transport = MockTransport([json_response({"ok": True})])
+        client = await make_mock_client(transport)
         await client.get_json("https://api.example.com/test")
 
         assert len(transport.requests) == 1
@@ -174,8 +131,8 @@ class TestUserAgent:
 class TestContentTypeValidation:
     @pytest.mark.asyncio
     async def test_html_response_raises_source_fetch_error(self) -> None:
-        transport = MockTransport([_html_response("<html>Bad Gateway</html>")])
-        client = await _make_client_with_transport(transport)
+        transport = MockTransport([html_response("<html>Bad Gateway</html>")])
+        client = await make_mock_client(transport)
         with pytest.raises(SourceFetchError, match="expected JSON but got content-type"):
             await client.get_json(
                 "https://api.example.com/jobs",
@@ -186,16 +143,14 @@ class TestContentTypeValidation:
 
     @pytest.mark.asyncio
     async def test_json_content_type_accepted(self) -> None:
-        transport = MockTransport([_json_response({"jobs": []})])
-        client = await _make_client_with_transport(transport)
+        transport = MockTransport([json_response({"jobs": []})])
+        client = await make_mock_client(transport)
         result = await client.get_json("https://api.example.com/jobs")
         assert result == {"jobs": []}
         await client.close()
 
     @pytest.mark.asyncio
     async def test_javascript_content_type_accepted(self) -> None:
-        import json
-
         body = json.dumps({"ok": True}).encode()
         resp = httpx.Response(
             status_code=200,
@@ -203,7 +158,7 @@ class TestContentTypeValidation:
             content=body,
         )
         transport = MockTransport([resp])
-        client = await _make_client_with_transport(transport)
+        client = await make_mock_client(transport)
         result = await client.get_json("https://api.example.com/test")
         assert result == {"ok": True}
         await client.close()
@@ -212,8 +167,8 @@ class TestContentTypeValidation:
 class TestErrorContext:
     @pytest.mark.asyncio
     async def test_error_includes_source_and_slug(self) -> None:
-        transport = MockTransport([_json_response({}, status=404)])
-        client = await _make_client_with_transport(transport)
+        transport = MockTransport([json_response({}, status=404)])
+        client = await make_mock_client(transport)
         with pytest.raises(SourceFetchError) as exc_info:
             await client.get_json(
                 "https://api.example.com/jobs",
@@ -226,8 +181,8 @@ class TestErrorContext:
 
     @pytest.mark.asyncio
     async def test_params_passed_to_request(self) -> None:
-        transport = MockTransport([_json_response({"ok": True})])
-        client = await _make_client_with_transport(transport)
+        transport = MockTransport([json_response({"ok": True})])
+        client = await make_mock_client(transport)
         await client.get_json(
             "https://api.example.com/jobs",
             params={"content": "true", "limit": "100"},

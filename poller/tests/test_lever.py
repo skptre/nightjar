@@ -4,13 +4,12 @@ import json
 from pathlib import Path
 from typing import Any
 
-import httpx
 import pytest
 
 from poller.exceptions import SourceFetchError, SourceParseError
-from poller.http import USER_AGENT, RateLimitedClient
 from poller.models import Company, SourceConfig, compute_posting_id
 from poller.sources.lever import LeverAdapter, _ms_to_iso
+from poller.tests.conftest import MockTransport, json_response, make_mock_client
 
 FIXTURES = Path(__file__).parent / "fixtures" / "lever"
 
@@ -28,42 +27,6 @@ def _make_company(
         tags=["defense"],
         sources=[SourceConfig(type="lever", board_token=slug, eu=eu)],
     )
-
-
-class MockTransport(httpx.AsyncBaseTransport):
-    def __init__(self, responses: list[httpx.Response]) -> None:
-        self._responses = list(responses)
-        self._call_count = 0
-        self.requests: list[httpx.Request] = []
-
-    async def handle_async_request(self, request: httpx.Request) -> httpx.Response:
-        self.requests.append(request)
-        if self._call_count < len(self._responses):
-            resp = self._responses[self._call_count]
-        else:
-            resp = self._responses[-1]
-        self._call_count += 1
-        resp.stream = httpx.ByteStream(resp.content)
-        return resp
-
-
-def _json_response(data: Any, status: int = 200) -> httpx.Response:
-    body = json.dumps(data).encode()
-    return httpx.Response(
-        status_code=status,
-        headers={"content-type": "application/json"},
-        content=body,
-    )
-
-
-async def _make_client_with_transport(transport: MockTransport) -> RateLimitedClient:
-    client = RateLimitedClient()
-    client._client = httpx.AsyncClient(
-        transport=transport,
-        timeout=httpx.Timeout(5.0),
-        headers={"User-Agent": USER_AGENT},
-    )
-    return client
 
 
 NOW = "2026-08-10T20:00:00Z"
@@ -84,8 +47,8 @@ class TestLeverFetch:
     @pytest.mark.asyncio
     async def test_normal_board_returns_all_jobs(self) -> None:
         fixture = _load_fixture("normal_board.json")
-        transport = MockTransport([_json_response(fixture)])
-        client = await _make_client_with_transport(transport)
+        transport = MockTransport([json_response(fixture)])
+        client = await make_mock_client(transport)
         adapter = LeverAdapter()
         company = _make_company()
         source = company.sources[0]
@@ -98,8 +61,8 @@ class TestLeverFetch:
 
     @pytest.mark.asyncio
     async def test_request_url_contains_slug(self) -> None:
-        transport = MockTransport([_json_response([])])
-        client = await _make_client_with_transport(transport)
+        transport = MockTransport([json_response([])])
+        client = await make_mock_client(transport)
         adapter = LeverAdapter()
         company = _make_company()
         source = company.sources[0]
@@ -113,8 +76,8 @@ class TestLeverFetch:
 
     @pytest.mark.asyncio
     async def test_mode_json_param_in_request(self) -> None:
-        transport = MockTransport([_json_response([])])
-        client = await _make_client_with_transport(transport)
+        transport = MockTransport([json_response([])])
+        client = await make_mock_client(transport)
         adapter = LeverAdapter()
         company = _make_company()
         source = company.sources[0]
@@ -127,8 +90,8 @@ class TestLeverFetch:
 
     @pytest.mark.asyncio
     async def test_eu_board_uses_eu_endpoint(self) -> None:
-        transport = MockTransport([_json_response([])])
-        client = await _make_client_with_transport(transport)
+        transport = MockTransport([json_response([])])
+        client = await make_mock_client(transport)
         adapter = LeverAdapter()
         company = _make_company(slug="eu-company", eu=True)
         source = company.sources[0]
@@ -141,8 +104,8 @@ class TestLeverFetch:
 
     @pytest.mark.asyncio
     async def test_non_eu_board_uses_us_endpoint(self) -> None:
-        transport = MockTransport([_json_response([])])
-        client = await _make_client_with_transport(transport)
+        transport = MockTransport([json_response([])])
+        client = await make_mock_client(transport)
         adapter = LeverAdapter()
         company = _make_company(eu=False)
         source = company.sources[0]
@@ -156,8 +119,8 @@ class TestLeverFetch:
 
     @pytest.mark.asyncio
     async def test_empty_board_returns_empty_list(self) -> None:
-        transport = MockTransport([_json_response([])])
-        client = await _make_client_with_transport(transport)
+        transport = MockTransport([json_response([])])
+        client = await make_mock_client(transport)
         adapter = LeverAdapter()
         company = _make_company()
         source = company.sources[0]
@@ -171,11 +134,11 @@ class TestLeverFetch:
     @pytest.mark.asyncio
     async def test_http_500_raises_source_fetch_error(self) -> None:
         transport = MockTransport([
-            _json_response({"error": "server error"}, status=500),
-            _json_response({"error": "server error"}, status=500),
-            _json_response({"error": "server error"}, status=500),
+            json_response({"error": "server error"}, status=500),
+            json_response({"error": "server error"}, status=500),
+            json_response({"error": "server error"}, status=500),
         ])
-        client = await _make_client_with_transport(transport)
+        client = await make_mock_client(transport)
         adapter = LeverAdapter()
         company = _make_company()
         source = company.sources[0]
@@ -186,8 +149,8 @@ class TestLeverFetch:
 
     @pytest.mark.asyncio
     async def test_non_array_response_raises_parse_error(self) -> None:
-        transport = MockTransport([_json_response({"jobs": []})])
-        client = await _make_client_with_transport(transport)
+        transport = MockTransport([json_response({"jobs": []})])
+        client = await make_mock_client(transport)
         adapter = LeverAdapter()
         company = _make_company()
         source = company.sources[0]
@@ -203,10 +166,10 @@ class TestLeverPagination:
         page1 = _load_fixture("paginated_page1.json")
         page2 = _load_fixture("paginated_page2.json")
         transport = MockTransport([
-            _json_response(page1),
-            _json_response(page2),
+            json_response(page1),
+            json_response(page2),
         ])
-        client = await _make_client_with_transport(transport)
+        client = await make_mock_client(transport)
         adapter = LeverAdapter()
         company = _make_company(slug="testco", name="TestCo")
         source = company.sources[0]
@@ -222,10 +185,10 @@ class TestLeverPagination:
         page1 = _load_fixture("paginated_page1.json")
         page2 = _load_fixture("paginated_page2.json")
         transport = MockTransport([
-            _json_response(page1),
-            _json_response(page2),
+            json_response(page1),
+            json_response(page2),
         ])
-        client = await _make_client_with_transport(transport)
+        client = await make_mock_client(transport)
         adapter = LeverAdapter()
         company = _make_company(slug="testco", name="TestCo")
         source = company.sources[0]
@@ -246,11 +209,11 @@ class TestLeverTruncation:
         page2 = _load_fixture("truncation_page2.json")
         page3 = _load_fixture("truncation_page3.json")
         transport = MockTransport([
-            _json_response(page1),
-            _json_response(page2),
-            _json_response(page3),
+            json_response(page1),
+            json_response(page2),
+            json_response(page3),
         ])
-        client = await _make_client_with_transport(transport)
+        client = await make_mock_client(transport)
         adapter = LeverAdapter()
         company = _make_company(slug="bigco", name="BigCo")
         source = company.sources[0]
@@ -264,8 +227,8 @@ class TestLeverTruncation:
     @pytest.mark.asyncio
     async def test_below_threshold_not_truncated(self) -> None:
         fixture = _load_fixture("normal_board.json")
-        transport = MockTransport([_json_response(fixture)])
-        client = await _make_client_with_transport(transport)
+        transport = MockTransport([json_response(fixture)])
+        client = await make_mock_client(transport)
         adapter = LeverAdapter()
         company = _make_company()
         source = company.sources[0]

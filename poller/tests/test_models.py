@@ -44,15 +44,17 @@ class TestPostingId:
         id2 = compute_posting_id("greenhouse", "ramp", "67890")
         assert id1 != id2
 
-    def test_title_not_in_id(self) -> None:
+    def test_title_changes_do_not_affect_id(self) -> None:
         id1 = compute_posting_id("greenhouse", "ramp", "12345")
         id2 = compute_posting_id("greenhouse", "ramp", "12345")
         assert id1 == id2
+        assert "SWE Intern" not in id1
+        assert "Senior Engineer" not in id1
 
-    def test_url_not_in_id(self) -> None:
+    def test_url_changes_do_not_affect_id(self) -> None:
         id1 = compute_posting_id("greenhouse", "ramp", "12345")
-        id2 = compute_posting_id("greenhouse", "ramp", "12345")
-        assert id1 == id2
+        assert "greenhouse.io" not in id1
+        assert "boards" not in id1
 
 
 class TestPostingRoundTrip:
@@ -71,6 +73,7 @@ class TestPostingRoundTrip:
             "posted_at": "2026-09-15T00:00:00Z",
             "first_seen_at": "2026-09-15T08:33:00Z",
             "last_seen_at": "2026-10-01T12:18:00Z",
+            "description_text": "",
             "closed_at": None,
             "compensation": None,
             "merged_from": [],
@@ -115,10 +118,10 @@ class TestPostingRoundTrip:
         d = posting.to_dict()
         assert "merged_from" not in d
 
-    def test_no_description_text_in_dict(self) -> None:
+    def test_description_text_in_dict(self) -> None:
         posting = self._make_posting()
         d = posting.to_dict()
-        assert "description_text" not in d
+        assert "description_text" in d
 
     def test_posting_is_frozen(self) -> None:
         posting = self._make_posting()

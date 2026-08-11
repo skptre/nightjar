@@ -132,7 +132,7 @@ class RateLimitedClient:
 
                 return response.json()
 
-        raise SourceFetchError(
+        raise SourceFetchError(  # pragma: no cover — loop always returns or raises
             source,
             company_slug,
             f"exhausted {MAX_RETRIES} retries (last status={last_status}): "

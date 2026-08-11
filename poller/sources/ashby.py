@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+import logging
 from typing import TYPE_CHECKING, Any
 
 from poller.exceptions import SourceParseError
 from poller.models import Company, Posting, RawPosting, SourceConfig, compute_posting_id
 from poller.sources.base import SourceAdapter
+
+logger = logging.getLogger(__name__)
 
 if TYPE_CHECKING:
     from poller.http import RateLimitedClient
@@ -81,11 +84,9 @@ class AshbyAdapter(SourceAdapter):
             try:
                 raw_postings.append(self._parse_job(job, company))
             except (KeyError, TypeError) as exc:
-                raise SourceParseError(
-                    "ashby",
-                    company.slug,
-                    f"malformed job object: {exc}",
-                ) from exc
+                logger.warning(
+                    "[ashby:%s] skipping malformed job: %s", company.slug, exc
+                )
 
         return raw_postings
 
@@ -128,5 +129,6 @@ class AshbyAdapter(SourceAdapter):
             posted_at=raw.posted_at,
             first_seen_at=now,
             last_seen_at=now,
+            description_text=raw.description,
             compensation=raw.compensation,
         )

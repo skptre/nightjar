@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 import html
+import logging
 import re
 from typing import TYPE_CHECKING, Any
 
 from poller.exceptions import SourceParseError
 from poller.models import Company, Posting, RawPosting, SourceConfig, compute_posting_id
 from poller.sources.base import SourceAdapter
+
+logger = logging.getLogger(__name__)
 
 if TYPE_CHECKING:
     from poller.http import RateLimitedClient
@@ -114,11 +117,9 @@ class GreenhouseAdapter(SourceAdapter):
             try:
                 raw_postings.append(self._parse_job(job, company, source))
             except (KeyError, TypeError) as exc:
-                raise SourceParseError(
-                    "greenhouse",
-                    company.slug,
-                    f"malformed job object: {exc}",
-                ) from exc
+                logger.warning(
+                    "[greenhouse:%s] skipping malformed job: %s", company.slug, exc
+                )
 
         return raw_postings
 
@@ -165,4 +166,5 @@ class GreenhouseAdapter(SourceAdapter):
             posted_at=raw.posted_at,
             first_seen_at=now,
             last_seen_at=now,
+            description_text=raw.description,
         )

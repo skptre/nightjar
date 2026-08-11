@@ -1,11 +1,14 @@
 from __future__ import annotations
 
+import logging
 from datetime import UTC, datetime
 from typing import TYPE_CHECKING, Any
 
 from poller.exceptions import SourceParseError
 from poller.models import Company, Posting, RawPosting, SourceConfig, compute_posting_id
 from poller.sources.base import SourceAdapter
+
+logger = logging.getLogger(__name__)
 
 if TYPE_CHECKING:
     from poller.http import RateLimitedClient
@@ -59,11 +62,9 @@ class LeverAdapter(SourceAdapter):
                 try:
                     all_postings.append(self._parse_job(job, company))
                 except (KeyError, TypeError) as exc:
-                    raise SourceParseError(
-                        "lever",
-                        company.slug,
-                        f"malformed job object: {exc}",
-                    ) from exc
+                    logger.warning(
+                        "[lever:%s] skipping malformed job: %s", company.slug, exc
+                    )
 
             if len(data) < PAGE_SIZE:
                 break
@@ -123,4 +124,5 @@ class LeverAdapter(SourceAdapter):
             posted_at=raw.posted_at,
             first_seen_at=now,
             last_seen_at=now,
+            description_text=raw.description,
         )

@@ -4,6 +4,14 @@
 
 # ── Greenhouse ──────────────────────────────────────────────────────
 
+- slug: airbnb
+  name: Airbnb
+  tags: [travel, consumer, sf]
+  sources:
+    - type: greenhouse
+      board_token: airbnb
+  high_priority: true
+
 - slug: airtable
   name: Airtable
   tags: [saas, productivity, sf]
@@ -48,6 +56,14 @@
     - type: greenhouse
       board_token: coinbase
 
+- slug: databricks
+  name: Databricks
+  tags: [data, ai, sf]
+  sources:
+    - type: greenhouse
+      board_token: databricks
+  high_priority: true
+
 - slug: datadog
   name: Datadog
   tags: [observability, infrastructure, nyc]
@@ -91,12 +107,40 @@
     - type: greenhouse
       board_token: gitlab
 
+- slug: imc
+  name: IMC Trading
+  tags: [quant, trading, amsterdam]
+  sources:
+    - type: greenhouse
+      board_token: imc
+
+- slug: lyft
+  name: Lyft
+  tags: [rideshare, consumer, sf]
+  sources:
+    - type: greenhouse
+      board_token: lyft
+
 - slug: mongodb
   name: MongoDB
   tags: [database, infrastructure, nyc]
   sources:
     - type: greenhouse
       board_token: mongodb
+
+- slug: optiver
+  name: Optiver
+  tags: [quant, trading, amsterdam]
+  sources:
+    - type: greenhouse
+      board_token: optiver
+
+- slug: pinterest
+  name: Pinterest
+  tags: [social, consumer, sf]
+  sources:
+    - type: greenhouse
+      board_token: pinterest
 
 - slug: robinhood
   name: Robinhood
@@ -210,6 +254,14 @@
     - type: ashby
       board_token: notion
 
+- slug: openai
+  name: OpenAI
+  tags: [ai, safety, sf]
+  sources:
+    - type: ashby
+      board_token: openai
+  high_priority: true
+
 - slug: plaid
   name: Plaid
   tags: [fintech, api, sf]
@@ -224,3 +276,10 @@
     - type: ashby
       board_token: ramp
   high_priority: true
+
+- slug: snowflake
+  name: Snowflake
+  tags: [data, cloud, bozeman]
+  sources:
+    - type: ashby
+      board_token: snowflake

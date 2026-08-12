@@ -1,4 +1,4 @@
-.PHONY: poll poll-dry test test-live lint dev
+.PHONY: poll poll-dry test test-live lint dev test-app lint-app
 
 poll:
 	uv run python -m poller
@@ -18,3 +18,9 @@ lint:
 
 dev:
 	cd app && npm run dev
+
+test-app:
+	cd app && npx vitest run
+
+lint-app:
+	cd app && npx tsc --noEmit

@@ -18,6 +18,7 @@ dist/
 dist-ssr/
 target/
 *.local
+app/public/sql-wasm.wasm
 
 # --- os ---
 .DS_Store

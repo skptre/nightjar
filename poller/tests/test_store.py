@@ -13,6 +13,7 @@ from poller.store import (
     load_feed,
     load_state,
     save_feed,
+    save_meta,
     save_state,
 )
 
@@ -421,3 +422,63 @@ class TestRunStateToDict:
         d = state.to_dict()
         keys = list(d["absent_ids"].keys())
         assert keys == ["aaa", "zzz"]
+
+
+class TestSaveMeta:
+    def test_writes_correct_sha256(self, tmp_path: Path) -> None:
+        import hashlib
+
+        p = _make_posting()
+        feed_path = tmp_path / "feed.json"
+        meta_path = tmp_path / "meta.json"
+        save_feed(feed_path, {p.id: p}, "2026-09-01T00:00:00Z")
+
+        save_meta(meta_path, feed_path, "2026-09-01T00:00:00Z", 1)
+
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        expected_sha = hashlib.sha256(feed_path.read_bytes()).hexdigest()
+        assert meta["sha256"] == expected_sha
+
+    def test_writes_correct_count(self, tmp_path: Path) -> None:
+        p = _make_posting()
+        feed_path = tmp_path / "feed.json"
+        meta_path = tmp_path / "meta.json"
+        save_feed(feed_path, {p.id: p}, "2026-09-01T00:00:00Z")
+
+        save_meta(meta_path, feed_path, "2026-09-01T00:00:00Z", 1)
+
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        assert meta["count"] == 1
+
+    def test_writes_updated_at(self, tmp_path: Path) -> None:
+        p = _make_posting()
+        feed_path = tmp_path / "feed.json"
+        meta_path = tmp_path / "meta.json"
+        save_feed(feed_path, {p.id: p}, "2026-09-15T12:00:00Z")
+
+        save_meta(meta_path, feed_path, "2026-09-15T12:00:00Z", 1)
+
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        assert meta["updated_at"] == "2026-09-15T12:00:00Z"
+
+    def test_creates_parent_dirs(self, tmp_path: Path) -> None:
+        p = _make_posting()
+        feed_path = tmp_path / "feed.json"
+        meta_path = tmp_path / "nested" / "meta.json"
+        save_feed(feed_path, {p.id: p}, "2026-09-01T00:00:00Z")
+
+        save_meta(meta_path, feed_path, "2026-09-01T00:00:00Z", 1)
+
+        assert meta_path.exists()
+
+    def test_trailing_newline(self, tmp_path: Path) -> None:
+        p = _make_posting()
+        feed_path = tmp_path / "feed.json"
+        meta_path = tmp_path / "meta.json"
+        save_feed(feed_path, {p.id: p}, "2026-09-01T00:00:00Z")
+
+        save_meta(meta_path, feed_path, "2026-09-01T00:00:00Z", 1)
+
+        text = meta_path.read_text(encoding="utf-8")
+        assert text.endswith("\n")
+        assert not text.endswith("\n\n")

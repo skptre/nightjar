@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Any
@@ -106,5 +107,20 @@ def save_state(path: Path, state: RunState) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
         json.dumps(state.to_dict(), indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
+
+def save_meta(meta_path: Path, feed_path: Path, updated_at: str, count: int) -> None:
+    feed_bytes = feed_path.read_bytes()
+    sha = hashlib.sha256(feed_bytes).hexdigest()
+    meta: dict[str, Any] = {
+        "updated_at": updated_at,
+        "sha256": sha,
+        "count": count,
+    }
+    meta_path.parent.mkdir(parents=True, exist_ok=True)
+    meta_path.write_text(
+        json.dumps(meta, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )

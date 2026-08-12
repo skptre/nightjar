@@ -118,10 +118,10 @@ class TestPostingRoundTrip:
         d = posting.to_dict()
         assert "merged_from" not in d
 
-    def test_description_text_in_dict(self) -> None:
+    def test_description_text_excluded_from_dict(self) -> None:
         posting = self._make_posting()
         d = posting.to_dict()
-        assert "description_text" in d
+        assert "description_text" not in d
 
     def test_posting_is_frozen(self) -> None:
         posting = self._make_posting()

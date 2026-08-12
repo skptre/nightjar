@@ -46,7 +46,6 @@ class Posting:
             "first_seen_at": self.first_seen_at,
             "last_seen_at": self.last_seen_at,
             "closed_at": self.closed_at,
-            "description_text": self.description_text,
         }
         if self.compensation is not None:
             d["compensation"] = self.compensation

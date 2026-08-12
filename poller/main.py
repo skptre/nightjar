@@ -207,7 +207,7 @@ def _git_commit_push(total: int, new: int, closed: int) -> None:
 
 
 def main() -> None:
-    dry_run = "--dry-run" in sys.argv
+    dry_run = "--dry-run" in sys.argv or "--once" in sys.argv
 
     logging.basicConfig(
         level=logging.INFO,

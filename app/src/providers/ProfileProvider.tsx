@@ -1,21 +1,11 @@
-import { createContext, useContext, type ReactNode } from 'react';
-
-export interface Profile {
-  graduation: string;
-  grad_window: [string, string];
-  current_class_year: string;
-  work_auth: string;
-  requires_sponsorship: boolean;
-  target_categories: string[];
-  locations: string[];
-  excluded_companies: string[];
-  tiers: Record<string, 1 | 2 | 3>;
-  contacts: Record<string, string>;
-}
+import { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
+import type { Profile } from '@/profile/types';
+import { loadProfile, saveProfile } from '@/profile/profile-store';
+import { ProfileSetup } from '@/profile/ProfileSetup';
 
 interface ProfileContextValue {
   profile: Profile | null;
-  updateProfile: (profile: Profile) => void;
+  updateProfile: (updates: Partial<Profile>) => void;
 }
 
 const ProfileContext = createContext<ProfileContextValue | null>(null);
@@ -27,8 +17,34 @@ export function useProfile(): ProfileContextValue {
 }
 
 export function ProfileProvider({ children }: { children: ReactNode }): ReactNode {
+  const [profile, setProfile] = useState<Profile | null>(() => loadProfile());
+
+  const updateProfile = useCallback(
+    (updates: Partial<Profile>) => {
+      setProfile((prev) => {
+        if (!prev) return prev;
+        const updated: Profile = { ...prev, ...updates };
+        saveProfile(updated);
+        return updated;
+      });
+    },
+    [],
+  );
+
+  const handleSetupComplete = useCallback(
+    (newProfile: Profile) => {
+      saveProfile(newProfile);
+      setProfile(newProfile);
+    },
+    [],
+  );
+
+  if (!profile) {
+    return <ProfileSetup onComplete={handleSetupComplete} />;
+  }
+
   return (
-    <ProfileContext.Provider value={{ profile: null, updateProfile: () => {} }}>
+    <ProfileContext.Provider value={{ profile, updateProfile }}>
       {children}
     </ProfileContext.Provider>
   );

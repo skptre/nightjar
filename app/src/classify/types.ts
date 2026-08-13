@@ -26,8 +26,24 @@ export interface CategoryResult {
 
 export type EligibilityVerdict = 'eligible' | 'ineligible' | 'unclear';
 
+export type EligibilityFlagType =
+  | 'no_sponsorship'
+  | 'clearance_required'
+  | 'citizenship_required'
+  | 'grad_window_mismatch'
+  | 'class_year_mismatch'
+  | 'location_mismatch'
+  | 'itar_ear'
+  | 'eligible_sponsorship';
+
+export const HARD_BLOCK_TYPES: ReadonlySet<EligibilityFlagType> = new Set([
+  'citizenship_required',
+  'clearance_required',
+  'itar_ear',
+]);
+
 export interface EligibilityFlag {
-  type: 'no_sponsorship' | 'clearance_required' | 'citizenship_required' | 'grad_window_mismatch' | 'class_year_mismatch' | 'location_mismatch' | 'itar_ear';
+  type: EligibilityFlagType;
   matched_sentence: string;
   pattern: string;
 }
@@ -57,7 +73,11 @@ export interface CategoryRule {
 
 export interface SponsorshipPattern {
   pattern: string;
-  flag_type: EligibilityFlag['type'];
+  flag_type: EligibilityFlagType;
+}
+
+export interface EligibleSponsorshipPattern {
+  pattern: string;
 }
 
 export interface ClassificationRules {
@@ -66,6 +86,7 @@ export interface ClassificationRules {
   year_round_patterns: string[];
   category_rules: CategoryRule[];
   sponsorship_patterns: SponsorshipPattern[];
+  eligible_sponsorship_patterns: EligibleSponsorshipPattern[];
   grad_window_patterns: string[];
   class_year_patterns: Array<{
     pattern: string;

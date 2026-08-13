@@ -1,4 +1,5 @@
-import type { EligibilityResult, EligibilityFlag, ClassificationRules } from './types';
+import type { EligibilityResult, EligibilityFlag, EligibilityFlagType, ClassificationRules } from './types';
+import { HARD_BLOCK_TYPES } from './types';
 import type { Profile } from '@/profile/types';
 import rules from './rules.json';
 
@@ -29,22 +30,46 @@ function findMatchingSentence(text: string, regex: RegExp): string | null {
   return null;
 }
 
+function isCitizenOrPR(workAuth: string): boolean {
+  return workAuth === 'us_citizen' || workAuth === 'permanent_resident';
+}
+
+function needsSponsorshipCheck(workAuth: string): boolean {
+  return workAuth !== 'f1_opt_cpt';
+}
+
+const NEGATED_SPONSORSHIP_RE = /\b(?:no|not|never|unable|cannot|can't|won't|will not|does not|doesn't|do not|don't)\b.*\bsponsor/i;
+
+function isNegatedSponsorshipContext(sentence: string): boolean {
+  return NEGATED_SPONSORSHIP_RE.test(sentence);
+}
+
 function checkSponsorship(
   description: string,
   profile: Profile,
-): EligibilityFlag[] {
-  if (!profile.requires_sponsorship) return [];
+): { ineligibleFlags: EligibilityFlag[]; eligibleFlags: EligibilityFlag[] } {
+  if (!profile.requires_sponsorship || isCitizenOrPR(profile.work_auth)) {
+    return { ineligibleFlags: [], eligibleFlags: [] };
+  }
 
-  const flags: EligibilityFlag[] = [];
+  const ineligibleFlags: EligibilityFlag[] = [];
+  const eligibleFlags: EligibilityFlag[] = [];
   const lower = description.toLowerCase();
 
   for (const entry of typedRules.sponsorship_patterns) {
+    const flagType = entry.flag_type as EligibilityFlagType;
+    const isHard = HARD_BLOCK_TYPES.has(flagType);
+
+    if (!isHard && !needsSponsorshipCheck(profile.work_auth)) {
+      continue;
+    }
+
     const regex = new RegExp(entry.pattern, 'i');
     if (regex.test(lower)) {
       const sentence = findMatchingSentence(description, regex);
       if (sentence) {
-        flags.push({
-          type: entry.flag_type as EligibilityFlag['type'],
+        ineligibleFlags.push({
+          type: flagType,
           matched_sentence: sentence,
           pattern: entry.pattern,
         });
@@ -52,7 +77,21 @@ function checkSponsorship(
     }
   }
 
-  return flags;
+  for (const entry of typedRules.eligible_sponsorship_patterns) {
+    const regex = new RegExp(entry.pattern, 'i');
+    if (regex.test(lower)) {
+      const sentence = findMatchingSentence(description, regex);
+      if (sentence && !isNegatedSponsorshipContext(sentence)) {
+        eligibleFlags.push({
+          type: 'eligible_sponsorship',
+          matched_sentence: sentence,
+          pattern: entry.pattern,
+        });
+      }
+    }
+  }
+
+  return { ineligibleFlags, eligibleFlags };
 }
 
 function parseYearFromText(text: string, patterns: string[]): number[] {
@@ -94,18 +133,16 @@ function checkGradWindow(
   const maxYear = Math.max(...years);
 
   if (userGradYear < minYear || userGradYear > maxYear) {
-    if (windowEndYear < minYear || windowStartYear > maxYear) {
-      for (const pat of typedRules.grad_window_patterns) {
-        const regex = new RegExp(pat, 'i');
-        const sentence = findMatchingSentence(description, regex);
-        if (sentence) {
-          flags.push({
-            type: 'grad_window_mismatch',
-            matched_sentence: sentence,
-            pattern: pat,
-          });
-          break;
-        }
+    for (const pat of typedRules.grad_window_patterns) {
+      const regex = new RegExp(pat, 'i');
+      const sentence = findMatchingSentence(description, regex);
+      if (sentence) {
+        flags.push({
+          type: 'grad_window_mismatch',
+          matched_sentence: sentence,
+          pattern: pat,
+        });
+        break;
       }
     }
   }
@@ -193,35 +230,45 @@ export function checkEligibility(
   postingLocations: string[],
   profile: Profile,
 ): EligibilityResult {
-  const allFlags: EligibilityFlag[] = [];
+  const allIneligibleFlags: EligibilityFlag[] = [];
+  let eligibleFlags: EligibilityFlag[] = [];
 
   if (description) {
-    const sponsorshipFlags = checkSponsorship(description, profile);
-    allFlags.push(...sponsorshipFlags);
+    const sponsorship = checkSponsorship(description, profile);
+    allIneligibleFlags.push(...sponsorship.ineligibleFlags);
+    eligibleFlags = sponsorship.eligibleFlags;
 
     const gradFlags = checkGradWindow(description, profile);
-    allFlags.push(...gradFlags);
+    allIneligibleFlags.push(...gradFlags);
 
     const classFlags = checkClassYear(description, profile);
-    allFlags.push(...classFlags);
+    allIneligibleFlags.push(...classFlags);
   }
 
   const locationFlags = checkLocation(postingLocations, profile);
-  allFlags.push(...locationFlags);
+  allIneligibleFlags.push(...locationFlags);
 
-  if (allFlags.length === 0) {
+  if (allIneligibleFlags.length > 0) {
+    const reasons = allIneligibleFlags.map((flag) => `matched: '${flag.matched_sentence}'`);
     return {
-      verdict: 'unclear',
-      reasons: [],
-      flags: [],
+      verdict: 'ineligible',
+      reasons,
+      flags: [...allIneligibleFlags, ...eligibleFlags],
     };
   }
 
-  const reasons = allFlags.map((flag) => `matched: '${flag.matched_sentence}'`);
+  if (eligibleFlags.length > 0) {
+    const reasons = eligibleFlags.map((flag) => `matched: '${flag.matched_sentence}'`);
+    return {
+      verdict: 'eligible',
+      reasons,
+      flags: eligibleFlags,
+    };
+  }
 
   return {
-    verdict: 'ineligible',
-    reasons,
-    flags: allFlags,
+    verdict: 'unclear',
+    reasons: [],
+    flags: [],
   };
 }

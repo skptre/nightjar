@@ -260,7 +260,7 @@
     { "pattern": "only u\\.?s\\.? citizens", "flag_type": "citizenship_required" },
     { "pattern": "citizen of the united states", "flag_type": "citizenship_required" },
     { "pattern": "must be a u\\.?s\\.? person", "flag_type": "citizenship_required" },
-    { "pattern": "u\\.?s\\.? person(?:s)? as defined", "flag_type": "citizenship_required" },
+    { "pattern": "u\\.?s\\.? person(?:\\(s\\)|s)? as defined", "flag_type": "citizenship_required" },
 
     { "pattern": "permanent resident(?:s)? (?:of the u|only|required)", "flag_type": "citizenship_required" },
     { "pattern": "green card(?:\\s+holder)?(?:\\s+required)?", "flag_type": "citizenship_required" },
@@ -299,8 +299,21 @@
     { "pattern": "this\\s+(?:position|role)\\s+(?:is\\s+)?not\\s+(?:eligible|open)\\s+(?:for|to)\\s+(?:visa\\s+)?sponsorship", "flag_type": "no_sponsorship" },
     { "pattern": "visa\\s+(?:transfer|sponsorship)\\s+(?:is\\s+)?not\\s+(?:available|offered|provided)", "flag_type": "no_sponsorship" }
   ],
+  "eligible_sponsorship_patterns": [
+    { "pattern": "(?:we|the company)\\s+(?:do|does|will|can)\\s+sponsor\\s+(?:work\\s+)?visas?" },
+    { "pattern": "(?:we|the company)\\s+sponsor\\s+(?:work\\s+)?visas?" },
+    { "pattern": "(?:we|the company)\\s+(?:provide|offer)s?\\s+(?:visa|immigration|work)\\s+sponsorship" },
+    { "pattern": "(?<!\\bno\\s+)(?:visa|immigration|work)\\s+sponsorship\\s+(?:is\\s+)?(?:available|offered|provided)" },
+    { "pattern": "(?:will|can)\\s+sponsor\\s+(?:qualified|eligible)\\s+candidates?" },
+    { "pattern": "h-?1b\\s+sponsorship\\s+(?:is\\s+)?(?:available|offered|provided)" },
+    { "pattern": "(?:we|the company)\\s+sponsor\\s+h-?1b" },
+    { "pattern": "(?:open|willing)\\s+to\\s+sponsor(?:ing)?\\s+(?:work\\s+)?(?:visas?|authorization)" },
+    { "pattern": "sponsorship\\s+(?:is\\s+)?available\\s+for\\s+(?:this|the)\\s+(?:position|role)" },
+    { "pattern": "(?:we|the company)\\s+(?:are|is)\\s+(?:able|willing|happy|glad)\\s+to\\s+sponsor" }
+  ],
   "grad_window_patterns": [
     "(?:graduating|graduation(?:\\s+date)?)\\s+(?:in\\s+|by\\s+|between\\s+)?(?:(?:january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|nov|dec|spring|summer|fall|winter)\\s+)?(20\\d{2})",
+    "class\\s+of\\s+(20\\d{2})\\s+(?:or|and|/|,\\s*(?:or\\s+)?)\\s*(20\\d{2})",
     "class\\s+of\\s+(20\\d{2})",
     "(?:expected|anticipated)\\s+graduation[:\\s]+(?:(?:january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|nov|dec|spring|summer|fall|winter)\\s+)?(20\\d{2})",
     "must\\s+(?:be\\s+)?graduat(?:e|ing)\\s+(?:by|before|no\\s+later\\s+than)\\s+(?:(?:january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|nov|dec|spring|summer|fall|winter)\\s+)?(20\\d{2})",

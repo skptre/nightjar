@@ -1,0 +1,353 @@
+[
+  {
+    "id": "unclear_01",
+    "company": "Stripe",
+    "description": "We are looking for a Software Engineering Intern to join our Payments team for Summer 2027. You will work on building scalable APIs and infrastructure that powers online commerce for millions of businesses. Strong knowledge of distributed systems, databases, and API design is a plus.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "unclear",
+    "expected_verdict_citizen": "unclear",
+    "notes": "No sponsorship language at all. Pure technical posting."
+  },
+  {
+    "id": "unclear_02",
+    "company": "Notion",
+    "description": "Join Notion as a Product Engineering Intern this summer! You'll ship features used by millions. We value curiosity, craft, and collaboration. Our team is distributed across San Francisco and New York. Competitive compensation and housing stipend provided.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "unclear",
+    "expected_verdict_citizen": "unclear",
+    "notes": "No work auth language. Typical startup posting."
+  },
+  {
+    "id": "unclear_03",
+    "company": "Figma",
+    "description": "Figma is hiring a Design Engineering Intern. You will build interactive prototypes and design tools. We are an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, national origin, disability, or veteran status.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "unclear",
+    "expected_verdict_citizen": "unclear",
+    "notes": "EEO boilerplate only. No sponsorship language."
+  },
+  {
+    "id": "unclear_04",
+    "company": "Vercel",
+    "description": "We're looking for an Infrastructure Engineering Intern to help us build the future of frontend development. This is a remote position open to candidates based in the United States. You'll work with Next.js, Edge Functions, and our global CDN.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "unclear",
+    "expected_verdict_citizen": "unclear",
+    "notes": "US-based but no sponsorship or citizenship mention."
+  },
+  {
+    "id": "unclear_05",
+    "company": "Linear",
+    "description": "Linear is looking for a Backend Engineering Intern to help build the fastest project management tool. You'll work on real-time sync, database performance, and API design. We offer a competitive salary, equity, and a great team culture.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "unclear",
+    "expected_verdict_citizen": "unclear",
+    "notes": "No legal language at all."
+  },
+  {
+    "id": "unclear_06",
+    "company": "Anthropic",
+    "description": "Join our research team as an AI Safety Intern. You will work on alignment research, interpretability, and responsible AI development. We welcome applicants from all backgrounds and are committed to building a diverse team. Proof of eligibility to work in the United States is required.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "unclear",
+    "expected_verdict_citizen": "unclear",
+    "notes": "Proof of eligibility to work is standard I-9 language. F-1 CPT satisfies this. NOT ineligible."
+  },
+  {
+    "id": "unclear_07",
+    "company": "Ramp",
+    "description": "Ramp is hiring a Software Engineering Intern for Summer 2027. You must be legally authorized to work in the United States. Strong CS fundamentals and experience with TypeScript or Python preferred.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "unclear",
+    "expected_verdict_citizen": "unclear",
+    "notes": "Legally authorized to work is EEOC-standard language. F-1 on CPT IS legally authorized. NOT ineligible."
+  },
+  {
+    "id": "unclear_08",
+    "company": "Plaid",
+    "description": "We are seeking a Data Engineering Intern for our Financial Infrastructure team. Must be authorized to work in the United States for the duration of the internship. Experience with Python, SQL, and data pipelines is preferred.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "unclear",
+    "expected_verdict_citizen": "unclear",
+    "notes": "Authorized to work for duration of internship. CPT provides this. NOT ineligible."
+  },
+  {
+    "id": "unclear_09",
+    "company": "Cursor",
+    "description": "Cursor is looking for an ML Engineering Intern to work on our AI-powered code editor. You'll develop models for code completion, refactoring suggestions, and multi-file edits. Strong background in transformer architectures and PyTorch required.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "unclear",
+    "expected_verdict_citizen": "unclear",
+    "notes": "Pure technical posting with no legal boilerplate."
+  },
+  {
+    "id": "unclear_10",
+    "company": "Scale AI",
+    "description": "Scale AI is hiring a Platform Engineering Intern. You will build systems that power our data labeling infrastructure. International students on valid work authorization are encouraged to apply. We offer a competitive internship program with mentorship and career development.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "unclear",
+    "expected_verdict_citizen": "unclear",
+    "notes": "Explicitly welcoming international students. Positive but not a formal sponsorship commitment."
+  },
+  {
+    "id": "eligible_01",
+    "company": "Google",
+    "description": "Software Engineering Intern, Summer 2027. We are looking for talented students to join our engineering team. We sponsor work visas for qualified candidates. Candidates must be enrolled in a Bachelor's, Master's, or PhD program in Computer Science or a related field.",
+    "expected_verdict_f1": "eligible",
+    "expected_verdict_h1b": "eligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "Explicit positive sponsorship signal: we sponsor work visas."
+  },
+  {
+    "id": "eligible_02",
+    "company": "Meta",
+    "description": "Join Meta as a Software Engineer Intern. Work on products used by billions. Visa sponsorship is available for this position. We offer competitive pay, housing, and relocation assistance. Apply by December 1st.",
+    "expected_verdict_f1": "eligible",
+    "expected_verdict_h1b": "eligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "Explicit: visa sponsorship is available."
+  },
+  {
+    "id": "eligible_03",
+    "company": "Amazon",
+    "description": "Amazon is hiring SDE Interns for Summer 2027. We are open to sponsoring work visas for exceptional candidates. This role is based in Seattle, WA or Arlington, VA. Strong problem-solving skills and familiarity with at least one object-oriented language required.",
+    "expected_verdict_f1": "eligible",
+    "expected_verdict_h1b": "eligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "Explicit: open to sponsoring work visas."
+  },
+  {
+    "id": "ineligible_citizenship_01",
+    "company": "Raytheon",
+    "description": "Software Engineering Intern, Summer 2027. Work on defense systems and radar technology. This position requires U.S. citizenship due to government contract requirements. Must be able to obtain and maintain a security clearance.",
+    "expected_verdict_f1": "ineligible",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "Hard block: U.S. citizenship required. Applies to F-1 and H-1B alike."
+  },
+  {
+    "id": "ineligible_citizenship_02",
+    "company": "Lockheed Martin",
+    "description": "Join Lockheed Martin as a Systems Engineering Intern. You will work on next-generation satellite systems. Candidates must be a U.S. citizen or a lawful permanent resident. This role requires access to export-controlled information.",
+    "expected_verdict_f1": "ineligible",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "Hard block: US citizen or permanent resident. F-1 and H-1B are neither."
+  },
+  {
+    "id": "ineligible_citizenship_03",
+    "company": "Palantir",
+    "description": "Software Engineering Intern. Help build software that transforms how organizations use data. Due to the nature of our government contracts, only U.S. citizens may apply for this position. U.S. Person status is required under ITAR regulations.",
+    "expected_verdict_f1": "ineligible",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "Hard block: US citizens only + ITAR. Double hard block."
+  },
+  {
+    "id": "ineligible_clearance_01",
+    "company": "Northrop Grumman",
+    "description": "Cybersecurity Engineering Intern. Work on protecting critical defense infrastructure. An active Top Secret/SCI clearance is required. Candidates must be eligible for security clearance. Prior experience with classified systems is preferred.",
+    "expected_verdict_f1": "ineligible",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "Hard block: TS/SCI clearance required. F-1 students cannot obtain security clearance."
+  },
+  {
+    "id": "ineligible_clearance_02",
+    "company": "BAE Systems",
+    "description": "Embedded Systems Intern. Work on avionics software for military aircraft. Must hold or be eligible to obtain a Secret clearance. U.S. citizenship is required for clearance eligibility.",
+    "expected_verdict_f1": "ineligible",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "Hard block: clearance + citizenship. Both apply to non-citizens."
+  },
+  {
+    "id": "ineligible_itar_01",
+    "company": "SpaceX",
+    "description": "Avionics Software Intern. Work on flight software for Falcon and Starship vehicles. This position is subject to ITAR and EAR export control regulations. Applicants must be a U.S. Person as defined by 22 CFR 120.15 (U.S. citizen, permanent resident, or protected individual).",
+    "expected_verdict_f1": "ineligible",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "Hard block: ITAR + U.S. Person requirement. F-1 and H-1B are not U.S. Persons."
+  },
+  {
+    "id": "ineligible_itar_02",
+    "company": "L3Harris",
+    "description": "RF Engineering Intern. Design radio frequency components for communications systems. This position involves compliance with International Traffic in Arms Regulations (ITAR). All applicants must be U.S. citizens or permanent residents.",
+    "expected_verdict_f1": "ineligible",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "Hard block: ITAR + citizenship/PR requirement."
+  },
+  {
+    "id": "ineligible_nosponsor_h1b_01",
+    "company": "Two Sigma",
+    "description": "Quantitative Research Intern, Summer 2027. Work on market-making strategies and quantitative models. We are unable to sponsor work visas for this position. Candidates must be authorized to work in the United States.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "no_sponsorship: unable to sponsor. F-1 on CPT does NOT need sponsorship so they are fine. H-1B needs sponsor transfer so ineligible."
+  },
+  {
+    "id": "ineligible_nosponsor_h1b_02",
+    "company": "Citadel",
+    "description": "Software Engineering Intern. Build high-performance trading systems. This company does not offer immigration sponsorship for intern positions. Strong skills in C++ and systems programming required.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "no_sponsorship: does not offer sponsorship. F-1 unaffected (CPT). H-1B ineligible."
+  },
+  {
+    "id": "ineligible_nosponsor_h1b_03",
+    "company": "Jane Street",
+    "description": "Trading Intern. Join our trading desk in New York. No visa sponsorship is available for this position. Must have strong quantitative skills and interest in financial markets.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "no_sponsorship: no visa sponsorship. F-1 fine (CPT). H-1B ineligible."
+  },
+  {
+    "id": "ineligible_nosponsor_h1b_04",
+    "company": "DRW",
+    "description": "Quantitative Trading Intern. Work alongside traders on live strategies. The company will not sponsor employment visas for this internship. Candidates must have unrestricted authorization to work in the US.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "no_sponsorship: will not sponsor + unrestricted authorization. F-1 CPT does not require sponsorship."
+  },
+  {
+    "id": "ineligible_nosponsor_h1b_05",
+    "company": "Capital One",
+    "description": "Software Engineering Intern, Summer 2027. Build products that help people manage their finances. Applicants must be authorized to work in the United States on a permanent basis without the need for current or future visa sponsorship. We are unable to provide sponsorship at this time.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "no_sponsorship: without need for sponsorship + unable to provide. For internships, F-1 CPT satisfies this since no sponsorship is needed."
+  },
+  {
+    "id": "adversarial_01",
+    "company": "Uber",
+    "description": "Applicants must be authorized to work in the United States without need for sponsorship now or in the future. We are committed to creating a diverse and inclusive workplace.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "ADVERSARIAL: has both neutral language (authorized to work) AND anti-sponsorship (without need for sponsorship). The combined phrase is a no_sponsorship pattern. For F-1: CPT means no sponsorship needed for internship. For H-1B: ineligible."
+  },
+  {
+    "id": "adversarial_02",
+    "company": "Microsoft",
+    "description": "We sponsor work visas for qualified candidates. Microsoft is an equal opportunity employer. Join us as a Software Engineering Intern for Summer 2027. Competitive salary and benefits.",
+    "expected_verdict_f1": "eligible",
+    "expected_verdict_h1b": "eligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "ADVERSARIAL: positive sponsorship signal. Should be eligible for F-1 and H-1B."
+  },
+  {
+    "id": "adversarial_03",
+    "company": "Apple",
+    "description": "Must be authorized to work in the United States. Apple is committed to inclusion and diversity. Join our Hardware Engineering team as an intern. You will work on next-generation products.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "unclear",
+    "expected_verdict_citizen": "unclear",
+    "notes": "ADVERSARIAL: neutral EEOC language ONLY. No anti-sponsorship. Must NOT trigger ineligible. F-1 on CPT IS authorized to work."
+  },
+  {
+    "id": "adversarial_04",
+    "company": "JPMorgan",
+    "description": "Must be authorized to work in the US. We are unable to sponsor work visas for this position. Software Engineering Summer Analyst intern position. Strong Java and Python skills required.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "ADVERSARIAL: neutral phrase + ineligible phrase in same posting. The no_sponsorship phrase applies to H-1B. F-1 unaffected (CPT, no sponsorship needed)."
+  },
+  {
+    "id": "adversarial_05",
+    "company": "Boeing",
+    "description": "This role requires U.S. citizenship due to government contract requirements. Boeing offers competitive internship programs across engineering disciplines. We are committed to building a diverse workforce.",
+    "expected_verdict_f1": "ineligible",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "ADVERSARIAL: citizenship requirement. Hard block. Even F-1 students are not US citizens."
+  },
+  {
+    "id": "grad_window_ineligible",
+    "company": "Goldman Sachs",
+    "description": "Summer Analyst Intern, Summer 2027. Open to students graduating in 2028. Must be pursuing a Bachelor's degree with expected graduation in 2028. Strong analytical and quantitative skills required.",
+    "expected_verdict_f1": "ineligible",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "ineligible",
+    "notes": "Graduation window mismatch: posting says graduating 2028, user graduates 2029. Applies regardless of work auth."
+  },
+  {
+    "id": "grad_window_eligible",
+    "company": "Morgan Stanley",
+    "description": "Technology Summer Analyst, 2027. Open to students in the Class of 2028 or 2029. Must be pursuing a degree in Computer Science, Engineering, or a related field. Strong programming skills in Java or Python.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "unclear",
+    "expected_verdict_citizen": "unclear",
+    "notes": "Graduation window match: posting includes 2029, user graduates 2029. No signal from this check."
+  },
+  {
+    "id": "grad_window_no_mention",
+    "company": "Robinhood",
+    "description": "Backend Engineering Intern. Build financial infrastructure that democratizes access to the markets. Experience with Go, PostgreSQL, or Kafka is a plus. Competitive pay and equity.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "unclear",
+    "expected_verdict_citizen": "unclear",
+    "notes": "No graduation year mentioned. No signal."
+  },
+  {
+    "id": "f1_specific_01",
+    "company": "Databricks",
+    "description": "Software Engineering Intern. Work on Apache Spark and large-scale data processing. This position does not offer visa sponsorship. Candidates must have valid work authorization for the duration of the internship.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "F-1 SPECIFIC: does not offer sponsorship + valid work auth for duration. F-1 on CPT has valid work auth and does NOT need sponsorship. H-1B needs sponsor transfer."
+  },
+  {
+    "id": "f1_specific_02",
+    "company": "Snowflake",
+    "description": "Data Engineering Intern. We cannot sponsor visas for this internship position. However, candidates with existing work authorization such as CPT or OPT are welcome to apply.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "F-1 SPECIFIC: explicitly says CPT/OPT welcome despite no sponsorship. F-1 students are clearly eligible. H-1B ineligible (needs sponsorship)."
+  },
+  {
+    "id": "f1_specific_03",
+    "company": "Netflix",
+    "description": "Software Engineer Intern. This position is not eligible for visa sponsorship. Must have unrestricted work authorization in the United States. Build systems that serve 200+ million subscribers.",
+    "expected_verdict_f1": "unclear",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "F-1 SPECIFIC: not eligible for sponsorship + unrestricted work auth. Both are no_sponsorship flags. F-1 CPT skips soft blocks. H-1B ineligible."
+  },
+  {
+    "id": "f1_specific_04",
+    "company": "Anduril",
+    "description": "Software Engineering Intern. Build autonomous systems for national defense. This position is subject to ITAR export control regulations. Must be a U.S. Person as defined by ITAR. No exceptions.",
+    "expected_verdict_f1": "ineligible",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "F-1 SPECIFIC: ITAR is a HARD block. Even though F-1 skips no_sponsorship, ITAR still applies. F-1 students are NOT U.S. Persons."
+  },
+  {
+    "id": "f1_specific_05",
+    "company": "Airbnb",
+    "description": "Software Engineering Intern, Summer 2027. We will sponsor qualified candidates for work visas. Build features that help millions of hosts and guests around the world. Based in San Francisco with hybrid work options.",
+    "expected_verdict_f1": "eligible",
+    "expected_verdict_h1b": "eligible",
+    "expected_verdict_citizen": "unclear",
+    "notes": "F-1 SPECIFIC: positive sponsorship signal. F-1 and H-1B both get eligible verdict."
+  },
+  {
+    "id": "class_year_mismatch",
+    "company": "Bridgewater",
+    "description": "Investment Engineering Intern. PhD students only. Must be currently enrolled in a doctoral program in Computer Science, Mathematics, or Physics. Strong quantitative modeling skills required.",
+    "expected_verdict_f1": "ineligible",
+    "expected_verdict_h1b": "ineligible",
+    "expected_verdict_citizen": "ineligible",
+    "notes": "Class year mismatch: PhD only, user is junior. Applies regardless of work auth."
+  }
+]

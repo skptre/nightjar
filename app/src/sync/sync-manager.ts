@@ -3,7 +3,8 @@ import type { Profile } from '@/profile/types';
 import { syncFeed, getLastSyncedAt, type SyncResult } from './feed-sync';
 import { fireNewPostingNotifications, requestNotificationPermission } from './notifications';
 import { prefetchDescriptions } from './description-fetch';
-import { classifyNewPostings } from '@/classify/classifier';
+import { recomputeNewPostings } from '@/classify/recompute';
+import { runAutoGhost } from '@/views/Pipeline/auto-ghost';
 
 export type SyncStatus = 'idle' | 'syncing' | 'error';
 
@@ -81,18 +82,23 @@ export class SyncManager {
     this.updateState({ status: 'syncing', lastError: null });
 
     try {
+      const ghosted = runAutoGhost(this.db);
+      if (ghosted > 0) {
+        console.log(`[nightjar] auto-ghosted ${String(ghosted)} stale application(s)`);
+      }
+
       const result = await syncFeed(this.db);
 
       if (!result.skipped && this.profile) {
         const idsToClassify = result.newPostingIds.length > 0
           ? result.newPostingIds
           : [];
-        const unclassified = this.db.query<{ id: string }>(
-          'SELECT id FROM postings_cache WHERE category IS NULL AND closed_at IS NULL',
+        const unscored = this.db.query<{ id: string }>(
+          'SELECT id FROM postings_cache WHERE (category IS NULL OR score IS NULL) AND closed_at IS NULL',
         ).map((r) => r.id);
-        const allIds = [...new Set([...idsToClassify, ...unclassified])];
+        const allIds = [...new Set([...idsToClassify, ...unscored])];
         if (allIds.length > 0) {
-          classifyNewPostings(this.db, allIds, this.profile);
+          recomputeNewPostings(this.db, allIds, this.profile);
         }
       }
 
@@ -113,7 +119,7 @@ export class SyncManager {
       });
 
       if (!result.skipped) {
-        void prefetchDescriptions(this.db);
+        void prefetchDescriptions(this.db, undefined, this.profile ?? undefined);
       }
 
       return result;

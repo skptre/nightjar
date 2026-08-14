@@ -1,4 +1,6 @@
 import type { NightjarDB } from '@/db/database';
+import type { Profile } from '@/profile/types';
+import { recomputePosting } from '@/classify/recompute';
 
 const MAX_CONCURRENT = 3;
 const MIN_HOST_DELAY_MS = 500;
@@ -246,6 +248,7 @@ function parsePostingData(row: { id: string; data: string }): PostingInfo | null
 export async function prefetchDescriptions(
   db: NightjarDB,
   limit: number = DEFAULT_PREFETCH_LIMIT,
+  profile?: Profile,
 ): Promise<DescriptionResult[]> {
   const rows = db.query<{ id: string; data: string }>(
     `SELECT id, data FROM postings_cache
@@ -277,6 +280,9 @@ export async function prefetchDescriptions(
           'UPDATE postings_cache SET description = ? WHERE id = ?',
           [result.description, result.id],
         );
+        if (profile) {
+          recomputePosting(db, result.id, profile);
+        }
       }
     });
     pending.push(promise);

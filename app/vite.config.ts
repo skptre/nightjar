@@ -51,7 +51,7 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    exclude: ['sql.js'],
+    include: ['sql.js'],
   },
   test: {
     environment: 'jsdom',

@@ -16,9 +16,8 @@ export class NightjarDB {
   }
 
   static async create(): Promise<NightjarDB> {
-    const SQL = await initSqlJs({
-      locateFile: (file: string) => `/${file}`,
-    });
+    const wasmBinary = await fetch('/sql-wasm.wasm').then(r => r.arrayBuffer());
+    const SQL = await initSqlJs({ wasmBinary });
 
     const savedData = await loadDatabase();
     const sqlDb = savedData ? new SQL.Database(savedData) : new SQL.Database();

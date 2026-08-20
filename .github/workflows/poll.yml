@@ -53,3 +53,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./data
           publish_branch: gh-pages
+          user_name: 'nightjar-bot'
+          user_email: 'nightjar-bot@users.noreply.github.com'

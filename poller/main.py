@@ -32,6 +32,55 @@ STATE_PATH = DATA_DIR / "state.json"
 META_PATH = DATA_DIR / "meta.json"
 
 
+async def _fetch_simplify(
+    companies: list[Any],
+    state: Any,
+    now_str: str,
+    skip_registry_candidates: bool,
+    data_dir: Path,
+) -> list[Posting]:
+    from poller.sources.simplify import SimplifyAdapter
+
+    adapter = SimplifyAdapter()
+    key = "simplify:__meta__"
+    prev_health = state.sources.get(key, SourceHealth())
+
+    try:
+        async with RateLimitedClient() as client:
+            dummy_company = type("Company", (), {
+                "slug": "__simplify__", "name": "Simplify",
+                "tags": [], "sources": [],
+            })()
+            dummy_source = type("SourceConfig", (), {
+                "type": "simplify", "board_token": "",
+            })()
+            raw_postings = await adapter.fetch(client, dummy_company, dummy_source)
+
+        postings = [adapter.normalize(raw, dummy_company, now_str) for raw in raw_postings]
+
+        state.sources[key] = SourceHealth(
+            last_polled_at=now_str,
+            healthy=True,
+            bootstrapped=prev_health.bootstrapped,
+        )
+        logger.info("[simplify] %d postings fetched", len(postings))
+        return postings
+
+    except NotImplementedError:
+        logger.debug("[simplify] adapter not yet implemented, skipping")
+        return []
+
+    except (SourceFetchError, SourceParseError) as exc:
+        logger.error("[simplify] %s", exc)
+        state.sources[key] = SourceHealth(
+            last_polled_at=prev_health.last_polled_at,
+            healthy=False,
+            error=str(exc),
+            bootstrapped=prev_health.bootstrapped,
+        )
+        return []
+
+
 async def _poll_source(
     client: RateLimitedClient,
     company: Any,
@@ -75,6 +124,8 @@ async def run_pipeline(
     *,
     registry_path: Path | None = None,
     data_dir: Path | None = None,
+    skip_simplify: bool = False,
+    skip_registry_candidates: bool = False,
 ) -> None:
     resolved_data = data_dir or DATA_DIR
     feed_path = resolved_data / "feed.json"
@@ -99,6 +150,8 @@ async def run_pipeline(
     due_tasks: list[tuple[Any, Any]] = []
     for company in companies:
         for source in company.sources:
+            if source.type == "simplify":
+                continue
             key = f"{source.type}:{company.slug}"
             health = state.sources.get(key)
             if is_poll_due(company, health, now):
@@ -135,6 +188,12 @@ async def run_pipeline(
 
     for postings in fetch_results.values():
         current_postings.extend(postings)
+
+    if not skip_simplify:
+        simplify_postings = await _fetch_simplify(
+            companies, state, now_str, skip_registry_candidates, resolved_data,
+        )
+        current_postings.extend(simplify_postings)
 
     for posting in previous_feed.values():
         key = f"{posting.source}:{posting.company_slug}"
@@ -208,6 +267,8 @@ def _git_commit_push(total: int, new: int, closed: int) -> None:
 
 def main() -> None:
     dry_run = "--dry-run" in sys.argv or "--once" in sys.argv
+    skip_simplify = "--skip-simplify" in sys.argv
+    skip_registry_candidates = "--skip-registry-candidates" in sys.argv
 
     logging.basicConfig(
         level=logging.INFO,
@@ -220,4 +281,8 @@ def main() -> None:
     else:
         logger.info("nightjar poller: live mode")
 
-    asyncio.run(run_pipeline(dry_run=dry_run))
+    asyncio.run(run_pipeline(
+        dry_run=dry_run,
+        skip_simplify=skip_simplify,
+        skip_registry_candidates=skip_registry_candidates,
+    ))

@@ -11,7 +11,7 @@ from poller.models import Company, SourceConfig, SourceHealth
 
 logger = logging.getLogger(__name__)
 
-VALID_SOURCE_TYPES = {"greenhouse", "lever", "ashby"}
+VALID_SOURCE_TYPES = {"greenhouse", "lever", "ashby", "workday", "simplify", "smartrecruiters"}
 DEFAULT_INTERVAL = timedelta(hours=6)
 HIGH_PRIORITY_INTERVAL = timedelta(minutes=30)
 RAMP_WINDOW_DAYS = 14

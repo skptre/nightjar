@@ -29,6 +29,7 @@ class Posting:
     closed_at: str | None = None
     compensation: str | None = None
     merged_from: list[str] = field(default_factory=list)
+    source_metadata: dict[str, Any] | None = None
 
     def to_dict(self) -> dict[str, Any]:
         d: dict[str, Any] = {
@@ -51,6 +52,8 @@ class Posting:
             d["compensation"] = self.compensation
         if self.merged_from:
             d["merged_from"] = list(self.merged_from)
+        if self.source_metadata is not None:
+            d["source_metadata"] = dict(self.source_metadata)
         return d
 
     @classmethod
@@ -73,6 +76,7 @@ class Posting:
             closed_at=d.get("closed_at"),
             compensation=d.get("compensation"),
             merged_from=list(d.get("merged_from", [])),
+            source_metadata=d.get("source_metadata"),
         )
 
 

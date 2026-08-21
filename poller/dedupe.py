@@ -13,6 +13,9 @@ SOURCE_PRIORITY: dict[str, int] = {
     "greenhouse": 0,
     "lever": 1,
     "ashby": 2,
+    "smartrecruiters": 3,
+    "workday": 4,
+    "simplify": 99,
 }
 
 TITLE_THRESHOLD = 95.0

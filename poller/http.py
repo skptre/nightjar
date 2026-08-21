@@ -139,6 +139,87 @@ class RateLimitedClient:
             f"{last_body[:200]}",
         )
 
+    async def post_json(
+        self,
+        url: str,
+        *,
+        json_body: dict[str, Any] | None = None,
+        source: str = "",
+        company_slug: str = "",
+    ) -> Any:
+        host = urlparse(url).hostname or ""
+        lock = self._get_host_lock(host)
+
+        last_status: int = 0
+        last_body: str = ""
+
+        for attempt in range(MAX_RETRIES):
+            async with lock:
+                await self._enforce_host_delay(host)
+
+                client = await self._get_client()
+                try:
+                    response = await client.post(url, json=json_body)
+                except httpx.HTTPError as exc:
+                    last_body = str(exc)
+                    if attempt < MAX_RETRIES - 1:
+                        await asyncio.sleep(BASE_DELAY * (2**attempt))
+                        continue
+                    raise SourceFetchError(
+                        source, company_slug, f"network error: {exc}"
+                    ) from exc
+
+                last_status = response.status_code
+                last_body = response.text[:500]
+
+                if response.status_code == 429 or response.status_code >= 500:
+                    if attempt < MAX_RETRIES - 1:
+                        if response.status_code == 429:
+                            retry_after = response.headers.get("Retry-After")
+                            if retry_after is not None:
+                                try:
+                                    delay = float(retry_after)
+                                except ValueError:
+                                    delay = BASE_DELAY * (2**attempt)
+                            else:
+                                delay = BASE_DELAY * (2**attempt)
+                        else:
+                            delay = BASE_DELAY * (2**attempt)
+                        await asyncio.sleep(delay)
+                        continue
+
+                    raise SourceFetchError(
+                        source,
+                        company_slug,
+                        f"HTTP {response.status_code} after {MAX_RETRIES} attempts: "
+                        f"{last_body[:200]}",
+                    )
+
+                if response.status_code >= 400:
+                    raise SourceFetchError(
+                        source,
+                        company_slug,
+                        f"HTTP {response.status_code}: {last_body[:200]}",
+                    )
+
+                content_type = response.headers.get("content-type", "")
+                if "json" not in content_type and "javascript" not in content_type:
+                    raise SourceFetchError(
+                        source,
+                        company_slug,
+                        f"expected JSON but got content-type '{content_type}': "
+                        f"{last_body[:200]}",
+                    )
+
+                return response.json()
+
+        raise SourceFetchError(
+            source,
+            company_slug,
+            f"exhausted {MAX_RETRIES} retries (last status={last_status}): "
+            f"{last_body[:200]}",
+        )
+
     async def close(self) -> None:
         if self._client is not None and not self._client.is_closed:
             await self._client.aclose()

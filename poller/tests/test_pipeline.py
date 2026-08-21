@@ -193,6 +193,7 @@ class TestFaultIsolation:
                 dry_run=True,
                 registry_path=registry_path,
                 data_dir=data_dir,
+                skip_simplify=True,
             )
 
         feed = load_feed(data_dir / "feed.json")
@@ -262,6 +263,7 @@ class TestFaultIsolation:
                 dry_run=True,
                 registry_path=registry_path,
                 data_dir=data_dir,
+                skip_simplify=True,
             )
 
         feed = load_feed(data_dir / "feed.json")
@@ -296,6 +298,7 @@ class TestIdempotency:
                 dry_run=True,
                 registry_path=registry_path,
                 data_dir=data_dir_1,
+                skip_simplify=True,
             )
 
         state_1 = load_state(data_dir_1 / "state.json")
@@ -314,6 +317,7 @@ class TestIdempotency:
                 dry_run=True,
                 registry_path=registry_path,
                 data_dir=data_dir_2,
+                skip_simplify=True,
             )
 
         feed_final_1 = load_feed(data_dir_1 / "feed.json")
@@ -355,6 +359,7 @@ class TestPipelineMetaFile:
                 dry_run=True,
                 registry_path=registry_path,
                 data_dir=data_dir,
+                skip_simplify=True,
             )
 
         meta_path = data_dir / "meta.json"
@@ -380,6 +385,7 @@ class TestPipelineMetaFile:
             dry_run=True,
             registry_path=registry_path,
             data_dir=data_dir,
+            skip_simplify=True,
         )
 
         meta_path = data_dir / "meta.json"
@@ -400,6 +406,7 @@ class TestPipelineStateTracking:
             dry_run=True,
             registry_path=registry_path,
             data_dir=data_dir,
+            skip_simplify=True,
         )
 
         state = load_state(data_dir / "state.json")
@@ -427,5 +434,6 @@ class TestPipelineStateTracking:
                 dry_run=True,
                 registry_path=registry_path,
                 data_dir=data_dir,
+                skip_simplify=True,
             )
             mock_git.assert_not_called()

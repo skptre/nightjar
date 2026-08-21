@@ -1,12 +1,22 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+import logging
+from typing import TYPE_CHECKING, Any
 
+from poller.exceptions import SourceParseError
+from poller.models import Posting, RawPosting, compute_posting_id
+from poller.normalize import clean_title, html_to_plaintext, normalize_location, normalize_locations
 from poller.sources.base import SourceAdapter
+
+logger = logging.getLogger(__name__)
 
 if TYPE_CHECKING:
     from poller.http import RateLimitedClient
-    from poller.models import Company, Posting, RawPosting, SourceConfig
+    from poller.models import Company, SourceConfig
+
+SMARTRECRUITERS_API = "https://api.smartrecruiters.com/v1/companies"
+SMARTRECRUITERS_JOBS = "https://jobs.smartrecruiters.com"
+PAGE_LIMIT = 100
 
 
 class SmartRecruitersAdapter(SourceAdapter):
@@ -17,7 +27,91 @@ class SmartRecruitersAdapter(SourceAdapter):
         company: Company,
         source: SourceConfig,
     ) -> list[RawPosting]:
-        raise NotImplementedError("SmartRecruitersAdapter.fetch not yet implemented")
+        token = source.board_token
+        base_url = f"{SMARTRECRUITERS_API}/{token}/postings"
+
+        all_postings: list[RawPosting] = []
+        offset = 0
+
+        while True:
+            data = await client.get_json(
+                base_url,
+                source="smartrecruiters",
+                company_slug=company.slug,
+                params={"offset": str(offset), "limit": str(PAGE_LIMIT)},
+            )
+
+            if not isinstance(data, dict):
+                raise SourceParseError(
+                    "smartrecruiters",
+                    company.slug,
+                    f"expected object, got {type(data).__name__}",
+                )
+
+            content = data.get("content", [])
+            if not isinstance(content, list):
+                raise SourceParseError(
+                    "smartrecruiters",
+                    company.slug,
+                    f"expected 'content' array, got {type(content).__name__}",
+                )
+
+            total_found = data.get("totalFound", 0)
+
+            for item in content:
+                try:
+                    all_postings.append(self._parse_posting(item, company, token))
+                except (KeyError, TypeError) as exc:
+                    logger.warning(
+                        "[smartrecruiters:%s] skipping malformed posting: %s",
+                        company.slug, exc,
+                    )
+
+            offset += PAGE_LIMIT
+            if offset >= total_found or not content:
+                break
+
+        logger.info(
+            "[smartrecruiters:%s] %d postings from %d total",
+            company.slug, len(all_postings), total_found,
+        )
+        return all_postings
+
+    def _parse_posting(
+        self,
+        item: dict[str, Any],
+        company: Company,
+        board_token: str,
+    ) -> RawPosting:
+        posting_id = item["id"]
+        location_obj = item.get("location", {}) or {}
+        city = location_obj.get("city", "")
+        region = location_obj.get("region", "")
+        country = location_obj.get("country", "")
+
+        if city and region:
+            location = f"{city}, {region}"
+        elif city:
+            location = city
+        elif region:
+            location = region
+        else:
+            location = country or ""
+
+        locations_list = [location] if location else []
+
+        return RawPosting(
+            source="smartrecruiters",
+            company_slug=company.slug,
+            source_job_id=str(posting_id),
+            title=item["name"],
+            location=location,
+            locations=locations_list,
+            url=f"{SMARTRECRUITERS_JOBS}/{board_token}/{posting_id}",
+            posted_at=item.get("releasedDate"),
+            description="",
+            raw_data=item,
+        )
 
     def normalize(
         self,
@@ -25,4 +119,35 @@ class SmartRecruitersAdapter(SourceAdapter):
         company: Company,
         now: str,
     ) -> Posting:
-        raise NotImplementedError("SmartRecruitersAdapter.normalize not yet implemented")
+        pid = compute_posting_id(raw.source, raw.company_slug, raw.source_job_id)
+
+        description = raw.description
+        sections = raw.raw_data.get("jobDescription", {})
+        if isinstance(sections, dict):
+            parts = sections.get("sections", [])
+            if isinstance(parts, list):
+                html_chunks = []
+                for section in parts:
+                    if isinstance(section, dict):
+                        text = section.get("text", "")
+                        if text:
+                            html_chunks.append(text)
+                if html_chunks:
+                    description = html_to_plaintext("\n".join(html_chunks))
+
+        return Posting(
+            id=pid,
+            company=company.name,
+            company_slug=company.slug,
+            title=clean_title(raw.title),
+            location=normalize_location(raw.location),
+            locations=normalize_locations(raw.locations),
+            url=raw.url,
+            source="smartrecruiters",
+            source_job_id=raw.source_job_id,
+            ats="smartrecruiters",
+            posted_at=raw.posted_at,
+            first_seen_at=now,
+            last_seen_at=now,
+            description_text=description,
+        )

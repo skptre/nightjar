@@ -106,6 +106,7 @@ async def run_golden_pipeline(data_dir: Path, registry_path: Path) -> None:
             dry_run=True,
             registry_path=registry_path,
             data_dir=data_dir,
+            skip_simplify=True,
         )
 
 

@@ -1,0 +1,90 @@
+{
+  "totalFound": 108,
+  "content": [
+    {
+      "id": "sr-001",
+      "name": "Software Engineering Intern - Summer 2027",
+      "ref_number": "REF001",
+      "releasedDate": "2026-08-01T10:00:00Z",
+      "location": {
+        "city": "New York",
+        "region": "NY",
+        "country": "US"
+      },
+      "department": {
+        "label": "Engineering"
+      },
+      "company": {
+        "name": "Visa Inc."
+      }
+    },
+    {
+      "id": "sr-002",
+      "name": "Data Science Intern",
+      "ref_number": "REF002",
+      "releasedDate": "2026-07-28T14:30:00Z",
+      "location": {
+        "city": "San Francisco",
+        "region": "CA",
+        "country": "US"
+      },
+      "department": {
+        "label": "Data"
+      },
+      "company": {
+        "name": "Visa Inc."
+      }
+    },
+    {
+      "id": "sr-003",
+      "name": "Product Manager Intern",
+      "ref_number": "REF003",
+      "releasedDate": "2026-07-25T09:15:00Z",
+      "location": {
+        "city": "Austin",
+        "region": "TX",
+        "country": "US"
+      },
+      "department": {
+        "label": "Product"
+      },
+      "company": {
+        "name": "Visa Inc."
+      }
+    },
+    {
+      "id": "sr-004",
+      "name": "Backend Engineer Intern",
+      "ref_number": "REF004",
+      "releasedDate": "2026-08-05T11:00:00Z",
+      "location": {
+        "city": "Seattle",
+        "region": "WA",
+        "country": "US"
+      },
+      "department": {
+        "label": "Engineering"
+      },
+      "company": {
+        "name": "Visa Inc."
+      }
+    },
+    {
+      "id": "sr-005",
+      "name": "Machine Learning Engineer Intern",
+      "ref_number": "REF005",
+      "releasedDate": "2026-08-10T08:45:00Z",
+      "location": {
+        "city": "Palo Alto",
+        "region": "CA",
+        "country": "US"
+      },
+      "department": {
+        "label": "AI Research"
+      },
+      "company": {
+        "name": "Visa Inc."
+      }
+    }
+  ]
+}

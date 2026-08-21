@@ -162,6 +162,7 @@ class TestSchemaContract:
                 dry_run=True,
                 registry_path=registry_path,
                 data_dir=data_dir,
+                skip_simplify=True,
             )
 
         feed_bytes = (data_dir / "feed.json").read_bytes()
@@ -224,6 +225,7 @@ class TestMetaIntegrity:
                 dry_run=True,
                 registry_path=registry_path,
                 data_dir=data_dir,
+                skip_simplify=True,
             )
 
         feed_bytes = (data_dir / "feed.json").read_bytes()
@@ -272,6 +274,7 @@ class TestFlappingFullCycle:
                 dry_run=True,
                 registry_path=registry_path,
                 data_dir=data_dir,
+                skip_simplify=True,
             )
 
         feed = load_feed(data_dir / "feed.json")
@@ -288,6 +291,7 @@ class TestFlappingFullCycle:
                 dry_run=True,
                 registry_path=registry_path,
                 data_dir=data_dir,
+                skip_simplify=True,
             )
 
         feed = load_feed(data_dir / "feed.json")
@@ -307,6 +311,7 @@ class TestFlappingFullCycle:
                 dry_run=True,
                 registry_path=registry_path,
                 data_dir=data_dir,
+                skip_simplify=True,
             )
 
         feed = load_feed(data_dir / "feed.json")
@@ -328,6 +333,7 @@ class TestFlappingFullCycle:
                 dry_run=True,
                 registry_path=registry_path,
                 data_dir=data_dir,
+                skip_simplify=True,
             )
 
         feed = load_feed(data_dir / "feed.json")
@@ -364,6 +370,7 @@ class TestBootstrapSuppression:
                 dry_run=True,
                 registry_path=registry_path,
                 data_dir=data_dir,
+                skip_simplify=True,
             )
 
         state = load_state(data_dir / "state.json")
@@ -392,6 +399,7 @@ class TestBootstrapSuppression:
                 dry_run=True,
                 registry_path=registry_path,
                 data_dir=data_dir,
+                skip_simplify=True,
             )
 
         feed2 = load_feed(data_dir / "feed.json")
@@ -449,6 +457,7 @@ class TestDedupeAcrossSources:
                 dry_run=True,
                 registry_path=registry_path,
                 data_dir=data_dir,
+                skip_simplify=True,
             )
 
         feed = load_feed(data_dir / "feed.json")
@@ -515,6 +524,7 @@ class TestConcurrentAdapterFailure:
                 dry_run=True,
                 registry_path=registry_path,
                 data_dir=data_dir,
+                skip_simplify=True,
             )
 
         feed = load_feed(data_dir / "feed.json")
@@ -599,6 +609,7 @@ class TestConcurrentAdapterFailure:
                 dry_run=True,
                 registry_path=registry_path,
                 data_dir=data_dir,
+                skip_simplify=True,
             )
 
         feed = load_feed(data_dir / "feed.json")

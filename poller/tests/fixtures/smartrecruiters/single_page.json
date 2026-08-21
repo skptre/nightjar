@@ -1,0 +1,56 @@
+{
+  "totalFound": 3,
+  "content": [
+    {
+      "id": "sp-001",
+      "name": "QA Engineering Intern",
+      "ref_number": "QA001",
+      "releasedDate": "2026-07-20T10:00:00Z",
+      "location": {
+        "city": "Chicago",
+        "region": "IL",
+        "country": "US"
+      },
+      "department": {
+        "label": "Quality"
+      },
+      "company": {
+        "name": "TestCorp"
+      }
+    },
+    {
+      "id": "sp-002",
+      "name": "Platform Engineer Intern",
+      "ref_number": "PE001",
+      "releasedDate": "2026-07-22T14:00:00Z",
+      "location": {
+        "city": "Boston",
+        "region": "MA",
+        "country": "US"
+      },
+      "department": {
+        "label": "Platform"
+      },
+      "company": {
+        "name": "TestCorp"
+      }
+    },
+    {
+      "id": "sp-003",
+      "name": "Mobile Developer Intern",
+      "ref_number": "MD001",
+      "releasedDate": "2026-07-25T11:30:00Z",
+      "location": {
+        "city": "Miami",
+        "region": "FL",
+        "country": "US"
+      },
+      "department": {
+        "label": "Mobile"
+      },
+      "company": {
+        "name": "TestCorp"
+      }
+    }
+  ]
+}

@@ -39,7 +39,7 @@ async def _fetch_simplify(
     skip_registry_candidates: bool,
     data_dir: Path,
 ) -> list[Posting]:
-    from poller.sources.simplify import SimplifyAdapter
+    from poller.sources.simplify import SimplifyAdapter, generate_registry_candidates
 
     adapter = SimplifyAdapter()
     key = "simplify:__meta__"
@@ -64,11 +64,14 @@ async def _fetch_simplify(
             bootstrapped=prev_health.bootstrapped,
         )
         logger.info("[simplify] %d postings fetched", len(postings))
-        return postings
 
-    except NotImplementedError:
-        logger.debug("[simplify] adapter not yet implemented, skipping")
-        return []
+        if not skip_registry_candidates:
+            known_slugs = {c.slug for c in companies}
+            generate_registry_candidates(
+                postings, known_slugs, data_dir / "registry_candidates.json",
+            )
+
+        return postings
 
     except (SourceFetchError, SourceParseError) as exc:
         logger.error("[simplify] %s", exc)

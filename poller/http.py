@@ -65,6 +65,7 @@ class RateLimitedClient:
         source: str = "",
         company_slug: str = "",
         params: dict[str, str] | None = None,
+        allow_plain_text: bool = False,
     ) -> Any:
         host = urlparse(url).hostname or ""
         lock = self._get_host_lock(host)
@@ -122,7 +123,9 @@ class RateLimitedClient:
                     )
 
                 content_type = response.headers.get("content-type", "")
-                if "json" not in content_type and "javascript" not in content_type:
+                json_like = "json" in content_type or "javascript" in content_type
+                plain_ok = allow_plain_text and "text/plain" in content_type
+                if not json_like and not plain_ok:
                     raise SourceFetchError(
                         source,
                         company_slug,

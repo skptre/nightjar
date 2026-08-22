@@ -20,6 +20,10 @@ target/
 *.local
 app/public/sql-wasm.wasm
 
+# --- generated data ---
+data/registry_candidates.json
+data/block6_additions.yaml
+
 # --- os ---
 .DS_Store
 Thumbs.db

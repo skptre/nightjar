@@ -245,7 +245,7 @@ class TestLoadRegistry:
             assert c.name
             assert len(c.sources) >= 1
             for s in c.sources:
-                assert s.type in {"greenhouse", "lever", "ashby"}
+                assert s.type in {"greenhouse", "lever", "ashby", "workday", "smartrecruiters"}
                 assert s.board_token
 
 

@@ -1,8 +1,16 @@
 # Nightjar company registry — the actual asset.
 # Anyone can PR new companies. Keep alphabetical within each section.
 # Phase 1 seed: ~30 companies across Greenhouse, Lever, Ashby.
+# Phase 2.5 Block 5: expanded to 80 companies across 5 ATS types.
 
 # ── Greenhouse ──────────────────────────────────────────────────────
+
+- slug: affirm
+  name: Affirm
+  tags: [fintech, lending, sf]
+  sources:
+    - type: greenhouse
+      board_token: affirm
 
 - slug: airbnb
   name: Airbnb
@@ -42,6 +50,20 @@
     - type: greenhouse
       board_token: brex
 
+- slug: chime
+  name: Chime
+  tags: [fintech, banking, sf]
+  sources:
+    - type: greenhouse
+      board_token: chime
+
+- slug: cloudflare
+  name: Cloudflare
+  tags: [infrastructure, cdn, sf]
+  sources:
+    - type: greenhouse
+      board_token: cloudflare
+
 - slug: cockroachlabs
   name: Cockroach Labs
   tags: [database, infrastructure, nyc]
@@ -71,12 +93,26 @@
     - type: greenhouse
       board_token: datadog
 
+- slug: descript
+  name: Descript
+  tags: [ai, media, sf]
+  sources:
+    - type: greenhouse
+      board_token: descript
+
 - slug: discord
   name: Discord
   tags: [social, gaming, sf]
   sources:
     - type: greenhouse
       board_token: discord
+
+- slug: doordash
+  name: DoorDash
+  tags: [delivery, consumer, sf]
+  sources:
+    - type: greenhouse
+      board_token: doordashusa
 
 - slug: dropbox
   name: Dropbox
@@ -92,6 +128,20 @@
     - type: greenhouse
       board_token: duolingo
 
+- slug: elastic
+  name: Elastic
+  tags: [search, infrastructure, remote]
+  sources:
+    - type: greenhouse
+      board_token: elastic
+
+- slug: epic-games
+  name: Epic Games
+  tags: [gaming, unreal, cary-nc]
+  sources:
+    - type: greenhouse
+      board_token: epicgames
+
 - slug: figma
   name: Figma
   tags: [design, saas, sf]
@@ -100,6 +150,13 @@
       board_token: figma
   high_priority: true
 
+- slug: flexport
+  name: Flexport
+  tags: [logistics, supply-chain, sf]
+  sources:
+    - type: greenhouse
+      board_token: flexport
+
 - slug: gitlab
   name: GitLab
   tags: [devtools, remote]
@@ -107,12 +164,42 @@
     - type: greenhouse
       board_token: gitlab
 
+- slug: gusto
+  name: Gusto
+  tags: [hr-tech, saas, sf]
+  sources:
+    - type: greenhouse
+      board_token: gusto
+
 - slug: imc
   name: IMC Trading
   tags: [quant, trading, amsterdam]
   sources:
     - type: greenhouse
       board_token: imc
+
+- slug: instacart
+  name: Instacart
+  tags: [delivery, consumer, sf]
+  sources:
+    - type: greenhouse
+      board_token: instacart
+
+- slug: jane-street
+  name: Jane Street
+  tags: [quant, trading, nyc]
+  sources:
+    - type: greenhouse
+      board_token: janestreet
+  high_priority: true
+
+- slug: jump-trading
+  name: Jump Trading
+  tags: [quant, trading, chicago]
+  sources:
+    - type: greenhouse
+      board_token: jumptrading
+  high_priority: true
 
 - slug: lyft
   name: Lyft
@@ -128,12 +215,33 @@
     - type: greenhouse
       board_token: mongodb
 
+- slug: nextdoor
+  name: Nextdoor
+  tags: [social, local, sf]
+  sources:
+    - type: greenhouse
+      board_token: nextdoor
+
+- slug: nuro
+  name: Nuro
+  tags: [robotics, av, mountain-view]
+  sources:
+    - type: greenhouse
+      board_token: nuro
+
 - slug: optiver
   name: Optiver
   tags: [quant, trading, amsterdam]
   sources:
     - type: greenhouse
       board_token: optiver
+
+- slug: pagerduty
+  name: PagerDuty
+  tags: [devops, infrastructure, sf]
+  sources:
+    - type: greenhouse
+      board_token: pagerduty
 
 - slug: pinterest
   name: Pinterest
@@ -142,12 +250,26 @@
     - type: greenhouse
       board_token: pinterest
 
+- slug: reddit
+  name: Reddit
+  tags: [social, consumer, sf]
+  sources:
+    - type: greenhouse
+      board_token: reddit
+
 - slug: robinhood
   name: Robinhood
   tags: [fintech, consumer, menlo-park]
   sources:
     - type: greenhouse
       board_token: robinhood
+
+- slug: samsara
+  name: Samsara
+  tags: [iot, infrastructure, sf]
+  sources:
+    - type: greenhouse
+      board_token: samsara
 
 - slug: scaleai
   name: Scale AI
@@ -156,6 +278,21 @@
     - type: greenhouse
       board_token: scaleai
 
+- slug: spacex
+  name: SpaceX
+  tags: [aerospace, hardware, hawthorne]
+  sources:
+    - type: greenhouse
+      board_token: spacex
+  high_priority: true
+
+- slug: squarespace
+  name: Squarespace
+  tags: [saas, web, nyc]
+  sources:
+    - type: greenhouse
+      board_token: squarespace
+
 - slug: stripe
   name: Stripe
   tags: [fintech, payments, sf]
@@ -163,6 +300,27 @@
     - type: greenhouse
       board_token: stripe
   high_priority: true
+
+- slug: toast
+  name: Toast
+  tags: [restaurant-tech, saas, boston]
+  sources:
+    - type: greenhouse
+      board_token: toast
+
+- slug: twitch
+  name: Twitch
+  tags: [streaming, gaming, sf]
+  sources:
+    - type: greenhouse
+      board_token: twitch
+
+- slug: upstart
+  name: Upstart
+  tags: [fintech, ai, remote]
+  sources:
+    - type: greenhouse
+      board_token: upstart
 
 - slug: vercel
   name: Vercel
@@ -177,6 +335,20 @@
   sources:
     - type: greenhouse
       board_token: watershed
+
+- slug: waymo
+  name: Waymo
+  tags: [av, robotics, mountain-view]
+  sources:
+    - type: greenhouse
+      board_token: waymo
+
+- slug: ziprecruiter
+  name: ZipRecruiter
+  tags: [hr-tech, marketplace, remote]
+  sources:
+    - type: greenhouse
+      board_token: ziprecruiter
 
 # ── Lever ───────────────────────────────────────────────────────────
 
@@ -233,12 +405,40 @@
       board_token: cursor
   high_priority: true
 
+- slug: deel
+  name: Deel
+  tags: [hr-tech, payroll, remote]
+  sources:
+    - type: ashby
+      board_token: deel
+
+- slug: hrt
+  name: Hudson River Trading
+  tags: [quant, trading, nyc]
+  sources:
+    - type: ashby
+      board_token: hrt
+
 - slug: linear
   name: Linear
   tags: [devtools, saas, remote]
   sources:
     - type: ashby
       board_token: linear
+
+- slug: loom
+  name: Loom
+  tags: [saas, video, remote]
+  sources:
+    - type: ashby
+      board_token: loom
+
+- slug: mercury
+  name: Mercury
+  tags: [fintech, banking, sf]
+  sources:
+    - type: ashby
+      board_token: mercury
 
 - slug: neon
   name: Neon
@@ -262,6 +462,13 @@
       board_token: openai
   high_priority: true
 
+- slug: perplexity
+  name: Perplexity
+  tags: [ai, search, sf]
+  sources:
+    - type: ashby
+      board_token: perplexity
+
 - slug: plaid
   name: Plaid
   tags: [fintech, api, sf]
@@ -283,3 +490,974 @@
   sources:
     - type: ashby
       board_token: snowflake
+
+- slug: warp
+  name: Warp
+  tags: [devtools, terminal, remote]
+  sources:
+    - type: ashby
+      board_token: warp
+
+# ── Workday ─────────────────────────────────────────────────────────
+
+- slug: blackrock
+  name: BlackRock
+  tags: [finance, asset-management, nyc]
+  sources:
+    - type: workday
+      board_token: blackrock.wd1.myworkdayjobs.com/BlackRock_Professional
+
+- slug: boeing
+  name: Boeing
+  tags: [aerospace, defense, chicago]
+  sources:
+    - type: workday
+      board_token: boeing.wd1.myworkdayjobs.com/external_careers
+
+- slug: capital-one
+  name: Capital One
+  tags: [fintech, banking, mclean-va]
+  sources:
+    - type: workday
+      board_token: capitalone.wd12.myworkdayjobs.com/Capital_One
+  high_priority: true
+
+- slug: cisco
+  name: Cisco
+  tags: [networking, infrastructure, san-jose]
+  sources:
+    - type: workday
+      board_token: cisco.wd5.myworkdayjobs.com/Cisco_Careers
+
+- slug: dell
+  name: Dell Technologies
+  tags: [hardware, enterprise, round-rock-tx]
+  sources:
+    - type: workday
+      board_token: dell.wd1.myworkdayjobs.com/External
+
+- slug: hp
+  name: HP Inc
+  tags: [hardware, enterprise, palo-alto]
+  sources:
+    - type: workday
+      board_token: hp.wd5.myworkdayjobs.com/ExternalCareerSite
+
+- slug: intel
+  name: Intel
+  tags: [semiconductor, hardware, santa-clara]
+  sources:
+    - type: workday
+      board_token: intel.wd1.myworkdayjobs.com/External
+
+- slug: micron
+  name: Micron Technology
+  tags: [semiconductor, memory, boise]
+  sources:
+    - type: workday
+      board_token: micron.wd1.myworkdayjobs.com/External
+
+- slug: nvidia
+  name: NVIDIA
+  tags: [semiconductor, ai, santa-clara]
+  sources:
+    - type: workday
+      board_token: nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite
+  high_priority: true
+
+# ── SmartRecruiters ─────────────────────────────────────────────────
+
+- slug: bosch
+  name: Bosch
+  tags: [hardware, automotive, stuttgart]
+  sources:
+    - type: smartrecruiters
+      board_token: BoschGroup
+
+- slug: skechers
+  name: Skechers
+  tags: [retail, consumer, manhattan-beach]
+  sources:
+    - type: smartrecruiters
+      board_token: Skechers
+
+- slug: visa
+  name: Visa
+  tags: [fintech, payments, sf]
+  sources:
+    - type: smartrecruiters
+      board_token: Visa
+
+# ── Block 6: Simplify-Bootstrapped Additions ────────────────────
+
+# ── Greenhouse (Block 6) ──
+
+- slug: appian
+  name: Appian
+  tags: [enterprise, low-code, mclean-va]
+  sources:
+    - type: greenhouse
+      board_token: appian
+
+- slug: aquatic-capital-management
+  name: Aquatic Capital Management
+  tags: [quant, trading, chicago]
+  sources:
+    - type: greenhouse
+      board_token: aquaticcapitalmanagement
+
+- slug: astera-labs
+  name: Astera Labs
+  tags: [semiconductor, hardware, santa-clara]
+  sources:
+    - type: greenhouse
+      board_token: asteraearlycareer2026
+
+- slug: astranis
+  name: Astranis
+  tags: [aerospace, satellite, sf]
+  sources:
+    - type: greenhouse
+      board_token: astranis
+  high_priority: true
+
+- slug: blackedge-capital
+  name: BlackEdge Capital
+  tags: [quant, trading, nyc]
+  sources:
+    - type: greenhouse
+      board_token: blackedgecapital
+
+- slug: chicago-trading-company
+  name: Chicago Trading Company
+  tags: [quant, trading, chicago]
+  sources:
+    - type: greenhouse
+      board_token: ctccampusboard
+  high_priority: true
+
+- slug: cresta
+  name: Cresta
+  tags: [ai, enterprise, sf]
+  sources:
+    - type: greenhouse
+      board_token: cresta
+
+- slug: docugami
+  name: Docugami
+  tags: [ai, document-ai, seattle]
+  sources:
+    - type: greenhouse
+      board_token: docugami
+
+- slug: drw
+  name: DRW
+  tags: [quant, trading, chicago]
+  sources:
+    - type: greenhouse
+      board_token: drweng
+  high_priority: true
+
+- slug: dv-trading
+  name: DV Trading
+  tags: [quant, trading, chicago]
+  sources:
+    - type: greenhouse
+      board_token: dvtrading
+
+- slug: figure
+  name: Figure AI
+  tags: [ai, robotics, sf]
+  sources:
+    - type: greenhouse
+      board_token: figureai
+  high_priority: true
+
+- slug: ginkgo-bioworks
+  name: Ginkgo Bioworks
+  tags: [biotech, synthetic-biology, boston]
+  sources:
+    - type: greenhouse
+      board_token: ginkgobioworks
+
+- slug: hpr-hyannis-port-research
+  name: Hyannis Port Research
+  tags: [quant, trading, nyc]
+  sources:
+    - type: greenhouse
+      board_token: hyannisportresearch
+
+- slug: integra-fec
+  name: Integra FEC
+  tags: [consulting, economics, sf]
+  sources:
+    - type: greenhouse
+      board_token: integra
+
+- slug: later
+  name: Later
+  tags: [saas, social-media, vancouver]
+  sources:
+    - type: greenhouse
+      board_token: later
+
+- slug: lila-sciences
+  name: Lila Sciences
+  tags: [ai, biotech, nyc]
+  sources:
+    - type: greenhouse
+      board_token: lilasciences
+
+- slug: marshall-wace
+  name: Marshall Wace
+  tags: [quant, trading, london]
+  sources:
+    - type: greenhouse
+      board_token: mwinternshipprogram
+
+- slug: maven-securities
+  name: Maven Securities
+  tags: [quant, trading, london]
+  sources:
+    - type: greenhouse
+      board_token: mavensecuritiesholdingltd
+
+- slug: neuralink
+  name: Neuralink
+  tags: [neurotech, hardware, austin]
+  sources:
+    - type: greenhouse
+      board_token: neuralink
+  high_priority: true
+
+- slug: point72
+  name: Point72
+  tags: [quant, finance, nyc]
+  sources:
+    - type: greenhouse
+      board_token: point72
+  high_priority: true
+
+- slug: seven-research
+  name: Seven Research
+  tags: [quant, trading, nyc]
+  sources:
+    - type: greenhouse
+      board_token: sevenresearch
+
+- slug: sharkninja
+  name: SharkNinja
+  tags: [consumer-electronics, hardware, needham-ma]
+  sources:
+    - type: greenhouse
+      board_token: sharkninjaoperatingllc
+
+- slug: snorkel-ai
+  name: Snorkel AI
+  tags: [ai, data, sf]
+  sources:
+    - type: greenhouse
+      board_token: snorkelai
+
+- slug: tenstorrent
+  name: Tenstorrent
+  tags: [ai, semiconductor, toronto]
+  sources:
+    - type: greenhouse
+      board_token: tenstorrentuniversity
+  high_priority: true
+
+- slug: the-nuclear-company
+  name: The Nuclear Company
+  tags: [energy, nuclear, sf]
+  sources:
+    - type: greenhouse
+      board_token: thenuclearcompany
+
+- slug: transmarket-group
+  name: TransMarket Group
+  tags: [quant, trading, chicago]
+  sources:
+    - type: greenhouse
+      board_token: transmarketgroup
+
+- slug: varda-space
+  name: Varda Space Industries
+  tags: [aerospace, manufacturing, la]
+  sources:
+    - type: greenhouse
+      board_token: vardaspace
+
+- slug: verkada
+  name: Verkada
+  tags: [security, iot, sf]
+  sources:
+    - type: greenhouse
+      board_token: verkada
+
+- slug: virtu-financial
+  name: Virtu Financial
+  tags: [quant, trading, nyc]
+  sources:
+    - type: greenhouse
+      board_token: virtu
+
+- slug: voloridge
+  name: Voloridge Investment Management
+  tags: [quant, trading, jupiter-fl]
+  sources:
+    - type: greenhouse
+      board_token: voloridgeinvestmentmanagement
+
+- slug: walleye-capital
+  name: Walleye Capital
+  tags: [quant, trading, nyc]
+  sources:
+    - type: greenhouse
+      board_token: walleyecapital-external-students
+
+- slug: xantium
+  name: Xantium
+  tags: [quant, trading, london]
+  sources:
+    - type: greenhouse
+      board_token: xantium
+
+# ── Lever (Block 6) ──
+
+- slug: belvedere-trading
+  name: Belvedere Trading
+  tags: [quant, trading, chicago]
+  sources:
+    - type: lever
+      board_token: belvederetrading
+
+- slug: hermeus
+  name: Hermeus
+  tags: [aerospace, hypersonic, atlanta]
+  sources:
+    - type: lever
+      board_token: hermeus
+
+- slug: institute-of-foundation-models
+  name: Institute of Foundation Models
+  tags: [ai, research, sf]
+  sources:
+    - type: lever
+      board_token: ifm-us
+
+- slug: kepler-communications
+  name: Kepler Communications
+  tags: [aerospace, satellite, toronto]
+  sources:
+    - type: lever
+      board_token: kepler
+
+- slug: magnet-forensics
+  name: Magnet Forensics
+  tags: [cybersecurity, forensics, waterloo]
+  sources:
+    - type: lever
+      board_token: magnetforensics
+
+- slug: multiply-labs
+  name: Multiply Labs
+  tags: [robotics, biotech, sf]
+  sources:
+    - type: lever
+      board_token: multiplylabs
+
+- slug: xsolla
+  name: Xsolla
+  tags: [gaming, payments, la]
+  sources:
+    - type: lever
+      board_token: xsolla
+
+- slug: zoox
+  name: Zoox
+  tags: [av, robotics, foster-city]
+  sources:
+    - type: lever
+      board_token: zoox
+  high_priority: true
+
+# ── Ashby (Block 6) ──
+
+- slug: 1x
+  name: 1X
+  tags: [ai, robotics, oslo]
+  sources:
+    - type: ashby
+      board_token: 1x
+
+- slug: anyscale
+  name: Anyscale
+  tags: [ai, infrastructure, sf]
+  sources:
+    - type: ashby
+      board_token: anyscale
+
+- slug: applied-intuition
+  name: Applied Intuition
+  tags: [av, simulation, sf]
+  sources:
+    - type: ashby
+      board_token: applied
+  high_priority: true
+
+- slug: astera
+  name: Astera Institute
+  tags: [ai, research, sf]
+  sources:
+    - type: ashby
+      board_token: astera
+
+- slug: base-power
+  name: Base Power
+  tags: [energy, infrastructure, sf]
+  sources:
+    - type: ashby
+      board_token: base-power
+
+- slug: cerebras
+  name: Cerebras Systems
+  tags: [ai, semiconductor, sunnyvale]
+  sources:
+    - type: ashby
+      board_token: cerebras
+
+- slug: creatify-lab
+  name: Creatify
+  tags: [ai, video, sf]
+  sources:
+    - type: ashby
+      board_token: creatify
+
+- slug: cybernetic-labs
+  name: Cybernetic Labs
+  tags: [ai, robotics, sf]
+  sources:
+    - type: ashby
+      board_token: netic
+
+- slug: dedalus-labs
+  name: Dedalus Labs
+  tags: [ai, research, sf]
+  sources:
+    - type: ashby
+      board_token: dedalus-labs
+
+- slug: droyd-robotics
+  name: Droyd Robotics
+  tags: [robotics, hardware, sf]
+  sources:
+    - type: ashby
+      board_token: droyd
+
+- slug: etched
+  name: Etched
+  tags: [ai, semiconductor, sf]
+  sources:
+    - type: ashby
+      board_token: Etched
+  high_priority: true
+
+- slug: heliux
+  name: Heliux
+  tags: [ai, infrastructure, sf]
+  sources:
+    - type: ashby
+      board_token: heliux
+
+- slug: heron-power
+  name: Heron Power
+  tags: [energy, infrastructure, sf]
+  sources:
+    - type: ashby
+      board_token: heron-power
+
+- slug: hex
+  name: Hex
+  tags: [data, analytics, sf]
+  sources:
+    - type: ashby
+      board_token: hex
+
+- slug: k-id
+  name: K-ID
+  tags: [ai, safety, sf]
+  sources:
+    - type: ashby
+      board_token: k-id
+
+- slug: kastle-ai
+  name: Kastle AI
+  tags: [ai, security, sf]
+  sources:
+    - type: ashby
+      board_token: kastle
+
+- slug: lambda
+  name: Lambda
+  tags: [ai, cloud, sf]
+  sources:
+    - type: ashby
+      board_token: lambda
+
+- slug: melius
+  name: Melius
+  tags: [ai, saas, sf]
+  sources:
+    - type: ashby
+      board_token: melius
+
+- slug: melotech
+  name: Melotech
+  tags: [ai, music, sf]
+  sources:
+    - type: ashby
+      board_token: melotech
+
+- slug: meshy
+  name: Meshy
+  tags: [ai, 3d, sf]
+  sources:
+    - type: ashby
+      board_token: meshy
+
+- slug: midjourney
+  name: Midjourney
+  tags: [ai, generative, sf]
+  sources:
+    - type: ashby
+      board_token: midjourney
+
+- slug: modal
+  name: Modal
+  tags: [ai, infrastructure, sf]
+  sources:
+    - type: ashby
+      board_token: modal
+
+- slug: opusclip
+  name: OpusClip
+  tags: [ai, video, sf]
+  sources:
+    - type: ashby
+      board_token: opusclip
+
+- slug: persona-ai
+  name: Persona AI
+  tags: [ai, identity, sf]
+  sources:
+    - type: ashby
+      board_token: persona.ai
+
+- slug: quadrillion
+  name: Quadrillion Labs
+  tags: [ai, infrastructure, sf]
+  sources:
+    - type: ashby
+      board_token: quadrillion-labs
+
+- slug: runway
+  name: Runway
+  tags: [ai, video, nyc]
+  sources:
+    - type: ashby
+      board_token: runway
+
+- slug: shield-ai
+  name: Shield AI
+  tags: [defense, ai, san-diego]
+  sources:
+    - type: ashby
+      board_token: shield-ai
+
+- slug: skydio
+  name: Skydio
+  tags: [robotics, drones, sf]
+  sources:
+    - type: ashby
+      board_token: skydio
+
+- slug: super
+  name: Super.com
+  tags: [consumer, travel, toronto]
+  sources:
+    - type: ashby
+      board_token: super.com
+
+- slug: terranova
+  name: Terranova
+  tags: [ai, data, sf]
+  sources:
+    - type: ashby
+      board_token: terranova
+
+- slug: tilde-research
+  name: Tilde Research
+  tags: [ai, research, sf]
+  sources:
+    - type: ashby
+      board_token: tilderesearch
+
+- slug: valstad
+  name: Valstad
+  tags: [ai, analytics, sf]
+  sources:
+    - type: ashby
+      board_token: valstad
+
+# ── Workday (Block 6) ──
+
+- slug: analog-devices
+  name: Analog Devices
+  tags: [semiconductor, hardware, wilmington-ma]
+  sources:
+    - type: workday
+      board_token: analogdevices.wd1.myworkdayjobs.com/External
+
+- slug: aptiv
+  name: Aptiv
+  tags: [automotive, av, boston]
+  sources:
+    - type: workday
+      board_token: aptiv.wd5.myworkdayjobs.com/aptiv_careers
+
+- slug: argonne-national-laboratory
+  name: Argonne National Laboratory
+  tags: [research, national-lab, chicago]
+  sources:
+    - type: workday
+      board_token: argonne.wd1.myworkdayjobs.com/EDU_PUB
+
+- slug: arlo
+  name: Arlo Technologies
+  tags: [iot, smart-home, carlsbad-ca]
+  sources:
+    - type: workday
+      board_token: arlo.wd12.myworkdayjobs.com/external_careers
+
+- slug: arrowstreet-capital
+  name: Arrowstreet Capital
+  tags: [quant, trading, boston]
+  sources:
+    - type: workday
+      board_token: arrowstreetcapital.wd5.myworkdayjobs.com/Campus_Careers
+
+- slug: autodesk
+  name: Autodesk
+  tags: [software, cad, sf]
+  sources:
+    - type: workday
+      board_token: autodesk.wd1.myworkdayjobs.com/uni
+
+- slug: bank-of-montreal
+  name: BMO Financial Group
+  tags: [finance, banking, toronto]
+  sources:
+    - type: workday
+      board_token: bmo.wd3.myworkdayjobs.com/Privileged
+
+- slug: blackstone
+  name: Blackstone
+  tags: [finance, pe, nyc]
+  sources:
+    - type: workday
+      board_token: blackstone.wd1.myworkdayjobs.com/Blackstone_Campus_Careers
+  high_priority: true
+
+- slug: bp
+  name: BP
+  tags: [energy, oil-gas, houston]
+  sources:
+    - type: workday
+      board_token: bpinternational.wd3.myworkdayjobs.com/bpEarlyCareers
+
+- slug: brookfield
+  name: Brookfield
+  tags: [finance, asset-management, nyc]
+  sources:
+    - type: workday
+      board_token: brookfield.wd5.myworkdayjobs.com/brookfieldprivate
+
+- slug: cadence-design-systems
+  name: Cadence Design Systems
+  tags: [eda, semiconductor, san-jose]
+  sources:
+    - type: workday
+      board_token: cadence.wd1.myworkdayjobs.com/Univ_Careers
+
+- slug: chevron-corporation
+  name: Chevron
+  tags: [energy, oil-gas, houston]
+  sources:
+    - type: workday
+      board_token: chevron.wd5.myworkdayjobs.com/University
+
+- slug: ciena
+  name: Ciena
+  tags: [networking, infrastructure, hanover-md]
+  sources:
+    - type: workday
+      board_token: ciena.wd5.myworkdayjobs.com/Careers
+
+- slug: conocophillips
+  name: ConocoPhillips
+  tags: [energy, oil-gas, houston]
+  sources:
+    - type: workday
+      board_token: conocophillips.wd1.myworkdayjobs.com/External
+
+- slug: dimensional-fund-advisors
+  name: Dimensional Fund Advisors
+  tags: [quant, finance, austin]
+  sources:
+    - type: workday
+      board_token: dimensional.wd5.myworkdayjobs.com/dfa_careers
+
+- slug: equifax
+  name: Equifax
+  tags: [data, fintech, atlanta]
+  sources:
+    - type: workday
+      board_token: equifax.wd5.myworkdayjobs.com/UR_External
+
+- slug: fti-consulting
+  name: FTI Consulting
+  tags: [consulting, economics, dc]
+  sources:
+    - type: workday
+      board_token: fticonsulting.wd108.myworkdayjobs.com/FTIConsultingCareersPrivate
+
+- slug: g-research
+  name: G-Research
+  tags: [quant, research, london]
+  sources:
+    - type: workday
+      board_token: gresearch.wd103.myworkdayjobs.com/G-Research
+  high_priority: true
+
+- slug: ge-aerospace
+  name: GE Aerospace
+  tags: [aerospace, defense, evendale-oh]
+  sources:
+    - type: workday
+      board_token: geaerospace.wd5.myworkdayjobs.com/ge_externalsite
+
+- slug: ge-healthcare
+  name: GE HealthCare
+  tags: [healthcare, medtech, chicago]
+  sources:
+    - type: workday
+      board_token: gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite
+
+- slug: ge-vernova
+  name: GE Vernova
+  tags: [energy, infrastructure, cambridge-ma]
+  sources:
+    - type: workday
+      board_token: gevernova.wd5.myworkdayjobs.com/vernova_externalsite
+
+- slug: hitachi
+  name: Hitachi
+  tags: [electronics, infrastructure, remote]
+  sources:
+    - type: workday
+      board_token: hitachi.wd1.myworkdayjobs.com/hitachi
+
+- slug: interdigital
+  name: InterDigital
+  tags: [wireless, patents, wilmington-de]
+  sources:
+    - type: workday
+      board_token: interdigital.wd5.myworkdayjobs.com/InterDigital_Intern
+
+- slug: keybank
+  name: KeyBank
+  tags: [finance, banking, cleveland]
+  sources:
+    - type: workday
+      board_token: keybank.wd5.myworkdayjobs.com/External_Career_Site
+
+- slug: lpl-financial-holdings
+  name: LPL Financial
+  tags: [finance, wealth-mgmt, boston]
+  sources:
+    - type: workday
+      board_token: lplfinancial.wd1.myworkdayjobs.com/university
+
+- slug: marvell
+  name: Marvell Technology
+  tags: [semiconductor, hardware, wilmington-de]
+  sources:
+    - type: workday
+      board_token: marvell.wd1.myworkdayjobs.com/MarvellCareers2
+
+- slug: motorola
+  name: Motorola Solutions
+  tags: [communications, infrastructure, chicago]
+  sources:
+    - type: workday
+      board_token: motorolasolutions.wd5.myworkdayjobs.com/Careers
+
+- slug: nightwing-intelligence-solutions
+  name: Nightwing
+  tags: [defense, intelligence, dc]
+  sources:
+    - type: workday
+      board_token: nwis.wd12.myworkdayjobs.com/NW
+
+- slug: nio
+  name: NIO
+  tags: [ev, automotive, san-jose]
+  sources:
+    - type: workday
+      board_token: nio.wd3.myworkdayjobs.com/NIO_Careers
+
+- slug: northrop-grumman
+  name: Northrop Grumman
+  tags: [defense, aerospace, falls-church-va]
+  sources:
+    - type: workday
+      board_token: ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site
+  high_priority: true
+
+- slug: nrel
+  name: National Renewable Energy Laboratory
+  tags: [research, national-lab, golden-co]
+  sources:
+    - type: workday
+      board_token: nrel.wd5.myworkdayjobs.com/NLR
+
+- slug: nxp-semiconductors
+  name: NXP Semiconductors
+  tags: [semiconductor, hardware, eindhoven]
+  sources:
+    - type: workday
+      board_token: nxp.wd3.myworkdayjobs.com/careers
+
+- slug: palo-alto-networks
+  name: Palo Alto Networks
+  tags: [cybersecurity, infrastructure, santa-clara]
+  sources:
+    - type: workday
+      board_token: paloaltonetworks.wd5.myworkdayjobs.com/panwexternalcareers
+  high_priority: true
+
+- slug: pimco
+  name: PIMCO
+  tags: [finance, asset-management, newport-beach]
+  sources:
+    - type: workday
+      board_token: pimco.wd1.myworkdayjobs.com/pimco-careers
+
+- slug: pnc-financial-services
+  name: PNC Financial Services
+  tags: [finance, banking, pittsburgh]
+  sources:
+    - type: workday
+      board_token: pnc.wd5.myworkdayjobs.com/External
+
+- slug: pricewaterhousecoopers-pwc
+  name: PwC
+  tags: [consulting, professional-services, nyc]
+  sources:
+    - type: workday
+      board_token: pwc.wd3.myworkdayjobs.com/Global_Campus_Careers
+
+- slug: rtx
+  name: RTX
+  tags: [defense, aerospace, arlington-va]
+  sources:
+    - type: workday
+      board_token: globalhr.wd5.myworkdayjobs.com/Private_Posting_No_TMP
+  high_priority: true
+
+- slug: schweitzer-engineering-laboratories
+  name: Schweitzer Engineering
+  tags: [power-systems, infrastructure, pullman-wa]
+  sources:
+    - type: workday
+      board_token: selinc.wd1.myworkdayjobs.com/SEL
+
+- slug: sony
+  name: Sony
+  tags: [electronics, gaming, tokyo]
+  sources:
+    - type: workday
+      board_token: sonyglobal.wd1.myworkdayjobs.com/SonyGlobalCareers
+
+- slug: synchrony-financial
+  name: Synchrony Financial
+  tags: [fintech, banking, stamford-ct]
+  sources:
+    - type: workday
+      board_token: synchronyfinancial.wd5.myworkdayjobs.com/University
+
+- slug: teledyne
+  name: Teledyne Technologies
+  tags: [defense, instruments, thousand-oaks-ca]
+  sources:
+    - type: workday
+      board_token: flir.wd1.myworkdayjobs.com/flircareers
+
+- slug: tencent
+  name: Tencent
+  tags: [tech, gaming, shenzhen]
+  sources:
+    - type: workday
+      board_token: tencent.wd1.myworkdayjobs.com/Tencent_Careers
+
+- slug: thomson-reuters
+  name: Thomson Reuters
+  tags: [data, legal-tech, toronto]
+  sources:
+    - type: workday
+      board_token: thomsonreuters.wd5.myworkdayjobs.com/External_Career_Site
+
+- slug: vanguard
+  name: Vanguard
+  tags: [finance, asset-management, malvern-pa]
+  sources:
+    - type: workday
+      board_token: vanguard.wd5.myworkdayjobs.com/vanguard_external
+
+# ── SmartRecruiters (Block 6) ──
+
+- slug: canva
+  name: Canva
+  tags: [design, saas, sydney]
+  sources:
+    - type: smartrecruiters
+      board_token: Canva
+
+- slug: fannie-mae
+  name: Fannie Mae
+  tags: [finance, mortgage, dc]
+  sources:
+    - type: smartrecruiters
+      board_token: FannieMae1SB
+
+- slug: infinitequant
+  name: InfiniteQuant
+  tags: [quant, trading, remote]
+  sources:
+    - type: smartrecruiters
+      board_token: InfiniteQuant
+
+- slug: lawrence-livermore-national-laboratory-llnl
+  name: Lawrence Livermore National Laboratory
+  tags: [research, national-lab, livermore-ca]
+  sources:
+    - type: smartrecruiters
+      board_token: LLNL
+
+- slug: northwestern-mutual
+  name: Northwestern Mutual
+  tags: [finance, insurance, milwaukee]
+  sources:
+    - type: smartrecruiters
+      board_token: NorthwesternMutual

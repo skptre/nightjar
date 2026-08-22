@@ -1,4 +1,4 @@
-.PHONY: poll poll-dry test test-live lint dev test-app lint-app
+.PHONY: poll poll-dry test test-live lint dev test-app lint-app infer-ats infer-ats-verify
 
 poll:
 	uv run python -m poller
@@ -24,3 +24,9 @@ test-app:
 
 lint-app:
 	cd app && npx tsc --noEmit
+
+infer-ats:
+	uv run python -m poller.tools.infer_ats
+
+infer-ats-verify:
+	uv run python -m poller.tools.infer_ats --verify

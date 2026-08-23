@@ -52,6 +52,22 @@ function matchNewGradPatterns(text: string, patterns: string[]): TermResult | nu
   return null;
 }
 
+function matchCoOpPatterns(text: string, patterns: string[]): TermResult | null {
+  const lower = text.toLowerCase();
+  for (const pat of patterns) {
+    const regex = new RegExp(pat, 'i');
+    const match = regex.exec(lower);
+    if (match) {
+      return {
+        term: 'co_op',
+        confidence: 'explicit',
+        matched: match[0],
+      };
+    }
+  }
+  return null;
+}
+
 function matchYearRoundPatterns(text: string, patterns: string[]): TermResult | null {
   const lower = text.toLowerCase();
   for (const pat of patterns) {
@@ -118,6 +134,9 @@ export function classifyTerm(
   const titleNewGrad = matchNewGradPatterns(title, typedRules.new_grad_patterns);
   if (titleNewGrad) return titleNewGrad;
 
+  const titleCoOp = matchCoOpPatterns(title, typedRules.co_op_patterns);
+  if (titleCoOp) return titleCoOp;
+
   const titleYearRound = matchYearRoundPatterns(title, typedRules.year_round_patterns);
   if (titleYearRound) return titleYearRound;
 
@@ -127,6 +146,9 @@ export function classifyTerm(
 
     const descNewGrad = matchNewGradPatterns(description, typedRules.new_grad_patterns);
     if (descNewGrad) return descNewGrad;
+
+    const descCoOp = matchCoOpPatterns(description, typedRules.co_op_patterns);
+    if (descCoOp) return descCoOp;
 
     const descYearRound = matchYearRoundPatterns(description, typedRules.year_round_patterns);
     if (descYearRound) return descYearRound;

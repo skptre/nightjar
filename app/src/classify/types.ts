@@ -5,6 +5,7 @@ export type Term =
   | 'summer_2028' | 'fall_2028' | 'winter_2028' | 'spring_2028'
   | 'summer_2029' | 'fall_2029' | 'winter_2029' | 'spring_2029'
   | 'new_grad'
+  | 'co_op'
   | 'year_round'
   | 'unknown';
 
@@ -83,8 +84,10 @@ export interface EligibleSponsorshipPattern {
 export interface ClassificationRules {
   term_patterns: TermPattern[];
   new_grad_patterns: string[];
+  co_op_patterns: string[];
   year_round_patterns: string[];
   category_rules: CategoryRule[];
+  simplify_category_map: Record<string, CategoryValue>;
   sponsorship_patterns: SponsorshipPattern[];
   eligible_sponsorship_patterns: EligibleSponsorshipPattern[];
   grad_window_patterns: string[];

@@ -17,6 +17,12 @@ export interface FeedPosting {
   closed_at: string | null;
   compensation?: string;
   merged_from?: string[];
+  source_metadata?: {
+    sponsorship?: string;
+    terms?: string[];
+    degrees?: string[];
+    category?: string;
+  };
 }
 
 export interface FeedData {

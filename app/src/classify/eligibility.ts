@@ -224,11 +224,73 @@ function checkLocation(
   return [];
 }
 
+export interface SourceMetadata {
+  sponsorship?: string;
+  terms?: string[];
+  degrees?: string[];
+  category?: string;
+}
+
+function checkSourceMetadata(
+  metadata: SourceMetadata,
+  profile: Profile,
+): EligibilityResult | null {
+  if (!profile.requires_sponsorship || isCitizenOrPR(profile.work_auth)) {
+    return null;
+  }
+
+  if (!metadata.sponsorship) return null;
+
+  const sponsorship = metadata.sponsorship;
+
+  if (sponsorship === 'Offers Sponsorship') {
+    return {
+      verdict: 'eligible',
+      reasons: ["matched: 'Simplify reports: offers sponsorship'"],
+      flags: [{
+        type: 'eligible_sponsorship',
+        matched_sentence: 'Simplify reports: offers sponsorship',
+        pattern: 'source_metadata.sponsorship',
+      }],
+    };
+  }
+
+  if (sponsorship === "Doesn't Offer Sponsorship" || sponsorship === 'Does Not Offer Sponsorship') {
+    if (!needsSponsorshipCheck(profile.work_auth)) {
+      return null;
+    }
+    return {
+      verdict: 'ineligible',
+      reasons: ["matched: 'Simplify reports: doesn\\'t offer sponsorship'"],
+      flags: [{
+        type: 'no_sponsorship',
+        matched_sentence: "Simplify reports: doesn't offer sponsorship",
+        pattern: 'source_metadata.sponsorship',
+      }],
+    };
+  }
+
+  if (sponsorship === 'U.S. Citizenship is Required' || sponsorship === 'U.S. Citizenship Required') {
+    return {
+      verdict: 'ineligible',
+      reasons: ["matched: 'Simplify reports: U.S. citizenship is required'"],
+      flags: [{
+        type: 'citizenship_required',
+        matched_sentence: 'Simplify reports: U.S. citizenship is required',
+        pattern: 'source_metadata.sponsorship',
+      }],
+    };
+  }
+
+  return null;
+}
+
 export function checkEligibility(
   title: string,
   description: string | null,
   postingLocations: string[],
   profile: Profile,
+  sourceMetadata?: SourceMetadata,
 ): EligibilityResult {
   const allIneligibleFlags: EligibilityFlag[] = [];
   let eligibleFlags: EligibilityFlag[] = [];
@@ -264,6 +326,11 @@ export function checkEligibility(
       reasons,
       flags: eligibleFlags,
     };
+  }
+
+  if (!description && sourceMetadata) {
+    const metaResult = checkSourceMetadata(sourceMetadata, profile);
+    if (metaResult) return metaResult;
   }
 
   return {

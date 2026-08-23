@@ -22,9 +22,19 @@ function matchCategory(
   return null;
 }
 
+function mapSimplifyCategory(simplifyCategory: string): CategoryValue | null {
+  const map = typedRules.simplify_category_map as Record<string, string>;
+  const mapped = map[simplifyCategory];
+  if (mapped === 'swe' || mapped === 'quant' || mapped === 'ml' || mapped === 'hardware') {
+    return mapped;
+  }
+  return null;
+}
+
 export function classifyCategory(
   title: string,
   description: string | null,
+  simplifyCategory?: string,
 ): CategoryResult {
   const titleMatch = matchCategory(title, 'title');
   if (titleMatch) return titleMatch;
@@ -32,6 +42,17 @@ export function classifyCategory(
   if (description) {
     const descMatch = matchCategory(description, 'description');
     if (descMatch) return descMatch;
+  }
+
+  if (simplifyCategory) {
+    const mapped = mapSimplifyCategory(simplifyCategory);
+    if (mapped) {
+      return {
+        category: mapped,
+        matched_rule: `simplify:${simplifyCategory}`,
+        matched_in: null,
+      };
+    }
   }
 
   return {

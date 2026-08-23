@@ -12,12 +12,17 @@ export function classifyPosting(
   profile: Profile,
 ): ClassificationResult {
   const term = classifyTerm(posting.title, description, posting.posted_at);
-  const category = classifyCategory(posting.title, description);
+  const category = classifyCategory(
+    posting.title,
+    description,
+    posting.source_metadata?.category,
+  );
   const eligibility = checkEligibility(
     posting.title,
     description,
     posting.locations ?? [],
     profile,
+    posting.source_metadata,
   );
 
   return { term, category, eligibility };

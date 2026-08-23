@@ -21,7 +21,19 @@
     "entry\\s+level",
     "entry-level",
     "recent\\s+grad(?:uate)?",
-    "university\\s+grad(?:uate)?"
+    "university\\s+grad(?:uate)?",
+    "apprentice(?:ship)?",
+    "campus\\s+(?:hire|recruit|program)",
+    "university\\s+(?:program|recruit|hire|talent)",
+    "early\\s+(?:career|talent|in\\s+career)",
+    "undergraduate",
+    "rotational\\s+(?:program|analyst)",
+    "analyst\\s+program",
+    "(?:summer|fall|winter|spring)\\s+(?:associate|analyst)"
+  ],
+  "co_op_patterns": [
+    "co-?op(?:\\s+(?:intern|student|program))?",
+    "cooperative\\s+(?:education|program|intern)"
   ],
   "year_round_patterns": [
     "year[\\s-]round",
@@ -251,6 +263,29 @@
       ]
     }
   ],
+  "simplify_category_map": {
+    "Software Engineering": "swe",
+    "Software Developer": "swe",
+    "Web Development": "swe",
+    "Mobile Development": "swe",
+    "DevOps": "swe",
+    "Cloud Engineering": "swe",
+    "Cybersecurity": "swe",
+    "Data Engineering": "swe",
+    "AI/ML": "ml",
+    "Machine Learning": "ml",
+    "Artificial Intelligence": "ml",
+    "Data Science": "ml",
+    "Research": "ml",
+    "Quantitative Finance": "quant",
+    "Trading": "quant",
+    "Quantitative Research": "quant",
+    "Hardware Engineering": "hardware",
+    "Electrical Engineering": "hardware",
+    "Embedded Systems": "hardware",
+    "Firmware": "hardware",
+    "Semiconductor": "hardware"
+  },
   "sponsorship_patterns": [
     { "pattern": "must be a u\\.?s\\.? citizen", "flag_type": "citizenship_required" },
     { "pattern": "must be a united states citizen", "flag_type": "citizenship_required" },

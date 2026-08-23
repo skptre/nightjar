@@ -1461,3 +1461,1034 @@
   sources:
     - type: smartrecruiters
       board_token: NorthwesternMutual
+
+# ── Batch 3: Verified Candidates ──────────────────────────────────
+
+# ── Lever (Batch 3) ──
+
+- slug: calstart
+  name: CALSTART
+  tags: [clean-energy, transportation, us]
+  sources:
+    - type: lever
+      board_token: calstart
+
+- slug: diversified-automation
+  name: Diversified Automation
+  tags: [automation, manufacturing, us]
+  sources:
+    - type: lever
+      board_token: diversified-automation
+
+# ── Workday (Batch 3) ──
+
+- slug: amcor
+  name: Amcor
+  tags: [packaging, manufacturing, us]
+  sources:
+    - type: workday
+      board_token: amcor.wd5.myworkdayjobs.com/amcor_external_career_site
+
+- slug: ameren
+  name: Ameren
+  tags: [energy, utility, st-louis]
+  sources:
+    - type: workday
+      board_token: ameren.wd1.myworkdayjobs.com/External
+
+- slug: american-fidelity
+  name: American Fidelity
+  tags: [finance, insurance, oklahoma-city]
+  sources:
+    - type: workday
+      board_token: americanfidelity.wd5.myworkdayjobs.com/External
+
+- slug: asm-global
+  name: ASM Global
+  tags: [entertainment, venue-management, us]
+  sources:
+    - type: workday
+      board_token: asmglobal.wd1.myworkdayjobs.com/careers
+
+- slug: borgwarner
+  name: BorgWarner
+  tags: [automotive, manufacturing, us]
+  sources:
+    - type: workday
+      board_token: borgwarner.wd5.myworkdayjobs.com/BorgWarner_Careers
+
+- slug: continental-resources
+  name: Continental Resources
+  tags: [energy, oil-gas, oklahoma-city]
+  sources:
+    - type: workday
+      board_token: clr.wd5.myworkdayjobs.com/CLR_Careers
+
+- slug: crowe
+  name: Crowe
+  tags: [consulting, accounting, chicago]
+  sources:
+    - type: workday
+      board_token: crowe.wd12.myworkdayjobs.com/external_careers
+
+- slug: delta-dental
+  name: Delta Dental
+  tags: [healthcare, insurance, us]
+  sources:
+    - type: workday
+      board_token: rhsc.wd5.myworkdayjobs.com/delta_dental_of_michigan
+
+- slug: ensemble-health-partners
+  name: Ensemble Health Partners
+  tags: [healthcare, revenue-cycle, us]
+  sources:
+    - type: workday
+      board_token: ensemblehp.wd5.myworkdayjobs.com/ensemblehealthpartnerscareers
+
+- slug: excellus-bcbs
+  name: Excellus BCBS
+  tags: [healthcare, insurance, rochester-ny]
+  sources:
+    - type: workday
+      board_token: lthc.wd1.myworkdayjobs.com/ExcellusBCBSCareers
+
+- slug: ge-appliances
+  name: GE Appliances
+  tags: [consumer-electronics, manufacturing, louisville]
+  sources:
+    - type: workday
+      board_token: haier.wd3.myworkdayjobs.com/ge_appliances
+
+- slug: generac
+  name: Generac
+  tags: [manufacturing, power, waukesha-wi]
+  sources:
+    - type: workday
+      board_token: generac.wd5.myworkdayjobs.com/external
+
+- slug: hntb
+  name: HNTB
+  tags: [engineering, infrastructure, us]
+  sources:
+    - type: workday
+      board_token: hntb.wd5.myworkdayjobs.com/hntb_university_careers
+
+- slug: humana
+  name: Humana
+  tags: [healthcare, insurance, louisville]
+  sources:
+    - type: workday
+      board_token: humana.wd5.myworkdayjobs.com/humana_external_career_site
+
+- slug: international-rescue-committee-irc
+  name: International Rescue Committee (IRC)
+  tags: [nonprofit, humanitarian, nyc]
+  sources:
+    - type: workday
+      board_token: theirc.wd1.myworkdayjobs.com/External_Careers
+
+- slug: jade-global
+  name: Jade Global
+  tags: [tech, consulting, san-jose]
+  sources:
+    - type: workday
+      board_token: jadeglobal.wd5.myworkdayjobs.com/jade_careers
+
+- slug: marmon-holdings
+  name: Marmon Holdings
+  tags: [conglomerate, manufacturing, chicago]
+  sources:
+    - type: workday
+      board_token: marmon.wd501.myworkdayjobs.com/Marmon_MSIP_Internships
+
+- slug: mckesson
+  name: McKesson
+  tags: [healthcare, pharma-distribution, irving-tx]
+  sources:
+    - type: workday
+      board_token: mckesson.wd3.myworkdayjobs.com/External_Careers
+
+- slug: nidec
+  name: Nidec
+  tags: [manufacturing, motors, us]
+  sources:
+    - type: workday
+      board_token: nidec.wd1.myworkdayjobs.com/nidec
+
+- slug: novanta
+  name: Novanta
+  tags: [manufacturing, photonics, bedford-ma]
+  sources:
+    - type: workday
+      board_token: novanta.wd5.myworkdayjobs.com/Novanta-Careers
+
+- slug: oneok
+  name: ONEOK
+  tags: [energy, pipelines, tulsa]
+  sources:
+    - type: workday
+      board_token: oneok.wd1.myworkdayjobs.com/ONEOK_Early_Careers
+
+- slug: ontario-teachers-pension-plan
+  name: Ontario Teachers' Pension Plan
+  tags: [finance, pension, toronto]
+  sources:
+    - type: workday
+      board_token: otppb.wd3.myworkdayjobs.com/OntarioTeachers_Careers
+
+- slug: rfcuny
+  name: RFCUNY
+  tags: [education, research, nyc]
+  sources:
+    - type: workday
+      board_token: rfcuny.wd108.myworkdayjobs.com/RFCUNY
+
+- slug: royal-bank-of-canada
+  name: Royal Bank of Canada
+  tags: [finance, banking, toronto]
+  sources:
+    - type: workday
+      board_token: rbc.wd3.myworkdayjobs.com/rbcglobal1
+
+- slug: soti
+  name: SOTI
+  tags: [tech, mobile-management, mississauga]
+  sources:
+    - type: workday
+      board_token: soti.wd3.myworkdayjobs.com/SOTI-Next-Gen
+
+- slug: suncor
+  name: Suncor
+  tags: [energy, oil-gas, calgary]
+  sources:
+    - type: workday
+      board_token: suncor.wd1.myworkdayjobs.com/Suncor_External
+
+- slug: thyssenkrupp
+  name: thyssenkrupp
+  tags: [manufacturing, industrial, us]
+  sources:
+    - type: workday
+      board_token: thyssenkruppmaterialsna.wd12.myworkdayjobs.com/1
+
+# ── SmartRecruiters (Batch 3) ──
+
+- slug: mapjects
+  name: Mapjects
+  tags: [tech, project-management, us]
+  sources:
+    - type: smartrecruiters
+      board_token: Mapjectscom
+
+- slug: rrs-group
+  name: RRS Group
+  tags: [consulting, sustainability, us]
+  sources:
+    - type: smartrecruiters
+      board_token: RRSGroup
+
+- slug: wabtec
+  name: Wabtec
+  tags: [transportation, rail, pittsburgh]
+  sources:
+    - type: smartrecruiters
+      board_token: Wabtec
+
+# ── Ashby (Batch 3) ──
+
+- slug: harvey
+  name: Harvey
+  tags: [ai, legal-tech, sf]
+  sources:
+    - type: ashby
+      board_token: harvey
+
+- slug: sierra
+  name: Sierra
+  tags: [ai, conversational-ai, sf]
+  sources:
+    - type: ashby
+      board_token: sierra
+
+- slug: langchain
+  name: LangChain
+  tags: [ai, developer-tools, sf]
+  sources:
+    - type: ashby
+      board_token: langchain
+
+- slug: deepgram
+  name: Deepgram
+  tags: [ai, speech, us]
+  sources:
+    - type: ashby
+      board_token: deepgram
+
+- slug: baseten
+  name: Baseten
+  tags: [ai, ml-infrastructure, sf]
+  sources:
+    - type: ashby
+      board_token: baseten
+
+- slug: polymarket
+  name: Polymarket
+  tags: [crypto, prediction-markets, nyc]
+  sources:
+    - type: ashby
+      board_token: polymarket
+
+- slug: replit
+  name: Replit
+  tags: [developer-tools, ai, sf]
+  sources:
+    - type: ashby
+      board_token: replit
+
+- slug: fireworks
+  name: Fireworks AI
+  tags: [ai, inference, sf]
+  sources:
+    - type: ashby
+      board_token: fireworks
+
+- slug: 1password
+  name: 1Password
+  tags: [security, passwords, toronto]
+  sources:
+    - type: ashby
+      board_token: 1password
+
+- slug: synthesia
+  name: Synthesia
+  tags: [ai, video, london]
+  sources:
+    - type: ashby
+      board_token: synthesia
+
+- slug: supabase
+  name: Supabase
+  tags: [developer-tools, database, remote]
+  sources:
+    - type: ashby
+      board_token: supabase
+
+- slug: temporal
+  name: Temporal
+  tags: [developer-tools, workflow, remote]
+  sources:
+    - type: ashby
+      board_token: temporal
+
+- slug: writer
+  name: Writer
+  tags: [ai, enterprise, sf]
+  sources:
+    - type: ashby
+      board_token: writer
+
+- slug: abridge
+  name: Abridge
+  tags: [ai, healthcare, pittsburgh]
+  sources:
+    - type: ashby
+      board_token: abridge
+
+- slug: kalshi
+  name: Kalshi
+  tags: [fintech, prediction-markets, nyc]
+  sources:
+    - type: ashby
+      board_token: kalshi
+
+- slug: miro
+  name: Miro
+  tags: [collaboration, design, remote]
+  sources:
+    - type: ashby
+      board_token: miro
+
+- slug: render
+  name: Render
+  tags: [cloud, developer-tools, sf]
+  sources:
+    - type: ashby
+      board_token: render
+
+- slug: workos
+  name: WorkOS
+  tags: [developer-tools, identity, sf]
+  sources:
+    - type: ashby
+      board_token: workos
+
+- slug: coder
+  name: Coder
+  tags: [developer-tools, remote-dev, austin]
+  sources:
+    - type: ashby
+      board_token: coder
+
+- slug: socket
+  name: Socket
+  tags: [security, supply-chain, sf]
+  sources:
+    - type: ashby
+      board_token: socket
+
+- slug: oyster
+  name: Oyster
+  tags: [hr-tech, remote-work, remote]
+  sources:
+    - type: ashby
+      board_token: oyster
+
+- slug: alchemy
+  name: Alchemy
+  tags: [crypto, web3-infra, sf]
+  sources:
+    - type: ashby
+      board_token: alchemy
+
+- slug: phantom
+  name: Phantom
+  tags: [crypto, wallet, remote]
+  sources:
+    - type: ashby
+      board_token: phantom
+
+- slug: granola
+  name: Granola
+  tags: [ai, productivity, sf]
+  sources:
+    - type: ashby
+      board_token: granola
+
+- slug: llamaindex
+  name: LlamaIndex
+  tags: [ai, developer-tools, sf]
+  sources:
+    - type: ashby
+      board_token: llamaindex
+
+- slug: color-health
+  name: Color Health
+  tags: [healthcare, genomics, sf]
+  sources:
+    - type: ashby
+      board_token: color-health
+
+- slug: semgrep
+  name: Semgrep
+  tags: [security, developer-tools, sf]
+  sources:
+    - type: ashby
+      board_token: semgrep
+
+- slug: resend
+  name: Resend
+  tags: [developer-tools, email, sf]
+  sources:
+    - type: ashby
+      board_token: resend
+
+- slug: propel
+  name: Propel
+  tags: [fintech, benefits, nyc]
+  sources:
+    - type: ashby
+      board_token: propel
+
+- slug: railway
+  name: Railway
+  tags: [cloud, developer-tools, sf]
+  sources:
+    - type: ashby
+      board_token: railway
+
+- slug: uniswap
+  name: Uniswap
+  tags: [crypto, defi, nyc]
+  sources:
+    - type: ashby
+      board_token: uniswap
+
+- slug: prefect
+  name: Prefect
+  tags: [developer-tools, data-orchestration, dc]
+  sources:
+    - type: ashby
+      board_token: prefect
+
+- slug: pinecone
+  name: Pinecone
+  tags: [ai, vector-database, sf]
+  sources:
+    - type: ashby
+      board_token: pinecone
+
+- slug: infisical
+  name: Infisical
+  tags: [security, secrets-management, sf]
+  sources:
+    - type: ashby
+      board_token: infisical
+
+- slug: paradigm
+  name: Paradigm
+  tags: [crypto, venture-capital, sf]
+  sources:
+    - type: ashby
+      board_token: paradigm
+
+- slug: stytch
+  name: Stytch
+  tags: [developer-tools, auth, sf]
+  sources:
+    - type: ashby
+      board_token: stytch
+
+- slug: atlan
+  name: Atlan
+  tags: [data, governance, remote]
+  sources:
+    - type: ashby
+      board_token: atlan
+
+- slug: unstructured
+  name: Unstructured
+  tags: [ai, data-processing, remote]
+  sources:
+    - type: ashby
+      board_token: unstructured
+
+- slug: doppler
+  name: Doppler
+  tags: [developer-tools, secrets, sf]
+  sources:
+    - type: ashby
+      board_token: doppler
+
+- slug: zed
+  name: Zed
+  tags: [developer-tools, editor, sf]
+  sources:
+    - type: ashby
+      board_token: zed
+
+- slug: rewind
+  name: Rewind AI
+  tags: [ai, productivity, sf]
+  sources:
+    - type: ashby
+      board_token: rewind
+
+- slug: inngest
+  name: Inngest
+  tags: [developer-tools, serverless, sf]
+  sources:
+    - type: ashby
+      board_token: inngest
+
+- slug: tldraw
+  name: tldraw
+  tags: [developer-tools, canvas, remote]
+  sources:
+    - type: ashby
+      board_token: tldraw
+
+- slug: a16z-crypto
+  name: a16z crypto
+  tags: [crypto, venture-capital, sf]
+  sources:
+    - type: ashby
+      board_token: a16z-crypto
+
+- slug: hightouch
+  name: Hightouch
+  tags: [data, reverse-etl, sf]
+  sources:
+    - type: ashby
+      board_token: hightouch
+
+- slug: weaviate
+  name: Weaviate
+  tags: [ai, vector-database, remote]
+  sources:
+    - type: ashby
+      board_token: weaviate
+
+# ── Workday (Batch 3) ──
+
+- slug: disney
+  name: Disney
+  tags: [entertainment, media, burbank]
+  sources:
+    - type: workday
+      board_token: disney.wd5.myworkdayjobs.com/disneycareer
+
+- slug: walmart
+  name: Walmart
+  tags: [retail, enterprise, bentonville]
+  sources:
+    - type: workday
+      board_token: walmart.wd504.myworkdayjobs.com/WalmartExternal
+
+- slug: target
+  name: Target
+  tags: [retail, enterprise, minneapolis]
+  sources:
+    - type: workday
+      board_token: target.wd5.myworkdayjobs.com/targetcareers
+
+- slug: procter-gamble
+  name: Procter & Gamble
+  tags: [consumer-goods, enterprise, cincinnati]
+  sources:
+    - type: workday
+      board_token: pg.wd5.myworkdayjobs.com/1000
+
+- slug: abbott
+  name: Abbott
+  tags: [healthcare, medical-devices, chicago]
+  sources:
+    - type: workday
+      board_token: abbott.wd5.myworkdayjobs.com/abbottcareers
+
+- slug: johnson-johnson
+  name: Johnson & Johnson
+  tags: [healthcare, pharma, new-brunswick-nj]
+  sources:
+    - type: workday
+      board_token: jj.wd5.myworkdayjobs.com/JJ
+
+- slug: pfizer
+  name: Pfizer
+  tags: [pharma, healthcare, nyc]
+  sources:
+    - type: workday
+      board_token: pfizer.wd1.myworkdayjobs.com/PfizerCareers
+
+- slug: eli-lilly
+  name: Eli Lilly
+  tags: [pharma, healthcare, indianapolis]
+  sources:
+    - type: workday
+      board_token: lilly.wd115.myworkdayjobs.com/LLY
+
+- slug: bristol-myers-squibb
+  name: Bristol-Myers Squibb
+  tags: [pharma, healthcare, princeton-nj]
+  sources:
+    - type: workday
+      board_token: bristolmyerssquibb.wd5.myworkdayjobs.com/BMS
+
+- slug: merck
+  name: Merck
+  tags: [pharma, healthcare, rahway-nj]
+  sources:
+    - type: workday
+      board_token: msd.wd5.myworkdayjobs.com/SearchJobs
+
+- slug: medtronic
+  name: Medtronic
+  tags: [healthcare, medical-devices, minneapolis]
+  sources:
+    - type: workday
+      board_token: medtronic.wd1.myworkdayjobs.com/MedtronicCareers
+
+- slug: 3m
+  name: 3M
+  tags: [manufacturing, conglomerate, st-paul-mn]
+  sources:
+    - type: workday
+      board_token: 3m.wd1.myworkdayjobs.com/Search
+
+- slug: danaher
+  name: Danaher
+  tags: [healthcare, industrial, dc]
+  sources:
+    - type: workday
+      board_token: danaher.wd1.myworkdayjobs.com/DanaherJobs
+
+- slug: stryker
+  name: Stryker
+  tags: [healthcare, medical-devices, kalamazoo-mi]
+  sources:
+    - type: workday
+      board_token: stryker.wd1.myworkdayjobs.com/StrykerCareers
+
+- slug: mondelez
+  name: Mondelez
+  tags: [consumer-goods, food, chicago]
+  sources:
+    - type: workday
+      board_token: mdlz.wd3.myworkdayjobs.com/External
+
+- slug: general-mills
+  name: General Mills
+  tags: [consumer-goods, food, minneapolis]
+  sources:
+    - type: workday
+      board_token: genmills.wd1.myworkdayjobs.com/GMI_External_Careers
+
+- slug: kraft-heinz
+  name: Kraft Heinz
+  tags: [consumer-goods, food, chicago]
+  sources:
+    - type: workday
+      board_token: heinz.wd1.myworkdayjobs.com/KraftHeinz_Careers
+
+- slug: edwards-lifesciences
+  name: Edwards Lifesciences
+  tags: [healthcare, medical-devices, irvine-ca]
+  sources:
+    - type: workday
+      board_token: edwards.wd5.myworkdayjobs.com/edwardscareers
+
+- slug: becton-dickinson
+  name: Becton Dickinson
+  tags: [healthcare, medical-devices, franklin-lakes-nj]
+  sources:
+    - type: workday
+      board_token: bdx.wd1.myworkdayjobs.com/EXTERNAL_CAREER_SITE_USA
+
+# ── SmartRecruiters (Batch 3 continued) ──
+
+- slug: ikea
+  name: IKEA
+  tags: [retail, furniture, remote]
+  sources:
+    - type: smartrecruiters
+      board_token: IkanoRetail
+
+- slug: western-digital
+  name: Western Digital
+  tags: [tech, storage, san-jose]
+  sources:
+    - type: smartrecruiters
+      board_token: WesternDigital
+
+- slug: equinox
+  name: Equinox
+  tags: [fitness, hospitality, nyc]
+  sources:
+    - type: smartrecruiters
+      board_token: equinox
+
+# ── Greenhouse (Batch 3) ──
+
+- slug: schonfeld
+  name: Schonfeld
+  tags: [quant, trading, nyc]
+  sources:
+    - type: greenhouse
+      board_token: schonfeld
+
+- slug: tower-research
+  name: Tower Research Capital
+  tags: [quant, trading, nyc]
+  sources:
+    - type: greenhouse
+      board_token: towerresearchcapital
+
+- slug: aqr
+  name: AQR Capital Management
+  tags: [quant, finance, greenwich-ct]
+  sources:
+    - type: greenhouse
+      board_token: aqr
+
+- slug: old-mission
+  name: Old Mission Capital
+  tags: [quant, trading, chicago]
+  sources:
+    - type: greenhouse
+      board_token: oldmissioncapital
+
+- slug: akuna-capital
+  name: Akuna Capital
+  tags: [quant, trading, chicago]
+  sources:
+    - type: greenhouse
+      board_token: akunacapital
+
+- slug: five-rings
+  name: Five Rings
+  tags: [quant, trading, nyc]
+  sources:
+    - type: greenhouse
+      board_token: fiveringsllc
+
+- slug: block
+  name: Block
+  tags: [fintech, payments, sf]
+  sources:
+    - type: greenhouse
+      board_token: block
+
+- slug: sofi
+  name: SoFi
+  tags: [fintech, banking, sf]
+  sources:
+    - type: greenhouse
+      board_token: sofi
+
+- slug: carta
+  name: Carta
+  tags: [fintech, equity, sf]
+  sources:
+    - type: greenhouse
+      board_token: carta
+
+- slug: roblox
+  name: Roblox
+  tags: [gaming, metaverse, san-mateo]
+  sources:
+    - type: greenhouse
+      board_token: roblox
+
+- slug: coupang
+  name: Coupang
+  tags: [ecommerce, enterprise, seattle]
+  sources:
+    - type: greenhouse
+      board_token: coupang
+
+- slug: twilio
+  name: Twilio
+  tags: [tech, communications, sf]
+  sources:
+    - type: greenhouse
+      board_token: twilio
+
+- slug: okta
+  name: Okta
+  tags: [security, identity, sf]
+  sources:
+    - type: greenhouse
+      board_token: okta
+
+- slug: zscaler
+  name: Zscaler
+  tags: [security, cloud, san-jose]
+  sources:
+    - type: greenhouse
+      board_token: zscaler
+
+- slug: apptronik
+  name: Apptronik
+  tags: [robotics, humanoid, austin]
+  sources:
+    - type: greenhouse
+      board_token: apptronik
+
+- slug: agility-robotics
+  name: Agility Robotics
+  tags: [robotics, humanoid, corvallis-or]
+  sources:
+    - type: greenhouse
+      board_token: agilityrobotics
+
+- slug: lucid-motors
+  name: Lucid Motors
+  tags: [automotive, ev, newark-ca]
+  sources:
+    - type: greenhouse
+      board_token: lucidmotors
+
+- slug: path-robotics
+  name: Path Robotics
+  tags: [robotics, welding, columbus-oh]
+  sources:
+    - type: greenhouse
+      board_token: pathrobotics
+
+- slug: locus-robotics
+  name: Locus Robotics
+  tags: [robotics, warehouse, wilmington-ma]
+  sources:
+    - type: greenhouse
+      board_token: locusrobotics
+
+- slug: rocket-lab
+  name: Rocket Lab
+  tags: [aerospace, launch, long-beach]
+  sources:
+    - type: greenhouse
+      board_token: rocketlab
+
+- slug: zipline
+  name: Zipline
+  tags: [aerospace, drone-delivery, sf]
+  sources:
+    - type: greenhouse
+      board_token: flyzipline
+
+- slug: together-ai
+  name: Together AI
+  tags: [ai, inference, sf]
+  sources:
+    - type: greenhouse
+      board_token: togetherai
+
+- slug: sambanova
+  name: SambaNova Systems
+  tags: [ai, chips, palo-alto]
+  sources:
+    - type: greenhouse
+      board_token: sambanovasystems
+
+- slug: inflection-ai
+  name: Inflection AI
+  tags: [ai, chatbot, palo-alto]
+  sources:
+    - type: greenhouse
+      board_token: inflectionai
+
+- slug: braze
+  name: Braze
+  tags: [saas, marketing, nyc]
+  sources:
+    - type: greenhouse
+      board_token: braze
+
+- slug: postman
+  name: Postman
+  tags: [developer-tools, api, sf]
+  sources:
+    - type: greenhouse
+      board_token: postman
+
+- slug: asana
+  name: Asana
+  tags: [saas, productivity, sf]
+  sources:
+    - type: greenhouse
+      board_token: asana
+
+- slug: smartsheet
+  name: Smartsheet
+  tags: [saas, project-management, bellevue-wa]
+  sources:
+    - type: greenhouse
+      board_token: smartsheet
+
+- slug: fivetran
+  name: Fivetran
+  tags: [data, etl, oakland]
+  sources:
+    - type: greenhouse
+      board_token: fivetran
+
+- slug: launchdarkly
+  name: LaunchDarkly
+  tags: [developer-tools, feature-flags, oakland]
+  sources:
+    - type: greenhouse
+      board_token: launchdarkly
+
+- slug: webflow
+  name: Webflow
+  tags: [tech, website-builder, sf]
+  sources:
+    - type: greenhouse
+      board_token: webflow
+
+- slug: calendly
+  name: Calendly
+  tags: [saas, scheduling, atlanta]
+  sources:
+    - type: greenhouse
+      board_token: calendly
+
+- slug: contentful
+  name: Contentful
+  tags: [saas, cms, berlin]
+  sources:
+    - type: greenhouse
+      board_token: contentful
+
+- slug: clover-health
+  name: Clover Health
+  tags: [healthcare, insurance, sf]
+  sources:
+    - type: greenhouse
+      board_token: cloverhealth
+
+- slug: flatiron-health
+  name: Flatiron Health
+  tags: [healthcare, oncology, nyc]
+  sources:
+    - type: greenhouse
+      board_token: flatironhealth
+
+- slug: recursion
+  name: Recursion
+  tags: [biotech, ai, salt-lake-city]
+  sources:
+    - type: greenhouse
+      board_token: recursionpharmaceuticals
+
+- slug: carvana
+  name: Carvana
+  tags: [automotive, ecommerce, phoenix]
+  sources:
+    - type: greenhouse
+      board_token: carvana
+
+- slug: roku
+  name: Roku
+  tags: [tech, streaming, san-jose]
+  sources:
+    - type: greenhouse
+      board_token: roku
+
+- slug: formlabs
+  name: Formlabs
+  tags: [hardware, 3d-printing, boston]
+  sources:
+    - type: greenhouse
+      board_token: formlabs
+
+- slug: redwood-materials
+  name: Redwood Materials
+  tags: [cleantech, battery-recycling, carson-city-nv]
+  sources:
+    - type: greenhouse
+      board_token: redwoodmaterials
+
+- slug: riot-games
+  name: Riot Games
+  tags: [gaming, entertainment, la]
+  sources:
+    - type: greenhouse
+      board_token: riotgames
+
+- slug: faire
+  name: Faire
+  tags: [ecommerce, wholesale, sf]
+  sources:
+    - type: greenhouse
+      board_token: faire
+
+- slug: melio
+  name: Melio
+  tags: [fintech, payments, nyc]
+  sources:
+    - type: greenhouse
+      board_token: melio
+
+- slug: marqeta
+  name: Marqeta
+  tags: [fintech, card-issuing, oakland]
+  sources:
+    - type: greenhouse
+      board_token: marqeta
+
+- slug: bungie
+  name: Bungie
+  tags: [gaming, fps, bellevue-wa]
+  sources:
+    - type: greenhouse
+      board_token: bungie

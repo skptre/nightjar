@@ -303,7 +303,7 @@ export function CompaniesView(): React.ReactNode {
                     </select>
                   </div>
                   <span className="text-xs text-gray-500 dark:text-nj-text-dim text-center uppercase">
-                    {company.source === 'greenhouse' ? 'GH' : company.source === 'lever' ? 'LV' : company.source === 'ashby' ? 'AB' : company.source}
+                    {company.source === 'greenhouse' ? 'GH' : company.source === 'lever' ? 'LV' : company.source === 'ashby' ? 'AB' : company.source === 'workday' ? 'WD' : company.source === 'smartrecruiters' ? 'SR' : company.source === 'simplify' ? 'SIM' : company.source}
                   </span>
                   <div className="flex justify-center" onClick={(e) => e.stopPropagation()}>
                     <ExcludeToggle

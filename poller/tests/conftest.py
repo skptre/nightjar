@@ -96,6 +96,7 @@ def make_posting(
     location: str = "New York, NY",
     locations: list[str] | None = None,
     compensation: str | None = None,
+    source_metadata: dict[str, Any] | None = None,
 ) -> Posting:
     return Posting(
         id=pid,
@@ -113,6 +114,7 @@ def make_posting(
         last_seen_at=last_seen,
         closed_at=closed_at,
         compensation=compensation,
+        source_metadata=source_metadata,
     )
 
 

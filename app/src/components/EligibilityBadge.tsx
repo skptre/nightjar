@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 export interface EligibilityData {
   verdict: string;
   reasons: string[];
-  flags: Array<{ type: string; matched_sentence: string }>;
+  flags: Array<{ type: string; matched_sentence: string; pattern?: string }>;
 }
 
 interface EligibilityBadgeProps {
@@ -19,7 +19,19 @@ function parseEligibility(raw: string | null): EligibilityData | null {
   }
 }
 
-function verdictStyles(verdict: string): string {
+function isMetadataBased(data: EligibilityData | null): boolean {
+  if (!data || data.flags.length === 0) return false;
+  return data.flags.every((f) => f.pattern === 'source_metadata.sponsorship');
+}
+
+function verdictStyles(verdict: string, metadataBased: boolean): string {
+  if (metadataBased) {
+    if (verdict === 'eligible')
+      return 'bg-green-50 text-green-600 dark:bg-nj-eligible-bg/50 dark:text-nj-eligible/70';
+    if (verdict === 'ineligible')
+      return 'bg-red-50 text-red-600 dark:bg-nj-ineligible-bg/50 dark:text-nj-ineligible/70';
+    return 'bg-yellow-50 text-yellow-600 dark:bg-nj-unclear-bg/50 dark:text-nj-unclear/70';
+  }
   if (verdict === 'eligible')
     return 'bg-green-100 text-green-800 dark:bg-nj-eligible-bg dark:text-nj-eligible';
   if (verdict === 'ineligible')
@@ -33,6 +45,7 @@ export function EligibilityBadge({ eligibilityJson }: EligibilityBadgeProps): Re
 
   const eligibility = parseEligibility(eligibilityJson);
   const verdict = eligibility?.verdict ?? 'unclear';
+  const metadataBased = isMetadataBased(eligibility);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent): void {
@@ -48,7 +61,7 @@ export function EligibilityBadge({ eligibilityJson }: EligibilityBadgeProps): Re
     <div className="relative flex-shrink-0" ref={ref}>
       <button
         onClick={() => setOpen(!open)}
-        className={`px-2 py-0.5 text-xs rounded-full font-medium cursor-pointer transition-opacity hover:opacity-80 ${verdictStyles(verdict)}`}
+        className={`px-2 py-0.5 text-xs rounded-full font-medium cursor-pointer transition-opacity hover:opacity-80 ${verdictStyles(verdict, metadataBased)}`}
       >
         {verdict}
       </button>
@@ -57,6 +70,11 @@ export function EligibilityBadge({ eligibilityJson }: EligibilityBadgeProps): Re
           <p className="text-xs font-medium text-gray-700 dark:text-nj-text mb-2">
             Eligibility: <span className={verdict === 'eligible' ? 'text-nj-eligible' : verdict === 'ineligible' ? 'text-nj-ineligible' : 'text-nj-unclear'}>{verdict}</span>
           </p>
+          {metadataBased && (
+            <p className="text-xs text-amber-600 dark:text-amber-400 mb-2">
+              Based on Simplify metadata (description not yet fetched)
+            </p>
+          )}
           {eligibility && eligibility.reasons.length > 0 ? (
             <ul className="space-y-1">
               {eligibility.reasons.map((reason, i) => (

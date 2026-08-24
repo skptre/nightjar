@@ -9,7 +9,7 @@ type TermFilter = 'all' | string;
 type EligibilityFilter = 'show' | 'hide';
 type TierFilter = 'all' | '1' | '2' | '3' | 'untiered';
 type AgeFilter = 'all' | 'today' | 'week' | 'month';
-type SourceFilter = 'all' | 'greenhouse' | 'lever' | 'ashby';
+type SourceFilter = 'all' | 'greenhouse' | 'lever' | 'ashby' | 'workday' | 'smartrecruiters' | 'simplify' | 'other';
 
 interface Filters {
   term: TermFilter;
@@ -430,6 +430,10 @@ export function FeedView(): React.ReactNode {
           <option value="greenhouse">Greenhouse</option>
           <option value="lever">Lever</option>
           <option value="ashby">Ashby</option>
+          <option value="workday">Workday</option>
+          <option value="smartrecruiters">SmartRecruiters</option>
+          <option value="simplify">Simplify</option>
+          <option value="other">Other</option>
         </select>
 
         {/* Clear */}

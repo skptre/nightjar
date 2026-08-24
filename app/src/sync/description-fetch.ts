@@ -39,6 +39,28 @@ export function parseAshbyUrl(url: string): { slug: string } | null {
   return { slug: match[1] };
 }
 
+export function parseWorkdayUrl(url: string): { host: string; tenant: string; path: string } | null {
+  const match = /https?:\/\/(([^.]+)\.wd\d+\.myworkdayjobs\.com)(\/.*)?/.exec(url);
+  if (!match?.[1] || !match[2]) return null;
+
+  const host = match[1];
+  const tenant = match[2];
+  let path = match[3] ?? '';
+
+  // Strip locale prefix (e.g., /en-US/, /en/, /fr-FR/)
+  path = path.replace(/^\/[a-z]{2}(-[A-Z]{2})?\//, '/');
+
+  if (!path || path === '/') return null;
+
+  return { host, tenant, path };
+}
+
+export function parseSmartRecruitersUrl(url: string): { company: string; postingId: string } | null {
+  const match = /jobs\.smartrecruiters\.com\/([^/]+)\/([^/?#]+)/.exec(url);
+  if (!match?.[1] || !match[2]) return null;
+  return { company: match[1], postingId: match[2] };
+}
+
 export function unescapeHtml(text: string): string {
   return text
     .replace(/&amp;/g, '&')
@@ -108,6 +130,54 @@ async function fetchLeverDescription(posting: PostingInfo): Promise<string | nul
   return trimmed.length > PLAINTEXT_CAP ? trimmed.substring(0, PLAINTEXT_CAP) : trimmed;
 }
 
+async function fetchWorkdayDescription(posting: PostingInfo): Promise<string | null> {
+  const parsed = parseWorkdayUrl(posting.url);
+  if (!parsed) return null;
+
+  const apiUrl = `https://${parsed.host}/wday/cxs/${parsed.tenant}${parsed.path}`;
+  const response = await fetch(apiUrl);
+  if (!response.ok) return null;
+
+  const data: unknown = await response.json();
+  if (typeof data !== 'object' || data === null) return null;
+
+  const description = (data as Record<string, unknown>)['jobDescription'];
+  if (typeof description !== 'string') return null;
+
+  return htmlToPlaintext(description);
+}
+
+async function fetchSmartRecruitersDescription(posting: PostingInfo): Promise<string | null> {
+  const parsed = parseSmartRecruitersUrl(posting.url);
+  if (!parsed) return null;
+
+  const apiUrl = `https://api.smartrecruiters.com/v1/companies/${parsed.company}/postings/${parsed.postingId}`;
+  const response = await fetch(apiUrl);
+  if (!response.ok) return null;
+
+  const data: unknown = await response.json();
+  if (typeof data !== 'object' || data === null) return null;
+
+  const jobDesc = (data as Record<string, unknown>)['jobDescription'];
+  if (typeof jobDesc !== 'object' || jobDesc === null) return null;
+
+  const sections = (jobDesc as Record<string, unknown>)['sections'];
+  if (!Array.isArray(sections)) return null;
+
+  const parts: string[] = [];
+  for (const section of sections) {
+    if (typeof section === 'object' && section !== null) {
+      const text = (section as Record<string, unknown>)['text'];
+      if (typeof text === 'string') {
+        parts.push(text);
+      }
+    }
+  }
+
+  if (parts.length === 0) return null;
+  return htmlToPlaintext(parts.join(' '));
+}
+
 async function fetchAshbyDescription(
   posting: PostingInfo,
   boardCache: Map<string, Array<Record<string, unknown>>>,
@@ -144,11 +214,19 @@ async function fetchAshbyDescription(
   return trimmed.length > PLAINTEXT_CAP ? trimmed.substring(0, PLAINTEXT_CAP) : trimmed;
 }
 
-function getHostForSource(source: string): string {
+function getHostForSource(source: string, url?: string): string {
   switch (source) {
     case 'greenhouse': return 'boards-api.greenhouse.io';
     case 'lever': return 'api.lever.co';
     case 'ashby': return 'api.ashbyhq.com';
+    case 'smartrecruiters': return 'api.smartrecruiters.com';
+    case 'workday': {
+      if (url) {
+        const parsed = parseWorkdayUrl(url);
+        if (parsed) return parsed.host;
+      }
+      return 'myworkdayjobs.com';
+    }
     default: return 'unknown';
   }
 }
@@ -160,7 +238,11 @@ export class DescriptionFetcher {
   private corsFailures = new Set<string>();
 
   async fetchOne(posting: PostingInfo): Promise<DescriptionResult> {
-    await this.acquireSlot(getHostForSource(posting.source));
+    if (posting.source === 'simplify' || posting.source === 'other') {
+      return { id: posting.id, description: null, error: null };
+    }
+
+    await this.acquireSlot(getHostForSource(posting.source, posting.url));
 
     try {
       let description: string | null = null;
@@ -174,6 +256,12 @@ export class DescriptionFetcher {
           break;
         case 'ashby':
           description = await fetchAshbyDescription(posting, this.ashbyBoardCache);
+          break;
+        case 'workday':
+          description = await fetchWorkdayDescription(posting);
+          break;
+        case 'smartrecruiters':
+          description = await fetchSmartRecruitersDescription(posting);
           break;
       }
 

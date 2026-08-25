@@ -1,4 +1,4 @@
-.PHONY: poll poll-dry test test-live lint dev test-app lint-app infer-ats infer-ats-verify
+.PHONY: poll poll-dry test test-live lint dev test-app lint-app infer-ats infer-ats-verify app-dev app-build app-dev-web
 
 poll:
 	uv run python -m poller
@@ -30,3 +30,12 @@ infer-ats:
 
 infer-ats-verify:
 	uv run python -m poller.tools.infer_ats --verify
+
+app-dev:
+	cd app && npm run tauri:dev
+
+app-build:
+	cd app && npm run tauri:build
+
+app-dev-web:
+	cd app && npm run dev

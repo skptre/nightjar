@@ -155,7 +155,7 @@ export function CompaniesView(): React.ReactNode {
         newTiers[slug] = parseInt(value, 10) as 1 | 2 | 3;
       }
       updateProfile({ tiers: newTiers });
-      recomputeAll(db, { ...profile, tiers: newTiers });
+      void recomputeAll(db, { ...profile, tiers: newTiers });
       setRefreshKey((k) => k + 1);
     },
     [db, profile, updateProfile],

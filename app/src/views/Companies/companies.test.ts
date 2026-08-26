@@ -38,7 +38,7 @@ function makePostingData(overrides: Record<string, unknown> = {}): string {
   });
 }
 
-function insertPosting(
+async function insertPosting(
   db: NightjarDB,
   id: string,
   overrides: {
@@ -48,9 +48,9 @@ function insertPosting(
     eligibility?: string | null;
     first_seen_at?: string;
   } = {},
-): void {
+): Promise<void> {
   const firstSeen = overrides.first_seen_at ?? '2026-08-10T12:00:00Z';
-  db.run(
+  await db.run(
     `INSERT INTO postings_cache (id, data, first_seen_at, closed_at, category, term, eligibility, score, score_breakdown, synced_at)
      VALUES (?, ?, ?, NULL, ?, 'summer_2027', ?, ?, ?, ?)`,
     [
@@ -66,8 +66,8 @@ function insertPosting(
   );
 }
 
-function queryCompanyAggregates(db: NightjarDB): Array<{ company_slug: string; count: number }> {
-  const rows = db.query<{ data: string }>(
+async function queryCompanyAggregates(db: NightjarDB): Promise<Array<{ company_slug: string; count: number }>> {
+  const rows = await db.query<{ data: string }>(
     'SELECT data FROM postings_cache WHERE closed_at IS NULL',
   );
 
@@ -90,12 +90,12 @@ describe('Companies View Data Layer', () => {
   });
 
   describe('company aggregation', () => {
-    it('groups postings by company_slug', () => {
-      insertPosting(db, 'ramp-1', { data: { company: 'Ramp', company_slug: 'ramp' } });
-      insertPosting(db, 'ramp-2', { data: { company: 'Ramp', company_slug: 'ramp' } });
-      insertPosting(db, 'stripe-1', { data: { company: 'Stripe', company_slug: 'stripe' } });
+    it('groups postings by company_slug', async () => {
+      await insertPosting(db, 'ramp-1', { data: { company: 'Ramp', company_slug: 'ramp' } });
+      await insertPosting(db, 'ramp-2', { data: { company: 'Ramp', company_slug: 'ramp' } });
+      await insertPosting(db, 'stripe-1', { data: { company: 'Stripe', company_slug: 'stripe' } });
 
-      const aggregates = queryCompanyAggregates(db);
+      const aggregates = await queryCompanyAggregates(db);
       expect(aggregates).toHaveLength(2);
 
       const ramp = aggregates.find((a) => a.company_slug === 'ramp');
@@ -104,27 +104,27 @@ describe('Companies View Data Layer', () => {
       expect(stripe?.count).toBe(1);
     });
 
-    it('excludes closed postings from counts', () => {
-      insertPosting(db, 'ramp-1', { data: { company: 'Ramp', company_slug: 'ramp' } });
+    it('excludes closed postings from counts', async () => {
+      await insertPosting(db, 'ramp-1', { data: { company: 'Ramp', company_slug: 'ramp' } });
 
-      db.run(
+      await db.run(
         `INSERT INTO postings_cache (id, data, first_seen_at, closed_at, category, term, eligibility, score, score_breakdown, synced_at)
          VALUES (?, ?, ?, ?, 'swe', 'summer_2027', '{}', 50, '{}', ?)`,
         ['ramp-closed', makePostingData({ company_slug: 'ramp' }), '2026-08-01T00:00:00Z', '2026-08-12T00:00:00Z', '2026-08-13T00:00:00Z'],
       );
 
-      const aggregates = queryCompanyAggregates(db);
+      const aggregates = await queryCompanyAggregates(db);
       const ramp = aggregates.find((a) => a.company_slug === 'ramp');
       expect(ramp?.count).toBe(1);
     });
 
-    it('shows correct posting count per company', () => {
+    it('shows correct posting count per company', async () => {
       for (let i = 0; i < 5; i++) {
-        insertPosting(db, `big-${String(i)}`, { data: { company: 'BigCo', company_slug: 'big' } });
+        await insertPosting(db, `big-${String(i)}`, { data: { company: 'BigCo', company_slug: 'big' } });
       }
-      insertPosting(db, 'small-0', { data: { company: 'SmallCo', company_slug: 'small' } });
+      await insertPosting(db, 'small-0', { data: { company: 'SmallCo', company_slug: 'small' } });
 
-      const aggregates = queryCompanyAggregates(db);
+      const aggregates = await queryCompanyAggregates(db);
       const big = aggregates.find((a) => a.company_slug === 'big');
       const small = aggregates.find((a) => a.company_slug === 'small');
       expect(big?.count).toBe(5);
@@ -151,23 +151,23 @@ describe('Companies View Data Layer', () => {
       expect(profile.tiers['ramp']).toBeUndefined();
     });
 
-    it('tier change triggers recompute and updates scores', () => {
-      insertPosting(db, 'ramp-1', {
+    it('tier change triggers recompute and updates scores', async () => {
+      await insertPosting(db, 'ramp-1', {
         data: { company: 'Ramp', company_slug: 'ramp' },
         score: 60,
       });
 
-      const beforeScore = db.queryOne<{ score: number }>(
+      const beforeScore = await db.queryOne<{ score: number }>(
         'SELECT score FROM postings_cache WHERE id = ?',
         ['ramp-1'],
       );
       expect(beforeScore?.score).toBe(60);
 
       const profileTier1 = makeProfile({ tiers: { ramp: 1 } });
-      const recomputed = recomputeAll(db, profileTier1);
+      const recomputed = await recomputeAll(db, profileTier1);
       expect(recomputed).toBeGreaterThan(0);
 
-      const afterScore = db.queryOne<{ score: number | null }>(
+      const afterScore = await db.queryOne<{ score: number | null }>(
         'SELECT score FROM postings_cache WHERE id = ?',
         ['ramp-1'],
       );
@@ -175,21 +175,21 @@ describe('Companies View Data Layer', () => {
       expect(afterScore!.score).not.toBe(60);
     });
 
-    it('tier 1 produces higher score than tier 3', () => {
-      insertPosting(db, 'co-1', {
+    it('tier 1 produces higher score than tier 3', async () => {
+      await insertPosting(db, 'co-1', {
         data: { company: 'TestCo', company_slug: 'testco' },
       });
 
       const profileT1 = makeProfile({ tiers: { testco: 1 } });
-      recomputeAll(db, profileT1);
-      const scoreT1 = db.queryOne<{ score: number }>(
+      await recomputeAll(db, profileT1);
+      const scoreT1 = await db.queryOne<{ score: number }>(
         'SELECT score FROM postings_cache WHERE id = ?',
         ['co-1'],
       );
 
       const profileT3 = makeProfile({ tiers: { testco: 3 } });
-      recomputeAll(db, profileT3);
-      const scoreT3 = db.queryOne<{ score: number }>(
+      await recomputeAll(db, profileT3);
+      const scoreT3 = await db.queryOne<{ score: number }>(
         'SELECT score FROM postings_cache WHERE id = ?',
         ['co-1'],
       );
@@ -235,13 +235,13 @@ describe('Companies View Data Layer', () => {
   });
 
   describe('exclude toggle', () => {
-    it('adding to excluded_companies hides from feed query', () => {
-      insertPosting(db, 'ramp-1', { data: { company: 'Ramp', company_slug: 'ramp' } });
-      insertPosting(db, 'stripe-1', { data: { company: 'Stripe', company_slug: 'stripe' } });
+    it('adding to excluded_companies hides from feed query', async () => {
+      await insertPosting(db, 'ramp-1', { data: { company: 'Ramp', company_slug: 'ramp' } });
+      await insertPosting(db, 'stripe-1', { data: { company: 'Stripe', company_slug: 'stripe' } });
 
       const excluded = new Set(['ramp']);
 
-      const rows = db.query<{ id: string; data: string }>(
+      const rows = await db.query<{ id: string; data: string }>(
         `SELECT p.id, p.data FROM postings_cache p
          LEFT JOIN applications a ON p.id = a.posting_id
          WHERE (a.posting_id IS NULL OR a.status = 'new') AND p.closed_at IS NULL`,
@@ -256,11 +256,11 @@ describe('Companies View Data Layer', () => {
       expect(filtered[0]?.id).toBe('stripe-1');
     });
 
-    it('removing from excluded restores to feed', () => {
-      insertPosting(db, 'ramp-1', { data: { company: 'Ramp', company_slug: 'ramp' } });
+    it('removing from excluded restores to feed', async () => {
+      await insertPosting(db, 'ramp-1', { data: { company: 'Ramp', company_slug: 'ramp' } });
 
       const excluded = new Set(['ramp']);
-      const rows = db.query<{ id: string; data: string }>(
+      const rows = await db.query<{ id: string; data: string }>(
         'SELECT id, data FROM postings_cache WHERE closed_at IS NULL',
       );
 
@@ -278,22 +278,22 @@ describe('Companies View Data Layer', () => {
       expect(filteredAfter).toHaveLength(1);
     });
 
-    it('excluded company still appears in companies list but marked', () => {
-      insertPosting(db, 'ramp-1', { data: { company: 'Ramp', company_slug: 'ramp' } });
+    it('excluded company still appears in companies list but marked', async () => {
+      await insertPosting(db, 'ramp-1', { data: { company: 'Ramp', company_slug: 'ramp' } });
 
-      const allCompanies = queryCompanyAggregates(db);
+      const allCompanies = await queryCompanyAggregates(db);
       expect(allCompanies).toHaveLength(1);
       expect(allCompanies[0]?.company_slug).toBe('ramp');
     });
   });
 
   describe('search and sort', () => {
-    it('search filters companies by name', () => {
-      insertPosting(db, 'ramp-1', { data: { company: 'Ramp', company_slug: 'ramp' } });
-      insertPosting(db, 'stripe-1', { data: { company: 'Stripe', company_slug: 'stripe' } });
-      insertPosting(db, 'plaid-1', { data: { company: 'Plaid', company_slug: 'plaid' } });
+    it('search filters companies by name', async () => {
+      await insertPosting(db, 'ramp-1', { data: { company: 'Ramp', company_slug: 'ramp' } });
+      await insertPosting(db, 'stripe-1', { data: { company: 'Stripe', company_slug: 'stripe' } });
+      await insertPosting(db, 'plaid-1', { data: { company: 'Plaid', company_slug: 'plaid' } });
 
-      const all = queryCompanyAggregates(db);
+      const all = await queryCompanyAggregates(db);
       expect(all).toHaveLength(3);
 
       const search = 'str';
@@ -304,16 +304,16 @@ describe('Companies View Data Layer', () => {
       expect(filtered[0]?.company_slug).toBe('stripe');
     });
 
-    it('sort by count descending', () => {
+    it('sort by count descending', async () => {
       for (let i = 0; i < 5; i++) {
-        insertPosting(db, `big-${String(i)}`, { data: { company: 'BigCo', company_slug: 'big' } });
+        await insertPosting(db, `big-${String(i)}`, { data: { company: 'BigCo', company_slug: 'big' } });
       }
-      insertPosting(db, 'small-0', { data: { company: 'SmallCo', company_slug: 'small' } });
+      await insertPosting(db, 'small-0', { data: { company: 'SmallCo', company_slug: 'small' } });
       for (let i = 0; i < 3; i++) {
-        insertPosting(db, `mid-${String(i)}`, { data: { company: 'MidCo', company_slug: 'mid' } });
+        await insertPosting(db, `mid-${String(i)}`, { data: { company: 'MidCo', company_slug: 'mid' } });
       }
 
-      const aggregates = queryCompanyAggregates(db);
+      const aggregates = await queryCompanyAggregates(db);
       aggregates.sort((a, b) => b.count - a.count);
 
       expect(aggregates[0]?.company_slug).toBe('big');

@@ -510,18 +510,18 @@ describe('source_metadata lifecycle — DB integration', () => {
     db = await NightjarDB.createInMemory();
   });
 
-  afterEach(() => {
-    db.close();
+  afterEach(async () => {
+    await db.close();
   });
 
-  it('metadata gives preliminary verdict, description overrides', () => {
+  it('metadata gives preliminary verdict, description overrides', async () => {
     const posting = makePosting({
       id: 'lifecycle1',
       title: 'SWE Intern',
       source_metadata: { sponsorship: "Doesn't Offer Sponsorship" },
     });
 
-    db.run(
+    await db.run(
       `INSERT INTO postings_cache (id, data, first_seen_at, synced_at)
        VALUES (?, ?, ?, ?)`,
       ['lifecycle1', JSON.stringify(posting), posting.first_seen_at, new Date().toISOString()],
@@ -529,31 +529,31 @@ describe('source_metadata lifecycle — DB integration', () => {
 
     const now = new Date(posting.first_seen_at);
 
-    const before = recomputePosting(db, 'lifecycle1', h1bProfile, now);
+    const before = await recomputePosting(db, 'lifecycle1', h1bProfile, now);
     expect(before).not.toBeNull();
     expect(before!.classification.eligibility.verdict).toBe('ineligible');
     expect(before!.score.score).toBeLessThanOrEqual(5);
 
-    db.run(
+    await db.run(
       'UPDATE postings_cache SET description = ? WHERE id = ?',
       ['We sponsor work visas for qualified candidates. Join our team!', 'lifecycle1'],
     );
 
-    const after = recomputePosting(db, 'lifecycle1', h1bProfile, now);
+    const after = await recomputePosting(db, 'lifecycle1', h1bProfile, now);
     expect(after).not.toBeNull();
     expect(after!.classification.eligibility.verdict).toBe('eligible');
     expect(after!.score.score).toBeGreaterThan(5);
     expect(after!.score.breakdown.eligibility).toBe(20);
   });
 
-  it('F-1 ignores no_sponsorship metadata, then description with hard block → ineligible', () => {
+  it('F-1 ignores no_sponsorship metadata, then description with hard block → ineligible', async () => {
     const posting = makePosting({
       id: 'lifecycle2',
       title: 'SWE Intern',
       source_metadata: { sponsorship: "Doesn't Offer Sponsorship" },
     });
 
-    db.run(
+    await db.run(
       `INSERT INTO postings_cache (id, data, first_seen_at, synced_at)
        VALUES (?, ?, ?, ?)`,
       ['lifecycle2', JSON.stringify(posting), posting.first_seen_at, new Date().toISOString()],
@@ -561,35 +561,35 @@ describe('source_metadata lifecycle — DB integration', () => {
 
     const now = new Date(posting.first_seen_at);
 
-    const before = recomputePosting(db, 'lifecycle2', f1Profile, now);
+    const before = await recomputePosting(db, 'lifecycle2', f1Profile, now);
     expect(before!.classification.eligibility.verdict).toBe('unclear');
     expect(before!.score.score).toBeGreaterThan(5);
 
-    db.run(
+    await db.run(
       'UPDATE postings_cache SET description = ? WHERE id = ?',
       ['Must be a U.S. citizen for this government contract.', 'lifecycle2'],
     );
 
-    const after = recomputePosting(db, 'lifecycle2', f1Profile, now);
+    const after = await recomputePosting(db, 'lifecycle2', f1Profile, now);
     expect(after!.classification.eligibility.verdict).toBe('ineligible');
     expect(after!.score.score).toBeLessThanOrEqual(5);
   });
 
-  it('category metadata used when title/description give no match', () => {
+  it('category metadata used when title/description give no match', async () => {
     const posting = makePosting({
       id: 'cat-meta1',
       title: 'Coordinator',
       source_metadata: { category: 'AI/ML' },
     });
 
-    db.run(
+    await db.run(
       `INSERT INTO postings_cache (id, data, first_seen_at, synced_at)
        VALUES (?, ?, ?, ?)`,
       ['cat-meta1', JSON.stringify(posting), posting.first_seen_at, new Date().toISOString()],
     );
 
     const now = new Date(posting.first_seen_at);
-    const result = recomputePosting(db, 'cat-meta1', f1Profile, now);
+    const result = await recomputePosting(db, 'cat-meta1', f1Profile, now);
     expect(result!.classification.category.category).toBe('ml');
   });
 });

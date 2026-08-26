@@ -10,7 +10,7 @@ import {
   prefetchDescriptions,
 } from './description-fetch';
 
-function insertPosting(
+async function insertPosting(
   db: NightjarDB,
   id: string,
   overrides: Partial<{
@@ -22,7 +22,7 @@ function insertPosting(
     description: string | null;
     score: number | null;
   }> = {},
-): void {
+): Promise<void> {
   const data = JSON.stringify({
     id,
     url: overrides.url ?? 'https://boards.greenhouse.io/testco/jobs/111',
@@ -40,7 +40,7 @@ function insertPosting(
     closed_at: null,
   });
 
-  db.run(
+  await db.run(
     `INSERT INTO postings_cache (id, data, first_seen_at, synced_at, description, score)
      VALUES (?, ?, ?, ?, ?, ?)`,
     [
@@ -373,13 +373,13 @@ describe('prefetchDescriptions', () => {
     db = await NightjarDB.createInMemory();
   });
 
-  afterEach(() => {
-    db.close();
+  afterEach(async () => {
+    await db.close();
     vi.restoreAllMocks();
   });
 
   it('skips postings with existing descriptions', async () => {
-    insertPosting(db, 'cached', {
+    await insertPosting(db, 'cached', {
       description: 'Already fetched',
       source: 'greenhouse',
       url: 'https://boards.greenhouse.io/test/jobs/1',
@@ -399,7 +399,7 @@ describe('prefetchDescriptions', () => {
   });
 
   it('fetches and stores descriptions for postings without them', async () => {
-    insertPosting(db, 'p1', {
+    await insertPosting(db, 'p1', {
       source: 'lever',
       url: 'https://jobs.lever.co/testco/abc',
       source_job_id: 'abc',
@@ -417,7 +417,7 @@ describe('prefetchDescriptions', () => {
     expect(results).toHaveLength(1);
     expect(results[0]!.description).toBe('Fetched description text');
 
-    const row = db.queryOne<{ description: string | null }>(
+    const row = await db.queryOne<{ description: string | null }>(
       'SELECT description FROM postings_cache WHERE id = ?',
       ['p1'],
     );
@@ -425,7 +425,7 @@ describe('prefetchDescriptions', () => {
   });
 
   it('skips closed postings', async () => {
-    db.run(
+    await db.run(
       `INSERT INTO postings_cache (id, data, first_seen_at, closed_at, synced_at)
        VALUES (?, ?, ?, ?, ?)`,
       [
@@ -456,7 +456,7 @@ describe('prefetchDescriptions', () => {
 
   it('respects limit parameter', async () => {
     for (let i = 0; i < 5; i++) {
-      insertPosting(db, `p${String(i)}`, {
+      await insertPosting(db, `p${String(i)}`, {
         source: 'lever',
         url: `https://jobs.lever.co/co${String(i)}/j${String(i)}`,
         source_job_id: `j${String(i)}`,
@@ -476,11 +476,11 @@ describe('prefetchDescriptions', () => {
   });
 
   it('prioritizes higher-scored postings', async () => {
-    insertPosting(db, 'low', {
+    await insertPosting(db, 'low', {
       source: 'lever', url: 'https://jobs.lever.co/low/j1',
       source_job_id: 'j1', company_slug: 'low', score: 20,
     });
-    insertPosting(db, 'high', {
+    await insertPosting(db, 'high', {
       source: 'lever', url: 'https://jobs.lever.co/high/j2',
       source_job_id: 'j2', company_slug: 'high', score: 90,
     });
@@ -501,7 +501,7 @@ describe('prefetchDescriptions', () => {
   });
 
   it('does not crash on malformed posting data', async () => {
-    db.run(
+    await db.run(
       'INSERT INTO postings_cache (id, data, first_seen_at, synced_at) VALUES (?, ?, ?, ?)',
       ['bad', 'not-json', '2026-08-01T00:00:00Z', '2026-08-12T00:00:00Z'],
     );

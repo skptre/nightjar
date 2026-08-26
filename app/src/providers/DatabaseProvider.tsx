@@ -1,8 +1,8 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
-import { NightjarDB } from '@/db/database';
+import { createDatabase, type Database } from '@/db/database';
 
 interface DatabaseContextValue {
-  db: NightjarDB;
+  db: Database;
 }
 
 const DatabaseContext = createContext<DatabaseContextValue | null>(null);
@@ -14,12 +14,12 @@ export function useDatabase(): DatabaseContextValue {
 }
 
 export function DatabaseProvider({ children }: { children: ReactNode }): ReactNode {
-  const [db, setDb] = useState<NightjarDB | null>(null);
+  const [db, setDb] = useState<Database | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
-    NightjarDB.create()
+    createDatabase()
       .then((instance) => {
         if (!cancelled) setDb(instance);
       })

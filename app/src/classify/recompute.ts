@@ -1,4 +1,4 @@
-import type { NightjarDB } from '@/db/database';
+import type { Database } from '@/db/database';
 import type { Profile } from '@/profile/types';
 import type { FeedPosting } from '@/sync/feed-sync';
 import type { ClassificationResult, CategoryValue, EligibilityVerdict } from './types';
@@ -18,12 +18,12 @@ function parsePosting(data: string): FeedPosting | null {
   }
 }
 
-function storeResult(
-  db: NightjarDB,
+async function storeResult(
+  db: Database,
   postingId: string,
   result: RecomputeResult,
-): void {
-  db.run(
+): Promise<void> {
+  await db.run(
     `UPDATE postings_cache
      SET category = ?, term = ?, eligibility = ?, score = ?, score_breakdown = ?
      WHERE id = ?`,
@@ -38,13 +38,13 @@ function storeResult(
   );
 }
 
-export function recomputePosting(
-  db: NightjarDB,
+export async function recomputePosting(
+  db: Database,
   postingId: string,
   profile: Profile,
   now?: Date,
-): RecomputeResult | null {
-  const row = db.queryOne<{ data: string; description: string | null; first_seen_at: string | null }>(
+): Promise<RecomputeResult | null> {
+  const row = await db.queryOne<{ data: string; description: string | null; first_seen_at: string | null }>(
     'SELECT data, description, first_seen_at FROM postings_cache WHERE id = ?',
     [postingId],
   );
@@ -70,22 +70,22 @@ export function recomputePosting(
   );
 
   const result: RecomputeResult = { classification, score };
-  storeResult(db, postingId, result);
+  await storeResult(db, postingId, result);
 
   return result;
 }
 
-export function recomputeNewPostings(
-  db: NightjarDB,
+export async function recomputeNewPostings(
+  db: Database,
   postingIds: string[],
   profile: Profile,
   now?: Date,
-): Map<string, RecomputeResult> {
+): Promise<Map<string, RecomputeResult>> {
   const results = new Map<string, RecomputeResult>();
 
-  db.transaction(() => {
+  await db.transaction(async () => {
     for (const id of postingIds) {
-      const result = recomputePostingInTransaction(db, id, profile, now);
+      const result = await recomputePostingInTransaction(db, id, profile, now);
       if (result) {
         results.set(id, result);
       }
@@ -95,26 +95,26 @@ export function recomputeNewPostings(
   return results;
 }
 
-export function recomputeAll(
-  db: NightjarDB,
+export async function recomputeAll(
+  db: Database,
   profile: Profile,
   now?: Date,
-): number {
-  const rows = db.query<{ id: string }>(
+): Promise<number> {
+  const rows = await db.query<{ id: string }>(
     'SELECT id FROM postings_cache WHERE closed_at IS NULL',
   );
 
-  const results = recomputeNewPostings(db, rows.map((r) => r.id), profile, now);
+  const results = await recomputeNewPostings(db, rows.map((r) => r.id), profile, now);
   return results.size;
 }
 
-export function rescorePosting(
-  db: NightjarDB,
+export async function rescorePosting(
+  db: Database,
   postingId: string,
   profile: Profile,
   now?: Date,
-): ScoreResult | null {
-  const row = db.queryOne<{
+): Promise<ScoreResult | null> {
+  const row = await db.queryOne<{
     data: string;
     first_seen_at: string | null;
     category: string | null;
@@ -156,7 +156,7 @@ export function rescorePosting(
     now,
   );
 
-  db.run(
+  await db.run(
     'UPDATE postings_cache SET score = ?, score_breakdown = ? WHERE id = ?',
     [score.score, JSON.stringify(score.breakdown), postingId],
   );
@@ -164,13 +164,13 @@ export function rescorePosting(
   return score;
 }
 
-function recomputePostingInTransaction(
-  db: NightjarDB,
+async function recomputePostingInTransaction(
+  db: Database,
   postingId: string,
   profile: Profile,
   now?: Date,
-): RecomputeResult | null {
-  const row = db.queryOne<{ data: string; description: string | null; first_seen_at: string | null }>(
+): Promise<RecomputeResult | null> {
+  const row = await db.queryOne<{ data: string; description: string | null; first_seen_at: string | null }>(
     'SELECT data, description, first_seen_at FROM postings_cache WHERE id = ?',
     [postingId],
   );
@@ -197,7 +197,7 @@ function recomputePostingInTransaction(
 
   const result: RecomputeResult = { classification, score };
 
-  db.run(
+  await db.run(
     `UPDATE postings_cache
      SET category = ?, term = ?, eligibility = ?, score = ?, score_breakdown = ?
      WHERE id = ?`,

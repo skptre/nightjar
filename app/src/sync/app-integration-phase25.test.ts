@@ -7,7 +7,7 @@ import {
   prefetchDescriptions,
 } from './description-fetch';
 
-function insertPosting(
+async function insertPosting(
   db: NightjarDB,
   id: string,
   overrides: Partial<{
@@ -19,7 +19,7 @@ function insertPosting(
     description: string | null;
     score: number | null;
   }> = {},
-): void {
+): Promise<void> {
   const data = JSON.stringify({
     id,
     url: overrides.url ?? 'https://boards.greenhouse.io/testco/jobs/111',
@@ -37,7 +37,7 @@ function insertPosting(
     closed_at: null,
   });
 
-  db.run(
+  await db.run(
     `INSERT INTO postings_cache (id, data, first_seen_at, synced_at, description, score)
      VALUES (?, ?, ?, ?, ?, ?)`,
     [
@@ -354,13 +354,13 @@ describe('prefetchDescriptions — new sources', () => {
     db = await NightjarDB.createInMemory();
   });
 
-  afterEach(() => {
-    db.close();
+  afterEach(async () => {
+    await db.close();
     vi.restoreAllMocks();
   });
 
   it('fetches workday descriptions through prefetch pipeline', async () => {
-    insertPosting(db, 'wd-prefetch', {
+    await insertPosting(db, 'wd-prefetch', {
       source: 'workday',
       url: 'https://intel.wd1.myworkdayjobs.com/en-US/IntelCareers/job/OR/Intern_JR111',
       source_job_id: 'JR111',
@@ -379,7 +379,7 @@ describe('prefetchDescriptions — new sources', () => {
     expect(results).toHaveLength(1);
     expect(results[0]!.description).toBe('Intel internship');
 
-    const row = db.queryOne<{ description: string | null }>(
+    const row = await db.queryOne<{ description: string | null }>(
       'SELECT description FROM postings_cache WHERE id = ?',
       ['wd-prefetch'],
     );
@@ -387,7 +387,7 @@ describe('prefetchDescriptions — new sources', () => {
   });
 
   it('does not attempt fetch for simplify-sourced postings', async () => {
-    insertPosting(db, 'sim-prefetch', {
+    await insertPosting(db, 'sim-prefetch', {
       source: 'simplify',
       url: 'https://careers.meta.com/jobs/abc',
       source_job_id: 'abc',

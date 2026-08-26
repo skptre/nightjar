@@ -1,11 +1,13 @@
 import initSqlJs, { type Database as SqlJsDatabase } from 'sql.js';
 import { loadDatabase, saveDatabase } from './indexeddb';
 import { runMigrations } from './migrations';
+import { isTauri } from '@/lib/platform';
 import schemaSQL from './schema.sql?raw';
+import type { Database, SqlValue } from './types';
 
-export type SqlValue = string | number | Uint8Array | null;
+export type { Database, SqlValue } from './types';
 
-export class NightjarDB {
+export class NightjarDB implements Database {
   private db: SqlJsDatabase;
   private readonly shouldPersist: boolean;
   private inTransaction = false;
@@ -27,7 +29,7 @@ export class NightjarDB {
       instance.initSchema();
     }
 
-    runMigrations(instance);
+    await runMigrations(instance);
     return instance;
   }
 
@@ -43,7 +45,7 @@ export class NightjarDB {
     const SQL = await initSqlJs();
     const sqlDb = new SQL.Database(data);
     const instance = new NightjarDB(sqlDb, false);
-    runMigrations(instance);
+    await runMigrations(instance);
     return instance;
   }
 
@@ -52,25 +54,25 @@ export class NightjarDB {
     void this.persist();
   }
 
-  run(sql: string, params?: SqlValue[]): void {
-    this.db.run(sql, params);
+  async run(sql: string, params?: SqlValue[]): Promise<void> {
+    this.db.run(sql, params as Parameters<SqlJsDatabase['run']>[1]);
     if (!this.inTransaction) {
       void this.persist();
     }
   }
 
-  exec(sql: string): void {
+  async exec(sql: string): Promise<void> {
     this.db.exec(sql);
     if (!this.inTransaction) {
       void this.persist();
     }
   }
 
-  query<T>(sql: string, params?: SqlValue[]): T[] {
+  async query<T>(sql: string, params?: SqlValue[]): Promise<T[]> {
     const stmt = this.db.prepare(sql);
     try {
       if (params) {
-        stmt.bind(params);
+        stmt.bind(params as Parameters<typeof stmt.bind>[0]);
       }
       const results: T[] = [];
       while (stmt.step()) {
@@ -82,16 +84,16 @@ export class NightjarDB {
     }
   }
 
-  queryOne<T>(sql: string, params?: SqlValue[]): T | undefined {
-    const rows = this.query<T>(sql, params);
+  async queryOne<T>(sql: string, params?: SqlValue[]): Promise<T | undefined> {
+    const rows = await this.query<T>(sql, params);
     return rows[0];
   }
 
-  transaction(fn: () => void): void {
+  async transaction(fn: () => Promise<void>): Promise<void> {
     this.inTransaction = true;
     this.db.run('BEGIN');
     try {
-      fn();
+      await fn();
       this.db.run('COMMIT');
     } catch (e) {
       this.db.run('ROLLBACK');
@@ -106,7 +108,7 @@ export class NightjarDB {
     return new Uint8Array(this.db.export());
   }
 
-  close(): void {
+  async close(): Promise<void> {
     this.db.close();
   }
 
@@ -115,4 +117,15 @@ export class NightjarDB {
     const data = this.db.export();
     await saveDatabase(new Uint8Array(data));
   }
+}
+
+export async function createDatabase(): Promise<Database> {
+  if (isTauri()) {
+    const { TauriDatabase } = await import('./tauri-database');
+    const db = await TauriDatabase.create();
+    const { migrateFromBrowser } = await import('./migrate-from-browser');
+    await migrateFromBrowser(db);
+    return db;
+  }
+  return NightjarDB.create();
 }

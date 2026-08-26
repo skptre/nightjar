@@ -405,12 +405,12 @@ describe('recompute — DB integration', () => {
     db = await NightjarDB.createInMemory();
   });
 
-  afterEach(() => {
-    db.close();
+  afterEach(async () => {
+    await db.close();
   });
 
-  function insertPosting(posting: FeedPosting, description: string | null = null): void {
-    db.run(
+  async function insertPosting(posting: FeedPosting, description: string | null = null): Promise<void> {
+    await db.run(
       `INSERT INTO postings_cache (id, data, description, first_seen_at, closed_at, synced_at)
        VALUES (?, ?, ?, ?, ?, ?)`,
       [
@@ -425,20 +425,20 @@ describe('recompute — DB integration', () => {
   }
 
   describe('recomputePosting', () => {
-    it('classifies and scores a single posting', () => {
+    it('classifies and scores a single posting', async () => {
       const posting = makePosting({ id: 'abc123' });
-      insertPosting(posting);
+      await insertPosting(posting);
 
       const profile = makeProfile({ tiers: { testco: 1 }, target_categories: ['swe'] });
       const now = new Date(posting.first_seen_at);
-      const result = recomputePosting(db, 'abc123', profile, now);
+      const result = await recomputePosting(db, 'abc123', profile, now);
 
       expect(result).not.toBeNull();
       expect(result!.classification.category.category).toBe('swe');
       expect(result!.score.score).toBeGreaterThan(0);
       expect(result!.score.breakdown.tier).toBe(30);
 
-      const row = db.queryOne<{ score: number; score_breakdown: string; category: string }>(
+      const row = await db.queryOne<{ score: number; score_breakdown: string; category: string }>(
         'SELECT score, score_breakdown, category FROM postings_cache WHERE id = ?',
         ['abc123'],
       );
@@ -449,29 +449,29 @@ describe('recompute — DB integration', () => {
       expect(breakdown['tier']).toBe(30);
     });
 
-    it('returns null for nonexistent posting', () => {
-      const result = recomputePosting(db, 'nonexistent', makeProfile());
+    it('returns null for nonexistent posting', async () => {
+      const result = await recomputePosting(db, 'nonexistent', makeProfile());
       expect(result).toBeNull();
     });
   });
 
   describe('recomputeNewPostings', () => {
-    it('batch classifies and scores multiple postings', () => {
+    it('batch classifies and scores multiple postings', async () => {
       const postings = [
         makePosting({ id: 'p1', company_slug: 'acme', title: 'Software Engineer Intern' }),
         makePosting({ id: 'p2', company_slug: 'bigco', title: 'ML Engineer Intern' }),
         makePosting({ id: 'p3', company_slug: 'smallco', title: 'Hardware Intern' }),
       ];
-      for (const p of postings) insertPosting(p);
+      for (const p of postings) await insertPosting(p);
 
       const profile = makeProfile({ tiers: { acme: 1, bigco: 2 }, target_categories: ['swe', 'ml'] });
       const now = new Date(postings[0]!.first_seen_at);
-      const results = recomputeNewPostings(db, ['p1', 'p2', 'p3'], profile, now);
+      const results = await recomputeNewPostings(db, ['p1', 'p2', 'p3'], profile, now);
 
       expect(results.size).toBe(3);
 
       for (const id of ['p1', 'p2', 'p3']) {
-        const row = db.queryOne<{ score: number; category: string }>(
+        const row = await db.queryOne<{ score: number; category: string }>(
           'SELECT score, category FROM postings_cache WHERE id = ?',
           [id],
         );
@@ -483,66 +483,66 @@ describe('recompute — DB integration', () => {
   });
 
   describe('recomputeAll', () => {
-    it('recomputes all non-closed postings', () => {
+    it('recomputes all non-closed postings', async () => {
       const open = makePosting({ id: 'open1', closed_at: null });
       const closed = makePosting({ id: 'closed1', closed_at: '2026-09-20T00:00:00Z' });
-      insertPosting(open);
-      insertPosting(closed);
+      await insertPosting(open);
+      await insertPosting(closed);
 
       const profile = makeProfile();
-      const count = recomputeAll(db, profile);
+      const count = await recomputeAll(db, profile);
 
       expect(count).toBe(1);
 
-      const openRow = db.queryOne<{ score: number }>('SELECT score FROM postings_cache WHERE id = ?', ['open1']);
+      const openRow = await db.queryOne<{ score: number }>('SELECT score FROM postings_cache WHERE id = ?', ['open1']);
       expect(openRow!.score).toBeGreaterThan(0);
 
-      const closedRow = db.queryOne<{ score: number | null }>('SELECT score FROM postings_cache WHERE id = ?', ['closed1']);
+      const closedRow = await db.queryOne<{ score: number | null }>('SELECT score FROM postings_cache WHERE id = ?', ['closed1']);
       expect(closedRow!.score).toBeNull();
     });
   });
 
   describe('description triggers rescore', () => {
-    it('scoring changes when description reveals ineligibility', () => {
+    it('scoring changes when description reveals ineligibility', async () => {
       const posting = makePosting({ id: 'desc1' });
-      insertPosting(posting);
+      await insertPosting(posting);
 
       const profile = makeProfile({ tiers: { testco: 1 }, target_categories: ['swe'] });
       const now = new Date(posting.first_seen_at);
 
-      const before = recomputePosting(db, 'desc1', profile, now);
+      const before = await recomputePosting(db, 'desc1', profile, now);
       expect(before).not.toBeNull();
       expect(before!.classification.eligibility.verdict).toBe('unclear');
       expect(before!.score.score).toBeGreaterThan(5);
 
-      db.run(
+      await db.run(
         'UPDATE postings_cache SET description = ? WHERE id = ?',
         ['This position requires US citizenship. We are unable to sponsor visas for this role.', 'desc1'],
       );
 
-      const after = recomputePosting(db, 'desc1', profile, now);
+      const after = await recomputePosting(db, 'desc1', profile, now);
       expect(after).not.toBeNull();
       expect(after!.classification.eligibility.verdict).toBe('ineligible');
       expect(after!.score.score).toBeLessThanOrEqual(5);
     });
 
-    it('scoring improves when description shows positive sponsorship', () => {
+    it('scoring improves when description shows positive sponsorship', async () => {
       const posting = makePosting({ id: 'desc2' });
-      insertPosting(posting);
+      await insertPosting(posting);
 
       const profile = makeProfile({ target_categories: ['swe'] });
       const now = new Date(posting.first_seen_at);
 
-      const before = recomputePosting(db, 'desc2', profile, now);
+      const before = await recomputePosting(db, 'desc2', profile, now);
       expect(before!.classification.eligibility.verdict).toBe('unclear');
       expect(before!.score.breakdown.eligibility).toBe(15);
 
-      db.run(
+      await db.run(
         'UPDATE postings_cache SET description = ? WHERE id = ?',
         ['We sponsor work visas for qualified candidates. Join our team!', 'desc2'],
       );
 
-      const after = recomputePosting(db, 'desc2', profile, now);
+      const after = await recomputePosting(db, 'desc2', profile, now);
       expect(after!.classification.eligibility.verdict).toBe('eligible');
       expect(after!.score.breakdown.eligibility).toBe(20);
       expect(after!.score.score).toBeGreaterThan(before!.score.score);
@@ -550,16 +550,16 @@ describe('recompute — DB integration', () => {
   });
 
   describe('profile change rescores', () => {
-    it('tier change from untiered to tier 1 increases score', () => {
+    it('tier change from untiered to tier 1 increases score', async () => {
       const posting = makePosting({ id: 'tier-test' });
-      insertPosting(posting);
+      await insertPosting(posting);
 
       const now = new Date(posting.first_seen_at);
       const untierProfile = makeProfile({ tiers: {} });
-      const before = recomputePosting(db, 'tier-test', untierProfile, now);
+      const before = await recomputePosting(db, 'tier-test', untierProfile, now);
 
       const tieredProfile = makeProfile({ tiers: { testco: 1 } });
-      const after = recomputePosting(db, 'tier-test', tieredProfile, now);
+      const after = await recomputePosting(db, 'tier-test', tieredProfile, now);
 
       expect(after!.score.score).toBeGreaterThan(before!.score.score);
       expect(after!.score.breakdown.tier).toBe(30);

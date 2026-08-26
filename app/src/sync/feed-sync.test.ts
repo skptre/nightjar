@@ -80,8 +80,8 @@ describe('feed-sync', () => {
     localStorage.clear();
   });
 
-  afterEach(() => {
-    db.close();
+  afterEach(async () => {
+    await db.close();
     vi.restoreAllMocks();
   });
 
@@ -142,19 +142,19 @@ describe('feed-sync', () => {
   });
 
   describe('upsertPostings', () => {
-    it('inserts new postings and flags them', () => {
+    it('inserts new postings and flags them', async () => {
       const feed = makeFeed({
         p1: makePosting({ id: 'p1', title: 'Role A' }),
         p2: makePosting({ id: 'p2', title: 'Role B' }),
       });
 
-      const result = upsertPostings(db, feed);
+      const result = await upsertPostings(db, feed);
 
       expect(result.newPostingIds).toEqual(['p1', 'p2']);
       expect(result.updatedCount).toBe(0);
       expect(result.totalCount).toBe(2);
 
-      const rows = db.query<{ id: string; data: string }>(
+      const rows = await db.query<{ id: string; data: string }>(
         'SELECT id, data FROM postings_cache ORDER BY id',
       );
       expect(rows).toHaveLength(2);
@@ -164,9 +164,9 @@ describe('feed-sync', () => {
       expect(parsed.title).toBe('Role A');
     });
 
-    it('updates existing postings without flagging as new', () => {
+    it('updates existing postings without flagging as new', async () => {
       const now = '2026-08-12T00:00:00Z';
-      db.run(
+      await db.run(
         'INSERT INTO postings_cache (id, data, first_seen_at, synced_at) VALUES (?, ?, ?, ?)',
         ['p1', '{"title":"Old Title"}', '2026-08-01T00:00:00Z', now],
       );
@@ -175,12 +175,12 @@ describe('feed-sync', () => {
         p1: makePosting({ id: 'p1', title: 'New Title' }),
       });
 
-      const result = upsertPostings(db, feed);
+      const result = await upsertPostings(db, feed);
 
       expect(result.newPostingIds).toEqual([]);
       expect(result.updatedCount).toBe(1);
 
-      const row = db.queryOne<{ data: string }>(
+      const row = await db.queryOne<{ data: string }>(
         'SELECT data FROM postings_cache WHERE id = ?',
         ['p1'],
       );
@@ -188,9 +188,9 @@ describe('feed-sync', () => {
       expect(parsed.title).toBe('New Title');
     });
 
-    it('preserves computed fields on update', () => {
+    it('preserves computed fields on update', async () => {
       const now = '2026-08-12T00:00:00Z';
-      db.run(
+      await db.run(
         `INSERT INTO postings_cache (id, data, first_seen_at, synced_at, category, term, eligibility, score, score_breakdown, description)
          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         ['p1', '{}', '2026-08-01T00:00:00Z', now, 'swe', 'summer_2027', '{"verdict":"eligible"}', 85.5, '{"tier":30}', 'Full description here'],
@@ -199,9 +199,9 @@ describe('feed-sync', () => {
       const feed = makeFeed({
         p1: makePosting({ id: 'p1' }),
       });
-      upsertPostings(db, feed);
+      await upsertPostings(db, feed);
 
-      const row = db.queryOne<{
+      const row = await db.queryOne<{
         category: string | null;
         term: string | null;
         eligibility: string | null;
@@ -221,14 +221,14 @@ describe('feed-sync', () => {
       expect(row!.description).toBe('Full description here');
     });
 
-    it('updates closed_at when feed has it set', () => {
+    it('updates closed_at when feed has it set', async () => {
       const now = '2026-08-12T00:00:00Z';
-      db.run(
+      await db.run(
         'INSERT INTO postings_cache (id, data, first_seen_at, synced_at) VALUES (?, ?, ?, ?)',
         ['p1', '{}', '2026-08-01T00:00:00Z', now],
       );
 
-      const row1 = db.queryOne<{ closed_at: string | null }>(
+      const row1 = await db.queryOne<{ closed_at: string | null }>(
         'SELECT closed_at FROM postings_cache WHERE id = ?',
         ['p1'],
       );
@@ -237,19 +237,19 @@ describe('feed-sync', () => {
       const feed = makeFeed({
         p1: makePosting({ id: 'p1', closed_at: '2026-08-11T00:00:00Z' }),
       });
-      const result = upsertPostings(db, feed);
+      const result = await upsertPostings(db, feed);
 
       expect(result.closedCount).toBe(1);
 
-      const row2 = db.queryOne<{ closed_at: string | null }>(
+      const row2 = await db.queryOne<{ closed_at: string | null }>(
         'SELECT closed_at FROM postings_cache WHERE id = ?',
         ['p1'],
       );
       expect(row2!.closed_at).toBe('2026-08-11T00:00:00Z');
     });
 
-    it('does not overwrite existing closed_at with null', () => {
-      db.run(
+    it('does not overwrite existing closed_at with null', async () => {
+      await db.run(
         'INSERT INTO postings_cache (id, data, first_seen_at, closed_at, synced_at) VALUES (?, ?, ?, ?, ?)',
         ['p1', '{}', '2026-08-01T00:00:00Z', '2026-08-10T00:00:00Z', '2026-08-12T00:00:00Z'],
       );
@@ -257,17 +257,17 @@ describe('feed-sync', () => {
       const feed = makeFeed({
         p1: makePosting({ id: 'p1', closed_at: null }),
       });
-      upsertPostings(db, feed);
+      await upsertPostings(db, feed);
 
-      const row = db.queryOne<{ closed_at: string | null }>(
+      const row = await db.queryOne<{ closed_at: string | null }>(
         'SELECT closed_at FROM postings_cache WHERE id = ?',
         ['p1'],
       );
       expect(row!.closed_at).toBe('2026-08-10T00:00:00Z');
     });
 
-    it('sets closed_at on postings missing from feed', () => {
-      db.run(
+    it('sets closed_at on postings missing from feed', async () => {
+      await db.run(
         'INSERT INTO postings_cache (id, data, first_seen_at, synced_at) VALUES (?, ?, ?, ?)',
         ['orphan1', '{}', '2026-08-01T00:00:00Z', '2026-08-12T00:00:00Z'],
       );
@@ -275,18 +275,18 @@ describe('feed-sync', () => {
       const feed = makeFeed({
         p1: makePosting({ id: 'p1' }),
       });
-      upsertPostings(db, feed);
+      await upsertPostings(db, feed);
 
-      const row = db.queryOne<{ closed_at: string | null }>(
+      const row = await db.queryOne<{ closed_at: string | null }>(
         'SELECT closed_at FROM postings_cache WHERE id = ?',
         ['orphan1'],
       );
       expect(row!.closed_at).not.toBeNull();
     });
 
-    it('does not double-set closed_at on already-closed orphans', () => {
+    it('does not double-set closed_at on already-closed orphans', async () => {
       const originalClosed = '2026-08-05T00:00:00Z';
-      db.run(
+      await db.run(
         'INSERT INTO postings_cache (id, data, first_seen_at, closed_at, synced_at) VALUES (?, ?, ?, ?, ?)',
         ['orphan1', '{}', '2026-08-01T00:00:00Z', originalClosed, '2026-08-12T00:00:00Z'],
       );
@@ -294,17 +294,17 @@ describe('feed-sync', () => {
       const feed = makeFeed({
         p1: makePosting({ id: 'p1' }),
       });
-      upsertPostings(db, feed);
+      await upsertPostings(db, feed);
 
-      const row = db.queryOne<{ closed_at: string | null }>(
+      const row = await db.queryOne<{ closed_at: string | null }>(
         'SELECT closed_at FROM postings_cache WHERE id = ?',
         ['orphan1'],
       );
       expect(row!.closed_at).toBe(originalClosed);
     });
 
-    it('preserves earliest first_seen_at on update', () => {
-      db.run(
+    it('preserves earliest first_seen_at on update', async () => {
+      await db.run(
         'INSERT INTO postings_cache (id, data, first_seen_at, synced_at) VALUES (?, ?, ?, ?)',
         ['p1', '{}', '2026-07-01T00:00:00Z', '2026-08-12T00:00:00Z'],
       );
@@ -312,17 +312,17 @@ describe('feed-sync', () => {
       const feed = makeFeed({
         p1: makePosting({ id: 'p1', first_seen_at: '2026-08-01T00:00:00Z' }),
       });
-      upsertPostings(db, feed);
+      await upsertPostings(db, feed);
 
-      const row = db.queryOne<{ first_seen_at: string | null }>(
+      const row = await db.queryOne<{ first_seen_at: string | null }>(
         'SELECT first_seen_at FROM postings_cache WHERE id = ?',
         ['p1'],
       );
       expect(row!.first_seen_at).toBe('2026-07-01T00:00:00Z');
     });
 
-    it('handles mixed new and existing postings', () => {
-      db.run(
+    it('handles mixed new and existing postings', async () => {
+      await db.run(
         'INSERT INTO postings_cache (id, data, first_seen_at, synced_at) VALUES (?, ?, ?, ?)',
         ['existing', '{}', '2026-08-01T00:00:00Z', '2026-08-12T00:00:00Z'],
       );
@@ -332,26 +332,26 @@ describe('feed-sync', () => {
         brand_new: makePosting({ id: 'brand_new', title: 'Brand New Role' }),
       });
 
-      const result = upsertPostings(db, feed);
+      const result = await upsertPostings(db, feed);
 
       expect(result.newPostingIds).toEqual(['brand_new']);
       expect(result.updatedCount).toBe(1);
       expect(result.totalCount).toBe(2);
     });
 
-    it('handles empty feed gracefully', () => {
-      db.run(
+    it('handles empty feed gracefully', async () => {
+      await db.run(
         'INSERT INTO postings_cache (id, data, first_seen_at, synced_at) VALUES (?, ?, ?, ?)',
         ['p1', '{}', '2026-08-01T00:00:00Z', '2026-08-12T00:00:00Z'],
       );
 
       const feed = makeFeed({});
-      const result = upsertPostings(db, feed);
+      const result = await upsertPostings(db, feed);
 
       expect(result.newPostingIds).toEqual([]);
       expect(result.totalCount).toBe(0);
 
-      const row = db.queryOne<{ closed_at: string | null }>(
+      const row = await db.queryOne<{ closed_at: string | null }>(
         'SELECT closed_at FROM postings_cache WHERE id = ?',
         ['p1'],
       );
@@ -420,7 +420,7 @@ describe('feed-sync', () => {
     });
 
     it('preserves existing SQLite data on network error', async () => {
-      db.run(
+      await db.run(
         'INSERT INTO postings_cache (id, data, first_seen_at, synced_at) VALUES (?, ?, ?, ?)',
         ['existing', '{"title":"Keep Me"}', '2026-08-01T00:00:00Z', '2026-08-12T00:00:00Z'],
       );
@@ -430,7 +430,7 @@ describe('feed-sync', () => {
       const result = await syncFeed(db, '/test');
       expect(result.skipped).toBe(true);
 
-      const row = db.queryOne<{ data: string }>(
+      const row = await db.queryOne<{ data: string }>(
         'SELECT data FROM postings_cache WHERE id = ?',
         ['existing'],
       );
@@ -438,7 +438,7 @@ describe('feed-sync', () => {
     });
 
     it('detects new postings correctly', async () => {
-      db.run(
+      await db.run(
         'INSERT INTO postings_cache (id, data, first_seen_at, synced_at) VALUES (?, ?, ?, ?)',
         ['old', '{}', '2026-08-01T00:00:00Z', '2026-08-12T00:00:00Z'],
       );
@@ -469,29 +469,29 @@ describe('notifications', () => {
     db = await NightjarDB.createInMemory();
   });
 
-  afterEach(() => {
-    db.close();
+  afterEach(async () => {
+    await db.close();
     vi.restoreAllMocks();
   });
 
   describe('getNewPostingSummaries', () => {
-    it('returns summaries for notifiable postings', () => {
+    it('returns summaries for notifiable postings', async () => {
       const now = '2026-08-12T00:00:00Z';
-      db.run(
+      await db.run(
         'INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)',
         ['p1', JSON.stringify({ title: 'SWE Intern', company: 'Ramp', location: 'NYC' }), now],
       );
 
-      const summaries = getNewPostingSummaries(db, ['p1']);
+      const summaries = await getNewPostingSummaries(db, ['p1']);
       expect(summaries).toHaveLength(1);
       expect(summaries[0]!.title).toBe('SWE Intern');
       expect(summaries[0]!.company).toBe('Ramp');
       expect(summaries[0]!.location).toBe('NYC');
     });
 
-    it('excludes ineligible postings', () => {
+    it('excludes ineligible postings', async () => {
       const now = '2026-08-12T00:00:00Z';
-      db.run(
+      await db.run(
         'INSERT INTO postings_cache (id, data, eligibility, synced_at) VALUES (?, ?, ?, ?)',
         [
           'p1',
@@ -501,24 +501,24 @@ describe('notifications', () => {
         ],
       );
 
-      const summaries = getNewPostingSummaries(db, ['p1']);
+      const summaries = await getNewPostingSummaries(db, ['p1']);
       expect(summaries).toHaveLength(0);
     });
 
-    it('includes postings with null eligibility (unclear)', () => {
+    it('includes postings with null eligibility (unclear)', async () => {
       const now = '2026-08-12T00:00:00Z';
-      db.run(
+      await db.run(
         'INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)',
         ['p1', JSON.stringify({ title: 'Role A', company: 'Co', location: '' }), now],
       );
 
-      const summaries = getNewPostingSummaries(db, ['p1']);
+      const summaries = await getNewPostingSummaries(db, ['p1']);
       expect(summaries).toHaveLength(1);
     });
 
-    it('includes postings with eligible verdict', () => {
+    it('includes postings with eligible verdict', async () => {
       const now = '2026-08-12T00:00:00Z';
-      db.run(
+      await db.run(
         'INSERT INTO postings_cache (id, data, eligibility, synced_at) VALUES (?, ?, ?, ?)',
         [
           'p1',
@@ -528,12 +528,12 @@ describe('notifications', () => {
         ],
       );
 
-      const summaries = getNewPostingSummaries(db, ['p1']);
+      const summaries = await getNewPostingSummaries(db, ['p1']);
       expect(summaries).toHaveLength(1);
     });
 
-    it('skips nonexistent posting IDs', () => {
-      const summaries = getNewPostingSummaries(db, ['nonexistent']);
+    it('skips nonexistent posting IDs', async () => {
+      const summaries = await getNewPostingSummaries(db, ['nonexistent']);
       expect(summaries).toHaveLength(0);
     });
   });
@@ -545,7 +545,7 @@ describe('notifications', () => {
       for (let i = 0; i < 5; i++) {
         const id = `p${String(i)}`;
         ids.push(id);
-        db.run(
+        await db.run(
           'INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)',
           [id, JSON.stringify({ title: `Role ${String(i)}`, company: 'Co', location: 'NYC' }), now],
         );
@@ -572,7 +572,7 @@ describe('notifications', () => {
       for (let i = 0; i < 20; i++) {
         const id = `p${String(i)}`;
         ids.push(id);
-        db.run(
+        await db.run(
           'INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)',
           [id, JSON.stringify({ title: `Role ${String(i)}`, company: 'Co', location: 'NYC' }), now],
         );
@@ -596,7 +596,7 @@ describe('notifications', () => {
 
     it('returns count but fires nothing when permission denied', async () => {
       const now = '2026-08-12T00:00:00Z';
-      db.run(
+      await db.run(
         'INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)',
         ['p1', JSON.stringify({ title: 'Role', company: 'Co', location: '' }), now],
       );
@@ -618,12 +618,12 @@ describe('notifications', () => {
 
     it('excludes ineligible from notification count', async () => {
       const now = '2026-08-12T00:00:00Z';
-      db.run(
+      await db.run(
         'INSERT INTO postings_cache (id, data, eligibility, synced_at) VALUES (?, ?, ?, ?)',
         ['p1', JSON.stringify({ title: 'R1', company: 'Co', location: '' }),
          JSON.stringify({ verdict: 'ineligible', reasons: ['x'] }), now],
       );
-      db.run(
+      await db.run(
         'INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)',
         ['p2', JSON.stringify({ title: 'R2', company: 'Co', location: '' }), now],
       );

@@ -21,7 +21,7 @@ function makePostingData(overrides: Record<string, unknown> = {}): string {
   });
 }
 
-function insertPosting(
+async function insertPosting(
   db: NightjarDB,
   id: string,
   overrides: {
@@ -31,9 +31,9 @@ function insertPosting(
     term?: string | null;
     eligibility?: string | null;
   } = {},
-): void {
+): Promise<void> {
   const dataOverrides = overrides.data ?? {};
-  db.run(
+  await db.run(
     `INSERT INTO postings_cache (id, data, first_seen_at, closed_at, category, term, eligibility, score, score_breakdown, synced_at)
      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     [
@@ -51,7 +51,7 @@ function insertPosting(
   );
 }
 
-function createApplication(
+async function createApplication(
   db: NightjarDB,
   postingId: string,
   status: string,
@@ -61,9 +61,9 @@ function createApplication(
     created_at?: string;
     updated_at?: string;
   } = {},
-): void {
+): Promise<void> {
   const now = '2026-08-13T14:00:00Z';
-  db.run(
+  await db.run(
     `INSERT INTO applications (posting_id, status, applied_at, notes, created_at, updated_at)
      VALUES (?, ?, ?, ?, ?, ?)`,
     [
@@ -85,8 +85,8 @@ interface PipelineQueryRow {
   app_updated_at: string;
 }
 
-function queryPipeline(db: NightjarDB): PipelineQueryRow[] {
-  return db.query<PipelineQueryRow>(
+async function queryPipeline(db: NightjarDB): Promise<PipelineQueryRow[]> {
+  return await db.query<PipelineQueryRow>(
     `SELECT p.id, a.status, a.applied_at, a.notes, a.updated_at as app_updated_at
      FROM postings_cache p
      INNER JOIN applications a ON p.id = a.posting_id
@@ -95,8 +95,8 @@ function queryPipeline(db: NightjarDB): PipelineQueryRow[] {
   );
 }
 
-function queryByStatus(db: NightjarDB, status: string): PipelineQueryRow[] {
-  return db.query<PipelineQueryRow>(
+async function queryByStatus(db: NightjarDB, status: string): Promise<PipelineQueryRow[]> {
+  return await db.query<PipelineQueryRow>(
     `SELECT p.id, a.status, a.applied_at, a.notes, a.updated_at as app_updated_at
      FROM postings_cache p
      INNER JOIN applications a ON p.id = a.posting_id
@@ -113,60 +113,60 @@ describe('Pipeline View Data Layer', () => {
     db = await NightjarDB.createInMemory();
   });
 
-  afterEach(() => {
-    db.close();
+  afterEach(async () => {
+    await db.close();
   });
 
   describe('status persistence', () => {
-    it('saved posting appears in pipeline query', () => {
-      insertPosting(db, 'p1');
-      createApplication(db, 'p1', 'saved');
+    it('saved posting appears in pipeline query', async () => {
+      await insertPosting(db, 'p1');
+      await createApplication(db, 'p1', 'saved');
 
-      const rows = queryPipeline(db);
+      const rows = await queryPipeline(db);
       expect(rows).toHaveLength(1);
       expect(rows[0]?.status).toBe('saved');
     });
 
-    it('applied posting persists with applied_at', () => {
-      insertPosting(db, 'p1');
+    it('applied posting persists with applied_at', async () => {
+      await insertPosting(db, 'p1');
       const appliedAt = '2026-08-13T15:00:00Z';
-      createApplication(db, 'p1', 'applied', { applied_at: appliedAt });
+      await createApplication(db, 'p1', 'applied', { applied_at: appliedAt });
 
-      const rows = queryPipeline(db);
+      const rows = await queryPipeline(db);
       expect(rows).toHaveLength(1);
       expect(rows[0]?.status).toBe('applied');
       expect(rows[0]?.applied_at).toBe(appliedAt);
     });
 
-    it('status persists after re-query (simulating refresh)', () => {
-      insertPosting(db, 'p1');
-      createApplication(db, 'p1', 'applied', { applied_at: '2026-08-13T15:00:00Z' });
+    it('status persists after re-query (simulating refresh)', async () => {
+      await insertPosting(db, 'p1');
+      await createApplication(db, 'p1', 'applied', { applied_at: '2026-08-13T15:00:00Z' });
 
-      const first = queryPipeline(db);
+      const first = await queryPipeline(db);
       expect(first[0]?.status).toBe('applied');
 
-      const second = queryPipeline(db);
+      const second = await queryPipeline(db);
       expect(second[0]?.status).toBe('applied');
     });
 
-    it('new status is excluded from pipeline', () => {
-      insertPosting(db, 'p1');
-      createApplication(db, 'p1', 'new');
+    it('new status is excluded from pipeline', async () => {
+      await insertPosting(db, 'p1');
+      await createApplication(db, 'p1', 'new');
 
-      const rows = queryPipeline(db);
+      const rows = await queryPipeline(db);
       expect(rows).toHaveLength(0);
     });
 
-    it('all valid statuses appear in pipeline', () => {
+    it('all valid statuses appear in pipeline', async () => {
       const statuses = ['saved', 'applied', 'oa', 'phone', 'onsite', 'offer', 'rejected', 'ghosted', 'skipped'];
       for (const status of statuses) {
-        insertPosting(db, status);
-        createApplication(db, status, status, {
+        await insertPosting(db, status);
+        await createApplication(db, status, status, {
           applied_at: status === 'applied' ? '2026-08-13T15:00:00Z' : null,
         });
       }
 
-      const rows = queryPipeline(db);
+      const rows = await queryPipeline(db);
       expect(rows).toHaveLength(statuses.length);
 
       const foundStatuses = new Set(rows.map((r) => r.status));
@@ -177,106 +177,106 @@ describe('Pipeline View Data Layer', () => {
   });
 
   describe('status change (drag simulation)', () => {
-    it('changing from applied to phone updates status and updated_at', () => {
-      insertPosting(db, 'p1');
+    it('changing from applied to phone updates status and updated_at', async () => {
+      await insertPosting(db, 'p1');
       const oldUpdatedAt = '2026-07-01T14:00:00Z';
-      createApplication(db, 'p1', 'applied', {
+      await createApplication(db, 'p1', 'applied', {
         applied_at: '2026-07-01T14:00:00Z',
         updated_at: oldUpdatedAt,
       });
 
       const now = '2026-08-13T16:00:00Z';
-      db.run(
+      await db.run(
         `UPDATE applications SET status = ?, updated_at = ? WHERE posting_id = ?`,
         ['phone', now, 'p1'],
       );
 
-      const rows = queryPipeline(db);
+      const rows = await queryPipeline(db);
       expect(rows[0]?.status).toBe('phone');
       expect(rows[0]?.app_updated_at).toBe(now);
     });
 
-    it('changing from saved to applied sets applied_at', () => {
-      insertPosting(db, 'p1');
-      createApplication(db, 'p1', 'saved');
+    it('changing from saved to applied sets applied_at', async () => {
+      await insertPosting(db, 'p1');
+      await createApplication(db, 'p1', 'saved');
 
       const now = '2026-08-13T16:00:00Z';
-      db.run(
+      await db.run(
         `UPDATE applications SET status = 'applied', applied_at = ?, updated_at = ? WHERE posting_id = ?`,
         [now, now, 'p1'],
       );
 
-      const rows = queryPipeline(db);
+      const rows = await queryPipeline(db);
       expect(rows[0]?.status).toBe('applied');
       expect(rows[0]?.applied_at).toBe(now);
     });
 
-    it('changing from phone to onsite preserves applied_at', () => {
-      insertPosting(db, 'p1');
+    it('changing from phone to onsite preserves applied_at', async () => {
+      await insertPosting(db, 'p1');
       const appliedAt = '2026-08-01T14:00:00Z';
-      createApplication(db, 'p1', 'phone', { applied_at: appliedAt });
+      await createApplication(db, 'p1', 'phone', { applied_at: appliedAt });
 
       const now = '2026-08-13T16:00:00Z';
-      db.run(
+      await db.run(
         `UPDATE applications SET status = 'onsite', updated_at = ? WHERE posting_id = ?`,
         [now, 'p1'],
       );
 
-      const rows = queryPipeline(db);
+      const rows = await queryPipeline(db);
       expect(rows[0]?.status).toBe('onsite');
       expect(rows[0]?.applied_at).toBe(appliedAt);
     });
 
-    it('changing from applied to rejected works', () => {
-      insertPosting(db, 'p1');
-      createApplication(db, 'p1', 'applied', { applied_at: '2026-08-01T14:00:00Z' });
+    it('changing from applied to rejected works', async () => {
+      await insertPosting(db, 'p1');
+      await createApplication(db, 'p1', 'applied', { applied_at: '2026-08-01T14:00:00Z' });
 
-      db.run(
+      await db.run(
         `UPDATE applications SET status = 'rejected', updated_at = ? WHERE posting_id = ?`,
         ['2026-08-13T16:00:00Z', 'p1'],
       );
 
-      const applied = queryByStatus(db, 'applied');
-      const rejected = queryByStatus(db, 'rejected');
+      const applied = await queryByStatus(db, 'applied');
+      const rejected = await queryByStatus(db, 'rejected');
       expect(applied).toHaveLength(0);
       expect(rejected).toHaveLength(1);
     });
 
-    it('moving between non-applied columns does not change applied_at', () => {
-      insertPosting(db, 'p1');
-      createApplication(db, 'p1', 'oa', { applied_at: null });
+    it('moving between non-applied columns does not change applied_at', async () => {
+      await insertPosting(db, 'p1');
+      await createApplication(db, 'p1', 'oa', { applied_at: null });
 
-      db.run(
+      await db.run(
         `UPDATE applications SET status = 'phone', updated_at = ? WHERE posting_id = ?`,
         ['2026-08-13T16:00:00Z', 'p1'],
       );
 
-      const rows = queryPipeline(db);
+      const rows = await queryPipeline(db);
       expect(rows[0]?.status).toBe('phone');
       expect(rows[0]?.applied_at).toBeNull();
     });
   });
 
   describe('column counts', () => {
-    it('counts match actual number of postings in each status', () => {
-      insertPosting(db, 's1');
-      insertPosting(db, 's2');
-      insertPosting(db, 'a1');
-      insertPosting(db, 'o1');
-      insertPosting(db, 'o2');
-      insertPosting(db, 'o3');
+    it('counts match actual number of postings in each status', async () => {
+      await insertPosting(db, 's1');
+      await insertPosting(db, 's2');
+      await insertPosting(db, 'a1');
+      await insertPosting(db, 'o1');
+      await insertPosting(db, 'o2');
+      await insertPosting(db, 'o3');
 
-      createApplication(db, 's1', 'saved');
-      createApplication(db, 's2', 'saved');
-      createApplication(db, 'a1', 'applied', { applied_at: '2026-08-13T15:00:00Z' });
-      createApplication(db, 'o1', 'offer');
-      createApplication(db, 'o2', 'offer');
-      createApplication(db, 'o3', 'offer');
+      await createApplication(db, 's1', 'saved');
+      await createApplication(db, 's2', 'saved');
+      await createApplication(db, 'a1', 'applied', { applied_at: '2026-08-13T15:00:00Z' });
+      await createApplication(db, 'o1', 'offer');
+      await createApplication(db, 'o2', 'offer');
+      await createApplication(db, 'o3', 'offer');
 
-      const saved = queryByStatus(db, 'saved');
-      const applied = queryByStatus(db, 'applied');
-      const offer = queryByStatus(db, 'offer');
-      const phone = queryByStatus(db, 'phone');
+      const saved = await queryByStatus(db, 'saved');
+      const applied = await queryByStatus(db, 'applied');
+      const offer = await queryByStatus(db, 'offer');
+      const phone = await queryByStatus(db, 'phone');
 
       expect(saved).toHaveLength(2);
       expect(applied).toHaveLength(1);
@@ -286,70 +286,70 @@ describe('Pipeline View Data Layer', () => {
   });
 
   describe('notes persistence', () => {
-    it('saving notes persists to database', () => {
-      insertPosting(db, 'p1');
-      createApplication(db, 'p1', 'saved');
+    it('saving notes persists to database', async () => {
+      await insertPosting(db, 'p1');
+      await createApplication(db, 'p1', 'saved');
 
-      db.run(
+      await db.run(
         `UPDATE applications SET notes = ?, updated_at = ? WHERE posting_id = ?`,
         ['Warm intro via Sarah', '2026-08-13T16:00:00Z', 'p1'],
       );
 
-      const rows = queryPipeline(db);
+      const rows = await queryPipeline(db);
       expect(rows[0]?.notes).toBe('Warm intro via Sarah');
     });
 
-    it('clearing notes sets to null', () => {
-      insertPosting(db, 'p1');
-      createApplication(db, 'p1', 'saved', { notes: 'Some notes' });
+    it('clearing notes sets to null', async () => {
+      await insertPosting(db, 'p1');
+      await createApplication(db, 'p1', 'saved', { notes: 'Some notes' });
 
-      db.run(
+      await db.run(
         `UPDATE applications SET notes = NULL, updated_at = ? WHERE posting_id = ?`,
         ['2026-08-13T16:00:00Z', 'p1'],
       );
 
-      const rows = queryPipeline(db);
+      const rows = await queryPipeline(db);
       expect(rows[0]?.notes).toBeNull();
     });
   });
 
   describe('skipped postings', () => {
-    it('skipped postings are in pipeline query', () => {
-      insertPosting(db, 'p1');
-      createApplication(db, 'p1', 'skipped');
+    it('skipped postings are in pipeline query', async () => {
+      await insertPosting(db, 'p1');
+      await createApplication(db, 'p1', 'skipped');
 
-      const rows = queryPipeline(db);
+      const rows = await queryPipeline(db);
       expect(rows).toHaveLength(1);
       expect(rows[0]?.status).toBe('skipped');
     });
 
-    it('skipped can be restored to saved', () => {
-      insertPosting(db, 'p1');
-      createApplication(db, 'p1', 'skipped');
+    it('skipped can be restored to saved', async () => {
+      await insertPosting(db, 'p1');
+      await createApplication(db, 'p1', 'skipped');
 
-      db.run(
+      await db.run(
         `UPDATE applications SET status = 'saved', updated_at = ? WHERE posting_id = ?`,
         ['2026-08-13T16:00:00Z', 'p1'],
       );
 
-      const skipped = queryByStatus(db, 'skipped');
-      const saved = queryByStatus(db, 'saved');
+      const skipped = await queryByStatus(db, 'skipped');
+      const saved = await queryByStatus(db, 'saved');
       expect(skipped).toHaveLength(0);
       expect(saved).toHaveLength(1);
     });
   });
 
   describe('ordering', () => {
-    it('pipeline cards ordered by updated_at descending', () => {
-      insertPosting(db, 'old');
-      insertPosting(db, 'mid');
-      insertPosting(db, 'new');
+    it('pipeline cards ordered by updated_at descending', async () => {
+      await insertPosting(db, 'old');
+      await insertPosting(db, 'mid');
+      await insertPosting(db, 'new');
 
-      createApplication(db, 'old', 'saved', { updated_at: '2026-08-01T12:00:00Z' });
-      createApplication(db, 'mid', 'saved', { updated_at: '2026-08-07T12:00:00Z' });
-      createApplication(db, 'new', 'saved', { updated_at: '2026-08-13T12:00:00Z' });
+      await createApplication(db, 'old', 'saved', { updated_at: '2026-08-01T12:00:00Z' });
+      await createApplication(db, 'mid', 'saved', { updated_at: '2026-08-07T12:00:00Z' });
+      await createApplication(db, 'new', 'saved', { updated_at: '2026-08-13T12:00:00Z' });
 
-      const rows = queryPipeline(db);
+      const rows = await queryPipeline(db);
       expect(rows.map((r) => r.id)).toEqual(['new', 'mid', 'old']);
     });
   });
@@ -362,62 +362,62 @@ describe('Auto-Ghost', () => {
     db = await NightjarDB.createInMemory();
   });
 
-  afterEach(() => {
-    db.close();
+  afterEach(async () => {
+    await db.close();
     vi.restoreAllMocks();
   });
 
-  it('ghosts applied posting older than 45 days', () => {
-    insertPosting(db, 'p1');
+  it('ghosts applied posting older than 45 days', async () => {
+    await insertPosting(db, 'p1');
     const fortySevenDaysAgo = new Date(Date.now() - 47 * 24 * 60 * 60 * 1000).toISOString();
-    createApplication(db, 'p1', 'applied', {
+    await createApplication(db, 'p1', 'applied', {
       applied_at: fortySevenDaysAgo,
       updated_at: fortySevenDaysAgo,
     });
 
-    const count = runAutoGhost(db);
+    const count = await runAutoGhost(db);
     expect(count).toBe(1);
 
-    const app = db.queryOne<{ status: string }>(
+    const app = await db.queryOne<{ status: string }>(
       'SELECT status FROM applications WHERE posting_id = ?',
       ['p1'],
     );
     expect(app?.status).toBe('ghosted');
   });
 
-  it('does NOT ghost posting at exactly 44 days', () => {
-    insertPosting(db, 'p1');
+  it('does NOT ghost posting at exactly 44 days', async () => {
+    await insertPosting(db, 'p1');
     const fortyFourDaysAgo = new Date(Date.now() - 44 * 24 * 60 * 60 * 1000).toISOString();
-    createApplication(db, 'p1', 'applied', {
+    await createApplication(db, 'p1', 'applied', {
       applied_at: fortyFourDaysAgo,
       updated_at: fortyFourDaysAgo,
     });
 
-    const count = runAutoGhost(db);
+    const count = await runAutoGhost(db);
     expect(count).toBe(0);
 
-    const app = db.queryOne<{ status: string }>(
+    const app = await db.queryOne<{ status: string }>(
       'SELECT status FROM applications WHERE posting_id = ?',
       ['p1'],
     );
     expect(app?.status).toBe('applied');
   });
 
-  it('does NOT ghost posting at exactly 45 days (boundary — strict less-than)', () => {
+  it('does NOT ghost posting at exactly 45 days (boundary — strict less-than)', async () => {
     const frozenNow = new Date('2026-08-14T12:00:00.000Z').getTime();
     vi.useFakeTimers();
     vi.setSystemTime(frozenNow);
 
-    insertPosting(db, 'p1');
+    await insertPosting(db, 'p1');
     const exactlyFortyFiveDaysAgo = new Date(frozenNow - 45 * 24 * 60 * 60 * 1000).toISOString();
-    createApplication(db, 'p1', 'applied', {
+    await createApplication(db, 'p1', 'applied', {
       applied_at: exactlyFortyFiveDaysAgo,
       updated_at: exactlyFortyFiveDaysAgo,
     });
 
-    const count = runAutoGhost(db);
+    const count = await runAutoGhost(db);
 
-    const app = db.queryOne<{ status: string }>(
+    const app = await db.queryOne<{ status: string }>(
       'SELECT status FROM applications WHERE posting_id = ?',
       ['p1'],
     );
@@ -427,115 +427,115 @@ describe('Auto-Ghost', () => {
     vi.useRealTimers();
   });
 
-  it('ghosts at 46 days', () => {
-    insertPosting(db, 'p1');
+  it('ghosts at 46 days', async () => {
+    await insertPosting(db, 'p1');
     const fortySixDaysAgo = new Date(Date.now() - 46 * 24 * 60 * 60 * 1000).toISOString();
-    createApplication(db, 'p1', 'applied', {
+    await createApplication(db, 'p1', 'applied', {
       applied_at: fortySixDaysAgo,
       updated_at: fortySixDaysAgo,
     });
 
-    const count = runAutoGhost(db);
+    const count = await runAutoGhost(db);
     expect(count).toBe(1);
 
-    const app = db.queryOne<{ status: string }>(
+    const app = await db.queryOne<{ status: string }>(
       'SELECT status FROM applications WHERE posting_id = ?',
       ['p1'],
     );
     expect(app?.status).toBe('ghosted');
   });
 
-  it('only ghosts "applied" status, not "saved" or "phone"', () => {
-    insertPosting(db, 'saved1');
-    insertPosting(db, 'phone1');
-    insertPosting(db, 'applied1');
+  it('only ghosts "applied" status, not "saved" or "phone"', async () => {
+    await insertPosting(db, 'saved1');
+    await insertPosting(db, 'phone1');
+    await insertPosting(db, 'applied1');
 
     const longAgo = new Date(Date.now() - 60 * 24 * 60 * 60 * 1000).toISOString();
-    createApplication(db, 'saved1', 'saved', { updated_at: longAgo });
-    createApplication(db, 'phone1', 'phone', { updated_at: longAgo });
-    createApplication(db, 'applied1', 'applied', {
+    await createApplication(db, 'saved1', 'saved', { updated_at: longAgo });
+    await createApplication(db, 'phone1', 'phone', { updated_at: longAgo });
+    await createApplication(db, 'applied1', 'applied', {
       applied_at: longAgo,
       updated_at: longAgo,
     });
 
-    const count = runAutoGhost(db);
+    const count = await runAutoGhost(db);
     expect(count).toBe(1);
 
     expect(
-      db.queryOne<{ status: string }>('SELECT status FROM applications WHERE posting_id = ?', ['saved1'])?.status,
+      (await db.queryOne<{ status: string }>('SELECT status FROM applications WHERE posting_id = ?', ['saved1']))?.status,
     ).toBe('saved');
     expect(
-      db.queryOne<{ status: string }>('SELECT status FROM applications WHERE posting_id = ?', ['phone1'])?.status,
+      (await db.queryOne<{ status: string }>('SELECT status FROM applications WHERE posting_id = ?', ['phone1']))?.status,
     ).toBe('phone');
     expect(
-      db.queryOne<{ status: string }>('SELECT status FROM applications WHERE posting_id = ?', ['applied1'])?.status,
+      (await db.queryOne<{ status: string }>('SELECT status FROM applications WHERE posting_id = ?', ['applied1']))?.status,
     ).toBe('ghosted');
   });
 
-  it('ghosts multiple stale postings in one call', () => {
-    insertPosting(db, 'p1');
-    insertPosting(db, 'p2');
-    insertPosting(db, 'p3');
+  it('ghosts multiple stale postings in one call', async () => {
+    await insertPosting(db, 'p1');
+    await insertPosting(db, 'p2');
+    await insertPosting(db, 'p3');
 
     const sixtyDaysAgo = new Date(Date.now() - 60 * 24 * 60 * 60 * 1000).toISOString();
     const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString();
 
-    createApplication(db, 'p1', 'applied', {
+    await createApplication(db, 'p1', 'applied', {
       applied_at: sixtyDaysAgo,
       updated_at: sixtyDaysAgo,
     });
-    createApplication(db, 'p2', 'applied', {
+    await createApplication(db, 'p2', 'applied', {
       applied_at: sixtyDaysAgo,
       updated_at: sixtyDaysAgo,
     });
-    createApplication(db, 'p3', 'applied', {
+    await createApplication(db, 'p3', 'applied', {
       applied_at: thirtyDaysAgo,
       updated_at: thirtyDaysAgo,
     });
 
-    const count = runAutoGhost(db);
+    const count = await runAutoGhost(db);
     expect(count).toBe(2);
 
     expect(
-      db.queryOne<{ status: string }>('SELECT status FROM applications WHERE posting_id = ?', ['p1'])?.status,
+      (await db.queryOne<{ status: string }>('SELECT status FROM applications WHERE posting_id = ?', ['p1']))?.status,
     ).toBe('ghosted');
     expect(
-      db.queryOne<{ status: string }>('SELECT status FROM applications WHERE posting_id = ?', ['p2'])?.status,
+      (await db.queryOne<{ status: string }>('SELECT status FROM applications WHERE posting_id = ?', ['p2']))?.status,
     ).toBe('ghosted');
     expect(
-      db.queryOne<{ status: string }>('SELECT status FROM applications WHERE posting_id = ?', ['p3'])?.status,
+      (await db.queryOne<{ status: string }>('SELECT status FROM applications WHERE posting_id = ?', ['p3']))?.status,
     ).toBe('applied');
   });
 
-  it('returns 0 when no postings need ghosting', () => {
-    insertPosting(db, 'p1');
-    createApplication(db, 'p1', 'applied', {
+  it('returns 0 when no postings need ghosting', async () => {
+    await insertPosting(db, 'p1');
+    await createApplication(db, 'p1', 'applied', {
       applied_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
     });
 
-    const count = runAutoGhost(db);
+    const count = await runAutoGhost(db);
     expect(count).toBe(0);
   });
 
-  it('returns 0 when applications table is empty', () => {
-    const count = runAutoGhost(db);
+  it('returns 0 when applications table is empty', async () => {
+    const count = await runAutoGhost(db);
     expect(count).toBe(0);
   });
 
-  it('sets updated_at on ghosted postings', () => {
-    insertPosting(db, 'p1');
+  it('sets updated_at on ghosted postings', async () => {
+    await insertPosting(db, 'p1');
     const sixtyDaysAgo = new Date(Date.now() - 60 * 24 * 60 * 60 * 1000).toISOString();
-    createApplication(db, 'p1', 'applied', {
+    await createApplication(db, 'p1', 'applied', {
       applied_at: sixtyDaysAgo,
       updated_at: sixtyDaysAgo,
     });
 
     const before = Date.now();
-    runAutoGhost(db);
+    await runAutoGhost(db);
     const after = Date.now();
 
-    const app = db.queryOne<{ updated_at: string }>(
+    const app = await db.queryOne<{ updated_at: string }>(
       'SELECT updated_at FROM applications WHERE posting_id = ?',
       ['p1'],
     );
@@ -545,12 +545,12 @@ describe('Auto-Ghost', () => {
     expect(updatedMs).toBeLessThanOrEqual(after + 1000);
   });
 
-  it('does not ghost already-ghosted postings', () => {
-    insertPosting(db, 'p1');
+  it('does not ghost already-ghosted postings', async () => {
+    await insertPosting(db, 'p1');
     const sixtyDaysAgo = new Date(Date.now() - 60 * 24 * 60 * 60 * 1000).toISOString();
-    createApplication(db, 'p1', 'ghosted', { updated_at: sixtyDaysAgo });
+    await createApplication(db, 'p1', 'ghosted', { updated_at: sixtyDaysAgo });
 
-    const count = runAutoGhost(db);
+    const count = await runAutoGhost(db);
     expect(count).toBe(0);
   });
 });

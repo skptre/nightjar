@@ -1085,8 +1085,8 @@ describe('classifier orchestrator', () => {
     db = await NightjarDB.createInMemory();
   });
 
-  afterEach(() => {
-    db.close();
+  afterEach(async () => {
+    await db.close();
   });
 
   describe('classifyPosting', () => {
@@ -1119,22 +1119,22 @@ describe('classifier orchestrator', () => {
   });
 
   describe('classifyAndStore', () => {
-    it('classifies and stores result in database', () => {
+    it('classifies and stores result in database', async () => {
       const posting = makePosting({ id: 'p1', title: 'Trading Intern - Summer 2027' });
-      db.run(
+      await db.run(
         `INSERT INTO postings_cache (id, data, first_seen_at, synced_at)
          VALUES (?, ?, ?, ?)`,
         ['p1', JSON.stringify(posting), '2026-09-15T00:00:00Z', '2026-10-01T00:00:00Z'],
       );
 
       const profile = makeProfile();
-      const result = classifyAndStore(db, 'p1', profile);
+      const result = await classifyAndStore(db, 'p1', profile);
 
       expect(result).not.toBeNull();
       expect(result!.term.term).toBe('summer_2027');
       expect(result!.category.category).toBe('quant');
 
-      const row = db.queryOne<{
+      const row = await db.queryOne<{
         category: string | null;
         term: string | null;
         eligibility: string | null;
@@ -1149,15 +1149,15 @@ describe('classifier orchestrator', () => {
       expect(eligibility.verdict).toBe('unclear');
     });
 
-    it('returns null for nonexistent posting', () => {
+    it('returns null for nonexistent posting', async () => {
       const profile = makeProfile();
-      const result = classifyAndStore(db, 'nonexistent', profile);
+      const result = await classifyAndStore(db, 'nonexistent', profile);
       expect(result).toBeNull();
     });
 
-    it('uses description column for eligibility checks — hard block still works for F-1', () => {
+    it('uses description column for eligibility checks — hard block still works for F-1', async () => {
       const posting = makePosting({ id: 'p1', title: 'SWE Intern - Summer 2027' });
-      db.run(
+      await db.run(
         `INSERT INTO postings_cache (id, data, description, first_seen_at, synced_at)
          VALUES (?, ?, ?, ?, ?)`,
         [
@@ -1170,11 +1170,11 @@ describe('classifier orchestrator', () => {
       );
 
       const profile = makeProfile({ requires_sponsorship: true });
-      const result = classifyAndStore(db, 'p1', profile);
+      const result = await classifyAndStore(db, 'p1', profile);
 
       expect(result!.eligibility.verdict).toBe('ineligible');
 
-      const row = db.queryOne<{ eligibility: string }>(
+      const row = await db.queryOne<{ eligibility: string }>(
         'SELECT eligibility FROM postings_cache WHERE id = ?',
         ['p1'],
       );
@@ -1182,9 +1182,9 @@ describe('classifier orchestrator', () => {
       expect(stored.verdict).toBe('ineligible');
     });
 
-    it('no_sponsorship in description → unclear for F-1 profile', () => {
+    it('no_sponsorship in description → unclear for F-1 profile', async () => {
       const posting = makePosting({ id: 'p1', title: 'SWE Intern - Summer 2027' });
-      db.run(
+      await db.run(
         `INSERT INTO postings_cache (id, data, description, first_seen_at, synced_at)
          VALUES (?, ?, ?, ?, ?)`,
         [
@@ -1197,14 +1197,14 @@ describe('classifier orchestrator', () => {
       );
 
       const profile = makeProfile({ work_auth: 'f1_opt_cpt', requires_sponsorship: true });
-      const result = classifyAndStore(db, 'p1', profile);
+      const result = await classifyAndStore(db, 'p1', profile);
 
       expect(result!.eligibility.verdict).toBe('unclear');
     });
   });
 
   describe('classifyNewPostings', () => {
-    it('classifies multiple postings in a transaction', () => {
+    it('classifies multiple postings in a transaction', async () => {
       const postings = [
         makePosting({ id: 'p1', title: 'ML Engineer Intern - Fall 2026' }),
         makePosting({ id: 'p2', title: 'Hardware Engineer Intern - Summer 2027' }),
@@ -1212,14 +1212,14 @@ describe('classifier orchestrator', () => {
       ];
 
       for (const p of postings) {
-        db.run(
+        await db.run(
           'INSERT INTO postings_cache (id, data, first_seen_at, synced_at) VALUES (?, ?, ?, ?)',
           [p.id, JSON.stringify(p), '2026-09-15T00:00:00Z', '2026-10-01T00:00:00Z'],
         );
       }
 
       const profile = makeProfile();
-      const results = classifyNewPostings(db, ['p1', 'p2', 'p3'], profile);
+      const results = await classifyNewPostings(db, ['p1', 'p2', 'p3'], profile);
 
       expect(results.size).toBe(3);
       expect(results.get('p1')!.category.category).toBe('ml');
@@ -1230,7 +1230,7 @@ describe('classifier orchestrator', () => {
       expect(results.get('p3')!.term.term).toBe('summer_2027');
 
       for (const id of ['p1', 'p2', 'p3']) {
-        const row = db.queryOne<{ category: string; term: string }>(
+        const row = await db.queryOne<{ category: string; term: string }>(
           'SELECT category, term FROM postings_cache WHERE id = ?',
           [id],
         );
@@ -1239,15 +1239,15 @@ describe('classifier orchestrator', () => {
       }
     });
 
-    it('skips nonexistent IDs gracefully', () => {
+    it('skips nonexistent IDs gracefully', async () => {
       const posting = makePosting({ id: 'p1', title: 'SWE Intern' });
-      db.run(
+      await db.run(
         'INSERT INTO postings_cache (id, data, first_seen_at, synced_at) VALUES (?, ?, ?, ?)',
         ['p1', JSON.stringify(posting), '2026-09-15T00:00:00Z', '2026-10-01T00:00:00Z'],
       );
 
       const profile = makeProfile();
-      const results = classifyNewPostings(db, ['p1', 'nonexistent'], profile);
+      const results = await classifyNewPostings(db, ['p1', 'nonexistent'], profile);
 
       expect(results.size).toBe(1);
       expect(results.has('p1')).toBe(true);
@@ -1255,36 +1255,36 @@ describe('classifier orchestrator', () => {
   });
 
   describe('reclassifyAll', () => {
-    it('reclassifies all open postings', () => {
+    it('reclassifies all open postings', async () => {
       const posting1 = makePosting({ id: 'p1', title: 'SWE Intern - Summer 2027' });
       const posting2 = makePosting({ id: 'p2', title: 'ML Intern - Fall 2026', closed_at: '2026-10-01T00:00:00Z' });
       const posting3 = makePosting({ id: 'p3', title: 'QA Intern' });
 
-      db.run(
+      await db.run(
         'INSERT INTO postings_cache (id, data, first_seen_at, synced_at) VALUES (?, ?, ?, ?)',
         ['p1', JSON.stringify(posting1), '2026-09-15T00:00:00Z', '2026-10-01T00:00:00Z'],
       );
-      db.run(
+      await db.run(
         'INSERT INTO postings_cache (id, data, first_seen_at, closed_at, synced_at) VALUES (?, ?, ?, ?, ?)',
         ['p2', JSON.stringify(posting2), '2026-09-15T00:00:00Z', '2026-10-01T00:00:00Z', '2026-10-01T00:00:00Z'],
       );
-      db.run(
+      await db.run(
         'INSERT INTO postings_cache (id, data, first_seen_at, synced_at) VALUES (?, ?, ?, ?)',
         ['p3', JSON.stringify(posting3), '2026-09-15T00:00:00Z', '2026-10-01T00:00:00Z'],
       );
 
       const profile = makeProfile();
-      const count = reclassifyAll(db, profile);
+      const count = await reclassifyAll(db, profile);
 
       expect(count).toBe(2);
 
-      const row1 = db.queryOne<{ category: string }>('SELECT category FROM postings_cache WHERE id = ?', ['p1']);
+      const row1 = await db.queryOne<{ category: string }>('SELECT category FROM postings_cache WHERE id = ?', ['p1']);
       expect(row1!.category).toBe('swe');
 
-      const row2 = db.queryOne<{ category: string | null }>('SELECT category FROM postings_cache WHERE id = ?', ['p2']);
+      const row2 = await db.queryOne<{ category: string | null }>('SELECT category FROM postings_cache WHERE id = ?', ['p2']);
       expect(row2!.category).toBeNull();
 
-      const row3 = db.queryOne<{ category: string }>('SELECT category FROM postings_cache WHERE id = ?', ['p3']);
+      const row3 = await db.queryOne<{ category: string }>('SELECT category FROM postings_cache WHERE id = ?', ['p3']);
       expect(row3!.category).toBe('other');
     });
   });

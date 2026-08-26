@@ -1,4 +1,4 @@
-import type { NightjarDB } from '@/db/database';
+import type { Database } from '@/db/database';
 
 export interface FeedPosting {
   id: string;
@@ -139,7 +139,7 @@ export function setLastSyncedAt(iso: string): void {
 }
 
 export async function syncFeed(
-  db: NightjarDB,
+  db: Database,
   baseUrl?: string,
 ): Promise<SyncResult> {
   const meta = await fetchMeta(baseUrl);
@@ -157,7 +157,7 @@ export async function syncFeed(
     return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: true };
   }
 
-  const result = upsertPostings(db, feed);
+  const result = await upsertPostings(db, feed);
 
   setStoredMetaHash(meta.sha256);
   setLastSyncedAt(new Date().toISOString());
@@ -165,10 +165,9 @@ export async function syncFeed(
   return result;
 }
 
-export function upsertPostings(db: NightjarDB, feed: FeedData): SyncResult {
-  const existingIds = new Set(
-    db.query<{ id: string }>('SELECT id FROM postings_cache').map((r) => r.id),
-  );
+export async function upsertPostings(db: Database, feed: FeedData): Promise<SyncResult> {
+  const existingRows = await db.query<{ id: string }>('SELECT id FROM postings_cache');
+  const existingIds = new Set(existingRows.map((r) => r.id));
 
   const now = new Date().toISOString();
   const newPostingIds: string[] = [];
@@ -177,20 +176,20 @@ export function upsertPostings(db: NightjarDB, feed: FeedData): SyncResult {
 
   const feedPostingIds = new Set<string>();
 
-  db.transaction(() => {
+  await db.transaction(async () => {
     for (const [id, posting] of Object.entries(feed.postings)) {
       feedPostingIds.add(id);
       const postingJson = JSON.stringify(posting);
 
       if (!existingIds.has(id)) {
-        db.run(
+        await db.run(
           `INSERT INTO postings_cache (id, data, first_seen_at, closed_at, synced_at)
            VALUES (?, ?, ?, ?, ?)`,
           [id, postingJson, posting.first_seen_at, posting.closed_at ?? null, now],
         );
         newPostingIds.push(id);
       } else {
-        db.run(
+        await db.run(
           `UPDATE postings_cache
            SET data = ?, synced_at = ?, closed_at = COALESCE(?, closed_at), first_seen_at = MIN(first_seen_at, ?)
            WHERE id = ?`,
@@ -206,7 +205,7 @@ export function upsertPostings(db: NightjarDB, feed: FeedData): SyncResult {
 
     for (const existingId of existingIds) {
       if (!feedPostingIds.has(existingId)) {
-        db.run(
+        await db.run(
           'UPDATE postings_cache SET closed_at = COALESCE(closed_at, ?) WHERE id = ?',
           [now, existingId],
         );

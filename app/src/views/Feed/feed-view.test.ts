@@ -20,7 +20,7 @@ function makePostingData(overrides: Record<string, unknown> = {}): string {
   });
 }
 
-function insertPosting(
+async function insertPosting(
   db: NightjarDB,
   id: string,
   overrides: {
@@ -32,10 +32,10 @@ function insertPosting(
     closed_at?: string | null;
     first_seen_at?: string;
   } = {},
-): void {
+): Promise<void> {
   const dataOverrides = overrides.data ?? {};
   const firstSeen = overrides.first_seen_at ?? '2026-08-10T12:00:00Z';
-  db.run(
+  await db.run(
     `INSERT INTO postings_cache (id, data, first_seen_at, closed_at, category, term, eligibility, score, score_breakdown, synced_at)
      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     [
@@ -53,8 +53,8 @@ function insertPosting(
   );
 }
 
-function queryUntriaged(db: NightjarDB): Array<{ id: string; score: number | null }> {
-  return db.query<{ id: string; score: number | null }>(
+async function queryUntriaged(db: NightjarDB): Promise<Array<{ id: string; score: number | null }>> {
+  return await db.query<{ id: string; score: number | null }>(
     `SELECT p.id, p.score
      FROM postings_cache p
      LEFT JOIN applications a ON p.id = a.posting_id
@@ -72,170 +72,170 @@ describe('Feed View Data Layer', () => {
   });
 
   describe('default query — untriaged postings', () => {
-    it('shows postings with no applications row', () => {
-      insertPosting(db, 'p1');
-      insertPosting(db, 'p2');
+    it('shows postings with no applications row', async () => {
+      await insertPosting(db, 'p1');
+      await insertPosting(db, 'p2');
 
-      const results = queryUntriaged(db);
+      const results = await queryUntriaged(db);
       expect(results).toHaveLength(2);
     });
 
-    it('shows postings with status new', () => {
-      insertPosting(db, 'p1');
+    it('shows postings with status new', async () => {
+      await insertPosting(db, 'p1');
       const now = '2026-08-13T12:00:00Z';
-      db.run(
+      await db.run(
         `INSERT INTO applications (posting_id, status, created_at, updated_at) VALUES (?, 'new', ?, ?)`,
         ['p1', now, now],
       );
 
-      const results = queryUntriaged(db);
+      const results = await queryUntriaged(db);
       expect(results).toHaveLength(1);
       expect(results[0]?.id).toBe('p1');
     });
 
-    it('excludes saved postings', () => {
-      insertPosting(db, 'p1');
-      insertPosting(db, 'p2');
+    it('excludes saved postings', async () => {
+      await insertPosting(db, 'p1');
+      await insertPosting(db, 'p2');
       const now = '2026-08-13T12:00:00Z';
-      db.run(
+      await db.run(
         `INSERT INTO applications (posting_id, status, created_at, updated_at) VALUES (?, 'saved', ?, ?)`,
         ['p1', now, now],
       );
 
-      const results = queryUntriaged(db);
+      const results = await queryUntriaged(db);
       expect(results).toHaveLength(1);
       expect(results[0]?.id).toBe('p2');
     });
 
-    it('excludes skipped postings', () => {
-      insertPosting(db, 'p1');
+    it('excludes skipped postings', async () => {
+      await insertPosting(db, 'p1');
       const now = '2026-08-13T12:00:00Z';
-      db.run(
+      await db.run(
         `INSERT INTO applications (posting_id, status, created_at, updated_at) VALUES (?, 'skipped', ?, ?)`,
         ['p1', now, now],
       );
 
-      const results = queryUntriaged(db);
+      const results = await queryUntriaged(db);
       expect(results).toHaveLength(0);
     });
 
-    it('excludes applied postings', () => {
-      insertPosting(db, 'p1');
+    it('excludes applied postings', async () => {
+      await insertPosting(db, 'p1');
       const now = '2026-08-13T12:00:00Z';
-      db.run(
+      await db.run(
         `INSERT INTO applications (posting_id, status, applied_at, created_at, updated_at) VALUES (?, 'applied', ?, ?, ?)`,
         ['p1', now, now, now],
       );
 
-      const results = queryUntriaged(db);
+      const results = await queryUntriaged(db);
       expect(results).toHaveLength(0);
     });
 
-    it('excludes closed postings', () => {
-      insertPosting(db, 'p1', { closed_at: '2026-08-12T00:00:00Z' });
-      insertPosting(db, 'p2');
+    it('excludes closed postings', async () => {
+      await insertPosting(db, 'p1', { closed_at: '2026-08-12T00:00:00Z' });
+      await insertPosting(db, 'p2');
 
-      const results = queryUntriaged(db);
+      const results = await queryUntriaged(db);
       expect(results).toHaveLength(1);
       expect(results[0]?.id).toBe('p2');
     });
 
-    it('sorts by score descending', () => {
-      insertPosting(db, 'low', { score: 30 });
-      insertPosting(db, 'mid', { score: 60 });
-      insertPosting(db, 'high', { score: 90 });
+    it('sorts by score descending', async () => {
+      await insertPosting(db, 'low', { score: 30 });
+      await insertPosting(db, 'mid', { score: 60 });
+      await insertPosting(db, 'high', { score: 90 });
 
-      const results = queryUntriaged(db);
+      const results = await queryUntriaged(db);
       expect(results.map((r) => r.id)).toEqual(['high', 'mid', 'low']);
     });
 
-    it('handles null scores at end', () => {
-      insertPosting(db, 'scored', { score: 50 });
-      insertPosting(db, 'unscored', { score: null });
+    it('handles null scores at end', async () => {
+      await insertPosting(db, 'scored', { score: 50 });
+      await insertPosting(db, 'unscored', { score: null });
 
-      const results = queryUntriaged(db);
+      const results = await queryUntriaged(db);
       expect(results[0]?.id).toBe('scored');
       expect(results[1]?.id).toBe('unscored');
     });
   });
 
   describe('action handlers — save', () => {
-    it('creates applications row with status saved', () => {
-      insertPosting(db, 'p1');
+    it('creates applications row with status saved', async () => {
+      await insertPosting(db, 'p1');
       const now = '2026-08-13T14:00:00Z';
-      db.run(
+      await db.run(
         `INSERT OR REPLACE INTO applications (posting_id, status, created_at, updated_at)
          VALUES (?, 'saved', COALESCE((SELECT created_at FROM applications WHERE posting_id = ?), ?), ?)`,
         ['p1', 'p1', now, now],
       );
 
-      const app = db.queryOne<{ posting_id: string; status: string }>(
+      const app = await db.queryOne<{ posting_id: string; status: string }>(
         'SELECT posting_id, status FROM applications WHERE posting_id = ?',
         ['p1'],
       );
       expect(app?.status).toBe('saved');
     });
 
-    it('removes posting from untriaged after save', () => {
-      insertPosting(db, 'p1');
-      insertPosting(db, 'p2');
+    it('removes posting from untriaged after save', async () => {
+      await insertPosting(db, 'p1');
+      await insertPosting(db, 'p2');
 
       const now = '2026-08-13T14:00:00Z';
-      db.run(
+      await db.run(
         `INSERT OR REPLACE INTO applications (posting_id, status, created_at, updated_at)
          VALUES (?, 'saved', ?, ?)`,
         ['p1', now, now],
       );
 
-      const results = queryUntriaged(db);
+      const results = await queryUntriaged(db);
       expect(results).toHaveLength(1);
       expect(results[0]?.id).toBe('p2');
     });
   });
 
   describe('action handlers — skip with undo', () => {
-    it('creates applications row with status skipped', () => {
-      insertPosting(db, 'p1');
+    it('creates applications row with status skipped', async () => {
+      await insertPosting(db, 'p1');
       const now = '2026-08-13T14:00:00Z';
-      db.run(
+      await db.run(
         `INSERT OR REPLACE INTO applications (posting_id, status, created_at, updated_at)
          VALUES (?, 'skipped', ?, ?)`,
         ['p1', now, now],
       );
 
-      const app = db.queryOne<{ status: string }>(
+      const app = await db.queryOne<{ status: string }>(
         'SELECT status FROM applications WHERE posting_id = ?',
         ['p1'],
       );
       expect(app?.status).toBe('skipped');
     });
 
-    it('undo deletes applications row, restoring to untriaged', () => {
-      insertPosting(db, 'p1');
+    it('undo deletes applications row, restoring to untriaged', async () => {
+      await insertPosting(db, 'p1');
       const now = '2026-08-13T14:00:00Z';
 
-      db.run(
+      await db.run(
         `INSERT INTO applications (posting_id, status, created_at, updated_at) VALUES (?, 'skipped', ?, ?)`,
         ['p1', now, now],
       );
-      expect(queryUntriaged(db)).toHaveLength(0);
+      expect(await queryUntriaged(db)).toHaveLength(0);
 
-      db.run('DELETE FROM applications WHERE posting_id = ?', ['p1']);
-      expect(queryUntriaged(db)).toHaveLength(1);
+      await db.run('DELETE FROM applications WHERE posting_id = ?', ['p1']);
+      expect(await queryUntriaged(db)).toHaveLength(1);
     });
   });
 
   describe('action handlers — apply', () => {
-    it('creates applications row with status applied and applied_at', () => {
-      insertPosting(db, 'p1');
+    it('creates applications row with status applied and applied_at', async () => {
+      await insertPosting(db, 'p1');
       const now = '2026-08-13T14:00:00Z';
-      db.run(
+      await db.run(
         `INSERT OR REPLACE INTO applications (posting_id, status, applied_at, created_at, updated_at)
          VALUES (?, 'applied', ?, ?, ?)`,
         ['p1', now, now, now],
       );
 
-      const app = db.queryOne<{ status: string; applied_at: string }>(
+      const app = await db.queryOne<{ status: string; applied_at: string }>(
         'SELECT status, applied_at FROM applications WHERE posting_id = ?',
         ['p1'],
       );
@@ -245,12 +245,12 @@ describe('Feed View Data Layer', () => {
   });
 
   describe('filter logic', () => {
-    it('filters by category', () => {
-      insertPosting(db, 'swe1', { category: 'swe' });
-      insertPosting(db, 'ml1', { category: 'ml' });
-      insertPosting(db, 'quant1', { category: 'quant' });
+    it('filters by category', async () => {
+      await insertPosting(db, 'swe1', { category: 'swe' });
+      await insertPosting(db, 'ml1', { category: 'ml' });
+      await insertPosting(db, 'quant1', { category: 'quant' });
 
-      const rows = db.query<{ id: string; category: string | null }>(
+      const rows = await db.query<{ id: string; category: string | null }>(
         `SELECT p.id, p.category FROM postings_cache p
          LEFT JOIN applications a ON p.id = a.posting_id
          WHERE (a.posting_id IS NULL OR a.status = 'new') AND p.closed_at IS NULL
@@ -261,11 +261,11 @@ describe('Feed View Data Layer', () => {
       expect(filtered[0]?.id).toBe('ml1');
     });
 
-    it('filters by term', () => {
-      insertPosting(db, 'summer', { term: 'summer_2027' });
-      insertPosting(db, 'fall', { term: 'fall_2026' });
+    it('filters by term', async () => {
+      await insertPosting(db, 'summer', { term: 'summer_2027' });
+      await insertPosting(db, 'fall', { term: 'fall_2026' });
 
-      const rows = db.query<{ id: string; term: string | null }>(
+      const rows = await db.query<{ id: string; term: string | null }>(
         `SELECT p.id, p.term FROM postings_cache p
          LEFT JOIN applications a ON p.id = a.posting_id
          WHERE (a.posting_id IS NULL OR a.status = 'new') AND p.closed_at IS NULL`,
@@ -275,18 +275,18 @@ describe('Feed View Data Layer', () => {
       expect(filtered[0]?.id).toBe('summer');
     });
 
-    it('filters ineligible postings', () => {
-      insertPosting(db, 'eligible', {
+    it('filters ineligible postings', async () => {
+      await insertPosting(db, 'eligible', {
         eligibility: JSON.stringify({ verdict: 'eligible', reasons: [], flags: [] }),
       });
-      insertPosting(db, 'ineligible', {
+      await insertPosting(db, 'ineligible', {
         eligibility: JSON.stringify({ verdict: 'ineligible', reasons: ['must be US citizen'], flags: [] }),
       });
-      insertPosting(db, 'unclear', {
+      await insertPosting(db, 'unclear', {
         eligibility: JSON.stringify({ verdict: 'unclear', reasons: [], flags: [] }),
       });
 
-      const rows = db.query<{ id: string; eligibility: string | null }>(
+      const rows = await db.query<{ id: string; eligibility: string | null }>(
         `SELECT p.id, p.eligibility FROM postings_cache p
          LEFT JOIN applications a ON p.id = a.posting_id
          WHERE (a.posting_id IS NULL OR a.status = 'new') AND p.closed_at IS NULL`,
@@ -310,11 +310,11 @@ describe('Feed View Data Layer', () => {
       expect(nonIneligible).toHaveLength(2);
     });
 
-    it('filters by source', () => {
-      insertPosting(db, 'gh', { data: { source: 'greenhouse' } });
-      insertPosting(db, 'lv', { data: { source: 'lever' } });
+    it('filters by source', async () => {
+      await insertPosting(db, 'gh', { data: { source: 'greenhouse' } });
+      await insertPosting(db, 'lv', { data: { source: 'lever' } });
 
-      const rows = db.query<{ id: string; data: string }>(
+      const rows = await db.query<{ id: string; data: string }>(
         `SELECT p.id, p.data FROM postings_cache p
          LEFT JOIN applications a ON p.id = a.posting_id
          WHERE (a.posting_id IS NULL OR a.status = 'new') AND p.closed_at IS NULL`,
@@ -328,11 +328,11 @@ describe('Feed View Data Layer', () => {
       expect(ghOnly[0]?.id).toBe('gh');
     });
 
-    it('filters by search across title and company', () => {
-      insertPosting(db, 'ramp', { data: { company: 'Ramp', title: 'SWE Intern' } });
-      insertPosting(db, 'stripe', { data: { company: 'Stripe', title: 'ML Engineer' } });
+    it('filters by search across title and company', async () => {
+      await insertPosting(db, 'ramp', { data: { company: 'Ramp', title: 'SWE Intern' } });
+      await insertPosting(db, 'stripe', { data: { company: 'Stripe', title: 'ML Engineer' } });
 
-      const rows = db.query<{ id: string; data: string }>(
+      const rows = await db.query<{ id: string; data: string }>(
         `SELECT p.id, p.data FROM postings_cache p
          LEFT JOIN applications a ON p.id = a.posting_id
          WHERE (a.posting_id IS NULL OR a.status = 'new') AND p.closed_at IS NULL`,
@@ -347,19 +347,19 @@ describe('Feed View Data Layer', () => {
       expect(filtered[0]?.id).toBe('stripe');
     });
 
-    it('filters by age — this week', () => {
+    it('filters by age — this week', async () => {
       const recent = new Date();
       const old = new Date();
       old.setDate(old.getDate() - 14);
 
-      insertPosting(db, 'new', { first_seen_at: recent.toISOString() });
-      insertPosting(db, 'old', { first_seen_at: old.toISOString() });
+      await insertPosting(db, 'new', { first_seen_at: recent.toISOString() });
+      await insertPosting(db, 'old', { first_seen_at: old.toISOString() });
 
       const threshold = new Date();
       threshold.setDate(threshold.getDate() - 7);
       const thresholdISO = threshold.toISOString();
 
-      const rows = db.query<{ id: string; first_seen_at: string }>(
+      const rows = await db.query<{ id: string; first_seen_at: string }>(
         `SELECT p.id, p.first_seen_at FROM postings_cache p
          LEFT JOIN applications a ON p.id = a.posting_id
          WHERE (a.posting_id IS NULL OR a.status = 'new') AND p.closed_at IS NULL`,
@@ -372,15 +372,15 @@ describe('Feed View Data Layer', () => {
   });
 
   describe('ineligible section', () => {
-    it('correctly separates ineligible postings', () => {
-      insertPosting(db, 'ok', {
+    it('correctly separates ineligible postings', async () => {
+      await insertPosting(db, 'ok', {
         eligibility: JSON.stringify({ verdict: 'unclear', reasons: [], flags: [] }),
       });
-      insertPosting(db, 'bad', {
+      await insertPosting(db, 'bad', {
         eligibility: JSON.stringify({ verdict: 'ineligible', reasons: ['must be US citizen'], flags: [] }),
       });
 
-      const rows = db.query<{ id: string; eligibility: string | null }>(
+      const rows = await db.query<{ id: string; eligibility: string | null }>(
         `SELECT p.id, p.eligibility FROM postings_cache p
          LEFT JOIN applications a ON p.id = a.posting_id
          WHERE (a.posting_id IS NULL OR a.status = 'new') AND p.closed_at IS NULL`,
@@ -408,13 +408,13 @@ describe('Feed View Data Layer', () => {
   });
 
   describe('excluded companies', () => {
-    it('filters out excluded company slugs', () => {
-      insertPosting(db, 'keep', { data: { company_slug: 'ramp' } });
-      insertPosting(db, 'exclude', { data: { company_slug: 'badco' } });
+    it('filters out excluded company slugs', async () => {
+      await insertPosting(db, 'keep', { data: { company_slug: 'ramp' } });
+      await insertPosting(db, 'exclude', { data: { company_slug: 'badco' } });
 
       const excluded = new Set(['badco']);
 
-      const rows = db.query<{ id: string; data: string }>(
+      const rows = await db.query<{ id: string; data: string }>(
         `SELECT p.id, p.data FROM postings_cache p
          LEFT JOIN applications a ON p.id = a.posting_id
          WHERE (a.posting_id IS NULL OR a.status = 'new') AND p.closed_at IS NULL`,
@@ -489,45 +489,45 @@ describe('Feed View Data Layer', () => {
   });
 
   describe('multi-posting triage sequence', () => {
-    it('save + skip sequence reduces feed correctly', () => {
-      insertPosting(db, 'p1', { score: 90 });
-      insertPosting(db, 'p2', { score: 80 });
-      insertPosting(db, 'p3', { score: 70 });
-      insertPosting(db, 'p4', { score: 60 });
+    it('save + skip sequence reduces feed correctly', async () => {
+      await insertPosting(db, 'p1', { score: 90 });
+      await insertPosting(db, 'p2', { score: 80 });
+      await insertPosting(db, 'p3', { score: 70 });
+      await insertPosting(db, 'p4', { score: 60 });
 
-      expect(queryUntriaged(db)).toHaveLength(4);
+      expect(await queryUntriaged(db)).toHaveLength(4);
 
       const now = '2026-08-13T14:00:00Z';
 
-      db.run(
+      await db.run(
         `INSERT INTO applications (posting_id, status, created_at, updated_at) VALUES (?, 'saved', ?, ?)`,
         ['p1', now, now],
       );
-      expect(queryUntriaged(db)).toHaveLength(3);
+      expect(await queryUntriaged(db)).toHaveLength(3);
 
-      db.run(
+      await db.run(
         `INSERT INTO applications (posting_id, status, created_at, updated_at) VALUES (?, 'skipped', ?, ?)`,
         ['p3', now, now],
       );
-      expect(queryUntriaged(db)).toHaveLength(2);
+      expect(await queryUntriaged(db)).toHaveLength(2);
 
-      const remaining = queryUntriaged(db);
+      const remaining = await queryUntriaged(db);
       expect(remaining.map((r) => r.id)).toEqual(['p2', 'p4']);
     });
 
-    it('undo skip restores posting to feed in correct order', () => {
-      insertPosting(db, 'p1', { score: 90 });
-      insertPosting(db, 'p2', { score: 50 });
+    it('undo skip restores posting to feed in correct order', async () => {
+      await insertPosting(db, 'p1', { score: 90 });
+      await insertPosting(db, 'p2', { score: 50 });
 
       const now = '2026-08-13T14:00:00Z';
-      db.run(
+      await db.run(
         `INSERT INTO applications (posting_id, status, created_at, updated_at) VALUES (?, 'skipped', ?, ?)`,
         ['p1', now, now],
       );
-      expect(queryUntriaged(db)).toHaveLength(1);
+      expect(await queryUntriaged(db)).toHaveLength(1);
 
-      db.run('DELETE FROM applications WHERE posting_id = ?', ['p1']);
-      const restored = queryUntriaged(db);
+      await db.run('DELETE FROM applications WHERE posting_id = ?', ['p1']);
+      const restored = await queryUntriaged(db);
       expect(restored).toHaveLength(2);
       expect(restored[0]?.id).toBe('p1');
     });

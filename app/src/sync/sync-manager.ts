@@ -1,4 +1,4 @@
-import type { NightjarDB } from '@/db/database';
+import type { Database } from '@/db/database';
 import type { Profile } from '@/profile/types';
 import { syncFeed, getLastSyncedAt, type SyncResult } from './feed-sync';
 import { fireNewPostingNotifications, requestNotificationPermission } from './notifications';
@@ -20,7 +20,7 @@ export interface SyncState {
 export type SyncListener = (state: SyncState) => void;
 
 export class SyncManager {
-  private db: NightjarDB;
+  private db: Database;
   private profile: Profile | null = null;
   private syncing = false;
   private intervalId: ReturnType<typeof setInterval> | null = null;
@@ -34,7 +34,7 @@ export class SyncManager {
   private visibilityHandler: (() => void) | null = null;
   private permissionRequested = false;
 
-  constructor(db: NightjarDB) {
+  constructor(db: Database) {
     this.db = db;
   }
 
@@ -82,7 +82,7 @@ export class SyncManager {
     this.updateState({ status: 'syncing', lastError: null });
 
     try {
-      const ghosted = runAutoGhost(this.db);
+      const ghosted = await runAutoGhost(this.db);
       if (ghosted > 0) {
         console.log(`[nightjar] auto-ghosted ${String(ghosted)} stale application(s)`);
       }
@@ -93,12 +93,13 @@ export class SyncManager {
         const idsToClassify = result.newPostingIds.length > 0
           ? result.newPostingIds
           : [];
-        const unscored = this.db.query<{ id: string }>(
+        const unscoredRows = await this.db.query<{ id: string }>(
           'SELECT id FROM postings_cache WHERE (category IS NULL OR score IS NULL) AND closed_at IS NULL',
-        ).map((r) => r.id);
+        );
+        const unscored = unscoredRows.map((r) => r.id);
         const allIds = [...new Set([...idsToClassify, ...unscored])];
         if (allIds.length > 0) {
-          recomputeNewPostings(this.db, allIds, this.profile);
+          await recomputeNewPostings(this.db, allIds, this.profile);
         }
       }
 

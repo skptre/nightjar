@@ -10,8 +10,8 @@ describe('NightjarDB', () => {
   });
 
   describe('schema creation', () => {
-    it('creates all tables on fresh database', () => {
-      const tables = db.query<{ name: string }>(
+    it('creates all tables on fresh database', async () => {
+      const tables = await db.query<{ name: string }>(
         "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name",
       );
       const names = tables.map((t) => t.name);
@@ -20,13 +20,13 @@ describe('NightjarDB', () => {
       expect(names).toContain('applications');
     });
 
-    it('sets initial schema version to 1', () => {
-      const version = getSchemaVersion(db);
+    it('sets initial schema version to 1', async () => {
+      const version = await getSchemaVersion(db);
       expect(version).toBe(1);
     });
 
-    it('creates indexes', () => {
-      const indexes = db.query<{ name: string }>(
+    it('creates indexes', async () => {
+      const indexes = await db.query<{ name: string }>(
         "SELECT name FROM sqlite_master WHERE type='index' AND name NOT LIKE 'sqlite_%' ORDER BY name",
       );
       const names = indexes.map((i) => i.name);
@@ -37,7 +37,7 @@ describe('NightjarDB', () => {
   });
 
   describe('posting round-trip', () => {
-    it('inserts and queries a posting correctly', () => {
+    it('inserts and queries a posting correctly', async () => {
       const now = '2026-08-12T00:00:00Z';
       const postingData = JSON.stringify({
         id: 'abc123',
@@ -45,13 +45,13 @@ describe('NightjarDB', () => {
         title: 'SWE Intern',
       });
 
-      db.run(
+      await db.run(
         `INSERT INTO postings_cache (id, data, first_seen_at, synced_at)
          VALUES (?, ?, ?, ?)`,
         ['abc123', postingData, now, now],
       );
 
-      const row = db.queryOne<{
+      const row = await db.queryOne<{
         id: string;
         data: string;
         first_seen_at: string;
@@ -71,14 +71,14 @@ describe('NightjarDB', () => {
       expect(row!.score).toBeNull();
     });
 
-    it('handles all nullable fields correctly', () => {
-      db.run(
+    it('handles all nullable fields correctly', async () => {
+      await db.run(
         `INSERT INTO postings_cache (id, data, synced_at)
          VALUES (?, ?, ?)`,
         ['test1', '{}', '2026-01-01T00:00:00Z'],
       );
 
-      const row = db.queryOne<{
+      const row = await db.queryOne<{
         id: string;
         description: string | null;
         closed_at: string | null;
@@ -106,20 +106,20 @@ describe('NightjarDB', () => {
   });
 
   describe('application tracking', () => {
-    it('inserts and queries application status', () => {
+    it('inserts and queries application status', async () => {
       const now = '2026-08-12T00:00:00Z';
 
-      db.run(
+      await db.run(
         `INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)`,
         ['p1', '{}', now],
       );
-      db.run(
+      await db.run(
         `INSERT INTO applications (posting_id, status, created_at, updated_at)
          VALUES (?, ?, ?, ?)`,
         ['p1', 'saved', now, now],
       );
 
-      const app = db.queryOne<{ posting_id: string; status: string }>(
+      const app = await db.queryOne<{ posting_id: string; status: string }>(
         'SELECT posting_id, status FROM applications WHERE posting_id = ?',
         ['p1'],
       );
@@ -129,15 +129,15 @@ describe('NightjarDB', () => {
       expect(app!.status).toBe('saved');
     });
 
-    it('defaults status to new', () => {
+    it('defaults status to new', async () => {
       const now = '2026-08-12T00:00:00Z';
-      db.run(
+      await db.run(
         `INSERT INTO applications (posting_id, created_at, updated_at)
          VALUES (?, ?, ?)`,
         ['p2', now, now],
       );
 
-      const app = db.queryOne<{ status: string }>(
+      const app = await db.queryOne<{ status: string }>(
         'SELECT status FROM applications WHERE posting_id = ?',
         ['p2'],
       );
@@ -148,11 +148,11 @@ describe('NightjarDB', () => {
   describe('export and import', () => {
     it('preserves data through export/import cycle', async () => {
       const now = '2026-08-12T00:00:00Z';
-      db.run(
+      await db.run(
         `INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)`,
         ['exp1', '{"title":"Test"}', now],
       );
-      db.run(
+      await db.run(
         `INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)`,
         ['exp2', '{"title":"Test2"}', now],
       );
@@ -160,7 +160,7 @@ describe('NightjarDB', () => {
       const exported = db.export();
       const db2 = await NightjarDB.createFromBytes(exported);
 
-      const rows = db2.query<{ id: string; data: string }>(
+      const rows = await db2.query<{ id: string; data: string }>(
         'SELECT id, data FROM postings_cache ORDER BY id',
       );
       expect(rows).toHaveLength(2);
@@ -169,20 +169,20 @@ describe('NightjarDB', () => {
       expect(rows[1]!.id).toBe('exp2');
       expect(rows[1]!.data).toBe('{"title":"Test2"}');
 
-      db2.close();
+      await db2.close();
     });
 
     it('preserves schema version through export/import', async () => {
       const exported = db.export();
       const db2 = await NightjarDB.createFromBytes(exported);
 
-      expect(getSchemaVersion(db2)).toBe(1);
-      db2.close();
+      expect(await getSchemaVersion(db2)).toBe(1);
+      await db2.close();
     });
   });
 
   describe('migration runner', () => {
-    it('applies pending migrations in order', () => {
+    it('applies pending migrations in order', async () => {
       const testMigrations: Migration[] = [
         {
           version: 2,
@@ -194,17 +194,17 @@ describe('NightjarDB', () => {
         },
       ];
 
-      runMigrations(db, testMigrations);
+      await runMigrations(db, testMigrations);
 
-      expect(getSchemaVersion(db)).toBe(3);
+      expect(await getSchemaVersion(db)).toBe(3);
 
-      db.run(
+      await db.run(
         `INSERT INTO postings_cache (id, data, synced_at, test_col, test_col2)
          VALUES (?, ?, ?, ?, ?)`,
         ['m1', '{}', '2026-01-01T00:00:00Z', 'hello', 42],
       );
 
-      const row = db.queryOne<{ test_col: string; test_col2: number }>(
+      const row = await db.queryOne<{ test_col: string; test_col2: number }>(
         'SELECT test_col, test_col2 FROM postings_cache WHERE id = ?',
         ['m1'],
       );
@@ -212,7 +212,7 @@ describe('NightjarDB', () => {
       expect(row!.test_col2).toBe(42);
     });
 
-    it('skips already-applied migrations', () => {
+    it('skips already-applied migrations', async () => {
       const testMigrations: Migration[] = [
         {
           version: 2,
@@ -220,33 +220,33 @@ describe('NightjarDB', () => {
         },
       ];
 
-      runMigrations(db, testMigrations);
-      expect(getSchemaVersion(db)).toBe(2);
+      await runMigrations(db, testMigrations);
+      expect(await getSchemaVersion(db)).toBe(2);
 
-      runMigrations(db, testMigrations);
-      expect(getSchemaVersion(db)).toBe(2);
+      await runMigrations(db, testMigrations);
+      expect(await getSchemaVersion(db)).toBe(2);
     });
 
-    it('applies only migrations newer than current version', () => {
+    it('applies only migrations newer than current version', async () => {
       const batch1: Migration[] = [
         { version: 2, sql: 'ALTER TABLE postings_cache ADD COLUMN v2_col TEXT;' },
       ];
-      runMigrations(db, batch1);
-      expect(getSchemaVersion(db)).toBe(2);
+      await runMigrations(db, batch1);
+      expect(await getSchemaVersion(db)).toBe(2);
 
       const batch2: Migration[] = [
         { version: 2, sql: 'ALTER TABLE postings_cache ADD COLUMN v2_col TEXT;' },
         { version: 3, sql: 'ALTER TABLE postings_cache ADD COLUMN v3_col TEXT;' },
       ];
-      runMigrations(db, batch2);
-      expect(getSchemaVersion(db)).toBe(3);
+      await runMigrations(db, batch2);
+      expect(await getSchemaVersion(db)).toBe(3);
 
-      db.run(
+      await db.run(
         `INSERT INTO postings_cache (id, data, synced_at, v2_col, v3_col)
          VALUES (?, ?, ?, ?, ?)`,
         ['check1', '{}', '2026-01-01T00:00:00Z', 'a', 'b'],
       );
-      const row = db.queryOne<{ v2_col: string; v3_col: string }>(
+      const row = await db.queryOne<{ v2_col: string; v3_col: string }>(
         'SELECT v2_col, v3_col FROM postings_cache WHERE id = ?',
         ['check1'],
       );
@@ -256,54 +256,54 @@ describe('NightjarDB', () => {
   });
 
   describe('transactions', () => {
-    it('commits all writes atomically', () => {
-      db.transaction(() => {
-        db.run(
+    it('commits all writes atomically', async () => {
+      await db.transaction(async () => {
+        await db.run(
           'INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)',
           ['tx1', '{}', '2026-01-01T00:00:00Z'],
         );
-        db.run(
+        await db.run(
           'INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)',
           ['tx2', '{}', '2026-01-01T00:00:00Z'],
         );
       });
 
-      const rows = db.query<{ id: string }>('SELECT id FROM postings_cache ORDER BY id');
+      const rows = await db.query<{ id: string }>('SELECT id FROM postings_cache ORDER BY id');
       expect(rows).toHaveLength(2);
       expect(rows[0]!.id).toBe('tx1');
       expect(rows[1]!.id).toBe('tx2');
     });
 
-    it('rolls back on error', () => {
-      expect(() => {
-        db.transaction(() => {
-          db.run(
+    it('rolls back on error', async () => {
+      await expect(
+        db.transaction(async () => {
+          await db.run(
             'INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)',
             ['rb1', '{}', '2026-01-01T00:00:00Z'],
           );
           throw new Error('intentional error');
-        });
-      }).toThrow('intentional error');
+        }),
+      ).rejects.toThrow('intentional error');
 
-      const rows = db.query<{ id: string }>('SELECT id FROM postings_cache');
+      const rows = await db.query<{ id: string }>('SELECT id FROM postings_cache');
       expect(rows).toHaveLength(0);
     });
   });
 
   describe('concurrent writes', () => {
-    it('rapid sequential writes do not corrupt data', () => {
+    it('rapid sequential writes do not corrupt data', async () => {
       for (let i = 0; i < 20; i++) {
-        db.run(
+        await db.run(
           'INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)',
           [`rapid${String(i)}`, `{"n":${String(i)}}`, '2026-01-01T00:00:00Z'],
         );
       }
 
-      const rows = db.query<{ id: string }>('SELECT id FROM postings_cache');
+      const rows = await db.query<{ id: string }>('SELECT id FROM postings_cache');
       expect(rows).toHaveLength(20);
 
       for (let i = 0; i < 20; i++) {
-        const row = db.queryOne<{ data: string }>(
+        const row = await db.queryOne<{ data: string }>(
           'SELECT data FROM postings_cache WHERE id = ?',
           [`rapid${String(i)}`],
         );
@@ -313,31 +313,121 @@ describe('NightjarDB', () => {
   });
 
   describe('query helpers', () => {
-    it('query returns empty array when no results', () => {
-      const rows = db.query<{ id: string }>('SELECT id FROM postings_cache');
+    it('query returns empty array when no results', async () => {
+      const rows = await db.query<{ id: string }>('SELECT id FROM postings_cache');
       expect(rows).toEqual([]);
     });
 
-    it('queryOne returns undefined when no results', () => {
-      const row = db.queryOne<{ id: string }>('SELECT id FROM postings_cache WHERE id = ?', [
+    it('queryOne returns undefined when no results', async () => {
+      const row = await db.queryOne<{ id: string }>('SELECT id FROM postings_cache WHERE id = ?', [
         'nonexistent',
       ]);
       expect(row).toBeUndefined();
     });
 
-    it('query returns multiple rows correctly', () => {
-      db.transaction(() => {
+    it('query returns multiple rows correctly', async () => {
+      await db.transaction(async () => {
         for (let i = 1; i <= 5; i++) {
-          db.run(
+          await db.run(
             'INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)',
             [`q${String(i)}`, '{}', '2026-01-01T00:00:00Z'],
           );
         }
       });
 
-      const rows = db.query<{ id: string }>('SELECT id FROM postings_cache ORDER BY id');
+      const rows = await db.query<{ id: string }>('SELECT id FROM postings_cache ORDER BY id');
       expect(rows).toHaveLength(5);
       expect(rows.map((r) => r.id)).toEqual(['q1', 'q2', 'q3', 'q4', 'q5']);
+    });
+  });
+
+  describe('browser-to-native migration', () => {
+    it('migrates postings and applications from sql.js bytes to target', async () => {
+      const source = await NightjarDB.createInMemory();
+      const now = '2026-08-25T12:00:00Z';
+      await source.run(
+        `INSERT INTO postings_cache (id, data, description, category, score, synced_at)
+         VALUES (?, ?, ?, ?, ?, ?)`,
+        ['mig1', '{"title":"SWE Intern"}', 'Build things', 'swe', 85, now],
+      );
+      await source.run(
+        `INSERT INTO postings_cache (id, data, synced_at)
+         VALUES (?, ?, ?)`,
+        ['mig2', '{"title":"ML Engineer"}', now],
+      );
+      await source.run(
+        `INSERT INTO applications (posting_id, status, applied_at, created_at, updated_at)
+         VALUES (?, ?, ?, ?, ?)`,
+        ['mig1', 'applied', now, now, now],
+      );
+
+      const exported = source.export();
+      const target = await NightjarDB.createInMemory();
+
+      const { migrateFromBrowser } = await import('./migrate-from-browser');
+      const migrated = await migrateFromBrowser(target, async () => exported);
+      expect(migrated).toBe(true);
+
+      const postings = await target.query<{ id: string; data: string; description: string | null; category: string | null; score: number | null }>(
+        'SELECT id, data, description, category, score FROM postings_cache ORDER BY id',
+      );
+      expect(postings).toHaveLength(2);
+      expect(postings[0]!.id).toBe('mig1');
+      expect(postings[0]!.data).toBe('{"title":"SWE Intern"}');
+      expect(postings[0]!.description).toBe('Build things');
+      expect(postings[0]!.category).toBe('swe');
+      expect(postings[0]!.score).toBe(85);
+      expect(postings[1]!.id).toBe('mig2');
+      expect(postings[1]!.description).toBeNull();
+
+      const apps = await target.query<{ posting_id: string; status: string; applied_at: string | null }>(
+        'SELECT posting_id, status, applied_at FROM applications',
+      );
+      expect(apps).toHaveLength(1);
+      expect(apps[0]!.posting_id).toBe('mig1');
+      expect(apps[0]!.status).toBe('applied');
+      expect(apps[0]!.applied_at).toBe(now);
+
+      await source.close();
+      await target.close();
+    });
+
+    it('skips migration when target already has data', async () => {
+      const target = await NightjarDB.createInMemory();
+      const now = '2026-08-25T12:00:00Z';
+      await target.run(
+        `INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)`,
+        ['existing', '{}', now],
+      );
+
+      const { migrateFromBrowser } = await import('./migrate-from-browser');
+      const migrated = await migrateFromBrowser(target, async () => new Uint8Array([1, 2, 3]));
+      expect(migrated).toBe(false);
+
+      await target.close();
+    });
+
+    it('skips migration when no browser data exists', async () => {
+      const target = await NightjarDB.createInMemory();
+
+      const { migrateFromBrowser } = await import('./migrate-from-browser');
+      const migrated = await migrateFromBrowser(target, async () => null);
+      expect(migrated).toBe(false);
+
+      await target.close();
+    });
+
+    it('skips migration when browser database has no rows', async () => {
+      const source = await NightjarDB.createInMemory();
+      const exported = source.export();
+      const target = await NightjarDB.createInMemory();
+
+      const { migrateFromBrowser } = await import('./migrate-from-browser');
+      const migrated = await migrateFromBrowser(target, async () => exported);
+      expect(migrated).toBe(false);
+
+      await source.close();
+      await target.close();
     });
   });
 });

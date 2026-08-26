@@ -1,4 +1,4 @@
-import type { NightjarDB } from '@/db/database';
+import type { Database } from '@/db/database';
 import type { Profile } from '@/profile/types';
 import type { ClassificationResult } from './types';
 import type { FeedPosting } from '@/sync/feed-sync';
@@ -28,12 +28,12 @@ export function classifyPosting(
   return { term, category, eligibility };
 }
 
-export function classifyAndStore(
-  db: NightjarDB,
+export async function classifyAndStore(
+  db: Database,
   postingId: string,
   profile: Profile,
-): ClassificationResult | null {
-  const row = db.queryOne<{ data: string; description: string | null }>(
+): Promise<ClassificationResult | null> {
+  const row = await db.queryOne<{ data: string; description: string | null }>(
     'SELECT data, description FROM postings_cache WHERE id = ?',
     [postingId],
   );
@@ -49,7 +49,7 @@ export function classifyAndStore(
 
   const result = classifyPosting(posting, row.description, profile);
 
-  db.run(
+  await db.run(
     `UPDATE postings_cache
      SET category = ?, term = ?, eligibility = ?
      WHERE id = ?`,
@@ -64,16 +64,16 @@ export function classifyAndStore(
   return result;
 }
 
-export function classifyNewPostings(
-  db: NightjarDB,
+export async function classifyNewPostings(
+  db: Database,
   postingIds: string[],
   profile: Profile,
-): Map<string, ClassificationResult> {
+): Promise<Map<string, ClassificationResult>> {
   const results = new Map<string, ClassificationResult>();
 
-  db.transaction(() => {
+  await db.transaction(async () => {
     for (const id of postingIds) {
-      const result = classifyAndStoreInTransaction(db, id, profile);
+      const result = await classifyAndStoreInTransaction(db, id, profile);
       if (result) {
         results.set(id, result);
       }
@@ -83,12 +83,12 @@ export function classifyNewPostings(
   return results;
 }
 
-function classifyAndStoreInTransaction(
-  db: NightjarDB,
+async function classifyAndStoreInTransaction(
+  db: Database,
   postingId: string,
   profile: Profile,
-): ClassificationResult | null {
-  const row = db.queryOne<{ data: string; description: string | null }>(
+): Promise<ClassificationResult | null> {
+  const row = await db.queryOne<{ data: string; description: string | null }>(
     'SELECT data, description FROM postings_cache WHERE id = ?',
     [postingId],
   );
@@ -104,7 +104,7 @@ function classifyAndStoreInTransaction(
 
   const result = classifyPosting(posting, row.description, profile);
 
-  db.run(
+  await db.run(
     `UPDATE postings_cache
      SET category = ?, term = ?, eligibility = ?
      WHERE id = ?`,
@@ -119,14 +119,14 @@ function classifyAndStoreInTransaction(
   return result;
 }
 
-export function reclassifyAll(
-  db: NightjarDB,
+export async function reclassifyAll(
+  db: Database,
   profile: Profile,
-): number {
-  const rows = db.query<{ id: string }>(
+): Promise<number> {
+  const rows = await db.query<{ id: string }>(
     'SELECT id FROM postings_cache WHERE closed_at IS NULL',
   );
 
-  const results = classifyNewPostings(db, rows.map((r) => r.id), profile);
+  const results = await classifyNewPostings(db, rows.map((r) => r.id), profile);
   return results.size;
 }

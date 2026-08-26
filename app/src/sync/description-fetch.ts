@@ -1,4 +1,4 @@
-import type { NightjarDB } from '@/db/database';
+import type { Database } from '@/db/database';
 import type { Profile } from '@/profile/types';
 import { recomputePosting } from '@/classify/recompute';
 
@@ -334,11 +334,11 @@ function parsePostingData(row: { id: string; data: string }): PostingInfo | null
 }
 
 export async function prefetchDescriptions(
-  db: NightjarDB,
+  db: Database,
   limit: number = DEFAULT_PREFETCH_LIMIT,
   profile?: Profile,
 ): Promise<DescriptionResult[]> {
-  const rows = db.query<{ id: string; data: string }>(
+  const rows = await db.query<{ id: string; data: string }>(
     `SELECT id, data FROM postings_cache
      WHERE description IS NULL AND closed_at IS NULL
      ORDER BY COALESCE(score, 0) DESC, first_seen_at DESC
@@ -361,15 +361,15 @@ export async function prefetchDescriptions(
 
   const pending: Array<Promise<void>> = [];
   for (const posting of postings) {
-    const promise = fetcher.fetchOne(posting).then((result) => {
+    const promise = fetcher.fetchOne(posting).then(async (result) => {
       results.push(result);
       if (result.description !== null) {
-        db.run(
+        await db.run(
           'UPDATE postings_cache SET description = ? WHERE id = ?',
           [result.description, result.id],
         );
         if (profile) {
-          recomputePosting(db, result.id, profile);
+          await recomputePosting(db, result.id, profile);
         }
       }
     });

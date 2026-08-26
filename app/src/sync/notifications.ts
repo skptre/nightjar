@@ -1,4 +1,4 @@
-import type { NightjarDB } from '@/db/database';
+import type { Database } from '@/db/database';
 
 const NOTIFICATION_CAP = 15;
 
@@ -9,15 +9,15 @@ interface PostingSummary {
   location: string;
 }
 
-export function getNewPostingSummaries(
-  db: NightjarDB,
+export async function getNewPostingSummaries(
+  db: Database,
   postingIds: string[],
-): PostingSummary[] {
+): Promise<PostingSummary[]> {
   if (postingIds.length === 0) return [];
 
   const summaries: PostingSummary[] = [];
   for (const id of postingIds) {
-    const row = db.queryOne<{ data: string; eligibility: string | null }>(
+    const row = await db.queryOne<{ data: string; eligibility: string | null }>(
       'SELECT data, eligibility FROM postings_cache WHERE id = ?',
       [id],
     );
@@ -62,10 +62,10 @@ export async function requestNotificationPermission(): Promise<NotificationPermi
 }
 
 export async function fireNewPostingNotifications(
-  db: NightjarDB,
+  db: Database,
   newPostingIds: string[],
 ): Promise<number> {
-  const summaries = getNewPostingSummaries(db, newPostingIds);
+  const summaries = await getNewPostingSummaries(db, newPostingIds);
   if (summaries.length === 0) return 0;
 
   if (!('Notification' in globalThis) || Notification.permission !== 'granted') {

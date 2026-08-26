@@ -1,14 +1,14 @@
 import type { Database } from '@/db/database';
 import type { Profile } from '@/profile/types';
+import { DEFAULT_SYNC_INTERVAL_MS } from '@/profile/types';
 import { syncFeed, getLastSyncedAt, type SyncResult } from './feed-sync';
 import { fireNewPostingNotifications, requestNotificationPermission } from './notifications';
 import { prefetchDescriptions } from './description-fetch';
 import { recomputeNewPostings } from '@/classify/recompute';
 import { runAutoGhost } from '@/views/Pipeline/auto-ghost';
+import { updateTrayInfo } from '@/lib/platform';
 
 export type SyncStatus = 'idle' | 'syncing' | 'error';
-
-const SYNC_INTERVAL_MS = 5 * 60 * 1000;
 
 export interface SyncState {
   status: SyncStatus;
@@ -33,6 +33,7 @@ export class SyncManager {
   };
   private visibilityHandler: (() => void) | null = null;
   private permissionRequested = false;
+  private syncIntervalMs: number = DEFAULT_SYNC_INTERVAL_MS;
 
   constructor(db: Database) {
     this.db = db;
@@ -50,6 +51,16 @@ export class SyncManager {
     return { ...this.state };
   }
 
+  setSyncInterval(ms: number): void {
+    this.syncIntervalMs = ms;
+    if (this.intervalId !== null) {
+      clearInterval(this.intervalId);
+      this.intervalId = setInterval(() => {
+        void this.doSync();
+      }, this.syncIntervalMs);
+    }
+  }
+
   start(): void {
     void this.doSync();
 
@@ -62,7 +73,7 @@ export class SyncManager {
 
     this.intervalId = setInterval(() => {
       void this.doSync();
-    }, SYNC_INTERVAL_MS);
+    }, this.syncIntervalMs);
   }
 
   stop(): void {
@@ -111,13 +122,17 @@ export class SyncManager {
         await fireNewPostingNotifications(this.db, result.newPostingIds);
       }
 
+      const updatedCount = result.skipped
+        ? this.state.newPostingCount
+        : this.state.newPostingCount + result.newPostingIds.length;
+
       this.updateState({
         status: 'idle',
         lastSyncedAt: new Date().toISOString(),
-        newPostingCount: result.skipped
-          ? this.state.newPostingCount
-          : this.state.newPostingCount + result.newPostingIds.length,
+        newPostingCount: updatedCount,
       });
+
+      void updateTrayInfo('just now', updatedCount);
 
       if (!result.skipped) {
         void prefetchDescriptions(this.db, undefined, this.profile ?? undefined);

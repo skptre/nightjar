@@ -119,9 +119,11 @@ export function PipelineView(): React.ReactNode {
   const [notesValue, setNotesValue] = useState('');
   const [dragOverColumn, setDragOverColumn] = useState<string | null>(null);
 
-  const cards = useMemo(() => {
-    void refreshKey;
-    const rows = db.query<PipelineQueryRow>(
+  const [cards, setCards] = useState<PipelineCard[]>([]);
+
+  useEffect(() => {
+    let cancelled = false;
+    void db.query<PipelineQueryRow>(
       `SELECT p.id, p.data, a.status, a.applied_at, a.deadline, a.notes,
               a.created_at as app_created_at, a.updated_at as app_updated_at,
               p.eligibility, p.score, p.category, p.term
@@ -129,14 +131,16 @@ export function PipelineView(): React.ReactNode {
        INNER JOIN applications a ON p.id = a.posting_id
        WHERE a.status != 'new'
        ORDER BY a.updated_at DESC`,
-    );
-
-    const result: PipelineCard[] = [];
-    for (const row of rows) {
-      const card = parseCard(row);
-      if (card) result.push(card);
-    }
-    return result;
+    ).then((rows) => {
+      if (cancelled) return;
+      const result: PipelineCard[] = [];
+      for (const row of rows) {
+        const card = parseCard(row);
+        if (card) result.push(card);
+      }
+      setCards(result);
+    });
+    return () => { cancelled = true; };
   }, [db, refreshKey]);
 
   const columnCards = useMemo(() => {

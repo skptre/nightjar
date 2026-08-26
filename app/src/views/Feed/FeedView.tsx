@@ -116,19 +116,26 @@ export function FeedView(): React.ReactNode {
     [profile?.excluded_companies],
   );
 
-  const postings = useMemo(() => {
-    void refreshKey;
-    const rows = db.query<PostingQueryRow>(
+  const [rawRows, setRawRows] = useState<PostingQueryRow[]>([]);
+
+  useEffect(() => {
+    let cancelled = false;
+    void db.query<PostingQueryRow>(
       `SELECT p.id, p.data, p.first_seen_at, p.closed_at, p.category, p.term, p.eligibility, p.score, p.score_breakdown
        FROM postings_cache p
        LEFT JOIN applications a ON p.id = a.posting_id
        WHERE (a.posting_id IS NULL OR a.status = 'new')
          AND p.closed_at IS NULL
        ORDER BY CASE WHEN p.score IS NULL THEN 1 ELSE 0 END, p.score DESC`,
-    );
+    ).then((rows) => {
+      if (!cancelled) setRawRows(rows);
+    });
+    return () => { cancelled = true; };
+  }, [db, refreshKey]);
 
+  const postings = useMemo(() => {
     const parsed: PostingRowData[] = [];
-    for (const row of rows) {
+    for (const row of rawRows) {
       const p = parsePostingRow(row);
       if (!p) continue;
       if (excludedCompanies.has(p.company_slug)) continue;
@@ -164,7 +171,7 @@ export function FeedView(): React.ReactNode {
     }
 
     return parsed;
-  }, [db, filters, search, excludedCompanies, profile, refreshKey]);
+  }, [rawRows, filters, search, excludedCompanies, profile]);
 
   const eligiblePostings = useMemo(() => {
     return postings.filter((p) => {

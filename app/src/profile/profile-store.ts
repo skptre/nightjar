@@ -70,7 +70,7 @@ export function validateAndRepairProfile(raw: unknown): Profile | null {
     ? raw['contacts']
     : DEFAULT_PROFILE_FIELDS.contacts;
 
-  return {
+  const result: Profile = {
     graduation: raw['graduation'] as string,
     grad_window,
     current_class_year: raw['current_class_year'] as string,
@@ -82,6 +82,27 @@ export function validateAndRepairProfile(raw: unknown): Profile | null {
     tiers,
     contacts,
   };
+
+  if (typeof raw['notifications_enabled'] === 'boolean') {
+    result.notifications_enabled = raw['notifications_enabled'];
+  }
+  if (isStringArray(raw['notification_categories'])) {
+    result.notification_categories = raw['notification_categories'];
+  }
+  if (typeof raw['notification_min_tier'] === 'number') {
+    result.notification_min_tier = raw['notification_min_tier'];
+  }
+  if (typeof raw['quiet_hours_start'] === 'string') {
+    result.quiet_hours_start = raw['quiet_hours_start'];
+  }
+  if (typeof raw['quiet_hours_end'] === 'string') {
+    result.quiet_hours_end = raw['quiet_hours_end'];
+  }
+  if (typeof raw['sync_interval_ms'] === 'number') {
+    result.sync_interval_ms = raw['sync_interval_ms'];
+  }
+
+  return result;
 }
 
 export function loadProfile(): Profile | null {

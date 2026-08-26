@@ -50,6 +50,8 @@ const META_HASH_KEY = 'nightjar_feed_meta_sha';
 const LAST_SYNCED_KEY = 'nightjar_last_synced_at';
 
 function getFeedBaseUrl(): string {
+  const override = localStorage.getItem('nightjar_feed_url_override');
+  if (override) return override;
   if (typeof import.meta !== 'undefined' && import.meta.env?.VITE_FEED_URL) {
     return import.meta.env.VITE_FEED_URL as string;
   }

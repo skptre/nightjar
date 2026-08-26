@@ -2,6 +2,8 @@ import { createContext, useContext, useEffect, useState, useRef, useCallback, ty
 import { useDatabase } from '@/providers/DatabaseProvider';
 import { useProfile } from '@/providers/ProfileProvider';
 import { SyncManager, type SyncStatus } from '@/sync/sync-manager';
+import { DEFAULT_SYNC_INTERVAL_MS } from '@/profile/types';
+import { listenForTraySync } from '@/lib/platform';
 
 interface SyncContextValue {
   status: SyncStatus;
@@ -34,6 +36,7 @@ export function SyncProvider({ children }: { children: ReactNode }): ReactNode {
 
     if (profile) {
       manager.setProfile(profile);
+      manager.setSyncInterval(profile.sync_interval_ms ?? DEFAULT_SYNC_INTERVAL_MS);
     }
 
     manager.onStateChange((state) => {
@@ -44,9 +47,17 @@ export function SyncProvider({ children }: { children: ReactNode }): ReactNode {
 
     manager.start();
 
+    let unlistenTray: (() => void) | null = null;
+    void listenForTraySync(() => {
+      void manager.doSync();
+    }).then((fn) => {
+      unlistenTray = fn;
+    });
+
     return () => {
       manager.stop();
       managerRef.current = null;
+      unlistenTray?.();
     };
   }, [db, profile]);
 

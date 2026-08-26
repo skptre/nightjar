@@ -29,6 +29,16 @@ export const CATEGORY_OPTIONS = [
 
 export type Category = (typeof CATEGORY_OPTIONS)[number]['value'];
 
+export const SYNC_INTERVAL_OPTIONS = [
+  { value: 60_000, label: '1 minute' },
+  { value: 300_000, label: '5 minutes' },
+  { value: 900_000, label: '15 minutes' },
+  { value: 1_800_000, label: '30 minutes' },
+  { value: 3_600_000, label: '1 hour' },
+] as const;
+
+export const DEFAULT_SYNC_INTERVAL_MS = 300_000;
+
 export interface Profile {
   graduation: string;
   grad_window: [string, string];
@@ -40,6 +50,12 @@ export interface Profile {
   excluded_companies: string[];
   tiers: Record<string, 1 | 2 | 3>;
   contacts: Record<string, string>;
+  notifications_enabled?: boolean;
+  notification_categories?: string[];
+  notification_min_tier?: number;
+  quiet_hours_start?: string;
+  quiet_hours_end?: string;
+  sync_interval_ms?: number;
 }
 
 export function computeGradWindow(graduation: string): [string, string] {

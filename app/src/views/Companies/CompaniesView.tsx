@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 import { useDatabase } from '@/providers/DatabaseProvider';
 import { useProfile } from '@/providers/ProfileProvider';
 import { recomputeAll } from '@/classify/recompute';
@@ -66,36 +66,38 @@ export function CompaniesView(): React.ReactNode {
   const [contactValue, setContactValue] = useState('');
   const [refreshKey, setRefreshKey] = useState(0);
 
-  const companies = useMemo(() => {
-    void refreshKey;
-    const rows = db.query<PostingQueryRow>(
+  const [companies, setCompanies] = useState<CompanyRow[]>([]);
+
+  useEffect(() => {
+    let cancelled = false;
+    void db.query<PostingQueryRow>(
       'SELECT data, first_seen_at, closed_at FROM postings_cache WHERE closed_at IS NULL',
-    );
+    ).then((rows) => {
+      if (cancelled) return;
+      const map = new Map<string, CompanyRow>();
+      for (const row of rows) {
+        const info = extractCompanyData(row.data);
+        if (!info || !info.company_slug) continue;
 
-    const map = new Map<string, CompanyRow>();
-
-    for (const row of rows) {
-      const info = extractCompanyData(row.data);
-      if (!info || !info.company_slug) continue;
-
-      const existing = map.get(info.company_slug);
-      if (existing) {
-        existing.postingCount++;
-        if (row.first_seen_at && (!existing.latestPosting || row.first_seen_at > existing.latestPosting)) {
-          existing.latestPosting = row.first_seen_at;
+        const existing = map.get(info.company_slug);
+        if (existing) {
+          existing.postingCount++;
+          if (row.first_seen_at && (!existing.latestPosting || row.first_seen_at > existing.latestPosting)) {
+            existing.latestPosting = row.first_seen_at;
+          }
+        } else {
+          map.set(info.company_slug, {
+            slug: info.company_slug,
+            name: info.company,
+            source: info.source,
+            postingCount: 1,
+            latestPosting: row.first_seen_at,
+          });
         }
-      } else {
-        map.set(info.company_slug, {
-          slug: info.company_slug,
-          name: info.company,
-          source: info.source,
-          postingCount: 1,
-          latestPosting: row.first_seen_at,
-        });
       }
-    }
-
-    return Array.from(map.values());
+      setCompanies(Array.from(map.values()));
+    });
+    return () => { cancelled = true; };
   }, [db, refreshKey]);
 
   const filteredCompanies = useMemo(() => {

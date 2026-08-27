@@ -42,9 +42,14 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         run: |
           git config user.name "nightjar-bot"
-          git config user.email "noreply"
+          git config user.email "nightjar-bot@users.noreply.github.com"
+          COMMIT_MSG="poll: automated feed update"
+          if [ -f data/commit_msg.txt ]; then
+            COMMIT_MSG=$(cat data/commit_msg.txt)
+            rm data/commit_msg.txt
+          fi
           git add data/
-          git commit -m "poll: automated feed update"
+          git commit -m "$COMMIT_MSG"
           git push
 
       - name: Deploy to GitHub Pages

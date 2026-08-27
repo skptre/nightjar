@@ -3,6 +3,7 @@ import { useDatabase } from '@/providers/DatabaseProvider';
 import { useProfile } from '@/providers/ProfileProvider';
 import { useSync } from '@/providers/SyncProvider';
 import { useKeyboard } from '@/hooks/useKeyboard';
+import { useVirtualList } from '@/hooks/useVirtualList';
 import { PostingRow, UndoToast, type PostingRowData, type PostingAction } from './PostingRow';
 
 type TermFilter = 'all' | string;
@@ -71,6 +72,18 @@ const CATEGORY_OPTIONS = [
   { value: 'other', label: 'Other' },
 ];
 
+const POSTING_ROW_HEIGHT = 72;
+
+function formatRelativeAge(iso: string): string {
+  const diffMs = Date.now() - new Date(iso).getTime();
+  const minutes = Math.floor(diffMs / 60_000);
+  if (minutes < 60) return `${String(minutes)}m ago`;
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${String(hours)}h ago`;
+  const days = Math.floor(hours / 24);
+  return `${String(days)}d ago`;
+}
+
 function getAgeThreshold(age: AgeFilter): string | null {
   if (age === 'all') return null;
   const now = new Date();
@@ -87,7 +100,7 @@ function getAgeThreshold(age: AgeFilter): string | null {
 export function FeedView(): React.ReactNode {
   const { db } = useDatabase();
   const { profile } = useProfile();
-  const { clearNewPostingCount } = useSync();
+  const { clearNewPostingCount, status: syncStatus, lastSyncedAt, lastError } = useSync();
 
   const [filters, setFilters] = useState<Filters>({
     term: 'all',
@@ -199,16 +212,22 @@ export function FeedView(): React.ReactNode {
 
   const postingIds = useMemo(() => displayPostings.map((p) => p.id), [displayPostings]);
 
-  const rowRefs = useMemo(
-    () => displayPostings.map(() => createRef<HTMLDivElement>()),
-    [displayPostings],
-  );
+  const {
+    visibleRange,
+    totalHeight,
+    offsetTop,
+    containerRef: virtualContainerRef,
+    scrollToIndex,
+  } = useVirtualList({
+    itemCount: displayPostings.length,
+    itemHeight: POSTING_ROW_HEIGHT,
+  });
 
   useEffect(() => {
-    if (selectedIndex >= 0 && rowRefs[selectedIndex]?.current) {
-      rowRefs[selectedIndex].current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    if (selectedIndex >= 0 && selectedIndex < displayPostings.length) {
+      scrollToIndex(selectedIndex);
     }
-  }, [selectedIndex, rowRefs]);
+  }, [selectedIndex, scrollToIndex, displayPostings.length]);
 
   const handleSelectIndex = useCallback((index: number): void => {
     setSelectedIndex(index);
@@ -312,10 +331,15 @@ export function FeedView(): React.ReactNode {
     return count;
   }, [filters]);
 
+  const resetScroll = useCallback((): void => {
+    virtualContainerRef.current?.scrollTo(0, 0);
+  }, [virtualContainerRef]);
+
   const updateFilter = useCallback(<K extends keyof Filters>(key: K, value: Filters[K]): void => {
     setFilters((prev) => ({ ...prev, [key]: value }));
     setSelectedIndex(0);
-  }, []);
+    resetScroll();
+  }, [resetScroll]);
 
   const toggleCategory = useCallback((cat: string): void => {
     setFilters((prev) => {
@@ -328,7 +352,8 @@ export function FeedView(): React.ReactNode {
       return { ...prev, categories: next };
     });
     setSelectedIndex(0);
-  }, []);
+    resetScroll();
+  }, [resetScroll]);
 
   const clearFilters = useCallback((): void => {
     setFilters({
@@ -341,10 +366,38 @@ export function FeedView(): React.ReactNode {
     });
     setSearch('');
     setSelectedIndex(0);
-  }, []);
+    resetScroll();
+  }, [resetScroll]);
+
+  const staleMessage = useMemo(() => {
+    if (syncStatus === 'error' && lastError) {
+      if (lastSyncedAt) {
+        const ago = formatRelativeAge(lastSyncedAt);
+        return `Sync failed. Using cached data from ${ago}.`;
+      }
+      return 'Sync failed. Using cached data.';
+    }
+    if (lastSyncedAt) {
+      const ageMs = Date.now() - new Date(lastSyncedAt).getTime();
+      if (ageMs > 30 * 60 * 1000) {
+        return `Using cached data from ${formatRelativeAge(lastSyncedAt)}.`;
+      }
+    }
+    return null;
+  }, [syncStatus, lastError, lastSyncedAt]);
 
   return (
     <div>
+      {/* Stale data indicator */}
+      {staleMessage && (
+        <div
+          className="mb-3 px-3 py-2 text-xs rounded-md bg-amber-50 text-amber-800 border border-amber-200 dark:bg-amber-900/20 dark:text-amber-300 dark:border-amber-700/40"
+          data-testid="stale-data-banner"
+        >
+          {staleMessage}
+        </div>
+      )}
+
       {/* Filter bar */}
       <div className="flex flex-wrap items-center gap-2 mb-4">
         {/* Search */}
@@ -484,7 +537,7 @@ export function FeedView(): React.ReactNode {
         {search && ` matching "${search}"`}
       </div>
 
-      {/* Posting list */}
+      {/* Posting list — virtualized */}
       <div className="border border-gray-200 dark:border-nj-border rounded-lg overflow-hidden">
         {displayPostings.length === 0 ? (
           <div className="py-12 text-center text-gray-500 dark:text-nj-muted">
@@ -499,15 +552,30 @@ export function FeedView(): React.ReactNode {
             )}
           </div>
         ) : (
-          displayPostings.map((posting, idx) => (
-            <PostingRow
-              key={posting.id}
-              posting={posting}
-              selected={idx === selectedIndex}
-              rowRef={rowRefs[idx] ?? createRef()}
-              onAction={handleAction}
-            />
-          ))
+          <div
+            ref={virtualContainerRef}
+            className="overflow-y-auto"
+            style={{ maxHeight: `calc(100vh - 280px)` }}
+            data-testid="virtual-scroll-container"
+          >
+            <div style={{ height: totalHeight, position: 'relative' }}>
+              <div style={{ position: 'absolute', top: offsetTop, left: 0, right: 0 }}>
+                {displayPostings.slice(visibleRange.start, visibleRange.end).map((posting, idx) => (
+                  <div
+                    key={posting.id}
+                    style={{ height: POSTING_ROW_HEIGHT }}
+                  >
+                    <PostingRow
+                      posting={posting}
+                      selected={visibleRange.start + idx === selectedIndex}
+                      rowRef={createRef()}
+                      onAction={handleAction}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         )}
       </div>
 

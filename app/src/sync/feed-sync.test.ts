@@ -7,6 +7,8 @@ import {
   fetchFeed,
   getStoredMetaHash,
   setStoredMetaHash,
+  getStoredLastModified,
+  setStoredLastModified,
   type FeedData,
   type FeedPosting,
   type MetaData,
@@ -138,6 +140,75 @@ describe('feed-sync', () => {
 
       const result = await fetchFeed('/test');
       expect(result).toBeNull();
+    });
+
+    it('sends If-Modified-Since header when stored Last-Modified exists', async () => {
+      setStoredLastModified('Wed, 26 Aug 2026 03:33:48 GMT');
+      const feed = makeFeed({ p1: makePosting({ id: 'p1' }) });
+
+      vi.stubGlobal('fetch', vi.fn((_url: string, init?: RequestInit) => {
+        const headers = init?.headers as Record<string, string> | undefined;
+        expect(headers?.['If-Modified-Since']).toBe('Wed, 26 Aug 2026 03:33:48 GMT');
+        return Promise.resolve({
+          ok: true,
+          status: 200,
+          headers: new Headers({ 'Last-Modified': 'Thu, 27 Aug 2026 10:00:00 GMT' }),
+          json: () => Promise.resolve(feed),
+        });
+      }));
+
+      const result = await fetchFeed('/test');
+      expect(result).toEqual(feed);
+      expect(getStoredLastModified()).toBe('Thu, 27 Aug 2026 10:00:00 GMT');
+    });
+
+    it('does not send If-Modified-Since when no stored value', async () => {
+      const feed = makeFeed({ p1: makePosting({ id: 'p1' }) });
+
+      vi.stubGlobal('fetch', vi.fn((_url: string, init?: RequestInit) => {
+        const headers = init?.headers as Record<string, string> | undefined;
+        expect(headers?.['If-Modified-Since']).toBeUndefined();
+        return Promise.resolve({
+          ok: true,
+          status: 200,
+          headers: new Headers({}),
+          json: () => Promise.resolve(feed),
+        });
+      }));
+
+      await fetchFeed('/test');
+    });
+
+    it('returns null on 304 Not Modified', async () => {
+      setStoredLastModified('Wed, 26 Aug 2026 03:33:48 GMT');
+
+      vi.stubGlobal('fetch', vi.fn(() => {
+        return Promise.resolve({
+          ok: false,
+          status: 304,
+          headers: new Headers({}),
+          json: () => Promise.reject(new Error('No body on 304')),
+        });
+      }));
+
+      const result = await fetchFeed('/test');
+      expect(result).toBeNull();
+    });
+
+    it('stores Last-Modified from response header', async () => {
+      const feed = makeFeed({ p1: makePosting({ id: 'p1' }) });
+
+      vi.stubGlobal('fetch', vi.fn(() => {
+        return Promise.resolve({
+          ok: true,
+          status: 200,
+          headers: new Headers({ 'Last-Modified': 'Fri, 28 Aug 2026 12:00:00 GMT' }),
+          json: () => Promise.resolve(feed),
+        });
+      }));
+
+      await fetchFeed('/test');
+      expect(getStoredLastModified()).toBe('Fri, 28 Aug 2026 12:00:00 GMT');
     });
   });
 

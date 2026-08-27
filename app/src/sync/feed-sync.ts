@@ -54,6 +54,7 @@ export interface SyncResult {
 
 const META_HASH_KEY = 'nightjar_feed_meta_sha';
 const LAST_SYNCED_KEY = 'nightjar_last_synced_at';
+const LAST_MODIFIED_KEY = 'nightjar_feed_last_modified';
 
 function getFeedBaseUrl(): string {
   const override = localStorage.getItem('nightjar_feed_url_override');
@@ -82,8 +83,21 @@ export async function fetchFeed(baseUrl?: string): Promise<FeedData | null> {
   const base = baseUrl ?? getFeedBaseUrl();
   const url = `${base}/feed.json`;
   try {
-    const response = await fetch(url);
+    const headers: Record<string, string> = {};
+    const lastModified = getStoredLastModified();
+    if (lastModified) {
+      headers['If-Modified-Since'] = lastModified;
+    }
+
+    const response = await fetch(url, { headers });
+    if (response.status === 304) return null;
     if (!response.ok) return null;
+
+    const responseLastModified = response.headers.get('Last-Modified');
+    if (responseLastModified) {
+      setStoredLastModified(responseLastModified);
+    }
+
     const data: unknown = await response.json();
     if (!isFeedData(data)) return null;
     return data;
@@ -125,6 +139,22 @@ export function getStoredMetaHash(): string | null {
 export function setStoredMetaHash(hash: string): void {
   try {
     localStorage.setItem(META_HASH_KEY, hash);
+  } catch {
+    // localStorage unavailable
+  }
+}
+
+export function getStoredLastModified(): string | null {
+  try {
+    return localStorage.getItem(LAST_MODIFIED_KEY);
+  } catch {
+    return null;
+  }
+}
+
+export function setStoredLastModified(value: string): void {
+  try {
+    localStorage.setItem(LAST_MODIFIED_KEY, value);
   } catch {
     // localStorage unavailable
   }

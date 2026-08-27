@@ -8,6 +8,7 @@ import { listenForTraySync } from '@/lib/platform';
 interface SyncContextValue {
   status: SyncStatus;
   lastSyncedAt: string | null;
+  lastError: string | null;
   newPostingCount: number;
   clearNewPostingCount: () => void;
 }
@@ -28,6 +29,7 @@ export function SyncProvider({ children }: { children: ReactNode }): ReactNode {
   const managerRef = useRef<SyncManager | null>(null);
   const [status, setStatus] = useState<SyncStatus>('idle');
   const [lastSyncedAt, setLastSyncedAt] = useState<string | null>(null);
+  const [lastError, setLastError] = useState<string | null>(null);
   const [newPostingCount, setNewPostingCount] = useState(0);
 
   useEffect(() => {
@@ -42,6 +44,7 @@ export function SyncProvider({ children }: { children: ReactNode }): ReactNode {
     manager.onStateChange((state) => {
       setStatus(state.status);
       setLastSyncedAt(state.lastSyncedAt);
+      setLastError(state.lastError);
       setNewPostingCount(state.newPostingCount);
     });
 
@@ -66,7 +69,7 @@ export function SyncProvider({ children }: { children: ReactNode }): ReactNode {
   }, []);
 
   return (
-    <SyncContext.Provider value={{ status, lastSyncedAt, newPostingCount, clearNewPostingCount }}>
+    <SyncContext.Provider value={{ status, lastSyncedAt, lastError, newPostingCount, clearNewPostingCount }}>
       {children}
     </SyncContext.Provider>
   );

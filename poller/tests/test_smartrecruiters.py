@@ -15,7 +15,8 @@ NOW = "2026-08-21T12:00:00Z"
 
 
 def _load_fixture(name: str) -> dict[str, Any]:
-    return json.loads((FIXTURES / name).read_text(encoding="utf-8"))
+    result: dict[str, Any] = json.loads((FIXTURES / name).read_text(encoding="utf-8"))
+    return result
 
 
 def _make_company(

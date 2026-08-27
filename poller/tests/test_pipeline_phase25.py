@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import dataclasses
 import json
-from typing import Any
+from typing import TYPE_CHECKING, Any
 from unittest.mock import patch
 
 import pytest
@@ -12,9 +12,10 @@ from poller.exceptions import SourceFetchError
 from poller.main import run_pipeline
 from poller.models import Company, Posting, RawPosting, SourceHealth
 from poller.store import RunState, load_feed, load_state, save_state
-from poller.tests.conftest import make_company, make_posting, make_source_health
+from poller.tests.conftest import make_company, make_posting
 
-from pathlib import Path
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
 def _write_registry(path: Path, companies: list[Company]) -> None:
@@ -101,10 +102,10 @@ class _FakeAdapter:
         raise ValueError(f"unexpected raw posting: {raw.source_job_id}")
 
 
-def _make_simplify_fetch(adapter: _FakeAdapter):
+def _make_simplify_fetch(adapter: _FakeAdapter) -> Any:
     async def fake_fetch_simplify(
-        companies, state, now_str, skip_reg_cand, data_dir,
-    ):
+        companies: Any, state: Any, now_str: str, skip_reg_cand: Any, data_dir: Any,
+    ) -> list[Posting]:
         raw = await adapter.fetch(None, None, None)
         return [adapter.normalize(r, None, now_str) for r in raw]
     return fake_fetch_simplify

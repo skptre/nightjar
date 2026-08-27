@@ -231,6 +231,13 @@ async def run_pipeline(
     save_state(state_path, updated_state)
     logger.info("state.json written (run %d)", updated_state.run_count)
 
+    active = len(updated_feed)
+    new = len(diff.new_ids)
+    closed = len(diff.closed_ids)
+    commit_msg = f"poll: {active} active, +{new} new, -{closed} closed"
+    commit_msg_path = resolved_data / "commit_msg.txt"
+    commit_msg_path.write_text(commit_msg, encoding="utf-8")
+
     if not dry_run and diff.has_changes:
         _git_commit_push(
             len(updated_feed), len(diff.new_ids), len(diff.closed_ids),

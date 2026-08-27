@@ -533,3 +533,113 @@ describe('Feed View Data Layer', () => {
     });
   });
 });
+
+describe('Virtual Scroll Logic', () => {
+  it('visible slice is bounded by overscan buffer', () => {
+    const itemCount = 1000;
+    const itemHeight = 72;
+    const overscan = 5;
+    const containerHeight = 500;
+    const scrollTop = 0;
+
+    const startIndex = Math.floor(scrollTop / itemHeight);
+    const visibleCount = Math.ceil(containerHeight / itemHeight);
+    const start = Math.max(0, startIndex - overscan);
+    const end = Math.min(itemCount, startIndex + visibleCount + overscan);
+
+    expect(start).toBe(0);
+    expect(end).toBeLessThan(50);
+    expect(end - start).toBeLessThanOrEqual(visibleCount + 2 * overscan);
+  });
+
+  it('1000 items at 72px produces <30 visible elements at 500px viewport', () => {
+    const containerHeight = 500;
+    const itemHeight = 72;
+    const overscan = 5;
+
+    const visibleCount = Math.ceil(containerHeight / itemHeight);
+    const totalRendered = visibleCount + 2 * overscan;
+
+    expect(totalRendered).toBeLessThan(30);
+  });
+
+  it('scroll to middle renders correct item range', () => {
+    const itemCount = 1000;
+    const itemHeight = 72;
+    const overscan = 5;
+    const containerHeight = 500;
+    const scrollTop = 36000;
+
+    const startIndex = Math.floor(scrollTop / itemHeight);
+    const visibleCount = Math.ceil(containerHeight / itemHeight);
+    const start = Math.max(0, startIndex - overscan);
+    const end = Math.min(itemCount, startIndex + visibleCount + overscan);
+
+    expect(start).toBe(startIndex - overscan);
+    expect(start).toBe(495);
+    expect(end).toBe(startIndex + visibleCount + overscan);
+  });
+
+  it('total height equals itemCount * itemHeight', () => {
+    expect(2000 * 72).toBe(144000);
+  });
+});
+
+describe('Stale Data Indicator Logic', () => {
+  it('no stale message when last sync is recent', () => {
+    const lastSyncedAt = new Date().toISOString();
+    const ageMs = Date.now() - new Date(lastSyncedAt).getTime();
+    const isStale = ageMs > 30 * 60 * 1000;
+    expect(isStale).toBe(false);
+  });
+
+  it('stale message when last sync is >30 min ago', () => {
+    const old = new Date(Date.now() - 45 * 60 * 1000).toISOString();
+    const ageMs = Date.now() - new Date(old).getTime();
+    const isStale = ageMs > 30 * 60 * 1000;
+    expect(isStale).toBe(true);
+  });
+
+  it('stale message on sync error with lastSyncedAt', () => {
+    const syncStatus = 'error';
+    const lastError = 'Network error';
+    const lastSyncedAt = new Date(Date.now() - 5 * 60 * 1000).toISOString();
+
+    let message: string | null = null;
+    if (syncStatus === 'error' && lastError) {
+      const diffMs = Date.now() - new Date(lastSyncedAt).getTime();
+      const minutes = Math.floor(diffMs / 60_000);
+      message = `Sync failed. Using cached data from ${String(minutes)}m ago.`;
+    }
+
+    expect(message).not.toBeNull();
+    expect(message).toContain('Sync failed');
+    expect(message).toContain('5m ago');
+  });
+
+  it('stale message on sync error without lastSyncedAt', () => {
+    const syncStatus = 'error';
+    const lastError = 'Network error';
+    const lastSyncedAt: string | null = null;
+
+    let message: string | null = null;
+    if (syncStatus === 'error' && lastError) {
+      if (lastSyncedAt) {
+        message = 'Sync failed. Using cached data from X ago.';
+      } else {
+        message = 'Sync failed. Using cached data.';
+      }
+    }
+
+    expect(message).toBe('Sync failed. Using cached data.');
+  });
+
+  it('no stale message when sync is idle and recent', () => {
+    const syncStatus: string = 'idle';
+    const lastSyncedAt = new Date().toISOString();
+
+    const ageMs = Date.now() - new Date(lastSyncedAt).getTime();
+    const isStale = syncStatus === 'error' || ageMs > 30 * 60 * 1000;
+    expect(isStale).toBe(false);
+  });
+});

@@ -2,6 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { ToastProvider } from '@/components/Toast';
 import { DatabaseProvider } from '@/providers/DatabaseProvider';
 import { ProfileProvider } from '@/providers/ProfileProvider';
 import { SyncProvider } from '@/providers/SyncProvider';
@@ -15,13 +16,15 @@ createRoot(root).render(
   <StrictMode>
     <ErrorBoundary>
       <BrowserRouter>
-        <DatabaseProvider>
-          <ProfileProvider>
-            <SyncProvider>
-              <App />
-            </SyncProvider>
-          </ProfileProvider>
-        </DatabaseProvider>
+        <ToastProvider>
+          <DatabaseProvider>
+            <ProfileProvider>
+              <SyncProvider>
+                <App />
+              </SyncProvider>
+            </ProfileProvider>
+          </DatabaseProvider>
+        </ToastProvider>
       </BrowserRouter>
     </ErrorBoundary>
   </StrictMode>,

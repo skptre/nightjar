@@ -287,9 +287,15 @@ export function PipelineView(): React.ReactNode {
           <h2 className="text-lg font-semibold text-gray-900 dark:text-nj-text">
             Pipeline
           </h2>
-          <p className="text-xs text-gray-500 dark:text-nj-muted mt-0.5">
-            {totalPipeline} posting{totalPipeline !== 1 ? 's' : ''} in pipeline
-          </p>
+          {totalPipeline > 0 ? (
+            <p className="text-xs text-gray-500 dark:text-nj-muted mt-0.5">
+              {totalPipeline} posting{totalPipeline !== 1 ? 's' : ''} in pipeline
+            </p>
+          ) : (
+            <p className="text-xs text-gray-500 dark:text-nj-muted mt-0.5">
+              Save or apply to postings from the Feed to see them here.
+            </p>
+          )}
         </div>
         {skippedCount > 0 && (
           <button
@@ -447,11 +453,11 @@ function PipelineCardComponent({
         tabIndex={0}
         onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onToggleExpand(card.id); }}
       >
-        <p className="text-xs font-medium text-gray-900 dark:text-nj-text leading-tight truncate">
-          {card.title}
+        <p className="text-xs font-medium text-gray-900 dark:text-nj-text leading-tight truncate" title={card.title}>
+          {card.title || '—'}
         </p>
         <p className="text-xs text-gray-500 dark:text-nj-text-dim truncate mt-0.5">
-          {card.company}
+          {card.company || '—'}
         </p>
         <div className="flex items-center justify-between mt-1.5">
           <span className="text-[10px] text-gray-400 dark:text-nj-muted">

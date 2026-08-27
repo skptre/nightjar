@@ -91,6 +91,9 @@ export async function fetchFeed(baseUrl?: string): Promise<FeedData | null> {
 
     const response = await fetch(url, { headers });
     if (response.status === 304) return null;
+    if (response.status === 404) {
+      throw new Error('Feed unavailable (404). Check feed URL in settings.');
+    }
     if (!response.ok) return null;
 
     const responseLastModified = response.headers.get('Last-Modified');
@@ -101,8 +104,11 @@ export async function fetchFeed(baseUrl?: string): Promise<FeedData | null> {
     const data: unknown = await response.json();
     if (!isFeedData(data)) return null;
     return data;
-  } catch {
-    return null;
+  } catch (err) {
+    if (err instanceof TypeError && err.message.includes('fetch')) {
+      return null;
+    }
+    throw err;
   }
 }
 
@@ -190,7 +196,12 @@ export async function syncFeed(
     return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: true };
   }
 
-  const feed = await fetchFeed(baseUrl);
+  let feed: FeedData | null;
+  try {
+    feed = await fetchFeed(baseUrl);
+  } catch {
+    return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: true };
+  }
   if (!feed) {
     return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: true };
   }

@@ -128,11 +128,10 @@ describe('feed-sync', () => {
       expect(result!.postings['p1']!.title).toBe('SWE Intern');
     });
 
-    it('returns null on 404', async () => {
+    it('throws on 404 with helpful message', async () => {
       mockFetchResponses({ 'feed.json': { ok: false, body: null } });
 
-      const result = await fetchFeed('/test');
-      expect(result).toBeNull();
+      await expect(fetchFeed('/test')).rejects.toThrow(/404/);
     });
 
     it('returns null on malformed response', async () => {

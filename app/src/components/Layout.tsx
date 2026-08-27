@@ -1,6 +1,7 @@
 import { useState, useEffect, type ReactNode } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useSync } from '@/providers/SyncProvider';
+import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 
 interface LayoutProps {
   children: ReactNode;
@@ -8,6 +9,7 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps): ReactNode {
   const { status, lastSyncedAt, newPostingCount } = useSync();
+  const { online } = useNetworkStatus();
   const [darkMode, setDarkMode] = useState(() => {
     const stored = localStorage.getItem('nightjar_dark_mode');
     return stored === null ? true : stored === 'true';
@@ -27,7 +29,7 @@ export function Layout({ children }: LayoutProps): ReactNode {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-nj-bg text-gray-900 dark:text-nj-text">
-      <nav className="border-b border-gray-200 dark:border-nj-border bg-white dark:bg-nj-surface sticky top-0 z-40">
+      <nav className="border-b border-gray-200 dark:border-nj-border bg-white dark:bg-nj-surface sticky top-0 z-40" role="navigation" aria-label="Main navigation">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-14">
           <div className="flex items-center gap-6">
             <span className="font-semibold text-lg tracking-tight bg-gradient-to-r from-nj-accent-bright to-nj-cat-swe bg-clip-text text-transparent">
@@ -72,6 +74,15 @@ export function Layout({ children }: LayoutProps): ReactNode {
           </div>
         </div>
       </nav>
+      {!online && (
+        <div
+          className="bg-amber-500 text-white text-center text-sm py-1.5 font-medium"
+          role="alert"
+          data-testid="offline-banner"
+        >
+          No internet connection. Showing cached data.
+        </div>
+      )}
       <main className="max-w-7xl mx-auto px-4 py-6">
         {children}
       </main>

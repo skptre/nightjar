@@ -32,6 +32,7 @@ export class SyncManager {
     lastError: null,
   };
   private visibilityHandler: (() => void) | null = null;
+  private onlineHandler: (() => void) | null = null;
   private permissionRequested = false;
   private syncIntervalMs: number = DEFAULT_SYNC_INTERVAL_MS;
 
@@ -71,6 +72,11 @@ export class SyncManager {
     };
     document.addEventListener('visibilitychange', this.visibilityHandler);
 
+    this.onlineHandler = (): void => {
+      void this.doSync();
+    };
+    window.addEventListener('online', this.onlineHandler);
+
     this.intervalId = setInterval(() => {
       void this.doSync();
     }, this.syncIntervalMs);
@@ -85,10 +91,18 @@ export class SyncManager {
       document.removeEventListener('visibilitychange', this.visibilityHandler);
       this.visibilityHandler = null;
     }
+    if (this.onlineHandler) {
+      window.removeEventListener('online', this.onlineHandler);
+      this.onlineHandler = null;
+    }
   }
 
   async doSync(): Promise<SyncResult | null> {
     if (this.syncing) return null;
+    if (typeof navigator !== 'undefined' && !navigator.onLine) {
+      this.updateState({ status: 'idle', lastError: 'Offline' });
+      return null;
+    }
     this.syncing = true;
     this.updateState({ status: 'syncing', lastError: null });
 

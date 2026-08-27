@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, type ReactNode } from 'react';
 import { useProfile } from '@/providers/ProfileProvider';
 import { useDatabase } from '@/providers/DatabaseProvider';
+import { useToast } from '@/components/Toast';
 import { isTauri } from '@/lib/platform';
 import {
   WORK_AUTH_OPTIONS,
@@ -124,6 +125,7 @@ function AutoLaunchRow(): ReactNode {
 
 function SyncSection(): ReactNode {
   const { profile, updateProfile } = useProfile();
+  const { toast } = useToast();
   const [showFeedUrl, setShowFeedUrl] = useState(false);
   const [feedUrl, setFeedUrl] = useState(() =>
     localStorage.getItem('nightjar_feed_url_override') ?? '',
@@ -135,8 +137,9 @@ function SyncSection(): ReactNode {
     (e: React.ChangeEvent<HTMLSelectElement>) => {
       const ms = Number(e.target.value);
       updateProfile({ sync_interval_ms: ms });
+      toast('Sync interval updated');
     },
-    [updateProfile],
+    [updateProfile, toast],
   );
 
   const handleFeedUrlSave = useCallback(() => {
@@ -146,7 +149,8 @@ function SyncSection(): ReactNode {
     } else {
       localStorage.removeItem('nightjar_feed_url_override');
     }
-  }, [feedUrl]);
+    toast('Feed URL saved');
+  }, [feedUrl, toast]);
 
   return (
     <Section title="Sync">
@@ -377,15 +381,14 @@ function NotificationsSection(): ReactNode {
 
 function DataSection(): ReactNode {
   const { db } = useDatabase();
+  const { toast } = useToast();
   const [showClearConfirm, setShowClearConfirm] = useState(false);
   const [confirmText, setConfirmText] = useState('');
-  const [exportStatus, setExportStatus] = useState<string | null>(null);
   const [exporting, setExporting] = useState(false);
 
   const handleExport = useCallback(
     async (type: 'csv' | 'json' | 'postings') => {
       setExporting(true);
-      setExportStatus(null);
       try {
         let content: string;
         let defaultName: string;
@@ -407,18 +410,16 @@ function DataSection(): ReactNode {
 
         const result = await saveFile({ content, defaultName, filters });
         if (result) {
-          setExportStatus(`Exported to ${result}`);
-        } else {
-          setExportStatus(null);
+          toast(`Exported to ${result}`);
         }
       } catch (err: unknown) {
         const msg = err instanceof Error ? err.message : 'Unknown error';
-        setExportStatus(`Export failed: ${msg}`);
+        toast(`Export failed: ${msg}`, 'error');
       } finally {
         setExporting(false);
       }
     },
-    [db],
+    [db, toast],
   );
 
   const handleClearData = useCallback(() => {
@@ -479,9 +480,13 @@ function DataSection(): ReactNode {
           </button>
         </div>
 
-        {exportStatus && (
-          <p className={`text-xs ${exportStatus.startsWith('Export failed') ? 'text-red-500' : 'text-green-600 dark:text-green-400'}`}>
-            {exportStatus}
+        {exporting && (
+          <p className="text-xs text-gray-500 dark:text-nj-muted flex items-center gap-1.5">
+            <svg className="w-3.5 h-3.5 animate-spin" viewBox="0 0 24 24" fill="none">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+            </svg>
+            Exporting…
           </p>
         )}
       </div>

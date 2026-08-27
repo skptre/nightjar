@@ -1,6 +1,8 @@
 import { useEffect, useCallback, useRef } from 'react';
 import type { PostingAction } from '@/views/Feed/PostingRow';
 
+const NAV_THROTTLE_MS = 50;
+
 interface UseKeyboardOptions {
   postingIds: string[];
   selectedIndex: number;
@@ -47,6 +49,8 @@ export function useKeyboard({
     disabled,
   };
 
+  const lastNavTime = useRef(0);
+
   const handleKeyDown = useCallback((e: KeyboardEvent): void => {
     const opts = optionsRef.current;
 
@@ -64,6 +68,9 @@ export function useKeyboard({
       case 'j':
       case 'ArrowDown': {
         e.preventDefault();
+        const now = Date.now();
+        if (now - lastNavTime.current < NAV_THROTTLE_MS) return;
+        lastNavTime.current = now;
         const next = Math.min(opts.selectedIndex + 1, opts.postingIds.length - 1);
         opts.onSelectIndex(next);
         break;
@@ -71,6 +78,9 @@ export function useKeyboard({
       case 'k':
       case 'ArrowUp': {
         e.preventDefault();
+        const now = Date.now();
+        if (now - lastNavTime.current < NAV_THROTTLE_MS) return;
+        lastNavTime.current = now;
         const prev = Math.max(opts.selectedIndex - 1, 0);
         opts.onSelectIndex(prev);
         break;

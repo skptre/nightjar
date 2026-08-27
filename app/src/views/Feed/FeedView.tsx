@@ -371,6 +371,15 @@ export function FeedView(): React.ReactNode {
 
   const staleMessage = useMemo(() => {
     if (syncStatus === 'error' && lastError) {
+      if (lastError === 'Offline') {
+        return 'No internet connection. Showing cached data.';
+      }
+      if (lastError.includes('404')) {
+        return 'Feed unavailable. Try again later.';
+      }
+      if (lastError.toLowerCase().includes('quota')) {
+        return 'Storage full. Export data and clear cache.';
+      }
       if (lastSyncedAt) {
         const ago = formatRelativeAge(lastSyncedAt);
         return `Sync failed. Using cached data from ${ago}.`;
@@ -410,6 +419,7 @@ export function FeedView(): React.ReactNode {
             onFocus={() => setSearchFocused(true)}
             onBlur={() => setSearchFocused(false)}
             placeholder="Search (/)..."
+            aria-label="Search postings"
             className="w-48 px-3 py-1.5 text-sm border border-gray-200 dark:border-nj-border rounded-md bg-white dark:bg-nj-surface text-gray-900 dark:text-nj-text placeholder-gray-400 dark:placeholder-nj-muted focus:outline-none focus:ring-1 focus:ring-nj-accent"
           />
         </div>
@@ -538,17 +548,33 @@ export function FeedView(): React.ReactNode {
       </div>
 
       {/* Posting list — virtualized */}
-      <div className="border border-gray-200 dark:border-nj-border rounded-lg overflow-hidden">
+      <div className="border border-gray-200 dark:border-nj-border rounded-lg overflow-hidden" role="list" aria-label="Job postings">
         {displayPostings.length === 0 ? (
-          <div className="py-12 text-center text-gray-500 dark:text-nj-muted">
-            <p className="text-sm">No postings to triage.</p>
-            {activeFilterCount > 0 && (
-              <button
-                onClick={clearFilters}
-                className="mt-2 text-sm text-nj-accent dark:text-nj-accent-bright hover:underline"
-              >
-                Clear filters
-              </button>
+          <div className="py-16 text-center text-gray-500 dark:text-nj-muted" data-testid="feed-empty-state">
+            {syncStatus === 'syncing' && rawRows.length === 0 ? (
+              <>
+                <svg className="w-8 h-8 mx-auto mb-3 animate-spin text-nj-accent" viewBox="0 0 24 24" fill="none">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                </svg>
+                <p className="text-sm font-medium">Syncing feed…</p>
+                <p className="text-xs mt-1">First sync may take a moment.</p>
+              </>
+            ) : activeFilterCount > 0 || search ? (
+              <>
+                <p className="text-sm">No postings match your filters.</p>
+                <button
+                  onClick={clearFilters}
+                  className="mt-2 text-sm text-nj-accent dark:text-nj-accent-bright hover:underline"
+                >
+                  Clear filters
+                </button>
+              </>
+            ) : (
+              <>
+                <p className="text-sm font-medium">No postings to triage.</p>
+                <p className="text-xs mt-1">All caught up! New postings appear here after each sync.</p>
+              </>
             )}
           </div>
         ) : (
@@ -640,6 +666,7 @@ function FilterChip({
       <button
         onClick={onRemove}
         className="text-violet-400 hover:text-violet-600 dark:text-nj-accent-bright/60 dark:hover:text-nj-accent-bright"
+        aria-label={`Remove filter: ${label}`}
       >
         &times;
       </button>

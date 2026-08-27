@@ -71,6 +71,8 @@ export function PostingRow({ posting, selected, rowRef, onAction }: PostingRowPr
   return (
     <div
       ref={rowRef}
+      role="listitem"
+      aria-selected={selected}
       className={`flex items-center gap-3 px-4 py-3 border-b border-gray-100 dark:border-nj-border transition-colors ${
         selected
           ? 'border-l-2 border-l-nj-accent bg-violet-50/50 dark:bg-nj-accent/5'
@@ -81,14 +83,14 @@ export function PostingRow({ posting, selected, rowRef, onAction }: PostingRowPr
       {/* Company + Title */}
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2">
-          <span className="text-sm font-medium text-gray-900 dark:text-nj-text truncate">
-            {posting.title}
+          <span className="text-sm font-medium text-gray-900 dark:text-nj-text truncate" title={posting.title}>
+            {posting.title || '—'}
           </span>
         </div>
         <div className="flex items-center gap-2 mt-0.5">
-          <span className="text-xs text-gray-600 dark:text-nj-text-dim">{posting.company}</span>
+          <span className="text-xs text-gray-600 dark:text-nj-text-dim">{posting.company || '—'}</span>
           <span className="text-xs text-gray-400 dark:text-nj-muted">·</span>
-          <span className="text-xs text-gray-500 dark:text-nj-muted truncate">
+          <span className="text-xs text-gray-500 dark:text-nj-muted truncate" title={posting.location || 'Remote'}>
             {posting.location || 'Remote'}
           </span>
           {posting.compensation && (
@@ -147,6 +149,7 @@ function ActionButton({
       onClick={onClick}
       className="px-2 py-1 text-xs text-gray-500 hover:text-gray-800 dark:text-nj-muted dark:hover:text-nj-text hover:bg-gray-100 dark:hover:bg-nj-surface-2 rounded transition-colors"
       title={`${label} (${shortcut})`}
+      aria-label={`${label} (keyboard: ${shortcut})`}
     >
       {label}
     </button>

@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, type ReactNode } from 'react';
 import { useProfile } from '@/providers/ProfileProvider';
+import { useDatabase } from '@/providers/DatabaseProvider';
 import { isTauri } from '@/lib/platform';
 import {
   WORK_AUTH_OPTIONS,
@@ -11,6 +12,10 @@ import {
   inferRequiresSponsorship,
 } from '@/profile/types';
 import { clearProfile } from '@/profile/profile-store';
+import { exportApplicationsCSV } from '@/export/export-csv';
+import { exportApplicationsJSON } from '@/export/export-json';
+import { exportPostingsJSON } from '@/export/export-postings';
+import { saveFile } from '@/export/file-save';
 
 export function SettingsView(): ReactNode {
   return (
@@ -371,8 +376,50 @@ function NotificationsSection(): ReactNode {
 /* ── Data ───────────────────────────────────────────── */
 
 function DataSection(): ReactNode {
+  const { db } = useDatabase();
   const [showClearConfirm, setShowClearConfirm] = useState(false);
   const [confirmText, setConfirmText] = useState('');
+  const [exportStatus, setExportStatus] = useState<string | null>(null);
+  const [exporting, setExporting] = useState(false);
+
+  const handleExport = useCallback(
+    async (type: 'csv' | 'json' | 'postings') => {
+      setExporting(true);
+      setExportStatus(null);
+      try {
+        let content: string;
+        let defaultName: string;
+        let filters: { name: string; extensions: string[] }[];
+
+        if (type === 'csv') {
+          content = await exportApplicationsCSV(db);
+          defaultName = `nightjar-applications-${new Date().toISOString().slice(0, 10)}.csv`;
+          filters = [{ name: 'CSV', extensions: ['csv'] }];
+        } else if (type === 'json') {
+          content = await exportApplicationsJSON(db);
+          defaultName = `nightjar-applications-${new Date().toISOString().slice(0, 10)}.json`;
+          filters = [{ name: 'JSON', extensions: ['json'] }];
+        } else {
+          content = await exportPostingsJSON(db);
+          defaultName = `nightjar-postings-backup-${new Date().toISOString().slice(0, 10)}.json`;
+          filters = [{ name: 'JSON', extensions: ['json'] }];
+        }
+
+        const result = await saveFile({ content, defaultName, filters });
+        if (result) {
+          setExportStatus(`Exported to ${result}`);
+        } else {
+          setExportStatus(null);
+        }
+      } catch (err: unknown) {
+        const msg = err instanceof Error ? err.message : 'Unknown error';
+        setExportStatus(`Export failed: ${msg}`);
+      } finally {
+        setExporting(false);
+      }
+    },
+    [db],
+  );
 
   const handleClearData = useCallback(() => {
     localStorage.clear();
@@ -381,6 +428,9 @@ function DataSection(): ReactNode {
     }
     window.location.reload();
   }, []);
+
+  const exportButtonClass =
+    'rounded-md border border-gray-300 dark:border-nj-border px-3 py-1.5 text-sm text-gray-700 dark:text-nj-text hover:bg-gray-50 dark:hover:bg-nj-bg transition-colors disabled:opacity-50 disabled:cursor-not-allowed';
 
   return (
     <Section title="Data">
@@ -395,23 +445,45 @@ function DataSection(): ReactNode {
           <div className="flex gap-2">
             <button
               type="button"
-              disabled
-              className="rounded-md border border-gray-300 dark:border-nj-border px-3 py-1.5 text-sm text-gray-400 dark:text-nj-muted cursor-not-allowed"
+              disabled={exporting}
+              onClick={() => void handleExport('csv')}
+              className={exportButtonClass}
             >
               CSV
             </button>
             <button
               type="button"
-              disabled
-              className="rounded-md border border-gray-300 dark:border-nj-border px-3 py-1.5 text-sm text-gray-400 dark:text-nj-muted cursor-not-allowed"
+              disabled={exporting}
+              onClick={() => void handleExport('json')}
+              className={exportButtonClass}
             >
               JSON
             </button>
           </div>
         </div>
-        <p className="text-xs text-gray-400 dark:text-nj-muted">
-          Export will be available in a future update.
-        </p>
+
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-sm font-medium text-gray-900 dark:text-nj-text">Export all postings</p>
+            <p className="text-xs text-gray-500 dark:text-nj-muted">
+              Full backup of cached postings with scores and classifications
+            </p>
+          </div>
+          <button
+            type="button"
+            disabled={exporting}
+            onClick={() => void handleExport('postings')}
+            className={exportButtonClass}
+          >
+            JSON
+          </button>
+        </div>
+
+        {exportStatus && (
+          <p className={`text-xs ${exportStatus.startsWith('Export failed') ? 'text-red-500' : 'text-green-600 dark:text-green-400'}`}>
+            {exportStatus}
+          </p>
+        )}
       </div>
 
       {isTauri() && (

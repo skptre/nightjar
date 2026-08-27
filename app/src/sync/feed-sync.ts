@@ -25,11 +25,17 @@ export interface FeedPosting {
   };
 }
 
+export interface FeedCompanyMeta {
+  name: string;
+  typical_open: string | null;
+}
+
 export interface FeedData {
   updated_at: string;
   version: number;
   count: number;
   postings: Record<string, FeedPosting>;
+  companies?: Record<string, FeedCompanyMeta>;
 }
 
 export interface MetaData {
@@ -210,6 +216,15 @@ export async function upsertPostings(db: Database, feed: FeedData): Promise<Sync
         await db.run(
           'UPDATE postings_cache SET closed_at = COALESCE(closed_at, ?) WHERE id = ?',
           [now, existingId],
+        );
+      }
+    }
+
+    if (feed.companies) {
+      for (const [slug, meta] of Object.entries(feed.companies)) {
+        await db.run(
+          `INSERT OR REPLACE INTO companies_meta (slug, name, typical_open) VALUES (?, ?, ?)`,
+          [slug, meta.name, meta.typical_open ?? null],
         );
       }
     }

@@ -43,6 +43,7 @@ export function Layout({ children }: LayoutProps): ReactNode {
                 )}
               </NavTab>
               <NavTab to="/pipeline">Pipeline</NavTab>
+              <NavTab to="/calendar">Calendar</NavTab>
               <NavTab to="/companies">Companies</NavTab>
             </div>
           </div>

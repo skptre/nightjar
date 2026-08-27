@@ -1,4 +1,5 @@
 import { useState, useMemo, useCallback, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDatabase } from '@/providers/DatabaseProvider';
 import { useProfile } from '@/providers/ProfileProvider';
 import { recomputeAll } from '@/classify/recompute';
@@ -55,6 +56,7 @@ function tierSortValue(tier: 1 | 2 | 3 | undefined): number {
 }
 
 export function CompaniesView(): React.ReactNode {
+  const navigate = useNavigate();
   const { db } = useDatabase();
   const { profile, updateProfile } = useProfile();
 
@@ -270,8 +272,8 @@ export function CompaniesView(): React.ReactNode {
                   className="grid grid-cols-[1fr_80px_80px_90px_70px_60px] gap-2 px-4 py-3 items-center cursor-pointer hover:bg-gray-50 dark:hover:bg-nj-surface-2/50 transition-colors"
                   onClick={() => setExpandedSlug(isExpanded ? null : company.slug)}
                 >
-                  <div className="min-w-0">
-                    <span className="text-sm font-medium text-gray-900 dark:text-nj-text truncate block">
+                  <div className="min-w-0" onClick={(e) => { e.stopPropagation(); void navigate(`/companies/${company.slug}`); }}>
+                    <span className="text-sm font-medium text-gray-900 dark:text-nj-text truncate block hover:text-nj-accent-bright cursor-pointer">
                       {company.name}
                     </span>
                     <span className="text-xs text-gray-400 dark:text-nj-muted">

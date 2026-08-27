@@ -5,7 +5,18 @@ export interface Migration {
   sql: string;
 }
 
-export const MIGRATIONS: Migration[] = [];
+export const MIGRATIONS: Migration[] = [
+  {
+    version: 2,
+    sql: `
+      CREATE TABLE IF NOT EXISTS companies_meta (
+        slug         TEXT PRIMARY KEY,
+        name         TEXT NOT NULL,
+        typical_open TEXT
+      );
+    `,
+  },
+];
 
 export async function runMigrations(
   db: Database,

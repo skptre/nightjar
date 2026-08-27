@@ -222,7 +222,7 @@ async def run_pipeline(
     )
 
     if diff.has_changes:
-        save_feed(feed_path, updated_feed, now_str)
+        save_feed(feed_path, updated_feed, now_str, companies=companies)
         save_meta(meta_path, feed_path, now_str, len(updated_feed))
         logger.info("feed.json written (%d postings)", len(updated_feed))
     else:

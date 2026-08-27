@@ -2,7 +2,7 @@ CREATE TABLE schema_version (
   version INTEGER NOT NULL
 );
 
-INSERT INTO schema_version (version) VALUES (1);
+INSERT INTO schema_version (version) VALUES (2);
 
 CREATE TABLE postings_cache (
   id              TEXT PRIMARY KEY,
@@ -33,3 +33,9 @@ CREATE TABLE applications (
 CREATE INDEX idx_postings_score ON postings_cache(score DESC);
 CREATE INDEX idx_postings_category ON postings_cache(category);
 CREATE INDEX idx_applications_status ON applications(status);
+
+CREATE TABLE companies_meta (
+  slug         TEXT PRIMARY KEY,
+  name         TEXT NOT NULL,
+  typical_open TEXT
+);

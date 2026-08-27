@@ -76,6 +76,7 @@ def save_feed(
     path: Path,
     postings: dict[str, Posting],
     updated_at: str,
+    companies: list[Any] | None = None,
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     feed: dict[str, Any] = {
@@ -87,6 +88,14 @@ def save_feed(
             for pid in sorted(postings)
         },
     }
+    if companies is not None:
+        companies_meta: dict[str, dict[str, str | None]] = {}
+        for c in companies:
+            companies_meta[c.slug] = {
+                "name": c.name,
+                "typical_open": c.typical_open,
+            }
+        feed["companies"] = dict(sorted(companies_meta.items()))
     path.write_text(
         json.dumps(feed, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",

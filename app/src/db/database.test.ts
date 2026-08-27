@@ -20,9 +20,9 @@ describe('NightjarDB', () => {
       expect(names).toContain('applications');
     });
 
-    it('sets initial schema version to 1', async () => {
+    it('sets initial schema version to 2', async () => {
       const version = await getSchemaVersion(db);
-      expect(version).toBe(1);
+      expect(version).toBe(2);
     });
 
     it('creates indexes', async () => {
@@ -176,7 +176,7 @@ describe('NightjarDB', () => {
       const exported = db.export();
       const db2 = await NightjarDB.createFromBytes(exported);
 
-      expect(await getSchemaVersion(db2)).toBe(1);
+      expect(await getSchemaVersion(db2)).toBe(2);
       await db2.close();
     });
   });
@@ -185,18 +185,18 @@ describe('NightjarDB', () => {
     it('applies pending migrations in order', async () => {
       const testMigrations: Migration[] = [
         {
-          version: 2,
+          version: 3,
           sql: 'ALTER TABLE postings_cache ADD COLUMN test_col TEXT;',
         },
         {
-          version: 3,
+          version: 4,
           sql: 'ALTER TABLE postings_cache ADD COLUMN test_col2 INTEGER;',
         },
       ];
 
       await runMigrations(db, testMigrations);
 
-      expect(await getSchemaVersion(db)).toBe(3);
+      expect(await getSchemaVersion(db)).toBe(4);
 
       await db.run(
         `INSERT INTO postings_cache (id, data, synced_at, test_col, test_col2)
@@ -215,43 +215,43 @@ describe('NightjarDB', () => {
     it('skips already-applied migrations', async () => {
       const testMigrations: Migration[] = [
         {
-          version: 2,
+          version: 3,
           sql: 'ALTER TABLE postings_cache ADD COLUMN skip_test TEXT;',
         },
       ];
 
       await runMigrations(db, testMigrations);
-      expect(await getSchemaVersion(db)).toBe(2);
+      expect(await getSchemaVersion(db)).toBe(3);
 
       await runMigrations(db, testMigrations);
-      expect(await getSchemaVersion(db)).toBe(2);
+      expect(await getSchemaVersion(db)).toBe(3);
     });
 
     it('applies only migrations newer than current version', async () => {
       const batch1: Migration[] = [
-        { version: 2, sql: 'ALTER TABLE postings_cache ADD COLUMN v2_col TEXT;' },
-      ];
-      await runMigrations(db, batch1);
-      expect(await getSchemaVersion(db)).toBe(2);
-
-      const batch2: Migration[] = [
-        { version: 2, sql: 'ALTER TABLE postings_cache ADD COLUMN v2_col TEXT;' },
         { version: 3, sql: 'ALTER TABLE postings_cache ADD COLUMN v3_col TEXT;' },
       ];
-      await runMigrations(db, batch2);
+      await runMigrations(db, batch1);
       expect(await getSchemaVersion(db)).toBe(3);
 
+      const batch2: Migration[] = [
+        { version: 3, sql: 'ALTER TABLE postings_cache ADD COLUMN v3_col TEXT;' },
+        { version: 4, sql: 'ALTER TABLE postings_cache ADD COLUMN v4_col TEXT;' },
+      ];
+      await runMigrations(db, batch2);
+      expect(await getSchemaVersion(db)).toBe(4);
+
       await db.run(
-        `INSERT INTO postings_cache (id, data, synced_at, v2_col, v3_col)
+        `INSERT INTO postings_cache (id, data, synced_at, v3_col, v4_col)
          VALUES (?, ?, ?, ?, ?)`,
         ['check1', '{}', '2026-01-01T00:00:00Z', 'a', 'b'],
       );
-      const row = await db.queryOne<{ v2_col: string; v3_col: string }>(
-        'SELECT v2_col, v3_col FROM postings_cache WHERE id = ?',
+      const row = await db.queryOne<{ v3_col: string; v4_col: string }>(
+        'SELECT v3_col, v4_col FROM postings_cache WHERE id = ?',
         ['check1'],
       );
-      expect(row!.v2_col).toBe('a');
-      expect(row!.v3_col).toBe('b');
+      expect(row!.v3_col).toBe('a');
+      expect(row!.v4_col).toBe('b');
     });
   });
 

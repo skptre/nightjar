@@ -7,11 +7,6 @@ An open internship feed (public repo, shared data) and a local desktop tracker (
 The poller is a public service. The app is a local tool. They share nothing except a JSON file on GitHub.
 Full spec is in /spec.md — it is the source of truth.
 
-## CURRENT PHASE
-
-Phase 1: Poller core. Greenhouse + Lever + Ashby adapters, registry, normalization, diffing, GH Actions cron.
-Phases run in the order given in spec.md §10. Each has acceptance criteria. Do not skip ahead.
-
 ## THE ARCHITECTURE (read this before every design decision)
 
 # [NJ] LAW: The poller knows NOTHING about any user. No profiles, no preferences, no eligibility,

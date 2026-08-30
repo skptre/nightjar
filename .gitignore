@@ -2,6 +2,9 @@
 .claude/settings.local.json
 .claude/plans/
 
+# --- session handoff ---
+.session-handoff.md
+
 # --- python ---
 __pycache__/
 *.py[cod]

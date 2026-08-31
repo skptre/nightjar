@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nightjar</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Outfit:wght@300;400;500;600;700&display=swap">
+<style>
+:root {
+  --ground: #F9F8F5;
+  --surface: #FFFFFF;
+  --text: #1C1B18;
+  --text-mid: #4A4840;
+  --text-muted: #8A8780;
+  --accent: #B86E1D;
+  --accent-soft: #B86E1D18;
+  --border: #E3E0D8;
+  --border-light: #EDEAE4;
+  --tag-gh: #2D7D4F;
+  --tag-gh-bg: #2D7D4F14;
+  --tag-lv: #5B4DC7;
+  --tag-lv-bg: #5B4DC714;
+  --tag-ab: #C45B2C;
+  --tag-ab-bg: #C45B2C14;
+  --comp: #1A7A5A;
+  --comp-bg: #1A7A5A0C;
+  --hover: #F4F2ED;
+  --shadow: 0 1px 3px rgba(28,27,24,0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #111318;
+    --surface: #1A1C22;
+    --text: #E3E2DE;
+    --text-mid: #B0AEA8;
+    --text-muted: #706E68;
+    --accent: #D4923E;
+    --accent-soft: #D4923E1A;
+    --border: #2A2C34;
+    --border-light: #22242A;
+    --tag-gh: #4CB87A;
+    --tag-gh-bg: #4CB87A18;
+    --tag-lv: #8B80E8;
+    --tag-lv-bg: #8B80E818;
+    --tag-ab: #E08050;
+    --tag-ab-bg: #E0805018;
+    --comp: #3CB888;
+    --comp-bg: #3CB88810;
+    --hover: #1E2028;
+    --shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+}
+
+:root[data-theme="dark"] {
+  --ground: #111318;
+  --surface: #1A1C22;
+  --text: #E3E2DE;
+  --text-mid: #B0AEA8;
+  --text-muted: #706E68;
+  --accent: #D4923E;
+  --accent-soft: #D4923E1A;
+  --border: #2A2C34;
+  --border-light: #22242A;
+  --tag-gh: #4CB87A;
+  --tag-gh-bg: #4CB87A18;
+  --tag-lv: #8B80E8;
+  --tag-lv-bg: #8B80E818;
+  --tag-ab: #E08050;
+  --tag-ab-bg: #E0805018;
+  --comp: #3CB888;
+  --comp-bg: #3CB88810;
+  --hover: #1E2028;
+  --shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--ground);
+  color: var(--text);
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+header {
+  margin-bottom: 1.75rem;
+}
+
+header h1 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.stats-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+}
+
+.stat strong {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.stat .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.search-wrap {
+  flex: 1;
+  min-width: 200px;
+  position: relative;
+}
+
+.search-wrap svg {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-wrap input {
+  width: 100%;
+  padding: 0.55rem 0.75rem 0.55rem 2.25rem;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.search-wrap input::placeholder { color: var(--text-muted); }
+.search-wrap input:focus { border-color: var(--accent); }
+
+select {
+  padding: 0.55rem 2rem 0.55rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238A8780' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  transition: border-color 0.15s;
+}
+
+select:focus { border-color: var(--accent); }
+
+.filter-pills {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.filter-pills button {
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.55rem 0.75rem;
+  border: none;
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  border-right: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.filter-pills button:last-child { border-right: none; }
+.filter-pills button:hover { color: var(--text); }
+.filter-pills button.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.filter-pills button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.table-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.scroll-table {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+thead th {
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding: 0.7rem 1rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.12s;
+}
+
+thead th:hover { color: var(--text); }
+thead th.sorted { color: var(--accent); }
+thead th .arrow { font-size: 0.65rem; margin-left: 0.25rem; }
+
+tbody tr {
+  border-bottom: 1px solid var(--border-light);
+  transition: background 0.1s;
+}
+
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: var(--hover); }
+
+td {
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  vertical-align: top;
+}
+
+.cell-company {
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cell-title a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.12s;
+}
+
+.cell-title a:hover { color: var(--accent); }
+.cell-title a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.cell-loc {
+  color: var(--text-mid);
+  font-size: 0.82rem;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.tag-greenhouse { color: var(--tag-gh); background: var(--tag-gh-bg); }
+.tag-lever { color: var(--tag-lv); background: var(--tag-lv-bg); }
+.tag-ashby { color: var(--tag-ab); background: var(--tag-ab-bg); }
+
+.cell-comp {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--comp);
+  white-space: nowrap;
+}
+
+.cell-comp:not(:empty) {
+  background: var(--comp-bg);
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  display: inline-block;
+}
+
+.cell-date {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.footer-bar .count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer-bar .count strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.load-more {
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.load-more:hover { background: var(--accent); color: #fff; }
+.load-more:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.empty {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.loading {
+  padding: 4rem 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.error-msg {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .shell { padding: 1.25rem 1rem; }
+  header h1 { font-size: 1.4rem; }
+  .controls { flex-direction: column; }
+  .hide-mobile { display: none; }
+  td { padding: 0.5rem 0.6rem; font-size: 0.82rem; }
+  .cell-company { max-width: 100px; }
+  .cell-loc { max-width: 120px; }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header>
+    <h1>Nightjar</h1>
+    <p class="subtitle">Intern, new grad, and early career postings &mdash; filtered from the full feed, updated every 15 minutes.</p>
+    <div class="stats-row" id="stats"></div>
+  </header>
+
+  <div class="controls" id="controls" style="display:none">
+    <div class="search-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.2-5.2M17 10a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <input type="text" id="search" placeholder="Search titles, companies, locations...">
+    </div>
+    <select id="company-filter">
+      <option value="">All companies</option>
+    </select>
+    <div class="filter-pills" id="source-pills">
+      <button class="active" data-source="">All</button>
+      <button data-source="greenhouse">Greenhouse</button>
+      <button data-source="lever">Lever</button>
+      <button data-source="ashby">Ashby</button>
+    </div>
+    <div class="filter-pills" id="scope-pills">
+      <button class="active" data-scope="intern">Intern / Early Career</button>
+      <button data-scope="all">All Roles</button>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="scroll-table">
+      <table>
+        <thead>
+          <tr>
+            <th data-col="company">Company <span class="arrow"></span></th>
+            <th data-col="title">Title <span class="arrow"></span></th>
+            <th data-col="location" class="hide-mobile">Location <span class="arrow"></span></th>
+            <th data-col="source" class="hide-mobile">Source <span class="arrow"></span></th>
+            <th data-col="compensation" class="hide-mobile">Comp <span class="arrow"></span></th>
+            <th data-col="posted_at">Posted <span class="arrow"></span></th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr><td colspan="6" class="loading">Loading feed&hellip;</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="footer-bar">
+      <span class="count" id="count-display"></span>
+      <button class="load-more" id="load-more" style="display:none">Show more</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var INTERN_RE = /\binterns?\b|\binternship\b|\bco-?op\b|\bnew grad(?:uate)?\b|\bentry[- ]level\b|\bearly career\b|\buniversity\b|\b(?:summer|winter|spring|fall) 202\d\b/i;
+  var PAGE = 100;
+  var allPostings = [];
+  var filtered = [];
+  var shown = PAGE;
+  var sortCol = "posted_at";
+  var sortAsc = false;
+  var searchTerm = "";
+  var companyFilter = "";
+  var sourceFilter = "";
+  var scopeFilter = "intern";
+
+  fetch("./feed.json")
+    .then(function(r) {
+      if (!r.ok) throw new Error("Feed not found (HTTP " + r.status + ")");
+      return r.json();
+    })
+    .then(function(data) {
+      var postings = data.postings || {};
+      allPostings = Object.values(postings).filter(function(p) {
+        return !p.closed_at;
+      });
+      buildUI(data.updated_at);
+    })
+    .catch(function(err) {
+      document.getElementById("tbody").innerHTML =
+        '<tr><td colspan="6" class="error-msg">Could not load feed.json &mdash; ' +
+        escHtml(err.message) + '</td></tr>';
+    });
+
+  function buildUI(updatedAt) {
+    document.getElementById("controls").style.display = "";
+
+    var compCounts = {};
+    allPostings.forEach(function(p) {
+      compCounts[p.company] = (compCounts[p.company] || 0) + 1;
+    });
+    var sel = document.getElementById("company-filter");
+    Object.entries(compCounts)
+      .sort(function(a, b) { return b[1] - a[1]; })
+      .forEach(function(pair) {
+        var opt = document.createElement("option");
+        opt.value = pair[0];
+        opt.textContent = pair[0] + " (" + pair[1] + ")";
+        sel.appendChild(opt);
+      });
+
+    applyFilters();
+    updateStats(updatedAt);
+    bindEvents();
+  }
+
+  function updateStats(updatedAt) {
+    var intern = allPostings.filter(function(p) { return INTERN_RE.test(p.title); });
+    var ts = updatedAt ? new Date(updatedAt) : null;
+    var timeStr = ts ? ts.toLocaleDateString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }) : "";
+    document.getElementById("stats").innerHTML =
+      '<span class="stat"><span class="dot"></span><strong>' + intern.length + '</strong> intern / early career</span>' +
+      '<span class="stat"><strong>' + allPostings.length.toLocaleString() + '</strong> total active</span>' +
+      (timeStr ? '<span class="stat">updated ' + timeStr + '</span>' : '');
+  }
+
+  function filterByScope(list) {
+    if (scopeFilter === "intern") {
+      return list.filter(function(p) { return INTERN_RE.test(p.title); });
+    }
+    return list;
+  }
+
+  function applyFilters() {
+    var data = filterByScope(allPostings);
+    if (searchTerm) {
+      var q = searchTerm.toLowerCase();
+      data = data.filter(function(p) {
+        return p.title.toLowerCase().indexOf(q) !== -1 ||
+               p.company.toLowerCase().indexOf(q) !== -1 ||
+               p.location.toLowerCase().indexOf(q) !== -1;
+      });
+    }
+    if (companyFilter) {
+      data = data.filter(function(p) { return p.company === companyFilter; });
+    }
+    if (sourceFilter) {
+      data = data.filter(function(p) { return p.source === sourceFilter; });
+    }
+    data.sort(function(a, b) {
+      var va = a[sortCol] || "";
+      var vb = b[sortCol] || "";
+      if (typeof va === "string") va = va.toLowerCase();
+      if (typeof vb === "string") vb = vb.toLowerCase();
+      if (va < vb) return sortAsc ? -1 : 1;
+      if (va > vb) return sortAsc ? 1 : -1;
+      return 0;
+    });
+    filtered = data;
+    shown = PAGE;
+    render();
+  }
+
+  function render() {
+    var tbody = document.getElementById("tbody");
+    var slice = filtered.slice(0, shown);
+    if (slice.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="6" class="empty">No postings match your filters.</td></tr>';
+    } else {
+      tbody.innerHTML = slice.map(function(p) {
+        var comp = p.compensation || "";
+        return '<tr>' +
+          '<td class="cell-company" title="' + escHtml(p.company) + '">' + escHtml(p.company) + '</td>' +
+          '<td class="cell-title"><a href="' + escHtml(p.url) + '" target="_blank" rel="noopener">' + escHtml(p.title) + '</a></td>' +
+          '<td class="cell-loc hide-mobile" title="' + escHtml(p.location) + '">' + escHtml(p.location) + '</td>' +
+          '<td class="hide-mobile"><span class="tag tag-' + p.source + '">' + p.source + '</span></td>' +
+          '<td class="hide-mobile"><span class="cell-comp">' + escHtml(comp) + '</span></td>' +
+          '<td class="cell-date">' + formatDate(p.posted_at) + '</td>' +
+          '</tr>';
+      }).join("");
+    }
+    document.getElementById("count-display").innerHTML =
+      'Showing <strong>' + Math.min(shown, filtered.length).toLocaleString() +
+      '</strong> of <strong>' + filtered.length.toLocaleString() + '</strong>';
+    document.getElementById("load-more").style.display = shown < filtered.length ? "" : "none";
+  }
+
+  function bindEvents() {
+    document.getElementById("search").addEventListener("input", function(e) {
+      searchTerm = e.target.value.trim();
+      applyFilters();
+    });
+    document.getElementById("company-filter").addEventListener("change", function(e) {
+      companyFilter = e.target.value;
+      applyFilters();
+    });
+    document.querySelectorAll("#source-pills button").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        document.querySelectorAll("#source-pills button").forEach(function(b) { b.classList.remove("active"); });
+        this.classList.add("active");
+        sourceFilter = this.dataset.source;
+        applyFilters();
+      });
+    });
+    document.querySelectorAll("#scope-pills button").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        document.querySelectorAll("#scope-pills button").forEach(function(b) { b.classList.remove("active"); });
+        this.classList.add("active");
+        scopeFilter = this.dataset.scope;
+        applyFilters();
+      });
+    });
+    document.querySelectorAll("thead th").forEach(function(th) {
+      th.addEventListener("click", function() {
+        var col = this.dataset.col;
+        if (sortCol === col) { sortAsc = !sortAsc; }
+        else { sortCol = col; sortAsc = true; }
+        document.querySelectorAll("thead th").forEach(function(t) {
+          t.classList.remove("sorted");
+          t.querySelector(".arrow").textContent = "";
+        });
+        this.classList.add("sorted");
+        this.querySelector(".arrow").textContent = sortAsc ? "▲" : "▼";
+        applyFilters();
+      });
+    });
+    document.getElementById("load-more").addEventListener("click", function() {
+      shown += PAGE;
+      render();
+    });
+    document.querySelector('th[data-col="posted_at"]').classList.add("sorted");
+    document.querySelector('th[data-col="posted_at"] .arrow').textContent = "▼";
+  }
+
+  function formatDate(d) {
+    if (!d) return "";
+    try {
+      var dt = new Date(d);
+      if (isNaN(dt.getTime())) return "";
+      var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+      return months[dt.getMonth()] + " " + dt.getDate();
+    } catch(e) { return ""; }
+  }
+
+  function escHtml(s) {
+    return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+})();
+</script>
+</body>
+</html>

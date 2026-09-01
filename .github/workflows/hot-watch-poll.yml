@@ -1,0 +1,59 @@
+name: Poll hot-watch sources
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: poller
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Poll only active watched sources
+        id: watch
+        shell: bash
+        run: |
+          set +e
+          uv run python -m poller.tools.hot_watch poll
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Commit authoritative feed and watch state
+        shell: bash
+        run: |
+          if git diff --quiet -- data/; then
+            echo "No managed hot-watch changes."
+            exit 0
+          fi
+          git config user.name "nightjar-bot"
+          git config user.email "nightjar-bot@users.noreply.github.com"
+          git add data/
+          git commit -m "poll: managed hot-watch update"
+          git push
+
+      - name: Report unhealthy watch
+        if: steps.watch.outputs.exit_code != '0'
+        run: |
+          echo "One or more watches reached the failure threshold." >&2
+          exit 1

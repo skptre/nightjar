@@ -13,6 +13,8 @@ SOURCE_PRIORITY: dict[str, int] = {
     "greenhouse": 0,
     "lever": 1,
     "ashby": 2,
+    "google_careers": 2,
+    "microsoft_careers": 2,
     "smartrecruiters": 3,
     "workday": 4,
     "simplify": 99,

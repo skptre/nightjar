@@ -39,6 +39,7 @@ class RateLimitedClient:
         self._host_last_request: dict[str, float] = {}
         self._http_cache: dict[str, dict[str, str]] = {}
         self._host_request_counts: dict[str, int] = {}
+        self._source_request_counts: dict[str, int] = {}
         self._host_budget = host_budget
 
     async def _get_client(self) -> httpx.AsyncClient:
@@ -72,8 +73,16 @@ class RateLimitedClient:
         count = self._host_request_counts.get(host, 0)
         return count < self._host_budget
 
-    def _record_request(self, host: str) -> None:
+    def _record_request(
+        self, host: str, source: str = "", company_slug: str = "",
+    ) -> None:
         self._host_request_counts[host] = self._host_request_counts.get(host, 0) + 1
+        if source and company_slug:
+            key = f"{source}:{company_slug}"
+            self._source_request_counts[key] = self._source_request_counts.get(key, 0) + 1
+
+    def source_request_counts(self) -> dict[str, int]:
+        return dict(self._source_request_counts)
 
     def _get_conditional_headers(self, url: str) -> dict[str, str]:
         headers: dict[str, str] = {}
@@ -128,7 +137,7 @@ class RateLimitedClient:
         for attempt in range(MAX_RETRIES):
             async with lock:
                 await self._enforce_host_delay(host)
-                self._record_request(host)
+                self._record_request(host, source, company_slug)
 
                 client = await self._get_client()
                 try:
@@ -213,12 +222,19 @@ class RateLimitedClient:
         host = urlparse(url).hostname or ""
         lock = self._get_host_lock(host)
 
+        if not self._check_host_budget(host):
+            raise SourceFetchError(
+                source, company_slug,
+                f"host budget exceeded for {host} ({self._host_budget} requests)",
+            )
+
         last_status: int = 0
         last_body: str = ""
 
         for attempt in range(MAX_RETRIES):
             async with lock:
                 await self._enforce_host_delay(host)
+                self._record_request(host, source, company_slug)
 
                 client = await self._get_client()
                 try:

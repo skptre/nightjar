@@ -4,6 +4,8 @@ import asyncio
 import logging
 import subprocess
 import sys
+import time
+from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -18,7 +20,7 @@ from poller.filter import (
 )
 from poller.http import RateLimitedClient
 from poller.models import Posting, SourceHealth
-from poller.registry import is_poll_due, load_registry
+from poller.registry import is_off_season, is_poll_due, load_registry
 from poller.sources import get_adapter
 from poller.store import (
     load_feed,
@@ -35,6 +37,16 @@ DATA_DIR = ROOT_DIR / "data"
 FEED_PATH = DATA_DIR / "feed.json"
 STATE_PATH = DATA_DIR / "state.json"
 META_PATH = DATA_DIR / "meta.json"
+
+
+@dataclass(frozen=True)
+class PipelineRunResult:
+    attempted_keys: frozenset[str] = field(default_factory=frozenset)
+    successful_keys: frozenset[str] = field(default_factory=frozenset)
+    failed_keys: frozenset[str] = field(default_factory=frozenset)
+    new_ids: frozenset[str] = field(default_factory=frozenset)
+    closed_ids: frozenset[str] = field(default_factory=frozenset)
+    request_counts: dict[str, int] = field(default_factory=dict)
 
 
 async def _fetch_simplify(
@@ -134,14 +146,18 @@ async def run_pipeline(
     data_dir: Path | None = None,
     skip_simplify: bool = False,
     skip_registry_candidates: bool = False,
-) -> None:
+    only_source_keys: set[str] | None = None,
+    force_poll: bool = False,
+    now: datetime | None = None,
+) -> PipelineRunResult:
     resolved_data = data_dir or DATA_DIR
     feed_path = resolved_data / "feed.json"
     state_path = resolved_data / "state.json"
     meta_path = resolved_data / "meta.json"
 
-    now = datetime.now(UTC)
-    now_str = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+    started_monotonic = time.monotonic()
+    run_now = (now or datetime.now(UTC)).astimezone(UTC)
+    now_str = run_now.strftime("%Y-%m-%dT%H:%M:%SZ")
 
     logger.info("loading registry")
     companies = load_registry(registry_path)
@@ -167,19 +183,29 @@ async def run_pipeline(
     )
 
     due_tasks: list[tuple[Any, Any]] = []
+    off_season_skipped: set[str] = set()
     for company in companies:
         for source in company.sources:
             if source.type == "simplify":
                 continue
             key = f"{source.type}:{company.slug}"
+            if only_source_keys is not None and key not in only_source_keys:
+                continue
             health = state.sources.get(key)
-            if is_poll_due(company, health, now):
+            if force_poll or is_poll_due(company, health, run_now):
                 due_tasks.append((company, source))
+            elif is_off_season(company, run_now):
+                off_season_skipped.add(company.slug)
 
     logger.info("%d sources due for polling", len(due_tasks))
+    logger.info(
+        "seasonal scheduling skipped %d off-season companies this cycle",
+        len(off_season_skipped),
+    )
 
     fetch_results: dict[str, list[Posting]] = {}
     updated_sources: dict[str, SourceHealth] = {}
+    request_counts: dict[str, int] = {}
 
     if due_tasks:
         async with RateLimitedClient() as client:
@@ -199,6 +225,7 @@ async def run_pipeline(
             results = await asyncio.gather(*coros)
 
         state.http_cache = client.dump_cache()
+        request_counts = client.source_request_counts()
 
         for key, postings, health in results:
             updated_sources[key] = health
@@ -251,7 +278,7 @@ async def run_pipeline(
     else:
         logger.info("no feed changes, skipping write")
 
-    elapsed = (datetime.now(UTC) - now).total_seconds()
+    elapsed = time.monotonic() - started_monotonic
     updated_state.run_duration_seconds = elapsed
 
     save_state(state_path, updated_state)
@@ -272,6 +299,18 @@ async def run_pipeline(
         logger.info("dry-run mode, skipping git commit/push")
 
     logger.info("pipeline complete in %.1fs", elapsed)
+    attempted_keys = frozenset(
+        f"{source.type}:{company.slug}" for company, source in due_tasks
+    )
+    successful_keys = frozenset(fetch_results)
+    return PipelineRunResult(
+        attempted_keys=attempted_keys,
+        successful_keys=successful_keys,
+        failed_keys=attempted_keys - successful_keys,
+        new_ids=diff.new_ids,
+        closed_ids=diff.closed_ids,
+        request_counts=request_counts,
+    )
 
 
 def _git_commit_push(total: int, new: int, closed: int) -> None:

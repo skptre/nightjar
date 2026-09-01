@@ -135,6 +135,22 @@ class Company:
     sources: list[SourceConfig]
     typical_open: str | None = None
     high_priority: bool = False
+    seasonal_pattern: str | None = None
+
+
+@dataclass
+class HotWatchStats:
+    watch_started_at: str
+    watch_expires_at: str
+    requested_interval_minutes: int
+    effective_interval_minutes: int
+    successful_polls: int = 0
+    failures: int = 0
+    consecutive_failures: int = 0
+    changes_found: int = 0
+    last_change_at: str | None = None
+    request_count: int = 0
+    healthy: bool = True
 
 
 @dataclass

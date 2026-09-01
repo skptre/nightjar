@@ -19,6 +19,7 @@
     - type: greenhouse
       board_token: airbnb
   high_priority: true
+  seasonal_pattern: fall
 
 - slug: airtable
   name: Airtable
@@ -34,6 +35,7 @@
     - type: greenhouse
       board_token: andurilindustries
   high_priority: true
+  seasonal_pattern: year_round
 
 - slug: anthropic
   name: Anthropic
@@ -85,6 +87,7 @@
     - type: greenhouse
       board_token: databricks
   high_priority: true
+  seasonal_pattern: fall
 
 - slug: datadog
   name: Datadog
@@ -149,6 +152,7 @@
     - type: greenhouse
       board_token: figma
   high_priority: true
+  seasonal_pattern: fall
 
 - slug: flexport
   name: Flexport
@@ -192,6 +196,7 @@
     - type: greenhouse
       board_token: janestreet
   high_priority: true
+  seasonal_pattern: fall
 
 - slug: jump-trading
   name: Jump Trading
@@ -200,6 +205,7 @@
     - type: greenhouse
       board_token: jumptrading
   high_priority: true
+  seasonal_pattern: fall
 
 - slug: lyft
   name: Lyft
@@ -366,6 +372,7 @@
     - type: lever
       board_token: palantir
   high_priority: true
+  seasonal_pattern: year_round
 
 - slug: spotify
   name: Spotify
@@ -513,6 +520,7 @@
   sources:
     - type: workday
       board_token: boeing.wd1.myworkdayjobs.com/external_careers
+  seasonal_pattern: year_round
 
 - slug: capital-one
   name: Capital One
@@ -521,6 +529,7 @@
     - type: workday
       board_token: capitalone.wd12.myworkdayjobs.com/Capital_One
   high_priority: true
+  seasonal_pattern: fall
 
 - slug: cisco
   name: Cisco
@@ -564,6 +573,7 @@
     - type: workday
       board_token: nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite
   high_priority: true
+  seasonal_pattern: fall
 
 # ── SmartRecruiters ─────────────────────────────────────────────────
 
@@ -635,6 +645,7 @@
     - type: greenhouse
       board_token: ctccampusboard
   high_priority: true
+  seasonal_pattern: fall
 
 - slug: cresta
   name: Cresta
@@ -657,6 +668,7 @@
     - type: greenhouse
       board_token: drweng
   high_priority: true
+  seasonal_pattern: fall
 
 - slug: dv-trading
   name: DV Trading
@@ -737,6 +749,7 @@
     - type: greenhouse
       board_token: point72
   high_priority: true
+  seasonal_pattern: fall
 
 - slug: seven-research
   name: Seven Research
@@ -1074,6 +1087,7 @@
   sources:
     - type: ashby
       board_token: shield-ai
+  seasonal_pattern: year_round
 
 - slug: skydio
   name: Skydio
@@ -1132,6 +1146,7 @@
   sources:
     - type: workday
       board_token: argonne.wd1.myworkdayjobs.com/EDU_PUB
+  seasonal_pattern: year_round
 
 - slug: arlo
   name: Arlo Technologies
@@ -1168,6 +1183,7 @@
     - type: workday
       board_token: blackstone.wd1.myworkdayjobs.com/Blackstone_Campus_Careers
   high_priority: true
+  seasonal_pattern: fall
 
 - slug: bp
   name: BP
@@ -1239,6 +1255,7 @@
     - type: workday
       board_token: gresearch.wd103.myworkdayjobs.com/G-Research
   high_priority: true
+  seasonal_pattern: fall
 
 - slug: ge-aerospace
   name: GE Aerospace
@@ -1246,6 +1263,7 @@
   sources:
     - type: workday
       board_token: geaerospace.wd5.myworkdayjobs.com/ge_externalsite
+  seasonal_pattern: year_round
 
 - slug: ge-healthcare
   name: GE HealthCare
@@ -1309,6 +1327,7 @@
   sources:
     - type: workday
       board_token: nwis.wd12.myworkdayjobs.com/NW
+  seasonal_pattern: year_round
 
 - slug: nio
   name: NIO
@@ -1324,6 +1343,7 @@
     - type: workday
       board_token: ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site
   high_priority: true
+  seasonal_pattern: year_round
 
 - slug: nrel
   name: National Renewable Energy Laboratory
@@ -1331,6 +1351,7 @@
   sources:
     - type: workday
       board_token: nrel.wd5.myworkdayjobs.com/NLR
+  seasonal_pattern: year_round
 
 - slug: nxp-semiconductors
   name: NXP Semiconductors
@@ -1346,6 +1367,7 @@
     - type: workday
       board_token: paloaltonetworks.wd5.myworkdayjobs.com/panwexternalcareers
   high_priority: true
+  seasonal_pattern: fall
 
 - slug: pimco
   name: PIMCO
@@ -1375,6 +1397,7 @@
     - type: workday
       board_token: globalhr.wd5.myworkdayjobs.com/Private_Posting_No_TMP
   high_priority: true
+  seasonal_pattern: year_round
 
 - slug: schweitzer-engineering-laboratories
   name: Schweitzer Engineering
@@ -1403,6 +1426,7 @@
   sources:
     - type: workday
       board_token: flir.wd1.myworkdayjobs.com/flircareers
+  seasonal_pattern: year_round
 
 - slug: tencent
   name: Tencent
@@ -1454,6 +1478,7 @@
   sources:
     - type: smartrecruiters
       board_token: LLNL
+  seasonal_pattern: year_round
 
 - slug: northwestern-mutual
   name: Northwestern Mutual

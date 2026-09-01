@@ -187,7 +187,7 @@ Deterministic and stable across runs. **Never include title, URL, or location** 
       board_token: ramp
   typical_open: "2026-09"
   high_priority: false
-  seasonal_pattern: "fall"        # planned: fall | spring | year_round | null
+  seasonal_pattern: "fall"        # fall | spring | year_round | null
 ```
 
 No tiers, no notes, no referral contacts — those are user opinions and belong in the app's local data.
@@ -261,7 +261,7 @@ nightjar/
 │   ├── http.py                   # rate-limited client
 │   ├── store.py
 │   ├── tools/
-│   │   ├── hot_watch.py          # planned: admin hot-watch CLI
+│   │   ├── hot_watch.py          # admin hot-watch CLI
 │   │   └── benchmark.py          # planned: coverage metrics
 │   └── tests/
 │       ├── fixtures/             # real captured API responses, committed
@@ -279,7 +279,8 @@ nightjar/
 │   └── popup/
 └── .github/workflows/
     ├── poll.yml
-    ├── hot-watch-poll.yml        # planned: focused 5-min hot watches
+    ├── hot-watch-poll.yml        # focused 5-min hot watches
+    ├── hot-watch-control.yml     # manual enable/disable/status control
     └── discover.yml              # planned: monthly discovery
 ```
 
@@ -462,10 +463,12 @@ Intervals are targets; the cron interval (15 min) is the hard floor. The poller 
 
 Anyone can set `high_priority: true` on a company in the registry via PR.
 
-**Planned extensions:**
-- **Seasonal polling:** Companies tagged with `seasonal_pattern` (fall, spring, year_round) poll less frequently off-season — capped to still maintain detection latency guarantees. Unknown-season companies always poll at default intervals (conservative — don't accidentally under-poll).
+**Implemented scheduling controls:**
+- **Seasonal polling:** `fall` is in season July–November; `spring` is in season December–April; `year_round` and `null` always use ordinary scheduling. High-priority sources fall back from 30 minutes to the six-hour default off-season. The six-hour ceiling preserves the detection-latency target. Unknown companies remain untagged and therefore never get slowed by an unsupported guess.
+- **Admin hot-watch mode:** `polling-overrides.yaml` contains public, auditable source watches with a required reason, five-minute managed minimum, and mandatory expiry of at most seven days. `poller.tools.hot_watch` validates a recent successful bootstrapped baseline before enabling a watch. The focused workflow polls only due watched sources and shares the normal poller's concurrency group, retention rules, rate limits, request budgets, and failure semantics. Three consecutive failures mark the watch unhealthy. An optional local foreground mode has a two-minute minimum and never writes feed/state.
+
+**Planned extension:**
 - **Adaptive polling:** Replace subjective `high_priority` boolean with data-driven scheduling based on observed change frequency. Hot (changed recently) → short interval. Active → moderate. Quiet → longer. Requires several weeks of activity data before switching.
-- **Admin hot-watch mode:** Temporary override for known launch windows. Auditable YAML config with mandatory expiry. Polls only selected sources at managed intervals. Optional local foreground mode for one-day launch tests where GitHub schedule jitter is too slow. Hot-watch is an operations control, not user-specific scoring.
 
 ### 6.5 Feed scope filters
 

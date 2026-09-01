@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING, Any
 if TYPE_CHECKING:
     from pathlib import Path
 
-from poller.models import Posting, SourceHealth
+from poller.models import HotWatchStats, Posting, SourceHealth
 
 FEED_VERSION = 1
 
@@ -22,6 +22,7 @@ class RunState:
     active_ids: set[str] = field(default_factory=set)
     absent_ids: dict[str, str] = field(default_factory=dict)
     http_cache: dict[str, dict[str, str]] = field(default_factory=dict)
+    hot_watch_stats: dict[str, HotWatchStats] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         d: dict[str, Any] = {
@@ -44,6 +45,23 @@ class RunState:
         d["absent_ids"] = dict(sorted(self.absent_ids.items()))
         if self.http_cache:
             d["http_cache"] = dict(sorted(self.http_cache.items()))
+        if self.hot_watch_stats:
+            d["hot_watch_stats"] = {
+                key: {
+                    "watch_started_at": value.watch_started_at,
+                    "watch_expires_at": value.watch_expires_at,
+                    "requested_interval_minutes": value.requested_interval_minutes,
+                    "effective_interval_minutes": value.effective_interval_minutes,
+                    "successful_polls": value.successful_polls,
+                    "failures": value.failures,
+                    "consecutive_failures": value.consecutive_failures,
+                    "changes_found": value.changes_found,
+                    "last_change_at": value.last_change_at,
+                    "request_count": value.request_count,
+                    "healthy": value.healthy,
+                }
+                for key, value in sorted(self.hot_watch_stats.items())
+            }
         return d
 
     @classmethod
@@ -59,6 +77,22 @@ class RunState:
             )
         raw_duration = d.get("run_duration_seconds")
         duration = float(raw_duration) if raw_duration is not None else None
+        hot_watch_stats = {
+            key: HotWatchStats(
+                watch_started_at=value["watch_started_at"],
+                watch_expires_at=value["watch_expires_at"],
+                requested_interval_minutes=value["requested_interval_minutes"],
+                effective_interval_minutes=value["effective_interval_minutes"],
+                successful_polls=value.get("successful_polls", 0),
+                failures=value.get("failures", 0),
+                consecutive_failures=value.get("consecutive_failures", 0),
+                changes_found=value.get("changes_found", 0),
+                last_change_at=value.get("last_change_at"),
+                request_count=value.get("request_count", 0),
+                healthy=value.get("healthy", True),
+            )
+            for key, value in d.get("hot_watch_stats", {}).items()
+        }
         return cls(
             last_run_at=d.get("last_run_at"),
             run_count=d.get("run_count", 0),
@@ -67,6 +101,7 @@ class RunState:
             active_ids=set(d.get("active_ids", [])),
             absent_ids=dict(d.get("absent_ids", {})),
             http_cache=dict(d.get("http_cache", {})),
+            hot_watch_stats=hot_watch_stats,
         )
 
 

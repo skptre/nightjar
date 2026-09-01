@@ -1,0 +1,116 @@
+name: Control hot watch
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: Enable, disable, or inspect a watch
+        required: true
+        type: choice
+        options: [enable, disable, status]
+      company_slug:
+        description: Registry company slug
+        required: false
+        type: string
+      source_type:
+        description: Source type when the company has multiple sources
+        required: false
+        type: string
+      interval:
+        description: Managed interval (minimum 5m)
+        required: false
+        default: 5m
+        type: string
+      duration:
+        description: Bounded duration (maximum 7d)
+        required: false
+        default: 48h
+        type: string
+      reason:
+        description: Public operational reason
+        required: false
+        type: string
+
+concurrency:
+  group: poller
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  control:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Validate inputs
+        shell: bash
+        env:
+          ACTION: ${{ inputs.action }}
+          COMPANY: ${{ inputs.company_slug }}
+          REASON: ${{ inputs.reason }}
+        run: |
+          if [[ "$ACTION" != "status" && -z "$COMPANY" ]]; then
+            echo "company_slug is required for $ACTION" >&2
+            exit 1
+          fi
+          if [[ "$ACTION" == "enable" && -z "$REASON" ]]; then
+            echo "reason is required for enable" >&2
+            exit 1
+          fi
+
+      - name: Apply control action
+        shell: bash
+        env:
+          ACTION: ${{ inputs.action }}
+          COMPANY: ${{ inputs.company_slug }}
+          SOURCE: ${{ inputs.source_type }}
+          INTERVAL: ${{ inputs.interval }}
+          DURATION: ${{ inputs.duration }}
+          REASON: ${{ inputs.reason }}
+        run: |
+          source_args=()
+          if [[ -n "$SOURCE" ]]; then
+            source_args=(--source "$SOURCE")
+          fi
+          if [[ "$ACTION" == "enable" ]]; then
+            uv run python -m poller.tools.hot_watch enable "$COMPANY" \
+              "${source_args[@]}" --interval "$INTERVAL" --for "$DURATION" \
+              --reason "$REASON"
+          elif [[ "$ACTION" == "disable" ]]; then
+            uv run python -m poller.tools.hot_watch disable "$COMPANY" \
+              "${source_args[@]}"
+          else
+            if [[ -n "$COMPANY" ]]; then
+              uv run python -m poller.tools.hot_watch status "$COMPANY"
+            else
+              uv run python -m poller.tools.hot_watch status
+            fi
+          fi
+
+      - name: Commit public override configuration
+        if: inputs.action != 'status'
+        shell: bash
+        run: |
+          if git diff --quiet -- polling-overrides.yaml data/; then
+            echo "No control changes."
+            exit 0
+          fi
+          git config user.name "nightjar-bot"
+          git config user.email "nightjar-bot@users.noreply.github.com"
+          git add polling-overrides.yaml data/
+          git commit -m "ops: ${{ inputs.action }} hot watch for ${{ inputs.company_slug }}"
+          git push

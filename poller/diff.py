@@ -130,9 +130,15 @@ def compute_diff(
     updated_state = RunState(
         last_run_at=now,
         run_count=state.run_count + 1,
+        run_duration_seconds=state.run_duration_seconds,
         sources=sources_copy,
         active_ids=current_ids,
         absent_ids=new_absent,
+        http_cache=dict(state.http_cache),
+        hot_watch_stats={
+            key: dataclasses.replace(value)
+            for key, value in state.hot_watch_stats.items()
+        },
     )
 
     diff_result = DiffResult(

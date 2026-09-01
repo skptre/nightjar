@@ -3,8 +3,10 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from poller.sources.ashby import AshbyAdapter
+from poller.sources.google_careers import GoogleCareersAdapter
 from poller.sources.greenhouse import GreenhouseAdapter
 from poller.sources.lever import LeverAdapter
+from poller.sources.microsoft_careers import MicrosoftCareersAdapter
 from poller.sources.simplify import SimplifyAdapter
 from poller.sources.smartrecruiters import SmartRecruitersAdapter
 from poller.sources.workday import WorkdayAdapter
@@ -19,6 +21,8 @@ ADAPTERS: dict[str, type[SourceAdapter]] = {
     "workday": WorkdayAdapter,
     "simplify": SimplifyAdapter,
     "smartrecruiters": SmartRecruitersAdapter,
+    "google_careers": GoogleCareersAdapter,
+    "microsoft_careers": MicrosoftCareersAdapter,
 }
 
 

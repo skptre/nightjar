@@ -209,7 +209,7 @@ class TestWorkdayFaultIsolation:
         )
         lv_posting = make_posting(
             pid="lv_beta_1", company="Beta", company_slug="beta",
-            title="Backend Eng", source="lever", source_job_id="2001",
+            title="Backend Eng Intern", source="lever", source_job_id="2001",
         )
 
         adapters = {
@@ -272,7 +272,7 @@ class TestSmartRecruitersPagination:
                 pid=f"sr_tc_{i}",
                 company="TestCorp SR",
                 company_slug="testcorp-sr",
-                title=f"Role {i}",
+                title=f"Intern Role {i}",
                 source="smartrecruiters",
                 source_job_id=f"sr-{i:03d}",
             )
@@ -402,13 +402,13 @@ class TestAllSixAdapters:
         lv_posts = [
             make_posting(
                 pid="lv_b_1", company="Beta", company_slug="beta",
-                title="Backend Eng", source="lever", source_job_id="l1",
+                title="Backend Eng Intern", source="lever", source_job_id="l1",
             ),
         ]
         ab_posts = [
             make_posting(
                 pid="ab_g_1", company="Gamma", company_slug="gamma",
-                title="Platform Eng", source="ashby", source_job_id="a1",
+                title="Platform Eng Intern", source="ashby", source_job_id="a1",
             ),
         ]
         wd_posts = [

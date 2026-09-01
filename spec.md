@@ -8,7 +8,7 @@ An open internship feed and local desktop tracker.
 
 Two things, deliberately separated:
 
-1. **A public feed.** A poller runs on GitHub Actions, hits ATS APIs every 15 minutes, and commits normalized postings to a public repo. Raw data, no opinions, no personal information. Anyone can consume it.
+1. **A public feed.** A poller runs on GitHub Actions, hits ATS APIs every 15 minutes, and commits normalized US internship, co-op, and explicit new-grad postings to a public repo. Product scope is public and global; no user opinions or personal information enter the poller. Anyone can consume it.
 
 2. **A desktop app.** You download it, set up a local profile (grad date, work auth, target categories), and the app pulls the feed from the public repo. Filtering, scoring, eligibility checking, and application tracking all happen locally. Your data never leaves your machine.
 
@@ -73,9 +73,9 @@ The split is the architecture. Everything upstream of the user is shared and pub
 
 ### 2.1 The rule
 
-**The poller knows nothing about any user.** No profiles, no preferences, no eligibility rules, no scoring. It fetches, normalizes, dedupes, and commits. That's it. Every opinion about what's relevant lives in the app.
+**The poller knows nothing about any user.** No profiles, no preferences, no eligibility rules, no scoring. It fetches, applies the public product-scope boundary, normalizes, dedupes, and commits. Every user-specific opinion about what's relevant lives in the app.
 
-Corollary: `feed.json` contains every active posting the poller has seen. The app decides what to show.
+Corollary: `feed.json` contains every active posting the poller has seen that is inside Nightjar's public scope: US internships, co-ops, and explicit new-grad programs. The app decides what to show within that shared scope.
 
 ### 2.2 Why public
 
@@ -303,13 +303,20 @@ load registry
   → check which companies are due (last_polled_at + interval)
   → for each due (company, source): fetch  [parallel across companies, rate-limited per host]
   → normalize to Posting
+  → apply public feed scope (student-role title + explicitly US location)
   → cross-source dedupe (§6.3)
   → diff against previous feed (§6.2)
   → write feed.json + state.json
   → commit + push (only if feed changed)
 ```
 
-No filtering. No scoring. No notifications. Raw data in, normalized data out.
+One non-personal filter is allowed here: the public feed's product scope.
+
+- **Role scope:** internships, co-ops, common internship-equivalent titles such as summer analyst/associate, and explicit new-grad programs. Broad labels such as `entry level` and `early career` are insufficient by themselves.
+- **Geography scope:** a posting must expose an explicit US signal in its normalized location (United States/US/USA, a US state name, or a US state abbreviation). Bare `Remote`, missing, opaque, or unrecognized locations are excluded until an adapter can establish that they are US roles.
+- **No user scope:** degree, graduation date, work authorization, sponsorship, category, company tier, and personal relevance remain app-side.
+
+No scoring and no notifications occur in the poller. Public source data in, scope-limited normalized data out.
 
 ### 6.2 Diffing
 
@@ -318,6 +325,7 @@ Compare current posting-ID set against `state.json`'s previous set.
 - **New**: in current, not in previous.
 - **Disappeared**: in previous, not in current → set `closed_at` only after absent for **two consecutive runs** (flapping guard against transient API failures).
 - **First fetch**: suppress the "new" flag for a company's first successful fetch (`bootstrapped: true` in state). Otherwise adding a company generates hundreds of phantom new postings.
+- **Scope migration**: when the public feed-scope policy changes, postings that no longer satisfy it are removed from feed/history state immediately. They do not pass through the two-miss or seven-day closure retention path, which is reserved for upstream disappearance of otherwise in-scope jobs.
 
 ### 6.3 Cross-source dedupe
 
@@ -601,6 +609,6 @@ Property: running the pipeline twice on identical input produces zero diffs.
 | Eligibility false positive hides an opportunity | High | Default `unclear`; never delete; always cite matched sentence |
 | Unstable posting IDs → feed churn → phantom new postings | High | Deterministic IDs (§3.2); zero-diff test (§11) |
 | Silent source failure looks like "no jobs" | High | Failure ≠ empty (§5); unhealthy flag in state.json |
-| feed.json grows too large | Medium | Active-only + 7-day closed retention (§3.4); index/detail split as upgrade path (§3.5) |
+| feed.json grows too large | Medium | Strict US student-role scope + active-only/7-day closed retention (§3.4); index/detail split as upgrade path (§3.5) |
 | Registry never grows past seed 30 | **Highest** | Phase 2.5 is not optional; bootstrapper (§5.5) |
 | Project becomes a substitute for applying | **Highest** | Phase 1+2 ship in one week or cut the project |

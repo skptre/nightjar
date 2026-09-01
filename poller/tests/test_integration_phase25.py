@@ -450,11 +450,11 @@ class TestMixedSourcePipeline:
             )],
             "lever": [make_posting(
                 pid="p_lv1", company="LV Co", company_slug="co-lv",
-                title="Backend Eng", source="lever", source_job_id="l1",
+                title="Backend Eng Intern", source="lever", source_job_id="l1",
             )],
             "ashby": [make_posting(
                 pid="p_ab1", company="AB Co", company_slug="co-ab",
-                title="Platform Eng", source="ashby", source_job_id="a1",
+                title="Platform Eng Intern", source="ashby", source_job_id="a1",
             )],
             "workday": [make_posting(
                 pid="p_wd1", company="WD Co", company_slug="co-wd",

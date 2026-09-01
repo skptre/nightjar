@@ -320,7 +320,7 @@ class TestNormalization:
         await client.close()
 
     @pytest.mark.asyncio
-    async def test_location_from_bullet_fields(self) -> None:
+    async def test_location_prefers_locations_text(self) -> None:
         fixture = _load_fixture("single_page.json")
         transport = MockTransport([json_response(fixture)])
         client = await make_mock_client(transport)
@@ -331,9 +331,24 @@ class TestNormalization:
             raw_postings = await adapter.fetch(client, company, company.sources[0])
 
         first = raw_postings[0]
-        assert first.location != ""
-        assert "Full time" not in first.location
-        assert "Posted" not in first.location
+        assert first.location == "Santa Clara, California, United States of America"
+        await client.close()
+
+    @pytest.mark.asyncio
+    async def test_location_falls_back_to_bullet_fields(self) -> None:
+        fixture = _load_fixture("single_page.json")
+        fixture["jobPostings"][0].pop("locationsText")
+        transport = MockTransport([json_response(fixture)])
+        client = await make_mock_client(transport)
+        adapter = WorkdayAdapter()
+        company = _make_company()
+
+        with patch("poller.sources.workday.asyncio.sleep", new_callable=AsyncMock):
+            raw_postings = await adapter.fetch(client, company, company.sources[0])
+
+        assert raw_postings[0].location == (
+            "Santa Clara, California, United States of America"
+        )
         await client.close()
 
 

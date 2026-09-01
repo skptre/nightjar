@@ -182,7 +182,9 @@ class WorkdayAdapter(SourceAdapter):
     ) -> RawPosting:
         external_path = job["externalPath"]
         bullet_fields = job.get("bulletFields", []) or []
-        location = _extract_location(bullet_fields)
+        location = str(job.get("locationsText") or "").strip()
+        if not location:
+            location = _extract_location(bullet_fields)
 
         return RawPosting(
             source="workday",

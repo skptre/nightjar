@@ -21,7 +21,7 @@ if TYPE_CHECKING:
     from poller.models import Company, SourceConfig
 
 SIMPLIFY_URL = (
-    "https://raw.githubusercontent.com/SimplifyJobs/Summer2025-Internships"
+    "https://raw.githubusercontent.com/SimplifyJobs/Summer2027-Internships"
     "/dev/.github/scripts/listings.json"
 )
 

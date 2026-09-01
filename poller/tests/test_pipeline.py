@@ -82,7 +82,7 @@ def _lever_postings(company_slug: str) -> list[Posting]:
             pid=f"lv_{company_slug}_1",
             company=company_slug.title(),
             company_slug=company_slug,
-            title="Backend Engineer",
+            title="Backend Engineer Intern",
             source="lever",
             source_job_id="2001",
         ),
@@ -95,7 +95,7 @@ def _ashby_postings(company_slug: str) -> list[Posting]:
             pid=f"ab_{company_slug}_1",
             company=company_slug.title(),
             company_slug=company_slug,
-            title="Platform Engineer",
+            title="Platform Engineer Intern",
             source="ashby",
             source_job_id="3001",
         ),
@@ -239,7 +239,7 @@ class TestFaultIsolation:
             pid="existing_gh_1",
             company="Alpha",
             company_slug="alpha",
-            title="Old SWE Role",
+            title="Old SWE Intern Role",
             source="greenhouse",
             source_job_id="999",
         )
@@ -269,8 +269,53 @@ class TestFaultIsolation:
         feed = load_feed(data_dir / "feed.json")
         assert existing_posting.id in feed
         loaded = feed[existing_posting.id]
-        assert loaded.title == "Old SWE Role"
+        assert loaded.title == "Old SWE Intern Role"
         assert loaded.closed_at is None
+
+
+@pytest.mark.asyncio()
+class TestPipelineScopeMigration:
+    async def test_out_of_scope_history_is_pruned_immediately(
+        self, tmp_path: Path,
+    ) -> None:
+        data_dir = tmp_path / "data"
+        data_dir.mkdir()
+        registry_path = tmp_path / "companies.yaml"
+        _write_registry(registry_path, [])
+
+        intern = make_posting(
+            pid="intern-us",
+            title="Software Engineering Intern",
+            location="Austin, TX",
+        )
+        manager = make_posting(
+            pid="manager-us",
+            title="Engineering Manager",
+            location="Austin, TX",
+        )
+        save_feed(
+            data_dir / "feed.json",
+            {intern.id: intern, manager.id: manager},
+            "2026-08-30T00:00:00Z",
+        )
+        _seed_state(
+            data_dir / "state.json",
+            active_ids={intern.id, manager.id},
+        )
+
+        await run_pipeline(
+            dry_run=True,
+            registry_path=registry_path,
+            data_dir=data_dir,
+            skip_simplify=True,
+        )
+
+        feed = load_feed(data_dir / "feed.json")
+        state = load_state(data_dir / "state.json")
+
+        assert set(feed) == {intern.id}
+        assert manager.id not in state.active_ids
+        assert manager.id not in state.absent_ids
 
 
 @pytest.mark.asyncio()

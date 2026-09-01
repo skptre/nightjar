@@ -11,6 +11,11 @@ from typing import Any
 from poller.dedupe import dedupe_postings
 from poller.diff import compute_diff
 from poller.exceptions import SourceFetchError, SourceParseError
+from poller.filter import (
+    filter_feed_mapping,
+    filter_student_roles,
+    filter_us_locations,
+)
 from poller.http import RateLimitedClient
 from poller.models import Posting, SourceHealth
 from poller.registry import is_poll_due, load_registry
@@ -144,6 +149,17 @@ async def run_pipeline(
 
     state = load_state(state_path)
     previous_feed = load_feed(feed_path)
+    previous_count = len(previous_feed)
+    previous_feed = filter_feed_mapping(previous_feed)
+    scope_pruned_count = previous_count - len(previous_feed)
+    if scope_pruned_count:
+        scoped_ids = set(previous_feed)
+        state.active_ids.intersection_update(scoped_ids)
+        state.absent_ids = {
+            posting_id: absent_at
+            for posting_id, absent_at in state.absent_ids.items()
+            if posting_id in scoped_ids
+        }
     logger.info(
         "loaded state (run %d) and feed (%d postings)",
         state.run_count,
@@ -203,6 +219,8 @@ async def run_pipeline(
         if key not in polled_keys and posting.closed_at is None:
             current_postings.append(posting)
 
+    current_postings = filter_student_roles(current_postings)
+    current_postings = filter_us_locations(current_postings)
     current_postings = dedupe_postings(current_postings)
 
     for key, health in updated_sources.items():
@@ -221,7 +239,9 @@ async def run_pipeline(
         len(diff.bootstrapped_ids),
     )
 
-    if diff.has_changes:
+    output_changed = diff.has_changes or scope_pruned_count > 0
+
+    if output_changed:
         save_feed(feed_path, updated_feed, now_str, companies=companies)
         save_meta(meta_path, feed_path, now_str, len(updated_feed))
         logger.info("feed.json written (%d postings)", len(updated_feed))
@@ -238,7 +258,7 @@ async def run_pipeline(
     commit_msg_path = resolved_data / "commit_msg.txt"
     commit_msg_path.write_text(commit_msg, encoding="utf-8")
 
-    if not dry_run and diff.has_changes:
+    if not dry_run and output_changed:
         _git_commit_push(
             len(updated_feed), len(diff.new_ids), len(diff.closed_ids),
         )
@@ -285,6 +305,7 @@ def main() -> None:
         format="%(asctime)s %(levelname)s [%(name)s] %(message)s",
         datefmt="%H:%M:%S",
     )
+    logging.getLogger("httpx").setLevel(logging.WARNING)
 
     if dry_run:
         logger.info("nightjar poller: dry-run mode")

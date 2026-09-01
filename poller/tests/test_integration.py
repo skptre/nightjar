@@ -151,7 +151,7 @@ class TestSchemaContract:
                 company_slug="acme",
                 source="greenhouse",
                 source_job_id=str(i),
-                title=f"Role {i}",
+                title=f"Intern Role {i}",
             )
             for i in range(5)
         ]
@@ -257,14 +257,14 @@ class TestFlappingFullCycle:
             company_slug="acme",
             source="ashby",
             source_job_id="j1",
-            title="Stable Role",
+            title="Stable Intern Role",
         )
         posting_x = make_posting(
             pid=compute_posting_id("ashby", "acme", "j2"),
             company_slug="acme",
             source="ashby",
             source_job_id="j2",
-            title="Flapping Role",
+            title="Flapping Intern Role",
         )
 
         # --- Run 1: both postings present (bootstrap) ---
@@ -359,7 +359,7 @@ class TestBootstrapSuppression:
                 company_slug="acme",
                 source="greenhouse",
                 source_job_id=str(i),
-                title=f"Role {i}",
+                title=f"Intern Role {i}",
             )
             for i in range(3)
         ]
@@ -387,7 +387,7 @@ class TestBootstrapSuppression:
             company_slug="acme",
             source="greenhouse",
             source_job_id="new_99",
-            title="Brand New Role",
+            title="Brand New Intern Role",
         )
         adapter2 = _FakeAdapter(initial_posts + [new_posting])
 

@@ -100,6 +100,27 @@ class SmartRecruitersAdapter(SourceAdapter):
 
         locations_list = [location] if location else []
 
+        employment_type_obj = item.get("typeOfEmployment", {})
+        employment_type: str | None = None
+        if isinstance(employment_type_obj, dict):
+            employment_type = employment_type_obj.get("label") or employment_type_obj.get("id")
+        elif isinstance(employment_type_obj, str) and employment_type_obj:
+            employment_type = employment_type_obj
+
+        dept_obj = item.get("department", {})
+        department: str | None = None
+        if isinstance(dept_obj, dict):
+            department = dept_obj.get("label") or dept_obj.get("id")
+        elif isinstance(dept_obj, str) and dept_obj:
+            department = dept_obj
+
+        exp_obj = item.get("experienceLevel", {})
+        experience_req: str | None = None
+        if isinstance(exp_obj, dict):
+            experience_req = exp_obj.get("label") or exp_obj.get("id")
+        elif isinstance(exp_obj, str) and exp_obj:
+            experience_req = exp_obj
+
         return RawPosting(
             source="smartrecruiters",
             company_slug=company.slug,
@@ -111,6 +132,9 @@ class SmartRecruitersAdapter(SourceAdapter):
             posted_at=item.get("releasedDate"),
             description="",
             raw_data=item,
+            employment_type=employment_type,
+            department=department,
+            experience_requirements=experience_req,
         )
 
     def normalize(
@@ -135,6 +159,10 @@ class SmartRecruitersAdapter(SourceAdapter):
                 if html_chunks:
                     description = html_to_plaintext("\n".join(html_chunks))
 
+        source_meta: dict[str, Any] | None = None
+        if raw.experience_requirements:
+            source_meta = {"experience_requirements": raw.experience_requirements}
+
         return Posting(
             id=pid,
             company=company.name,
@@ -150,4 +178,7 @@ class SmartRecruitersAdapter(SourceAdapter):
             first_seen_at=now,
             last_seen_at=now,
             description_text=description,
+            employment_type=raw.employment_type,
+            department=raw.department,
+            source_metadata=source_meta,
         )

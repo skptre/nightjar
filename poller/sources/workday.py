@@ -186,6 +186,14 @@ class WorkdayAdapter(SourceAdapter):
         if not location:
             location = _extract_location(bullet_fields)
 
+        employment_type: str | None = None
+        for field_val in bullet_fields:
+            lower = str(field_val).lower().strip()
+            if lower in ("full time", "full-time", "part time", "part-time",
+                         "contract", "temporary", "regular"):
+                employment_type = lower.replace("-", " ")
+                break
+
         return RawPosting(
             source="workday",
             company_slug=company.slug,
@@ -197,6 +205,7 @@ class WorkdayAdapter(SourceAdapter):
             posted_at=None,
             description="",
             raw_data=job,
+            employment_type=employment_type,
         )
 
     def normalize(
@@ -221,4 +230,5 @@ class WorkdayAdapter(SourceAdapter):
             first_seen_at=now,
             last_seen_at=now,
             description_text=raw.description,
+            employment_type=raw.employment_type,
         )

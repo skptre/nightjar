@@ -28,6 +28,10 @@ class Posting:
     description_text: str = ""
     closed_at: str | None = None
     compensation: str | None = None
+    employment_type: str | None = None
+    department: str | None = None
+    workplace_type: str | None = None
+    valid_through: str | None = None
     merged_from: list[str] = field(default_factory=list)
     source_metadata: dict[str, Any] | None = None
 
@@ -50,6 +54,14 @@ class Posting:
         }
         if self.compensation is not None:
             d["compensation"] = self.compensation
+        if self.employment_type is not None:
+            d["employment_type"] = self.employment_type
+        if self.department is not None:
+            d["department"] = self.department
+        if self.workplace_type is not None:
+            d["workplace_type"] = self.workplace_type
+        if self.valid_through is not None:
+            d["valid_through"] = self.valid_through
         if self.merged_from:
             d["merged_from"] = list(self.merged_from)
         if self.source_metadata is not None:
@@ -75,6 +87,10 @@ class Posting:
             description_text=d.get("description_text", ""),
             closed_at=d.get("closed_at"),
             compensation=d.get("compensation"),
+            employment_type=d.get("employment_type"),
+            department=d.get("department"),
+            workplace_type=d.get("workplace_type"),
+            valid_through=d.get("valid_through"),
             merged_from=list(d.get("merged_from", [])),
             source_metadata=d.get("source_metadata"),
         )
@@ -93,6 +109,15 @@ class RawPosting:
     description: str
     raw_data: dict[str, Any] = field(default_factory=dict)
     compensation: str | None = None
+    employment_type: str | None = None
+    department: str | None = None
+    requisition_id: str | None = None
+    workplace_type: str | None = None
+    updated_at: str | None = None
+    valid_through: str | None = None
+    education_requirements: str | None = None
+    experience_requirements: str | None = None
+    occupational_category: str | None = None
 
 
 @dataclass

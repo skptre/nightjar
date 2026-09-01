@@ -19,7 +19,9 @@
       "posted_at": "2026-03-03T15:17:38Z",
       "first_seen_at": "2026-09-15T12:00:00Z",
       "last_seen_at": "2026-09-15T12:00:00Z",
-      "closed_at": null
+      "closed_at": null,
+      "employment_type": "Intern",
+      "workplace_type": "onsite"
     },
     "96c97d0ed8249fd9": {
       "id": "96c97d0ed8249fd9",
@@ -40,7 +42,10 @@
       "first_seen_at": "2026-09-15T12:00:00Z",
       "last_seen_at": "2026-09-15T12:00:00Z",
       "closed_at": null,
-      "compensation": "$60/hr"
+      "compensation": "$60/hr",
+      "employment_type": "Intern",
+      "department": "Engineering",
+      "workplace_type": "onsite"
     },
     "e65b735a1daf59b0": {
       "id": "e65b735a1daf59b0",
@@ -59,7 +64,8 @@
       "posted_at": null,
       "first_seen_at": "2026-09-15T12:00:00Z",
       "last_seen_at": "2026-09-15T12:00:00Z",
-      "closed_at": null
+      "closed_at": null,
+      "department": "Engineering"
     }
   },
   "companies": {

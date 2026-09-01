@@ -24,10 +24,32 @@ _STUDENT_ROLE_PATTERNS: list[re.Pattern[str]] = [
         r"\bcooperative\s+education\b",
         r"\bstudent\s+trainee\b",
 
-        # Common internship-equivalent titles
+        # Seasonal program terms
         r"\bsummer\s+analyst\b",
         r"\bwinter\s+analyst\b",
         r"\bsummer\s+associate\b",
+        r"\bspring\s+week\b",
+        r"\binsight\s+program(?:me)?\b",
+
+        # Academic/research terms
+        r"\bresearch\s+experience\b",
+        r"\b(?:REU)\b",
+        r"\bstudent\s+researcher\b",
+        r"\bresearch\s+intern\b",
+        r"\bundergraduate\s+researcher\b",
+        r"\blab\s+(?:assistant|intern)\b",
+
+        # UK/international terms
+        r"\bindustrial\s+placement\b",
+        r"\byear\s+in\s+industry\b",
+        r"\bsandwich\s+year\b",
+        r"\bwork\s+placement\b",
+
+        # Early career terms
+        r"\bapprenticeship\b",
+        r"\bexternship\b",
+        r"\bgraduate\s+internship\b",
+        r"\bpracticum\b",
 
         # Explicit new-graduate programs. Generic "entry level" and
         # "early career" are deliberately excluded because they routinely

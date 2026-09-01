@@ -95,6 +95,15 @@ class AshbyAdapter(SourceAdapter):
         location = normalize_location(job.get("location", "") or "")
         description = job.get("descriptionPlain", "") or ""
 
+        employment_type = job.get("employmentType") or None
+        department = job.get("department") or None
+        is_remote = job.get("isRemote")
+        workplace_type: str | None = None
+        if is_remote is True:
+            workplace_type = "remote"
+        elif is_remote is False:
+            workplace_type = "onsite"
+
         return RawPosting(
             source="ashby",
             company_slug=company.slug,
@@ -107,6 +116,10 @@ class AshbyAdapter(SourceAdapter):
             description=description,
             raw_data=job,
             compensation=_format_compensation(job),
+            employment_type=employment_type,
+            department=department,
+            workplace_type=workplace_type,
+            updated_at=job.get("updatedAt"),
         )
 
     def normalize(
@@ -132,4 +145,7 @@ class AshbyAdapter(SourceAdapter):
             last_seen_at=now,
             description_text=raw.description,
             compensation=raw.compensation,
+            employment_type=raw.employment_type,
+            department=raw.department,
+            workplace_type=raw.workplace_type,
         )

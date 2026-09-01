@@ -97,6 +97,16 @@ class GreenhouseAdapter(SourceAdapter):
         content_raw = job.get("content", "")
         description = html_to_plaintext(content_raw) if content_raw else ""
 
+        departments = job.get("departments", [])
+        department = departments[0]["name"] if departments else None
+
+        metadata = job.get("metadata", []) or []
+        employment_type: str | None = None
+        for meta in metadata:
+            if isinstance(meta, dict) and meta.get("name") == "Employment Type":
+                employment_type = meta.get("value")
+                break
+
         return RawPosting(
             source="greenhouse",
             company_slug=company.slug,
@@ -108,6 +118,9 @@ class GreenhouseAdapter(SourceAdapter):
             posted_at=job.get("first_published"),
             description=description,
             raw_data=job,
+            employment_type=employment_type,
+            department=department,
+            updated_at=job.get("updated_at"),
         )
 
     def normalize(
@@ -132,4 +145,6 @@ class GreenhouseAdapter(SourceAdapter):
             first_seen_at=now,
             last_seen_at=now,
             description_text=raw.description,
+            employment_type=raw.employment_type,
+            department=raw.department,
         )

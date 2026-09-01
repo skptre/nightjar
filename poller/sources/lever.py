@@ -92,6 +92,11 @@ class LeverAdapter(SourceAdapter):
 
         description = job.get("descriptionPlain", "") or ""
 
+        commitment = categories.get("commitment", "") or ""
+        employment_type: str | None = commitment if commitment else None
+        department = categories.get("department", "") or None
+        workplace_type = (job.get("workplaceType", "") or "").lower() or None
+
         return RawPosting(
             source="lever",
             company_slug=company.slug,
@@ -103,6 +108,9 @@ class LeverAdapter(SourceAdapter):
             posted_at=posted_at,
             description=description,
             raw_data=job,
+            employment_type=employment_type,
+            department=department,
+            workplace_type=workplace_type,
         )
 
     def normalize(
@@ -127,4 +135,7 @@ class LeverAdapter(SourceAdapter):
             first_seen_at=now,
             last_seen_at=now,
             description_text=raw.description,
+            employment_type=raw.employment_type,
+            department=raw.department,
+            workplace_type=raw.workplace_type,
         )

@@ -183,6 +183,7 @@ async def run_pipeline(
 
     if due_tasks:
         async with RateLimitedClient() as client:
+            client.load_cache(state.http_cache)
             coros = [
                 _poll_source(
                     client,
@@ -196,6 +197,8 @@ async def run_pipeline(
                 for company, source in due_tasks
             ]
             results = await asyncio.gather(*coros)
+
+        state.http_cache = client.dump_cache()
 
         for key, postings, health in results:
             updated_sources[key] = health
@@ -248,6 +251,9 @@ async def run_pipeline(
     else:
         logger.info("no feed changes, skipping write")
 
+    elapsed = (datetime.now(UTC) - now).total_seconds()
+    updated_state.run_duration_seconds = elapsed
+
     save_state(state_path, updated_state)
     logger.info("state.json written (run %d)", updated_state.run_count)
 
@@ -265,7 +271,6 @@ async def run_pipeline(
     elif dry_run:
         logger.info("dry-run mode, skipping git commit/push")
 
-    elapsed = (datetime.now(UTC) - now).total_seconds()
     logger.info("pipeline complete in %.1fs", elapsed)
 
 

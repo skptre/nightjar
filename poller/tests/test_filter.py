@@ -43,20 +43,20 @@ class TestIsStudentRole:
     def test_early_career_is_not_specific_enough(self) -> None:
         assert not is_student_role("Early Career Software Developer")
 
-    def test_apprenticeship_is_out_of_scope(self) -> None:
-        assert not is_student_role("Software Apprenticeship Program")
+    def test_apprenticeship_matches(self) -> None:
+        assert is_student_role("Software Apprenticeship Program")
 
     def test_student_trainee(self) -> None:
         assert is_student_role("Student Trainee (Engineering)")
 
-    def test_reu_is_out_of_scope(self) -> None:
-        assert not is_student_role("REU - Materials Science")
+    def test_reu_matches(self) -> None:
+        assert is_student_role("REU - Materials Science")
 
-    def test_industrial_placement_is_out_of_scope(self) -> None:
-        assert not is_student_role("Industrial Placement - Aerospace")
+    def test_industrial_placement_matches(self) -> None:
+        assert is_student_role("Industrial Placement - Aerospace")
 
-    def test_year_in_industry_is_out_of_scope(self) -> None:
-        assert not is_student_role("Year in Industry - Software Development")
+    def test_year_in_industry_matches(self) -> None:
+        assert is_student_role("Year in Industry - Software Development")
 
     def test_campus_hire(self) -> None:
         assert is_student_role("Campus Hire - Quantitative Analyst")
@@ -64,14 +64,14 @@ class TestIsStudentRole:
     def test_recent_graduate(self) -> None:
         assert is_student_role("Recent Graduate - Civil Engineer")
 
-    def test_spring_week_is_out_of_scope(self) -> None:
-        assert not is_student_role("Spring Week - Markets")
+    def test_spring_week_matches(self) -> None:
+        assert is_student_role("Spring Week - Markets")
 
-    def test_externship_is_out_of_scope(self) -> None:
-        assert not is_student_role("Externship - Product Design")
+    def test_externship_matches(self) -> None:
+        assert is_student_role("Externship - Product Design")
 
-    def test_practicum_is_out_of_scope(self) -> None:
-        assert not is_student_role("Practicum - Clinical Engineering")
+    def test_practicum_matches(self) -> None:
+        assert is_student_role("Practicum - Clinical Engineering")
 
     def test_graduate_trainee(self) -> None:
         assert is_student_role("Graduate Trainee - Finance")

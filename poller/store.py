@@ -17,15 +17,20 @@ FEED_VERSION = 1
 class RunState:
     last_run_at: str | None = None
     run_count: int = 0
+    run_duration_seconds: float | None = None
     sources: dict[str, SourceHealth] = field(default_factory=dict)
     active_ids: set[str] = field(default_factory=set)
     absent_ids: dict[str, str] = field(default_factory=dict)
+    http_cache: dict[str, dict[str, str]] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        return {
+        d: dict[str, Any] = {
             "last_run_at": self.last_run_at,
             "run_count": self.run_count,
-            "sources": {
+        }
+        if self.run_duration_seconds is not None:
+            d["run_duration_seconds"] = round(self.run_duration_seconds, 1)
+        d["sources"] = {
                 k: {
                     "last_polled_at": v.last_polled_at,
                     "healthy": v.healthy,
@@ -34,10 +39,12 @@ class RunState:
                     "potentially_truncated": v.potentially_truncated,
                 }
                 for k, v in sorted(self.sources.items())
-            },
-            "active_ids": sorted(self.active_ids),
-            "absent_ids": dict(sorted(self.absent_ids.items())),
-        }
+            }
+        d["active_ids"] = sorted(self.active_ids)
+        d["absent_ids"] = dict(sorted(self.absent_ids.items()))
+        if self.http_cache:
+            d["http_cache"] = dict(sorted(self.http_cache.items()))
+        return d
 
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> RunState:
@@ -50,12 +57,16 @@ class RunState:
                 bootstrapped=v.get("bootstrapped", False),
                 potentially_truncated=v.get("potentially_truncated", False),
             )
+        raw_duration = d.get("run_duration_seconds")
+        duration = float(raw_duration) if raw_duration is not None else None
         return cls(
             last_run_at=d.get("last_run_at"),
             run_count=d.get("run_count", 0),
+            run_duration_seconds=duration,
             sources=sources,
             active_ids=set(d.get("active_ids", [])),
             absent_ids=dict(d.get("absent_ids", {})),
+            http_cache=dict(d.get("http_cache", {})),
         )
 
 

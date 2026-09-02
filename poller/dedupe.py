@@ -20,6 +20,10 @@ SOURCE_PRIORITY: dict[str, int] = {
     "bamboohr": 3,
     "workable": 3,
     "breezy": 3,
+    "jazzhr": 3,
+    "teamtailor": 3,
+    "pinpoint": 3,
+    "comeet": 3,
     "workday": 4,
     "simplify": 99,
 }

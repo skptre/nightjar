@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "id": 5001,
+      "type": "postings",
+      "attributes": {
+        "title": "Software Engineering Intern",
+        "description": "<p>Join our engineering team for a hands-on internship.</p>",
+        "location_name": "London, UK",
+        "department_name": "Engineering",
+        "employment_type": "Internship",
+        "workplace_type": "onsite",
+        "published_at": "2026-08-01T09:00:00Z"
+      },
+      "links": {
+        "self": "https://acme.pinpointhq.com/en/postings/5001"
+      }
+    },
+    {
+      "id": 5002,
+      "type": "postings",
+      "attributes": {
+        "title": "Product Management Intern",
+        "description": "<p>Work with product managers on strategy.</p>",
+        "location_name": "Manchester, UK",
+        "department_name": "Product",
+        "employment_type": "Internship",
+        "workplace_type": "hybrid",
+        "published_at": "2026-08-10T09:00:00Z"
+      },
+      "links": {
+        "self": "https://acme.pinpointhq.com/en/postings/5002"
+      }
+    }
+  ]
+}

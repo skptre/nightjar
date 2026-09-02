@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "id": "TT003",
+      "type": "jobs",
+      "links": {
+        "careersite-job-url": "https://career.acme.com/jobs/tt003-backend-intern"
+      },
+      "attributes": {
+        "title": "Backend Engineering Intern",
+        "body": "<p>Build backend services.</p>",
+        "created-at": "2026-08-15T10:00:00.000+00:00",
+        "employment-type": "Internship",
+        "remote-status": "fully",
+        "internal": false
+      },
+      "relationships": {
+        "department": {"data": {"id": "d99", "type": "departments"}},
+        "locations": {"data": []}
+      }
+    }
+  ],
+  "meta": {"record-count": 1, "page-count": 1}
+}

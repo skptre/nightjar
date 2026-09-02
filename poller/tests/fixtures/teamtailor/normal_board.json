@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "id": "TT001",
+      "type": "jobs",
+      "links": {
+        "careersite-job-url": "https://career.acme.com/jobs/tt001-software-engineering-intern",
+        "careersite-job-apply-url": "https://career.acme.com/jobs/tt001-software-engineering-intern/applications/new"
+      },
+      "attributes": {
+        "title": "Software Engineering Intern",
+        "pitch": "Join our team",
+        "body": "<p>Work on cutting-edge projects with our engineering team.</p>",
+        "created-at": "2026-08-01T10:00:00.000+00:00",
+        "updated-at": "2026-08-10T10:00:00.000+00:00",
+        "employment-type": "Internship",
+        "remote-status": "none",
+        "internal": false
+      },
+      "relationships": {
+        "department": {"data": {"id": "d1", "type": "departments"}},
+        "locations": {"data": [{"id": "l1", "type": "locations"}]}
+      }
+    },
+    {
+      "id": "TT002",
+      "type": "jobs",
+      "links": {
+        "careersite-job-url": "https://career.acme.com/jobs/tt002-product-design-intern"
+      },
+      "attributes": {
+        "title": "Product Design Intern",
+        "body": "<p>Design beautiful user experiences.</p>",
+        "created-at": "2026-08-05T10:00:00.000+00:00",
+        "employment-type": null,
+        "remote-status": "hybrid",
+        "internal": false
+      },
+      "relationships": {
+        "department": {"data": {"id": "d2", "type": "departments"}},
+        "locations": {"data": [{"id": "l2", "type": "locations"}, {"id": "l3", "type": "locations"}]}
+      }
+    }
+  ],
+  "included": [
+    {"id": "d1", "type": "departments", "attributes": {"name": "Engineering"}},
+    {"id": "d2", "type": "departments", "attributes": {"name": "Design"}},
+    {"id": "l1", "type": "locations", "attributes": {"name": "Stockholm, Sweden"}},
+    {"id": "l2", "type": "locations", "attributes": {"name": "San Francisco, CA"}},
+    {"id": "l3", "type": "locations", "attributes": {"name": "Remote"}}
+  ],
+  "meta": {"record-count": 2, "page-count": 1}
+}

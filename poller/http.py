@@ -1,10 +1,13 @@
 from __future__ import annotations
 
 import asyncio
+import ipaddress
 import random
+import re
 import time
+from contextlib import suppress
 from typing import Any
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 import httpx
 
@@ -19,10 +22,26 @@ BASE_DELAY = 1.0
 MIN_HOST_DELAY = 1.0
 MAX_JITTER = 0.5
 
+_DNS_LABEL_RE = re.compile(r"^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$", re.IGNORECASE)
+_NON_PUBLIC_SUFFIXES = (".local", ".internal", ".localhost", ".home", ".arpa")
+
 
 DEFAULT_HOST_BUDGET = 500
 
 NOT_MODIFIED = object()
+
+
+def is_public_hostname(hostname: str) -> bool:
+    """Reject local/private URL targets before discovery makes a request."""
+    host = hostname.casefold().rstrip(".").strip("[]")
+    if not host or host == "localhost" or host.endswith(_NON_PUBLIC_SUFFIXES):
+        return False
+    try:
+        address = ipaddress.ip_address(host)
+    except ValueError:
+        labels = host.split(".")
+        return len(labels) >= 2 and all(_DNS_LABEL_RE.fullmatch(label) for label in labels)
+    return address.is_global
 
 
 class RateLimitedClient:
@@ -210,6 +229,177 @@ class RateLimitedClient:
             f"exhausted {MAX_RETRIES} retries (last status={last_status}): "
             f"{last_body[:200]}",
         )
+
+    async def get_text(
+        self,
+        url: str,
+        source: str = "",
+        company_slug: str = "",
+        params: dict[str, str] | None = None,
+    ) -> str:
+        """Fetch public text/NDJSON with the standard retry and rate-limit policy."""
+        host = urlparse(url).hostname or ""
+        lock = self._get_host_lock(host)
+        last_status = 0
+        last_body = ""
+
+        for attempt in range(MAX_RETRIES):
+            if not self._check_host_budget(host):
+                raise SourceFetchError(
+                    source,
+                    company_slug,
+                    f"host budget exceeded for {host} ({self._host_budget} requests)",
+                )
+            async with lock:
+                await self._enforce_host_delay(host)
+                self._record_request(host, source, company_slug)
+                client = await self._get_client()
+                try:
+                    response = await client.get(
+                        url,
+                        params=params,
+                        headers={"User-Agent": USER_AGENT},
+                    )
+                except httpx.HTTPError as exc:
+                    last_body = str(exc)
+                    if attempt < MAX_RETRIES - 1:
+                        await asyncio.sleep(BASE_DELAY * (2**attempt))
+                        continue
+                    raise SourceFetchError(
+                        source, company_slug, f"network error: {exc}"
+                    ) from exc
+
+                last_status = response.status_code
+                last_body = response.text[:500]
+                if response.status_code == 429 or response.status_code >= 500:
+                    if attempt < MAX_RETRIES - 1:
+                        delay = BASE_DELAY * (2**attempt)
+                        if response.status_code == 429:
+                            retry_after = response.headers.get("Retry-After")
+                            if retry_after is not None:
+                                with suppress(ValueError):
+                                    delay = float(retry_after)
+                        await asyncio.sleep(delay)
+                        continue
+                    raise SourceFetchError(
+                        source,
+                        company_slug,
+                        f"HTTP {response.status_code} after {MAX_RETRIES} attempts: "
+                        f"{last_body[:200]}",
+                    )
+                if response.status_code >= 400:
+                    raise SourceFetchError(
+                        source,
+                        company_slug,
+                        f"HTTP {response.status_code}: {last_body[:200]}",
+                    )
+                content_type = response.headers.get("content-type", "").casefold()
+                textual = (
+                    not content_type
+                    or "text/" in content_type
+                    or "json" in content_type
+                    or "javascript" in content_type
+                    or "xml" in content_type
+                )
+                if not textual:
+                    raise SourceFetchError(
+                        source,
+                        company_slug,
+                        f"expected text but got content-type '{content_type}'",
+                    )
+                return response.text
+
+        raise SourceFetchError(  # pragma: no cover — loop always returns or raises
+            source,
+            company_slug,
+            f"exhausted {MAX_RETRIES} retries (last status={last_status}): "
+            f"{last_body[:200]}",
+        )
+
+    async def resolve_url(
+        self,
+        url: str,
+        *,
+        source: str = "",
+        company_slug: str = "",
+        max_redirects: int = 3,
+    ) -> tuple[str, int]:
+        """Resolve a public URL with an explicit, bounded redirect chain."""
+        if max_redirects < 0 or max_redirects > 3:
+            raise ValueError("max_redirects must be between 0 and 3")
+        current = url
+        redirect_count = 0
+
+        while True:
+            parsed = urlparse(current)
+            if (
+                parsed.scheme not in {"http", "https"}
+                or parsed.username
+                or parsed.password
+                or not parsed.hostname
+                or not is_public_hostname(parsed.hostname)
+            ):
+                raise SourceFetchError(source, company_slug, "unsafe redirect URL")
+            host = parsed.hostname
+            lock = self._get_host_lock(host)
+            response: httpx.Response | None = None
+
+            for attempt in range(MAX_RETRIES):
+                if not self._check_host_budget(host):
+                    raise SourceFetchError(
+                        source,
+                        company_slug,
+                        f"host budget exceeded for {host} ({self._host_budget} requests)",
+                    )
+                async with lock:
+                    await self._enforce_host_delay(host)
+                    self._record_request(host, source, company_slug)
+                    client = await self._get_client()
+                    try:
+                        response = await client.get(
+                            current,
+                            follow_redirects=False,
+                            headers={"User-Agent": USER_AGENT},
+                        )
+                    except httpx.HTTPError as exc:
+                        if attempt < MAX_RETRIES - 1:
+                            await asyncio.sleep(BASE_DELAY * (2**attempt))
+                            continue
+                        raise SourceFetchError(
+                            source, company_slug, f"network error: {exc}"
+                        ) from exc
+                    if response.status_code == 429 or response.status_code >= 500:
+                        if attempt < MAX_RETRIES - 1:
+                            await asyncio.sleep(BASE_DELAY * (2**attempt))
+                            continue
+                        raise SourceFetchError(
+                            source,
+                            company_slug,
+                            f"HTTP {response.status_code} after {MAX_RETRIES} attempts",
+                        )
+                    break
+
+            if response is None:  # pragma: no cover — retry loop returns or raises
+                raise SourceFetchError(source, company_slug, "no redirect response")
+            if response.status_code >= 400:
+                raise SourceFetchError(
+                    source, company_slug, f"HTTP {response.status_code}"
+                )
+            if response.status_code not in {301, 302, 303, 307, 308}:
+                return str(response.url), response.status_code
+            location = response.headers.get("Location")
+            if not location:
+                raise SourceFetchError(
+                    source, company_slug, "redirect response lacked Location"
+                )
+            if redirect_count >= max_redirects:
+                raise SourceFetchError(
+                    source,
+                    company_slug,
+                    f"redirect limit exceeded ({max_redirects})",
+                )
+            current = urljoin(current, location)
+            redirect_count += 1
 
     async def post_json(
         self,

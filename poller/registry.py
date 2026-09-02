@@ -14,6 +14,7 @@ logger = logging.getLogger(__name__)
 VALID_SOURCE_TYPES = {
     "greenhouse", "lever", "ashby", "workday", "simplify", "smartrecruiters",
     "google_careers", "microsoft_careers",
+    "recruitee", "bamboohr", "workable", "breezy",
 }
 VALID_SEASONAL_PATTERNS = {"fall", "spring", "year_round"}
 DEFAULT_INTERVAL = timedelta(hours=6)

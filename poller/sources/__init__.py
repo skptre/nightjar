@@ -3,12 +3,16 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from poller.sources.ashby import AshbyAdapter
+from poller.sources.bamboohr import BambooHRAdapter
+from poller.sources.breezy import BreezyAdapter
 from poller.sources.google_careers import GoogleCareersAdapter
 from poller.sources.greenhouse import GreenhouseAdapter
 from poller.sources.lever import LeverAdapter
 from poller.sources.microsoft_careers import MicrosoftCareersAdapter
+from poller.sources.recruitee import RecruiteeAdapter
 from poller.sources.simplify import SimplifyAdapter
 from poller.sources.smartrecruiters import SmartRecruitersAdapter
+from poller.sources.workable import WorkableAdapter
 from poller.sources.workday import WorkdayAdapter
 
 if TYPE_CHECKING:
@@ -23,6 +27,10 @@ ADAPTERS: dict[str, type[SourceAdapter]] = {
     "smartrecruiters": SmartRecruitersAdapter,
     "google_careers": GoogleCareersAdapter,
     "microsoft_careers": MicrosoftCareersAdapter,
+    "recruitee": RecruiteeAdapter,
+    "bamboohr": BambooHRAdapter,
+    "workable": WorkableAdapter,
+    "breezy": BreezyAdapter,
 }
 
 

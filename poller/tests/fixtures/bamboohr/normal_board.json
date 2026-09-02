@@ -1,0 +1,22 @@
+{
+  "result": [
+    {
+      "id": 50001,
+      "jobOpeningName": "Software Engineering Intern",
+      "location": {"city": "Seattle", "state": "WA"},
+      "department": {"label": "Engineering", "name": "Engineering"},
+      "employmentStatus": "Intern",
+      "datePosted": "2026-08-01T00:00:00Z",
+      "description": "Build features for our core platform."
+    },
+    {
+      "id": 50002,
+      "jobOpeningName": "Finance Summer Analyst",
+      "location": {"city": "New York", "state": "NY"},
+      "department": {"label": "Finance"},
+      "employmentStatus": "Temporary",
+      "datePosted": "2026-08-10T00:00:00Z",
+      "description": "Support the finance team with modeling and analysis."
+    }
+  ]
+}

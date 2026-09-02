@@ -2,8 +2,7 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
 from unittest.mock import MagicMock, patch
 
 import pytest
@@ -18,6 +17,9 @@ from poller.models import (
     compute_posting_id,
 )
 from poller.store import RunState
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
 # ── RawPosting new fields ──────────────────────────────────────────

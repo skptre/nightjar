@@ -11,11 +11,13 @@ import sys
 from collections import Counter
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
-from poller.models import Posting
 from poller.registry import load_registry
 from poller.store import load_feed, load_state
+
+if TYPE_CHECKING:
+    from poller.models import Posting
 
 logger = logging.getLogger(__name__)
 

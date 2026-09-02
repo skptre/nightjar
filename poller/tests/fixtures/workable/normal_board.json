@@ -1,0 +1,28 @@
+{
+  "jobs": [
+    {
+      "shortcode": "WK0001",
+      "title": "Backend Engineering Intern",
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "US",
+      "department": "Engineering",
+      "employment_type": "Internship",
+      "remote": false,
+      "published_on": "2026-08-01",
+      "description": "Backend internship working with distributed systems."
+    },
+    {
+      "shortcode": "WK0002",
+      "title": "ML Research Intern",
+      "city": "Boston",
+      "state": "MA",
+      "country": "US",
+      "department": "Research",
+      "employment_type": "Internship",
+      "remote": true,
+      "published_on": "2026-08-15",
+      "description": "ML research internship, fully remote."
+    }
+  ]
+}

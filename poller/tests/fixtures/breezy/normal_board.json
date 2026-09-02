@@ -1,0 +1,22 @@
+[
+  {
+    "id": "pos_abc123",
+    "name": "Frontend Engineering Intern",
+    "friendly_id": "frontend-engineering-intern",
+    "location": {"city": "Austin", "state": "TX", "country": "US"},
+    "department": "Engineering",
+    "type": {"id": "intern", "name": "Internship"},
+    "published_date": "2026-08-05T00:00:00Z",
+    "description": "<p>Build user interfaces with React and TypeScript.</p>"
+  },
+  {
+    "id": "pos_def456",
+    "name": "Marketing Intern",
+    "friendly_id": "marketing-intern",
+    "location": {"city": "Denver", "state": "CO", "country": "US"},
+    "department": "Marketing",
+    "type": {"id": "intern", "name": "Internship"},
+    "published_date": "2026-08-12T00:00:00Z",
+    "description": "<p>Support marketing campaigns and analytics.</p>"
+  }
+]

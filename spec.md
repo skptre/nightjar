@@ -250,11 +250,14 @@ nightjar/
 │   │   ├── smartrecruiters.py
 │   │   ├── simplify.py
 │   │   └── generic.py            # planned: multi-strategy extraction
-│   ├── discovery/                # planned: Common Crawl + board discovery
+│   ├── discovery/                # Common Crawl + board discovery
 │   │   ├── common_crawl.py
+│   │   ├── models.py
 │   │   ├── verify.py
 │   │   ├── catalog.py
-│   │   └── identity.py
+│   │   ├── identity.py
+│   │   ├── redirect_detect.py
+│   │   └── directories.py
 │   ├── normalize.py
 │   ├── dedupe.py
 │   ├── registry.py
@@ -262,14 +265,16 @@ nightjar/
 │   ├── store.py
 │   ├── tools/
 │   │   ├── hot_watch.py          # admin hot-watch CLI
-│   │   └── benchmark.py          # planned: coverage metrics
+│   │   ├── benchmark.py          # coverage metrics
+│   │   └── discover.py           # bounded discovery workflow CLI
 │   └── tests/
 │       ├── fixtures/             # real captured API responses, committed
 │       └── test_filter.py
 ├── data/
 │   ├── feed.json                 # GENERATED — active postings
 │   ├── state.json                # GENERATED — run metadata, per-source health
-│   └── discovered_boards.json    # planned: discovery pipeline output
+│   ├── discovered_boards.json    # discovery pipeline output
+│   └── company_identities.json   # identities + pending review queue
 ├── app/                          # Vite + React + TS → Tauri wrap later
 │   └── src/
 ├── extension/                    # Chrome MV3
@@ -492,18 +497,18 @@ No scoring and no notifications occur in the poller. Public source data in, scop
 
 ---
 
-## 7. Discovery pipeline (planned)
+## 7. Discovery pipeline
 
 ### 7.1 Common Crawl board discovery
 
-Discovers career boards at web scale without crawling the web ourselves. Query Common Crawl's URL index for known ATS URL patterns (boards.greenhouse.io, jobs.lever.co, myworkdayjobs.com, etc.). Extract board URLs, tenant identifiers, and ATS family. Dedupe against existing registry.
+Discovers career boards at web scale without crawling the web ourselves. The initial production slice queries the latest Common Crawl CDX index discovered dynamically through the official `collinfo.json` endpoint. It queries only `boards.greenhouse.io/*`, `jobs.lever.co/*`, and `jobs.ashbyhq.com/*`. Workday and SmartRecruiters URLs can be recognized from redirect and Simplify inputs, but are deliberately excluded from the initial Common Crawl query set until the first live slice is measured.
 
-Start with a bounded vertical slice (a few proven ATS patterns), measure candidate count and verification success rate, then widen. Per-run candidate budget to prevent runaway verification costs. Use latest CC index only.
+The slice enforces a maximum of 500 candidates for verification, samples all three ATS families fairly when one family fills the budget, canonicalizes tenants before verification, and deduplicates against `companies.yaml`. It records candidate count, duplicate rate, verification success rate, active-board yield, and query count. Common Crawl is a discovery source, not a freshness feed; only the latest index is queried. Widen the pattern list only after a live run validates the complete discovery-to-promotion loop.
 
 ### 7.2 Supplementary discovery
 
-- **Redirect-based ATS detection:** Fetch `/careers` or `/jobs` on known employer domains, follow redirects, match final URL against ATS patterns.
-- **Public directory scanning:** SEC EDGAR company filings, university career center employer lists, federal agency websites. Use structured data feeds where available, not web scraping.
+- **Redirect-based ATS detection:** Fetch `/careers` or `/jobs` on known public employer domains, respect `robots.txt`, follow at most three redirects, and match the final URL against ATS patterns. Local, private, link-local, credential-bearing, and non-HTTP targets are rejected before requests.
+- **Public directory scanning:** Accept explicit employer website fields from structured sources such as SEC EDGAR company data, university career-center feeds, and federal agency datasets. HTML directory scraping is out of scope. Directory provenance is preserved alongside redirect provenance.
 - **Simplify and community repos:** Continue as one discovery signal. Every direct application URL that maps to a supported ATS type → registry candidate.
 
 ### 7.3 Verification and catalog
@@ -511,6 +516,14 @@ Start with a bounded vertical slice (a few proven ATS patterns), measure candida
 Discovered boards are verified live — hit the public endpoint, confirm it returns valid job data, record job count and estimated poll cost. Verified candidates with supported ATS type auto-generate registry entries for review. Workday candidates flagged for manual review due to high polling cost.
 
 Output: `data/discovered_boards.json` — candidates with provenance, verification status, and discovery source tracking.
+
+A terminal 404/410 marks a candidate dead. Transient failures and schema drift remain pending and never become a successful empty board. Workday candidates always remain `review_required`, with estimated page cost calculated using the hard 20-item page limit.
+
+### 7.4 Company identity and promotion
+
+`data/company_identities.json` stores reviewed canonical names, aliases, official employer domains, ATS instances, and parent/subsidiary relationships. Identity matching auto-links only an exact ATS instance or a reviewed employer-domain match. Hosted ATS domains are never treated as employer domains. Fuzzy name similarity produces a review proposal and never auto-merges companies; parent and subsidiary records remain distinct.
+
+Verified supported boards generate entries in `data/registry_candidates.json` for human review. This generated file remains Git-ignored and is uploaded by the monthly workflow as a 30-day review artifact; the durable catalog and identity-review queue are committed. Discovery never edits `companies.yaml` directly. The monthly `discover.yml` workflow shares the poller concurrency group with `cancel-in-progress: false`, so discovery catalog writes cannot race normal feed/state writes.
 
 ---
 

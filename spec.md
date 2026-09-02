@@ -401,18 +401,44 @@ Official public API, requires a free API key. Filter on `HiringPath=student` for
 
 Adapters for large employers who publish first on their own custom career sites and may not appear promptly in Simplify or community repos. Google Careers and Microsoft Careers are the first two. Further adapters prioritized by measured internship volume and unique-posting yield, not prestige.
 
-### 5.9 Generic extraction adapter (planned)
+### 5.9 Generic extraction adapter
 
-Multi-strategy extraction for custom career sites. Extraction hierarchy (try in order):
-1. `robots.txt` — respect all rules, extract sitemap URLs
-2. Sitemap indexes — find job-specific sitemaps, use `lastmod` for conditional fetching
-3. RSS/Atom feeds — check for alternate feed links, common paths (`/careers/feed`, `/jobs/rss`)
-4. Embedded JSON-LD with `@type: JobPosting` — extract per schema.org spec
-5. Static application state — Next.js `__NEXT_DATA__` or similar hydration globals
-6. Semantic HTML heuristic — last resort, low confidence, results quarantined with `review_required: true`
-7. Declare unsupported — mark and re-evaluate monthly
+The `generic` adapter covers public, static career sites that do not justify a dedicated
+adapter. Its `board_token` is the full careers-page URL; a hostname/path without a scheme
+is normalized to HTTPS. Private, local, credential-bearing, and non-HTTP(S) targets are
+rejected before any request.
 
-No JS rendering. No headless browsers. Static HTML only. CAPTCHA or anti-bot challenge → skip and mark as blocked.
+The adapter is deliberately fail-closed and uses this hierarchy:
+
+1. Fetch and enforce `/robots.txt` using RFC 9309 longest-match semantics. A robots 4xx is
+   unavailable and permits access; network/5xx failures are unreachable and disallow access.
+2. Follow same-host sitemap indexes and job-specific sitemaps, preserving each job URL's
+   `lastmod` as extraction provenance.
+3. Parse RSS or Atom feeds advertised in robots/page metadata, then bounded common paths.
+4. Parse schema.org `JobPosting` JSON-LD from static pages.
+5. Parse JSON-only `__NEXT_DATA__` and `window.__INITIAL_STATE__` hydration payloads.
+6. Extract semantic HTML only into a low-confidence, review-required quarantine. These
+   candidates never enter `feed.json`.
+
+Only a structurally valid empty feed or an explicitly job-specific empty sitemap may return
+`[]`. Unsupported markup, schema drift, CAPTCHA/challenge pages, and robots blocks raise a
+source error so prior postings are retained. Every published generic posting records a
+high-confidence `extraction_method` in `source_metadata`; niche schema fields and explicit
+requisition IDs are also retained there.
+
+Generic extraction uses the shared honest Nightjar HTTP client (one-second per-host delay,
+jitter, and bounded retry), enforces robots before every requested page and redirect target,
+refuses cross-host sitemap/redirect traversal, caps work at 100 requested pages per
+company/run, and performs no JavaScript rendering or browser automation. Sitemap `lastmod`
+is recorded but page-level 304 skipping is not enabled: the current adapter contract cannot
+safely carry unchanged page postings into a partial snapshot, and treating those pages as
+absent would create false closures.
+
+Scrapling was evaluated and is not a dependency. Its current parser-only package does not
+replace the small standard-format parsers needed here, while its fetcher/browser extras are
+centered on capabilities Nightjar explicitly bans (browser execution, impersonation, and
+anti-bot bypass). The adapter therefore uses `httpx` through the shared client plus standard
+library HTML, JSON, and bounded XML parsing.
 
 ### 5.10 Explicitly not implemented
 

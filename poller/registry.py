@@ -16,6 +16,7 @@ VALID_SOURCE_TYPES = {
     "google_careers", "microsoft_careers",
     "recruitee", "bamboohr", "workable", "breezy",
     "jazzhr", "teamtailor", "pinpoint", "comeet",
+    "generic",
 }
 VALID_SEASONAL_PATTERNS = {"fall", "spring", "year_round"}
 DEFAULT_INTERVAL = timedelta(hours=6)

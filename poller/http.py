@@ -236,6 +236,7 @@ class RateLimitedClient:
         source: str = "",
         company_slug: str = "",
         params: dict[str, str] | None = None,
+        follow_redirects: bool = True,
     ) -> str:
         """Fetch public text/NDJSON with the standard retry and rate-limit policy."""
         host = urlparse(url).hostname or ""
@@ -259,6 +260,7 @@ class RateLimitedClient:
                         url,
                         params=params,
                         headers={"User-Agent": USER_AGENT},
+                        follow_redirects=follow_redirects,
                     )
                 except httpx.HTTPError as exc:
                     last_body = str(exc)
@@ -271,6 +273,19 @@ class RateLimitedClient:
 
                 last_status = response.status_code
                 last_body = response.text[:500]
+                if not follow_redirects and 300 <= response.status_code < 400:
+                    location = response.headers.get("Location")
+                    if not location:
+                        raise SourceFetchError(
+                            source,
+                            company_slug,
+                            f"HTTP {response.status_code} redirect lacked Location",
+                        )
+                    raise SourceFetchError(
+                        source,
+                        company_slug,
+                        f"redirect {response.status_code}: {urljoin(url, location)}",
+                    )
                 if response.status_code == 429 or response.status_code >= 500:
                     if attempt < MAX_RETRIES - 1:
                         delay = BASE_DELAY * (2**attempt)

@@ -6,6 +6,7 @@ from poller.sources.ashby import AshbyAdapter
 from poller.sources.bamboohr import BambooHRAdapter
 from poller.sources.breezy import BreezyAdapter
 from poller.sources.comeet import ComeetAdapter
+from poller.sources.generic import GenericAdapter
 from poller.sources.google_careers import GoogleCareersAdapter
 from poller.sources.greenhouse import GreenhouseAdapter
 from poller.sources.jazzhr import JazzHRAdapter
@@ -31,6 +32,7 @@ ADAPTERS: dict[str, type[SourceAdapter]] = {
     "smartrecruiters": SmartRecruitersAdapter,
     "google_careers": GoogleCareersAdapter,
     "microsoft_careers": MicrosoftCareersAdapter,
+    "generic": GenericAdapter,
     "recruitee": RecruiteeAdapter,
     "bamboohr": BambooHRAdapter,
     "workable": WorkableAdapter,

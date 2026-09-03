@@ -1,7 +1,7 @@
 {
-  "last_run_at": "2026-09-03T21:23:54Z",
-  "run_count": 21,
-  "run_duration_seconds": 375.0,
+  "last_run_at": "2026-09-03T23:30:30Z",
+  "run_count": 22,
+  "run_duration_seconds": 370.3,
   "sources": {
     "ashby:1password": {
       "last_polled_at": "2026-09-03T18:34:11Z",
@@ -82,17 +82,17 @@
       "last_content_hash": "c7c0b887c5741697"
     },
     "ashby:applied-intuition": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 21.99,
-      "activity_poll_count": 2,
-      "last_content_hash": "394b6c4d3376b6d1"
+      "estimated_poll_cost": 18.37,
+      "activity_poll_count": 3,
+      "last_content_hash": "76ca3492f492ec5a"
     },
     "ashby:ashby": {
       "last_polled_at": "2026-09-03T18:34:11Z",
@@ -238,16 +238,16 @@
       "last_content_hash": "69e1c15a10f0b0fc"
     },
     "ashby:cursor": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 99.67,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 81.03,
+      "activity_poll_count": 3,
       "last_content_hash": "082e7abab632c2ad"
     },
     "ashby:cybernetic-labs": {
@@ -329,16 +329,16 @@
       "last_content_hash": "7ead9c198438e0fa"
     },
     "ashby:etched": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 112.45,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 90.99,
+      "activity_poll_count": 3,
       "last_content_hash": "1004bf393e05f2ce"
     },
     "ashby:fireworks": {
@@ -693,17 +693,17 @@
       "last_content_hash": "671b3fd9d5f192a4"
     },
     "ashby:openai": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 13.98,
-      "activity_poll_count": 2,
-      "last_content_hash": "3c2cf515015301c1"
+      "estimated_poll_cost": 11.51,
+      "activity_poll_count": 3,
+      "last_content_hash": "488f5a468b5b3cfb"
     },
     "ashby:opusclip": {
       "last_polled_at": "2026-09-03T18:34:11Z",
@@ -875,17 +875,17 @@
       "last_content_hash": "71ee8024ec19132a"
     },
     "ashby:ramp": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 16.76,
-      "activity_poll_count": 2,
-      "last_content_hash": "7d7b87da8997bec6"
+      "estimated_poll_cost": 13.92,
+      "activity_poll_count": 3,
+      "last_content_hash": "a8c3149718ff60dd"
     },
     "ashby:render": {
       "last_polled_at": "2026-09-03T18:34:11Z",
@@ -1265,16 +1265,16 @@
       "last_content_hash": "e5286d7f884b0fb0"
     },
     "greenhouse:airbnb": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 1.11,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 10.65,
+      "activity_poll_count": 3,
       "last_content_hash": "b0649af25c77dd16"
     },
     "greenhouse:airtable": {
@@ -1304,30 +1304,30 @@
       "last_content_hash": "b13922869e0165ba"
     },
     "greenhouse:anduril": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 13.56,
-      "activity_poll_count": 2,
-      "last_content_hash": "50a8128ffd119022"
+      "estimated_poll_cost": 13.82,
+      "activity_poll_count": 3,
+      "last_content_hash": "07da8cdda01b709b"
     },
     "greenhouse:anthropic": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 14.3,
-      "activity_poll_count": 2,
-      "last_content_hash": "fa0aa6be484ac692"
+      "estimated_poll_cost": 15.21,
+      "activity_poll_count": 3,
+      "last_content_hash": "9be29e9ced4809df"
     },
     "greenhouse:appian": {
       "last_polled_at": "2026-09-03T18:34:11Z",
@@ -1408,16 +1408,16 @@
       "last_content_hash": "f2f0665ea96db0e2"
     },
     "greenhouse:astranis": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 78.58,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 73.3,
+      "activity_poll_count": 3,
       "last_content_hash": "9cdb310d68ac1da0"
     },
     "greenhouse:blackedge-capital": {
@@ -1525,16 +1525,16 @@
       "last_content_hash": "e4a0d215779e1150"
     },
     "greenhouse:chicago-trading-company": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 173.6,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 149.55,
+      "activity_poll_count": 3,
       "last_content_hash": "df32107a40dcc707"
     },
     "greenhouse:chime": {
@@ -1642,17 +1642,17 @@
       "last_content_hash": "dfb045c1a00d8a79"
     },
     "greenhouse:databricks": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 20.71,
-      "activity_poll_count": 2,
-      "last_content_hash": "9eed637d2de98892"
+      "estimated_poll_cost": 20.49,
+      "activity_poll_count": 3,
+      "last_content_hash": "cb7a23214fad3350"
     },
     "greenhouse:datadog": {
       "last_polled_at": "2026-09-03T18:34:11Z",
@@ -1733,16 +1733,16 @@
       "last_content_hash": "82d74b814f2267eb"
     },
     "greenhouse:drw": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 176.4,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 152.09,
+      "activity_poll_count": 3,
       "last_content_hash": "979f3753fe8906c2"
     },
     "greenhouse:duolingo": {
@@ -1811,29 +1811,29 @@
       "last_content_hash": "841581ab207742a3"
     },
     "greenhouse:figma": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 29.2,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 27.41,
+      "activity_poll_count": 3,
       "last_content_hash": "da5b68d83345edcf"
     },
     "greenhouse:figure": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 176.07,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 152.01,
+      "activity_poll_count": 3,
       "last_content_hash": "be8c594d9a59293d"
     },
     "greenhouse:five-rings": {
@@ -2006,29 +2006,29 @@
       "last_content_hash": "c215885bf46475ea"
     },
     "greenhouse:jane-street": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 159.12,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 137.23,
+      "activity_poll_count": 3,
       "last_content_hash": "5478a1d47da3bf73"
     },
     "greenhouse:jump-trading": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 163.1,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 140.67,
+      "activity_poll_count": 3,
       "last_content_hash": "bbe14514235dfb2a"
     },
     "greenhouse:later": {
@@ -2175,17 +2175,17 @@
       "last_content_hash": "f0a412adb4a6c724"
     },
     "greenhouse:neuralink": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 180.11,
-      "activity_poll_count": 2,
-      "last_content_hash": "39df0f8923c3e0f4"
+      "estimated_poll_cost": 152.74,
+      "activity_poll_count": 3,
+      "last_content_hash": "7844c46cff7ed175"
     },
     "greenhouse:nextdoor": {
       "last_polled_at": "2026-09-03T18:34:11Z",
@@ -2292,16 +2292,16 @@
       "last_content_hash": "30e3cf91a93ba931"
     },
     "greenhouse:point72": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 181.56,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 156.7,
+      "activity_poll_count": 3,
       "last_content_hash": "78c608f73bddc633"
     },
     "greenhouse:postman": {
@@ -2539,17 +2539,17 @@
       "last_content_hash": "7fe4e2db65fad175"
     },
     "greenhouse:spacex": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 55.91,
-      "activity_poll_count": 2,
-      "last_content_hash": "bbf6ea1ca1803bf0"
+      "estimated_poll_cost": 51.79,
+      "activity_poll_count": 3,
+      "last_content_hash": "9afdd5a5bd019900"
     },
     "greenhouse:squarespace": {
       "last_polled_at": "2026-09-03T18:34:11Z",
@@ -2565,29 +2565,29 @@
       "last_content_hash": "9ac8fae8c906201a"
     },
     "greenhouse:stripe": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 66.25,
-      "activity_poll_count": 2,
-      "last_content_hash": "5760225a5d728582"
+      "estimated_poll_cost": 60.6,
+      "activity_poll_count": 3,
+      "last_content_hash": "9983527bdf2c1f01"
     },
     "greenhouse:tenstorrent": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 99.08,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 88.43,
+      "activity_poll_count": 3,
       "last_content_hash": "85e53779f4abaa5d"
     },
     "greenhouse:the-nuclear-company": {
@@ -2981,16 +2981,16 @@
       "last_content_hash": "b52996adf97f93ee"
     },
     "lever:palantir": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": true,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 27.03,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 23.74,
+      "activity_poll_count": 3,
       "last_content_hash": "9a7811db4d23579a"
     },
     "lever:spotify": {
@@ -3020,17 +3020,17 @@
       "last_content_hash": "a673ebf4928121df"
     },
     "lever:zoox": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 25.61,
-      "activity_poll_count": 2,
-      "last_content_hash": "70e2414a12970b1a"
+      "estimated_poll_cost": 22.33,
+      "activity_poll_count": 3,
+      "last_content_hash": "695f8af2b2960f40"
     },
     "simplify:10a-labs": {
       "last_polled_at": null,
@@ -3059,7 +3059,7 @@
       "last_content_hash": null
     },
     "simplify:__meta__": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
@@ -11287,6 +11287,19 @@
       "activity_poll_count": 0,
       "last_content_hash": null
     },
+    "simplify:peak-energy": {
+      "last_polled_at": null,
+      "healthy": true,
+      "error": null,
+      "bootstrapped": true,
+      "potentially_truncated": false,
+      "last_change_at": null,
+      "change_frequency": 0.0,
+      "consecutive_unchanged": 0,
+      "estimated_poll_cost": 0.0,
+      "activity_poll_count": 0,
+      "last_content_hash": null
+    },
     "simplify:pella": {
       "last_polled_at": null,
       "healthy": true,
@@ -13718,6 +13731,19 @@
       "activity_poll_count": 0,
       "last_content_hash": null
     },
+    "simplify:the-cary-company": {
+      "last_polled_at": null,
+      "healthy": true,
+      "error": null,
+      "bootstrapped": true,
+      "potentially_truncated": false,
+      "last_change_at": null,
+      "change_frequency": 0.0,
+      "consecutive_unchanged": 0,
+      "estimated_poll_cost": 0.0,
+      "activity_poll_count": 0,
+      "last_content_hash": null
+    },
     "simplify:the-federal-reserve-system": {
       "last_polled_at": null,
       "healthy": true,
@@ -15747,16 +15773,16 @@
       "last_content_hash": "fd55cb73011efc56"
     },
     "workday:blackstone": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 3.12,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 3.02,
+      "activity_poll_count": 3,
       "last_content_hash": "7a1a6f7b71e61f5a"
     },
     "workday:boeing": {
@@ -15838,17 +15864,17 @@
       "last_content_hash": "369344ecbeef8a04"
     },
     "workday:capital-one": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 173.1,
-      "activity_poll_count": 2,
-      "last_content_hash": "e3842af6218d2d14"
+      "estimated_poll_cost": 172.28,
+      "activity_poll_count": 3,
+      "last_content_hash": "f9a6848d3e506bfa"
     },
     "workday:chevron-corporation": {
       "last_polled_at": "2026-09-03T18:34:11Z",
@@ -15944,7 +15970,7 @@
     "workday:dell": {
       "last_polled_at": "2026-09-02T09:29:57Z",
       "healthy": false,
-      "error": "[workday:dell] fetch failed: HTTP 422: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"BC833DMTM18LYY\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
+      "error": "[workday:dell] fetch failed: HTTP 422: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"80715BMTM5RFFU\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
       "bootstrapped": false,
       "potentially_truncated": false,
       "last_change_at": null,
@@ -16072,16 +16098,16 @@
       "last_content_hash": "68e25234c54644f7"
     },
     "workday:g-research": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 3.28,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 3.18,
+      "activity_poll_count": 3,
       "last_content_hash": "3efa6b0ea1a4c7e7"
     },
     "workday:ge-aerospace": {
@@ -16462,17 +16488,17 @@
       "last_content_hash": "333a5db9b01f7a45"
     },
     "workday:northrop-grumman": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 395.31,
-      "activity_poll_count": 2,
-      "last_content_hash": "0c2068a730ff4286"
+      "estimated_poll_cost": 390.02,
+      "activity_poll_count": 3,
+      "last_content_hash": "e13b533e648e4e20"
     },
     "workday:novanta": {
       "last_polled_at": "2026-09-03T18:34:11Z",
@@ -16501,17 +16527,17 @@
       "last_content_hash": "b96ceaa205a9ecb5"
     },
     "workday:nvidia": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 4.02,
-      "activity_poll_count": 2,
-      "last_content_hash": "79763113284f0d27"
+      "estimated_poll_cost": 3.99,
+      "activity_poll_count": 3,
+      "last_content_hash": "8da349536b631d9b"
     },
     "workday:nxp-semiconductors": {
       "last_polled_at": "2026-09-03T18:34:11Z",
@@ -16553,17 +16579,17 @@
       "last_content_hash": "eae06fce1f9ad2f2"
     },
     "workday:palo-alto-networks": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 142.19,
-      "activity_poll_count": 2,
-      "last_content_hash": "e13daff1c68c02e4"
+      "estimated_poll_cost": 141.48,
+      "activity_poll_count": 3,
+      "last_content_hash": "fc00914bc5499130"
     },
     "workday:pfizer": {
       "last_polled_at": "2026-09-03T18:34:11Z",
@@ -16657,17 +16683,17 @@
       "last_content_hash": "37a7655646c42fa1"
     },
     "workday:rtx": {
-      "last_polled_at": "2026-09-03T21:23:54Z",
+      "last_polled_at": "2026-09-03T23:30:30Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-03T21:23:54Z",
+      "last_change_at": "2026-09-03T23:30:30Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 20.55,
-      "activity_poll_count": 2,
-      "last_content_hash": "10ee97744cc77846"
+      "estimated_poll_cost": 19.82,
+      "activity_poll_count": 3,
+      "last_content_hash": "df73a8e192f9f567"
     },
     "workday:schweitzer-engineering-laboratories": {
       "last_polled_at": "2026-09-03T18:34:11Z",
@@ -16866,7 +16892,6 @@
     "0188b2e40d1ce684",
     "018cfc214eae56b1",
     "01a86992d7059b88",
-    "01b5c5a4364966bf",
     "01d4b82faae367bb",
     "01de6dce92acadb0",
     "01faa26a2ac6d74b",
@@ -17456,6 +17481,7 @@
     "2845ca96ecd3bfaf",
     "284e801577935a80",
     "2850e67ba2eb1db6",
+    "285c3d7a4959692e",
     "285f23d907602311",
     "286e1159b6cc1cf8",
     "287305b39c1e9c43",
@@ -17605,8 +17631,10 @@
     "31531895913cf114",
     "315632ceb5dfb969",
     "31638095cb150aef",
+    "3167343ff3a3d911",
     "316af1949ffafbda",
     "317336d42b3ce95b",
+    "31882efc9c9389bd",
     "319c145e3d2dda88",
     "31a47c20270cc8f2",
     "31b2439d786b6100",
@@ -17758,6 +17786,7 @@
     "3b1806218146da9f",
     "3b1a74857c04c31f",
     "3b21b6324932fb3c",
+    "3b3a5c8b17a099fb",
     "3b3e84b7d321ebab",
     "3b4c78e340d21783",
     "3b4e076141e9d92d",
@@ -18346,6 +18375,7 @@
     "626d939d25cc85be",
     "6270f604979ac23c",
     "628695944fd288e4",
+    "628bd56e81e54d44",
     "629b84d04c16bb3b",
     "629d0cf25cd422bc",
     "62a2bb662117fe7c",
@@ -19317,6 +19347,7 @@
     "9fa687c3e509d35c",
     "9fa85cc6f967cb3c",
     "9fab176ef63eea79",
+    "9fab2a6d0bd8cead",
     "9fc9b06f11e020da",
     "9fd64e107755ba1b",
     "9feb008bd5346ba2",
@@ -19517,6 +19548,7 @@
     "ae356923d1098988",
     "ae3a61807b3deb06",
     "ae418ac999329c0b",
+    "ae5067ede8b6803a",
     "ae57f8bb613f74ea",
     "ae6649511ec47c99",
     "ae85a6640cd37fcb",
@@ -19550,7 +19582,6 @@
     "b03cfc0544e7d92b",
     "b05658792d0db57a",
     "b05929e2f66af1f5",
-    "b0712cae9ada7eec",
     "b07dfccadb655322",
     "b08be99e5589f9a2",
     "b0e309c2c36c8f65",
@@ -19861,6 +19892,7 @@
     "c55a819e29a2c9b2",
     "c56501146efc1c02",
     "c5669807ffadeb16",
+    "c57a714a505c5c93",
     "c57c4496568d4b46",
     "c587aa86a111b73f",
     "c58ef120ba9437de",
@@ -20396,6 +20428,7 @@
     "e7955a4545520bc1",
     "e79a63be7c923954",
     "e7b73163334bd4a2",
+    "e7c30f79f4e4abac",
     "e7c6640fafea3fcf",
     "e7c95f46a82084ef",
     "e7cfab423422c34b",
@@ -20662,6 +20695,7 @@
     "f7618963e0de11de",
     "f773ac219a659c4e",
     "f788986d3d84ebd3",
+    "f7ef3d4270c44a62",
     "f7f3f26ae6f7a0cf",
     "f7f80dad1148936d",
     "f80511ff73304ac6",
@@ -20758,6 +20792,7 @@
     "feaf149b91a2783b",
     "feb207cd62f27463",
     "feb85a40d72d51ff",
+    "fecaed20405d0160",
     "fed641a76ffbdbda",
     "fee084dacc648cc2",
     "fee0bad7b88d6874",
@@ -20779,12 +20814,8 @@
     "ffff10677bed8202"
   ],
   "absent_ids": {
-    "750b0c8af201581a": "2026-09-03T21:23:54Z",
-    "8c47ebfa8adb8198": "2026-09-03T21:23:54Z",
-    "9b83aae4f837669f": "2026-09-03T21:23:54Z",
-    "aed97f7eadce7683": "2026-09-03T21:23:54Z",
-    "e5d115deb9b69367": "2026-09-03T21:23:54Z",
-    "f0504cc8f4267937": "2026-09-03T21:23:54Z"
+    "01b5c5a4364966bf": "2026-09-03T23:30:30Z",
+    "b0712cae9ada7eec": "2026-09-03T23:30:30Z"
   },
   "http_cache": {
     "https://api.ashbyhq.com/posting-api/job-board/1password": {
@@ -20794,7 +20825,7 @@
       "etag": "W/\"job-board:13e04a6ef584790c14d147951e7679eb23eb1a5d8e0ae41d0efa7de69f7e5d62\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/Etched": {
-      "etag": "W/\"job-board:40723a3ba4aa7478f02b706d14ce5ce7f2a332e8242720a784458931e8551422\""
+      "etag": "W/\"job-board:35b32f4d4d7ee1a4a717d21493e1278a6672206c47e4c7b3278a799228fd1a1b\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/a16z-crypto": {
       "etag": "W/\"job-board:ccb5e209ddd2663a022f3d49ac0b6c999843cd39835e26c55c5f2e7c451c6663\""
@@ -20809,7 +20840,7 @@
       "etag": "W/\"job-board:3adaa189e270cf1e889e6b12a7726a70ec438086b53bdbb19fe8636a0bb1643b\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/applied": {
-      "etag": "W/\"job-board:bb66c64e15344781c87c424c7f79b1ed41852c48ac398b6b5ed53bbd5de6ebb5\""
+      "etag": "W/\"job-board:28543c44c11369eb99ca786a1565a3747a50dd00fa2a0301634a76de0dfe8324\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/ashby": {
       "etag": "W/\"job-board:a168f201ab5a8c241caf9eda247bd87ddaddc65413918f9a0b8730eadfbc216f\""
@@ -20947,7 +20978,7 @@
       "etag": "W/\"job-board:bafafb65375eb98933cc47922522bbd57dd006b34dfe73b0e6e4edfe6eccc219\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/openai": {
-      "etag": "W/\"job-board:c4c14988e06c3ad6e46aa75c76525d087dd3929e30b548ae6c3d4dfdeed172d3\""
+      "etag": "W/\"job-board:624052122a3f4f61a11e58b9f754b2b5f598c835b7353e9113799e8d5f430ff0\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/opusclip": {
       "etag": "W/\"job-board:1d6ee8d671bc45fac0820c6344f8e16783090c6e711cbdf90abc4a87643da9f7\""
@@ -20989,7 +21020,7 @@
       "etag": "W/\"job-board:b5080e939dfa0b37431ba1758314861362674c17a61163f6a372ddd3007b370b\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/ramp": {
-      "etag": "W/\"job-board:51c9e49100e093d75fae30484cc15fe41df6d533a4162c3c797dcb4592142c93\""
+      "etag": "W/\"job-board:c27511ac92acdf74cc3c3ad45bc4e0f0298cb6887a31adb72e2762513de8e538\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/render": {
       "etag": "W/\"job-board:d83afef873a7b0f346347eb1a3de8b1a31fde47dbf3281984ad23fdbc3f5f1a9\""
@@ -21109,7 +21140,7 @@
       "etag": "W/\"12dc9c-FtH9WMaDW8iVoNT0xhsbmSiVFFs\""
     },
     "https://api.lever.co/v0/postings/zoox": {
-      "etag": "W/\"6607e-E3lTkdKAjLGIfEnqWQy1cynSLLY\""
+      "etag": "W/\"6abe9-jxb4WIvHhjDO236DFC6InISoq6s\""
     },
     "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings": {
       "etag": "W/\"139e4-+jy2rLoy4SMrpvuoJW8Dej/wr1E\""
@@ -21169,10 +21200,10 @@
       "etag": "W/\"9560a9d20d6f65386ad1b9e8fcb88b38\""
     },
     "https://boards-api.greenhouse.io/v1/boards/andurilindustries/jobs": {
-      "etag": "W/\"a573bf5022b0e34ea122c93c31bd76c9\""
+      "etag": "W/\"4984ff5e68798afcc12f537379fc0428\""
     },
     "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs": {
-      "etag": "W/\"252b20d7932ce938b3a0bd9829e70c3d\""
+      "etag": "W/\"389fbe80d2726aa7f060468798c39858\""
     },
     "https://boards-api.greenhouse.io/v1/boards/appian/jobs": {
       "etag": "W/\"73044aa192771aa52e28c7a43788c7e7\""
@@ -21247,7 +21278,7 @@
       "etag": "W/\"3f9500950575498fa8ffe5e6e33cb265\""
     },
     "https://boards-api.greenhouse.io/v1/boards/databricks/jobs": {
-      "etag": "W/\"50b0f3b1ab5a06d44e6c39931fcec2ff\""
+      "etag": "W/\"423e0be0b1dd1ac1c0451e321d33093a\""
     },
     "https://boards-api.greenhouse.io/v1/boards/datadog/jobs": {
       "etag": "W/\"7860ce1ec0c9865e777a9fe8f21ac45e\""
@@ -21286,7 +21317,7 @@
       "etag": "W/\"f0bfa6153ffaec856b4009284ee2b1e4\""
     },
     "https://boards-api.greenhouse.io/v1/boards/figma/jobs": {
-      "etag": "W/\"77dd2a8c825a76b70bcfe8bf60f3280d\""
+      "etag": "W/\"befccdd72363fb9777767b8270dba80b\""
     },
     "https://boards-api.greenhouse.io/v1/boards/figureai/jobs": {
       "etag": "W/\"ffe0083a9f1bb9b347ed4a5a5c2fb9cb\""
@@ -21370,7 +21401,7 @@
       "etag": "W/\"99930ccaee4519c9c5b5f233ba8f7306\""
     },
     "https://boards-api.greenhouse.io/v1/boards/neuralink/jobs": {
-      "etag": "W/\"99738f3e030340f68a70c24eee235188\""
+      "etag": "W/\"54d3a86f95b2e5bdd3e6d249fa78e0cf\""
     },
     "https://boards-api.greenhouse.io/v1/boards/nextdoor/jobs": {
       "etag": "W/\"67ef4ccacbb70f1aad7fb7a9a69fa76f\""
@@ -21454,16 +21485,16 @@
       "etag": "W/\"f25b1f170244202e10df776be6e03858\""
     },
     "https://boards-api.greenhouse.io/v1/boards/spacex/jobs": {
-      "etag": "W/\"2f384246b6af66197dfdf38eec9591da\""
+      "etag": "W/\"07219cb4eed154057dab535a6ff283e7\""
     },
     "https://boards-api.greenhouse.io/v1/boards/squarespace/jobs": {
       "etag": "W/\"e799ea88b4874a5bbfbae380479cce7e\""
     },
     "https://boards-api.greenhouse.io/v1/boards/stripe/jobs": {
-      "etag": "W/\"8e925668026f6c8b37f8bf0206512159\""
+      "etag": "W/\"7b8199db7033556834c0dbc80435c08c\""
     },
     "https://boards-api.greenhouse.io/v1/boards/tenstorrentuniversity/jobs": {
-      "etag": "W/\"20ebdea51ff91909cebf7ac51579fca0\""
+      "etag": "W/\"9b57d15fe16bde421bbd7b2da6783f9f\""
     },
     "https://boards-api.greenhouse.io/v1/boards/thenuclearcompany/jobs": {
       "etag": "W/\"92d5b257f3d6333452fa7d3252585891\""

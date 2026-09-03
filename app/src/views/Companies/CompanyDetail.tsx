@@ -1,8 +1,17 @@
-import { useState, useEffect, useCallback, useMemo, type ReactNode } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef, type ReactNode } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useDatabase } from '@/providers/DatabaseProvider';
 import { useProfile } from '@/providers/ProfileProvider';
 import { recomputeAll } from '@/classify/recompute';
+import { OutcomeDialog } from '@/outcomes/OutcomeDialog';
+import { transitionApplicationStatus } from '@/outcomes/outcome-service';
+import {
+  isApplicationStatus,
+  statusNeedsOutcomePrompt,
+  type ApplicationStatus,
+  type OutcomeDetails,
+  type PipelineStatus,
+} from '@/outcomes/types';
 import { ExcludeToggle } from './ExcludeToggle';
 
 type Tab = 'postings' | 'applications' | 'timeline';
@@ -101,6 +110,13 @@ export function CompanyDetail(): ReactNode {
   const [editingContact, setEditingContact] = useState(false);
   const [contactValue, setContactValue] = useState('');
   const [refreshKey, setRefreshKey] = useState(0);
+  const [pendingTransition, setPendingTransition] = useState<{
+    application: ApplicationQueryRow & { title: string };
+    status: PipelineStatus;
+  } | null>(null);
+  const [transitionError, setTransitionError] = useState<string | null>(null);
+  const [transitionBusy, setTransitionBusy] = useState(false);
+  const transitionInFlight = useRef(false);
 
   useEffect(() => {
     if (!slug) return;
@@ -242,22 +258,53 @@ export function CompanyDetail(): ReactNode {
     setEditingContact(false);
   }, [profile, slug, updateProfile, contactValue]);
 
-  const handleStatusChange = useCallback(
-    async (postingId: string, newStatus: string): Promise<void> => {
-      const now = new Date().toISOString();
-      await db.run(
-        'UPDATE applications SET status = ?, updated_at = ? WHERE posting_id = ?',
-        [newStatus, now, postingId],
-      );
-      setRefreshKey((k) => k + 1);
+  const commitStatusChange = useCallback(
+    async (
+      postingId: string,
+      newStatus: ApplicationStatus,
+      details: OutcomeDetails = {},
+    ): Promise<void> => {
+      if (transitionInFlight.current) return;
+      transitionInFlight.current = true;
+      setTransitionBusy(true);
+      setTransitionError(null);
+      try {
+        await transitionApplicationStatus(db, postingId, newStatus, details);
+        setPendingTransition(null);
+        setRefreshKey((k) => k + 1);
+      } catch (reason: unknown) {
+        setTransitionError(String(reason));
+      } finally {
+        transitionInFlight.current = false;
+        setTransitionBusy(false);
+      }
     },
     [db],
+  );
+
+  const handleStatusChange = useCallback(
+    (postingId: string, newStatus: string): void => {
+      if (!isApplicationStatus(newStatus)) return;
+      const application = applications.find((item) => item.posting_id === postingId);
+      if (!application || application.status === newStatus) return;
+      if (newStatus !== 'new' && newStatus !== 'skipped' && statusNeedsOutcomePrompt(newStatus)) {
+        setPendingTransition({ application, status: newStatus });
+        return;
+      }
+      void commitStatusChange(postingId, newStatus);
+    },
+    [applications, commitStatusChange],
   );
 
   if (!slug) return null;
 
   return (
     <div>
+      {transitionError && (
+        <p role="alert" className="mb-3 text-sm text-nj-ineligible">
+          Could not update this application. {transitionError}
+        </p>
+      )}
       <button
         onClick={() => void navigate('/companies')}
         className="flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700 dark:text-nj-text-dim dark:hover:text-nj-text mb-3"
@@ -359,6 +406,23 @@ export function CompanyDetail(): ReactNode {
       {tab === 'postings' && <PostingsTab postings={postings} />}
       {tab === 'applications' && <ApplicationsTab applications={applications} onStatusChange={handleStatusChange} />}
       {tab === 'timeline' && <TimelineTab entries={timeline} />}
+
+      {pendingTransition && (
+        <OutcomeDialog
+          company={companyName || slug}
+          title={pendingTransition.application.title}
+          status={pendingTransition.status}
+          busy={transitionBusy}
+          onCancel={() => setPendingTransition(null)}
+          onSubmit={(details) => {
+            void commitStatusChange(
+              pendingTransition.application.posting_id,
+              pendingTransition.status,
+              details,
+            );
+          }}
+        />
+      )}
     </div>
   );
 }
@@ -418,7 +482,7 @@ function ApplicationsTab({
   onStatusChange,
 }: {
   applications: (ApplicationQueryRow & { title: string })[];
-  onStatusChange: (postingId: string, status: string) => Promise<void>;
+  onStatusChange: (postingId: string, status: string) => void;
 }): ReactNode {
   if (applications.length === 0) {
     return <p className="text-sm text-gray-500 dark:text-nj-muted py-8 text-center">No applications for this company yet.</p>;
@@ -444,7 +508,7 @@ function ApplicationsTab({
           <div className="flex justify-center">
             <select
               value={a.status}
-              onChange={(e) => void onStatusChange(a.posting_id, e.target.value)}
+              onChange={(e) => onStatusChange(a.posting_id, e.target.value)}
               className="text-xs px-1.5 py-1 rounded border border-gray-200 dark:border-nj-border bg-white dark:bg-nj-surface-2 text-gray-700 dark:text-nj-text cursor-pointer"
             >
               {statuses.map((s) => (

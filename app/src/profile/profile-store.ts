@@ -1,4 +1,4 @@
-import type { Profile } from './types';
+import type { Profile, ScoringAdjustments } from './types';
 
 const STORAGE_KEY = 'nightjar_profile';
 
@@ -40,6 +40,39 @@ function isGradWindow(value: unknown): value is [string, string] {
 
 function migrateCategoryArray(values: string[]): string[] {
   return [...new Set(values.map((value) => value === 'ml' ? 'data-ml' : value))];
+}
+
+function parseScoringAdjustments(value: unknown): ScoringAdjustments | undefined {
+  if (!isRecord(value)) return undefined;
+  const result: ScoringAdjustments = {};
+  if (isRecord(value['tier_bonus'])) {
+    const tierBonus: NonNullable<ScoringAdjustments['tier_bonus']> = {};
+    for (const tier of ['1', '2', '3'] as const) {
+      const points = value['tier_bonus'][tier];
+      if (typeof points === 'number' && Number.isFinite(points) && points >= -10 && points <= 10) {
+        tierBonus[tier] = points;
+      }
+    }
+    if (Object.keys(tierBonus).length > 0) result.tier_bonus = tierBonus;
+  }
+  const freshness = value['freshness_bonus'];
+  if (
+    isRecord(freshness)
+    && typeof freshness['max_days'] === 'number'
+    && Number.isFinite(freshness['max_days'])
+    && freshness['max_days'] >= 0
+    && freshness['max_days'] <= 30
+    && typeof freshness['points'] === 'number'
+    && Number.isFinite(freshness['points'])
+    && freshness['points'] >= -10
+    && freshness['points'] <= 10
+  ) {
+    result.freshness_bonus = {
+      max_days: freshness['max_days'],
+      points: freshness['points'],
+    };
+  }
+  return Object.keys(result).length > 0 ? result : undefined;
 }
 
 export function validateAndRepairProfile(raw: unknown): Profile | null {
@@ -105,6 +138,8 @@ export function validateAndRepairProfile(raw: unknown): Profile | null {
   if (typeof raw['sync_interval_ms'] === 'number') {
     result.sync_interval_ms = raw['sync_interval_ms'];
   }
+  const scoringAdjustments = parseScoringAdjustments(raw['scoring_adjustments']);
+  if (scoringAdjustments) result.scoring_adjustments = scoringAdjustments;
 
   return result;
 }

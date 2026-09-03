@@ -1,15 +1,13 @@
-import { useState, useMemo, useCallback, useEffect } from 'react';
+import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { useDatabase } from '@/providers/DatabaseProvider';
-
-type PipelineStatus =
-  | 'saved'
-  | 'applied'
-  | 'oa'
-  | 'phone'
-  | 'onsite'
-  | 'offer'
-  | 'rejected'
-  | 'ghosted';
+import { OutcomeDialog } from '@/outcomes/OutcomeDialog';
+import { transitionApplicationStatus } from '@/outcomes/outcome-service';
+import {
+  statusNeedsOutcomePrompt,
+  type ApplicationOutcome,
+  type OutcomeDetails,
+  type PipelineStatus,
+} from '@/outcomes/types';
 
 const PIPELINE_COLUMNS: { status: PipelineStatus; label: string }[] = [
   { status: 'saved', label: 'Saved' },
@@ -38,6 +36,10 @@ interface PipelineCard {
   score: number | null;
   category: string | null;
   term: string | null;
+  outcome: ApplicationOutcome | null;
+  outcome_at: string | null;
+  interview_rounds: number;
+  outcome_notes: string | null;
 }
 
 interface PipelineQueryRow {
@@ -53,6 +55,10 @@ interface PipelineQueryRow {
   score: number | null;
   category: string | null;
   term: string | null;
+  outcome: ApplicationOutcome | null;
+  outcome_at: string | null;
+  interview_rounds: number;
+  outcome_notes: string | null;
 }
 
 function parseCard(row: PipelineQueryRow): PipelineCard | null {
@@ -74,6 +80,10 @@ function parseCard(row: PipelineQueryRow): PipelineCard | null {
       score: row.score,
       category: row.category,
       term: row.term,
+      outcome: row.outcome,
+      outcome_at: row.outcome_at,
+      interview_rounds: row.interview_rounds,
+      outcome_notes: row.outcome_notes,
     };
   } catch {
     return null;
@@ -118,6 +128,13 @@ export function PipelineView(): React.ReactNode {
   const [editingNotes, setEditingNotes] = useState<string | null>(null);
   const [notesValue, setNotesValue] = useState('');
   const [dragOverColumn, setDragOverColumn] = useState<string | null>(null);
+  const [pendingTransition, setPendingTransition] = useState<{
+    card: PipelineCard;
+    status: PipelineStatus;
+  } | null>(null);
+  const [transitionError, setTransitionError] = useState<string | null>(null);
+  const [transitionBusy, setTransitionBusy] = useState(false);
+  const transitionInFlight = useRef(false);
 
   const [cards, setCards] = useState<PipelineCard[]>([]);
 
@@ -126,6 +143,7 @@ export function PipelineView(): React.ReactNode {
     void db.query<PipelineQueryRow>(
       `SELECT p.id, p.data, a.status, a.applied_at, a.deadline, a.notes,
               a.created_at as app_created_at, a.updated_at as app_updated_at,
+              a.outcome, a.outcome_at, a.interview_rounds, a.outcome_notes,
               p.eligibility, p.score, p.category, p.term
        FROM postings_cache p
        INNER JOIN applications a ON p.id = a.posting_id
@@ -178,57 +196,57 @@ export function PipelineView(): React.ReactNode {
     setDragOverColumn(null);
   }, []);
 
+  const commitStatusChange = useCallback(
+    (cardId: string, newStatus: PipelineStatus, details: OutcomeDetails = {}): void => {
+      if (transitionInFlight.current) return;
+      transitionInFlight.current = true;
+      setTransitionBusy(true);
+      setTransitionError(null);
+      void transitionApplicationStatus(db, cardId, newStatus, details)
+        .then(() => {
+          setPendingTransition(null);
+          setRefreshKey((key) => key + 1);
+        })
+        .catch((reason: unknown) => setTransitionError(String(reason)))
+        .finally(() => {
+          transitionInFlight.current = false;
+          setTransitionBusy(false);
+        });
+    },
+    [db],
+  );
+
+  const requestStatusChange = useCallback(
+    (card: PipelineCard, newStatus: PipelineStatus): void => {
+      if (card.status === newStatus) return;
+      if (statusNeedsOutcomePrompt(newStatus)) {
+        setPendingTransition({ card, status: newStatus });
+        return;
+      }
+      commitStatusChange(card.id, newStatus);
+    },
+    [commitStatusChange],
+  );
+
   const handleDrop = useCallback(
-    (e: React.DragEvent, newStatus: string): void => {
+    (e: React.DragEvent, newStatus: PipelineStatus): void => {
       e.preventDefault();
       setDragOverColumn(null);
       const cardId = e.dataTransfer.getData('text/plain');
       if (!cardId) return;
 
       const card = cards.find((c) => c.id === cardId);
-      if (!card || card.status === newStatus) return;
-
-      const now = new Date().toISOString();
-
-      if (newStatus === 'applied' && !card.applied_at) {
-        db.run(
-          `UPDATE applications SET status = ?, applied_at = ?, updated_at = ? WHERE posting_id = ?`,
-          [newStatus, now, now, cardId],
-        );
-      } else {
-        db.run(
-          `UPDATE applications SET status = ?, updated_at = ? WHERE posting_id = ?`,
-          [newStatus, now, cardId],
-        );
-      }
-
-      setRefreshKey((k) => k + 1);
+      if (card) requestStatusChange(card, newStatus);
     },
-    [db, cards],
+    [cards, requestStatusChange],
   );
 
   const handleStatusChange = useCallback(
-    (cardId: string, newStatus: string): void => {
+    (cardId: string, newStatus: PipelineStatus): void => {
       const card = cards.find((c) => c.id === cardId);
-      if (!card || card.status === newStatus) return;
-
-      const now = new Date().toISOString();
-
-      if (newStatus === 'applied' && !card.applied_at) {
-        db.run(
-          `UPDATE applications SET status = ?, applied_at = ?, updated_at = ? WHERE posting_id = ?`,
-          [newStatus, now, now, cardId],
-        );
-      } else {
-        db.run(
-          `UPDATE applications SET status = ?, updated_at = ? WHERE posting_id = ?`,
-          [newStatus, now, cardId],
-        );
-      }
-
-      setRefreshKey((k) => k + 1);
+      if (card) requestStatusChange(card, newStatus);
     },
-    [db, cards],
+    [cards, requestStatusChange],
   );
 
   const handleToggleExpand = useCallback(
@@ -282,6 +300,15 @@ export function PipelineView(): React.ReactNode {
 
   return (
     <div>
+      {transitionError && (
+        <div
+          role="alert"
+          className="mb-3 rounded-md border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700 dark:border-nj-ineligible/30 dark:bg-nj-ineligible/5 dark:text-nj-ineligible"
+        >
+          Could not update this application. {transitionError}
+        </div>
+      )}
+
       <div className="flex items-center justify-between mb-4">
         <div>
           <h2 className="text-lg font-semibold text-gray-900 dark:text-nj-text">
@@ -392,6 +419,23 @@ export function PipelineView(): React.ReactNode {
           </div>
         </div>
       )}
+
+      {pendingTransition && (
+        <OutcomeDialog
+          company={pendingTransition.card.company}
+          title={pendingTransition.card.title}
+          status={pendingTransition.status}
+          busy={transitionBusy}
+          onCancel={() => setPendingTransition(null)}
+          onSubmit={(details) => {
+            commitStatusChange(
+              pendingTransition.card.id,
+              pendingTransition.status,
+              details,
+            );
+          }}
+        />
+      )}
     </div>
   );
 }
@@ -403,7 +447,7 @@ interface PipelineCardProps {
   notesValue: string;
   onDragStart: (e: React.DragEvent, id: string) => void;
   onToggleExpand: (id: string) => void;
-  onStatusChange: (id: string, status: string) => void;
+  onStatusChange: (id: string, status: PipelineStatus) => void;
   onStartEditNotes: (card: PipelineCard) => void;
   onSaveNotes: (id: string) => void;
   onCancelNotes: () => void;
@@ -574,6 +618,23 @@ function PipelineCardComponent({
               </div>
             )}
           </div>
+
+          {card.outcome && (
+            <div className="rounded bg-gray-50 px-2 py-1.5 text-[10px] text-gray-600 dark:bg-nj-surface-2 dark:text-nj-text-dim">
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-medium capitalize">{card.outcome}</span>
+                {card.outcome_at && <span>{formatDate(card.outcome_at)}</span>}
+              </div>
+              {card.interview_rounds > 0 && (
+                <p className="mt-0.5">
+                  {card.interview_rounds} interview round{card.interview_rounds === 1 ? '' : 's'}
+                </p>
+              )}
+              {card.outcome_notes && (
+                <p className="mt-0.5 whitespace-pre-wrap">{card.outcome_notes}</p>
+              )}
+            </div>
+          )}
 
           {/* Quick status change */}
           <div className="pt-1 border-t border-gray-100 dark:border-nj-border">

@@ -670,13 +670,33 @@ CREATE TABLE applications (
   created_at     TIMESTAMP NOT NULL,
   updated_at     TIMESTAMP NOT NULL
 );
+
+CREATE TABLE application_outcome_events (
+  id               INTEGER PRIMARY KEY AUTOINCREMENT,
+  posting_id       TEXT NOT NULL,
+  outcome          TEXT NOT NULL,     -- interview | offer | rejection | ghosted | withdrawn
+  occurred_at      TIMESTAMP NOT NULL,
+  interview_rounds INTEGER DEFAULT 0,
+  notes            TEXT,
+  FOREIGN KEY (posting_id) REFERENCES applications(posting_id)
+);
+
+CREATE TABLE recalibration_suggestion_actions (
+  suggestion_id TEXT PRIMARY KEY,
+  status        TEXT NOT NULL,        -- applied | dismissed
+  acted_at      TIMESTAMP NOT NULL
+);
 ```
 
 `ghosted` is auto-set: `applied` with no status change for 45 days.
 
-### 8.7 Outcome-based recalibration (planned)
+The columns on `applications` hold the latest outcome summary for fast display. `application_outcome_events` is the immutable local history, so a later rejection or offer does not erase an earlier interview. Status changes, outcome summaries, and events are written atomically.
 
-Track what worked. After enough recorded outcomes, analyze patterns: category success rate, tier correlation, company responsiveness, time-of-application signal. Show suggestions in an "Insights" panel — descriptive, not causal. Always include sample sizes and cautious framing. Never silently change scoring weights. User explicitly applies or dismisses suggestions.
+### 8.7 Outcome-based recalibration
+
+Track what worked. After 10 recorded outcomes, analyze patterns: category success rate, tier correlation, company-level responsiveness, ATS association, time-of-application signal, and ghost rates by tier. Show suggestions in an "Insights" panel — descriptive, not causal. Always include sample sizes and cautious framing. An ATS association describes the mix of employers using that host; it is never presented as ATS quality or a cause of hiring outcomes.
+
+Never silently change scoring. Suggestions expose explicit **Apply** and **Dismiss** actions. Applying a suggestion updates only the existing category, tier, or freshness signal and recomputes cached scores; the choice is stored locally. Outcome history, suggestion decisions, and all dashboard calculations remain on-device and are never transmitted.
 
 Stats dashboard: applications sent, interview rate, offer rate, response time, breakdowns by category and tier. All data local — never transmitted.
 

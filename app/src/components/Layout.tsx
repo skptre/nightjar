@@ -47,6 +47,7 @@ export function Layout({ children }: LayoutProps): ReactNode {
               <NavTab to="/pipeline">Pipeline</NavTab>
               <NavTab to="/calendar">Calendar</NavTab>
               <NavTab to="/companies">Companies</NavTab>
+              <NavTab to="/insights">Insights</NavTab>
             </div>
           </div>
           <div className="flex items-center gap-4">

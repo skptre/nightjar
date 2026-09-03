@@ -153,6 +153,33 @@ describe('profile-store', () => {
       expect(result!.tiers).toEqual({ ramp: 2, stripe: 1, figma: 3 });
     });
 
+    it('preserves bounded scoring adjustments selected from outcome insights', () => {
+      const result = validateAndRepairProfile({
+        ...makeTestProfile(),
+        scoring_adjustments: {
+          tier_bonus: { '1': -2, '2': 5, '3': 10 },
+          freshness_bonus: { max_days: 3, points: 5 },
+        },
+      });
+
+      expect(result?.scoring_adjustments).toEqual({
+        tier_bonus: { '1': -2, '2': 5, '3': 10 },
+        freshness_bonus: { max_days: 3, points: 5 },
+      });
+    });
+
+    it('drops malformed or out-of-bounds scoring adjustments', () => {
+      const result = validateAndRepairProfile({
+        ...makeTestProfile(),
+        scoring_adjustments: {
+          tier_bonus: { '1': 11, '2': 'five', '4': 3 },
+          freshness_bonus: { max_days: -1, points: 50 },
+        },
+      });
+
+      expect(result?.scoring_adjustments).toBeUndefined();
+    });
+
     it('rejects non-object input', () => {
       expect(validateAndRepairProfile(null)).toBeNull();
       expect(validateAndRepairProfile('string')).toBeNull();

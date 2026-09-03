@@ -47,12 +47,18 @@ describe('export', () => {
       notes?: string;
       next_action?: string;
       next_action_at?: string;
+      outcome?: string;
+      outcome_at?: string;
+      interview_rounds?: number;
+      outcome_notes?: string;
     } = {},
   ): Promise<void> {
     const now = '2026-08-15T00:00:00Z';
     await db.run(
-      `INSERT INTO applications (posting_id, status, applied_at, deadline, notes, next_action, next_action_at, created_at, updated_at)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO applications
+       (posting_id, status, applied_at, deadline, notes, next_action, next_action_at,
+        outcome, outcome_at, interview_rounds, outcome_notes, created_at, updated_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         postingId,
         status,
@@ -61,6 +67,10 @@ describe('export', () => {
         extras.notes ?? null,
         extras.next_action ?? null,
         extras.next_action_at ?? null,
+        extras.outcome ?? null,
+        extras.outcome_at ?? null,
+        extras.interview_rounds ?? 0,
+        extras.outcome_notes ?? null,
         now,
         now,
       ],
@@ -73,7 +83,7 @@ describe('export', () => {
       const lines = csv.split('\n');
       expect(lines).toHaveLength(1);
       expect(lines[0]).toBe(
-        'company,title,status,applied_at,deadline,location,url,category,eligibility_verdict,score,notes,next_action,next_action_at,created_at,updated_at',
+        'company,title,status,applied_at,deadline,location,url,category,eligibility_verdict,score,notes,next_action,next_action_at,outcome,outcome_at,interview_rounds,outcome_notes,created_at,updated_at',
       );
     });
 
@@ -181,6 +191,26 @@ describe('export', () => {
       const rows = await queryApplicationRows(db);
       expect(rows[0]!.eligibility_verdict).toBeNull();
     });
+
+    it('exports the latest outcome summary columns', async () => {
+      await insertPosting('outcome-1', {
+        company: 'Example Co', title: 'Intern', location: 'Remote', url: 'https://example.com/1',
+      });
+      await insertApplication('outcome-1', 'rejected', {
+        outcome: 'rejection',
+        outcome_at: '2026-09-03T15:00:00Z',
+        interview_rounds: 2,
+        outcome_notes: 'Completed two rounds',
+      });
+
+      const rows = await queryApplicationRows(db);
+      expect(rows[0]).toMatchObject({
+        outcome: 'rejection',
+        outcome_at: '2026-09-03',
+        interview_rounds: 2,
+        outcome_notes: 'Completed two rounds',
+      });
+    });
   });
 
   describe('JSON export', () => {
@@ -253,6 +283,39 @@ describe('export', () => {
       expect(app.score).toBe(72.0);
       expect(app.notes).toBe('Reached out to recruiter');
       expect(app.next_action).toBe('Follow up');
+    });
+
+    it('includes immutable outcome event history', async () => {
+      await insertPosting('history-1', {
+        company: 'Example Co', title: 'Intern', location: 'Remote', url: 'https://example.com/1',
+      });
+      await insertApplication('history-1', 'rejected', {
+        applied_at: '2026-09-01T00:00:00Z',
+        outcome: 'rejection',
+        outcome_at: '2026-09-10T00:00:00Z',
+        interview_rounds: 1,
+      });
+      await db.run(
+        `INSERT INTO application_outcome_events
+         (posting_id, outcome, occurred_at, interview_rounds, notes)
+         VALUES ('history-1', 'interview', '2026-09-05T00:00:00Z', 1, NULL)`,
+      );
+
+      const parsed = JSON.parse(await exportApplicationsJSON(db)) as {
+        outcome_events: Array<{
+          posting_id: string;
+          outcome: string;
+          occurred_at: string;
+          interview_rounds: number;
+        }>;
+      };
+      expect(parsed.outcome_events).toEqual([{
+        posting_id: 'history-1',
+        outcome: 'interview',
+        occurred_at: '2026-09-05T00:00:00Z',
+        interview_rounds: 1,
+        notes: null,
+      }]);
     });
   });
 

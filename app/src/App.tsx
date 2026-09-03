@@ -6,6 +6,7 @@ import { CalendarView } from '@/views/Calendar/CalendarView';
 import { CompaniesView } from '@/views/Companies/CompaniesView';
 import { CompanyDetail } from '@/views/Companies/CompanyDetail';
 import { SettingsView } from '@/views/Settings/SettingsView';
+import { InsightsView } from '@/views/Insights/InsightsView';
 
 export function App(): React.ReactNode {
   return (
@@ -17,6 +18,7 @@ export function App(): React.ReactNode {
         <Route path="/companies" element={<CompaniesView />} />
         <Route path="/companies/:slug" element={<CompanyDetail />} />
         <Route path="/settings" element={<SettingsView />} />
+        <Route path="/insights" element={<InsightsView />} />
       </Routes>
     </Layout>
   );

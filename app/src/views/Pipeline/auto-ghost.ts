@@ -19,8 +19,17 @@ export async function runAutoGhost(db: Database): Promise<number> {
   await db.transaction(async () => {
     for (const row of stale) {
       await db.run(
-        `UPDATE applications SET status = 'ghosted', updated_at = ? WHERE posting_id = ?`,
-        [now, row.posting_id],
+        `UPDATE applications
+         SET status = 'ghosted', outcome = 'ghosted', outcome_at = ?,
+             outcome_notes = NULL, updated_at = ?
+         WHERE posting_id = ?`,
+        [now, now, row.posting_id],
+      );
+      await db.run(
+        `INSERT INTO application_outcome_events
+         (posting_id, outcome, occurred_at, interview_rounds, notes)
+         VALUES (?, 'ghosted', ?, 0, NULL)`,
+        [row.posting_id, now],
       );
     }
   });

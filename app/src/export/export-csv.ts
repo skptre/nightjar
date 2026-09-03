@@ -14,6 +14,10 @@ export interface ApplicationRow {
   notes: string | null;
   next_action: string | null;
   next_action_at: string | null;
+  outcome: string | null;
+  outcome_at: string | null;
+  interview_rounds: number;
+  outcome_notes: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -32,6 +36,10 @@ const CSV_COLUMNS: (keyof ApplicationRow)[] = [
   'notes',
   'next_action',
   'next_action_at',
+  'outcome',
+  'outcome_at',
+  'interview_rounds',
+  'outcome_notes',
   'created_at',
   'updated_at',
 ];
@@ -63,12 +71,17 @@ export async function queryApplicationRows(db: Database): Promise<ApplicationRow
     notes: string | null;
     next_action: string | null;
     next_action_at: string | null;
+    outcome: string | null;
+    outcome_at: string | null;
+    interview_rounds: number;
+    outcome_notes: string | null;
     created_at: string;
     updated_at: string;
   }>(
     `SELECT p.data, a.status, a.applied_at, a.deadline,
             p.category, p.eligibility, p.score,
             a.notes, a.next_action, a.next_action_at,
+            a.outcome, a.outcome_at, a.interview_rounds, a.outcome_notes,
             a.created_at, a.updated_at
      FROM applications a
      JOIN postings_cache p ON p.id = a.posting_id
@@ -107,6 +120,10 @@ export async function queryApplicationRows(db: Database): Promise<ApplicationRow
       notes: row.notes,
       next_action: row.next_action,
       next_action_at: formatDate(row.next_action_at),
+      outcome: row.outcome,
+      outcome_at: formatDate(row.outcome_at),
+      interview_rounds: row.interview_rounds,
+      outcome_notes: row.outcome_notes,
       created_at: formatDate(row.created_at),
       updated_at: formatDate(row.updated_at),
     };

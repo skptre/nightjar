@@ -25,6 +25,14 @@ export type ClassYear = (typeof CLASS_YEAR_OPTIONS)[number]['value'];
 
 export type Category = CategoryValue;
 
+export interface ScoringAdjustments {
+  tier_bonus?: Partial<Record<'1' | '2' | '3', number>>;
+  freshness_bonus?: {
+    max_days: number;
+    points: number;
+  };
+}
+
 export const SYNC_INTERVAL_OPTIONS = [
   { value: 60_000, label: '1 minute' },
   { value: 300_000, label: '5 minutes' },
@@ -52,6 +60,7 @@ export interface Profile {
   quiet_hours_start?: string;
   quiet_hours_end?: string;
   sync_interval_ms?: number;
+  scoring_adjustments?: ScoringAdjustments;
 }
 
 export function computeGradWindow(graduation: string): [string, string] {

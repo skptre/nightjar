@@ -21,14 +21,33 @@ describe('NightjarDB', () => {
       expect(names).toContain('applications');
     });
 
-    it('sets initial schema version to 3', async () => {
+    it('sets initial schema version to 4', async () => {
       const version = await getSchemaVersion(db);
-      expect(version).toBe(3);
+      expect(version).toBe(4);
     });
 
     it('stores multi-label category tags', async () => {
       const columns = await db.query<{ name: string }>('PRAGMA table_info(postings_cache)');
       expect(columns.map((column) => column.name)).toContain('category_tags');
+    });
+
+    it('stores outcome summaries and immutable outcome events', async () => {
+      const applicationColumns = await db.query<{ name: string }>('PRAGMA table_info(applications)');
+      const names = applicationColumns.map((column) => column.name);
+      expect(names).toEqual(expect.arrayContaining([
+        'outcome',
+        'outcome_at',
+        'interview_rounds',
+        'outcome_notes',
+      ]));
+
+      const tables = await db.query<{ name: string }>(
+        "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name",
+      );
+      expect(tables.map((table) => table.name)).toEqual(expect.arrayContaining([
+        'application_outcome_events',
+        'recalibration_suggestion_actions',
+      ]));
     });
 
     it('creates indexes', async () => {
@@ -182,7 +201,7 @@ describe('NightjarDB', () => {
       const exported = db.export();
       const db2 = await NightjarDB.createFromBytes(exported);
 
-      expect(await getSchemaVersion(db2)).toBe(3);
+      expect(await getSchemaVersion(db2)).toBe(4);
       await db2.close();
     });
   });
@@ -207,6 +226,17 @@ describe('NightjarDB', () => {
           score_breakdown TEXT,
           synced_at TEXT NOT NULL
         );
+        CREATE TABLE applications (
+          posting_id TEXT PRIMARY KEY,
+          status TEXT NOT NULL DEFAULT 'new',
+          applied_at TEXT,
+          deadline TEXT,
+          notes TEXT,
+          next_action TEXT,
+          next_action_at TEXT,
+          created_at TEXT NOT NULL,
+          updated_at TEXT NOT NULL
+        );
         INSERT INTO postings_cache (id, data, category, synced_at)
         VALUES ('legacy-ml', '{}', 'ml', '2026-09-01T00:00:00Z');
       `);
@@ -214,7 +244,7 @@ describe('NightjarDB', () => {
       const migrated = await NightjarDB.createFromBytes(new Uint8Array(legacy.export()));
       legacy.close();
 
-      expect(await getSchemaVersion(migrated)).toBe(3);
+      expect(await getSchemaVersion(migrated)).toBe(4);
       const columns = await migrated.query<{ name: string }>('PRAGMA table_info(postings_cache)');
       expect(columns.map((column) => column.name)).toContain('category_tags');
       const row = await migrated.queryOne<{ category: string; category_tags: string | null }>(
@@ -225,21 +255,61 @@ describe('NightjarDB', () => {
       await migrated.close();
     });
 
+    it('migrates a version 3 application database to outcome tracking', async () => {
+      const SQL = await initSqlJs();
+      const legacy = new SQL.Database();
+      legacy.exec(`
+        CREATE TABLE schema_version (version INTEGER NOT NULL);
+        INSERT INTO schema_version (version) VALUES (3);
+        CREATE TABLE postings_cache (
+          id TEXT PRIMARY KEY,
+          data TEXT NOT NULL,
+          synced_at TEXT NOT NULL,
+          category_tags TEXT
+        );
+        CREATE TABLE applications (
+          posting_id TEXT PRIMARY KEY,
+          status TEXT NOT NULL DEFAULT 'new',
+          applied_at TEXT,
+          deadline TEXT,
+          notes TEXT,
+          next_action TEXT,
+          next_action_at TEXT,
+          created_at TEXT NOT NULL,
+          updated_at TEXT NOT NULL
+        );
+      `);
+
+      const migrated = await NightjarDB.createFromBytes(new Uint8Array(legacy.export()));
+      legacy.close();
+
+      expect(await getSchemaVersion(migrated)).toBe(4);
+      const columns = await migrated.query<{ name: string }>('PRAGMA table_info(applications)');
+      expect(columns.map((column) => column.name)).toEqual(expect.arrayContaining([
+        'outcome', 'outcome_at', 'interview_rounds', 'outcome_notes',
+      ]));
+      const eventsTable = await migrated.queryOne<{ name: string }>(
+        "SELECT name FROM sqlite_master WHERE type='table' AND name='application_outcome_events'",
+      );
+      expect(eventsTable?.name).toBe('application_outcome_events');
+      await migrated.close();
+    });
+
     it('applies pending migrations in order', async () => {
       const testMigrations: Migration[] = [
         {
-          version: 4,
+          version: 5,
           sql: 'ALTER TABLE postings_cache ADD COLUMN test_col TEXT;',
         },
         {
-          version: 5,
+          version: 6,
           sql: 'ALTER TABLE postings_cache ADD COLUMN test_col2 INTEGER;',
         },
       ];
 
       await runMigrations(db, testMigrations);
 
-      expect(await getSchemaVersion(db)).toBe(5);
+      expect(await getSchemaVersion(db)).toBe(6);
 
       await db.run(
         `INSERT INTO postings_cache (id, data, synced_at, test_col, test_col2)
@@ -272,29 +342,44 @@ describe('NightjarDB', () => {
 
     it('applies only migrations newer than current version', async () => {
       const batch1: Migration[] = [
-        { version: 4, sql: 'ALTER TABLE postings_cache ADD COLUMN v3_col TEXT;' },
+        { version: 5, sql: 'ALTER TABLE postings_cache ADD COLUMN v5_col TEXT;' },
       ];
       await runMigrations(db, batch1);
-      expect(await getSchemaVersion(db)).toBe(4);
-
-      const batch2: Migration[] = [
-        { version: 4, sql: 'ALTER TABLE postings_cache ADD COLUMN v3_col TEXT;' },
-        { version: 5, sql: 'ALTER TABLE postings_cache ADD COLUMN v4_col TEXT;' },
-      ];
-      await runMigrations(db, batch2);
       expect(await getSchemaVersion(db)).toBe(5);
 
+      const batch2: Migration[] = [
+        { version: 5, sql: 'ALTER TABLE postings_cache ADD COLUMN v5_col TEXT;' },
+        { version: 6, sql: 'ALTER TABLE postings_cache ADD COLUMN v6_col TEXT;' },
+      ];
+      await runMigrations(db, batch2);
+      expect(await getSchemaVersion(db)).toBe(6);
+
       await db.run(
-        `INSERT INTO postings_cache (id, data, synced_at, v3_col, v4_col)
+        `INSERT INTO postings_cache (id, data, synced_at, v5_col, v6_col)
          VALUES (?, ?, ?, ?, ?)`,
         ['check1', '{}', '2026-01-01T00:00:00Z', 'a', 'b'],
       );
-      const row = await db.queryOne<{ v3_col: string; v4_col: string }>(
-        'SELECT v3_col, v4_col FROM postings_cache WHERE id = ?',
+      const row = await db.queryOne<{ v5_col: string; v6_col: string }>(
+        'SELECT v5_col, v6_col FROM postings_cache WHERE id = ?',
         ['check1'],
       );
-      expect(row!.v3_col).toBe('a');
-      expect(row!.v4_col).toBe('b');
+      expect(row!.v5_col).toBe('a');
+      expect(row!.v6_col).toBe('b');
+    });
+
+    it('rolls back a migration and its version when any statement fails', async () => {
+      const brokenMigration: Migration[] = [{
+        version: 5,
+        sql: `
+          ALTER TABLE postings_cache ADD COLUMN rollback_probe TEXT;
+          INSERT INTO table_that_does_not_exist (value) VALUES ('fail');
+        `,
+      }];
+
+      await expect(runMigrations(db, brokenMigration)).rejects.toThrow();
+      expect(await getSchemaVersion(db)).toBe(4);
+      const columns = await db.query<{ name: string }>('PRAGMA table_info(postings_cache)');
+      expect(columns.map((column) => column.name)).not.toContain('rollback_probe');
     });
   });
 
@@ -389,9 +474,9 @@ describe('NightjarDB', () => {
       const source = await NightjarDB.createInMemory();
       const now = '2026-08-25T12:00:00Z';
       await source.run(
-        `INSERT INTO postings_cache (id, data, description, category, score, synced_at)
-         VALUES (?, ?, ?, ?, ?, ?)`,
-        ['mig1', '{"title":"SWE Intern"}', 'Build things', 'swe', 85, now],
+        `INSERT INTO postings_cache (id, data, description, category, category_tags, score, synced_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?)`,
+        ['mig1', '{"title":"SWE Intern"}', 'Build things', 'swe', '["swe","data-ml"]', 85, now],
       );
       await source.run(
         `INSERT INTO postings_cache (id, data, synced_at)
@@ -399,9 +484,22 @@ describe('NightjarDB', () => {
         ['mig2', '{"title":"ML Engineer"}', now],
       );
       await source.run(
-        `INSERT INTO applications (posting_id, status, applied_at, created_at, updated_at)
-         VALUES (?, ?, ?, ?, ?)`,
-        ['mig1', 'applied', now, now, now],
+        `INSERT INTO applications
+         (posting_id, status, applied_at, outcome, outcome_at, interview_rounds,
+          outcome_notes, created_at, updated_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        ['mig1', 'rejected', now, 'rejection', now, 2, 'Final round completed.', now, now],
+      );
+      await source.run(
+        `INSERT INTO application_outcome_events
+         (posting_id, outcome, occurred_at, interview_rounds, notes)
+         VALUES (?, 'interview', ?, 2, 'Final round completed.')`,
+        ['mig1', now],
+      );
+      await source.run(
+        `INSERT INTO recalibration_suggestion_actions (suggestion_id, status, acted_at)
+         VALUES ('tier:2', 'dismissed', ?)`,
+        [now],
       );
 
       const exported = source.export();
@@ -411,25 +509,49 @@ describe('NightjarDB', () => {
       const migrated = await migrateFromBrowser(target, async () => exported);
       expect(migrated).toBe(true);
 
-      const postings = await target.query<{ id: string; data: string; description: string | null; category: string | null; score: number | null }>(
-        'SELECT id, data, description, category, score FROM postings_cache ORDER BY id',
+      const postings = await target.query<{ id: string; data: string; description: string | null; category: string | null; category_tags: string | null; score: number | null }>(
+        'SELECT id, data, description, category, category_tags, score FROM postings_cache ORDER BY id',
       );
       expect(postings).toHaveLength(2);
       expect(postings[0]!.id).toBe('mig1');
       expect(postings[0]!.data).toBe('{"title":"SWE Intern"}');
       expect(postings[0]!.description).toBe('Build things');
       expect(postings[0]!.category).toBe('swe');
+      expect(postings[0]!.category_tags).toBe('["swe","data-ml"]');
       expect(postings[0]!.score).toBe(85);
       expect(postings[1]!.id).toBe('mig2');
       expect(postings[1]!.description).toBeNull();
 
-      const apps = await target.query<{ posting_id: string; status: string; applied_at: string | null }>(
-        'SELECT posting_id, status, applied_at FROM applications',
+      const apps = await target.query<{
+        posting_id: string;
+        status: string;
+        applied_at: string | null;
+        outcome: string | null;
+        outcome_at: string | null;
+        interview_rounds: number;
+        outcome_notes: string | null;
+      }>(
+        `SELECT posting_id, status, applied_at, outcome, outcome_at,
+                interview_rounds, outcome_notes
+         FROM applications`,
       );
       expect(apps).toHaveLength(1);
       expect(apps[0]!.posting_id).toBe('mig1');
-      expect(apps[0]!.status).toBe('applied');
+      expect(apps[0]!.status).toBe('rejected');
       expect(apps[0]!.applied_at).toBe(now);
+      expect(apps[0]!.outcome).toBe('rejection');
+      expect(apps[0]!.outcome_at).toBe(now);
+      expect(apps[0]!.interview_rounds).toBe(2);
+      expect(apps[0]!.outcome_notes).toBe('Final round completed.');
+
+      const events = await target.query<{ outcome: string; interview_rounds: number }>(
+        'SELECT outcome, interview_rounds FROM application_outcome_events',
+      );
+      expect(events).toEqual([{ outcome: 'interview', interview_rounds: 2 }]);
+      const decisions = await target.query<{ suggestion_id: string; status: string }>(
+        'SELECT suggestion_id, status FROM recalibration_suggestion_actions',
+      );
+      expect(decisions).toEqual([{ suggestion_id: 'tier:2', status: 'dismissed' }]);
 
       await source.close();
       await target.close();
@@ -447,6 +569,57 @@ describe('NightjarDB', () => {
       const migrated = await migrateFromBrowser(target, async () => new Uint8Array([1, 2, 3]));
       expect(migrated).toBe(false);
 
+      await target.close();
+    });
+
+    it('migrates a pre-outcome browser database with safe defaults', async () => {
+      const SQL = await initSqlJs();
+      const legacy = new SQL.Database();
+      legacy.exec(`
+        CREATE TABLE postings_cache (
+          id TEXT PRIMARY KEY,
+          data TEXT NOT NULL,
+          description TEXT,
+          first_seen_at TEXT,
+          closed_at TEXT,
+          category TEXT,
+          term TEXT,
+          eligibility TEXT,
+          score REAL,
+          score_breakdown TEXT,
+          synced_at TEXT NOT NULL
+        );
+        CREATE TABLE applications (
+          posting_id TEXT PRIMARY KEY,
+          status TEXT NOT NULL,
+          applied_at TEXT,
+          deadline TEXT,
+          notes TEXT,
+          next_action TEXT,
+          next_action_at TEXT,
+          created_at TEXT NOT NULL,
+          updated_at TEXT NOT NULL
+        );
+        INSERT INTO postings_cache (id, data, category, synced_at)
+        VALUES ('legacy-app', '{}', 'swe', '2026-08-25T12:00:00Z');
+        INSERT INTO applications (posting_id, status, applied_at, created_at, updated_at)
+        VALUES ('legacy-app', 'applied', '2026-08-25T12:00:00Z',
+                '2026-08-25T12:00:00Z', '2026-08-25T12:00:00Z');
+      `);
+      const exported = new Uint8Array(legacy.export());
+      legacy.close();
+      const target = await NightjarDB.createInMemory();
+
+      const { migrateFromBrowser } = await import('./migrate-from-browser');
+      expect(await migrateFromBrowser(target, async () => exported)).toBe(true);
+      const application = await target.queryOne<{
+        outcome: string | null;
+        interview_rounds: number;
+      }>(
+        'SELECT outcome, interview_rounds FROM applications WHERE posting_id = ?',
+        ['legacy-app'],
+      );
+      expect(application).toEqual({ outcome: null, interview_rounds: 0 });
       await target.close();
     });
 

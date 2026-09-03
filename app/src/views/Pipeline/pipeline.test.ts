@@ -378,7 +378,7 @@ describe('Auto-Ghost', () => {
     const count = await runAutoGhost(db);
     expect(count).toBe(1);
 
-    const app = await db.queryOne<{ status: string }>(
+    const app = await db.queryOne<{ status: string; outcome: string | null; outcome_at: string | null }>(
       'SELECT status FROM applications WHERE posting_id = ?',
       ['p1'],
     );
@@ -438,11 +438,21 @@ describe('Auto-Ghost', () => {
     const count = await runAutoGhost(db);
     expect(count).toBe(1);
 
-    const app = await db.queryOne<{ status: string }>(
-      'SELECT status FROM applications WHERE posting_id = ?',
+    const app = await db.queryOne<{
+      status: string;
+      outcome: string | null;
+      outcome_at: string | null;
+    }>(
+      'SELECT status, outcome, outcome_at FROM applications WHERE posting_id = ?',
       ['p1'],
     );
-    expect(app?.status).toBe('ghosted');
+    expect(app).toMatchObject({ status: 'ghosted', outcome: 'ghosted' });
+    expect(app?.outcome_at).toBeTruthy();
+    const events = await db.query<{ outcome: string }>(
+      'SELECT outcome FROM application_outcome_events WHERE posting_id = ?',
+      ['p1'],
+    );
+    expect(events).toEqual([{ outcome: 'ghosted' }]);
   });
 
   it('only ghosts "applied" status, not "saved" or "phone"', async () => {

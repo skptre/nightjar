@@ -28,17 +28,20 @@ const FRESHNESS_MIN = 2;
 function computeTierScore(companySlug: string, profile: Profile): number {
   const tier = profile.tiers[companySlug];
   if (tier === undefined) return 15;
-  if (tier === 1) return 30;
-  if (tier === 2) return 20;
-  return 10;
+  const base = tier === 1 ? 30 : tier === 2 ? 20 : 10;
+  const bonus = profile.scoring_adjustments?.tier_bonus?.[String(tier) as '1' | '2' | '3'] ?? 0;
+  return Math.max(0, Math.min(40, base + bonus));
 }
 
-function computeFreshnessScore(firstSeenAt: string, now: Date): number {
+function computeFreshnessScore(firstSeenAt: string, now: Date, profile: Profile): number {
   const seenDate = new Date(firstSeenAt);
   const diffMs = now.getTime() - seenDate.getTime();
   const daysOld = Math.max(0, diffMs / (1000 * 60 * 60 * 24));
   const raw = FRESHNESS_MAX * Math.exp(-FRESHNESS_DECAY_RATE * daysOld);
-  return Math.max(FRESHNESS_MIN, Math.min(FRESHNESS_MAX, Math.round(raw * 100) / 100));
+  const base = Math.max(FRESHNESS_MIN, Math.min(FRESHNESS_MAX, Math.round(raw * 100) / 100));
+  const adjustment = profile.scoring_adjustments?.freshness_bonus;
+  const bonus = adjustment && daysOld <= adjustment.max_days ? adjustment.points : 0;
+  return Math.max(0, Math.min(40, Math.round((base + bonus) * 100) / 100));
 }
 
 function computeCategoryScore(
@@ -66,7 +69,7 @@ export function scorePosting(
   const currentTime = now ?? new Date();
 
   const tier = computeTierScore(input.company_slug, profile);
-  const freshness = computeFreshnessScore(input.first_seen_at, currentTime);
+  const freshness = computeFreshnessScore(input.first_seen_at, currentTime, profile);
   const category = computeCategoryScore(
     input.category,
     input.category_tags,

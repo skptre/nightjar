@@ -18,6 +18,7 @@ export interface ScoringInput {
   first_seen_at: string;
   eligibility_verdict: EligibilityVerdict;
   category: CategoryValue;
+  category_tags: readonly CategoryValue[];
 }
 
 const FRESHNESS_DECAY_RATE = 0.05;
@@ -42,9 +43,11 @@ function computeFreshnessScore(firstSeenAt: string, now: Date): number {
 
 function computeCategoryScore(
   category: CategoryValue,
+  categoryTags: readonly CategoryValue[],
   targetCategories: string[],
 ): number {
-  if (targetCategories.includes(category)) return 20;
+  const matchableCategories = categoryTags.length > 0 ? categoryTags : [category];
+  if (matchableCategories.some((tag) => targetCategories.includes(tag))) return 20;
   if (category === 'other') return 10;
   return 5;
 }
@@ -64,7 +67,11 @@ export function scorePosting(
 
   const tier = computeTierScore(input.company_slug, profile);
   const freshness = computeFreshnessScore(input.first_seen_at, currentTime);
-  const category = computeCategoryScore(input.category, profile.target_categories);
+  const category = computeCategoryScore(
+    input.category,
+    input.category_tags,
+    profile.target_categories,
+  );
   const eligibility = computeEligibilityScore(input.eligibility_verdict);
 
   const breakdown: ScoreBreakdown = { tier, freshness, category, eligibility };

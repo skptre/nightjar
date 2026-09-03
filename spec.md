@@ -498,8 +498,7 @@ Anyone can set `high_priority: true` on a company in the registry via PR.
 - **Seasonal polling:** `fall` is in season July–November; `spring` is in season December–April; `year_round` and `null` always use ordinary scheduling. High-priority sources fall back from 30 minutes to the six-hour default off-season. The six-hour ceiling preserves the detection-latency target. Unknown companies remain untagged and therefore never get slowed by an unsupported guess.
 - **Admin hot-watch mode:** `polling-overrides.yaml` contains public, auditable source watches with a required reason, five-minute managed minimum, and mandatory expiry of at most seven days. `poller.tools.hot_watch` validates a recent successful bootstrapped baseline before enabling a watch. The focused workflow polls only due watched sources and shares the normal poller's concurrency group, retention rules, rate limits, request budgets, and failure semantics. Three consecutive failures mark the watch unhealthy. An optional local foreground mode has a two-minute minimum and never writes feed/state.
 
-**Planned extension:**
-- **Adaptive polling:** Replace subjective `high_priority` boolean with data-driven scheduling based on observed change frequency. Hot (changed recently) → short interval. Active → moderate. Quiet → longer. Requires several weeks of activity data before switching.
+- **Adaptive polling:** Data-driven scheduling based on per-source activity metrics tracked in `state.json`. Each source records `last_change_at`, `change_frequency` (EMA, alpha=0.2), `consecutive_unchanged`, `estimated_poll_cost` (EMA), `activity_poll_count`, and `last_raw_id_hash` (SHA-256 of sorted raw adapter IDs, used for change detection independent of feed deduplication). After 48+ polls (~12 days at default interval), sources are classified into tiers: **Hot** (consecutive_unchanged < 2, 15 min), **Active** (< 10, 2 hours), **Quiet** (≥ 10, 6 hours). Override priority: ramp window > off-season cap (6h) > adaptive tier (capped to 30 min for high_priority sources) > default (6h). Cost-aware scheduling defers quiet sources when cumulative estimated cost exceeds 80% of run budget; hot and active sources are never deferred.
 
 ### 6.5 Feed scope filters
 
@@ -706,11 +705,27 @@ Privacy guarantees: email content never leaves the local machine. No email body 
 - Keyboard-first: `j`/`k` move, `s` save, `x` skip, `o` open, `/` search.
 - No destructive action without undo.
 
-### 8.11 Notifications
+### 8.11 Company logos
+
+Display company logos alongside postings in feed, pipeline, and company views. Logos are fetched app-side at render time — never stored in feed.json or the repo.
+
+**Source:** Logo.dev API — `https://img.logo.dev/{domain}?token={key}&size=128&format=png`. Free tier: 500K requests/month, requires "Logos provided by Logo.dev" attribution link. Returns actual company logos (not favicons), supports PNG/WebP/JPG, 32–512px, light/dark mode. Free API key via logo.dev/signup, no credit card.
+
+**Domain resolution:** Derive the company domain from the posting URL or board token. For hosted ATS boards (boards.greenhouse.io, jobs.lever.co), extract the employer domain from `companies.yaml` or the company identity model. Add an optional `domain` field to the company registry entry for explicit overrides.
+
+**Caching:** Cache fetched logos in local SQLite as blobs keyed by domain. Favicons rarely change — cache indefinitely, refresh on manual trigger or monthly. Cache miss renders a placeholder initial (first letter of company name on a colored background derived from the slug hash).
+
+**Constraints:**
+- App fetches logos lazily on first render, not eagerly on sync.
+- No logo data in feed.json, state.json, or the repo. App-side only.
+- Placeholder fallback must always work — never show a broken image.
+- Google Favicon API is a read-only public endpoint; no personal data is sent.
+
+### 8.12 Notifications
 
 OS-native system notifications on new eligible postings. Volume cap: max 15 notifications per sync. If exceeded, send one summary notification and let the feed view carry the detail.
 
-### 8.12 Build approach
+### 8.13 Build approach
 
 **Vite + React + TypeScript first.** Get it working in a browser with `npm run dev`. Wrap in Tauri only after the triage UX works. Tauri wraps a web frontend, so nothing is wasted — but the Rust toolchain and native build config add a day of setup that doesn't help until the views are done.
 

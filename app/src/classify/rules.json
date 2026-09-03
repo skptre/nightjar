@@ -46,6 +46,7 @@
   "category_rules": [
     {
       "category": "quant",
+      "priority": 98,
       "keywords": [
         "quantitative researcher",
         "quantitative developer",
@@ -75,6 +76,7 @@
         "quantitative finance",
         "quantitative strategies",
         "strats",
+        "strat",
         "financial engineering",
         "derivatives pricing",
         "options pricing",
@@ -84,13 +86,17 @@
         "hft",
         "high frequency trading",
         "low latency trading",
-        "execution algorithms"
+        "execution algorithms",
+        "quantitative",
+        "quant"
       ]
     },
     {
-      "category": "ml",
+      "category": "data-ml",
+      "priority": 100,
       "keywords": [
         "machine learning",
+        "ml",
         "deep learning",
         "artificial intelligence",
         "ml engineer",
@@ -100,10 +106,7 @@
         "ai research",
         "data scientist",
         "data science",
-        "research scientist",
-        "research engineer",
         "applied scientist",
-        "applied research",
         "nlp",
         "natural language processing",
         "natural language understanding",
@@ -128,23 +131,20 @@
         "responsible ai",
         "ml systems",
         "neural network",
-        "reinforcement learning",
-        "robotics"
+        "reinforcement learning"
       ]
     },
     {
       "category": "hardware",
+      "priority": 92,
       "keywords": [
         "hardware engineer",
         "hardware engineering",
-        "electrical engineer",
-        "electrical engineering",
         "embedded engineer",
         "embedded software",
         "embedded systems",
         "firmware engineer",
         "firmware",
-        "fpga",
         "asic",
         "asic design",
         "chip design",
@@ -153,44 +153,22 @@
         "silicon engineer",
         "silicon design",
         "silicon validation",
-        "vlsi",
-        "pcb design",
-        "pcb engineer",
-        "circuit design",
-        "circuit engineer",
-        "analog engineer",
-        "analog design",
-        "digital design",
-        "digital engineer",
-        "rf engineer",
-        "rf design",
-        "radio frequency",
-        "signal integrity",
-        "power engineer",
-        "power electronics",
         "verification engineer",
         "design verification",
         "validation engineer",
         "physical design",
         "layout engineer",
-        "dsp engineer",
-        "signal processing",
-        "semiconductor",
         "microcontroller",
         "microprocessor",
         "soc",
         "system on chip",
         "iot engineer",
-        "iot",
-        "cad engineer",
-        "mechanical engineer",
-        "mechanical engineering",
-        "manufacturing engineer",
-        "test engineer"
+        "iot"
       ]
     },
     {
       "category": "swe",
+      "priority": 60,
       "keywords": [
         "software engineer",
         "software engineering",
@@ -259,7 +237,226 @@
         "solutions engineer",
         "solutions architect",
         "technical program",
-        "developer experience"
+        "developer experience",
+        "robotics"
+      ]
+    },
+    {
+      "category": "aero",
+      "priority": 97,
+      "keywords": [
+        "aerospace engineer",
+        "aerospace engineering",
+        "aerospace",
+        "aerospace systems",
+        "aerodynamics",
+        "propulsion",
+        "flight systems",
+        "flight test",
+        "avionics",
+        "satellite",
+        "spacecraft",
+        "guidance navigation control",
+        "guidance, navigation, and control",
+        "gnc engineer",
+        "gnc"
+      ]
+    },
+    {
+      "category": "chemE",
+      "priority": 96,
+      "keywords": [
+        "chemical engineer",
+        "chemical engineering",
+        "chemical process",
+        "process chemistry",
+        "materials science",
+        "polymer",
+        "petrochemical"
+      ]
+    },
+    {
+      "category": "bioE",
+      "priority": 96,
+      "keywords": [
+        "biomedical engineer",
+        "biomedical engineering",
+        "bioengineer",
+        "bioengineering",
+        "bioinformatics",
+        "medical device",
+        "tissue engineering"
+      ]
+    },
+    {
+      "category": "mechE",
+      "priority": 95,
+      "keywords": [
+        "mechanical engineer",
+        "mechanical engineering",
+        "thermal engineer",
+        "thermal engineering",
+        "hvac",
+        "solidworks",
+        "cad engineer",
+        "cad design",
+        "manufacturing engineer",
+        "manufacturing engineering",
+        "mechanical process",
+        "mechanical test",
+        "materials engineer",
+        "robotics"
+      ]
+    },
+    {
+      "category": "civil",
+      "priority": 95,
+      "keywords": [
+        "civil engineer",
+        "civil engineering",
+        "structural engineer",
+        "structural engineering",
+        "geotechnical",
+        "transportation engineer",
+        "civil environmental",
+        "construction engineer",
+        "water resources"
+      ]
+    },
+    {
+      "category": "ECE",
+      "priority": 94,
+      "keywords": [
+        "electrical engineer",
+        "electrical engineering",
+        "computer engineering",
+        "circuit design",
+        "circuit engineer",
+        "pcb",
+        "vlsi",
+        "fpga",
+        "power systems",
+        "power engineer",
+        "signal processing",
+        "signals processing",
+        "signal integrity",
+        "dsp engineer",
+        "rf engineer",
+        "rf design",
+        "radio frequency",
+        "analog engineer",
+        "analog design",
+        "digital design",
+        "digital engineer",
+        "semiconductor",
+        "power electronics",
+        "aerospace controls",
+        "flight controls",
+        "robotics"
+      ]
+    },
+    {
+      "category": "accounting",
+      "priority": 94,
+      "keywords": [
+        "accounting intern",
+        "accountant",
+        "audit intern",
+        "auditing",
+        "tax intern",
+        "tax accounting",
+        "cpa",
+        "forensic accounting",
+        "financial reporting"
+      ]
+    },
+    {
+      "category": "consulting",
+      "priority": 91,
+      "keywords": [
+        "management consultant",
+        "management consulting",
+        "strategy consultant",
+        "strategy consulting",
+        "consulting intern",
+        "consultant intern",
+        "advisory intern",
+        "consulting analyst",
+        "business analyst consulting",
+        "consulting business analyst"
+      ]
+    },
+    {
+      "category": "finance",
+      "priority": 90,
+      "keywords": [
+        "financial analyst",
+        "finance intern",
+        "investment banking",
+        "asset management",
+        "risk analyst",
+        "actuary",
+        "actuarial",
+        "portfolio analyst",
+        "credit analyst",
+        "equity research"
+      ]
+    },
+    {
+      "category": "supply-chain",
+      "priority": 89,
+      "keywords": [
+        "supply chain",
+        "logistics analyst",
+        "logistics intern",
+        "procurement",
+        "warehouse operations",
+        "inventory management",
+        "inventory analyst",
+        "demand planning"
+      ]
+    },
+    {
+      "category": "design",
+      "priority": 87,
+      "keywords": [
+        "ux designer",
+        "ui designer",
+        "product designer",
+        "industrial designer",
+        "graphic designer",
+        "ux researcher",
+        "user experience researcher",
+        "interaction designer"
+      ]
+    },
+    {
+      "category": "research",
+      "priority": 80,
+      "keywords": [
+        "research assistant",
+        "lab assistant",
+        "research experience for undergraduates",
+        "reu",
+        "research intern",
+        "field researcher",
+        "research associate",
+        "research scientist",
+        "research engineer"
+      ]
+    },
+    {
+      "category": "operations",
+      "priority": 75,
+      "keywords": [
+        "operations analyst",
+        "operations intern",
+        "business operations",
+        "program manager operations",
+        "project manager operations",
+        "operations program manager",
+        "operations project manager",
+        "operational excellence"
       ]
     }
   ],
@@ -271,20 +468,31 @@
     "DevOps": "swe",
     "Cloud Engineering": "swe",
     "Cybersecurity": "swe",
-    "Data Engineering": "swe",
-    "AI/ML": "ml",
-    "Machine Learning": "ml",
-    "Artificial Intelligence": "ml",
-    "Data Science": "ml",
-    "Research": "ml",
+    "Data Engineering": "data-ml",
+    "AI/ML": "data-ml",
+    "Machine Learning": "data-ml",
+    "Artificial Intelligence": "data-ml",
+    "Data Science": "data-ml",
+    "Research": "research",
     "Quantitative Finance": "quant",
     "Trading": "quant",
     "Quantitative Research": "quant",
     "Hardware Engineering": "hardware",
-    "Electrical Engineering": "hardware",
+    "Electrical Engineering": "ECE",
     "Embedded Systems": "hardware",
     "Firmware": "hardware",
-    "Semiconductor": "hardware"
+    "Semiconductor": "ECE",
+    "Mechanical Engineering": "mechE",
+    "Aerospace Engineering": "aero",
+    "Civil Engineering": "civil",
+    "Chemical Engineering": "chemE",
+    "Biomedical Engineering": "bioE",
+    "Finance": "finance",
+    "Accounting": "accounting",
+    "Consulting": "consulting",
+    "Design": "design",
+    "Operations": "operations",
+    "Supply Chain": "supply-chain"
   },
   "sponsorship_patterns": [
     { "pattern": "must be a u\\.?s\\.? citizen", "flag_type": "citizenship_required" },

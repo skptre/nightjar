@@ -6,7 +6,7 @@ import { isTauri } from '@/lib/platform';
 import {
   WORK_AUTH_OPTIONS,
   CLASS_YEAR_OPTIONS,
-  CATEGORY_OPTIONS,
+  CATEGORY_GROUPS,
   SYNC_INTERVAL_OPTIONS,
   DEFAULT_SYNC_INTERVAL_MS,
   computeGradWindow,
@@ -17,6 +17,7 @@ import { exportApplicationsCSV } from '@/export/export-csv';
 import { exportApplicationsJSON } from '@/export/export-json';
 import { exportPostingsJSON } from '@/export/export-postings';
 import { saveFile } from '@/export/file-save';
+import { recomputeAll } from '@/classify/recompute';
 
 export function SettingsView(): ReactNode {
   return (
@@ -217,6 +218,7 @@ function SyncSection(): ReactNode {
 
 function ProfileSection(): ReactNode {
   const { profile, updateProfile } = useProfile();
+  const { db } = useDatabase();
   const [showWizardConfirm, setShowWizardConfirm] = useState(false);
 
   if (!profile) return null;
@@ -248,6 +250,7 @@ function ProfileSection(): ReactNode {
       ? current.filter((c) => c !== cat)
       : [...current, cat];
     updateProfile({ target_categories: next });
+    void recomputeAll(db, { ...profile, target_categories: next });
   };
 
   const handleResetProfile = (): void => {
@@ -308,24 +311,34 @@ function ProfileSection(): ReactNode {
         <span className="text-sm font-medium text-gray-700 dark:text-nj-text-dim">
           Target categories
         </span>
-        <div className="mt-2 flex flex-wrap gap-2">
-          {CATEGORY_OPTIONS.map((opt) => {
-            const active = profile.target_categories.includes(opt.value);
-            return (
-              <button
-                key={opt.value}
-                type="button"
-                onClick={() => handleCategoryToggle(opt.value)}
-                className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${
-                  active
-                    ? 'bg-nj-accent text-white'
-                    : 'bg-gray-100 dark:bg-nj-border text-gray-600 dark:text-nj-text-dim hover:bg-gray-200 dark:hover:bg-nj-surface'
-                }`}
-              >
-                {opt.label}
-              </button>
-            );
-          })}
+        <div className="mt-2 space-y-3">
+          {CATEGORY_GROUPS.map((group) => (
+            <fieldset key={group.label}>
+              <legend className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-nj-muted">
+                {group.label}
+              </legend>
+              <div className="flex flex-wrap gap-2">
+                {group.options.map((opt) => {
+                  const active = profile.target_categories.includes(opt.value);
+                  return (
+                    <button
+                      key={opt.value}
+                      type="button"
+                      aria-pressed={active}
+                      onClick={() => handleCategoryToggle(opt.value)}
+                      className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${
+                        active
+                          ? 'bg-nj-accent text-white'
+                          : 'bg-gray-100 dark:bg-nj-border text-gray-600 dark:text-nj-text-dim hover:bg-gray-200 dark:hover:bg-nj-surface'
+                      }`}
+                    >
+                      {opt.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </fieldset>
+          ))}
         </div>
       </div>
 

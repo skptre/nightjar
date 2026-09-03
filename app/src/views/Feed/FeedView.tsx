@@ -5,6 +5,12 @@ import { useSync } from '@/providers/SyncProvider';
 import { useKeyboard } from '@/hooks/useKeyboard';
 import { useVirtualList } from '@/hooks/useVirtualList';
 import { PostingRow, UndoToast, type PostingRowData, type PostingAction } from './PostingRow';
+import {
+  CATEGORY_FILTER_GROUPS,
+  CATEGORY_OPTIONS,
+  matchesCategorySelection,
+  parseCategoryTags,
+} from '@/classify/types';
 
 type TermFilter = 'all' | string;
 type EligibilityFilter = 'show' | 'hide';
@@ -32,6 +38,7 @@ interface PostingQueryRow {
   first_seen_at: string;
   closed_at: string | null;
   category: string | null;
+  category_tags: string | null;
   term: string | null;
   eligibility: string | null;
   score: number | null;
@@ -53,6 +60,7 @@ function parsePostingRow(row: PostingQueryRow): PostingRowData | null {
       first_seen_at: row.first_seen_at ?? (parsed['first_seen_at'] as string) ?? '',
       closed_at: row.closed_at,
       category: row.category,
+      category_tags: parseCategoryTags(row.category_tags, row.category),
       term: row.term,
       eligibility: row.eligibility,
       score: row.score,
@@ -64,15 +72,12 @@ function parsePostingRow(row: PostingQueryRow): PostingRowData | null {
   }
 }
 
-const CATEGORY_OPTIONS = [
-  { value: 'swe', label: 'SWE' },
-  { value: 'quant', label: 'Quant' },
-  { value: 'ml', label: 'ML' },
-  { value: 'hardware', label: 'HW' },
-  { value: 'other', label: 'Other' },
-];
-
 const POSTING_ROW_HEIGHT = 72;
+
+function categoryShortLabel(category: string): string {
+  return CATEGORY_OPTIONS.find((option) => option.value === category)?.shortLabel
+    ?? category;
+}
 
 function formatRelativeAge(iso: string): string {
   const diffMs = Date.now() - new Date(iso).getTime();
@@ -134,7 +139,7 @@ export function FeedView(): React.ReactNode {
   useEffect(() => {
     let cancelled = false;
     void db.query<PostingQueryRow>(
-      `SELECT p.id, p.data, p.first_seen_at, p.closed_at, p.category, p.term, p.eligibility, p.score, p.score_breakdown
+      `SELECT p.id, p.data, p.first_seen_at, p.closed_at, p.category, p.category_tags, p.term, p.eligibility, p.score, p.score_breakdown
        FROM postings_cache p
        LEFT JOIN applications a ON p.id = a.posting_id
        WHERE (a.posting_id IS NULL OR a.status = 'new')
@@ -154,7 +159,7 @@ export function FeedView(): React.ReactNode {
       if (excludedCompanies.has(p.company_slug)) continue;
 
       if (filters.term !== 'all' && p.term !== filters.term) continue;
-      if (filters.categories.size > 0 && p.category && !filters.categories.has(p.category)) continue;
+      if (!matchesCategorySelection(p.category_tags, p.category, filters.categories)) continue;
       if (filters.eligibility === 'hide') {
         try {
           const elig = JSON.parse(p.eligibility ?? '{}') as { verdict?: string };
@@ -437,21 +442,37 @@ export function FeedView(): React.ReactNode {
         </select>
 
         {/* Category multi-select */}
-        <div className="flex items-center gap-1">
-          {CATEGORY_OPTIONS.map((cat) => (
-            <button
-              key={cat.value}
-              onClick={() => toggleCategory(cat.value)}
-              className={`px-2 py-1 text-xs rounded-md border transition-colors ${
-                filters.categories.has(cat.value)
-                  ? 'border-nj-accent/60 bg-violet-50 text-violet-700 dark:bg-nj-accent/15 dark:text-nj-accent-bright dark:border-nj-accent/50'
-                  : 'border-gray-200 dark:border-nj-border text-gray-500 dark:text-nj-text-dim hover:border-gray-300 dark:hover:border-nj-border-bright'
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
+        <details className="relative">
+          <summary className="cursor-pointer list-none px-2 py-1.5 text-xs border border-gray-200 dark:border-nj-border rounded-md bg-white dark:bg-nj-surface text-gray-700 dark:text-nj-text-dim">
+            Categories{filters.categories.size > 0 ? ` (${String(filters.categories.size)})` : ''}
+          </summary>
+          <div className="absolute left-0 z-20 mt-1 w-96 max-w-[80vw] space-y-3 rounded-lg border border-gray-200 bg-white p-3 shadow-lg dark:border-nj-border dark:bg-nj-surface">
+            {CATEGORY_FILTER_GROUPS.map((group) => (
+              <fieldset key={group.label}>
+                <legend className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-nj-muted">
+                  {group.label}
+                </legend>
+                <div className="flex flex-wrap gap-1.5">
+                  {group.options.map((cat) => (
+                    <button
+                      key={cat.value}
+                      type="button"
+                      aria-pressed={filters.categories.has(cat.value)}
+                      onClick={() => toggleCategory(cat.value)}
+                      className={`px-2 py-1 text-xs rounded-md border transition-colors ${
+                        filters.categories.has(cat.value)
+                          ? 'border-nj-accent/60 bg-violet-50 text-violet-700 dark:bg-nj-accent/15 dark:text-nj-accent-bright dark:border-nj-accent/50'
+                          : 'border-gray-200 dark:border-nj-border text-gray-500 dark:text-nj-text-dim hover:border-gray-300 dark:hover:border-nj-border-bright'
+                      }`}
+                    >
+                      {cat.shortLabel}
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
+            ))}
+          </div>
+        </details>
 
         {/* Eligibility toggle */}
         <button
@@ -524,7 +545,7 @@ export function FeedView(): React.ReactNode {
             <FilterChip label={`Term: ${filters.term.replace(/_/g, ' ')}`} onRemove={() => updateFilter('term', 'all')} />
           )}
           {Array.from(filters.categories).map((cat) => (
-            <FilterChip key={cat} label={`Category: ${cat.toUpperCase()}`} onRemove={() => toggleCategory(cat)} />
+            <FilterChip key={cat} label={`Category: ${categoryShortLabel(cat)}`} onRemove={() => toggleCategory(cat)} />
           ))}
           {filters.eligibility === 'hide' && (
             <FilterChip label="Hiding ineligible" onRemove={() => updateFilter('eligibility', 'show')} />

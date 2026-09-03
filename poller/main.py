@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import logging
 import subprocess
 import sys
@@ -20,7 +21,14 @@ from poller.filter import (
 )
 from poller.http import RateLimitedClient
 from poller.models import Posting, SourceHealth
-from poller.registry import is_off_season, is_poll_due, load_registry
+from poller.registry import (
+    classify_tier_distribution,
+    is_off_season,
+    is_poll_due,
+    load_registry,
+    prioritize_due_sources,
+    update_source_activity,
+)
 from poller.sources import get_adapter
 from poller.store import (
     load_feed,
@@ -107,9 +115,10 @@ async def _poll_source(
     source: Any,
     now_str: str,
     prev_health: SourceHealth,
-) -> tuple[str, list[Posting], SourceHealth]:
+) -> tuple[str, list[Posting], SourceHealth, float]:
     key = f"{source.type}:{company.slug}"
     adapter = get_adapter(source.type)
+    started = time.monotonic()
 
     try:
         raw_postings = await adapter.fetch(client, company, source)
@@ -122,21 +131,33 @@ async def _poll_source(
             healthy=True,
             bootstrapped=prev_health.bootstrapped,
             potentially_truncated=truncated,
+            last_change_at=prev_health.last_change_at,
+            change_frequency=prev_health.change_frequency,
+            consecutive_unchanged=prev_health.consecutive_unchanged,
+            estimated_poll_cost=prev_health.estimated_poll_cost,
+            activity_poll_count=prev_health.activity_poll_count,
         )
 
-        logger.info("[%s] %d postings fetched", key, len(postings))
-        return key, postings, health
+        duration = time.monotonic() - started
+        logger.info("[%s] %d postings fetched (%.1fs)", key, len(postings), duration)
+        return key, postings, health, duration
 
     except (SourceFetchError, SourceParseError) as exc:
         logger.error("[%s] %s", key, exc)
+        duration = time.monotonic() - started
         health = SourceHealth(
             last_polled_at=prev_health.last_polled_at,
             healthy=False,
             error=str(exc),
             bootstrapped=prev_health.bootstrapped,
             potentially_truncated=prev_health.potentially_truncated,
+            last_change_at=prev_health.last_change_at,
+            change_frequency=prev_health.change_frequency,
+            consecutive_unchanged=prev_health.consecutive_unchanged,
+            estimated_poll_cost=prev_health.estimated_poll_cost,
+            activity_poll_count=prev_health.activity_poll_count,
         )
-        return key, [], health
+        return key, [], health, duration
 
 
 async def run_pipeline(
@@ -197,7 +218,24 @@ async def run_pipeline(
             elif is_off_season(company, run_now):
                 off_season_skipped.add(company.slug)
 
-    logger.info("%d sources due for polling", len(due_tasks))
+    tier_dist = classify_tier_distribution(state.sources)
+    logger.info(
+        "adaptive tiers: %d hot, %d active, %d quiet, %d unknown",
+        tier_dist["hot"], tier_dist["active"],
+        tier_dist["quiet"], tier_dist["unknown"],
+    )
+
+    prioritized_tasks, deferred_tasks = prioritize_due_sources(
+        due_tasks, state.sources,
+    )
+    if deferred_tasks:
+        deferred_slugs = [t[0].slug for t in deferred_tasks]
+        logger.info(
+            "cost-aware scheduling deferred %d quiet sources: %s",
+            len(deferred_tasks), ", ".join(deferred_slugs[:10]),
+        )
+
+    logger.info("%d sources due for polling", len(prioritized_tasks))
     logger.info(
         "seasonal scheduling skipped %d off-season companies this cycle",
         len(off_season_skipped),
@@ -207,7 +245,7 @@ async def run_pipeline(
     updated_sources: dict[str, SourceHealth] = {}
     request_counts: dict[str, int] = {}
 
-    if due_tasks:
+    if prioritized_tasks:
         async with RateLimitedClient() as client:
             client.load_cache(state.http_cache)
             coros = [
@@ -220,17 +258,27 @@ async def run_pipeline(
                         f"{source.type}:{company.slug}", SourceHealth()
                     ),
                 )
-                for company, source in due_tasks
+                for company, source in prioritized_tasks
             ]
             results = await asyncio.gather(*coros)
 
         state.http_cache = client.dump_cache()
         request_counts = client.source_request_counts()
 
-        for key, postings, health in results:
-            updated_sources[key] = health
+        for key, postings, health, duration in results:
             if health.healthy:
+                current_ids = sorted(p.id for p in postings)
+                raw_hash = hashlib.sha256(
+                    ",".join(current_ids).encode()
+                ).hexdigest()[:16]
+                changed = raw_hash != health.last_raw_id_hash
+                health = update_source_activity(
+                    health, changed=changed,
+                    poll_duration=duration, now=run_now,
+                    raw_id_hash=raw_hash,
+                )
                 fetch_results[key] = postings
+            updated_sources[key] = health
 
     polled_keys = set(fetch_results.keys())
     current_postings: list[Posting] = []
@@ -300,7 +348,7 @@ async def run_pipeline(
 
     logger.info("pipeline complete in %.1fs", elapsed)
     attempted_keys = frozenset(
-        f"{source.type}:{company.slug}" for company, source in due_tasks
+        f"{source.type}:{company.slug}" for company, source in prioritized_tasks
     )
     successful_keys = frozenset(fetch_results)
     return PipelineRunResult(

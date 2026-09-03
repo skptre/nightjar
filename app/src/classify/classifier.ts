@@ -51,10 +51,11 @@ export async function classifyAndStore(
 
   await db.run(
     `UPDATE postings_cache
-     SET category = ?, term = ?, eligibility = ?
+     SET category = ?, category_tags = ?, term = ?, eligibility = ?
      WHERE id = ?`,
     [
       result.category.category,
+      JSON.stringify(result.category.category_tags),
       result.term.term,
       JSON.stringify(result.eligibility),
       postingId,
@@ -106,10 +107,11 @@ async function classifyAndStoreInTransaction(
 
   await db.run(
     `UPDATE postings_cache
-     SET category = ?, term = ?, eligibility = ?
+     SET category = ?, category_tags = ?, term = ?, eligibility = ?
      WHERE id = ?`,
     [
       result.category.category,
+      JSON.stringify(result.category.category_tags),
       result.term.term,
       JSON.stringify(result.eligibility),
       postingId,

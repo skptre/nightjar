@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import dataclasses
 import logging
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
@@ -25,6 +26,14 @@ OFF_SEASON_INTERVAL = timedelta(hours=6)
 RAMP_WINDOW_DAYS = 14
 FALL_MONTHS = frozenset({7, 8, 9, 10, 11})
 SPRING_MONTHS = frozenset({12, 1, 2, 3, 4})
+
+HOT_INTERVAL = timedelta(minutes=15)
+ACTIVE_INTERVAL = timedelta(hours=2)
+QUIET_INTERVAL = timedelta(hours=6)
+MIN_ADAPTIVE_POLLS = 48
+HOT_THRESHOLD = 2
+ACTIVE_THRESHOLD = 10
+ACTIVITY_EMA_ALPHA = 0.2
 
 
 def load_registry(path: Path | None = None) -> list[Company]:
@@ -124,11 +133,32 @@ def is_poll_due(
     if _in_ramp_window(company, now):
         return True
 
-    if is_off_season(company, now):
-        interval = OFF_SEASON_INTERVAL
-    else:
-        interval = HIGH_PRIORITY_INTERVAL if company.high_priority else DEFAULT_INTERVAL
+    interval = _compute_interval(company, source_health, now)
     return elapsed >= interval
+
+
+def _compute_interval(
+    company: Company,
+    source_health: SourceHealth,
+    now: datetime,
+) -> timedelta:
+    if is_off_season(company, now):
+        return OFF_SEASON_INTERVAL
+
+    tier = get_activity_tier(source_health)
+    if tier is not None:
+        if tier == "hot":
+            interval = HOT_INTERVAL
+        elif tier == "active":
+            interval = ACTIVE_INTERVAL
+        else:
+            interval = QUIET_INTERVAL
+
+        if company.high_priority and interval > HIGH_PRIORITY_INTERVAL:
+            interval = HIGH_PRIORITY_INTERVAL
+        return interval
+
+    return HIGH_PRIORITY_INTERVAL if company.high_priority else DEFAULT_INTERVAL
 
 
 def is_off_season(company: Company, now: datetime) -> bool:
@@ -162,3 +192,95 @@ def _in_ramp_window(company: Company, now: datetime) -> bool:
     window_start = typical_date - timedelta(days=RAMP_WINDOW_DAYS)
     window_end = typical_date + timedelta(days=RAMP_WINDOW_DAYS)
     return window_start <= now <= window_end
+
+
+def get_activity_tier(source_health: SourceHealth | None) -> str | None:
+    if source_health is None:
+        return None
+    if source_health.activity_poll_count < MIN_ADAPTIVE_POLLS:
+        return None
+    if source_health.consecutive_unchanged < HOT_THRESHOLD:
+        return "hot"
+    if source_health.consecutive_unchanged < ACTIVE_THRESHOLD:
+        return "active"
+    return "quiet"
+
+
+def update_source_activity(
+    health: SourceHealth,
+    *,
+    changed: bool,
+    poll_duration: float,
+    now: datetime,
+    raw_id_hash: str | None = None,
+) -> SourceHealth:
+    count = health.activity_poll_count + 1
+    now_str = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    if count == 1:
+        freq = 1.0 if changed else 0.0
+        cost = poll_duration
+    else:
+        alpha = ACTIVITY_EMA_ALPHA
+        freq = alpha * (1.0 if changed else 0.0) + (1 - alpha) * health.change_frequency
+        cost = alpha * poll_duration + (1 - alpha) * health.estimated_poll_cost
+
+    return dataclasses.replace(
+        health,
+        last_change_at=now_str if changed else health.last_change_at,
+        consecutive_unchanged=0 if changed else health.consecutive_unchanged + 1,
+        change_frequency=round(freq, 4),
+        estimated_poll_cost=round(cost, 2),
+        activity_poll_count=count,
+        last_raw_id_hash=raw_id_hash if raw_id_hash is not None else health.last_raw_id_hash,
+    )
+
+
+def prioritize_due_sources(
+    due_tasks: list[tuple[Company, SourceConfig]],
+    sources: dict[str, SourceHealth],
+    budget_seconds: float = 900.0,
+) -> tuple[list[tuple[Company, SourceConfig]], list[tuple[Company, SourceConfig]]]:
+    tier_order = {"hot": 0, "active": 1, "unknown": 2, "quiet": 3}
+
+    def sort_key(task: tuple[Company, SourceConfig]) -> int:
+        company, source = task
+        key = f"{source.type}:{company.slug}"
+        health = sources.get(key)
+        tier = get_activity_tier(health) or "unknown"
+        return tier_order.get(tier, 2)
+
+    sorted_tasks = sorted(due_tasks, key=sort_key)
+
+    budget_threshold = budget_seconds * 0.8
+    cumulative_cost = 0.0
+    prioritized: list[tuple[Company, SourceConfig]] = []
+    deferred: list[tuple[Company, SourceConfig]] = []
+
+    for task in sorted_tasks:
+        company, source = task
+        key = f"{source.type}:{company.slug}"
+        health = sources.get(key)
+        tier = get_activity_tier(health) or "unknown"
+        cost = health.estimated_poll_cost if health else 0.0
+
+        if tier == "quiet" and cumulative_cost + cost > budget_threshold:
+            deferred.append(task)
+        else:
+            prioritized.append(task)
+            cumulative_cost += cost
+
+    return prioritized, deferred
+
+
+def classify_tier_distribution(
+    sources: dict[str, SourceHealth],
+) -> dict[str, int]:
+    distribution = {"hot": 0, "active": 0, "quiet": 0, "unknown": 0}
+    for health in sources.values():
+        tier = get_activity_tier(health)
+        if tier is None:
+            distribution["unknown"] += 1
+        else:
+            distribution[tier] += 1
+    return distribution

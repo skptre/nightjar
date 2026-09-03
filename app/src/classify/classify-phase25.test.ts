@@ -217,7 +217,7 @@ describe('category-classifier — Simplify metadata fallback', () => {
       null,
       'Software Engineering',
     );
-    expect(result.category).toBe('ml');
+    expect(result.category).toBe('data-ml');
     expect(result.matched_in).toBe('title');
   });
 
@@ -227,7 +227,7 @@ describe('category-classifier — Simplify metadata fallback', () => {
       'Work on deep learning models in our AI research lab.',
       'Software Engineering',
     );
-    expect(result.category).toBe('ml');
+    expect(result.category).toBe('data-ml');
     expect(result.matched_in).toBe('description');
   });
 
@@ -242,9 +242,9 @@ describe('category-classifier — Simplify metadata fallback', () => {
     expect(result.matched_in).toBeNull();
   });
 
-  it('maps "AI/ML" to ml', () => {
+  it('maps "AI/ML" to data-ml', () => {
     const result = classifyCategory('Policy Advisor', null, 'AI/ML');
-    expect(result.category).toBe('ml');
+    expect(result.category).toBe('data-ml');
   });
 
   it('maps "Quantitative Finance" to quant', () => {
@@ -257,9 +257,9 @@ describe('category-classifier — Simplify metadata fallback', () => {
     expect(result.category).toBe('hardware');
   });
 
-  it('maps "Data Science" to ml', () => {
+  it('maps "Data Science" to data-ml', () => {
     const result = classifyCategory('Analytics Intern', null, 'Data Science');
-    expect(result.category).toBe('ml');
+    expect(result.category).toBe('data-ml');
   });
 
   it('maps "Embedded Systems" to hardware', () => {
@@ -590,6 +590,6 @@ describe('source_metadata lifecycle — DB integration', () => {
 
     const now = new Date(posting.first_seen_at);
     const result = await recomputePosting(db, 'cat-meta1', f1Profile, now);
-    expect(result!.classification.category.category).toBe('ml');
+    expect(result!.classification.category.category).toBe('data-ml');
   });
 });

@@ -38,6 +38,10 @@ function isGradWindow(value: unknown): value is [string, string] {
   );
 }
 
+function migrateCategoryArray(values: string[]): string[] {
+  return [...new Set(values.map((value) => value === 'ml' ? 'data-ml' : value))];
+}
+
 export function validateAndRepairProfile(raw: unknown): Profile | null {
   if (!isRecord(raw)) return null;
 
@@ -51,7 +55,7 @@ export function validateAndRepairProfile(raw: unknown): Profile | null {
     : [raw['graduation'] as string, raw['graduation'] as string] as [string, string];
 
   const target_categories = isStringArray(raw['target_categories'])
-    ? raw['target_categories']
+    ? migrateCategoryArray(raw['target_categories'])
     : [];
 
   const locations = isStringArray(raw['locations'])
@@ -87,7 +91,7 @@ export function validateAndRepairProfile(raw: unknown): Profile | null {
     result.notifications_enabled = raw['notifications_enabled'];
   }
   if (isStringArray(raw['notification_categories'])) {
-    result.notification_categories = raw['notification_categories'];
+    result.notification_categories = migrateCategoryArray(raw['notification_categories']);
   }
   if (typeof raw['notification_min_tier'] === 'number') {
     result.notification_min_tier = raw['notification_min_tier'];

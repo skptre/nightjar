@@ -1,3 +1,6 @@
+import type { CategoryValue } from '@/classify/types';
+export { CATEGORY_GROUPS, CATEGORY_OPTIONS } from '@/classify/types';
+
 export const WORK_AUTH_OPTIONS = [
   { value: 'us_citizen', label: 'US Citizen', requiresSponsorship: false },
   { value: 'permanent_resident', label: 'Permanent Resident', requiresSponsorship: false },
@@ -20,14 +23,7 @@ export const CLASS_YEAR_OPTIONS = [
 
 export type ClassYear = (typeof CLASS_YEAR_OPTIONS)[number]['value'];
 
-export const CATEGORY_OPTIONS = [
-  { value: 'swe', label: 'Software Engineering' },
-  { value: 'quant', label: 'Quantitative Finance' },
-  { value: 'ml', label: 'Machine Learning / AI' },
-  { value: 'hardware', label: 'Hardware / Embedded' },
-] as const;
-
-export type Category = (typeof CATEGORY_OPTIONS)[number]['value'];
+export type Category = CategoryValue;
 
 export const SYNC_INTERVAL_OPTIONS = [
   { value: 60_000, label: '1 minute' },

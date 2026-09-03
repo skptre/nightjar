@@ -1,7 +1,8 @@
 import type { Database } from '@/db/database';
 import type { Profile } from '@/profile/types';
 import type { FeedPosting } from '@/sync/feed-sync';
-import type { ClassificationResult, CategoryValue, EligibilityVerdict } from './types';
+import type { ClassificationResult, EligibilityVerdict } from './types';
+import { normalizeCategoryValue, parseCategoryTags } from './types';
 import { classifyPosting } from './classifier';
 import { scorePosting, type ScoreResult } from './scoring';
 
@@ -25,10 +26,11 @@ async function storeResult(
 ): Promise<void> {
   await db.run(
     `UPDATE postings_cache
-     SET category = ?, term = ?, eligibility = ?, score = ?, score_breakdown = ?
+     SET category = ?, category_tags = ?, term = ?, eligibility = ?, score = ?, score_breakdown = ?
      WHERE id = ?`,
     [
       result.classification.category.category,
+      JSON.stringify(result.classification.category.category_tags),
       result.classification.term.term,
       JSON.stringify(result.classification.eligibility),
       result.score.score,
@@ -64,6 +66,7 @@ export async function recomputePosting(
       first_seen_at: firstSeenAt,
       eligibility_verdict: classification.eligibility.verdict,
       category: classification.category.category,
+      category_tags: classification.category.category_tags,
     },
     profile,
     now,
@@ -108,6 +111,26 @@ export async function recomputeAll(
   return results.size;
 }
 
+export async function recomputePendingCategoryTaxonomy(
+  db: Database,
+  profile: Profile,
+  now?: Date,
+): Promise<number> {
+  const rows = await db.query<{ id: string }>(
+    `SELECT id FROM postings_cache
+     WHERE category_tags IS NULL OR category IS NULL OR score IS NULL`,
+  );
+  if (rows.length === 0) return 0;
+
+  const results = await recomputeNewPostings(
+    db,
+    rows.map((row) => row.id),
+    profile,
+    now,
+  );
+  return results.size;
+}
+
 export async function rescorePosting(
   db: Database,
   postingId: string,
@@ -118,9 +141,10 @@ export async function rescorePosting(
     data: string;
     first_seen_at: string | null;
     category: string | null;
+    category_tags: string | null;
     eligibility: string | null;
   }>(
-    'SELECT data, first_seen_at, category, eligibility FROM postings_cache WHERE id = ?',
+    'SELECT data, first_seen_at, category, category_tags, eligibility FROM postings_cache WHERE id = ?',
     [postingId],
   );
 
@@ -129,7 +153,8 @@ export async function rescorePosting(
   const posting = parsePosting(row.data);
   if (!posting) return null;
 
-  const category = (row.category ?? 'other') as CategoryValue;
+  const categoryTags = parseCategoryTags(row.category_tags, row.category);
+  const category = normalizeCategoryValue(row.category) ?? categoryTags[0] ?? 'other';
 
   let eligibilityVerdict: EligibilityVerdict = 'unclear';
   if (row.eligibility) {
@@ -151,6 +176,7 @@ export async function rescorePosting(
       first_seen_at: firstSeenAt,
       eligibility_verdict: eligibilityVerdict,
       category,
+      category_tags: categoryTags,
     },
     profile,
     now,
@@ -190,6 +216,7 @@ async function recomputePostingInTransaction(
       first_seen_at: firstSeenAt,
       eligibility_verdict: classification.eligibility.verdict,
       category: classification.category.category,
+      category_tags: classification.category.category_tags,
     },
     profile,
     now,
@@ -199,10 +226,11 @@ async function recomputePostingInTransaction(
 
   await db.run(
     `UPDATE postings_cache
-     SET category = ?, term = ?, eligibility = ?, score = ?, score_breakdown = ?
+     SET category = ?, category_tags = ?, term = ?, eligibility = ?, score = ?, score_breakdown = ?
      WHERE id = ?`,
     [
       result.classification.category.category,
+      JSON.stringify(result.classification.category.category_tags),
       result.classification.term.term,
       JSON.stringify(result.classification.eligibility),
       result.score.score,

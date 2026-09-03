@@ -16,6 +16,13 @@ export const MIGRATIONS: Migration[] = [
       );
     `,
   },
+  {
+    version: 3,
+    sql: `
+      ALTER TABLE postings_cache ADD COLUMN category_tags TEXT;
+      UPDATE postings_cache SET category = 'data-ml' WHERE category = 'ml';
+    `,
+  },
 ];
 
 export async function runMigrations(

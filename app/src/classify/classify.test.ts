@@ -234,9 +234,9 @@ describe('category-classifier', () => {
       expect(result.matched_in).toBe('title');
     });
 
-    it('classifies "Machine Learning Engineer" as ml', () => {
+    it('classifies "Machine Learning Engineer" as data-ml', () => {
       const result = classifyCategory('Machine Learning Engineer Intern', null);
-      expect(result.category).toBe('ml');
+      expect(result.category).toBe('data-ml');
       expect(result.matched_in).toBe('title');
     });
 
@@ -256,14 +256,14 @@ describe('category-classifier', () => {
       expect(result.category).toBe('quant');
     });
 
-    it('classifies "Data Scientist Intern" as ml', () => {
+    it('classifies "Data Scientist Intern" as data-ml', () => {
       const result = classifyCategory('Data Scientist Intern', null);
-      expect(result.category).toBe('ml');
+      expect(result.category).toBe('data-ml');
     });
 
-    it('classifies "FPGA Design Intern" as hardware', () => {
+    it('classifies "FPGA Design Intern" as ECE', () => {
       const result = classifyCategory('FPGA Design Intern', null);
-      expect(result.category).toBe('hardware');
+      expect(result.category).toBe('ECE');
     });
 
     it('classifies "Embedded Software Engineer" as hardware', () => {
@@ -281,9 +281,9 @@ describe('category-classifier', () => {
       expect(result.category).toBe('swe');
     });
 
-    it('classifies "Research Scientist" as ml', () => {
+    it('classifies "Research Scientist" as research', () => {
       const result = classifyCategory('Research Scientist Intern', null);
-      expect(result.category).toBe('ml');
+      expect(result.category).toBe('research');
     });
   });
 
@@ -293,7 +293,7 @@ describe('category-classifier', () => {
         'Summer 2027 Intern',
         'Work on machine learning models and deploy them to production.',
       );
-      expect(result.category).toBe('ml');
+      expect(result.category).toBe('data-ml');
       expect(result.matched_in).toBe('description');
     });
 
@@ -313,9 +313,9 @@ describe('category-classifier', () => {
       expect(result.category).toBe('quant');
     });
 
-    it('ml matches before swe for "ML Engineer"', () => {
+    it('data-ml matches before swe for "ML Engineer"', () => {
       const result = classifyCategory('ML Engineer Intern', null);
-      expect(result.category).toBe('ml');
+      expect(result.category).toBe('data-ml');
     });
 
     it('hardware matches before swe for "Firmware Engineer"', () => {
@@ -346,7 +346,7 @@ describe('category-classifier', () => {
 
     it('matches mixed case', () => {
       const result = classifyCategory('Machine Learning intern', null);
-      expect(result.category).toBe('ml');
+      expect(result.category).toBe('data-ml');
     });
   });
 });
@@ -1113,7 +1113,7 @@ describe('classifier orchestrator', () => {
       const result = classifyPosting(posting, description, profile);
 
       expect(result.term.term).toBe('summer_2027');
-      expect(result.category.category).toBe('ml');
+      expect(result.category.category).toBe('data-ml');
       expect(result.eligibility.verdict).toBe('ineligible');
     });
   });
@@ -1222,7 +1222,7 @@ describe('classifier orchestrator', () => {
       const results = await classifyNewPostings(db, ['p1', 'p2', 'p3'], profile);
 
       expect(results.size).toBe(3);
-      expect(results.get('p1')!.category.category).toBe('ml');
+      expect(results.get('p1')!.category.category).toBe('data-ml');
       expect(results.get('p2')!.category.category).toBe('hardware');
       expect(results.get('p3')!.category.category).toBe('quant');
       expect(results.get('p1')!.term.term).toBe('fall_2026');

@@ -160,3 +160,9 @@ class SourceHealth:
     error: str | None = None
     bootstrapped: bool = False
     potentially_truncated: bool = False
+    last_change_at: str | None = None
+    change_frequency: float = 0.0
+    consecutive_unchanged: int = 0
+    estimated_poll_cost: float = 0.0
+    activity_poll_count: int = 0
+    last_raw_id_hash: str | None = None

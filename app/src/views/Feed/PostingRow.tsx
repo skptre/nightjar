@@ -1,6 +1,7 @@
 import { useEffect, type RefObject } from 'react';
 import { EligibilityBadge } from '@/components/EligibilityBadge';
 import { ScoreBreakdown } from '@/components/ScoreBreakdown';
+import { CATEGORY_OPTIONS, type CategoryValue } from '@/classify/types';
 
 export interface PostingRowData {
   id: string;
@@ -14,6 +15,7 @@ export interface PostingRowData {
   first_seen_at: string;
   closed_at: string | null;
   category: string | null;
+  category_tags: CategoryValue[];
   term: string | null;
   eligibility: string | null;
   score: number | null;
@@ -49,15 +51,14 @@ function termLabel(term: string | null): string | null {
 
 function categoryLabel(cat: string | null): string | null {
   if (!cat) return null;
-  const labels: Record<string, string> = { swe: 'SWE', quant: 'Quant', ml: 'ML', hardware: 'HW', other: 'Other' };
-  return labels[cat] ?? cat;
+  return CATEGORY_OPTIONS.find((option) => option.value === cat)?.shortLabel ?? cat;
 }
 
 function categoryTagStyle(cat: string | null): string {
   switch (cat) {
     case 'swe': return 'bg-cyan-50 text-cyan-700 dark:bg-nj-cat-swe/10 dark:text-nj-cat-swe';
     case 'quant': return 'bg-orange-50 text-orange-700 dark:bg-nj-cat-quant/10 dark:text-nj-cat-quant';
-    case 'ml': return 'bg-purple-50 text-purple-700 dark:bg-nj-cat-ml/10 dark:text-nj-cat-ml';
+    case 'data-ml': return 'bg-purple-50 text-purple-700 dark:bg-nj-cat-ml/10 dark:text-nj-cat-ml';
     case 'hardware': return 'bg-teal-50 text-teal-700 dark:bg-nj-cat-hw/10 dark:text-nj-cat-hw';
     default: return 'bg-gray-100 text-gray-600 dark:bg-nj-cat-other/10 dark:text-nj-cat-other';
   }

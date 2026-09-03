@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { loadProfile, saveProfile, validateAndRepairProfile, clearProfile } from './profile-store';
-import { computeGradWindow, inferRequiresSponsorship } from './types';
+import { CATEGORY_GROUPS, computeGradWindow, inferRequiresSponsorship } from './types';
 import type { Profile } from './types';
 
 function makeTestProfile(overrides: Partial<Profile> = {}): Profile {
@@ -10,7 +10,7 @@ function makeTestProfile(overrides: Partial<Profile> = {}): Profile {
     current_class_year: 'junior',
     work_auth: 'f1_opt_cpt',
     requires_sponsorship: true,
-    target_categories: ['swe', 'ml'],
+    target_categories: ['swe', 'data-ml'],
     locations: ['US'],
     excluded_companies: [],
     tiers: {},
@@ -77,6 +77,17 @@ describe('profile-store', () => {
   });
 
   describe('validation and repair', () => {
+    it('maps the retired ml category in profile and notification preferences', () => {
+      const result = validateAndRepairProfile({
+        ...makeTestProfile(),
+        target_categories: ['ml', 'swe', 'ml'],
+        notification_categories: ['ml', 'quant'],
+      });
+
+      expect(result?.target_categories).toEqual(['data-ml', 'swe']);
+      expect(result?.notification_categories).toEqual(['data-ml', 'quant']);
+    });
+
     it('returns null for missing required fields', () => {
       expect(validateAndRepairProfile({})).toBeNull();
       expect(validateAndRepairProfile({ graduation: '2029-05' })).toBeNull();
@@ -167,6 +178,18 @@ describe('profile-store', () => {
       clearProfile();
       expect(loadProfile()).toBeNull();
     });
+  });
+});
+
+describe('category profile options', () => {
+  it('groups every expanded category for profile selection', () => {
+    expect(CATEGORY_GROUPS.map((group) => group.label)).toEqual([
+      'Engineering',
+      'Business',
+      'Other',
+    ]);
+    expect(CATEGORY_GROUPS.flatMap((group) => group.options).map((option) => option.value))
+      .toContain('supply-chain');
   });
 });
 

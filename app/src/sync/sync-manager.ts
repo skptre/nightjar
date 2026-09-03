@@ -4,7 +4,7 @@ import { DEFAULT_SYNC_INTERVAL_MS } from '@/profile/types';
 import { syncFeed, getLastSyncedAt, type SyncResult } from './feed-sync';
 import { fireNewPostingNotifications, requestNotificationPermission } from './notifications';
 import { prefetchDescriptions } from './description-fetch';
-import { recomputeNewPostings } from '@/classify/recompute';
+import { recomputePendingCategoryTaxonomy } from '@/classify/recompute';
 import { runAutoGhost } from '@/views/Pipeline/auto-ghost';
 import { updateTrayInfo } from '@/lib/platform';
 
@@ -99,14 +99,21 @@ export class SyncManager {
 
   async doSync(): Promise<SyncResult | null> {
     if (this.syncing) return null;
-    if (typeof navigator !== 'undefined' && !navigator.onLine) {
-      this.updateState({ status: 'idle', lastError: 'Offline' });
-      return null;
-    }
     this.syncing = true;
-    this.updateState({ status: 'syncing', lastError: null });
 
     try {
+      // Category migration is local and must not depend on network availability.
+      if (this.profile) {
+        await recomputePendingCategoryTaxonomy(this.db, this.profile);
+      }
+
+      if (typeof navigator !== 'undefined' && !navigator.onLine) {
+        this.updateState({ status: 'idle', lastError: 'Offline' });
+        return null;
+      }
+
+      this.updateState({ status: 'syncing', lastError: null });
+
       const ghosted = await runAutoGhost(this.db);
       if (ghosted > 0) {
         console.log(`[nightjar] auto-ghosted ${String(ghosted)} stale application(s)`);
@@ -115,17 +122,7 @@ export class SyncManager {
       const result = await syncFeed(this.db);
 
       if (!result.skipped && this.profile) {
-        const idsToClassify = result.newPostingIds.length > 0
-          ? result.newPostingIds
-          : [];
-        const unscoredRows = await this.db.query<{ id: string }>(
-          'SELECT id FROM postings_cache WHERE (category IS NULL OR score IS NULL) AND closed_at IS NULL',
-        );
-        const unscored = unscoredRows.map((r) => r.id);
-        const allIds = [...new Set([...idsToClassify, ...unscored])];
-        if (allIds.length > 0) {
-          await recomputeNewPostings(this.db, allIds, this.profile);
-        }
+        await recomputePendingCategoryTaxonomy(this.db, this.profile);
       }
 
       if (!result.skipped && result.newPostingIds.length > 0) {

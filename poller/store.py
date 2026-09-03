@@ -38,6 +38,12 @@ class RunState:
                     "error": v.error,
                     "bootstrapped": v.bootstrapped,
                     "potentially_truncated": v.potentially_truncated,
+                    "last_change_at": v.last_change_at,
+                    "change_frequency": v.change_frequency,
+                    "consecutive_unchanged": v.consecutive_unchanged,
+                    "estimated_poll_cost": v.estimated_poll_cost,
+                    "activity_poll_count": v.activity_poll_count,
+                    "last_raw_id_hash": v.last_raw_id_hash,
                 }
                 for k, v in sorted(self.sources.items())
             }
@@ -74,6 +80,12 @@ class RunState:
                 error=v.get("error"),
                 bootstrapped=v.get("bootstrapped", False),
                 potentially_truncated=v.get("potentially_truncated", False),
+                last_change_at=v.get("last_change_at"),
+                change_frequency=v.get("change_frequency", 0.0),
+                consecutive_unchanged=v.get("consecutive_unchanged", 0),
+                estimated_poll_cost=v.get("estimated_poll_cost", 0.0),
+                activity_poll_count=v.get("activity_poll_count", 0),
+                last_raw_id_hash=v.get("last_raw_id_hash"),
             )
         raw_duration = d.get("run_duration_seconds")
         duration = float(raw_duration) if raw_duration is not None else None

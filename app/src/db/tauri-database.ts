@@ -1,5 +1,6 @@
 import type { Database, SqlValue } from './types';
 import { isTauri } from '@/lib/platform';
+import { runMigrations } from './migrations';
 import schemaSQL from './schema.sql?raw';
 
 type TauriDb = {
@@ -53,6 +54,8 @@ export class TauriDatabase implements Database {
     if (tables.length === 0) {
       await instance.initSchema();
     }
+
+    await runMigrations(instance);
 
     return instance;
   }

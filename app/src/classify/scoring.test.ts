@@ -12,7 +12,7 @@ function makeProfile(overrides: Partial<Profile> = {}): Profile {
     current_class_year: 'junior',
     work_auth: 'f1_opt_cpt',
     requires_sponsorship: true,
-    target_categories: ['swe', 'quant', 'ml'],
+    target_categories: ['swe', 'quant', 'data-ml'],
     locations: ['US'],
     excluded_companies: [],
     tiers: {},
@@ -41,11 +41,13 @@ function makePosting(overrides: Partial<FeedPosting> & { id: string }): FeedPost
 }
 
 function makeScoringInput(overrides: Partial<ScoringInput> = {}): ScoringInput {
+  const category = overrides.category ?? 'swe';
   return {
     company_slug: 'testco',
     first_seen_at: new Date().toISOString(),
     eligibility_verdict: 'unclear',
-    category: 'swe',
+    category,
+    category_tags: overrides.category_tags ?? [category],
     ...overrides,
   };
 }
@@ -145,7 +147,7 @@ describe('scorePosting — pure scoring function', () => {
 
   describe('category match signal (0-20 points)', () => {
     it('category in target_categories = 20 points', () => {
-      const profile = makeProfile({ target_categories: ['swe', 'ml'] });
+      const profile = makeProfile({ target_categories: ['swe', 'data-ml'] });
       const result = scorePosting(
         makeScoringInput({ category: 'swe', first_seen_at: now.toISOString() }),
         profile,
@@ -164,7 +166,7 @@ describe('scorePosting — pure scoring function', () => {
     });
 
     it('category not in target_categories = 5 points', () => {
-      const profile = makeProfile({ target_categories: ['swe', 'ml'] });
+      const profile = makeProfile({ target_categories: ['swe', 'data-ml'] });
       const result = scorePosting(
         makeScoringInput({ category: 'hardware', first_seen_at: now.toISOString() }),
         profile,
@@ -258,7 +260,7 @@ describe('scorePosting — pure scoring function', () => {
 
     it('untiered + 7 days + non-target category + unclear', () => {
       const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-      const profile = makeProfile({ target_categories: ['ml'] });
+      const profile = makeProfile({ target_categories: ['data-ml'] });
       const result = scorePosting(
         makeScoringInput({
           eligibility_verdict: 'unclear',
@@ -292,7 +294,7 @@ describe('scorePosting — pure scoring function', () => {
     it('correctly orders 5 postings by expected ranking', () => {
       const profile = makeProfile({
         tiers: { tier1co: 1, tier2co: 2, tier3co: 3 },
-        target_categories: ['swe', 'ml'],
+        target_categories: ['swe', 'data-ml'],
       });
 
       const oneDayAgo = new Date(now.getTime() - 1 * 24 * 60 * 60 * 1000);
@@ -301,23 +303,23 @@ describe('scorePosting — pure scoring function', () => {
 
       const scores = [
         scorePosting(
-          { company_slug: 'tier1co', first_seen_at: now.toISOString(), eligibility_verdict: 'eligible', category: 'swe' },
+          { company_slug: 'tier1co', first_seen_at: now.toISOString(), eligibility_verdict: 'eligible', category: 'swe', category_tags: ['swe'] },
           profile, now,
         ),
         scorePosting(
-          { company_slug: 'tier2co', first_seen_at: oneDayAgo.toISOString(), eligibility_verdict: 'unclear', category: 'ml' },
+          { company_slug: 'tier2co', first_seen_at: oneDayAgo.toISOString(), eligibility_verdict: 'unclear', category: 'data-ml', category_tags: ['data-ml'] },
           profile, now,
         ),
         scorePosting(
-          { company_slug: 'tier3co', first_seen_at: sevenDaysAgo.toISOString(), eligibility_verdict: 'unclear', category: 'other' },
+          { company_slug: 'tier3co', first_seen_at: sevenDaysAgo.toISOString(), eligibility_verdict: 'unclear', category: 'other', category_tags: ['other'] },
           profile, now,
         ),
         scorePosting(
-          { company_slug: 'tier3co', first_seen_at: thirtyDaysAgo.toISOString(), eligibility_verdict: 'unclear', category: 'hardware' },
+          { company_slug: 'tier3co', first_seen_at: thirtyDaysAgo.toISOString(), eligibility_verdict: 'unclear', category: 'hardware', category_tags: ['hardware'] },
           profile, now,
         ),
         scorePosting(
-          { company_slug: 'tier1co', first_seen_at: now.toISOString(), eligibility_verdict: 'ineligible', category: 'swe' },
+          { company_slug: 'tier1co', first_seen_at: now.toISOString(), eligibility_verdict: 'ineligible', category: 'swe', category_tags: ['swe'] },
           profile, now,
         ),
       ];
@@ -464,7 +466,7 @@ describe('recompute — DB integration', () => {
       ];
       for (const p of postings) await insertPosting(p);
 
-      const profile = makeProfile({ tiers: { acme: 1, bigco: 2 }, target_categories: ['swe', 'ml'] });
+      const profile = makeProfile({ tiers: { acme: 1, bigco: 2 }, target_categories: ['swe', 'data-ml'] });
       const now = new Date(postings[0]!.first_seen_at);
       const results = await recomputeNewPostings(db, ['p1', 'p2', 'p3'], profile, now);
 

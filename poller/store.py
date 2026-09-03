@@ -43,7 +43,7 @@ class RunState:
                     "consecutive_unchanged": v.consecutive_unchanged,
                     "estimated_poll_cost": v.estimated_poll_cost,
                     "activity_poll_count": v.activity_poll_count,
-                    "last_raw_id_hash": v.last_raw_id_hash,
+                    "last_content_hash": v.last_content_hash,
                 }
                 for k, v in sorted(self.sources.items())
             }
@@ -85,7 +85,7 @@ class RunState:
                 consecutive_unchanged=v.get("consecutive_unchanged", 0),
                 estimated_poll_cost=v.get("estimated_poll_cost", 0.0),
                 activity_poll_count=v.get("activity_poll_count", 0),
-                last_raw_id_hash=v.get("last_raw_id_hash"),
+                last_content_hash=v.get("last_content_hash") or v.get("last_raw_id_hash"),
             )
         raw_duration = d.get("run_duration_seconds")
         duration = float(raw_duration) if raw_duration is not None else None

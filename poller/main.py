@@ -225,9 +225,16 @@ async def run_pipeline(
         tier_dist["quiet"], tier_dist["unknown"],
     )
 
-    prioritized_tasks, deferred_tasks = prioritize_due_sources(
-        due_tasks, state.sources,
-    )
+    if force_poll:
+        prioritized_tasks = due_tasks
+        deferred_tasks: list[tuple[Any, Any]] = []
+    else:
+        force_keys = set(state.hot_watch_stats.keys()) if state.hot_watch_stats else None
+        prioritized_tasks, deferred_tasks = prioritize_due_sources(
+            due_tasks, state.sources,
+            force_include_keys=force_keys,
+            now=run_now,
+        )
     if deferred_tasks:
         deferred_slugs = [t[0].slug for t in deferred_tasks]
         logger.info(
@@ -267,15 +274,18 @@ async def run_pipeline(
 
         for key, postings, health, duration in results:
             if health.healthy:
-                current_ids = sorted(p.id for p in postings)
-                raw_hash = hashlib.sha256(
-                    ",".join(current_ids).encode()
+                content_parts = sorted(
+                    f"{p.id}|{p.title}|{p.url}|{p.location}"
+                    for p in postings
+                )
+                content_hash = hashlib.sha256(
+                    "\n".join(content_parts).encode()
                 ).hexdigest()[:16]
-                changed = raw_hash != health.last_raw_id_hash
+                changed = content_hash != health.last_content_hash
                 health = update_source_activity(
                     health, changed=changed,
                     poll_duration=duration, now=run_now,
-                    raw_id_hash=raw_hash,
+                    content_hash=content_hash,
                 )
                 fetch_results[key] = postings
             updated_sources[key] = health

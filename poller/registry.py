@@ -34,6 +34,7 @@ MIN_ADAPTIVE_POLLS = 48
 HOT_THRESHOLD = 2
 ACTIVE_THRESHOLD = 10
 ACTIVITY_EMA_ALPHA = 0.2
+MAX_STARVATION_HOURS = 48
 
 
 def load_registry(path: Path | None = None) -> list[Company]:
@@ -212,7 +213,7 @@ def update_source_activity(
     changed: bool,
     poll_duration: float,
     now: datetime,
-    raw_id_hash: str | None = None,
+    content_hash: str | None = None,
 ) -> SourceHealth:
     count = health.activity_poll_count + 1
     now_str = now.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -232,14 +233,26 @@ def update_source_activity(
         change_frequency=round(freq, 4),
         estimated_poll_cost=round(cost, 2),
         activity_poll_count=count,
-        last_raw_id_hash=raw_id_hash if raw_id_hash is not None else health.last_raw_id_hash,
+        last_content_hash=content_hash if content_hash is not None else health.last_content_hash,
     )
+
+
+def _is_starving(health: SourceHealth | None, now: datetime | None) -> bool:
+    if health is None or health.last_polled_at is None or now is None:
+        return False
+    last = datetime.fromisoformat(health.last_polled_at)
+    if last.tzinfo is None:
+        last = last.replace(tzinfo=UTC)
+    return (now - last) > timedelta(hours=MAX_STARVATION_HOURS)
 
 
 def prioritize_due_sources(
     due_tasks: list[tuple[Company, SourceConfig]],
     sources: dict[str, SourceHealth],
     budget_seconds: float = 900.0,
+    *,
+    force_include_keys: set[str] | None = None,
+    now: datetime | None = None,
 ) -> tuple[list[tuple[Company, SourceConfig]], list[tuple[Company, SourceConfig]]]:
     tier_order = {"hot": 0, "active": 1, "unknown": 2, "quiet": 3}
 
@@ -264,7 +277,13 @@ def prioritize_due_sources(
         tier = get_activity_tier(health) or "unknown"
         cost = health.estimated_poll_cost if health else 0.0
 
-        if tier == "quiet" and cumulative_cost + cost > budget_threshold:
+        is_protected = (
+            company.high_priority
+            or (force_include_keys is not None and key in force_include_keys)
+            or _is_starving(health, now)
+        )
+
+        if tier == "quiet" and cumulative_cost + cost > budget_threshold and not is_protected:
             deferred.append(task)
         else:
             prioritized.append(task)

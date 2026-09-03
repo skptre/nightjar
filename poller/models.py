@@ -165,4 +165,4 @@ class SourceHealth:
     consecutive_unchanged: int = 0
     estimated_poll_cost: float = 0.0
     activity_poll_count: int = 0
-    last_raw_id_hash: str | None = None
+    last_content_hash: str | None = None

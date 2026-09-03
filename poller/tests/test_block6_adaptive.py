@@ -151,22 +151,22 @@ class TestUpdateSourceActivity:
         assert updated.bootstrapped is True
         assert updated.potentially_truncated is True
 
-    def test_stores_raw_id_hash(self) -> None:
+    def test_stores_content_hash(self) -> None:
         now = datetime(2026, 9, 1, 12, 0, 0, tzinfo=UTC)
         health = SourceHealth()
         updated = update_source_activity(
             health, changed=True, poll_duration=1.0, now=now,
-            raw_id_hash="abcd1234",
+            content_hash="abcd1234",
         )
-        assert updated.last_raw_id_hash == "abcd1234"
+        assert updated.last_content_hash == "abcd1234"
 
-    def test_preserves_raw_id_hash_when_not_provided(self) -> None:
+    def test_preserves_content_hash_when_not_provided(self) -> None:
         now = datetime(2026, 9, 1, 12, 0, 0, tzinfo=UTC)
-        health = SourceHealth(last_raw_id_hash="existing_hash")
+        health = SourceHealth(last_content_hash="existing_hash")
         updated = update_source_activity(
             health, changed=False, poll_duration=1.0, now=now,
         )
-        assert updated.last_raw_id_hash == "existing_hash"
+        assert updated.last_content_hash == "existing_hash"
 
 
 # ── Activity Tier Classification ─────────────────────────────
@@ -491,7 +491,7 @@ class TestSourceHealthSerialization:
             consecutive_unchanged=3,
             estimated_poll_cost=5.2,
             activity_poll_count=12,
-            last_raw_id_hash="abc123",
+            last_content_hash="abc123",
         )
         state = RunState(sources={"greenhouse:test": health})
         d = state.to_dict()
@@ -502,7 +502,7 @@ class TestSourceHealthSerialization:
         assert source_data["consecutive_unchanged"] == 3
         assert source_data["estimated_poll_cost"] == 5.2
         assert source_data["activity_poll_count"] == 12
-        assert source_data["last_raw_id_hash"] == "abc123"
+        assert source_data["last_content_hash"] == "abc123"
 
     def test_new_fields_deserialize(self) -> None:
         from poller.store import RunState
@@ -517,7 +517,7 @@ class TestSourceHealthSerialization:
                     "consecutive_unchanged": 3,
                     "estimated_poll_cost": 5.2,
                     "activity_poll_count": 12,
-                    "last_raw_id_hash": "abc123",
+                    "last_content_hash": "abc123",
                 }
             }
         }
@@ -529,7 +529,7 @@ class TestSourceHealthSerialization:
         assert h.consecutive_unchanged == 3
         assert h.estimated_poll_cost == 5.2
         assert h.activity_poll_count == 12
-        assert h.last_raw_id_hash == "abc123"
+        assert h.last_content_hash == "abc123"
 
     def test_missing_new_fields_default(self) -> None:
         from poller.store import RunState
@@ -550,7 +550,7 @@ class TestSourceHealthSerialization:
         assert h.consecutive_unchanged == 0
         assert h.estimated_poll_cost == 0.0
         assert h.activity_poll_count == 0
-        assert h.last_raw_id_hash is None
+        assert h.last_content_hash is None
 
     def test_full_round_trip(self) -> None:
         from poller.store import RunState
@@ -565,7 +565,7 @@ class TestSourceHealthSerialization:
             consecutive_unchanged=7,
             estimated_poll_cost=8.3,
             activity_poll_count=50,
-            last_raw_id_hash="deadbeef12345678",
+            last_content_hash="deadbeef12345678",
         )
         state = RunState(sources={"greenhouse:test": health})
         restored = RunState.from_dict(state.to_dict())
@@ -579,7 +579,7 @@ class TestSourceHealthSerialization:
         assert h.consecutive_unchanged == health.consecutive_unchanged
         assert h.estimated_poll_cost == health.estimated_poll_cost
         assert h.activity_poll_count == health.activity_poll_count
-        assert h.last_raw_id_hash == health.last_raw_id_hash
+        assert h.last_content_hash == health.last_content_hash
 
 
 # ── Tier Distribution Logging ────────────────────────────────
@@ -611,3 +611,165 @@ class TestTierDistribution:
     def test_empty_sources(self) -> None:
         dist = classify_tier_distribution({})
         assert dist == {"hot": 0, "active": 0, "quiet": 0, "unknown": 0}
+
+
+# ── Content Hash Detection (Issue 1) ───────────────────────
+
+
+class TestContentHashDetection:
+
+    def test_title_edit_changes_hash(self) -> None:
+        import hashlib
+
+        def content_hash(postings: list[tuple[str, str, str, str]]) -> str:
+            parts = sorted(f"{pid}|{t}|{u}|{loc}" for pid, t, u, loc in postings)
+            return hashlib.sha256("\n".join(parts).encode()).hexdigest()[:16]
+
+        base = [("id1", "SWE Intern", "https://co.com/1", "NYC")]
+        edited = [("id1", "Software Engineer Intern", "https://co.com/1", "NYC")]
+        assert content_hash(base) != content_hash(edited)
+
+    def test_same_content_same_hash(self) -> None:
+        import hashlib
+
+        def content_hash(postings: list[tuple[str, str, str, str]]) -> str:
+            parts = sorted(f"{pid}|{t}|{u}|{loc}" for pid, t, u, loc in postings)
+            return hashlib.sha256("\n".join(parts).encode()).hexdigest()[:16]
+
+        data = [("id1", "SWE Intern", "https://co.com/1", "NYC")]
+        assert content_hash(data) == content_hash(data)
+
+    def test_url_edit_changes_hash(self) -> None:
+        import hashlib
+
+        def content_hash(postings: list[tuple[str, str, str, str]]) -> str:
+            parts = sorted(f"{pid}|{t}|{u}|{loc}" for pid, t, u, loc in postings)
+            return hashlib.sha256("\n".join(parts).encode()).hexdigest()[:16]
+
+        base = [("id1", "SWE Intern", "https://co.com/1", "NYC")]
+        edited = [("id1", "SWE Intern", "https://co.com/jobs/1", "NYC")]
+        assert content_hash(base) != content_hash(edited)
+
+
+# ── Never-Defer High Priority & Hot-Watch (Issue 2) ────────
+
+
+class TestNeverDeferProtected:
+
+    def test_high_priority_quiet_never_deferred(self) -> None:
+        sources = {
+            "greenhouse:hot-co": SourceHealth(
+                consecutive_unchanged=0, activity_poll_count=50,
+                estimated_poll_cost=700.0,
+            ),
+            "greenhouse:hp-quiet": SourceHealth(
+                consecutive_unchanged=15, activity_poll_count=50,
+                estimated_poll_cost=200.0,
+            ),
+        }
+        hot = _company(slug="hot-co")
+        hp_quiet = _company(slug="hp-quiet", high_priority=True)
+        tasks = [(hot, hot.sources[0]), (hp_quiet, hp_quiet.sources[0])]
+
+        prioritized, deferred = prioritize_due_sources(
+            tasks, sources, budget_seconds=900.0,
+        )
+        deferred_slugs = [t[0].slug for t in deferred]
+        assert "hp-quiet" not in deferred_slugs
+
+    def test_hot_watch_key_never_deferred(self) -> None:
+        sources = {
+            "greenhouse:hot-co": SourceHealth(
+                consecutive_unchanged=0, activity_poll_count=50,
+                estimated_poll_cost=700.0,
+            ),
+            "greenhouse:watched": SourceHealth(
+                consecutive_unchanged=15, activity_poll_count=50,
+                estimated_poll_cost=200.0,
+            ),
+        }
+        hot = _company(slug="hot-co")
+        watched = _company(slug="watched")
+        tasks = [(hot, hot.sources[0]), (watched, watched.sources[0])]
+
+        prioritized, deferred = prioritize_due_sources(
+            tasks, sources, budget_seconds=900.0,
+            force_include_keys={"greenhouse:watched"},
+        )
+        deferred_slugs = [t[0].slug for t in deferred]
+        assert "watched" not in deferred_slugs
+
+    def test_unprotected_quiet_still_deferred(self) -> None:
+        sources = {
+            "greenhouse:hot-co": SourceHealth(
+                consecutive_unchanged=0, activity_poll_count=50,
+                estimated_poll_cost=700.0,
+            ),
+            "greenhouse:quiet-co": SourceHealth(
+                consecutive_unchanged=15, activity_poll_count=50,
+                estimated_poll_cost=200.0,
+            ),
+        }
+        hot = _company(slug="hot-co")
+        quiet = _company(slug="quiet-co")
+        tasks = [(hot, hot.sources[0]), (quiet, quiet.sources[0])]
+
+        prioritized, deferred = prioritize_due_sources(
+            tasks, sources, budget_seconds=900.0,
+        )
+        deferred_slugs = [t[0].slug for t in deferred]
+        assert "quiet-co" in deferred_slugs
+
+
+# ── Anti-Starvation (Issue 3) ──────────────────────────────
+
+
+class TestAntiStarvation:
+
+    def test_starving_quiet_source_not_deferred(self) -> None:
+        now = datetime(2026, 9, 3, 12, 0, 0, tzinfo=UTC)
+        stale_time = (now - timedelta(hours=50)).isoformat()
+        sources = {
+            "greenhouse:hot-co": SourceHealth(
+                consecutive_unchanged=0, activity_poll_count=50,
+                estimated_poll_cost=700.0,
+            ),
+            "greenhouse:starved": SourceHealth(
+                consecutive_unchanged=20, activity_poll_count=50,
+                estimated_poll_cost=200.0,
+                last_polled_at=stale_time,
+            ),
+        }
+        hot = _company(slug="hot-co")
+        starved = _company(slug="starved")
+        tasks = [(hot, hot.sources[0]), (starved, starved.sources[0])]
+
+        prioritized, deferred = prioritize_due_sources(
+            tasks, sources, budget_seconds=900.0, now=now,
+        )
+        deferred_slugs = [t[0].slug for t in deferred]
+        assert "starved" not in deferred_slugs
+
+    def test_recently_polled_quiet_can_be_deferred(self) -> None:
+        now = datetime(2026, 9, 3, 12, 0, 0, tzinfo=UTC)
+        recent_time = (now - timedelta(hours=7)).isoformat()
+        sources = {
+            "greenhouse:hot-co": SourceHealth(
+                consecutive_unchanged=0, activity_poll_count=50,
+                estimated_poll_cost=700.0,
+            ),
+            "greenhouse:recent-quiet": SourceHealth(
+                consecutive_unchanged=20, activity_poll_count=50,
+                estimated_poll_cost=200.0,
+                last_polled_at=recent_time,
+            ),
+        }
+        hot = _company(slug="hot-co")
+        recent_quiet = _company(slug="recent-quiet")
+        tasks = [(hot, hot.sources[0]), (recent_quiet, recent_quiet.sources[0])]
+
+        prioritized, deferred = prioritize_due_sources(
+            tasks, sources, budget_seconds=900.0, now=now,
+        )
+        deferred_slugs = [t[0].slug for t in deferred]
+        assert "recent-quiet" in deferred_slugs

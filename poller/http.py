@@ -151,7 +151,7 @@ class RateLimitedClient:
         last_status: int = 0
         last_body: str = ""
 
-        cond_headers = self._get_conditional_headers(url) if use_conditional else {}
+        cond_headers = self._get_conditional_headers(url)
 
         for attempt in range(MAX_RETRIES):
             async with lock:
@@ -175,8 +175,16 @@ class RateLimitedClient:
                 last_status = response.status_code
                 last_body = response.text[:500]
 
-                if response.status_code == 304 and use_conditional:
-                    return NOT_MODIFIED
+                if response.status_code == 304:
+                    if use_conditional:
+                        return NOT_MODIFIED
+                    cond_headers = {}
+                    if attempt < MAX_RETRIES - 1:
+                        continue
+                    raise SourceFetchError(
+                        source, company_slug,
+                        "server returned 304 without conditional request",
+                    )
 
                 if response.status_code == 429 or response.status_code >= 500:
                     if attempt < MAX_RETRIES - 1:

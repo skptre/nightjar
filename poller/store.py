@@ -11,6 +11,7 @@ if TYPE_CHECKING:
 from poller.models import HotWatchStats, Posting, SourceHealth
 
 FEED_VERSION = 1
+SHARDING_THRESHOLD = 5000
 
 
 @dataclass
@@ -178,7 +179,14 @@ def save_state(path: Path, state: RunState) -> None:
     )
 
 
-def save_meta(meta_path: Path, feed_path: Path, updated_at: str, count: int) -> None:
+def save_meta(
+    meta_path: Path,
+    feed_path: Path,
+    updated_at: str,
+    count: int,
+    *,
+    shard_hashes: dict[str, ShardMeta] | None = None,
+) -> None:
     feed_bytes = feed_path.read_bytes()
     sha = hashlib.sha256(feed_bytes).hexdigest()
     meta: dict[str, Any] = {
@@ -186,8 +194,132 @@ def save_meta(meta_path: Path, feed_path: Path, updated_at: str, count: int) -> 
         "sha256": sha,
         "count": count,
     }
+    if shard_hashes is not None:
+        meta["sharded"] = True
+        meta["shards"] = {
+            shard_id: {
+                "sha256": sm.sha256,
+                "count": sm.count,
+                "updated_at": sm.updated_at,
+            }
+            for shard_id, sm in sorted(shard_hashes.items())
+        }
     meta_path.parent.mkdir(parents=True, exist_ok=True)
     meta_path.write_text(
         json.dumps(meta, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
+
+
+@dataclass(frozen=True)
+class ShardMeta:
+    sha256: str
+    count: int
+    updated_at: str
+
+
+def _partition_by_source(
+    postings: dict[str, Posting],
+) -> dict[str, dict[str, Posting]]:
+    shards: dict[str, dict[str, Posting]] = {}
+    for pid, posting in postings.items():
+        source = posting.source
+        if source not in shards:
+            shards[source] = {}
+        shards[source][pid] = posting
+    return shards
+
+
+def save_feed_sharded(
+    feed_dir: Path,
+    postings: dict[str, Posting],
+    updated_at: str,
+    companies: list[Any] | None = None,
+) -> dict[str, ShardMeta]:
+    feed_dir.mkdir(parents=True, exist_ok=True)
+
+    partitions = _partition_by_source(postings)
+    shard_hashes: dict[str, ShardMeta] = {}
+
+    for shard_id, shard_postings in sorted(partitions.items()):
+        shard_data: dict[str, Any] = {
+            "shard_id": shard_id,
+            "updated_at": updated_at,
+            "count": len(shard_postings),
+            "postings": {
+                pid: shard_postings[pid].to_dict()
+                for pid in sorted(shard_postings)
+            },
+        }
+        shard_path = feed_dir / f"{shard_id}.json"
+        shard_bytes = (
+            json.dumps(shard_data, indent=2, ensure_ascii=False) + "\n"
+        ).encode("utf-8")
+        shard_path.write_bytes(shard_bytes)
+
+        sha = hashlib.sha256(shard_bytes).hexdigest()
+        shard_hashes[shard_id] = ShardMeta(
+            sha256=sha, count=len(shard_postings), updated_at=updated_at,
+        )
+
+    index: dict[str, Any] = {
+        "version": 1,
+        "updated_at": updated_at,
+        "total_count": len(postings),
+        "shards": [
+            {
+                "id": sid,
+                "count": sm.count,
+                "sha256": sm.sha256,
+                "updated_at": sm.updated_at,
+            }
+            for sid, sm in sorted(shard_hashes.items())
+        ],
+    }
+    if companies is not None:
+        companies_meta: dict[str, dict[str, str | None]] = {}
+        for c in companies:
+            companies_meta[c.slug] = {
+                "name": c.name,
+                "typical_open": c.typical_open,
+            }
+        index["companies"] = dict(sorted(companies_meta.items()))
+
+    index_path = feed_dir / "index.json"
+    index_path.write_text(
+        json.dumps(index, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
+    stale = {
+        f.name
+        for f in feed_dir.iterdir()
+        if f.suffix == ".json" and f.name != "index.json"
+    }
+    live = {f"{sid}.json" for sid in shard_hashes}
+    for name in stale - live:
+        (feed_dir / name).unlink()
+
+    return shard_hashes
+
+
+def load_feed_sharded(feed_dir: Path) -> dict[str, Posting]:
+    index_path = feed_dir / "index.json"
+    if not index_path.exists():
+        return {}
+    index_text = index_path.read_text(encoding="utf-8")
+    if not index_text.strip():
+        return {}
+    index_data = json.loads(index_text)
+
+    postings: dict[str, Posting] = {}
+    for shard_info in index_data.get("shards", []):
+        shard_path = feed_dir / f"{shard_info['id']}.json"
+        if not shard_path.exists():
+            continue
+        shard_text = shard_path.read_text(encoding="utf-8")
+        shard_data = json.loads(shard_text)
+        for pid, pdata in shard_data.get("postings", {}).items():
+            postings[pid] = Posting.from_dict(pdata)
+
+    return postings

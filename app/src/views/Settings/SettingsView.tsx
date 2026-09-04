@@ -18,6 +18,9 @@ import { exportApplicationsJSON } from '@/export/export-json';
 import { exportPostingsJSON } from '@/export/export-postings';
 import { saveFile } from '@/export/file-save';
 import { recomputeAll } from '@/classify/recompute';
+import type { GmailAuthState } from '@/integrations/types';
+import { getAuthState, startOAuthFlow, disconnectGmail } from '@/integrations/gmail-auth';
+import { clearAllGmailData } from '@/integrations/gmail-service';
 
 export function SettingsView(): ReactNode {
   return (
@@ -27,6 +30,7 @@ export function SettingsView(): ReactNode {
       <SyncSection />
       <ProfileSection />
       <NotificationsSection />
+      {isTauri() && <GmailSection />}
       <DataSection />
     </div>
   );
@@ -386,6 +390,188 @@ function NotificationsSection(): ReactNode {
         Notification preferences will be available in a future update. New posting notifications
         are currently enabled by default.
       </p>
+    </Section>
+  );
+}
+
+/* ── Gmail ──────────────────────────────────────────── */
+
+function GmailSection(): ReactNode {
+  const { db } = useDatabase();
+  const { toast } = useToast();
+  const [authState, setAuthState] = useState<GmailAuthState>({
+    connected: false,
+    email: null,
+    lastScanAt: null,
+    error: null,
+  });
+  const [loading, setLoading] = useState(true);
+  const [showDisconnectConfirm, setShowDisconnectConfirm] = useState(false);
+  const [clientId, setClientIdState] = useState(() =>
+    localStorage.getItem('nightjar_gmail_client_id') ?? '',
+  );
+  const [showClientId, setShowClientId] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    void getAuthState().then((state) => {
+      if (!cancelled) {
+        setAuthState(state);
+        setLoading(false);
+      }
+    });
+    return () => { cancelled = true; };
+  }, []);
+
+  const handleConnect = useCallback(async () => {
+    if (!clientId.trim()) {
+      toast('Set a Gmail client ID first', 'error');
+      setShowClientId(true);
+      return;
+    }
+    setLoading(true);
+    try {
+      await startOAuthFlow();
+      toast('OAuth flow started — complete sign-in in your browser');
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Failed to start OAuth';
+      toast(msg, 'error');
+    } finally {
+      setLoading(false);
+    }
+  }, [clientId, toast]);
+
+  const handleDisconnect = useCallback(async () => {
+    setLoading(true);
+    try {
+      await disconnectGmail();
+      await clearAllGmailData(db);
+      setAuthState({ connected: false, email: null, lastScanAt: null, error: null });
+      setShowDisconnectConfirm(false);
+      toast('Gmail disconnected. All email data deleted.');
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Failed to disconnect';
+      toast(msg, 'error');
+    } finally {
+      setLoading(false);
+    }
+  }, [db, toast]);
+
+  const handleSaveClientId = useCallback(() => {
+    const trimmed = clientId.trim();
+    if (trimmed) {
+      localStorage.setItem('nightjar_gmail_client_id', trimmed);
+    } else {
+      localStorage.removeItem('nightjar_gmail_client_id');
+    }
+    toast('Gmail client ID saved');
+  }, [clientId, toast]);
+
+  return (
+    <Section title="Gmail Sync">
+      <p className="text-sm text-gray-600 dark:text-nj-text-dim">
+        Nightjar can scan your inbox for interview invitations, offers, and rejections from
+        companies you&apos;ve applied to. Email content never leaves your computer — only message
+        IDs are stored for deduplication.
+      </p>
+
+      {authState.connected ? (
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <span className="inline-block w-2 h-2 rounded-full bg-green-500" />
+            <span className="text-sm text-gray-700 dark:text-nj-text">
+              Connected{authState.email ? ` as ${authState.email}` : ''}
+            </span>
+          </div>
+          {authState.lastScanAt && (
+            <p className="text-xs text-gray-500 dark:text-nj-muted">
+              Last scan: {new Date(authState.lastScanAt).toLocaleString()}
+            </p>
+          )}
+          {!showDisconnectConfirm ? (
+            <button
+              type="button"
+              onClick={() => setShowDisconnectConfirm(true)}
+              disabled={loading}
+              className="text-sm text-red-600 hover:text-red-700 transition-colors disabled:opacity-50"
+            >
+              Disconnect Gmail
+            </button>
+          ) : (
+            <div className="flex items-center gap-3">
+              <p className="text-sm text-red-600 dark:text-red-400">
+                This will revoke access and delete all email scan data.
+              </p>
+              <button
+                type="button"
+                onClick={() => void handleDisconnect()}
+                disabled={loading}
+                className="rounded-md bg-red-600 px-3 py-1 text-sm font-medium text-white hover:bg-red-700 transition-colors disabled:opacity-50"
+              >
+                Confirm
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowDisconnectConfirm(false)}
+                className="text-sm text-gray-500 dark:text-nj-muted hover:text-gray-700 dark:hover:text-nj-text"
+              >
+                Cancel
+              </button>
+            </div>
+          )}
+        </div>
+      ) : (
+        <div className="space-y-3">
+          <button
+            type="button"
+            onClick={() => void handleConnect()}
+            disabled={loading}
+            className="rounded-md bg-nj-accent px-4 py-2 text-sm font-medium text-white hover:bg-nj-accent-bright transition-colors disabled:opacity-50"
+          >
+            Connect Gmail
+          </button>
+          <p className="text-xs text-gray-500 dark:text-nj-muted">
+            Read-only access (gmail.readonly). Nightjar never sends email.
+          </p>
+        </div>
+      )}
+
+      <div className="border-t border-gray-100 dark:border-nj-border pt-4">
+        <button
+          type="button"
+          onClick={() => setShowClientId((p) => !p)}
+          className="text-xs text-gray-400 dark:text-nj-muted hover:text-gray-600 dark:hover:text-nj-text transition-colors"
+        >
+          {showClientId ? 'Hide' : 'Show'} OAuth setup
+        </button>
+        {showClientId && (
+          <div className="mt-3 space-y-2">
+            <label className="block text-sm font-medium text-gray-700 dark:text-nj-text-dim">
+              Google OAuth Client ID
+            </label>
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={clientId}
+                onChange={(e) => setClientIdState(e.target.value)}
+                placeholder="xxxx.apps.googleusercontent.com"
+                className="flex-1 rounded-md border border-gray-300 dark:border-nj-border bg-white dark:bg-nj-bg text-sm text-gray-900 dark:text-nj-text px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-nj-accent"
+              />
+              <button
+                type="button"
+                onClick={handleSaveClientId}
+                className="rounded-md bg-nj-accent px-3 py-1.5 text-sm font-medium text-white hover:bg-nj-accent-bright transition-colors"
+              >
+                Save
+              </button>
+            </div>
+            <p className="text-xs text-gray-400 dark:text-nj-muted">
+              Create a Desktop OAuth client at console.cloud.google.com. Enable Gmail API. Add
+              http://localhost:19847/oauth/callback as a redirect URI.
+            </p>
+          </div>
+        )}
+      </div>
     </Section>
   );
 }

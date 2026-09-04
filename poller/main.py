@@ -31,9 +31,11 @@ from poller.registry import (
 )
 from poller.sources import get_adapter
 from poller.store import (
+    SHARDING_THRESHOLD,
     load_feed,
     load_state,
     save_feed,
+    save_feed_sharded,
     save_meta,
     save_state,
 )
@@ -331,7 +333,20 @@ async def run_pipeline(
 
     if output_changed:
         save_feed(feed_path, updated_feed, now_str, companies=companies)
-        save_meta(meta_path, feed_path, now_str, len(updated_feed))
+        shard_hashes = None
+        if len(updated_feed) >= SHARDING_THRESHOLD:
+            feed_shard_dir = resolved_data / "feed"
+            shard_hashes = save_feed_sharded(
+                feed_shard_dir, updated_feed, now_str, companies=companies,
+            )
+            logger.info(
+                "feed sharded into %d shards (%d postings)",
+                len(shard_hashes), len(updated_feed),
+            )
+        save_meta(
+            meta_path, feed_path, now_str, len(updated_feed),
+            shard_hashes=shard_hashes,
+        )
         logger.info("feed.json written (%d postings)", len(updated_feed))
     else:
         logger.info("no feed changes, skipping write")

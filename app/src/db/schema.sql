@@ -2,7 +2,7 @@ CREATE TABLE schema_version (
   version INTEGER NOT NULL
 );
 
-INSERT INTO schema_version (version) VALUES (4);
+INSERT INTO schema_version (version) VALUES (5);
 
 CREATE TABLE postings_cache (
   id              TEXT PRIMARY KEY,
@@ -63,3 +63,26 @@ CREATE TABLE companies_meta (
   name         TEXT NOT NULL,
   typical_open TEXT
 );
+
+CREATE TABLE gmail_suggestions (
+  id            TEXT PRIMARY KEY,
+  email_id      TEXT NOT NULL,
+  signal_type   TEXT NOT NULL CHECK (
+    signal_type IN ('interview', 'offer', 'rejection', 'assessment')
+  ),
+  company_slug  TEXT NOT NULL,
+  company_name  TEXT NOT NULL,
+  posting_id    TEXT NOT NULL,
+  sender_domain TEXT NOT NULL,
+  subject       TEXT NOT NULL,
+  received_at   TEXT NOT NULL,
+  status        TEXT NOT NULL DEFAULT 'pending' CHECK (
+    status IN ('pending', 'accepted', 'dismissed')
+  ),
+  created_at    TEXT NOT NULL,
+  FOREIGN KEY (posting_id) REFERENCES applications(posting_id)
+);
+
+CREATE UNIQUE INDEX idx_gmail_suggestions_email ON gmail_suggestions(email_id);
+CREATE INDEX idx_gmail_suggestions_status ON gmail_suggestions(status);
+CREATE INDEX idx_gmail_suggestions_posting ON gmail_suggestions(posting_id);

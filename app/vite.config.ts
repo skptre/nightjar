@@ -57,5 +57,10 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: [],
+    alias: {
+      '@tauri-apps/plugin-store': path.resolve(__dirname, 'src/test-stubs/tauri-store.ts'),
+      '@tauri-apps/plugin-shell': path.resolve(__dirname, 'src/test-stubs/tauri-shell.ts'),
+      '@tauri-apps/plugin-autostart': path.resolve(__dirname, 'src/test-stubs/tauri-autostart.ts'),
+    },
   },
 });

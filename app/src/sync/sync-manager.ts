@@ -6,7 +6,9 @@ import { fireNewPostingNotifications, requestNotificationPermission } from './no
 import { prefetchDescriptions } from './description-fetch';
 import { recomputePendingCategoryTaxonomy } from '@/classify/recompute';
 import { runAutoGhost } from '@/views/Pipeline/auto-ghost';
-import { updateTrayInfo } from '@/lib/platform';
+import { isTauri, updateTrayInfo } from '@/lib/platform';
+import { isGmailConnected } from '@/integrations/gmail-auth';
+import { runGmailScan } from '@/integrations/gmail-service';
 
 export type SyncStatus = 'idle' | 'syncing' | 'error';
 
@@ -147,6 +149,20 @@ export class SyncManager {
 
       if (!result.skipped) {
         void prefetchDescriptions(this.db, undefined, this.profile ?? undefined);
+      }
+
+      if (isTauri()) {
+        try {
+          const connected = await isGmailConnected();
+          if (connected) {
+            const gmailNew = await runGmailScan(this.db);
+            if (gmailNew > 0) {
+              console.log(`[nightjar] Gmail scan found ${String(gmailNew)} new suggestion(s)`);
+            }
+          }
+        } catch (gmailErr: unknown) {
+          console.warn('[nightjar] Gmail scan failed:', gmailErr);
+        }
       }
 
       return result;

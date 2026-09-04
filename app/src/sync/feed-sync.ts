@@ -184,18 +184,66 @@ export async function fetchShardIndex(baseUrl?: string): Promise<ShardIndex | nu
   }
 }
 
-export async function fetchShard(shardId: string, baseUrl?: string): Promise<ShardData | null> {
+export async function computeSha256(text: string): Promise<string> {
+  const encoder = new TextEncoder();
+  const bytes = encoder.encode(text);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', bytes);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+export class ShardValidationError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'ShardValidationError';
+  }
+}
+
+export async function fetchShard(
+  shardId: string,
+  expectedInfo: ShardInfo,
+  baseUrl?: string,
+): Promise<ShardData> {
   const base = baseUrl ?? getFeedBaseUrl();
   const url = `${base}/feed/${shardId}.json`;
-  try {
-    const response = await fetch(url);
-    if (!response.ok) return null;
-    const data: unknown = await response.json();
-    if (!isShardData(data)) return null;
-    return data;
-  } catch {
-    return null;
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Shard fetch failed: ${shardId} (HTTP ${String(response.status)})`);
   }
+
+  const rawText = await response.text();
+
+  const hash = await computeSha256(rawText);
+  if (hash !== expectedInfo.sha256) {
+    throw new ShardValidationError(
+      `Shard ${shardId} SHA-256 mismatch: expected ${expectedInfo.sha256}, got ${hash}`,
+    );
+  }
+
+  const data: unknown = JSON.parse(rawText);
+  if (!isShardData(data)) {
+    throw new ShardValidationError(`Shard ${shardId} response is not valid shard data`);
+  }
+
+  if (data.shard_id !== shardId) {
+    throw new ShardValidationError(
+      `Shard ID mismatch: requested ${shardId}, received ${data.shard_id}`,
+    );
+  }
+
+  const actualCount = Object.keys(data.postings).length;
+  if (data.count !== actualCount) {
+    throw new ShardValidationError(
+      `Shard ${shardId} internal count mismatch: header says ${String(data.count)}, actual postings: ${String(actualCount)}`,
+    );
+  }
+  if (actualCount !== expectedInfo.count) {
+    throw new ShardValidationError(
+      `Shard ${shardId} count mismatch with meta: meta says ${String(expectedInfo.count)}, actual: ${String(actualCount)}`,
+    );
+  }
+
+  return data;
 }
 
 function isShardIndex(value: unknown): value is ShardIndex {
@@ -351,29 +399,30 @@ async function syncFeedSharded(
     return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: true };
   }
 
-  const shardResults = await Promise.all(
-    changedShardIds.map((id) => fetchShard(id, baseUrl)),
+  const shardResults = await Promise.allSettled(
+    changedShardIds.map((id) => fetchShard(id, shards[id]!, baseUrl)),
   );
 
-  const failedShardIds: string[] = [];
+  const failedShards: string[] = [];
   const mergedPostings: Record<string, FeedPosting> = {};
   const newShardHashes: Record<string, string> = {};
 
   for (let i = 0; i < changedShardIds.length; i++) {
-    const shardData = shardResults[i];
+    const result = shardResults[i]!;
     const shardId = changedShardIds[i]!;
-    if (!shardData) {
-      failedShardIds.push(shardId);
+    if (result.status === 'rejected') {
+      const reason = result.reason instanceof Error ? result.reason.message : String(result.reason);
+      failedShards.push(`${shardId}: ${reason}`);
       continue;
     }
-    for (const [pid, posting] of Object.entries(shardData.postings)) {
+    for (const [pid, posting] of Object.entries(result.value.postings)) {
       mergedPostings[pid] = posting;
     }
     newShardHashes[shardId] = shards[shardId]!.sha256;
   }
 
-  if (failedShardIds.length > 0) {
-    return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: false, error: `Failed to fetch shards: ${failedShardIds.join(', ')}` };
+  if (failedShards.length > 0) {
+    return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: false, error: `Shard sync failed: ${failedShards.join('; ')}` };
   }
 
   for (const [shardId, hash] of Object.entries(storedShardHashes)) {

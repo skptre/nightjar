@@ -482,3 +482,71 @@ class TestPipelineStateTracking:
                 skip_simplify=True,
             )
             mock_git.assert_not_called()
+
+
+@pytest.mark.asyncio()
+class TestStaleSourcePruning:
+    async def test_stale_sources_removed_from_state(
+        self, tmp_path: Path,
+    ) -> None:
+        data_dir = tmp_path / "data"
+        data_dir.mkdir()
+        registry_path = tmp_path / "companies.yaml"
+
+        company = make_company(
+            slug="alpha", name="Alpha", source_type="greenhouse",
+            board_token="alpha",
+        )
+        _write_registry(registry_path, [company])
+
+        _seed_state(
+            data_dir / "state.json",
+            sources={
+                "greenhouse:alpha": make_source_health(bootstrapped=True),
+                "ashby:removed-co": make_source_health(bootstrapped=True),
+                "lever:gone-corp": make_source_health(bootstrapped=True),
+            },
+        )
+
+        gh_adapter = _FakeAdapter(_greenhouse_postings("alpha"))
+
+        with patch("poller.main.get_adapter", return_value=gh_adapter):
+            await run_pipeline(
+                dry_run=True,
+                registry_path=registry_path,
+                data_dir=data_dir,
+                skip_simplify=True,
+            )
+
+        state = load_state(data_dir / "state.json")
+        assert "greenhouse:alpha" in state.sources
+        assert "ashby:removed-co" not in state.sources
+        assert "lever:gone-corp" not in state.sources
+
+    async def test_simplify_meta_key_preserved(
+        self, tmp_path: Path,
+    ) -> None:
+        data_dir = tmp_path / "data"
+        data_dir.mkdir()
+        registry_path = tmp_path / "companies.yaml"
+
+        _write_registry(registry_path, [])
+
+        _seed_state(
+            data_dir / "state.json",
+            sources={
+                "simplify:__meta__": make_source_health(bootstrapped=True),
+                "ashby:removed-co": make_source_health(bootstrapped=True),
+            },
+        )
+
+        await run_pipeline(
+            dry_run=True,
+            registry_path=registry_path,
+            data_dir=data_dir,
+            skip_simplify=True,
+        )
+
+        state = load_state(data_dir / "state.json")
+        assert "simplify:__meta__" in state.sources
+        assert "ashby:removed-co" not in state.sources

@@ -187,6 +187,22 @@ async def run_pipeline(
     logger.info("loaded %d companies", len(companies))
 
     state = load_state(state_path)
+
+    valid_source_keys = {
+        f"{source.type}:{company.slug}"
+        for company in companies
+        for source in company.sources
+    }
+    valid_source_keys.add("simplify:__meta__")
+    stale_keys = [k for k in state.sources if k not in valid_source_keys]
+    if stale_keys:
+        for k in stale_keys:
+            del state.sources[k]
+        logger.info(
+            "pruned %d stale source(s) from state: %s",
+            len(stale_keys), ", ".join(sorted(stale_keys)[:10]),
+        )
+
     previous_feed = load_feed(feed_path)
     previous_count = len(previous_feed)
     previous_feed = filter_feed_mapping(previous_feed)

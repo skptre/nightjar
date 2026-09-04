@@ -5,13 +5,17 @@ import {
   upsertPostings,
   fetchMeta,
   fetchFeed,
+  computeSha256,
+  ShardValidationError,
   getStoredMetaHash,
   setStoredMetaHash,
   getStoredLastModified,
   setStoredLastModified,
+  getStoredShardHashes,
   type FeedData,
   type FeedPosting,
   type MetaData,
+  type ShardInfo,
 } from './feed-sync';
 import { fireNewPostingNotifications, getNewPostingSummaries } from './notifications';
 
@@ -51,7 +55,7 @@ function makeMeta(sha256: string, count: number): MetaData {
   };
 }
 
-function mockFetchResponses(responses: Record<string, { ok: boolean; body: unknown; status?: number }>): void {
+function mockFetchResponses(responses: Record<string, { ok: boolean; body?: unknown; rawText?: string; status?: number }>): void {
   vi.stubGlobal('fetch', vi.fn((url: string) => {
     for (const [pattern, response] of Object.entries(responses)) {
       if (url.includes(pattern)) {
@@ -61,17 +65,20 @@ function mockFetchResponses(responses: Record<string, { ok: boolean; body: unkno
             ok: false,
             status,
             json: () => Promise.reject(new Error('Not found')),
+            text: () => Promise.resolve(''),
           });
         }
+        const textContent = response.rawText ?? JSON.stringify(response.body);
         return Promise.resolve({
           ok: true,
           status: response.status ?? 200,
           headers: new Headers({ 'content-type': 'application/json' }),
-          json: () => Promise.resolve(response.body),
+          json: () => Promise.resolve(response.body ?? JSON.parse(textContent)),
+          text: () => Promise.resolve(textContent),
         });
       }
     }
-    return Promise.resolve({ ok: false, status: 404 });
+    return Promise.resolve({ ok: false, status: 404, text: () => Promise.resolve('') });
   }));
 }
 
@@ -528,6 +535,299 @@ describe('feed-sync', () => {
 
       expect(result.newPostingIds).toEqual(['new1']);
       expect(result.updatedCount).toBe(1);
+    });
+  });
+
+  describe('sharded sync', () => {
+    function makeShardText(shardId: string, postings: Record<string, FeedPosting>): string {
+      return JSON.stringify({
+        shard_id: shardId,
+        updated_at: '2026-08-12T00:00:00Z',
+        count: Object.keys(postings).length,
+        postings,
+      }, null, 2) + '\n';
+    }
+
+    async function makeShardWithHash(shardId: string, postings: Record<string, FeedPosting>) {
+      const text = makeShardText(shardId, postings);
+      const sha256 = await computeSha256(text);
+      return { text, sha256, count: Object.keys(postings).length };
+    }
+
+    function makeShardedMeta(
+      feedHash: string,
+      totalCount: number,
+      shards: Record<string, ShardInfo>,
+    ): MetaData {
+      return {
+        updated_at: '2026-08-12T00:00:00Z',
+        sha256: feedHash,
+        count: totalCount,
+        sharded: true,
+        shards,
+      };
+    }
+
+    it('correctly syncs multiple valid shards', async () => {
+      const p1 = makePosting({ id: 'p1', source: 'greenhouse', company: 'Acme', company_slug: 'acme' });
+      const p2 = makePosting({ id: 'p2', source: 'lever', company: 'Beta', company_slug: 'beta' });
+
+      const gh = await makeShardWithHash('greenhouse', { p1 });
+      const lv = await makeShardWithHash('lever', { p2 });
+
+      const meta = makeShardedMeta('feedhash_new', 2, {
+        greenhouse: { sha256: gh.sha256, count: gh.count, updated_at: '2026-08-12T00:00:00Z' },
+        lever: { sha256: lv.sha256, count: lv.count, updated_at: '2026-08-12T00:00:00Z' },
+      });
+
+      mockFetchResponses({
+        'meta.json': { ok: true, body: meta },
+        'greenhouse.json': { ok: true, rawText: gh.text },
+        'lever.json': { ok: true, rawText: lv.text },
+        'index.json': { ok: false, body: null },
+      });
+
+      const result = await syncFeed(db, '/test');
+
+      expect(result.error).toBeUndefined();
+      expect(result.skipped).toBe(false);
+      expect(result.newPostingIds).toHaveLength(2);
+      expect(result.newPostingIds).toContain('p1');
+      expect(result.newPostingIds).toContain('p2');
+      expect(result.totalCount).toBe(2);
+
+      expect(getStoredMetaHash()).toBe('feedhash_new');
+      const storedShardHashes = getStoredShardHashes();
+      expect(storedShardHashes['greenhouse']).toBe(gh.sha256);
+      expect(storedShardHashes['lever']).toBe(lv.sha256);
+    });
+
+    it('rejects shard with mismatched shard_id — zero writes', async () => {
+      const wrongIdPostings = { p1: makePosting({ id: 'p1', source: 'greenhouse' }) };
+      const wrongIdText = makeShardText('lever', wrongIdPostings);
+      const wrongIdHash = await computeSha256(wrongIdText);
+
+      const meta = makeShardedMeta('feedhash', 1, {
+        greenhouse: { sha256: wrongIdHash, count: 1, updated_at: '2026-08-12T00:00:00Z' },
+      });
+
+      mockFetchResponses({
+        'meta.json': { ok: true, body: meta },
+        'greenhouse.json': { ok: true, rawText: wrongIdText },
+        'index.json': { ok: false, body: null },
+      });
+
+      const result = await syncFeed(db, '/test');
+
+      expect(result.error).toContain('Shard ID mismatch');
+      expect(result.newPostingIds).toHaveLength(0);
+
+      const rows = await db.query<{ id: string }>('SELECT id FROM postings_cache');
+      expect(rows).toHaveLength(0);
+    });
+
+    it('rejects shard with internal count mismatch — zero writes', async () => {
+      const badCountData = {
+        shard_id: 'greenhouse',
+        updated_at: '2026-08-12T00:00:00Z',
+        count: 5,
+        postings: { p1: makePosting({ id: 'p1', source: 'greenhouse' }) },
+      };
+      const badCountText = JSON.stringify(badCountData, null, 2) + '\n';
+      const badCountHash = await computeSha256(badCountText);
+
+      const meta = makeShardedMeta('feedhash', 5, {
+        greenhouse: { sha256: badCountHash, count: 5, updated_at: '2026-08-12T00:00:00Z' },
+      });
+
+      mockFetchResponses({
+        'meta.json': { ok: true, body: meta },
+        'greenhouse.json': { ok: true, rawText: badCountText },
+        'index.json': { ok: false, body: null },
+      });
+
+      const result = await syncFeed(db, '/test');
+
+      expect(result.error).toContain('internal count mismatch');
+      const rows = await db.query<{ id: string }>('SELECT id FROM postings_cache');
+      expect(rows).toHaveLength(0);
+    });
+
+    it('rejects shard with meta count mismatch — zero writes', async () => {
+      const p1 = makePosting({ id: 'p1', source: 'greenhouse' });
+      const gh = await makeShardWithHash('greenhouse', { p1 });
+
+      const meta = makeShardedMeta('feedhash', 10, {
+        greenhouse: { sha256: gh.sha256, count: 10, updated_at: '2026-08-12T00:00:00Z' },
+      });
+
+      mockFetchResponses({
+        'meta.json': { ok: true, body: meta },
+        'greenhouse.json': { ok: true, rawText: gh.text },
+        'index.json': { ok: false, body: null },
+      });
+
+      const result = await syncFeed(db, '/test');
+
+      expect(result.error).toContain('count mismatch with meta');
+      const rows = await db.query<{ id: string }>('SELECT id FROM postings_cache');
+      expect(rows).toHaveLength(0);
+    });
+
+    it('rejects shard with wrong SHA-256 — zero writes', async () => {
+      const p1 = makePosting({ id: 'p1', source: 'greenhouse' });
+      const gh = await makeShardWithHash('greenhouse', { p1 });
+
+      const meta = makeShardedMeta('feedhash', 1, {
+        greenhouse: { sha256: 'badhash000000', count: 1, updated_at: '2026-08-12T00:00:00Z' },
+      });
+
+      mockFetchResponses({
+        'meta.json': { ok: true, body: meta },
+        'greenhouse.json': { ok: true, rawText: gh.text },
+        'index.json': { ok: false, body: null },
+      });
+
+      const result = await syncFeed(db, '/test');
+
+      expect(result.error).toContain('SHA-256 mismatch');
+      const rows = await db.query<{ id: string }>('SELECT id FROM postings_cache');
+      expect(rows).toHaveLength(0);
+    });
+
+    it('one failed shard causes zero writes even if others succeed', async () => {
+      const p1 = makePosting({ id: 'p1', source: 'greenhouse' });
+      const p2 = makePosting({ id: 'p2', source: 'lever' });
+      const gh = await makeShardWithHash('greenhouse', { p1 });
+      const lv = await makeShardWithHash('lever', { p2 });
+
+      const meta = makeShardedMeta('feedhash', 2, {
+        greenhouse: { sha256: gh.sha256, count: gh.count, updated_at: '2026-08-12T00:00:00Z' },
+        lever: { sha256: 'wrong_hash', count: lv.count, updated_at: '2026-08-12T00:00:00Z' },
+      });
+
+      mockFetchResponses({
+        'meta.json': { ok: true, body: meta },
+        'greenhouse.json': { ok: true, rawText: gh.text },
+        'lever.json': { ok: true, rawText: lv.text },
+        'index.json': { ok: false, body: null },
+      });
+
+      const result = await syncFeed(db, '/test');
+
+      expect(result.error).toBeDefined();
+      expect(result.error).toContain('lever');
+
+      const rows = await db.query<{ id: string }>('SELECT id FROM postings_cache');
+      expect(rows).toHaveLength(0);
+    });
+
+    it('handles flat-to-sharded transition', async () => {
+      const flatMeta = makeMeta('flathash', 1);
+      const flatFeed = makeFeed({ p1: makePosting({ id: 'p1', source: 'greenhouse' }) });
+
+      mockFetchResponses({
+        'meta.json': { ok: true, body: flatMeta },
+        'feed.json': { ok: true, body: flatFeed },
+      });
+
+      const flatResult = await syncFeed(db, '/test');
+      expect(flatResult.newPostingIds).toEqual(['p1']);
+      expect(getStoredMetaHash()).toBe('flathash');
+
+      vi.restoreAllMocks();
+
+      const p1 = makePosting({ id: 'p1', source: 'greenhouse' });
+      const p2 = makePosting({ id: 'p2', source: 'lever' });
+      const gh = await makeShardWithHash('greenhouse', { p1 });
+      const lv = await makeShardWithHash('lever', { p2 });
+
+      const shardedMeta = makeShardedMeta('shardedhash', 2, {
+        greenhouse: { sha256: gh.sha256, count: gh.count, updated_at: '2026-08-12T00:00:00Z' },
+        lever: { sha256: lv.sha256, count: lv.count, updated_at: '2026-08-12T00:00:00Z' },
+      });
+
+      mockFetchResponses({
+        'meta.json': { ok: true, body: shardedMeta },
+        'greenhouse.json': { ok: true, rawText: gh.text },
+        'lever.json': { ok: true, rawText: lv.text },
+        'index.json': { ok: false, body: null },
+      });
+
+      const shardedResult = await syncFeed(db, '/test');
+
+      expect(shardedResult.error).toBeUndefined();
+      expect(shardedResult.skipped).toBe(false);
+      expect(shardedResult.newPostingIds).toContain('p2');
+      expect(getStoredMetaHash()).toBe('shardedhash');
+
+      const rows = await db.query<{ id: string }>('SELECT id FROM postings_cache ORDER BY id');
+      expect(rows).toHaveLength(2);
+    });
+
+    it('skips unchanged shards and only fetches changed ones', async () => {
+      const p1 = makePosting({ id: 'p1', source: 'greenhouse' });
+      const p2 = makePosting({ id: 'p2', source: 'lever' });
+      const gh = await makeShardWithHash('greenhouse', { p1 });
+      const lv = await makeShardWithHash('lever', { p2 });
+
+      const meta1 = makeShardedMeta('hash1', 2, {
+        greenhouse: { sha256: gh.sha256, count: gh.count, updated_at: '2026-08-12T00:00:00Z' },
+        lever: { sha256: lv.sha256, count: lv.count, updated_at: '2026-08-12T00:00:00Z' },
+      });
+
+      mockFetchResponses({
+        'meta.json': { ok: true, body: meta1 },
+        'greenhouse.json': { ok: true, rawText: gh.text },
+        'lever.json': { ok: true, rawText: lv.text },
+        'index.json': { ok: false, body: null },
+      });
+
+      await syncFeed(db, '/test');
+      vi.restoreAllMocks();
+
+      const p2updated = makePosting({ id: 'p2', source: 'lever', title: 'Updated Role' });
+      const lvUpdated = await makeShardWithHash('lever', { p2: p2updated });
+
+      const meta2 = makeShardedMeta('hash2', 2, {
+        greenhouse: { sha256: gh.sha256, count: gh.count, updated_at: '2026-08-12T00:00:00Z' },
+        lever: { sha256: lvUpdated.sha256, count: lvUpdated.count, updated_at: '2026-08-13T00:00:00Z' },
+      });
+
+      mockFetchResponses({
+        'meta.json': { ok: true, body: meta2 },
+        'lever.json': { ok: true, rawText: lvUpdated.text },
+        'index.json': { ok: false, body: null },
+      });
+
+      const result = await syncFeed(db, '/test');
+      expect(result.error).toBeUndefined();
+
+      const fetchCalls = vi.mocked(fetch).mock.calls.map((c) => c[0] as string);
+      expect(fetchCalls.some((u) => u.includes('greenhouse.json'))).toBe(false);
+      expect(fetchCalls.some((u) => u.includes('lever.json'))).toBe(true);
+    });
+
+    it('rejects shard HTTP failure — zero writes', async () => {
+      const p1 = makePosting({ id: 'p1', source: 'greenhouse' });
+      const gh = await makeShardWithHash('greenhouse', { p1 });
+
+      const meta = makeShardedMeta('feedhash', 1, {
+        greenhouse: { sha256: gh.sha256, count: gh.count, updated_at: '2026-08-12T00:00:00Z' },
+      });
+
+      mockFetchResponses({
+        'meta.json': { ok: true, body: meta },
+        'greenhouse.json': { ok: false, body: null, status: 500 },
+        'index.json': { ok: false, body: null },
+      });
+
+      const result = await syncFeed(db, '/test');
+
+      expect(result.error).toBeDefined();
+      expect(result.error).toContain('greenhouse');
+      const rows = await db.query<{ id: string }>('SELECT id FROM postings_cache');
+      expect(rows).toHaveLength(0);
     });
   });
 });

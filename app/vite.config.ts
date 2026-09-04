@@ -3,6 +3,9 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import fs from 'fs';
+import { fileURLToPath } from 'node:url';
+
+const appDirectory = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [
@@ -10,8 +13,8 @@ export default defineConfig({
     {
       name: 'copy-sql-wasm',
       buildStart() {
-        const src = path.resolve(__dirname, 'node_modules/sql.js/dist/sql-wasm.wasm');
-        const destDir = path.resolve(__dirname, 'public');
+        const src = path.resolve(appDirectory, 'node_modules/sql.js/dist/sql-wasm.wasm');
+        const destDir = path.resolve(appDirectory, 'public');
         const dest = path.resolve(destDir, 'sql-wasm.wasm');
         if (fs.existsSync(src) && !fs.existsSync(dest)) {
           fs.mkdirSync(destDir, { recursive: true });
@@ -25,7 +28,7 @@ export default defineConfig({
         server.middlewares.use((req, res, next) => {
           if (req.url?.startsWith('/data/')) {
             const relativePath = req.url.slice(6);
-            const filePath = path.resolve(__dirname, '..', 'data', relativePath);
+            const filePath = path.resolve(appDirectory, '..', 'data', relativePath);
             if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
               const ext = path.extname(filePath).toLowerCase();
               const contentType = ext === '.json' ? 'application/json' : 'text/plain';
@@ -42,7 +45,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': path.resolve(appDirectory, 'src'),
     },
   },
   server: {
@@ -58,9 +61,9 @@ export default defineConfig({
     globals: true,
     setupFiles: [],
     alias: {
-      '@tauri-apps/plugin-store': path.resolve(__dirname, 'src/test-stubs/tauri-store.ts'),
-      '@tauri-apps/plugin-shell': path.resolve(__dirname, 'src/test-stubs/tauri-shell.ts'),
-      '@tauri-apps/plugin-autostart': path.resolve(__dirname, 'src/test-stubs/tauri-autostart.ts'),
+      '@tauri-apps/plugin-store': path.resolve(appDirectory, 'src/test-stubs/tauri-store.ts'),
+      '@tauri-apps/plugin-shell': path.resolve(appDirectory, 'src/test-stubs/tauri-shell.ts'),
+      '@tauri-apps/plugin-autostart': path.resolve(appDirectory, 'src/test-stubs/tauri-autostart.ts'),
     },
   },
 });

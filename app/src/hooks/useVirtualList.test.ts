@@ -11,13 +11,13 @@ beforeEach(() => {
 });
 
 describe('useVirtualList', () => {
-  it('returns zero range when container height is 0', () => {
+  it('returns an initial render range while container height is being measured', () => {
     const { result } = renderHook(() =>
       useVirtualList({ itemCount: 100, itemHeight: 72 }),
     );
 
     expect(result.current.visibleRange.start).toBe(0);
-    expect(result.current.visibleRange.end).toBe(0);
+    expect(result.current.visibleRange.end).toBe(10);
     expect(result.current.totalHeight).toBe(7200);
   });
 
@@ -53,6 +53,7 @@ describe('useVirtualList', () => {
     );
 
     expect(result.current.totalHeight).toBe(72);
+    expect(result.current.visibleRange).toEqual({ start: 0, end: 1 });
   });
 
   it('provides scrollToIndex function', () => {

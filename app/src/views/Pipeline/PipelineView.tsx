@@ -1,4 +1,5 @@
 import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { useDatabase } from '@/providers/DatabaseProvider';
 import { OutcomeDialog } from '@/outcomes/OutcomeDialog';
 import { transitionApplicationStatus } from '@/outcomes/outcome-service';
@@ -300,6 +301,23 @@ export function PipelineView(): React.ReactNode {
 
   const totalPipeline = cards.filter((c) => c.status !== 'skipped').length;
 
+  if (totalPipeline === 0) {
+    return (
+      <div>
+        <h1 className="text-xl font-semibold text-gray-950">Applications</h1>
+        <div className="mt-5 rounded-lg border border-gray-200 bg-white px-6 py-16 text-center">
+          <h2 className="text-base font-semibold text-gray-900">Your application tracker starts here.</h2>
+          <p className="mx-auto mt-2 max-w-md text-sm text-gray-500">
+            Save a job or mark it applied, and Nightjar will organize the next steps here.
+          </p>
+          <Link to="/" className="mt-5 inline-flex rounded-md bg-violet-700 px-4 py-2 text-sm font-medium text-white hover:bg-violet-800">
+            Browse jobs
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
       {transitionError && (
@@ -315,18 +333,8 @@ export function PipelineView(): React.ReactNode {
 
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-nj-text">
-            Pipeline
-          </h2>
-          {totalPipeline > 0 ? (
-            <p className="text-xs text-gray-500 dark:text-nj-muted mt-0.5">
-              {totalPipeline} posting{totalPipeline !== 1 ? 's' : ''} in pipeline
-            </p>
-          ) : (
-            <p className="text-xs text-gray-500 dark:text-nj-muted mt-0.5">
-              Save or apply to postings from the Feed to see them here.
-            </p>
-          )}
+          <h1 className="text-xl font-semibold text-gray-950">Applications</h1>
+          <p className="mt-1 text-sm text-gray-500">Move applications forward as their status changes.</p>
         </div>
         {skippedCount > 0 && (
           <button

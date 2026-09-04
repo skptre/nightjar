@@ -1,4 +1,4 @@
-import { useState, useEffect, type ReactNode } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSync } from '@/providers/SyncProvider';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
@@ -8,24 +8,13 @@ interface LayoutProps {
 }
 
 export function Layout({ children }: LayoutProps): ReactNode {
-  const { status, lastSyncedAt, newPostingCount } = useSync();
+  const { status, lastSyncedAt } = useSync();
   const { online } = useNetworkStatus();
-  const [darkMode, setDarkMode] = useState(() => {
-    const stored = localStorage.getItem('nightjar_dark_mode');
-    return stored === null ? true : stored === 'true';
-  });
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', darkMode);
-  }, [darkMode]);
-
-  const toggleDarkMode = (): void => {
-    setDarkMode((prev) => {
-      const next = !prev;
-      localStorage.setItem('nightjar_dark_mode', String(next));
-      return next;
-    });
-  };
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('nightjar_dark_mode', 'false');
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-nj-bg text-gray-900 dark:text-nj-text">
@@ -37,17 +26,9 @@ export function Layout({ children }: LayoutProps): ReactNode {
             </span>
             <div className="flex gap-1">
               <NavTab to="/" end>
-                Feed
-                {newPostingCount > 0 && (
-                  <span className="ml-1.5 inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium bg-nj-accent text-white">
-                    {newPostingCount}
-                  </span>
-                )}
+                Jobs
               </NavTab>
-              <NavTab to="/pipeline">Pipeline</NavTab>
-              <NavTab to="/calendar">Calendar</NavTab>
-              <NavTab to="/companies">Companies</NavTab>
-              <NavTab to="/insights">Insights</NavTab>
+              <NavTab to="/applications">Applications</NavTab>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -65,13 +46,6 @@ export function Layout({ children }: LayoutProps): ReactNode {
             >
               <GearIcon />
             </NavLink>
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-md text-gray-500 hover:text-gray-700 dark:text-nj-muted dark:hover:text-nj-text transition-colors"
-              aria-label="Toggle dark mode"
-            >
-              {darkMode ? <SunIcon /> : <MoonIcon />}
-            </button>
           </div>
         </div>
       </nav>
@@ -167,32 +141,6 @@ function formatRelativeTime(iso: string): string {
   const hours = Math.floor(minutes / 60);
   if (hours < 24) return `${String(hours)}h ago`;
   return `${String(Math.floor(hours / 24))}d ago`;
-}
-
-function SunIcon(): ReactNode {
-  return (
-    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-      />
-    </svg>
-  );
-}
-
-function MoonIcon(): ReactNode {
-  return (
-    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-      />
-    </svg>
-  );
 }
 
 function GearIcon(): ReactNode {

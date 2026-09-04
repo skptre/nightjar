@@ -5,14 +5,12 @@ import { useToast } from '@/components/Toast';
 import { isTauri, GMAIL_ENABLED } from '@/lib/platform';
 import {
   WORK_AUTH_OPTIONS,
-  CLASS_YEAR_OPTIONS,
   CATEGORY_GROUPS,
   SYNC_INTERVAL_OPTIONS,
   DEFAULT_SYNC_INTERVAL_MS,
   computeGradWindow,
   inferRequiresSponsorship,
 } from '@/profile/types';
-import { clearProfile } from '@/profile/profile-store';
 import { exportApplicationsCSV } from '@/export/export-csv';
 import { exportApplicationsJSON } from '@/export/export-json';
 import { exportPostingsJSON } from '@/export/export-postings';
@@ -29,7 +27,6 @@ export function SettingsView(): ReactNode {
       <GeneralSection />
       <SyncSection />
       <ProfileSection />
-      <NotificationsSection />
       {GMAIL_ENABLED && isTauri() && <GmailSection />}
       <DataSection />
     </div>
@@ -39,38 +36,17 @@ export function SettingsView(): ReactNode {
 /* ── General ────────────────────────────────────────── */
 
 function GeneralSection(): ReactNode {
-  const [darkMode, setDarkMode] = useState(() => {
-    const stored = localStorage.getItem('nightjar_dark_mode');
-    return stored === null ? true : stored === 'true';
-  });
-
-  const toggleDarkMode = useCallback(() => {
-    setDarkMode((prev) => {
-      const next = !prev;
-      localStorage.setItem('nightjar_dark_mode', String(next));
-      document.documentElement.classList.toggle('dark', next);
-      return next;
-    });
-  }, []);
+  if (!isTauri()) return null;
 
   return (
     <Section title="General">
-      <ToggleRow
-        label="Dark mode"
-        description="Use dark color scheme"
-        checked={darkMode}
-        disabled={false}
-        onChange={toggleDarkMode}
-      />
-      {isTauri() && <AutoLaunchRow />}
-      {isTauri() && (
-        <div className="border-t border-gray-100 dark:border-nj-border pt-4">
-          <p className="text-sm text-gray-500 dark:text-nj-muted">
-            Closing the window minimizes Nightjar to the system tray. Use the tray icon or
-            &ldquo;Quit&rdquo; from the tray menu to exit completely.
-          </p>
-        </div>
-      )}
+      <AutoLaunchRow />
+      <div className="border-t border-gray-100 pt-4">
+        <p className="text-sm text-gray-500">
+          Closing the window minimizes Nightjar to the system tray. Use the tray icon or
+          &ldquo;Quit&rdquo; from the tray menu to exit completely.
+        </p>
+      </div>
     </Section>
   );
 }
@@ -221,11 +197,29 @@ function SyncSection(): ReactNode {
 /* ── Profile ────────────────────────────────────────── */
 
 function ProfileSection(): ReactNode {
-  const { profile, updateProfile } = useProfile();
+  const { profile, updateProfile, beginProfileSetup } = useProfile();
   const { db } = useDatabase();
   const [showWizardConfirm, setShowWizardConfirm] = useState(false);
 
-  if (!profile) return null;
+  if (!profile) {
+    return (
+      <Section title="Preferences">
+        <div>
+          <p className="text-sm font-medium text-gray-900">Narrow your jobs</p>
+          <p className="mt-1 text-xs text-gray-500">
+            Add optional graduation, authorization, field, and location preferences.
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={beginProfileSetup}
+          className="w-fit rounded-md bg-violet-700 px-4 py-2 text-sm font-medium text-white hover:bg-violet-800"
+        >
+          Personalize jobs
+        </button>
+      </Section>
+    );
+  }
 
   const handleGraduationChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const graduation = e.target.value;
@@ -244,10 +238,6 @@ function ProfileSection(): ReactNode {
     });
   };
 
-  const handleClassYearChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
-    updateProfile({ current_class_year: e.target.value });
-  };
-
   const handleCategoryToggle = (cat: string): void => {
     const current = profile.target_categories;
     const next = current.includes(cat)
@@ -258,13 +248,12 @@ function ProfileSection(): ReactNode {
   };
 
   const handleResetProfile = (): void => {
-    clearProfile();
-    window.location.reload();
+    beginProfileSetup();
   };
 
   return (
     <Section title="Profile">
-      <div className="grid grid-cols-2 gap-4">
+      <div className="max-w-xs">
         <label className="block">
           <span className="text-sm font-medium text-gray-700 dark:text-nj-text-dim">
             Graduation
@@ -277,20 +266,6 @@ function ProfileSection(): ReactNode {
           />
         </label>
 
-        <label className="block">
-          <span className="text-sm font-medium text-gray-700 dark:text-nj-text-dim">
-            Class year
-          </span>
-          <select
-            value={profile.current_class_year}
-            onChange={handleClassYearChange}
-            className="mt-1 block w-full rounded-md border border-gray-300 dark:border-nj-border bg-white dark:bg-nj-bg text-sm text-gray-900 dark:text-nj-text px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-nj-accent"
-          >
-            {CLASS_YEAR_OPTIONS.map((opt) => (
-              <option key={opt.value} value={opt.value}>{opt.label}</option>
-            ))}
-          </select>
-        </label>
       </div>
 
       <label className="block">
@@ -382,17 +357,6 @@ function ProfileSection(): ReactNode {
 }
 
 /* ── Notifications (placeholder) ────────────────────── */
-
-function NotificationsSection(): ReactNode {
-  return (
-    <Section title="Notifications">
-      <p className="text-sm text-gray-500 dark:text-nj-muted">
-        Notification preferences will be available in a future update. New posting notifications
-        are currently enabled by default.
-      </p>
-    </Section>
-  );
-}
 
 /* ── Gmail ──────────────────────────────────────────── */
 

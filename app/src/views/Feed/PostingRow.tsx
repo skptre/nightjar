@@ -1,6 +1,5 @@
 import { useEffect, type RefObject } from 'react';
 import { EligibilityBadge } from '@/components/EligibilityBadge';
-import { ScoreBreakdown } from '@/components/ScoreBreakdown';
 import { CATEGORY_OPTIONS, type CategoryValue } from '@/classify/types';
 
 export interface PostingRowData {
@@ -44,11 +43,6 @@ function formatRelativeDate(iso: string): string {
   return `${String(Math.floor(days / 30))}mo`;
 }
 
-function termLabel(term: string | null): string | null {
-  if (!term || term === 'unknown') return null;
-  return term.replace(/_/g, ' ');
-}
-
 function categoryLabel(cat: string | null): string | null {
   if (!cat) return null;
   return CATEGORY_OPTIONS.find((option) => option.value === cat)?.shortLabel ?? cat;
@@ -65,8 +59,6 @@ function categoryTagStyle(cat: string | null): string {
 }
 
 export function PostingRow({ posting, selected, rowRef, onAction }: PostingRowProps): React.ReactNode {
-  const score = posting.score ?? 0;
-  const term = termLabel(posting.term);
   const category = categoryLabel(posting.category);
 
   return (
@@ -105,11 +97,6 @@ export function PostingRow({ posting, selected, rowRef, onAction }: PostingRowPr
 
       {/* Tags */}
       <div className="flex items-center gap-1.5 flex-shrink-0">
-        {term && (
-          <span className="px-1.5 py-0.5 text-xs rounded bg-gray-100 text-gray-600 dark:bg-nj-surface-2 dark:text-nj-text-dim">
-            {term}
-          </span>
-        )}
         {category && (
           <span className={`px-1.5 py-0.5 text-xs rounded ${categoryTagStyle(posting.category)}`}>
             {category}
@@ -123,7 +110,6 @@ export function PostingRow({ posting, selected, rowRef, onAction }: PostingRowPr
       </span>
 
       <EligibilityBadge eligibilityJson={posting.eligibility} />
-      <ScoreBreakdown score={score} breakdownJson={posting.score_breakdown} />
 
       {/* Actions */}
       <div className="flex items-center gap-1 flex-shrink-0">

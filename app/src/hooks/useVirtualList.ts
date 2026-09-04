@@ -38,7 +38,7 @@ export function useVirtualList({
     setContainerHeight(container.clientHeight);
 
     return () => observer.disconnect();
-  }, []);
+  }, [itemCount]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -56,13 +56,23 @@ export function useVirtualList({
       container.removeEventListener('scroll', handleScroll);
       cancelAnimationFrame(rafId.current);
     };
-  }, []);
+  }, [itemCount]);
 
   const totalHeight = itemCount * itemHeight;
 
   const { visibleRange, offsetTop } = useMemo(() => {
-    if (containerHeight === 0 || itemCount === 0) {
+    if (itemCount === 0) {
       return { visibleRange: { start: 0, end: 0 }, offsetTop: 0 };
+    }
+
+    // The list container is conditionally rendered after async data arrives.
+    // Render a small bootstrap window until ResizeObserver reports its height;
+    // otherwise there are no rows to give the container measurable content.
+    if (containerHeight === 0) {
+      return {
+        visibleRange: { start: 0, end: Math.min(itemCount, Math.max(overscan * 2, 1)) },
+        offsetTop: 0,
+      };
     }
 
     const startIndex = Math.floor(scrollTop / itemHeight);

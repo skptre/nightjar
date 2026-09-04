@@ -2,7 +2,6 @@ import { useState } from 'react';
 import {
   type Profile,
   WORK_AUTH_OPTIONS,
-  CLASS_YEAR_OPTIONS,
   CATEGORY_GROUPS,
   computeGradWindow,
   inferRequiresSponsorship,
@@ -10,12 +9,12 @@ import {
 
 interface ProfileSetupProps {
   onComplete: (profile: Profile) => void;
+  onBack: () => void;
 }
 
 interface Step1State {
   graduationYear: string;
   graduationMonth: string;
-  classYear: string;
   workAuth: string;
   requiresSponsorship: boolean | null;
   showSponsorshipQuestion: boolean;
@@ -51,12 +50,11 @@ function buildGraduationYears(): string[] {
   return years;
 }
 
-export function ProfileSetup({ onComplete }: ProfileSetupProps): React.ReactNode {
+export function ProfileSetup({ onComplete, onBack }: ProfileSetupProps): React.ReactNode {
   const [step, setStep] = useState<1 | 2>(1);
   const [step1, setStep1] = useState<Step1State>({
     graduationYear: '',
     graduationMonth: '05',
-    classYear: '',
     workAuth: '',
     requiresSponsorship: null,
     showSponsorshipQuestion: false,
@@ -115,7 +113,6 @@ export function ProfileSetup({ onComplete }: ProfileSetupProps): React.ReactNode
 
   const isStep1Valid =
     step1.graduationYear !== '' &&
-    step1.classYear !== '' &&
     step1.workAuth !== '' &&
     step1.requiresSponsorship !== null;
 
@@ -126,7 +123,9 @@ export function ProfileSetup({ onComplete }: ProfileSetupProps): React.ReactNode
     const profile: Profile = {
       graduation,
       grad_window: computeGradWindow(graduation),
-      current_class_year: step1.classYear,
+      // Retained in the persisted schema for backwards compatibility. Graduation
+      // date is the single source of education timing in the current setup flow.
+      current_class_year: 'unknown',
       work_auth: step1.workAuth,
       requires_sponsorship: step1.requiresSponsorship!,
       target_categories: step2.targetCategories,
@@ -198,26 +197,6 @@ export function ProfileSetup({ onComplete }: ProfileSetupProps): React.ReactNode
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Class year
-                </label>
-                <select
-                  value={step1.classYear}
-                  onChange={(e) =>
-                    setStep1((prev) => ({ ...prev, classYear: e.target.value }))
-                  }
-                  className="w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-gray-100"
-                >
-                  <option value="">Select class year</option>
-                  {CLASS_YEAR_OPTIONS.map((c) => (
-                    <option key={c.value} value={c.value}>
-                      {c.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Work authorization
                 </label>
                 <select
@@ -270,7 +249,14 @@ export function ProfileSetup({ onComplete }: ProfileSetupProps): React.ReactNode
                 </div>
               )}
 
-              <div className="flex justify-end pt-2">
+              <div className="flex justify-between pt-2">
+                <button
+                  type="button"
+                  onClick={onBack}
+                  className="px-4 py-2 rounded-md text-sm font-medium text-gray-600 hover:bg-gray-100 transition-colors"
+                >
+                  Back
+                </button>
                 <button
                   type="button"
                   disabled={!isStep1Valid}

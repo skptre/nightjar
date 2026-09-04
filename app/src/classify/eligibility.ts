@@ -154,6 +154,7 @@ function checkClassYear(
   description: string,
   profile: Profile,
 ): EligibilityFlag[] {
+  if (!profile.current_class_year || profile.current_class_year === 'unknown') return [];
   const flags: EligibilityFlag[] = [];
   const lower = description.toLowerCase();
 

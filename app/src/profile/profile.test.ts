@@ -7,7 +7,7 @@ function makeTestProfile(overrides: Partial<Profile> = {}): Profile {
   return {
     graduation: '2029-05',
     grad_window: ['2028-11', '2029-06'],
-    current_class_year: 'junior',
+    current_class_year: 'unknown',
     work_auth: 'f1_opt_cpt',
     requires_sponsorship: true,
     target_categories: ['swe', 'data-ml'],
@@ -102,7 +102,6 @@ describe('profile-store', () => {
     it('applies defaults for missing optional fields', () => {
       const minimal = {
         graduation: '2029-05',
-        current_class_year: 'junior',
         work_auth: 'us_citizen',
         requires_sponsorship: false,
       };
@@ -113,6 +112,7 @@ describe('profile-store', () => {
       expect(result!.tiers).toEqual({});
       expect(result!.contacts).toEqual({});
       expect(result!.target_categories).toEqual([]);
+      expect(result!.current_class_year).toBe('unknown');
     });
 
     it('repairs invalid grad_window with fallback', () => {

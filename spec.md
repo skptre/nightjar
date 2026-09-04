@@ -560,13 +560,13 @@ Triage and tracking. Answers: "what should I look at right now" and "where is ev
 
 ### 8.2 Profile
 
-Created on first launch, stored locally, never transmitted.
+Optional and stored locally, never transmitted. First launch presents a choice between browsing jobs immediately and personalizing results. Browsing never requires a profile or account. Graduation date is the single education-timing input in the MVP; the redundant class-year question is not shown.
 
 ```jsonc
 {
   "graduation": "2029-05",
   "grad_window": ["2028-12", "2029-06"],
-  "current_class_year": "rising junior",
+  "current_class_year": "unknown",
   "work_auth": "f1_opt_cpt",
   "requires_sponsorship": true,
   "target_categories": ["swe", "mechE", "aero"],
@@ -583,7 +583,7 @@ Created on first launch, stored locally, never transmitted.
 }
 ```
 
-Tiers, contacts, and notes are personal opinions. They stay here, not in the shared registry.
+`current_class_year`, tiers, contacts, and exclusions remain in the stored shape for backwards compatibility. They are not collected or exposed by the MVP interface; loaded profiles normalize class year to `unknown` so an invisible legacy answer cannot affect eligibility. Any future company-management experience requires a new product/design decision.
 
 ### 8.3 Filter engine (runs locally)
 
@@ -611,14 +611,14 @@ Title match beats description match for `primary_category`. More specific catego
 Rules:
 - **Graduation window.** Parse stated windows from the description. If the user's date falls outside → `ineligible`.
 - **Work authorization.** Detect: "U.S. citizen", "US Person", "permanent resident", "security clearance", "ITAR", "unable to sponsor", "no visa sponsorship". → `ineligible`.
-- **Class year.** "rising senior only", "PhD required", etc. → `ineligible` or `unclear`.
+- **Class year.** The engine retains this signal for compatibility tests and future explicit profile types. MVP profiles use `current_class_year: "unknown"`, which skips the check; the app does not infer class year from graduation date.
 - **Location.** Non-US → `ineligible` (configurable).
 
-**Default is `unclear`, never `ineligible`.** Silently hiding a real opportunity is the worst failure. Every `ineligible` verdict must cite a matched sentence from the posting. `ineligible` postings are collapsed in the UI behind a toggle, never deleted.
+**Default is `unclear`, never `ineligible`.** Silently hiding a real opportunity is the worst failure. Every `ineligible` verdict must cite a matched sentence from the posting. The MVP job list never hides or separates a posting solely because of this verdict; eligibility remains an explanatory row-level signal.
 
 ### 8.4 Scoring (runs locally)
 
-Transparent weighted sum. The score must be explainable in the UI.
+The local engine retains its transparent weighted score for compatibility and future experimentation. The MVP job list does not expose or sort by this score; it sorts by `first_seen_at` descending so freshness is predictable.
 
 | Signal | Weight |
 |---|---|
@@ -627,7 +627,7 @@ Transparent weighted sum. The score must be explainable in the UI.
 | Category match (any tag overlap) | high |
 | Eligibility verdict | very high (`ineligible` floors the score) |
 
-Four signals. Resist adding more — every term makes the score harder to explain, and the explanation is the point.
+Four signals. Resist adding more. Company tiers and score breakdowns are not exposed in the current MVP UI pending a deliberate redesign.
 
 ### 8.5 Data flow
 
@@ -694,11 +694,11 @@ The columns on `applications` hold the latest outcome summary for fast display. 
 
 ### 8.7 Outcome-based recalibration
 
-Track what worked. After 10 recorded outcomes, analyze patterns: category success rate, tier correlation, company-level responsiveness, ATS association, time-of-application signal, and ghost rates by tier. Show suggestions in an "Insights" panel — descriptive, not causal. Always include sample sizes and cautious framing. An ATS association describes the mix of employers using that host; it is never presented as ATS quality or a cause of hiring outcomes.
+Outcome-based recalibration remains a deferred, opt-in capability. It is not a primary-navigation tab in the MVP. If reintroduced, it must be descriptive rather than causal, show sample sizes and cautious framing, and avoid presenting rejection/interview-rate metrics by default.
 
 Never silently change scoring. Suggestions expose explicit **Apply** and **Dismiss** actions. Applying a suggestion updates only the existing category, tier, or freshness signal and recomputes cached scores; the choice is stored locally. Outcome history, suggestion decisions, and all dashboard calculations remain on-device and are never transmitted.
 
-Stats dashboard: applications sent, interview rate, offer rate, response time, breakdowns by category and tier. All data local — never transmitted.
+Any future stats dashboard is opt-in and local-only; it is not part of the default MVP experience.
 
 ### 8.8 Gmail sync (planned, Tauri-only)
 
@@ -710,24 +710,26 @@ Privacy guarantees: email content never leaves the local machine. No email body 
 
 ### 8.9 Views
 
-**Feed** — ranked list of new/unactioned postings. Filters: term, category, eligibility, tier, age, source. Row actions: `Save`, `Skip`, `Open`, `Mark applied`.
+**Jobs** — all current, non-dismissed postings sorted newest-first. Search is always available. Field filters live behind one dismissible filter button; a saved profile seeds the selected fields. Term, eligibility, tier, age, and source are not user-facing filters in the MVP. No total-posting or ineligible-posting counts are shown. Row actions: `Save`, `Skip`, `Open`, `Mark applied`.
 
-**Pipeline** — kanban by status. Drag to change status.
+**Applications** — the application tracker. Its empty state first explains how saved/applied jobs arrive here; the status board appears only after the user has something to track. The internal route name `pipeline` may remain for compatibility, but the product label is “Applications.”
 
-**Calendar** — deadlines and known program open dates.
-
-**Companies** — browse the registry, set local tiers, add contacts and notes.
+Calendar, Companies, and Insights are not MVP routes or primary navigation. Their underlying local data code may remain dormant until product/design decisions justify a new experience.
 
 ### 8.10 UI principles
 
-- Default view is "things I haven't decided on yet," not "all postings."
+- Default view is the current job catalog, with explicitly skipped postings omitted.
+- Browsing does not require onboarding, a profile, or an account.
+- Primary navigation is limited to Jobs, Applications, and Settings.
+- Light mode is the only supported MVP presentation until the visual system is redesigned.
+- Filters open on demand and close on outside click, an explicit close action, or Escape.
 - Every eligibility verdict is clickable → shows the matched sentence.
 - Keyboard-first: `j`/`k` move, `s` save, `x` skip, `o` open, `/` search.
 - No destructive action without undo.
 
 ### 8.11 Company logos
 
-Display company logos alongside postings in feed, pipeline, and company views. Logos are fetched app-side at render time — never stored in feed.json or the repo.
+Display company logos alongside postings in jobs and application-tracker views. Logos are fetched app-side at render time — never stored in feed.json or the repo.
 
 **Source:** Logo.dev API — `https://img.logo.dev/{domain}?token={key}&size=128&format=png`. Free tier: 500K requests/month, requires "Logos provided by Logo.dev" attribution link. Returns actual company logos (not favicons), supports PNG/WebP/JPG, 32–512px, light/dark mode. Free API key via logo.dev/signup, no credit card.
 

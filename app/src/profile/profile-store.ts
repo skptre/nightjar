@@ -79,7 +79,6 @@ export function validateAndRepairProfile(raw: unknown): Profile | null {
   if (!isRecord(raw)) return null;
 
   if (typeof raw['graduation'] !== 'string' || raw['graduation'] === '') return null;
-  if (typeof raw['current_class_year'] !== 'string' || raw['current_class_year'] === '') return null;
   if (typeof raw['work_auth'] !== 'string' || raw['work_auth'] === '') return null;
   if (typeof raw['requires_sponsorship'] !== 'boolean') return null;
 
@@ -110,7 +109,9 @@ export function validateAndRepairProfile(raw: unknown): Profile | null {
   const result: Profile = {
     graduation: raw['graduation'] as string,
     grad_window,
-    current_class_year: raw['current_class_year'] as string,
+    // Class year duplicated graduation timing and is no longer collected. Normalize
+    // existing profiles so an invisible legacy answer cannot affect eligibility.
+    current_class_year: 'unknown',
     work_auth: raw['work_auth'] as string,
     requires_sponsorship: raw['requires_sponsorship'] as boolean,
     target_categories,

@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { NightjarDB } from '@/db/database';
+import { CURRENT_JOBS_QUERY, filterOptionsForProfile } from './FeedView';
 
 function makePostingData(overrides: Record<string, unknown> = {}): string {
   return JSON.stringify({
@@ -54,14 +55,7 @@ async function insertPosting(
 }
 
 async function queryUntriaged(db: NightjarDB): Promise<Array<{ id: string; score: number | null }>> {
-  return await db.query<{ id: string; score: number | null }>(
-    `SELECT p.id, p.score
-     FROM postings_cache p
-     LEFT JOIN applications a ON p.id = a.posting_id
-     WHERE (a.posting_id IS NULL OR a.status = 'new')
-       AND p.closed_at IS NULL
-     ORDER BY CASE WHEN p.score IS NULL THEN 1 ELSE 0 END, p.score DESC`,
-  );
+  return await db.query<{ id: string; score: number | null }>(CURRENT_JOBS_QUERY);
 }
 
 describe('Feed View Data Layer', () => {
@@ -93,7 +87,7 @@ describe('Feed View Data Layer', () => {
       expect(results[0]?.id).toBe('p1');
     });
 
-    it('excludes saved postings', async () => {
+    it('keeps saved postings visible', async () => {
       await insertPosting(db, 'p1');
       await insertPosting(db, 'p2');
       const now = '2026-08-13T12:00:00Z';
@@ -103,8 +97,8 @@ describe('Feed View Data Layer', () => {
       );
 
       const results = await queryUntriaged(db);
-      expect(results).toHaveLength(1);
-      expect(results[0]?.id).toBe('p2');
+      expect(results).toHaveLength(2);
+      expect(results.map((row) => row.id)).toContain('p1');
     });
 
     it('excludes skipped postings', async () => {
@@ -119,7 +113,7 @@ describe('Feed View Data Layer', () => {
       expect(results).toHaveLength(0);
     });
 
-    it('excludes applied postings', async () => {
+    it('keeps applied postings visible', async () => {
       await insertPosting(db, 'p1');
       const now = '2026-08-13T12:00:00Z';
       await db.run(
@@ -128,7 +122,8 @@ describe('Feed View Data Layer', () => {
       );
 
       const results = await queryUntriaged(db);
-      expect(results).toHaveLength(0);
+      expect(results).toHaveLength(1);
+      expect(results[0]?.id).toBe('p1');
     });
 
     it('excludes closed postings', async () => {
@@ -140,22 +135,21 @@ describe('Feed View Data Layer', () => {
       expect(results[0]?.id).toBe('p2');
     });
 
-    it('sorts by score descending', async () => {
-      await insertPosting(db, 'low', { score: 30 });
-      await insertPosting(db, 'mid', { score: 60 });
-      await insertPosting(db, 'high', { score: 90 });
+    it('sorts newest first regardless of score', async () => {
+      await insertPosting(db, 'old-high', { score: 90, first_seen_at: '2026-08-10T00:00:00Z' });
+      await insertPosting(db, 'new-low', { score: 30, first_seen_at: '2026-08-13T00:00:00Z' });
+      await insertPosting(db, 'mid', { score: 60, first_seen_at: '2026-08-12T00:00:00Z' });
 
       const results = await queryUntriaged(db);
-      expect(results.map((r) => r.id)).toEqual(['high', 'mid', 'low']);
+      expect(results.map((r) => r.id)).toEqual(['new-low', 'mid', 'old-high']);
     });
 
-    it('handles null scores at end', async () => {
-      await insertPosting(db, 'scored', { score: 50 });
-      await insertPosting(db, 'unscored', { score: null });
+    it('does not hide unscored postings', async () => {
+      await insertPosting(db, 'scored', { score: 50, first_seen_at: '2026-08-10T00:00:00Z' });
+      await insertPosting(db, 'unscored', { score: null, first_seen_at: '2026-08-13T00:00:00Z' });
 
       const results = await queryUntriaged(db);
-      expect(results[0]?.id).toBe('scored');
-      expect(results[1]?.id).toBe('unscored');
+      expect(results.map((row) => row.id)).toEqual(['unscored', 'scored']);
     });
   });
 
@@ -176,7 +170,7 @@ describe('Feed View Data Layer', () => {
       expect(app?.status).toBe('saved');
     });
 
-    it('removes posting from untriaged after save', async () => {
+    it('keeps posting in the browsing list after save', async () => {
       await insertPosting(db, 'p1');
       await insertPosting(db, 'p2');
 
@@ -188,8 +182,8 @@ describe('Feed View Data Layer', () => {
       );
 
       const results = await queryUntriaged(db);
-      expect(results).toHaveLength(1);
-      expect(results[0]?.id).toBe('p2');
+      expect(results).toHaveLength(2);
+      expect(results.map((row) => row.id)).toContain('p1');
     });
   });
 
@@ -503,16 +497,16 @@ describe('Feed View Data Layer', () => {
         `INSERT INTO applications (posting_id, status, created_at, updated_at) VALUES (?, 'saved', ?, ?)`,
         ['p1', now, now],
       );
-      expect(await queryUntriaged(db)).toHaveLength(3);
+      expect(await queryUntriaged(db)).toHaveLength(4);
 
       await db.run(
         `INSERT INTO applications (posting_id, status, created_at, updated_at) VALUES (?, 'skipped', ?, ?)`,
         ['p3', now, now],
       );
-      expect(await queryUntriaged(db)).toHaveLength(2);
+      expect(await queryUntriaged(db)).toHaveLength(3);
 
       const remaining = await queryUntriaged(db);
-      expect(remaining.map((r) => r.id)).toEqual(['p2', 'p4']);
+      expect(remaining.map((r) => r.id).sort()).toEqual(['p1', 'p2', 'p4']);
     });
 
     it('undo skip restores posting to feed in correct order', async () => {
@@ -531,6 +525,17 @@ describe('Feed View Data Layer', () => {
       expect(restored).toHaveLength(2);
       expect(restored[0]?.id).toBe('p1');
     });
+  });
+});
+
+describe('field filter choices', () => {
+  it('keeps a software profile focused on adjacent technical fields', () => {
+    const values = filterOptionsForProfile(['swe']).map((option) => option.value);
+    expect(values).toEqual(['swe', 'data-ml', 'hardware', 'ECE', 'quant', 'research']);
+    expect(values).not.toContain('supply-chain');
+    expect(values).not.toContain('mechE');
+    expect(values).not.toContain('aero');
+    expect(values).not.toContain('civil');
   });
 });
 

@@ -214,6 +214,24 @@ class TestIsUsLocation:
     def test_unknown_city_dropped(self) -> None:
         assert not is_us_location("Ann Arbor", [])
 
+    def test_berlin_de_not_flagged_non_us(self) -> None:
+        assert not is_explicitly_non_us("Berlin, DE", [])
+
+    def test_toronto_ca_not_flagged_non_us(self) -> None:
+        assert not is_explicitly_non_us("Toronto, CA", [])
+
+    def test_bangalore_in_not_flagged_non_us(self) -> None:
+        assert not is_explicitly_non_us("Bangalore, IN", [])
+
+    def test_berlin_germany_flagged_non_us(self) -> None:
+        assert is_explicitly_non_us("Berlin, Germany", [])
+
+    def test_toronto_canada_flagged_non_us(self) -> None:
+        assert is_explicitly_non_us("Toronto, Canada", [])
+
+    def test_bangalore_india_flagged_non_us(self) -> None:
+        assert is_explicitly_non_us("Bangalore, India", [])
+
 
 class TestFilterUsLocations:
     def test_filters_non_us(self) -> None:

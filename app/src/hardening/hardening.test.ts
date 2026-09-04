@@ -236,14 +236,13 @@ describe('Block 10 — App Hardening', () => {
       vi.unstubAllGlobals();
     });
 
-    it('network error returns null gracefully', async () => {
+    it('network error throws with descriptive message', async () => {
       vi.stubGlobal('fetch', vi.fn(() =>
         Promise.reject(new TypeError('Failed to fetch')),
       ));
 
       const { fetchFeed } = await import('@/sync/feed-sync');
-      const result = await fetchFeed();
-      expect(result).toBeNull();
+      await expect(fetchFeed()).rejects.toThrow(/Network error/);
 
       vi.unstubAllGlobals();
     });

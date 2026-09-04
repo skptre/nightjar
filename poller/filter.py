@@ -172,7 +172,7 @@ _NON_US_COUNTRIES = re.compile(
 )
 
 _NON_US_ABBREVS = re.compile(
-    r"\b(?:UK|CA|MX|AU|NZ|DE|FR|IN|CN|JP|SG|IE|NL|SE|NO|DK|FI|PL|BR|KR)\b"
+    r"\b(?:UK|MX|AU|NZ|FR|CN|JP|SG|IE|NL|SE|NO|DK|FI|PL|BR|KR)\b"
 )
 
 
@@ -183,7 +183,12 @@ def is_explicitly_non_us(location: str, locations: list[str]) -> bool:
     if not all_locs or all(not loc.strip() for loc in all_locs):
         return False
     combined = " ; ".join(all_locs)
-    if _US_COUNTRY_PATTERNS.search(combined) or _STATE_ABBREV_RE.search(combined) or _STATE_NAME_RE.search(combined):
+    has_us = (
+        _US_COUNTRY_PATTERNS.search(combined)
+        or _STATE_ABBREV_RE.search(combined)
+        or _STATE_NAME_RE.search(combined)
+    )
+    if has_us:
         return False
     return bool(_NON_US_COUNTRIES.search(combined) or _NON_US_ABBREVS.search(combined))
 

@@ -51,20 +51,21 @@ function makeMeta(sha256: string, count: number): MetaData {
   };
 }
 
-function mockFetchResponses(responses: Record<string, { ok: boolean; body: unknown }>): void {
+function mockFetchResponses(responses: Record<string, { ok: boolean; body: unknown; status?: number }>): void {
   vi.stubGlobal('fetch', vi.fn((url: string) => {
     for (const [pattern, response] of Object.entries(responses)) {
       if (url.includes(pattern)) {
         if (!response.ok) {
+          const status = response.status ?? 404;
           return Promise.resolve({
             ok: false,
-            status: 404,
+            status,
             json: () => Promise.reject(new Error('Not found')),
           });
         }
         return Promise.resolve({
           ok: true,
-          status: 200,
+          status: response.status ?? 200,
           headers: new Headers({ 'content-type': 'application/json' }),
           json: () => Promise.resolve(response.body),
         });
@@ -96,25 +97,22 @@ describe('feed-sync', () => {
       expect(result).toEqual(meta);
     });
 
-    it('returns null on 404', async () => {
-      mockFetchResponses({ 'meta.json': { ok: false, body: null } });
+    it('throws on HTTP error', async () => {
+      mockFetchResponses({ 'meta.json': { ok: false, body: null, status: 500 } });
 
-      const result = await fetchMeta('/test');
-      expect(result).toBeNull();
+      await expect(fetchMeta('/test')).rejects.toThrow(/HTTP 500/);
     });
 
-    it('returns null on network error', async () => {
+    it('throws on network error', async () => {
       vi.stubGlobal('fetch', vi.fn(() => Promise.reject(new Error('Network error'))));
 
-      const result = await fetchMeta('/test');
-      expect(result).toBeNull();
+      await expect(fetchMeta('/test')).rejects.toThrow('Network error');
     });
 
-    it('returns null on malformed response', async () => {
+    it('throws on malformed response', async () => {
       mockFetchResponses({ 'meta.json': { ok: true, body: { foo: 'bar' } } });
 
-      const result = await fetchMeta('/test');
-      expect(result).toBeNull();
+      await expect(fetchMeta('/test')).rejects.toThrow(/not valid/);
     });
   });
 
@@ -134,11 +132,10 @@ describe('feed-sync', () => {
       await expect(fetchFeed('/test')).rejects.toThrow(/404/);
     });
 
-    it('returns null on malformed response', async () => {
+    it('throws on malformed response', async () => {
       mockFetchResponses({ 'feed.json': { ok: true, body: [] } });
 
-      const result = await fetchFeed('/test');
-      expect(result).toBeNull();
+      await expect(fetchFeed('/test')).rejects.toThrow(/not valid/);
     });
 
     it('sends If-Modified-Since header when stored Last-Modified exists', async () => {

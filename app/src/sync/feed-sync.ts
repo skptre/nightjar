@@ -75,18 +75,18 @@ function getFeedBaseUrl(): string {
   return '/data';
 }
 
-export async function fetchMeta(baseUrl?: string): Promise<MetaData | null> {
+export async function fetchMeta(baseUrl?: string): Promise<MetaData> {
   const base = baseUrl ?? getFeedBaseUrl();
   const url = `${base}/meta.json`;
-  try {
-    const response = await fetch(url);
-    if (!response.ok) return null;
-    const data: unknown = await response.json();
-    if (!isMetaData(data)) return null;
-    return data;
-  } catch {
-    return null;
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Metadata fetch failed (HTTP ${String(response.status)})`);
   }
+  const data: unknown = await response.json();
+  if (!isMetaData(data)) {
+    throw new Error('Metadata response is not valid');
+  }
+  return data;
 }
 
 export async function fetchFeed(baseUrl?: string): Promise<FeedData | null> {
@@ -104,7 +104,9 @@ export async function fetchFeed(baseUrl?: string): Promise<FeedData | null> {
     if (response.status === 404) {
       throw new Error('Feed unavailable (404). Check feed URL in settings.');
     }
-    if (!response.ok) return null;
+    if (!response.ok) {
+      throw new Error(`Feed fetch failed (HTTP ${String(response.status)})`);
+    }
 
     const responseLastModified = response.headers.get('Last-Modified');
     if (responseLastModified) {
@@ -112,11 +114,13 @@ export async function fetchFeed(baseUrl?: string): Promise<FeedData | null> {
     }
 
     const data: unknown = await response.json();
-    if (!isFeedData(data)) return null;
+    if (!isFeedData(data)) {
+      throw new Error('Feed response is not valid feed data');
+    }
     return data;
   } catch (err) {
     if (err instanceof TypeError && err.message.includes('fetch')) {
-      return null;
+      throw new Error('Network error fetching feed');
     }
     throw err;
   }
@@ -286,9 +290,12 @@ export async function syncFeed(
   db: Database,
   baseUrl?: string,
 ): Promise<SyncResult> {
-  const meta = await fetchMeta(baseUrl);
-  if (!meta) {
-    return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: false, error: 'Failed to fetch feed metadata' };
+  let meta: MetaData;
+  try {
+    meta = await fetchMeta(baseUrl);
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : 'Failed to fetch feed metadata';
+    return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: false, error: message };
   }
 
   const storedHash = getStoredMetaHash();

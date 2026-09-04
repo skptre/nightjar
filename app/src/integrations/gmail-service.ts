@@ -36,13 +36,8 @@ export async function loadApplicationCompanies(db: Database): Promise<Applicatio
       };
 
       let domain = '';
-      if (posting.url) {
-        try {
-          const urlObj = new URL(posting.url);
-          domain = urlObj.hostname.replace(/^www\./, '');
-        } catch {
-          // URL parse failed — leave domain empty
-        }
+      if (posting.company_slug) {
+        domain = `${posting.company_slug}.com`;
       }
 
       companies.push({
@@ -112,13 +107,24 @@ export async function acceptSuggestion(
   suggestionId: string,
   newStatus: string,
 ): Promise<void> {
-  const suggestion = await db.queryOne<{ posting_id: string }>(
-    'SELECT posting_id FROM gmail_suggestions WHERE id = ?',
+  const suggestion = await db.queryOne<{
+    posting_id: string;
+    signal_type: string;
+  }>(
+    'SELECT posting_id, signal_type FROM gmail_suggestions WHERE id = ?',
     [suggestionId],
   );
   if (!suggestion) return;
 
   const now = new Date().toISOString();
+  const outcomeMap: Record<string, string> = {
+    interview: 'interview',
+    offer: 'offer',
+    rejection: 'rejection',
+    assessment: 'interview',
+  };
+  const outcome = outcomeMap[suggestion.signal_type];
+
   await db.transaction(async () => {
     await db.run(
       `UPDATE gmail_suggestions SET status = 'accepted' WHERE id = ?`,
@@ -128,6 +134,14 @@ export async function acceptSuggestion(
       `UPDATE applications SET status = ?, updated_at = ? WHERE posting_id = ?`,
       [newStatus, now, suggestion.posting_id],
     );
+    if (outcome) {
+      await db.run(
+        `INSERT INTO application_outcome_events
+         (posting_id, outcome, occurred_at, interview_rounds, notes)
+         VALUES (?, ?, ?, ?, ?)`,
+        [suggestion.posting_id, outcome, now, 0, 'Detected via Gmail scan'],
+      );
+    }
   });
 }
 

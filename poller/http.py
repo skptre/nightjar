@@ -13,7 +13,7 @@ import httpx
 
 from poller.exceptions import SourceFetchError
 
-USER_AGENT = "nightjar/0.1 (+https://github.com/svhar/nightjar)"
+USER_AGENT = "nightjar/0.1 (+https://github.com/skptre/nightjar)"
 
 DEFAULT_CONNECT_TIMEOUT = 30.0
 DEFAULT_READ_TIMEOUT = 60.0

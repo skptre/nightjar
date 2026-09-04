@@ -9,6 +9,7 @@ import {
   type PipelineStatus,
 } from '@/outcomes/types';
 import { GmailSuggestionsPanel } from '@/integrations/GmailSuggestionsPanel';
+import { GMAIL_ENABLED } from '@/lib/platform';
 
 const PIPELINE_COLUMNS: { status: PipelineStatus; label: string }[] = [
   { status: 'saved', label: 'Saved' },
@@ -310,7 +311,7 @@ export function PipelineView(): React.ReactNode {
         </div>
       )}
 
-      <GmailSuggestionsPanel onStatusChange={() => setRefreshKey((k) => k + 1)} />
+      {GMAIL_ENABLED && <GmailSuggestionsPanel onStatusChange={() => setRefreshKey((k) => k + 1)} />}
 
       <div className="flex items-center justify-between mb-4">
         <div>

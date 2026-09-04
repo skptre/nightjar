@@ -24,7 +24,7 @@
       }
     ],
     "security": {
-      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://raw.githubusercontent.com https://boards-api.greenhouse.io https://api.lever.co https://api.eu.lever.co https://api.ashbyhq.com https://api.smartrecruiters.com https://*.myworkdayjobs.com; img-src 'self' data:"
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://skptre.github.io https://raw.githubusercontent.com https://boards-api.greenhouse.io https://api.lever.co https://api.eu.lever.co https://api.ashbyhq.com https://api.smartrecruiters.com https://*.myworkdayjobs.com https://accounts.google.com https://oauth2.googleapis.com https://www.googleapis.com; img-src 'self' data:"
     }
   },
   "bundle": {

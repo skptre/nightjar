@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, type ReactNode } from 'react';
 import { useProfile } from '@/providers/ProfileProvider';
 import { useDatabase } from '@/providers/DatabaseProvider';
 import { useToast } from '@/components/Toast';
-import { isTauri } from '@/lib/platform';
+import { isTauri, GMAIL_ENABLED } from '@/lib/platform';
 import {
   WORK_AUTH_OPTIONS,
   CLASS_YEAR_OPTIONS,
@@ -30,7 +30,7 @@ export function SettingsView(): ReactNode {
       <SyncSection />
       <ProfileSection />
       <NotificationsSection />
-      {isTauri() && <GmailSection />}
+      {GMAIL_ENABLED && isTauri() && <GmailSection />}
       <DataSection />
     </div>
   );

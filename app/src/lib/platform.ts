@@ -1,3 +1,6 @@
+// Flip to true when Gmail OAuth callback server is implemented
+export const GMAIL_ENABLED = false;
+
 export function isTauri(): boolean {
   return typeof window !== 'undefined' &&
     '__TAURI_INTERNALS__' in window;

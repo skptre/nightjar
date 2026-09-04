@@ -6,7 +6,7 @@ import { fireNewPostingNotifications, requestNotificationPermission } from './no
 import { prefetchDescriptions } from './description-fetch';
 import { recomputePendingCategoryTaxonomy } from '@/classify/recompute';
 import { runAutoGhost } from '@/views/Pipeline/auto-ghost';
-import { isTauri, updateTrayInfo } from '@/lib/platform';
+import { isTauri, updateTrayInfo, GMAIL_ENABLED } from '@/lib/platform';
 import { isGmailConnected } from '@/integrations/gmail-auth';
 import { runGmailScan } from '@/integrations/gmail-service';
 
@@ -123,6 +123,11 @@ export class SyncManager {
 
       const result = await syncFeed(this.db);
 
+      if (result.error) {
+        this.updateState({ status: 'error', lastError: result.error });
+        return result;
+      }
+
       if (!result.skipped && this.profile) {
         await recomputePendingCategoryTaxonomy(this.db, this.profile);
       }
@@ -151,7 +156,7 @@ export class SyncManager {
         void prefetchDescriptions(this.db, undefined, this.profile ?? undefined);
       }
 
-      if (isTauri()) {
+      if (GMAIL_ENABLED && isTauri()) {
         try {
           const connected = await isGmailConnected();
           if (connected) {

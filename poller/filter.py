@@ -89,7 +89,7 @@ def filter_feed_mapping(postings: dict[str, Posting]) -> dict[str, Posting]:
         posting_id: posting
         for posting_id, posting in postings.items()
         if is_student_role(posting.title)
-        and is_us_location(posting.location, posting.locations)
+        and not is_explicitly_non_us(posting.location, posting.locations)
     }
     dropped = len(postings) - len(kept)
     if dropped:
@@ -157,11 +157,42 @@ def is_us_location(location: str, locations: list[str]) -> bool:
     return _STATE_NAME_RE.search(combined) is not None
 
 
+_NON_US_COUNTRIES = re.compile(
+    r"\b(?:"
+    r"canada|mexico|brazil|argentina|chile|colombia|peru"
+    r"|united\s+kingdom|england|scotland|wales|ireland"
+    r"|france|germany|netherlands|belgium|switzerland|austria|spain|portugal|italy"
+    r"|sweden|norway|denmark|finland|iceland|poland|czech|romania|hungary|greece"
+    r"|india|china|japan|south\s+korea|singapore|hong\s+kong|taiwan|philippines"
+    r"|australia|new\s+zealand"
+    r"|israel|united\s+arab\s+emirates|saudi\s+arabia|qatar|egypt|nigeria|kenya"
+    r"|south\s+africa|turkey|russia|ukraine"
+    r")\b",
+    re.IGNORECASE,
+)
+
+_NON_US_ABBREVS = re.compile(
+    r"\b(?:UK|CA|MX|AU|NZ|DE|FR|IN|CN|JP|SG|IE|NL|SE|NO|DK|FI|PL|BR|KR)\b"
+)
+
+
+def is_explicitly_non_us(location: str, locations: list[str]) -> bool:
+    """True only when location data contains a known non-US country/region
+    AND no US signal. Empty, opaque, and bare-Remote return False (kept)."""
+    all_locs = locations + ([location] if location else [])
+    if not all_locs or all(not loc.strip() for loc in all_locs):
+        return False
+    combined = " ; ".join(all_locs)
+    if _US_COUNTRY_PATTERNS.search(combined) or _STATE_ABBREV_RE.search(combined) or _STATE_NAME_RE.search(combined):
+        return False
+    return bool(_NON_US_COUNTRIES.search(combined) or _NON_US_ABBREVS.search(combined))
+
+
 def filter_us_locations(postings: list[Posting]) -> list[Posting]:
-    kept = [p for p in postings if is_us_location(p.location, p.locations)]
+    kept = [p for p in postings if not is_explicitly_non_us(p.location, p.locations)]
     dropped = len(postings) - len(kept)
     logger.info(
-        "filter: %d explicitly US roles kept, %d non-US/unknown dropped",
+        "filter: %d roles kept (US + ambiguous), %d explicitly non-US dropped",
         len(kept), dropped,
     )
     return kept

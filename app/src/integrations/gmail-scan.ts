@@ -119,9 +119,9 @@ export function extractSenderDomain(headers: Array<{ name: string; value: string
   const from = headers.find((h) => h.name.toLowerCase() === 'from')?.value;
   if (!from) return null;
   const angleMatch = /<[^@]+@([^>]+)>/.exec(from);
-  if (angleMatch) return angleMatch[1].toLowerCase();
+  if (angleMatch?.[1]) return angleMatch[1].toLowerCase();
   const bareMatch = /[\w.+-]+@([\w.-]+)/.exec(from);
-  if (bareMatch) return bareMatch[1].toLowerCase();
+  if (bareMatch?.[1]) return bareMatch[1].toLowerCase();
   return null;
 }
 

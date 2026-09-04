@@ -469,16 +469,17 @@ describe('feed-sync', () => {
       expect(calls.some((u) => u.includes('feed.json'))).toBe(false);
     });
 
-    it('returns skipped on meta fetch failure', async () => {
+    it('returns error on meta fetch failure', async () => {
       mockFetchResponses({
         'meta.json': { ok: false, body: null },
       });
 
       const result = await syncFeed(db, '/test');
-      expect(result.skipped).toBe(true);
+      expect(result.skipped).toBe(false);
+      expect(result.error).toBeDefined();
     });
 
-    it('returns skipped on feed fetch failure', async () => {
+    it('returns error on feed fetch failure', async () => {
       const meta = makeMeta('newhash', 5);
       mockFetchResponses({
         'meta.json': { ok: true, body: meta },
@@ -486,7 +487,8 @@ describe('feed-sync', () => {
       });
 
       const result = await syncFeed(db, '/test');
-      expect(result.skipped).toBe(true);
+      expect(result.skipped).toBe(false);
+      expect(result.error).toBeDefined();
     });
 
     it('preserves existing SQLite data on network error', async () => {
@@ -498,7 +500,8 @@ describe('feed-sync', () => {
       vi.stubGlobal('fetch', vi.fn(() => Promise.reject(new Error('Network error'))));
 
       const result = await syncFeed(db, '/test');
-      expect(result.skipped).toBe(true);
+      expect(result.skipped).toBe(false);
+      expect(result.error).toBeDefined();
 
       const row = await db.queryOne<{ data: string }>(
         'SELECT data FROM postings_cache WHERE id = ?',

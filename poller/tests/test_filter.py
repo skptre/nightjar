@@ -4,6 +4,7 @@ from poller.filter import (
     filter_feed_mapping,
     filter_student_roles,
     filter_us_locations,
+    is_explicitly_non_us,
     is_student_role,
     is_us_location,
 )
@@ -138,16 +139,22 @@ class TestIsUsLocation:
     def test_usa(self) -> None:
         assert is_us_location("San Francisco, CA, USA", [])
 
-    def test_ambiguous_remote_dropped(self) -> None:
+    def test_ambiguous_remote_not_us(self) -> None:
         assert not is_us_location("Remote", [])
+
+    def test_ambiguous_remote_not_explicitly_non_us(self) -> None:
+        assert not is_explicitly_non_us("Remote", [])
 
     def test_remote_us_kept(self) -> None:
         assert is_us_location("Remote in US", [])
 
-    def test_empty_location_dropped(self) -> None:
+    def test_empty_location_not_us(self) -> None:
         assert not is_us_location("", [])
 
-    def test_no_locations_dropped(self) -> None:
+    def test_empty_location_not_explicitly_non_us(self) -> None:
+        assert not is_explicitly_non_us("", [])
+
+    def test_no_locations_not_us(self) -> None:
         assert not is_us_location("", [])
 
     def test_dc(self) -> None:
@@ -156,17 +163,29 @@ class TestIsUsLocation:
     def test_locations_list_us(self) -> None:
         assert is_us_location("", ["New York, NY", "Boston, MA"])
 
-    def test_opaque_workday_id_dropped(self) -> None:
+    def test_opaque_workday_id_not_us(self) -> None:
         assert not is_us_location("R249096", [])
 
-    def test_opaque_numeric_dropped(self) -> None:
+    def test_opaque_workday_id_not_explicitly_non_us(self) -> None:
+        assert not is_explicitly_non_us("R249096", [])
+
+    def test_opaque_numeric_not_us(self) -> None:
         assert not is_us_location("10153195", [])
 
-    def test_india_dropped(self) -> None:
+    def test_opaque_numeric_not_explicitly_non_us(self) -> None:
+        assert not is_explicitly_non_us("10153195", [])
+
+    def test_india_not_us(self) -> None:
         assert not is_us_location("Bangalore, India", [])
+
+    def test_india_explicitly_non_us(self) -> None:
+        assert is_explicitly_non_us("Bangalore, India", [])
 
     def test_india_in_locations(self) -> None:
         assert not is_us_location("", ["Bengaluru, Karnataka, India"])
+
+    def test_india_in_locations_explicitly_non_us(self) -> None:
+        assert is_explicitly_non_us("", ["Bengaluru, Karnataka, India"])
 
     def test_uk_dropped(self) -> None:
         assert not is_us_location("London, United Kingdom", [])
@@ -211,6 +230,25 @@ class TestFilterUsLocations:
         result = filter_us_locations([us, india])
         assert len(result) == 1
         assert us in result
+
+    def test_keeps_ambiguous_locations(self) -> None:
+        remote = MagicMock()
+        remote.title = "Intern"
+        remote.location = "Remote"
+        remote.locations = []
+
+        empty = MagicMock()
+        empty.title = "Intern"
+        empty.location = ""
+        empty.locations = []
+
+        opaque = MagicMock()
+        opaque.title = "Intern"
+        opaque.location = "R249096"
+        opaque.locations = []
+
+        result = filter_us_locations([remote, empty, opaque])
+        assert len(result) == 3
 
     def test_empty_list(self) -> None:
         assert filter_us_locations([]) == []

@@ -118,7 +118,7 @@ describe('hasCalendarAttachment', () => {
 
   it('returns false with no parts', () => {
     const msg = makeMessage();
-    msg.payload.parts = undefined;
+    delete msg.payload.parts;
     expect(hasCalendarAttachment(msg)).toBe(false);
   });
 
@@ -293,8 +293,8 @@ describe('gmail_suggestions database operations', () => {
 
       const pending = await getPendingSuggestions(db);
       expect(pending).toHaveLength(1);
-      expect(pending[0].signalType).toBe('interview');
-      expect(pending[0].companyName).toBe('Stripe');
+      expect(pending[0]!.signalType).toBe('interview');
+      expect(pending[0]!.companyName).toBe('Stripe');
     });
 
     it('deduplicates by email_id', async () => {
@@ -334,7 +334,7 @@ describe('gmail_suggestions database operations', () => {
       });
 
       const pending = await getPendingSuggestions(db);
-      expect(pending[0].subject.length).toBeLessThanOrEqual(200);
+      expect(pending[0]!.subject.length).toBeLessThanOrEqual(200);
     });
   });
 
@@ -390,7 +390,7 @@ describe('gmail_suggestions database operations', () => {
       expect(pending).toHaveLength(1);
 
       const suggestedStatus = SIGNAL_SUGGESTED_STATUS['interview'];
-      await acceptSuggestion(db, pending[0].id, suggestedStatus);
+      await acceptSuggestion(db, pending[0]!.id, suggestedStatus);
 
       const afterAccept = await getPendingSuggestions(db);
       expect(afterAccept).toHaveLength(0);
@@ -423,7 +423,7 @@ describe('gmail_suggestions database operations', () => {
       });
 
       const pending = await getPendingSuggestions(db);
-      await dismissSuggestion(db, pending[0].id);
+      await dismissSuggestion(db, pending[0]!.id);
 
       const afterDismiss = await getPendingSuggestions(db);
       expect(afterDismiss).toHaveLength(0);
@@ -470,8 +470,8 @@ describe('gmail_suggestions database operations', () => {
       await insertTestApplication('post-stripe-1');
       const companies = await loadApplicationCompanies(db);
       expect(companies).toHaveLength(1);
-      expect(companies[0].companySlug).toBe('stripe');
-      expect(companies[0].domain).toBe('stripe.com');
+      expect(companies[0]!.companySlug).toBe('stripe');
+      expect(companies[0]!.domain).toBe('stripe.com');
     });
 
     it('excludes applications with non-active statuses', async () => {
@@ -550,7 +550,7 @@ describe('end-to-end scan scenarios', () => {
 
     const pending = await getPendingSuggestions(db);
     expect(pending).toHaveLength(1);
-    expect(pending[0].signalType).toBe('interview');
+    expect(pending[0]!.signalType).toBe('interview');
   });
 
   it('rejects email received before application date', async () => {
@@ -574,7 +574,7 @@ describe('end-to-end scan scenarios', () => {
     });
 
     const pending = await getPendingSuggestions(db);
-    await acceptSuggestion(db, pending[0].id, SIGNAL_SUGGESTED_STATUS['offer']);
+    await acceptSuggestion(db, pending[0]!.id, SIGNAL_SUGGESTED_STATUS['offer']);
 
     const app = await db.queryOne<{ status: string }>(
       'SELECT status FROM applications WHERE posting_id = ?',
@@ -601,7 +601,7 @@ describe('end-to-end scan scenarios', () => {
     });
 
     const pending = await getPendingSuggestions(db);
-    await dismissSuggestion(db, pending[0].id);
+    await dismissSuggestion(db, pending[0]!.id);
 
     const processedIds = await getProcessedEmailIds(db);
     expect(processedIds.has('e2e-dismiss')).toBe(true);
@@ -639,6 +639,6 @@ describe('end-to-end scan scenarios', () => {
 
     const pending = await getPendingSuggestions(db);
     expect(pending).toHaveLength(2);
-    expect(pending[0].receivedAt > pending[1].receivedAt).toBe(true);
+    expect(pending[0]!.receivedAt > pending[1]!.receivedAt).toBe(true);
   });
 });

@@ -58,6 +58,7 @@ export interface SyncResult {
   closedCount: number;
   totalCount: number;
   skipped: boolean;
+  error?: string;
 }
 
 const META_HASH_KEY = 'nightjar_feed_meta_sha';
@@ -287,7 +288,7 @@ export async function syncFeed(
 ): Promise<SyncResult> {
   const meta = await fetchMeta(baseUrl);
   if (!meta) {
-    return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: true };
+    return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: false, error: 'Failed to fetch feed metadata' };
   }
 
   const storedHash = getStoredMetaHash();
@@ -302,8 +303,9 @@ export async function syncFeed(
   let feed: FeedData | null;
   try {
     feed = await fetchFeed(baseUrl);
-  } catch {
-    return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: true };
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : 'Feed fetch failed';
+    return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: false, error: message };
   }
   if (!feed) {
     return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: true };
@@ -346,17 +348,25 @@ async function syncFeedSharded(
     changedShardIds.map((id) => fetchShard(id, baseUrl)),
   );
 
+  const failedShardIds: string[] = [];
   const mergedPostings: Record<string, FeedPosting> = {};
   const newShardHashes: Record<string, string> = {};
 
   for (let i = 0; i < changedShardIds.length; i++) {
     const shardData = shardResults[i];
     const shardId = changedShardIds[i]!;
-    if (!shardData) continue;
+    if (!shardData) {
+      failedShardIds.push(shardId);
+      continue;
+    }
     for (const [pid, posting] of Object.entries(shardData.postings)) {
       mergedPostings[pid] = posting;
     }
     newShardHashes[shardId] = shards[shardId]!.sha256;
+  }
+
+  if (failedShardIds.length > 0) {
+    return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: false, error: `Failed to fetch shards: ${failedShardIds.join(', ')}` };
   }
 
   for (const [shardId, hash] of Object.entries(storedShardHashes)) {
@@ -369,7 +379,7 @@ async function syncFeedSharded(
   try {
     index = await fetchShardIndex(baseUrl);
   } catch {
-    // fall through
+    // companies metadata is best-effort
   }
 
   const feed: FeedData = {
@@ -377,8 +387,10 @@ async function syncFeedSharded(
     version: 1,
     count: meta.count,
     postings: mergedPostings,
-    companies: index?.companies,
   };
+  if (index?.companies) {
+    feed.companies = index.companies;
+  }
 
   const result = await upsertShardedPostings(db, feed, changedShardIds, removedShardIds);
 

@@ -1,0 +1,1429 @@
+{
+  "version": 1,
+  "updated_at": "2026-09-04T11:41:25Z",
+  "total_count": 5563,
+  "shards": [
+    {
+      "id": "ashby",
+      "count": 140,
+      "sha256": "09c4d811106ff568dbe0112f32aecfb3e3f60043d8bb1d9ec09cdc50be48b94c",
+      "updated_at": "2026-09-04T11:41:25Z"
+    },
+    {
+      "id": "greenhouse",
+      "count": 450,
+      "sha256": "ccdacd497f54c4b1fa3f63bb6f7a7f820b17d10a0e44152cdb6fe583dea7e925",
+      "updated_at": "2026-09-04T11:41:25Z"
+    },
+    {
+      "id": "lever",
+      "count": 101,
+      "sha256": "3e911c0f5563f7f6de1ac75a9549142fec0ea3915e8f2ac146747e641c7ce231",
+      "updated_at": "2026-09-04T11:41:25Z"
+    },
+    {
+      "id": "simplify",
+      "count": 2990,
+      "sha256": "00aebd9fadfab5801398feda2b0df5250bef76224144a237dc2d840a67f8845e",
+      "updated_at": "2026-09-04T11:41:25Z"
+    },
+    {
+      "id": "smartrecruiters",
+      "count": 488,
+      "sha256": "ea8c0b55904297216d20d127742ec1f9549cfb12feda6b92c63f701762c9c235",
+      "updated_at": "2026-09-04T11:41:25Z"
+    },
+    {
+      "id": "workday",
+      "count": 1394,
+      "sha256": "7eba07d62d72fd989d4a85ac0591ccbac72901e7a4b6f841a47dcd073ca1c98f",
+      "updated_at": "2026-09-04T11:41:25Z"
+    }
+  ],
+  "companies": {
+    "1password": {
+      "name": "1Password",
+      "typical_open": null
+    },
+    "1x": {
+      "name": "1X",
+      "typical_open": null
+    },
+    "3m": {
+      "name": "3M",
+      "typical_open": null
+    },
+    "a16z-crypto": {
+      "name": "a16z crypto",
+      "typical_open": null
+    },
+    "abbott": {
+      "name": "Abbott",
+      "typical_open": null
+    },
+    "abridge": {
+      "name": "Abridge",
+      "typical_open": null
+    },
+    "affirm": {
+      "name": "Affirm",
+      "typical_open": null
+    },
+    "agility-robotics": {
+      "name": "Agility Robotics",
+      "typical_open": null
+    },
+    "airbnb": {
+      "name": "Airbnb",
+      "typical_open": null
+    },
+    "airtable": {
+      "name": "Airtable",
+      "typical_open": null
+    },
+    "akuna-capital": {
+      "name": "Akuna Capital",
+      "typical_open": null
+    },
+    "alchemy": {
+      "name": "Alchemy",
+      "typical_open": null
+    },
+    "amcor": {
+      "name": "Amcor",
+      "typical_open": null
+    },
+    "ameren": {
+      "name": "Ameren",
+      "typical_open": null
+    },
+    "american-fidelity": {
+      "name": "American Fidelity",
+      "typical_open": null
+    },
+    "analog-devices": {
+      "name": "Analog Devices",
+      "typical_open": null
+    },
+    "anduril": {
+      "name": "Anduril Industries",
+      "typical_open": null
+    },
+    "anthropic": {
+      "name": "Anthropic",
+      "typical_open": null
+    },
+    "anyscale": {
+      "name": "Anyscale",
+      "typical_open": null
+    },
+    "appian": {
+      "name": "Appian",
+      "typical_open": null
+    },
+    "applied-intuition": {
+      "name": "Applied Intuition",
+      "typical_open": null
+    },
+    "apptronik": {
+      "name": "Apptronik",
+      "typical_open": null
+    },
+    "aptiv": {
+      "name": "Aptiv",
+      "typical_open": null
+    },
+    "aqr": {
+      "name": "AQR Capital Management",
+      "typical_open": null
+    },
+    "aquatic-capital-management": {
+      "name": "Aquatic Capital Management",
+      "typical_open": null
+    },
+    "argonne-national-laboratory": {
+      "name": "Argonne National Laboratory",
+      "typical_open": null
+    },
+    "arlo": {
+      "name": "Arlo Technologies",
+      "typical_open": null
+    },
+    "arrowstreet-capital": {
+      "name": "Arrowstreet Capital",
+      "typical_open": null
+    },
+    "asana": {
+      "name": "Asana",
+      "typical_open": null
+    },
+    "ashby": {
+      "name": "Ashby",
+      "typical_open": null
+    },
+    "asm-global": {
+      "name": "ASM Global",
+      "typical_open": null
+    },
+    "astera": {
+      "name": "Astera Institute",
+      "typical_open": null
+    },
+    "astera-labs": {
+      "name": "Astera Labs",
+      "typical_open": null
+    },
+    "astranis": {
+      "name": "Astranis",
+      "typical_open": null
+    },
+    "atlan": {
+      "name": "Atlan",
+      "typical_open": null
+    },
+    "autodesk": {
+      "name": "Autodesk",
+      "typical_open": null
+    },
+    "bank-of-montreal": {
+      "name": "BMO Financial Group",
+      "typical_open": null
+    },
+    "base-power": {
+      "name": "Base Power",
+      "typical_open": null
+    },
+    "baseten": {
+      "name": "Baseten",
+      "typical_open": null
+    },
+    "becton-dickinson": {
+      "name": "Becton Dickinson",
+      "typical_open": null
+    },
+    "belvedere-trading": {
+      "name": "Belvedere Trading",
+      "typical_open": null
+    },
+    "benchling": {
+      "name": "Benchling",
+      "typical_open": null
+    },
+    "blackedge-capital": {
+      "name": "BlackEdge Capital",
+      "typical_open": null
+    },
+    "blackrock": {
+      "name": "BlackRock",
+      "typical_open": null
+    },
+    "blackstone": {
+      "name": "Blackstone",
+      "typical_open": null
+    },
+    "block": {
+      "name": "Block",
+      "typical_open": null
+    },
+    "boeing": {
+      "name": "Boeing",
+      "typical_open": null
+    },
+    "borgwarner": {
+      "name": "BorgWarner",
+      "typical_open": null
+    },
+    "bosch": {
+      "name": "Bosch",
+      "typical_open": null
+    },
+    "bp": {
+      "name": "BP",
+      "typical_open": null
+    },
+    "braze": {
+      "name": "Braze",
+      "typical_open": null
+    },
+    "brex": {
+      "name": "Brex",
+      "typical_open": null
+    },
+    "bristol-myers-squibb": {
+      "name": "Bristol-Myers Squibb",
+      "typical_open": null
+    },
+    "brookfield": {
+      "name": "Brookfield",
+      "typical_open": null
+    },
+    "bungie": {
+      "name": "Bungie",
+      "typical_open": null
+    },
+    "cadence-design-systems": {
+      "name": "Cadence Design Systems",
+      "typical_open": null
+    },
+    "calendly": {
+      "name": "Calendly",
+      "typical_open": null
+    },
+    "calstart": {
+      "name": "CALSTART",
+      "typical_open": null
+    },
+    "canva": {
+      "name": "Canva",
+      "typical_open": null
+    },
+    "capital-one": {
+      "name": "Capital One",
+      "typical_open": null
+    },
+    "carta": {
+      "name": "Carta",
+      "typical_open": null
+    },
+    "carvana": {
+      "name": "Carvana",
+      "typical_open": null
+    },
+    "cerebras": {
+      "name": "Cerebras Systems",
+      "typical_open": null
+    },
+    "chevron-corporation": {
+      "name": "Chevron",
+      "typical_open": null
+    },
+    "chicago-trading-company": {
+      "name": "Chicago Trading Company",
+      "typical_open": null
+    },
+    "chime": {
+      "name": "Chime",
+      "typical_open": null
+    },
+    "ciena": {
+      "name": "Ciena",
+      "typical_open": null
+    },
+    "cisco": {
+      "name": "Cisco",
+      "typical_open": null
+    },
+    "cloudflare": {
+      "name": "Cloudflare",
+      "typical_open": null
+    },
+    "clover-health": {
+      "name": "Clover Health",
+      "typical_open": null
+    },
+    "cockroachlabs": {
+      "name": "Cockroach Labs",
+      "typical_open": null
+    },
+    "coder": {
+      "name": "Coder",
+      "typical_open": null
+    },
+    "cohere": {
+      "name": "Cohere",
+      "typical_open": null
+    },
+    "coinbase": {
+      "name": "Coinbase",
+      "typical_open": null
+    },
+    "color-health": {
+      "name": "Color Health",
+      "typical_open": null
+    },
+    "conocophillips": {
+      "name": "ConocoPhillips",
+      "typical_open": null
+    },
+    "contentful": {
+      "name": "Contentful",
+      "typical_open": null
+    },
+    "continental-resources": {
+      "name": "Continental Resources",
+      "typical_open": null
+    },
+    "coupang": {
+      "name": "Coupang",
+      "typical_open": null
+    },
+    "creatify-lab": {
+      "name": "Creatify",
+      "typical_open": null
+    },
+    "cresta": {
+      "name": "Cresta",
+      "typical_open": null
+    },
+    "crowe": {
+      "name": "Crowe",
+      "typical_open": null
+    },
+    "cursor": {
+      "name": "Cursor",
+      "typical_open": null
+    },
+    "cybernetic-labs": {
+      "name": "Cybernetic Labs",
+      "typical_open": null
+    },
+    "danaher": {
+      "name": "Danaher",
+      "typical_open": null
+    },
+    "databricks": {
+      "name": "Databricks",
+      "typical_open": null
+    },
+    "datadog": {
+      "name": "Datadog",
+      "typical_open": null
+    },
+    "dedalus-labs": {
+      "name": "Dedalus Labs",
+      "typical_open": null
+    },
+    "deel": {
+      "name": "Deel",
+      "typical_open": null
+    },
+    "deepgram": {
+      "name": "Deepgram",
+      "typical_open": null
+    },
+    "dell": {
+      "name": "Dell Technologies",
+      "typical_open": null
+    },
+    "delta-dental": {
+      "name": "Delta Dental",
+      "typical_open": null
+    },
+    "descript": {
+      "name": "Descript",
+      "typical_open": null
+    },
+    "dimensional-fund-advisors": {
+      "name": "Dimensional Fund Advisors",
+      "typical_open": null
+    },
+    "discord": {
+      "name": "Discord",
+      "typical_open": null
+    },
+    "disney": {
+      "name": "Disney",
+      "typical_open": null
+    },
+    "diversified-automation": {
+      "name": "Diversified Automation",
+      "typical_open": null
+    },
+    "docugami": {
+      "name": "Docugami",
+      "typical_open": null
+    },
+    "doordash": {
+      "name": "DoorDash",
+      "typical_open": null
+    },
+    "doppler": {
+      "name": "Doppler",
+      "typical_open": null
+    },
+    "dropbox": {
+      "name": "Dropbox",
+      "typical_open": null
+    },
+    "droyd-robotics": {
+      "name": "Droyd Robotics",
+      "typical_open": null
+    },
+    "drw": {
+      "name": "DRW",
+      "typical_open": null
+    },
+    "duolingo": {
+      "name": "Duolingo",
+      "typical_open": null
+    },
+    "dv-trading": {
+      "name": "DV Trading",
+      "typical_open": null
+    },
+    "edwards-lifesciences": {
+      "name": "Edwards Lifesciences",
+      "typical_open": null
+    },
+    "elastic": {
+      "name": "Elastic",
+      "typical_open": null
+    },
+    "eli-lilly": {
+      "name": "Eli Lilly",
+      "typical_open": null
+    },
+    "ensemble-health-partners": {
+      "name": "Ensemble Health Partners",
+      "typical_open": null
+    },
+    "epic-games": {
+      "name": "Epic Games",
+      "typical_open": null
+    },
+    "equifax": {
+      "name": "Equifax",
+      "typical_open": null
+    },
+    "equinox": {
+      "name": "Equinox",
+      "typical_open": null
+    },
+    "etched": {
+      "name": "Etched",
+      "typical_open": null
+    },
+    "excellus-bcbs": {
+      "name": "Excellus BCBS",
+      "typical_open": null
+    },
+    "faire": {
+      "name": "Faire",
+      "typical_open": null
+    },
+    "fannie-mae": {
+      "name": "Fannie Mae",
+      "typical_open": null
+    },
+    "figma": {
+      "name": "Figma",
+      "typical_open": null
+    },
+    "figure": {
+      "name": "Figure AI",
+      "typical_open": null
+    },
+    "fireworks": {
+      "name": "Fireworks AI",
+      "typical_open": null
+    },
+    "five-rings": {
+      "name": "Five Rings",
+      "typical_open": null
+    },
+    "fivetran": {
+      "name": "Fivetran",
+      "typical_open": null
+    },
+    "flatiron-health": {
+      "name": "Flatiron Health",
+      "typical_open": null
+    },
+    "flexport": {
+      "name": "Flexport",
+      "typical_open": null
+    },
+    "formlabs": {
+      "name": "Formlabs",
+      "typical_open": null
+    },
+    "fti-consulting": {
+      "name": "FTI Consulting",
+      "typical_open": null
+    },
+    "g-research": {
+      "name": "G-Research",
+      "typical_open": null
+    },
+    "ge-aerospace": {
+      "name": "GE Aerospace",
+      "typical_open": null
+    },
+    "ge-appliances": {
+      "name": "GE Appliances",
+      "typical_open": null
+    },
+    "ge-healthcare": {
+      "name": "GE HealthCare",
+      "typical_open": null
+    },
+    "ge-vernova": {
+      "name": "GE Vernova",
+      "typical_open": null
+    },
+    "generac": {
+      "name": "Generac",
+      "typical_open": null
+    },
+    "general-mills": {
+      "name": "General Mills",
+      "typical_open": null
+    },
+    "ginkgo-bioworks": {
+      "name": "Ginkgo Bioworks",
+      "typical_open": null
+    },
+    "gitlab": {
+      "name": "GitLab",
+      "typical_open": null
+    },
+    "granola": {
+      "name": "Granola",
+      "typical_open": null
+    },
+    "gusto": {
+      "name": "Gusto",
+      "typical_open": null
+    },
+    "harvey": {
+      "name": "Harvey",
+      "typical_open": null
+    },
+    "heliux": {
+      "name": "Heliux",
+      "typical_open": null
+    },
+    "hermeus": {
+      "name": "Hermeus",
+      "typical_open": null
+    },
+    "heron-power": {
+      "name": "Heron Power",
+      "typical_open": null
+    },
+    "hex": {
+      "name": "Hex",
+      "typical_open": null
+    },
+    "hightouch": {
+      "name": "Hightouch",
+      "typical_open": null
+    },
+    "hitachi": {
+      "name": "Hitachi",
+      "typical_open": null
+    },
+    "hntb": {
+      "name": "HNTB",
+      "typical_open": null
+    },
+    "hp": {
+      "name": "HP Inc",
+      "typical_open": null
+    },
+    "hpr-hyannis-port-research": {
+      "name": "Hyannis Port Research",
+      "typical_open": null
+    },
+    "hrt": {
+      "name": "Hudson River Trading",
+      "typical_open": null
+    },
+    "humana": {
+      "name": "Humana",
+      "typical_open": null
+    },
+    "ikea": {
+      "name": "IKEA",
+      "typical_open": null
+    },
+    "imc": {
+      "name": "IMC Trading",
+      "typical_open": null
+    },
+    "infinitequant": {
+      "name": "InfiniteQuant",
+      "typical_open": null
+    },
+    "infisical": {
+      "name": "Infisical",
+      "typical_open": null
+    },
+    "inflection-ai": {
+      "name": "Inflection AI",
+      "typical_open": null
+    },
+    "inngest": {
+      "name": "Inngest",
+      "typical_open": null
+    },
+    "instacart": {
+      "name": "Instacart",
+      "typical_open": null
+    },
+    "institute-of-foundation-models": {
+      "name": "Institute of Foundation Models",
+      "typical_open": null
+    },
+    "integra-fec": {
+      "name": "Integra FEC",
+      "typical_open": null
+    },
+    "intel": {
+      "name": "Intel",
+      "typical_open": null
+    },
+    "interdigital": {
+      "name": "InterDigital",
+      "typical_open": null
+    },
+    "international-rescue-committee-irc": {
+      "name": "International Rescue Committee (IRC)",
+      "typical_open": null
+    },
+    "jade-global": {
+      "name": "Jade Global",
+      "typical_open": null
+    },
+    "jane-street": {
+      "name": "Jane Street",
+      "typical_open": null
+    },
+    "johnson-johnson": {
+      "name": "Johnson & Johnson",
+      "typical_open": null
+    },
+    "jump-trading": {
+      "name": "Jump Trading",
+      "typical_open": null
+    },
+    "k-id": {
+      "name": "K-ID",
+      "typical_open": null
+    },
+    "kalshi": {
+      "name": "Kalshi",
+      "typical_open": null
+    },
+    "kastle-ai": {
+      "name": "Kastle AI",
+      "typical_open": null
+    },
+    "kepler-communications": {
+      "name": "Kepler Communications",
+      "typical_open": null
+    },
+    "keybank": {
+      "name": "KeyBank",
+      "typical_open": null
+    },
+    "kraft-heinz": {
+      "name": "Kraft Heinz",
+      "typical_open": null
+    },
+    "lambda": {
+      "name": "Lambda",
+      "typical_open": null
+    },
+    "langchain": {
+      "name": "LangChain",
+      "typical_open": null
+    },
+    "later": {
+      "name": "Later",
+      "typical_open": null
+    },
+    "launchdarkly": {
+      "name": "LaunchDarkly",
+      "typical_open": null
+    },
+    "lawrence-livermore-national-laboratory-llnl": {
+      "name": "Lawrence Livermore National Laboratory",
+      "typical_open": null
+    },
+    "lever": {
+      "name": "Lever",
+      "typical_open": null
+    },
+    "lila-sciences": {
+      "name": "Lila Sciences",
+      "typical_open": null
+    },
+    "linear": {
+      "name": "Linear",
+      "typical_open": null
+    },
+    "llamaindex": {
+      "name": "LlamaIndex",
+      "typical_open": null
+    },
+    "locus-robotics": {
+      "name": "Locus Robotics",
+      "typical_open": null
+    },
+    "loom": {
+      "name": "Loom",
+      "typical_open": null
+    },
+    "lpl-financial-holdings": {
+      "name": "LPL Financial",
+      "typical_open": null
+    },
+    "lucid-motors": {
+      "name": "Lucid Motors",
+      "typical_open": null
+    },
+    "lyft": {
+      "name": "Lyft",
+      "typical_open": null
+    },
+    "magnet-forensics": {
+      "name": "Magnet Forensics",
+      "typical_open": null
+    },
+    "mapjects": {
+      "name": "Mapjects",
+      "typical_open": null
+    },
+    "marmon-holdings": {
+      "name": "Marmon Holdings",
+      "typical_open": null
+    },
+    "marqeta": {
+      "name": "Marqeta",
+      "typical_open": null
+    },
+    "marshall-wace": {
+      "name": "Marshall Wace",
+      "typical_open": null
+    },
+    "marvell": {
+      "name": "Marvell Technology",
+      "typical_open": null
+    },
+    "maven-securities": {
+      "name": "Maven Securities",
+      "typical_open": null
+    },
+    "mckesson": {
+      "name": "McKesson",
+      "typical_open": null
+    },
+    "medtronic": {
+      "name": "Medtronic",
+      "typical_open": null
+    },
+    "melio": {
+      "name": "Melio",
+      "typical_open": null
+    },
+    "melius": {
+      "name": "Melius",
+      "typical_open": null
+    },
+    "melotech": {
+      "name": "Melotech",
+      "typical_open": null
+    },
+    "merck": {
+      "name": "Merck",
+      "typical_open": null
+    },
+    "mercury": {
+      "name": "Mercury",
+      "typical_open": null
+    },
+    "meshy": {
+      "name": "Meshy",
+      "typical_open": null
+    },
+    "micron": {
+      "name": "Micron Technology",
+      "typical_open": null
+    },
+    "midjourney": {
+      "name": "Midjourney",
+      "typical_open": null
+    },
+    "miro": {
+      "name": "Miro",
+      "typical_open": null
+    },
+    "modal": {
+      "name": "Modal",
+      "typical_open": null
+    },
+    "mondelez": {
+      "name": "Mondelez",
+      "typical_open": null
+    },
+    "mongodb": {
+      "name": "MongoDB",
+      "typical_open": null
+    },
+    "motorola": {
+      "name": "Motorola Solutions",
+      "typical_open": null
+    },
+    "multiply-labs": {
+      "name": "Multiply Labs",
+      "typical_open": null
+    },
+    "neon": {
+      "name": "Neon",
+      "typical_open": null
+    },
+    "neuralink": {
+      "name": "Neuralink",
+      "typical_open": null
+    },
+    "nextdoor": {
+      "name": "Nextdoor",
+      "typical_open": null
+    },
+    "nidec": {
+      "name": "Nidec",
+      "typical_open": null
+    },
+    "nightwing-intelligence-solutions": {
+      "name": "Nightwing",
+      "typical_open": null
+    },
+    "nio": {
+      "name": "NIO",
+      "typical_open": null
+    },
+    "northrop-grumman": {
+      "name": "Northrop Grumman",
+      "typical_open": null
+    },
+    "northwestern-mutual": {
+      "name": "Northwestern Mutual",
+      "typical_open": null
+    },
+    "notion": {
+      "name": "Notion",
+      "typical_open": null
+    },
+    "novanta": {
+      "name": "Novanta",
+      "typical_open": null
+    },
+    "nrel": {
+      "name": "National Renewable Energy Laboratory",
+      "typical_open": null
+    },
+    "nuro": {
+      "name": "Nuro",
+      "typical_open": null
+    },
+    "nvidia": {
+      "name": "NVIDIA",
+      "typical_open": null
+    },
+    "nxp-semiconductors": {
+      "name": "NXP Semiconductors",
+      "typical_open": null
+    },
+    "okta": {
+      "name": "Okta",
+      "typical_open": null
+    },
+    "old-mission": {
+      "name": "Old Mission Capital",
+      "typical_open": null
+    },
+    "oneok": {
+      "name": "ONEOK",
+      "typical_open": null
+    },
+    "ontario-teachers-pension-plan": {
+      "name": "Ontario Teachers' Pension Plan",
+      "typical_open": null
+    },
+    "openai": {
+      "name": "OpenAI",
+      "typical_open": null
+    },
+    "optiver": {
+      "name": "Optiver",
+      "typical_open": null
+    },
+    "opusclip": {
+      "name": "OpusClip",
+      "typical_open": null
+    },
+    "oyster": {
+      "name": "Oyster",
+      "typical_open": null
+    },
+    "pagerduty": {
+      "name": "PagerDuty",
+      "typical_open": null
+    },
+    "palantir": {
+      "name": "Palantir",
+      "typical_open": null
+    },
+    "palo-alto-networks": {
+      "name": "Palo Alto Networks",
+      "typical_open": null
+    },
+    "paradigm": {
+      "name": "Paradigm",
+      "typical_open": null
+    },
+    "path-robotics": {
+      "name": "Path Robotics",
+      "typical_open": null
+    },
+    "perplexity": {
+      "name": "Perplexity",
+      "typical_open": null
+    },
+    "persona-ai": {
+      "name": "Persona AI",
+      "typical_open": null
+    },
+    "pfizer": {
+      "name": "Pfizer",
+      "typical_open": null
+    },
+    "phantom": {
+      "name": "Phantom",
+      "typical_open": null
+    },
+    "pimco": {
+      "name": "PIMCO",
+      "typical_open": null
+    },
+    "pinecone": {
+      "name": "Pinecone",
+      "typical_open": null
+    },
+    "pinterest": {
+      "name": "Pinterest",
+      "typical_open": null
+    },
+    "plaid": {
+      "name": "Plaid",
+      "typical_open": null
+    },
+    "pnc-financial-services": {
+      "name": "PNC Financial Services",
+      "typical_open": null
+    },
+    "point72": {
+      "name": "Point72",
+      "typical_open": null
+    },
+    "polymarket": {
+      "name": "Polymarket",
+      "typical_open": null
+    },
+    "postman": {
+      "name": "Postman",
+      "typical_open": null
+    },
+    "prefect": {
+      "name": "Prefect",
+      "typical_open": null
+    },
+    "pricewaterhousecoopers-pwc": {
+      "name": "PwC",
+      "typical_open": null
+    },
+    "procter-gamble": {
+      "name": "Procter & Gamble",
+      "typical_open": null
+    },
+    "propel": {
+      "name": "Propel",
+      "typical_open": null
+    },
+    "quadrillion": {
+      "name": "Quadrillion Labs",
+      "typical_open": null
+    },
+    "railway": {
+      "name": "Railway",
+      "typical_open": null
+    },
+    "ramp": {
+      "name": "Ramp",
+      "typical_open": null
+    },
+    "recursion": {
+      "name": "Recursion",
+      "typical_open": null
+    },
+    "reddit": {
+      "name": "Reddit",
+      "typical_open": null
+    },
+    "redwood-materials": {
+      "name": "Redwood Materials",
+      "typical_open": null
+    },
+    "render": {
+      "name": "Render",
+      "typical_open": null
+    },
+    "replit": {
+      "name": "Replit",
+      "typical_open": null
+    },
+    "resend": {
+      "name": "Resend",
+      "typical_open": null
+    },
+    "rewind": {
+      "name": "Rewind AI",
+      "typical_open": null
+    },
+    "rfcuny": {
+      "name": "RFCUNY",
+      "typical_open": null
+    },
+    "riot-games": {
+      "name": "Riot Games",
+      "typical_open": null
+    },
+    "robinhood": {
+      "name": "Robinhood",
+      "typical_open": null
+    },
+    "roblox": {
+      "name": "Roblox",
+      "typical_open": null
+    },
+    "rocket-lab": {
+      "name": "Rocket Lab",
+      "typical_open": null
+    },
+    "roku": {
+      "name": "Roku",
+      "typical_open": null
+    },
+    "royal-bank-of-canada": {
+      "name": "Royal Bank of Canada",
+      "typical_open": null
+    },
+    "rrs-group": {
+      "name": "RRS Group",
+      "typical_open": null
+    },
+    "rtx": {
+      "name": "RTX",
+      "typical_open": null
+    },
+    "runway": {
+      "name": "Runway",
+      "typical_open": null
+    },
+    "sambanova": {
+      "name": "SambaNova Systems",
+      "typical_open": null
+    },
+    "samsara": {
+      "name": "Samsara",
+      "typical_open": null
+    },
+    "scaleai": {
+      "name": "Scale AI",
+      "typical_open": null
+    },
+    "schonfeld": {
+      "name": "Schonfeld",
+      "typical_open": null
+    },
+    "schweitzer-engineering-laboratories": {
+      "name": "Schweitzer Engineering",
+      "typical_open": null
+    },
+    "semgrep": {
+      "name": "Semgrep",
+      "typical_open": null
+    },
+    "seven-research": {
+      "name": "Seven Research",
+      "typical_open": null
+    },
+    "sharkninja": {
+      "name": "SharkNinja",
+      "typical_open": null
+    },
+    "shield-ai": {
+      "name": "Shield AI",
+      "typical_open": null
+    },
+    "sierra": {
+      "name": "Sierra",
+      "typical_open": null
+    },
+    "skechers": {
+      "name": "Skechers",
+      "typical_open": null
+    },
+    "skydio": {
+      "name": "Skydio",
+      "typical_open": null
+    },
+    "smartsheet": {
+      "name": "Smartsheet",
+      "typical_open": null
+    },
+    "snorkel-ai": {
+      "name": "Snorkel AI",
+      "typical_open": null
+    },
+    "snowflake": {
+      "name": "Snowflake",
+      "typical_open": null
+    },
+    "socket": {
+      "name": "Socket",
+      "typical_open": null
+    },
+    "sofi": {
+      "name": "SoFi",
+      "typical_open": null
+    },
+    "sony": {
+      "name": "Sony",
+      "typical_open": null
+    },
+    "soti": {
+      "name": "SOTI",
+      "typical_open": null
+    },
+    "spacex": {
+      "name": "SpaceX",
+      "typical_open": null
+    },
+    "spotify": {
+      "name": "Spotify",
+      "typical_open": null
+    },
+    "squarespace": {
+      "name": "Squarespace",
+      "typical_open": null
+    },
+    "stripe": {
+      "name": "Stripe",
+      "typical_open": null
+    },
+    "stryker": {
+      "name": "Stryker",
+      "typical_open": null
+    },
+    "stytch": {
+      "name": "Stytch",
+      "typical_open": null
+    },
+    "suncor": {
+      "name": "Suncor",
+      "typical_open": null
+    },
+    "supabase": {
+      "name": "Supabase",
+      "typical_open": null
+    },
+    "super": {
+      "name": "Super.com",
+      "typical_open": null
+    },
+    "synchrony-financial": {
+      "name": "Synchrony Financial",
+      "typical_open": null
+    },
+    "synthesia": {
+      "name": "Synthesia",
+      "typical_open": null
+    },
+    "target": {
+      "name": "Target",
+      "typical_open": null
+    },
+    "teledyne": {
+      "name": "Teledyne Technologies",
+      "typical_open": null
+    },
+    "temporal": {
+      "name": "Temporal",
+      "typical_open": null
+    },
+    "tencent": {
+      "name": "Tencent",
+      "typical_open": null
+    },
+    "tenstorrent": {
+      "name": "Tenstorrent",
+      "typical_open": null
+    },
+    "terranova": {
+      "name": "Terranova",
+      "typical_open": null
+    },
+    "the-nuclear-company": {
+      "name": "The Nuclear Company",
+      "typical_open": null
+    },
+    "thomson-reuters": {
+      "name": "Thomson Reuters",
+      "typical_open": null
+    },
+    "thyssenkrupp": {
+      "name": "thyssenkrupp",
+      "typical_open": null
+    },
+    "tilde-research": {
+      "name": "Tilde Research",
+      "typical_open": null
+    },
+    "tldraw": {
+      "name": "tldraw",
+      "typical_open": null
+    },
+    "toast": {
+      "name": "Toast",
+      "typical_open": null
+    },
+    "together-ai": {
+      "name": "Together AI",
+      "typical_open": null
+    },
+    "tower-research": {
+      "name": "Tower Research Capital",
+      "typical_open": null
+    },
+    "transmarket-group": {
+      "name": "TransMarket Group",
+      "typical_open": null
+    },
+    "twilio": {
+      "name": "Twilio",
+      "typical_open": null
+    },
+    "twitch": {
+      "name": "Twitch",
+      "typical_open": null
+    },
+    "uniswap": {
+      "name": "Uniswap",
+      "typical_open": null
+    },
+    "unstructured": {
+      "name": "Unstructured",
+      "typical_open": null
+    },
+    "upstart": {
+      "name": "Upstart",
+      "typical_open": null
+    },
+    "valstad": {
+      "name": "Valstad",
+      "typical_open": null
+    },
+    "vanguard": {
+      "name": "Vanguard",
+      "typical_open": null
+    },
+    "varda-space": {
+      "name": "Varda Space Industries",
+      "typical_open": null
+    },
+    "vercel": {
+      "name": "Vercel",
+      "typical_open": null
+    },
+    "verkada": {
+      "name": "Verkada",
+      "typical_open": null
+    },
+    "virtu-financial": {
+      "name": "Virtu Financial",
+      "typical_open": null
+    },
+    "visa": {
+      "name": "Visa",
+      "typical_open": null
+    },
+    "voloridge": {
+      "name": "Voloridge Investment Management",
+      "typical_open": null
+    },
+    "wabtec": {
+      "name": "Wabtec",
+      "typical_open": null
+    },
+    "walleye-capital": {
+      "name": "Walleye Capital",
+      "typical_open": null
+    },
+    "walmart": {
+      "name": "Walmart",
+      "typical_open": null
+    },
+    "warp": {
+      "name": "Warp",
+      "typical_open": null
+    },
+    "watershed": {
+      "name": "Watershed",
+      "typical_open": null
+    },
+    "waymo": {
+      "name": "Waymo",
+      "typical_open": null
+    },
+    "weaviate": {
+      "name": "Weaviate",
+      "typical_open": null
+    },
+    "webflow": {
+      "name": "Webflow",
+      "typical_open": null
+    },
+    "western-digital": {
+      "name": "Western Digital",
+      "typical_open": null
+    },
+    "workos": {
+      "name": "WorkOS",
+      "typical_open": null
+    },
+    "writer": {
+      "name": "Writer",
+      "typical_open": null
+    },
+    "xantium": {
+      "name": "Xantium",
+      "typical_open": null
+    },
+    "xsolla": {
+      "name": "Xsolla",
+      "typical_open": null
+    },
+    "zed": {
+      "name": "Zed",
+      "typical_open": null
+    },
+    "zipline": {
+      "name": "Zipline",
+      "typical_open": null
+    },
+    "ziprecruiter": {
+      "name": "ZipRecruiter",
+      "typical_open": null
+    },
+    "zoox": {
+      "name": "Zoox",
+      "typical_open": null
+    },
+    "zscaler": {
+      "name": "Zscaler",
+      "typical_open": null
+    }
+  }
+}

@@ -505,6 +505,13 @@ describe('feed-sync', () => {
       setStoredMetaHash('samehash');
       const meta = makeMeta('samehash', 5);
 
+      for (let i = 0; i < 5; i++) {
+        await db.run(
+          'INSERT INTO postings_cache (id, data, first_seen_at, synced_at) VALUES (?, ?, ?, ?)',
+          [`p${String(i)}`, '{}', '2026-08-01T00:00:00Z', '2026-08-12T00:00:00Z'],
+        );
+      }
+
       mockFetchResponses({
         'meta.json': { ok: true, body: meta },
       });

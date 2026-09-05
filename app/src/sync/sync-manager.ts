@@ -25,6 +25,7 @@ export class SyncManager {
   private db: Database;
   private profile: Profile | null = null;
   private syncing = false;
+  private started = false;
   private intervalId: ReturnType<typeof setInterval> | null = null;
   private listener: SyncListener | null = null;
   private state: SyncState = {
@@ -42,7 +43,7 @@ export class SyncManager {
     this.db = db;
   }
 
-  setProfile(profile: Profile): void {
+  setProfile(profile: Profile | null): void {
     this.profile = profile;
   }
 
@@ -65,6 +66,8 @@ export class SyncManager {
   }
 
   start(): void {
+    if (this.started) return;
+    this.started = true;
     void this.doSync();
 
     this.visibilityHandler = (): void => {
@@ -85,6 +88,7 @@ export class SyncManager {
   }
 
   stop(): void {
+    this.started = false;
     if (this.intervalId !== null) {
       clearInterval(this.intervalId);
       this.intervalId = null;
@@ -152,9 +156,7 @@ export class SyncManager {
 
       void updateTrayInfo('just now', updatedCount);
 
-      if (!result.skipped) {
-        void prefetchDescriptions(this.db, undefined, this.profile ?? undefined);
-      }
+      void prefetchDescriptions(this.db, undefined, this.profile ?? undefined);
 
       if (GMAIL_ENABLED && isTauri()) {
         try {

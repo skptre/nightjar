@@ -4,6 +4,7 @@ import {
   parseGreenhouseUrl,
   parseLeverUrl,
   parseAshbyUrl,
+  parseWorkdayUrl,
   htmlToPlaintext,
   unescapeHtml,
   DescriptionFetcher,
@@ -16,6 +17,7 @@ async function insertPosting(
   overrides: Partial<{
     url: string;
     source: string;
+    ats: string;
     source_job_id: string;
     company_slug: string;
     title: string;
@@ -33,7 +35,7 @@ async function insertPosting(
     company: 'TestCo',
     location: 'NYC',
     locations: ['NYC'],
-    ats: overrides.source ?? 'greenhouse',
+    ats: overrides.ats ?? overrides.source ?? 'greenhouse',
     posted_at: null,
     first_seen_at: '2026-08-01T00:00:00Z',
     last_seen_at: '2026-08-12T00:00:00Z',
@@ -59,6 +61,11 @@ describe('URL parsing', () => {
     it('extracts token and jobId', () => {
       const result = parseGreenhouseUrl('https://boards.greenhouse.io/ramp/jobs/12345');
       expect(result).toEqual({ token: 'ramp', jobId: '12345' });
+    });
+
+    it('supports the current job-boards hostname', () => {
+      expect(parseGreenhouseUrl('https://job-boards.greenhouse.io/ramp/jobs/12345'))
+        .toEqual({ token: 'ramp', jobId: '12345' });
     });
 
     it('handles URLs with query params', () => {
@@ -94,6 +101,11 @@ describe('URL parsing', () => {
       });
     });
 
+    it('supports EU Lever boards', () => {
+      expect(parseLeverUrl('https://jobs.eu.lever.co/cloudflare/abc-123'))
+        .toEqual({ slug: 'cloudflare', jobId: 'abc-123' });
+    });
+
     it('returns null for non-lever URLs', () => {
       expect(parseLeverUrl('https://boards.greenhouse.io/ramp/jobs/1')).toBeNull();
     });
@@ -102,7 +114,7 @@ describe('URL parsing', () => {
   describe('parseAshbyUrl', () => {
     it('extracts slug', () => {
       const result = parseAshbyUrl('https://jobs.ashbyhq.com/anthropic/abc-123');
-      expect(result).toEqual({ slug: 'anthropic' });
+      expect(result).toEqual({ slug: 'anthropic', jobId: 'abc-123' });
     });
 
     it('handles slug-only URLs', () => {
@@ -112,6 +124,25 @@ describe('URL parsing', () => {
 
     it('returns null for non-ashby URLs', () => {
       expect(parseAshbyUrl('https://jobs.lever.co/foo/bar')).toBeNull();
+    });
+  });
+
+  describe('parseWorkdayUrl', () => {
+    it('keeps the career site required by the CXS detail endpoint', () => {
+      expect(parseWorkdayUrl(
+        'https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/Santa-Clara/SWE-Intern_JR1',
+      )).toEqual({
+        host: 'nvidia.wd5.myworkdayjobs.com',
+        tenant: 'nvidia',
+        site: 'NVIDIAExternalCareerSite',
+        path: '/job/Santa-Clara/SWE-Intern_JR1',
+      });
+    });
+
+    it('rejects legacy site-less URLs instead of building a broken API URL', () => {
+      expect(parseWorkdayUrl(
+        'https://nvidia.wd5.myworkdayjobs.com/job/Santa-Clara/SWE-Intern_JR1',
+      )).toBeNull();
     });
   });
 });
@@ -255,6 +286,26 @@ describe('DescriptionFetcher', () => {
     });
 
     expect(result.description).toBe('Second job description');
+  });
+
+  it('uses the Ashby ID in a Simplify URL', async () => {
+    vi.stubGlobal('fetch', vi.fn(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve({
+        jobs: [{ id: 'ashby-job', descriptionPlain: 'Matched by URL' }],
+      }),
+    })));
+
+    const result = await new DescriptionFetcher().fetchOne({
+      id: 'simplify-row',
+      url: 'https://jobs.ashbyhq.com/linear/ashby-job',
+      source: 'simplify',
+      ats: 'ashby',
+      source_job_id: 'simplify-source-id',
+      company_slug: 'linear',
+    });
+
+    expect(result.description).toBe('Matched by URL');
   });
 
   it('caches ashby board response for same company', async () => {
@@ -422,6 +473,52 @@ describe('prefetchDescriptions', () => {
       ['p1'],
     );
     expect(row!.description).toBe('Fetched description text');
+  });
+
+  it('uses the underlying ATS for Simplify postings', async () => {
+    await insertPosting(db, 'simplify-lever', {
+      source: 'simplify',
+      ats: 'lever',
+      url: 'https://jobs.lever.co/testco/abc',
+      source_job_id: 'abc',
+    });
+
+    const fetchMock = vi.fn(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve({ descriptionPlain: 'Lever detail via Simplify' }),
+    }));
+    vi.stubGlobal('fetch', fetchMock);
+
+    const results = await prefetchDescriptions(db, 1);
+
+    expect(results[0]?.description).toBe('Lever detail via Simplify');
+    expect(fetchMock).toHaveBeenCalledWith('https://api.lever.co/v0/postings/testco/abc');
+  });
+
+  it('backs off failed rows so a fresh row is not starved', async () => {
+    await insertPosting(db, 'first', {
+      source: 'greenhouse',
+      url: 'https://boards.greenhouse.io/testco/jobs/111',
+      score: 100,
+    });
+    await insertPosting(db, 'second', {
+      source: 'greenhouse',
+      url: 'https://boards.greenhouse.io/testco/jobs/222',
+      source_job_id: '222',
+      score: 10,
+    });
+
+    vi.stubGlobal('fetch', vi.fn(() => Promise.resolve({ ok: false })));
+
+    const firstPass = await prefetchDescriptions(db, 1);
+    const secondPass = await prefetchDescriptions(db, 1);
+
+    expect(firstPass.map((result) => result.id)).toEqual(['first']);
+    expect(secondPass.map((result) => result.id)).toEqual(['second']);
+    const attempted = await db.query<{ id: string; description_attempted_at: string | null }>(
+      'SELECT id, description_attempted_at FROM postings_cache ORDER BY id',
+    );
+    expect(attempted.every((row) => row.description_attempted_at !== null)).toBe(true);
   });
 
   it('skips closed postings', async () => {

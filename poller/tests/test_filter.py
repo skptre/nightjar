@@ -249,7 +249,7 @@ class TestFilterUsLocations:
         assert len(result) == 1
         assert us in result
 
-    def test_keeps_ambiguous_locations(self) -> None:
+    def test_drops_ambiguous_locations_from_us_feed(self) -> None:
         remote = MagicMock()
         remote.title = "Intern"
         remote.location = "Remote"
@@ -266,7 +266,7 @@ class TestFilterUsLocations:
         opaque.locations = []
 
         result = filter_us_locations([remote, empty, opaque])
-        assert len(result) == 3
+        assert result == []
 
     def test_empty_list(self) -> None:
         assert filter_us_locations([]) == []

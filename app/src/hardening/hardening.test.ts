@@ -187,38 +187,6 @@ describe('Block 10 — App Hardening', () => {
     });
   });
 
-  describe('Stale data messages', () => {
-    function getStaleMessage(lastError: string | null): string | null {
-      if (lastError) {
-        if (lastError === 'Offline') return 'No internet connection. Showing cached data.';
-        if (lastError.includes('404')) return 'Feed unavailable. Try again later.';
-        if (lastError.toLowerCase().includes('quota')) return 'Storage full. Export data and clear cache.';
-        return 'Sync failed. Using cached data.';
-      }
-      return null;
-    }
-
-    it('offline error produces correct message', () => {
-      expect(getStaleMessage('Offline')).toBe('No internet connection. Showing cached data.');
-    });
-
-    it('404 error produces correct message', () => {
-      expect(getStaleMessage('Feed unavailable (404). Check feed URL in settings.')).toBe('Feed unavailable. Try again later.');
-    });
-
-    it('quota error produces correct message', () => {
-      expect(getStaleMessage('QuotaExceededError: storage quota reached')).toBe('Storage full. Export data and clear cache.');
-    });
-
-    it('generic error produces fallback message', () => {
-      expect(getStaleMessage('Unknown error')).toBe('Sync failed. Using cached data.');
-    });
-
-    it('no error returns null', () => {
-      expect(getStaleMessage(null)).toBeNull();
-    });
-  });
-
   describe('Feed sync error handling', () => {
     it('404 response from feed throws with helpful message', async () => {
       vi.stubGlobal('fetch', vi.fn(() =>

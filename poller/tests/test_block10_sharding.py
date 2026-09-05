@@ -392,8 +392,8 @@ class TestMetaWithShards:
 
 
 class TestShardingThreshold:
-    def test_threshold_is_5000(self) -> None:
-        assert SHARDING_THRESHOLD == 5000
+    def test_threshold_accounts_for_published_descriptions(self) -> None:
+        assert SHARDING_THRESHOLD == 1000
 
 
 class TestGlobalDedupeBeforeSharding:

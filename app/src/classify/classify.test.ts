@@ -879,6 +879,13 @@ describe('eligibility — location', () => {
     expect(result.verdict).toBe('unclear');
   });
 
+  it('flags an explicit foreign city for a US-only user', () => {
+    const profile = makeProfile({ locations: ['US'] });
+    const result = checkEligibility('Intern', null, ['Shanghai'], profile);
+    expect(result.verdict).toBe('ineligible');
+    expect(result.flags.some((flag) => flag.type === 'location_mismatch')).toBe(true);
+  });
+
   it('does not flag when user locations empty', () => {
     const profile = makeProfile({ locations: [] });
     const result = checkEligibility(
@@ -903,6 +910,31 @@ describe('eligibility — location', () => {
 });
 
 describe('eligibility — defaults and invariants', () => {
+  it('uses structured degree metadata to reject a clear mismatch', () => {
+    const profile = makeProfile({ degree_type: 'bachelors' });
+    const result = checkEligibility(
+      'Research Intern',
+      null,
+      ['New York, NY'],
+      profile,
+      { degrees: ["Master's", 'PhD'] },
+    );
+    expect(result.verdict).toBe('ineligible');
+    expect(result.flags.some((flag) => flag.type === 'degree_mismatch')).toBe(true);
+  });
+
+  it('does not reject when structured degree metadata includes the profile degree', () => {
+    const profile = makeProfile({ degree_type: 'bachelors' });
+    const result = checkEligibility(
+      'Software Intern',
+      null,
+      ['New York, NY'],
+      profile,
+      { degrees: ["Bachelor's", "Master's"] },
+    );
+    expect(result.verdict).toBe('unclear');
+  });
+
   it('defaults to unclear with no description', () => {
     const result = checkEligibility(
       'SWE Intern',

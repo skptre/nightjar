@@ -121,6 +121,10 @@ export function validateAndRepairProfile(raw: unknown): Profile | null {
     contacts,
   };
 
+  if (raw['degree_type'] === 'bachelors' || raw['degree_type'] === 'masters' || raw['degree_type'] === 'phd') {
+    result.degree_type = raw['degree_type'];
+  }
+
   if (typeof raw['notifications_enabled'] === 'boolean') {
     result.notifications_enabled = raw['notifications_enabled'];
   }

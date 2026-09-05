@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { NightjarDB } from '@/db/database';
-import { CURRENT_JOBS_QUERY, filterOptionsForProfile } from './FeedView';
+import { CURRENT_JOBS_QUERY, filterOptionsForProfile, getFeedEmptyState } from './FeedView';
 
 function makePostingData(overrides: Record<string, unknown> = {}): string {
   return JSON.stringify({
@@ -590,61 +590,19 @@ describe('Virtual Scroll Logic', () => {
   });
 });
 
-describe('Stale Data Indicator Logic', () => {
-  it('no stale message when last sync is recent', () => {
-    const lastSyncedAt = new Date().toISOString();
-    const ageMs = Date.now() - new Date(lastSyncedAt).getTime();
-    const isStale = ageMs > 30 * 60 * 1000;
-    expect(isStale).toBe(false);
+describe('Feed empty-state messaging', () => {
+  it('shows an actionable first-load error without cache terminology', () => {
+    const state = getFeedEmptyState(0, 'error');
+
+    expect(state.title).toBe("Jobs couldn't be updated.");
+    expect(state.detail).toContain('retry automatically');
+    expect(`${state.title} ${state.detail ?? ''}`).not.toMatch(/cached|sync failed/i);
   });
 
-  it('stale message when last sync is >30 min ago', () => {
-    const old = new Date(Date.now() - 45 * 60 * 1000).toISOString();
-    const ageMs = Date.now() - new Date(old).getTime();
-    const isStale = ageMs > 30 * 60 * 1000;
-    expect(isStale).toBe(true);
-  });
-
-  it('stale message on sync error with lastSyncedAt', () => {
-    const syncStatus = 'error';
-    const lastError = 'Network error';
-    const lastSyncedAt = new Date(Date.now() - 5 * 60 * 1000).toISOString();
-
-    let message: string | null = null;
-    if (syncStatus === 'error' && lastError) {
-      const diffMs = Date.now() - new Date(lastSyncedAt).getTime();
-      const minutes = Math.floor(diffMs / 60_000);
-      message = `Sync failed. Using cached data from ${String(minutes)}m ago.`;
-    }
-
-    expect(message).not.toBeNull();
-    expect(message).toContain('Sync failed');
-    expect(message).toContain('5m ago');
-  });
-
-  it('stale message on sync error without lastSyncedAt', () => {
-    const syncStatus = 'error';
-    const lastError = 'Network error';
-    const lastSyncedAt: string | null = null;
-
-    let message: string | null = null;
-    if (syncStatus === 'error' && lastError) {
-      if (lastSyncedAt) {
-        message = 'Sync failed. Using cached data from X ago.';
-      } else {
-        message = 'Sync failed. Using cached data.';
-      }
-    }
-
-    expect(message).toBe('Sync failed. Using cached data.');
-  });
-
-  it('no stale message when sync is idle and recent', () => {
-    const syncStatus: string = 'idle';
-    const lastSyncedAt = new Date().toISOString();
-
-    const ageMs = Date.now() - new Date(lastSyncedAt).getTime();
-    const isStale = syncStatus === 'error' || ageMs > 30 * 60 * 1000;
-    expect(isStale).toBe(false);
+  it('does not surface a background refresh failure over existing jobs', () => {
+    expect(getFeedEmptyState(12, 'error')).toEqual({
+      title: 'No jobs match these filters.',
+      detail: null,
+    });
   });
 });

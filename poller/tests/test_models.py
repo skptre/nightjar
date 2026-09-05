@@ -118,10 +118,21 @@ class TestPostingRoundTrip:
         d = posting.to_dict()
         assert "merged_from" not in d
 
-    def test_description_text_excluded_from_dict(self) -> None:
-        posting = self._make_posting()
-        d = posting.to_dict()
-        assert "description_text" not in d
+    def test_description_text_included_when_available(self) -> None:
+        posting = self._make_posting(description_text="Public job description")
+        assert posting.to_dict()["description_text"] == "Public job description"
+
+    def test_published_description_is_capped(self) -> None:
+        posting = self._make_posting(description_text="x" * 6_000)
+        assert len(posting.to_dict()["description_text"]) == 5_000
+
+    def test_empty_description_text_omitted(self) -> None:
+        posting = self._make_posting(description_text="")
+        assert "description_text" not in posting.to_dict()
+
+    def test_public_http_url_is_upgraded_to_https(self) -> None:
+        posting = self._make_posting(url="http://jobs.example.com/role/1")
+        assert posting.to_dict()["url"] == "https://jobs.example.com/role/1"
 
     def test_posting_is_frozen(self) -> None:
         posting = self._make_posting()

@@ -167,6 +167,10 @@ def _merge(canonical: Posting, discarded: Posting) -> Posting:
     merged_metadata: dict[str, Any] = {}
     if canonical.source_metadata and isinstance(canonical.source_metadata, dict):
         merged_metadata.update(canonical.source_metadata)
+    if discarded.source_metadata and isinstance(discarded.source_metadata, dict):
+        for metadata_key, value in discarded.source_metadata.items():
+            if metadata_key != "provenance":
+                merged_metadata.setdefault(metadata_key, value)
     merged_metadata["provenance"] = deduped_prov
 
     return dataclasses.replace(
@@ -202,8 +206,34 @@ def _is_match(a: Posting, b: Posting) -> bool:
 
 
 def dedupe_postings(postings: list[Posting]) -> list[Posting]:
+    # Exact application URLs are authoritative even when registry aliases use
+    # different company slugs or an aggregator labels the underlying ATS as its
+    # own source. Merge these globally before the conservative fuzzy pass.
+    exact_by_url: dict[str, Posting] = {}
+    without_exact_duplicates: list[Posting] = []
+    for posting in postings:
+        canonical_url = canonicalize_url(
+            posting.url,
+            provider=posting.ats,
+            has_source_job_id=bool(posting.source_job_id),
+        )
+        if not canonical_url:
+            without_exact_duplicates.append(posting)
+            continue
+        existing = exact_by_url.get(canonical_url)
+        if existing is None:
+            exact_by_url[canonical_url] = posting
+            without_exact_duplicates.append(posting)
+            continue
+
+        canonical, discarded = _pick_canonical(existing, posting)
+        merged_posting = _merge(canonical, discarded)
+        exact_by_url[canonical_url] = merged_posting
+        existing_index = without_exact_duplicates.index(existing)
+        without_exact_duplicates[existing_index] = merged_posting
+
     groups: dict[str, list[Posting]] = defaultdict(list)
-    for p in postings:
+    for p in without_exact_duplicates:
         groups[p.company_slug].append(p)
 
     result: list[Posting] = []
@@ -214,7 +244,7 @@ def dedupe_postings(postings: list[Posting]) -> list[Posting]:
             continue
 
         discarded_ids: set[str] = set()
-        merged: dict[str, Posting] = {p.id: p for p in group}
+        merged_by_id: dict[str, Posting] = {p.id: p for p in group}
 
         for i in range(len(group)):
             if group[i].id in discarded_ids:
@@ -223,17 +253,17 @@ def dedupe_postings(postings: list[Posting]) -> list[Posting]:
                 if group[j].id in discarded_ids:
                     continue
 
-                a = merged[group[i].id]
-                b = merged[group[j].id]
+                a = merged_by_id[group[i].id]
+                b = merged_by_id[group[j].id]
 
                 if not _is_match(a, b):
                     continue
 
                 canonical, discard = _pick_canonical(a, b)
-                merged[canonical.id] = _merge(canonical, discard)
+                merged_by_id[canonical.id] = _merge(canonical, discard)
                 discarded_ids.add(discard.id)
 
-        for posting_id, posting in merged.items():
+        for posting_id, posting in merged_by_id.items():
             if posting_id not in discarded_ids:
                 result.append(posting)
 

@@ -38,6 +38,19 @@ def _extract_job_id(external_path: str) -> str:
     return parts[-1] if parts else external_path
 
 
+def build_public_url(host: str, site: str, external_path: str) -> str:
+    """Build a Workday browser URL without losing the career-site segment."""
+    path = external_path if external_path.startswith("/") else f"/{external_path}"
+    if re.match(rf"^/[a-z]{{2}}(?:-[A-Z]{{2}})?/{re.escape(site)}/job/", path):
+        return f"https://{host}{path}"
+    if path.startswith(f"/{site}/job/"):
+        return f"https://{host}{path}"
+    locale_match = re.match(r"^(/[a-z]{2}(?:-[A-Z]{2})?)(/job/.*)$", path)
+    if locale_match:
+        return f"https://{host}{locale_match.group(1)}/{site}{locale_match.group(2)}"
+    return f"https://{host}/{site}{path}"
+
+
 def _extract_location(bullet_fields: list[str]) -> str:
     for field in bullet_fields:
         lower = field.lower().strip()
@@ -111,7 +124,7 @@ class WorkdayAdapter(SourceAdapter):
             for job in job_postings:
                 try:
                     all_postings.append(
-                        self._parse_job(job, company, host)
+                        self._parse_job(job, company, host, site)
                     )
                 except (KeyError, TypeError) as exc:
                     logger.warning(
@@ -179,6 +192,7 @@ class WorkdayAdapter(SourceAdapter):
         job: dict[str, Any],
         company: Company,
         host: str,
+        site: str = "",
     ) -> RawPosting:
         external_path = job["externalPath"]
         bullet_fields = job.get("bulletFields", []) or []
@@ -201,7 +215,7 @@ class WorkdayAdapter(SourceAdapter):
             title=job["title"],
             location=location,
             locations=[location] if location else [],
-            url=f"https://{host}{external_path}",
+            url=build_public_url(host, site, external_path) if site else f"https://{host}{external_path}",
             posted_at=None,
             description="",
             raw_data=job,

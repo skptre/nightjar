@@ -1,8 +1,10 @@
-import { fireEvent, render, screen, within } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { OutcomeDialog } from './OutcomeDialog';
 import { InsightsDashboard } from '@/views/Insights/InsightsView';
 import { EMPTY_INSIGHTS_MESSAGE, type OutcomeAnalysis } from '@/engine/recalibrate';
+
+afterEach(cleanup);
 
 function analysisFixture(): OutcomeAnalysis {
   return {

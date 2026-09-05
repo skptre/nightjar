@@ -86,7 +86,16 @@ def compute_diff(
     updated_feed: dict[str, Posting] = {}
 
     for pid, posting in current_by_id.items():
-        updated_feed[pid] = dataclasses.replace(posting, last_seen_at=now)
+        previous = previous_feed.get(pid)
+        updated_feed[pid] = dataclasses.replace(
+            posting,
+            first_seen_at=previous.first_seen_at if previous else posting.first_seen_at,
+            description_text=(
+                posting.description_text
+                or (previous.description_text if previous else "")
+            ),
+            last_seen_at=now,
+        )
 
     for pid in disappeared_ids:
         if pid in previous_feed:

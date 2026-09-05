@@ -20,6 +20,7 @@ export interface PostingRowData {
   score: number | null;
   score_breakdown: string | null;
   compensation: string | null;
+  description_available?: boolean;
 }
 
 export type PostingAction = 'save' | 'skip' | 'apply' | 'open';
@@ -76,9 +77,14 @@ export function PostingRow({ posting, selected, rowRef, onAction }: PostingRowPr
       {/* Company + Title */}
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2">
-          <span className="text-sm font-medium text-gray-900 dark:text-nj-text truncate" title={posting.title}>
+          <button
+            type="button"
+            onClick={() => onAction(posting.id, 'open')}
+            className="truncate text-left text-sm font-medium text-gray-900 hover:text-violet-700 hover:underline dark:text-nj-text"
+            title={`Open ${posting.title}`}
+          >
             {posting.title || '—'}
-          </span>
+          </button>
         </div>
         <div className="flex items-center gap-2 mt-0.5">
           <span className="text-xs text-gray-600 dark:text-nj-text-dim">{posting.company || '—'}</span>
@@ -109,7 +115,10 @@ export function PostingRow({ posting, selected, rowRef, onAction }: PostingRowPr
         {formatRelativeDate(posting.first_seen_at)}
       </span>
 
-      <EligibilityBadge eligibilityJson={posting.eligibility} />
+      <EligibilityBadge
+        eligibilityJson={posting.eligibility}
+        descriptionAvailable={Boolean(posting.description_available)}
+      />
 
       {/* Actions */}
       <div className="flex items-center gap-1 flex-shrink-0">

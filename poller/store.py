@@ -11,7 +11,7 @@ if TYPE_CHECKING:
 from poller.models import HotWatchStats, Posting, SourceHealth
 
 FEED_VERSION = 1
-SHARDING_THRESHOLD = 5000
+SHARDING_THRESHOLD = 1000
 
 
 @dataclass

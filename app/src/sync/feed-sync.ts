@@ -15,6 +15,7 @@ export interface FeedPosting {
   first_seen_at: string;
   last_seen_at: string;
   closed_at: string | null;
+  description_text?: string;
   compensation?: string;
   merged_from?: string[];
   source_metadata?: {
@@ -65,20 +66,62 @@ const META_HASH_KEY = 'nightjar_feed_meta_sha';
 const LAST_SYNCED_KEY = 'nightjar_last_synced_at';
 const LAST_MODIFIED_KEY = 'nightjar_feed_last_modified';
 const SHARD_HASHES_KEY = 'nightjar_shard_hashes';
+const PRODUCTION_FEED_BASE_URL = 'https://raw.githubusercontent.com/skptre/nightjar/main/data';
+const FETCH_TIMEOUT_MS = 15_000;
+const RETRY_DELAYS_MS = [250, 750] as const;
 
-function getFeedBaseUrl(): string {
-  const override = localStorage.getItem('nightjar_feed_url_override');
+export function getFeedBaseUrl(isDevelopment: boolean = import.meta.env.DEV): string {
+  let override: string | null = null;
+  try {
+    override = localStorage.getItem('nightjar_feed_url_override');
+  } catch {
+    // localStorage unavailable; fall through to the configured/default URL.
+  }
   if (override) return override;
   if (typeof import.meta !== 'undefined' && import.meta.env?.VITE_FEED_URL) {
     return import.meta.env.VITE_FEED_URL as string;
   }
-  return '/data';
+  return isDevelopment ? '/data' : PRODUCTION_FEED_BASE_URL;
+}
+
+function shouldRetryStatus(status: number): boolean {
+  return status === 408 || status === 429 || status >= 500;
+}
+
+async function waitBeforeRetry(delayMs: number): Promise<void> {
+  if (import.meta.env.MODE === 'test') return;
+  await new Promise<void>((resolve) => setTimeout(resolve, delayMs));
+}
+
+async function fetchWithRetry(url: string, init?: RequestInit): Promise<Response> {
+  let lastError: unknown = new Error('Feed request failed');
+
+  for (let attempt = 0; attempt <= RETRY_DELAYS_MS.length; attempt++) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+    try {
+      const response = await fetch(url, { ...init, signal: controller.signal });
+      if (attempt < RETRY_DELAYS_MS.length && shouldRetryStatus(response.status)) {
+        await waitBeforeRetry(RETRY_DELAYS_MS[attempt]!);
+        continue;
+      }
+      return response;
+    } catch (error: unknown) {
+      lastError = error;
+      if (attempt >= RETRY_DELAYS_MS.length) throw error;
+      await waitBeforeRetry(RETRY_DELAYS_MS[attempt]!);
+    } finally {
+      clearTimeout(timeoutId);
+    }
+  }
+
+  throw lastError;
 }
 
 export async function fetchMeta(baseUrl?: string): Promise<MetaData> {
   const base = baseUrl ?? getFeedBaseUrl();
   const url = `${base}/meta.json`;
-  const response = await fetch(url);
+  const response = await fetchWithRetry(url);
   if (!response.ok) {
     throw new Error(`Metadata fetch failed (HTTP ${String(response.status)})`);
   }
@@ -99,7 +142,7 @@ export async function fetchFeed(baseUrl?: string): Promise<FeedData | null> {
       headers['If-Modified-Since'] = lastModified;
     }
 
-    const response = await fetch(url, { headers });
+    const response = await fetchWithRetry(url, { headers });
     if (response.status === 304) return null;
     if (response.status === 404) {
       throw new Error('Feed unavailable (404). Check feed URL in settings.');
@@ -174,7 +217,7 @@ export async function fetchShardIndex(baseUrl?: string): Promise<ShardIndex | nu
   const base = baseUrl ?? getFeedBaseUrl();
   const url = `${base}/feed/index.json`;
   try {
-    const response = await fetch(url);
+    const response = await fetchWithRetry(url);
     if (!response.ok) return null;
     const data: unknown = await response.json();
     if (!isShardIndex(data)) return null;
@@ -206,7 +249,7 @@ export async function fetchShard(
 ): Promise<ShardData> {
   const base = baseUrl ?? getFeedBaseUrl();
   const url = `${base}/feed/${shardId}.json`;
-  const response = await fetch(url);
+  const response = await fetchWithRetry(url);
   if (!response.ok) {
     throw new Error(`Shard fetch failed: ${shardId} (HTTP ${String(response.status)})`);
   }
@@ -348,6 +391,7 @@ export async function syncFeed(
 
   const storedHash = getStoredMetaHash();
   if (storedHash === meta.sha256) {
+    setLastSyncedAt(new Date().toISOString());
     return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: true };
   }
 
@@ -485,17 +529,40 @@ async function upsertShardedPostings(
 
       if (!existingById.has(id)) {
         await db.run(
-          `INSERT INTO postings_cache (id, data, first_seen_at, closed_at, synced_at)
-           VALUES (?, ?, ?, ?, ?)`,
-          [id, postingJson, posting.first_seen_at, posting.closed_at ?? null, now],
+          `INSERT INTO postings_cache (id, data, description, first_seen_at, closed_at, synced_at)
+           VALUES (?, ?, ?, ?, ?, ?)`,
+          [id, postingJson, posting.description_text ?? null, posting.first_seen_at, posting.closed_at ?? null, now],
         );
         newPostingIds.push(id);
       } else {
         await db.run(
           `UPDATE postings_cache
-           SET data = ?, synced_at = ?, closed_at = COALESCE(?, closed_at), first_seen_at = MIN(first_seen_at, ?)
+           SET data = ?,
+               description = COALESCE(?, description),
+               eligibility = CASE
+                 WHEN ? IS NOT NULL AND COALESCE(description, '') != ? THEN NULL
+                 ELSE eligibility
+               END,
+               score = CASE
+                 WHEN ? IS NOT NULL AND COALESCE(description, '') != ? THEN NULL
+                 ELSE score
+               END,
+               description_error = CASE WHEN ? IS NOT NULL THEN NULL ELSE description_error END,
+               synced_at = ?, closed_at = COALESCE(?, closed_at), first_seen_at = MIN(first_seen_at, ?)
            WHERE id = ?`,
-          [postingJson, now, posting.closed_at ?? null, posting.first_seen_at, id],
+          [
+            postingJson,
+            posting.description_text ?? null,
+            posting.description_text ?? null,
+            posting.description_text ?? null,
+            posting.description_text ?? null,
+            posting.description_text ?? null,
+            posting.description_text ?? null,
+            now,
+            posting.closed_at ?? null,
+            posting.first_seen_at,
+            id,
+          ],
         );
         updatedCount++;
         if (posting.closed_at) {
@@ -557,17 +624,40 @@ export async function upsertPostings(db: Database, feed: FeedData): Promise<Sync
 
       if (!existingIds.has(id)) {
         await db.run(
-          `INSERT INTO postings_cache (id, data, first_seen_at, closed_at, synced_at)
-           VALUES (?, ?, ?, ?, ?)`,
-          [id, postingJson, posting.first_seen_at, posting.closed_at ?? null, now],
+          `INSERT INTO postings_cache (id, data, description, first_seen_at, closed_at, synced_at)
+           VALUES (?, ?, ?, ?, ?, ?)`,
+          [id, postingJson, posting.description_text ?? null, posting.first_seen_at, posting.closed_at ?? null, now],
         );
         newPostingIds.push(id);
       } else {
         await db.run(
           `UPDATE postings_cache
-           SET data = ?, synced_at = ?, closed_at = COALESCE(?, closed_at), first_seen_at = MIN(first_seen_at, ?)
+           SET data = ?,
+               description = COALESCE(?, description),
+               eligibility = CASE
+                 WHEN ? IS NOT NULL AND COALESCE(description, '') != ? THEN NULL
+                 ELSE eligibility
+               END,
+               score = CASE
+                 WHEN ? IS NOT NULL AND COALESCE(description, '') != ? THEN NULL
+                 ELSE score
+               END,
+               description_error = CASE WHEN ? IS NOT NULL THEN NULL ELSE description_error END,
+               synced_at = ?, closed_at = COALESCE(?, closed_at), first_seen_at = MIN(first_seen_at, ?)
            WHERE id = ?`,
-          [postingJson, now, posting.closed_at ?? null, posting.first_seen_at, id],
+          [
+            postingJson,
+            posting.description_text ?? null,
+            posting.description_text ?? null,
+            posting.description_text ?? null,
+            posting.description_text ?? null,
+            posting.description_text ?? null,
+            posting.description_text ?? null,
+            now,
+            posting.closed_at ?? null,
+            posting.first_seen_at,
+            id,
+          ],
         );
         updatedCount++;
 

@@ -89,14 +89,8 @@ class SmartRecruitersAdapter(SourceAdapter):
         region = location_obj.get("region", "")
         country = location_obj.get("country", "")
 
-        if city and region:
-            location = f"{city}, {region}"
-        elif city:
-            location = city
-        elif region:
-            location = region
-        else:
-            location = country or ""
+        location_parts = [part for part in (city, region, country) if part]
+        location = ", ".join(dict.fromkeys(location_parts))
 
         locations_list = [location] if location else []
 

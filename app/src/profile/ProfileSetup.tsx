@@ -2,6 +2,8 @@ import { useState } from 'react';
 import {
   type Profile,
   WORK_AUTH_OPTIONS,
+  DEGREE_TYPE_OPTIONS,
+  type DegreeType,
   CATEGORY_GROUPS,
   computeGradWindow,
   inferRequiresSponsorship,
@@ -13,6 +15,7 @@ interface ProfileSetupProps {
 }
 
 interface Step1State {
+  degreeType: DegreeType | '';
   graduationYear: string;
   graduationMonth: string;
   workAuth: string;
@@ -53,6 +56,7 @@ function buildGraduationYears(): string[] {
 export function ProfileSetup({ onComplete, onBack }: ProfileSetupProps): React.ReactNode {
   const [step, setStep] = useState<1 | 2>(1);
   const [step1, setStep1] = useState<Step1State>({
+    degreeType: '',
     graduationYear: '',
     graduationMonth: '05',
     workAuth: '',
@@ -112,6 +116,7 @@ export function ProfileSetup({ onComplete, onBack }: ProfileSetupProps): React.R
   };
 
   const isStep1Valid =
+    step1.degreeType !== '' &&
     step1.graduationYear !== '' &&
     step1.workAuth !== '' &&
     step1.requiresSponsorship !== null;
@@ -121,6 +126,7 @@ export function ProfileSetup({ onComplete, onBack }: ProfileSetupProps): React.R
   const handleFinish = (): void => {
     const graduation = `${step1.graduationYear}-${step1.graduationMonth}`;
     const profile: Profile = {
+      degree_type: step1.degreeType as DegreeType,
       graduation,
       grad_window: computeGradWindow(graduation),
       // Retained in the persisted schema for backwards compatibility. Graduation
@@ -193,6 +199,25 @@ export function ProfileSetup({ onComplete, onBack }: ProfileSetupProps): React.R
                     ))}
                   </select>
                 </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Degree type
+                </label>
+                <select
+                  value={step1.degreeType}
+                  onChange={(event) => setStep1((previous) => ({
+                    ...previous,
+                    degreeType: event.target.value as DegreeType,
+                  }))}
+                  className="w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-gray-100"
+                >
+                  <option value="">Select degree type</option>
+                  {DEGREE_TYPE_OPTIONS.map((option) => (
+                    <option key={option.value} value={option.value}>{option.label}</option>
+                  ))}
+                </select>
               </div>
 
               <div>

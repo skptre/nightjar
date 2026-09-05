@@ -55,7 +55,7 @@ export function Layout({ children }: LayoutProps): ReactNode {
           role="alert"
           data-testid="offline-banner"
         >
-          No internet connection. Showing cached data.
+          You're offline.
         </div>
       )}
       <main className="max-w-7xl mx-auto px-4 py-6">
@@ -120,16 +120,14 @@ function SyncIndicator({
       </span>
     );
   }
-  if (status === 'error') {
-    return <span className="text-sm text-nj-ineligible">Sync error</span>;
-  }
   if (lastSyncedAt) {
     return (
       <span className="text-sm text-gray-500 dark:text-nj-muted">
-        Synced {formatRelativeTime(lastSyncedAt)}
+        Updated {formatRelativeTime(lastSyncedAt)}
       </span>
     );
   }
+  if (status === 'error') return null;
   return <span className="text-sm text-gray-500 dark:text-nj-muted">Not synced</span>;
 }
 

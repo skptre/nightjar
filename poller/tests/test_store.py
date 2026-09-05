@@ -195,7 +195,7 @@ class TestFeedRoundTrip:
         assert lp.closed_at == "2026-09-10T00:00:00Z"
         assert lp.compensation == "$40/hr"
         assert lp.merged_from == ["other_id_1", "other_id_2"]
-        assert lp.description_text == ""
+        assert lp.description_text == "Build cool stuff"
 
     def test_round_trip_preserves_byte_stability(self, tmp_path: Path) -> None:
         p1 = _make_posting(pid="ccc333", source_job_id="3")

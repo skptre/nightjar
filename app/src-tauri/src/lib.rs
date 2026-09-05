@@ -1,3 +1,4 @@
+use std::process::Command;
 use std::sync::Mutex;
 use tauri::menu::{Menu, MenuItem, PredefinedMenuItem};
 use tauri::tray::{MouseButton, MouseButtonState, TrayIconBuilder, TrayIconEvent};
@@ -32,6 +33,38 @@ fn show_window(app: tauri::AppHandle) -> Result<(), String> {
     Ok(())
 }
 
+#[tauri::command]
+fn open_external_url(url: String) -> Result<(), String> {
+    let parsed = tauri::Url::parse(&url).map_err(|_| "Invalid job URL".to_string())?;
+    if !matches!(parsed.scheme(), "http" | "https") {
+        return Err("Only web URLs can be opened".to_string());
+    }
+
+    #[cfg(target_os = "windows")]
+    let mut command = {
+        let mut cmd = Command::new("rundll32");
+        cmd.arg("url.dll,FileProtocolHandler").arg(parsed.as_str());
+        cmd
+    };
+    #[cfg(target_os = "macos")]
+    let mut command = {
+        let mut cmd = Command::new("open");
+        cmd.arg(parsed.as_str());
+        cmd
+    };
+    #[cfg(all(unix, not(target_os = "macos")))]
+    let mut command = {
+        let mut cmd = Command::new("xdg-open");
+        cmd.arg(parsed.as_str());
+        cmd
+    };
+
+    command
+        .spawn()
+        .map(|_| ())
+        .map_err(|error| format!("Could not open job URL: {error}"))
+}
+
 fn show_main_window(app: &tauri::AppHandle) {
     if let Some(window) = app.get_webview_window("main") {
         let _ = window.show();
@@ -50,7 +83,11 @@ pub fn run() {
             tauri_plugin_autostart::MacosLauncher::LaunchAgent,
             Some(vec!["--minimized"]),
         ))
-        .invoke_handler(tauri::generate_handler![update_tray_info, show_window])
+        .invoke_handler(tauri::generate_handler![
+            update_tray_info,
+            show_window,
+            open_external_url
+        ])
         .setup(|app| {
             if cfg!(debug_assertions) {
                 app.handle().plugin(

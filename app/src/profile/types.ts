@@ -11,6 +11,14 @@ export const WORK_AUTH_OPTIONS = [
 
 export type WorkAuth = (typeof WORK_AUTH_OPTIONS)[number]['value'];
 
+export const DEGREE_TYPE_OPTIONS = [
+  { value: 'bachelors', label: "Bachelor's" },
+  { value: 'masters', label: "Master's" },
+  { value: 'phd', label: 'PhD' },
+] as const;
+
+export type DegreeType = (typeof DEGREE_TYPE_OPTIONS)[number]['value'];
+
 export const CLASS_YEAR_OPTIONS = [
   { value: 'freshman', label: 'Freshman' },
   { value: 'sophomore', label: 'Sophomore' },
@@ -44,6 +52,7 @@ export const SYNC_INTERVAL_OPTIONS = [
 export const DEFAULT_SYNC_INTERVAL_MS = 300_000;
 
 export interface Profile {
+  degree_type?: DegreeType;
   graduation: string;
   grad_window: [string, string];
   current_class_year: string;

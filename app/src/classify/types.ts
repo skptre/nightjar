@@ -161,6 +161,7 @@ export type EligibilityFlagType =
   | 'grad_window_mismatch'
   | 'class_year_mismatch'
   | 'location_mismatch'
+  | 'degree_mismatch'
   | 'itar_ear'
   | 'eligible_sponsorship';
 

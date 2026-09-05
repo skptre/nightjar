@@ -13,6 +13,7 @@ from poller.models import Company, SourceConfig
 from poller.sources.workday import (
     WORKDAY_PAGE_LIMIT,
     WorkdayAdapter,
+    build_public_url,
     parse_board_token,
 )
 from poller.tests.conftest import MockTransport, json_response, make_mock_client
@@ -70,6 +71,16 @@ class TestParseBoardToken:
     def test_missing_site_raises(self) -> None:
         with pytest.raises(ValueError, match="invalid Workday board_token"):
             parse_board_token("nvidia.wd5.myworkdayjobs.com")
+
+    def test_public_url_keeps_locale_before_site(self) -> None:
+        assert build_public_url(
+            "nvidia.wd5.myworkdayjobs.com",
+            "NVIDIAExternalCareerSite",
+            "/en-US/job/Santa-Clara/SWE-Intern_JR1",
+        ) == (
+            "https://nvidia.wd5.myworkdayjobs.com/en-US/"
+            "NVIDIAExternalCareerSite/job/Santa-Clara/SWE-Intern_JR1"
+        )
 
 
 class TestWorkdayPagination:
@@ -277,6 +288,7 @@ class TestUrlConstruction:
 
         for posting in raw:
             assert posting.url.startswith("https://nvidia.wd5.myworkdayjobs.com/")
+            assert "/NVIDIAExternalCareerSite/" in posting.url
             assert "/wday/cxs/" not in posting.url
         await client.close()
 

@@ -43,7 +43,11 @@ class Posting:
             "title": self.title,
             "location": self.location,
             "locations": list(self.locations),
-            "url": self.url,
+            "url": (
+                f"https://{self.url.removeprefix('http://')}"
+                if self.url.startswith("http://")
+                else self.url
+            ),
             "source": self.source,
             "source_job_id": self.source_job_id,
             "ats": self.ats,
@@ -62,6 +66,8 @@ class Posting:
             d["workplace_type"] = self.workplace_type
         if self.valid_through is not None:
             d["valid_through"] = self.valid_through
+        if self.description_text:
+            d["description_text"] = self.description_text[:5_000]
         if self.merged_from:
             d["merged_from"] = list(self.merged_from)
         if self.source_metadata is not None:

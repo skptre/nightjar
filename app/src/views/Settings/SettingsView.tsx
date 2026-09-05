@@ -5,6 +5,8 @@ import { useToast } from '@/components/Toast';
 import { isTauri, GMAIL_ENABLED } from '@/lib/platform';
 import {
   WORK_AUTH_OPTIONS,
+  DEGREE_TYPE_OPTIONS,
+  type DegreeType,
   CATEGORY_GROUPS,
   SYNC_INTERVAL_OPTIONS,
   DEFAULT_SYNC_INTERVAL_MS,
@@ -19,6 +21,7 @@ import { recomputeAll } from '@/classify/recompute';
 import type { GmailAuthState } from '@/integrations/types';
 import { getAuthState, startOAuthFlow, disconnectGmail } from '@/integrations/gmail-auth';
 import { clearAllGmailData } from '@/integrations/gmail-service';
+import { clearAllLocalData } from '@/db/clear-local-data';
 
 export function SettingsView(): ReactNode {
   return (
@@ -254,6 +257,25 @@ function ProfileSection(): ReactNode {
   return (
     <Section title="Profile">
       <div className="max-w-xs">
+        <label className="mb-4 block">
+          <span className="text-sm font-medium text-gray-700 dark:text-nj-text-dim">
+            Degree type
+          </span>
+          <select
+            value={profile.degree_type ?? ''}
+            onChange={(event) => {
+              const degree_type = event.target.value as DegreeType;
+              updateProfile({ degree_type });
+              void recomputeAll(db, { ...profile, degree_type });
+            }}
+            className="mt-1 block w-full rounded-md border border-gray-300 dark:border-nj-border bg-white dark:bg-nj-bg text-sm text-gray-900 dark:text-nj-text px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-nj-accent"
+          >
+            <option value="" disabled>Select degree type</option>
+            {DEGREE_TYPE_OPTIONS.map((option) => (
+              <option key={option.value} value={option.value}>{option.label}</option>
+            ))}
+          </select>
+        </label>
         <label className="block">
           <span className="text-sm font-medium text-gray-700 dark:text-nj-text-dim">
             Graduation
@@ -548,6 +570,7 @@ function DataSection(): ReactNode {
   const [showClearConfirm, setShowClearConfirm] = useState(false);
   const [confirmText, setConfirmText] = useState('');
   const [exporting, setExporting] = useState(false);
+  const [clearing, setClearing] = useState(false);
 
   const handleExport = useCallback(
     async (type: 'csv' | 'json' | 'postings') => {
@@ -585,13 +608,17 @@ function DataSection(): ReactNode {
     [db, toast],
   );
 
-  const handleClearData = useCallback(() => {
-    localStorage.clear();
-    if ('indexedDB' in window) {
-      void indexedDB.deleteDatabase('nightjar-db');
+  const handleClearData = useCallback(async () => {
+    setClearing(true);
+    try {
+      await clearAllLocalData(db);
+      window.location.reload();
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Unknown error';
+      toast(`Delete failed: ${message}`, 'error');
+      setClearing(false);
     }
-    window.location.reload();
-  }, []);
+  }, [db, toast]);
 
   const exportButtonClass =
     'rounded-md border border-gray-300 dark:border-nj-border px-3 py-1.5 text-sm text-gray-700 dark:text-nj-text hover:bg-gray-50 dark:hover:bg-nj-bg transition-colors disabled:opacity-50 disabled:cursor-not-allowed';
@@ -697,15 +724,15 @@ function DataSection(): ReactNode {
               />
               <button
                 type="button"
-                disabled={confirmText !== 'delete'}
-                onClick={handleClearData}
+                disabled={confirmText !== 'delete' || clearing}
+                onClick={() => void handleClearData()}
                 className={`rounded-md px-3 py-1.5 text-sm font-medium text-white transition-colors ${
                   confirmText === 'delete'
                     ? 'bg-red-600 hover:bg-red-700'
                     : 'bg-red-300 dark:bg-red-900 cursor-not-allowed'
                 }`}
               >
-                Delete everything
+                {clearing ? 'Deleting…' : 'Delete everything'}
               </button>
               <button
                 type="button"

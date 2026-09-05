@@ -21,9 +21,9 @@ describe('NightjarDB', () => {
       expect(names).toContain('applications');
     });
 
-    it('sets initial schema version to 5', async () => {
+    it('sets initial schema version to 6', async () => {
       const version = await getSchemaVersion(db);
-      expect(version).toBe(5);
+      expect(version).toBe(6);
     });
 
     it('stores multi-label category tags', async () => {
@@ -201,7 +201,7 @@ describe('NightjarDB', () => {
       const exported = db.export();
       const db2 = await NightjarDB.createFromBytes(exported);
 
-      expect(await getSchemaVersion(db2)).toBe(5);
+      expect(await getSchemaVersion(db2)).toBe(6);
       await db2.close();
     });
   });
@@ -244,7 +244,7 @@ describe('NightjarDB', () => {
       const migrated = await NightjarDB.createFromBytes(new Uint8Array(legacy.export()));
       legacy.close();
 
-      expect(await getSchemaVersion(migrated)).toBe(5);
+      expect(await getSchemaVersion(migrated)).toBe(6);
       const columns = await migrated.query<{ name: string }>('PRAGMA table_info(postings_cache)');
       expect(columns.map((column) => column.name)).toContain('category_tags');
       const row = await migrated.queryOne<{ category: string; category_tags: string | null }>(
@@ -283,7 +283,7 @@ describe('NightjarDB', () => {
       const migrated = await NightjarDB.createFromBytes(new Uint8Array(legacy.export()));
       legacy.close();
 
-      expect(await getSchemaVersion(migrated)).toBe(5);
+      expect(await getSchemaVersion(migrated)).toBe(6);
       const columns = await migrated.query<{ name: string }>('PRAGMA table_info(applications)');
       expect(columns.map((column) => column.name)).toEqual(expect.arrayContaining([
         'outcome', 'outcome_at', 'interview_rounds', 'outcome_notes',
@@ -298,18 +298,18 @@ describe('NightjarDB', () => {
     it('applies pending migrations in order', async () => {
       const testMigrations: Migration[] = [
         {
-          version: 6,
+          version: 7,
           sql: 'ALTER TABLE postings_cache ADD COLUMN test_col TEXT;',
         },
         {
-          version: 7,
+          version: 8,
           sql: 'ALTER TABLE postings_cache ADD COLUMN test_col2 INTEGER;',
         },
       ];
 
       await runMigrations(db, testMigrations);
 
-      expect(await getSchemaVersion(db)).toBe(7);
+      expect(await getSchemaVersion(db)).toBe(8);
 
       await db.run(
         `INSERT INTO postings_cache (id, data, synced_at, test_col, test_col2)
@@ -328,48 +328,48 @@ describe('NightjarDB', () => {
     it('skips already-applied migrations', async () => {
       const testMigrations: Migration[] = [
         {
-          version: 5,
+          version: 6,
           sql: 'ALTER TABLE postings_cache ADD COLUMN skip_test TEXT;',
         },
       ];
 
       await runMigrations(db, testMigrations);
-      expect(await getSchemaVersion(db)).toBe(5);
+      expect(await getSchemaVersion(db)).toBe(6);
 
       await runMigrations(db, testMigrations);
-      expect(await getSchemaVersion(db)).toBe(5);
+      expect(await getSchemaVersion(db)).toBe(6);
     });
 
     it('applies only migrations newer than current version', async () => {
       const batch1: Migration[] = [
-        { version: 6, sql: 'ALTER TABLE postings_cache ADD COLUMN v6_col TEXT;' },
-      ];
-      await runMigrations(db, batch1);
-      expect(await getSchemaVersion(db)).toBe(6);
-
-      const batch2: Migration[] = [
-        { version: 6, sql: 'ALTER TABLE postings_cache ADD COLUMN v6_col TEXT;' },
         { version: 7, sql: 'ALTER TABLE postings_cache ADD COLUMN v7_col TEXT;' },
       ];
-      await runMigrations(db, batch2);
+      await runMigrations(db, batch1);
       expect(await getSchemaVersion(db)).toBe(7);
 
+      const batch2: Migration[] = [
+        { version: 7, sql: 'ALTER TABLE postings_cache ADD COLUMN v7_col TEXT;' },
+        { version: 8, sql: 'ALTER TABLE postings_cache ADD COLUMN v8_col TEXT;' },
+      ];
+      await runMigrations(db, batch2);
+      expect(await getSchemaVersion(db)).toBe(8);
+
       await db.run(
-        `INSERT INTO postings_cache (id, data, synced_at, v6_col, v7_col)
+        `INSERT INTO postings_cache (id, data, synced_at, v7_col, v8_col)
          VALUES (?, ?, ?, ?, ?)`,
         ['check1', '{}', '2026-01-01T00:00:00Z', 'a', 'b'],
       );
-      const row = await db.queryOne<{ v6_col: string; v7_col: string }>(
-        'SELECT v6_col, v7_col FROM postings_cache WHERE id = ?',
+      const row = await db.queryOne<{ v7_col: string; v8_col: string }>(
+        'SELECT v7_col, v8_col FROM postings_cache WHERE id = ?',
         ['check1'],
       );
-      expect(row!.v6_col).toBe('a');
-      expect(row!.v7_col).toBe('b');
+      expect(row!.v7_col).toBe('a');
+      expect(row!.v8_col).toBe('b');
     });
 
     it('rolls back a migration and its version when any statement fails', async () => {
       const brokenMigration: Migration[] = [{
-        version: 6,
+        version: 7,
         sql: `
           ALTER TABLE postings_cache ADD COLUMN rollback_probe TEXT;
           INSERT INTO table_that_does_not_exist (value) VALUES ('fail');
@@ -377,7 +377,7 @@ describe('NightjarDB', () => {
       }];
 
       await expect(runMigrations(db, brokenMigration)).rejects.toThrow();
-      expect(await getSchemaVersion(db)).toBe(5);
+      expect(await getSchemaVersion(db)).toBe(6);
       const columns = await db.query<{ name: string }>('PRAGMA table_info(postings_cache)');
       expect(columns.map((column) => column.name)).not.toContain('rollback_probe');
     });

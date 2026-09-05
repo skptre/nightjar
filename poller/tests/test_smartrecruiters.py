@@ -139,7 +139,7 @@ class TestSmartRecruitersLocationFormatting:
             "location": {"city": "New York", "region": "NY", "country": "US"},
         }
         raw = adapter._parse_posting(item, company, "Visa")
-        assert raw.location == "New York, NY"
+        assert raw.location == "New York, NY, US"
 
     def test_city_only(self) -> None:
         adapter = SmartRecruitersAdapter()
@@ -151,7 +151,7 @@ class TestSmartRecruitersLocationFormatting:
             "location": {"city": "London", "region": "", "country": "UK"},
         }
         raw = adapter._parse_posting(item, company, "Visa")
-        assert raw.location == "London"
+        assert raw.location == "London, UK"
 
     def test_no_city_falls_back_to_country(self) -> None:
         adapter = SmartRecruitersAdapter()

@@ -6,6 +6,29 @@ export function isTauri(): boolean {
     '__TAURI_INTERNALS__' in window;
 }
 
+export async function openExternal(url: string): Promise<boolean> {
+  let parsed: URL;
+  try {
+    parsed = new URL(url);
+  } catch {
+    return false;
+  }
+  if (parsed.protocol !== 'https:' && parsed.protocol !== 'http:') return false;
+
+  if (isTauri()) {
+    try {
+      const { invoke } = await import('@tauri-apps/api/core');
+      await invoke('open_external_url', { url: parsed.toString() });
+      return true;
+    } catch (error: unknown) {
+      console.warn('[nightjar] could not open job link:', error);
+      return false;
+    }
+  }
+
+  return window.open(parsed.toString(), '_blank', 'noopener,noreferrer') !== null;
+}
+
 export async function updateTrayInfo(lastSync: string, newCount: number): Promise<void> {
   if (!isTauri()) return;
   try {

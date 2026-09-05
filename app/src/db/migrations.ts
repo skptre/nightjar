@@ -83,6 +83,13 @@ export const MIGRATIONS: Migration[] = [
         ON gmail_suggestions(posting_id);
     `,
   },
+  {
+    version: 6,
+    sql: `
+      ALTER TABLE postings_cache ADD COLUMN description_attempted_at TEXT;
+      ALTER TABLE postings_cache ADD COLUMN description_error TEXT;
+    `,
+  },
 ];
 
 export async function runMigrations(

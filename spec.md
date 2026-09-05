@@ -156,11 +156,14 @@ Every source adapter normalizes to this shape. This is the contract between the 
   // optional fields, included when non-null:
   "compensation": "$30/hr",
   "merged_from": ["abc123", "def456"],
-  "source_metadata": {}
+  "source_metadata": {},
+  "description_text": "Public, normalized job description"
 }
 ```
 
-`description_text` is captured internally for filtering and classification but intentionally omitted from `to_dict()` serialization — it would bloat `feed.json` without benefiting consumers, since the app can fetch full descriptions from the source URL.
+`description_text` is published when an adapter provides it. Job descriptions are public source data; profile matching and eligibility remain local. This avoids relying on cross-origin browser requests that ATS providers may block. A transient source failure never replaces a previously captured description with an empty value.
+
+For listings whose aggregate source omits the description, production poller runs hydrate a rotating batch of up to 200 supported ATS detail URLs (Greenhouse, Lever, Ashby, Workday, and SmartRecruiters). Successful descriptions are retained across later runs, capped at 5,000 plaintext characters, and published in the appropriate source shard. Failures are isolated to the posting and the rotating window prevents one broken URL from starving the queue.
 
 No eligibility, no score, no category. Those are computed by the app.
 
@@ -214,8 +217,8 @@ The registry started as a hand-curated seed list and was expanded via Simplify b
 The feed is a single JSON file. As the registry grows, so does the feed.
 
 Mitigations, in order of when to implement them:
-1. **Start with one file.** It works fine until it doesn't. The app caches locally and only fetches when the remote `updated_at` is newer (conditional fetch via a lightweight `data/meta.json` with just the timestamp and hash).
-2. **If it gets too large:** shard by source type (`greenhouse.json`, `lever.json`, etc.) — each adapter writes its own shard, and the app fetches only changed shards by comparing per-shard hashes. Implementation is measurement-triggered, not automatic.
+1. **Start with one file for small feeds.** The app caches locally and only fetches when the remote hash changes.
+2. **Shard at 1,000 postings:** shard by source type (`greenhouse.json`, `lever.json`, etc.) so publishing descriptions does not force every client to redownload the entire feed. The app fetches only changed shards by comparing per-shard hashes.
 3. **Git history mitigation:** consider moving feed.json to GitHub Releases as an asset, periodic `git gc`, or a separate `data` branch. Contingency plans — implement only if growth becomes a real problem.
 
 ### 3.6 Company identity model
@@ -514,7 +517,7 @@ The poller applies two product-scope filters. These are public feed boundaries, 
 
 Broad labels like `entry level` and `early career` are insufficient by themselves — they must co-occur with other student-role signals.
 
-**Geography scope** (`poller/filter.py: filter_us_locations`): A posting must expose an explicit US signal in its location data (United States, US, USA, a US state name, or a US state abbreviation). Conservative approach: keep postings with empty/unknown locations, bare "Remote," or opaque identifiers (e.g., Workday location IDs that can't be parsed). Drop only postings with explicitly non-US locations.
+**Geography scope** (`poller/filter.py: filter_us_locations`): A posting must expose an explicit US signal in its location data (United States, US, USA, a US state name, or a US state abbreviation). Empty/unknown locations, unrestricted "Remote," and opaque identifiers are excluded from the initial US-only feed rather than guessed to be domestic. Source adapters preserve country data whenever it is available.
 
 **No user scope:** degree, graduation date, work authorization, sponsorship, category, company tier, and personal relevance remain app-side.
 
@@ -564,6 +567,7 @@ Optional and stored locally, never transmitted. First launch presents a choice b
 
 ```jsonc
 {
+  "degree_type": "bachelors",
   "graduation": "2029-05",
   "grad_window": ["2028-12", "2029-06"],
   "current_class_year": "unknown",
@@ -609,16 +613,17 @@ Title match beats description match for `primary_category`. More specific catego
 ```
 
 Rules:
+- **Degree type.** Compare the local profile against structured source degree metadata when available. An explicit mismatch → `ineligible` with the source degree list as evidence.
 - **Graduation window.** Parse stated windows from the description. If the user's date falls outside → `ineligible`.
 - **Work authorization.** Detect: "U.S. citizen", "US Person", "permanent resident", "security clearance", "ITAR", "unable to sponsor", "no visa sponsorship". → `ineligible`.
 - **Class year.** The engine retains this signal for compatibility tests and future explicit profile types. MVP profiles use `current_class_year: "unknown"`, which skips the check; the app does not infer class year from graduation date.
 - **Location.** Non-US → `ineligible` (configurable).
 
-**Default is `unclear`, never `ineligible`.** Silently hiding a real opportunity is the worst failure. Every `ineligible` verdict must cite a matched sentence from the posting. The MVP job list never hides or separates a posting solely because of this verdict; eligibility remains an explanatory row-level signal.
+**Default is `unclear`, never `ineligible`.** Every `ineligible` verdict must cite description text or structured source/location evidence. The default **For you** view omits evidence-backed mismatches and ranks the remainder by local profile score; **All jobs** always restores the complete current feed. The UI distinguishes a missing description ("Details needed") from a read description with no explicit conflict ("Review").
 
 ### 8.4 Scoring (runs locally)
 
-The local engine retains its transparent weighted score for compatibility and future experimentation. The MVP job list does not expose or sort by this score; it sorts by `first_seen_at` descending so freshness is predictable.
+The local engine retains its transparent weighted score. **For you** sorts by this score with freshness as a tie-breaker; **All jobs** sorts by `first_seen_at` descending.
 
 | Signal | Weight |
 |---|---|
@@ -631,7 +636,7 @@ Four signals. Resist adding more. Company tiers and score breakdowns are not exp
 
 ### 8.5 Data flow
 
-App polls the public feed on launch, on window focus, and periodically. Caches locally. Fully functional offline from cache.
+App polls the public feed on launch, on window focus, and periodically. Development uses Vite's local `/data` route; production browser and Tauri builds fetch `data/` from the repository's public `raw.githubusercontent.com` URL. Requests use bounded retries and timeouts. The app caches locally and remains fully functional offline. A failed background refresh does not replace usable jobs with a disruptive cache warning; an actionable error is shown only when no jobs have ever loaded.
 
 On each sync:
 1. Fetch feed. If `updated_at` hasn't changed, skip.
@@ -652,7 +657,10 @@ CREATE TABLE postings_cache (
   category       TEXT,               -- primary_category
   category_tags  TEXT,               -- JSON array
   eligibility    TEXT,               -- JSON
-  score          REAL
+  score          REAL,
+  description    TEXT,
+  description_attempted_at TIMESTAMP,
+  description_error TEXT
 );
 
 CREATE TABLE applications (
@@ -844,7 +852,7 @@ The largest phase, split into three independent sub-phases. Full plan in `.claud
 **Phase 4C — Outcome intelligence:**
 - Outcome-based recalibration (descriptive insights, app-side)
 - Gmail sync for interview/offer detection (app-side, Tauri-only)
-- Feed sharding (only if measurements justify it)
+- Feed sharding by ATS/source type at 1,000 postings (implemented after the measured feed exceeded the flat-feed budget)
 
 ### Phase 5 — Extension
 
@@ -857,7 +865,7 @@ Build adapters against forms actually encountered. Do not start before real usag
 - **Unit**: every adapter's `normalize` against committed fixtures. Every filter pattern against labeled test cases. Every eligibility rule against labeled sentences.
 - **Golden-file**: full pipeline against a fixture registry produces a byte-stable `feed.json`.
 - **No network in the default test run.** `make test` must pass offline.
-- **Filter tests**: student-role filter catches all 30+ role-type patterns. US-location filter keeps ambiguous locations, drops explicit non-US.
+- **Filter tests**: student-role filter catches all 30+ role-type patterns. US-location filter requires an explicit US signal and drops ambiguous or non-US locations.
 
 Property: running the pipeline twice on identical input produces zero diffs.
 
@@ -869,8 +877,7 @@ Property: running the pipeline twice on identical input produces zero diffs.
 2. **Term filtering in the app** — default to showing all terms, or only the user's selected target terms?
 3. **Ineligible postings in the app** — collapsed-but-visible (spec's assumption) or fully hidden behind a filter?
 4. **Data model expansion fields** — Option A (first-class `Posting` fields for key fields like `employment_type`, `department`) vs Option B (pack everything into `source_metadata`), or hybrid.
-5. **Feed sharding strategy** — by source type (simpler, uneven shards) vs by company slug (more even, cross-shard dedupe complexity). Measurement-triggered — no decision until feed size warrants it.
-6. **Generic adapter dependency** — Scrapling for sitemap spiders, RSS parsing, and cached dev responses? Only non-stealth features permitted. Or stick with raw httpx + stdlib.
+5. **Generic adapter dependency** — Scrapling for sitemap spiders, RSS parsing, and cached dev responses? Only non-stealth features permitted. Or stick with raw httpx + stdlib.
 
 ---
 
@@ -881,7 +888,7 @@ Property: running the pipeline twice on identical input produces zero diffs.
 | Eligibility false positive hides an opportunity | High | Default `unclear`; never delete; always cite matched sentence |
 | Unstable posting IDs → feed churn → phantom new postings | High | Deterministic IDs (§3.2); zero-diff test (§12) |
 | Silent source failure looks like "no jobs" | High | Failure ≠ empty (§5); unhealthy flag in state.json |
-| feed.json grows too large | Medium | Strict US student-role scope + active-only/7-day closed retention (§3.4); sharding as measurement-triggered upgrade (§3.5) |
+| feed.json grows too large | Medium | Strict US student-role scope + active-only/7-day closed retention (§3.4); source-type sharding at 1,000 postings (§3.5) |
 | False merge in dedupe hides a real role | High | Conservative bias; provenance-first upgrade adds req ID + URL match layers before fuzzy |
 | Discovery floods registry with low-value sources | Medium | Verification pipeline, Workday manual review gate, measured unique-posting yield threshold |
 | Generic extraction produces unstable IDs or false postings | Medium | HTML heuristic results quarantined with `review_required`; high-confidence methods (JSON-LD, RSS) only auto-published |

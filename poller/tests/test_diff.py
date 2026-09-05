@@ -15,6 +15,7 @@ def _make_posting(
     first_seen: str = "2026-09-01T00:00:00Z",
     last_seen: str = "2026-09-01T00:00:00Z",
     closed_at: str | None = None,
+    description_text: str = "",
 ) -> Posting:
     return Posting(
         id=pid,
@@ -31,6 +32,7 @@ def _make_posting(
         first_seen_at=first_seen,
         last_seen_at=last_seen,
         closed_at=closed_at,
+        description_text=description_text,
     )
 
 
@@ -72,6 +74,28 @@ class TestNewPostings:
 
         assert "exist1" not in diff.new_ids
         assert "exist1" in feed
+
+    def test_continuing_posting_preserves_original_first_seen(self) -> None:
+        current = _make_posting(pid="exist1", first_seen=T1)
+        previous = _make_posting(pid="exist1", first_seen=T0)
+        state = RunState(active_ids={"exist1"})
+
+        feed, _new_state, _diff = compute_diff(
+            [current], {"exist1": previous}, state, T2,
+        )
+
+        assert feed["exist1"].first_seen_at == T0
+
+    def test_transient_empty_description_preserves_last_success(self) -> None:
+        current = _make_posting(pid="exist1", description_text="")
+        previous = _make_posting(pid="exist1", description_text="Public details")
+        state = RunState(active_ids={"exist1"})
+
+        feed, _new_state, _diff = compute_diff(
+            [current], {"exist1": previous}, state, T2,
+        )
+
+        assert feed["exist1"].description_text == "Public details"
 
     def test_multiple_new_postings(self) -> None:
         p1 = _make_posting(pid="new1", source_job_id="1")

@@ -2,16 +2,18 @@ from __future__ import annotations
 
 import asyncio
 import hashlib
+import json
 import logging
 import subprocess
 import sys
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
 from poller.dedupe import dedupe_postings
+from poller.description_enrich import enrich_posting_descriptions
 from poller.diff import compute_diff
 from poller.exceptions import SourceFetchError, SourceParseError
 from poller.filter import (
@@ -30,6 +32,7 @@ from poller.registry import (
     update_source_activity,
 )
 from poller.sources import get_adapter
+from poller.sources.workday import build_public_url, parse_board_token
 from poller.store import (
     SHARDING_THRESHOLD,
     load_feed,
@@ -47,6 +50,58 @@ DATA_DIR = ROOT_DIR / "data"
 FEED_PATH = DATA_DIR / "feed.json"
 STATE_PATH = DATA_DIR / "state.json"
 META_PATH = DATA_DIR / "meta.json"
+
+
+def _repair_legacy_workday_urls(
+    postings: dict[str, Posting],
+    companies: list[Any],
+) -> tuple[dict[str, Posting], int]:
+    sites: dict[str, tuple[str, str]] = {}
+    for company in companies:
+        for source in company.sources:
+            if source.type != "workday":
+                continue
+            host, _tenant, site = parse_board_token(source.board_token)
+            sites[company.slug] = (host, site)
+
+    repaired = dict(postings)
+    changed = 0
+    for posting_id, posting in postings.items():
+        target = sites.get(posting.company_slug)
+        if posting.source != "workday" or target is None:
+            continue
+        host, site = target
+        marker = f"/{site}/"
+        if marker in posting.url:
+            continue
+        path_start = posting.url.find("/job/")
+        if path_start < 0:
+            continue
+        new_url = build_public_url(host, site, posting.url[path_start:])
+        repaired[posting_id] = replace(posting, url=new_url)
+        changed += 1
+    return repaired, changed
+
+
+def _has_material_feed_updates(
+    previous: dict[str, Posting],
+    current: dict[str, Posting],
+) -> bool:
+    for posting_id in set(previous) & set(current):
+        before = previous[posting_id].to_dict()
+        after = current[posting_id].to_dict()
+        before.pop("last_seen_at", None)
+        after.pop("last_seen_at", None)
+        if before != after:
+            return True
+    return False
+
+
+def _meta_uses_shards(path: Path) -> bool:
+    try:
+        return bool(json.loads(path.read_text(encoding="utf-8")).get("sharded"))
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        return False
 
 
 @dataclass(frozen=True)
@@ -171,6 +226,7 @@ async def run_pipeline(
     skip_registry_candidates: bool = False,
     only_source_keys: set[str] | None = None,
     force_poll: bool = False,
+    description_enrichment: bool | None = None,
     now: datetime | None = None,
 ) -> PipelineRunResult:
     resolved_data = data_dir or DATA_DIR
@@ -204,6 +260,7 @@ async def run_pipeline(
         )
 
     previous_feed = load_feed(feed_path)
+    previous_feed, repaired_url_count = _repair_legacy_workday_urls(previous_feed, companies)
     previous_count = len(previous_feed)
     previous_feed = filter_feed_mapping(previous_feed)
     scope_pruned_count = previous_count - len(previous_feed)
@@ -329,6 +386,25 @@ async def run_pipeline(
     current_postings = filter_us_locations(current_postings)
     current_postings = dedupe_postings(current_postings)
 
+    # Browser security policies make client-side ATS detail requests unreliable.
+    # Runs against the production data directory publish a bounded rotating batch;
+    # fixture/custom-data runs remain offline unless explicitly enabled.
+    should_enrich_descriptions = (
+        data_dir is None
+        if description_enrichment is None
+        else description_enrichment
+    )
+    if should_enrich_descriptions:
+        async with RateLimitedClient() as description_client:
+            description_client.load_cache(state.http_cache)
+            current_postings, _ = await enrich_posting_descriptions(
+                current_postings,
+                previous_feed,
+                description_client,
+                run_number=state.run_count,
+            )
+            state.http_cache.update(description_client.dump_cache())
+
     for key, health in updated_sources.items():
         state.sources[key] = health
 
@@ -345,12 +421,20 @@ async def run_pipeline(
         len(diff.bootstrapped_ids),
     )
 
-    output_changed = diff.has_changes or scope_pruned_count > 0
+    should_shard = len(updated_feed) >= SHARDING_THRESHOLD
+    sharding_state_changed = should_shard != _meta_uses_shards(meta_path)
+    output_changed = (
+        diff.has_changes
+        or scope_pruned_count > 0
+        or repaired_url_count > 0
+        or _has_material_feed_updates(previous_feed, updated_feed)
+        or sharding_state_changed
+    )
 
     if output_changed:
         save_feed(feed_path, updated_feed, now_str, companies=companies)
         shard_hashes = None
-        if len(updated_feed) >= SHARDING_THRESHOLD:
+        if should_shard:
             feed_shard_dir = resolved_data / "feed"
             shard_hashes = save_feed_sharded(
                 feed_shard_dir, updated_feed, now_str, companies=companies,
@@ -432,6 +516,7 @@ def main() -> None:
     dry_run = "--dry-run" in sys.argv or "--once" in sys.argv
     skip_simplify = "--skip-simplify" in sys.argv
     skip_registry_candidates = "--skip-registry-candidates" in sys.argv
+    skip_description_enrichment = "--skip-description-enrichment" in sys.argv
 
     logging.basicConfig(
         level=logging.INFO,
@@ -449,4 +534,5 @@ def main() -> None:
         dry_run=dry_run,
         skip_simplify=skip_simplify,
         skip_registry_candidates=skip_registry_candidates,
+        description_enrichment=not skip_description_enrichment,
     ))

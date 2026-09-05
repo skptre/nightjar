@@ -89,7 +89,7 @@ def filter_feed_mapping(postings: dict[str, Posting]) -> dict[str, Posting]:
         posting_id: posting
         for posting_id, posting in postings.items()
         if is_student_role(posting.title)
-        and not is_explicitly_non_us(posting.location, posting.locations)
+        and is_us_location(posting.location, posting.locations)
     }
     dropped = len(postings) - len(kept)
     if dropped:
@@ -194,10 +194,15 @@ def is_explicitly_non_us(location: str, locations: list[str]) -> bool:
 
 
 def filter_us_locations(postings: list[Posting]) -> list[Posting]:
-    kept = [p for p in postings if not is_explicitly_non_us(p.location, p.locations)]
+    """Keep only postings with an explicit United States location signal.
+
+    Bare cities, opaque IDs, and unrestricted "Remote" locations are excluded.
+    This intentionally favors a trustworthy US-only feed over speculative recall.
+    """
+    kept = [p for p in postings if is_us_location(p.location, p.locations)]
     dropped = len(postings) - len(kept)
     logger.info(
-        "filter: %d roles kept (US + ambiguous), %d explicitly non-US dropped",
+        "filter: %d explicitly US roles kept, %d non-US/ambiguous dropped",
         len(kept), dropped,
     )
     return kept

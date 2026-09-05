@@ -4,6 +4,8 @@ import { useProfile } from '@/providers/ProfileProvider';
 import { useSync } from '@/providers/SyncProvider';
 import { useKeyboard } from '@/hooks/useKeyboard';
 import { useVirtualList } from '@/hooks/useVirtualList';
+import { openExternal } from '@/lib/platform';
+import { useToast } from '@/components/Toast';
 import { PostingRow, UndoToast, type PostingAction, type PostingRowData } from './PostingRow';
 import {
   CATEGORY_OPTIONS,
@@ -28,12 +30,13 @@ interface PostingQueryRow {
   eligibility: string | null;
   score: number | null;
   score_breakdown: string | null;
+  description: string | null;
 }
 
 const POSTING_ROW_HEIGHT = 72;
 
 export const CURRENT_JOBS_QUERY = `SELECT p.id, p.data, p.first_seen_at, p.closed_at, p.category, p.category_tags,
-              p.term, p.eligibility, p.score, p.score_breakdown
+              p.term, p.eligibility, p.score, p.score_breakdown, p.description
        FROM postings_cache p
        LEFT JOIN applications a ON p.id = a.posting_id
        WHERE p.closed_at IS NULL
@@ -68,6 +71,7 @@ function parsePostingRow(row: PostingQueryRow): PostingRowData | null {
       score: row.score,
       score_breakdown: row.score_breakdown,
       compensation: (parsed['compensation'] as string) ?? null,
+      description_available: Boolean(row.description),
     };
   } catch {
     return null;
@@ -86,19 +90,25 @@ export function filterOptionsForProfile(targetCategories: readonly string[]): re
   return CATEGORY_OPTIONS.filter((option) => related.has(option.value));
 }
 
-function formatRelativeAge(iso: string): string {
-  const diffMs = Date.now() - new Date(iso).getTime();
-  const minutes = Math.floor(diffMs / 60_000);
-  if (minutes < 60) return `${String(Math.max(minutes, 0))}m ago`;
-  const hours = Math.floor(minutes / 60);
-  if (hours < 24) return `${String(hours)}h ago`;
-  return `${String(Math.floor(hours / 24))}d ago`;
+export function getFeedEmptyState(
+  rawPostingCount: number,
+  syncStatus: string,
+): { title: string; detail: string | null } {
+  if (rawPostingCount === 0 && syncStatus === 'error') {
+    return {
+      title: "Jobs couldn't be updated.",
+      detail: 'Check your connection. Nightjar will retry automatically.',
+    };
+  }
+  return { title: 'No jobs match these filters.', detail: null };
 }
 
 export function FeedView(): React.ReactNode {
   const { db } = useDatabase();
+  const { toast } = useToast();
   const { profile } = useProfile();
-  const { clearNewPostingCount, status: syncStatus, lastSyncedAt, lastError } = useSync();
+  const { clearNewPostingCount, status: syncStatus, lastSyncedAt } = useSync();
+  const [viewMode, setViewMode] = useState<'for-you' | 'all'>(() => profile ? 'for-you' : 'all');
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(
     () => new Set(profile?.target_categories ?? []),
   );
@@ -143,6 +153,14 @@ export function FeedView(): React.ReactNode {
     for (const row of rawRows) {
       const posting = parsePostingRow(row);
       if (!posting) continue;
+      if (viewMode === 'for-you' && profile && posting.eligibility) {
+        try {
+          const eligibility = JSON.parse(posting.eligibility) as { verdict?: string };
+          if (eligibility.verdict === 'ineligible') continue;
+        } catch {
+          // Invalid cached eligibility stays visible for manual review.
+        }
+      }
       if (!matchesCategorySelection(posting.category_tags, posting.category, selectedCategories)) continue;
       if (
         query
@@ -151,10 +169,18 @@ export function FeedView(): React.ReactNode {
       ) continue;
       result.push(posting);
     }
+    if (viewMode === 'for-you' && profile) {
+      result.sort((left, right) => {
+        const scoreDifference = (right.score ?? -1) - (left.score ?? -1);
+        if (scoreDifference !== 0) return scoreDifference;
+        return right.first_seen_at.localeCompare(left.first_seen_at);
+      });
+    }
     return result;
-  }, [rawRows, search, selectedCategories]);
+  }, [rawRows, search, selectedCategories, viewMode, profile]);
 
   const postingIds = useMemo(() => postings.map((posting) => posting.id), [postings]);
+  const emptyState = getFeedEmptyState(rawRows.length, syncStatus);
   const filterOptions = useMemo(
     () => filterOptionsForProfile(profile?.target_categories ?? []),
     [profile?.target_categories],
@@ -198,7 +224,9 @@ export function FeedView(): React.ReactNode {
     const now = new Date().toISOString();
 
     if (action === 'open') {
-      window.open(posting.url, '_blank', 'noopener,noreferrer');
+      void openExternal(posting.url).then((opened) => {
+        if (!opened) toast('Could not open this job link.', 'error');
+      });
       return;
     }
     if (action === 'save') {
@@ -225,7 +253,7 @@ export function FeedView(): React.ReactNode {
       setUndoState({ postingId: id, title: posting.title });
       setRefreshKey((key) => key + 1);
     });
-  }, [db, postings]);
+  }, [db, postings, toast]);
 
   const handleUndo = useCallback((): void => {
     if (!undoState) return;
@@ -256,21 +284,6 @@ export function FeedView(): React.ReactNode {
     disabled: false,
   });
 
-  const staleMessage = useMemo(() => {
-    if (syncStatus === 'error' && lastError) {
-      if (lastError === 'Offline') return 'No internet connection. Showing cached data.';
-      if (lastError.includes('404')) return 'Jobs are temporarily unavailable. Try again later.';
-      if (lastError.toLowerCase().includes('quota')) return 'Storage is full. Export data and clear the cache.';
-      return lastSyncedAt
-        ? `Sync failed. Showing jobs from ${formatRelativeAge(lastSyncedAt)}.`
-        : 'Sync failed. Showing cached jobs.';
-    }
-    if (lastSyncedAt && Date.now() - new Date(lastSyncedAt).getTime() > 30 * 60 * 1000) {
-      return `Showing jobs from ${formatRelativeAge(lastSyncedAt)}.`;
-    }
-    return null;
-  }, [lastError, lastSyncedAt, syncStatus]);
-
   const rowRefs = useMemo(
     () => postings.map(() => createRef<HTMLDivElement>()),
     [postings],
@@ -280,14 +293,38 @@ export function FeedView(): React.ReactNode {
     <div>
       <div className="mb-5">
         <h1 className="text-xl font-semibold text-gray-950">Jobs</h1>
-        <p className="mt-1 text-sm text-gray-500">Current postings, newest first.</p>
+        <p className="mt-1 text-sm text-gray-500">
+          {viewMode === 'for-you' ? 'Relevant jobs ranked for your preferences.' : 'All current postings, newest first.'}
+        </p>
+        {profile && (
+          <div className="mt-3 inline-flex rounded-md border border-gray-300 bg-white p-0.5" aria-label="Job view">
+            <button
+              type="button"
+              aria-pressed={viewMode === 'for-you'}
+              onClick={() => {
+                setViewMode('for-you');
+                setSelectedCategories(new Set(profile.target_categories));
+                resetListPosition();
+              }}
+              className={`rounded px-3 py-1.5 text-sm font-medium ${viewMode === 'for-you' ? 'bg-violet-700 text-white' : 'text-gray-600'}`}
+            >
+              For you
+            </button>
+            <button
+              type="button"
+              aria-pressed={viewMode === 'all'}
+              onClick={() => {
+                setViewMode('all');
+                setSelectedCategories(new Set());
+                resetListPosition();
+              }}
+              className={`rounded px-3 py-1.5 text-sm font-medium ${viewMode === 'all' ? 'bg-violet-700 text-white' : 'text-gray-600'}`}
+            >
+              All jobs
+            </button>
+          </div>
+        )}
       </div>
-
-      {staleMessage && (
-        <div className="mb-4 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800" data-testid="stale-data-banner">
-          {staleMessage}
-        </div>
-      )}
 
       <div className="mb-4 flex items-center gap-2">
         <input
@@ -359,8 +396,12 @@ export function FeedView(): React.ReactNode {
         </div>
       ) : postings.length === 0 ? (
         <div className="rounded-lg border border-gray-200 bg-white px-6 py-16 text-center">
-          <p className="text-sm font-medium text-gray-900">No jobs match these filters.</p>
-          {(selectedCategories.size > 0 || search) && (
+          <p className="text-sm font-medium text-gray-900">
+            {emptyState.title}
+          </p>
+          {emptyState.detail ? (
+            <p className="mt-2 text-sm text-gray-500">{emptyState.detail}</p>
+          ) : (selectedCategories.size > 0 || search) && (
             <button type="button" onClick={clearFilters} className="mt-3 text-sm font-medium text-violet-700 hover:text-violet-900">
               Show all jobs
             </button>

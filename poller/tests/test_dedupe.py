@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import dataclasses
+
 from poller.dedupe import dedupe_postings
 from poller.models import Posting, compute_posting_id
 
@@ -16,6 +18,7 @@ def _posting(
     locations: list[str] | None = None,
     first_seen_at: str = NOW,
     last_seen_at: str = NOW,
+    url: str | None = None,
 ) -> Posting:
     posting_id = compute_posting_id(source, company_slug, source_job_id)
     return Posting(
@@ -25,7 +28,7 @@ def _posting(
         title=title,
         location=location,
         locations=locations if locations is not None else [location] if location else [],
-        url=f"https://example.com/jobs/{source_job_id}",
+        url=url or f"https://example.com/jobs/{source_job_id}",
         source=source,
         source_job_id=source_job_id,
         ats=source,
@@ -87,6 +90,53 @@ class TestDifferentCompany:
         b = _posting(source="lever", company_slug="globex", source_job_id="2")
         result = dedupe_postings([a, b])
         assert len(result) == 2
+
+    def test_exact_application_url_merges_registry_aliases(self) -> None:
+        direct = _posting(
+            source="greenhouse",
+            company_slug="imc-trading",
+            source_job_id="123",
+            url="https://boards.greenhouse.io/imc/jobs/123?gh_src=direct",
+        )
+        aggregate = _posting(
+            source="simplify",
+            company_slug="imc",
+            source_job_id="other-id",
+            url="https://boards.greenhouse.io/imc/jobs/123?utm_source=simplify",
+        )
+        aggregate = dataclasses.replace(aggregate, ats="greenhouse")
+
+        result = dedupe_postings([aggregate, direct])
+
+        assert len(result) == 1
+        assert result[0].source == "greenhouse"
+
+    def test_exact_url_keeps_aggregator_eligibility_metadata(self) -> None:
+        direct = _posting(
+            source="greenhouse",
+            company_slug="acme",
+            source_job_id="123",
+            url="https://job-boards.greenhouse.io/acme/jobs/123",
+        )
+        aggregate = dataclasses.replace(
+            _posting(
+                source="simplify",
+                company_slug="acme-inc",
+                source_job_id="aggregate-id",
+                url="https://job-boards.greenhouse.io/acme/jobs/123",
+            ),
+            ats="greenhouse",
+            source_metadata={
+                "degrees": ["Bachelor's"],
+                "sponsorship": "Offers Sponsorship",
+            },
+        )
+
+        result = dedupe_postings([direct, aggregate])
+
+        assert result[0].source_metadata is not None
+        assert result[0].source_metadata["degrees"] == ["Bachelor's"]
+        assert result[0].source_metadata["sponsorship"] == "Offers Sponsorship"
 
 
 class TestCanonicalPreference:

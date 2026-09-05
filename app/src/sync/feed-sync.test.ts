@@ -5,9 +5,11 @@ import {
   upsertPostings,
   fetchMeta,
   fetchFeed,
+  getFeedBaseUrl,
   computeSha256,
   ShardValidationError,
   getStoredMetaHash,
+  getLastSyncedAt,
   setStoredMetaHash,
   getStoredLastModified,
   setStoredLastModified,
@@ -96,6 +98,16 @@ describe('feed-sync', () => {
   });
 
   describe('fetchMeta', () => {
+    it('uses the public GitHub feed outside development', () => {
+      expect(getFeedBaseUrl(false)).toBe(
+        'https://raw.githubusercontent.com/skptre/nightjar/main/data',
+      );
+    });
+
+    it('uses the local Vite data route during development', () => {
+      expect(getFeedBaseUrl(true)).toBe('/data');
+    });
+
     it('returns parsed meta data on success', async () => {
       const meta = makeMeta('abc123hash', 42);
       mockFetchResponses({ 'meta.json': { ok: true, body: meta } });
@@ -114,6 +126,20 @@ describe('feed-sync', () => {
       vi.stubGlobal('fetch', vi.fn(() => Promise.reject(new Error('Network error'))));
 
       await expect(fetchMeta('/test')).rejects.toThrow('Network error');
+    });
+
+    it('retries a transient metadata failure', async () => {
+      const meta = makeMeta('retry-success', 12);
+      vi.stubGlobal('fetch', vi.fn()
+        .mockResolvedValueOnce({ ok: false, status: 503 })
+        .mockResolvedValueOnce({
+          ok: true,
+          status: 200,
+          json: () => Promise.resolve(meta),
+        }));
+
+      await expect(fetchMeta('/test')).resolves.toEqual(meta);
+      expect(fetch).toHaveBeenCalledTimes(2);
     });
 
     it('throws on malformed response', async () => {
@@ -295,6 +321,25 @@ describe('feed-sync', () => {
       expect(row!.description).toBe('Full description here');
     });
 
+    it('stores feed descriptions and invalidates stale profile results', async () => {
+      const now = '2026-08-12T00:00:00Z';
+      await db.run(
+        `INSERT INTO postings_cache (id, data, description, first_seen_at, synced_at, eligibility, score)
+         VALUES (?, ?, ?, ?, ?, ?, ?)`,
+        ['p1', '{}', 'Old description', '2026-08-01T00:00:00Z', now, '{"verdict":"unclear"}', 50],
+      );
+
+      await upsertPostings(db, makeFeed({
+        p1: makePosting({ id: 'p1', description_text: 'New description' }),
+      }));
+
+      const row = await db.queryOne<{ description: string; eligibility: string | null; score: number | null }>(
+        'SELECT description, eligibility, score FROM postings_cache WHERE id = ?',
+        ['p1'],
+      );
+      expect(row).toEqual({ description: 'New description', eligibility: null, score: null });
+    });
+
     it('updates closed_at when feed has it set', async () => {
       const now = '2026-08-12T00:00:00Z';
       await db.run(
@@ -467,6 +512,7 @@ describe('feed-sync', () => {
 
       expect(result.skipped).toBe(true);
       expect(result.newPostingIds).toEqual([]);
+      expect(getLastSyncedAt()).not.toBeNull();
 
       const fetchFn = vi.mocked(fetch);
       const calls = fetchFn.mock.calls.map((c) => c[0] as string);

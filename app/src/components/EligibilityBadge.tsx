@@ -8,6 +8,7 @@ export interface EligibilityData {
 
 interface EligibilityBadgeProps {
   eligibilityJson: string | null;
+  descriptionAvailable?: boolean;
 }
 
 function parseEligibility(raw: string | null): EligibilityData | null {
@@ -39,13 +40,20 @@ function verdictStyles(verdict: string, metadataBased: boolean): string {
   return 'bg-yellow-100 text-yellow-800 dark:bg-nj-unclear-bg dark:text-nj-unclear';
 }
 
-export function EligibilityBadge({ eligibilityJson }: EligibilityBadgeProps): React.ReactNode {
+export function EligibilityBadge({ eligibilityJson, descriptionAvailable = false }: EligibilityBadgeProps): React.ReactNode {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   const eligibility = parseEligibility(eligibilityJson);
   const verdict = eligibility?.verdict ?? 'unclear';
   const metadataBased = isMetadataBased(eligibility);
+  const label = !descriptionAvailable
+    ? 'Details needed'
+    : verdict === 'eligible'
+      ? 'Match'
+      : verdict === 'ineligible'
+        ? 'Not a match'
+        : 'Review';
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent): void {
@@ -63,12 +71,12 @@ export function EligibilityBadge({ eligibilityJson }: EligibilityBadgeProps): Re
         onClick={() => setOpen(!open)}
         className={`px-2 py-0.5 text-xs rounded-full font-medium cursor-pointer transition-opacity hover:opacity-80 ${verdictStyles(verdict, metadataBased)}`}
       >
-        {verdict}
+        {label}
       </button>
       {open && (
         <div className="absolute right-0 top-full mt-1 z-50 w-72 bg-white dark:bg-nj-surface-2 border border-gray-200 dark:border-nj-border-bright rounded-lg shadow-lg shadow-black/20 p-3">
           <p className="text-xs font-medium text-gray-700 dark:text-nj-text mb-2">
-            Eligibility: <span className={verdict === 'eligible' ? 'text-nj-eligible' : verdict === 'ineligible' ? 'text-nj-ineligible' : 'text-nj-unclear'}>{verdict}</span>
+            {label}
           </p>
           {metadataBased && (
             <p className="text-xs text-amber-600 dark:text-amber-400 mb-2">
@@ -85,9 +93,9 @@ export function EligibilityBadge({ eligibilityJson }: EligibilityBadgeProps): Re
             </ul>
           ) : (
             <p className="text-xs text-gray-500 dark:text-nj-muted">
-              {eligibilityJson === null
-                ? 'Description not yet fetched.'
-                : 'No eligibility signals detected in posting description.'}
+              {!descriptionAvailable
+                ? 'Nightjar has not received the job description yet. Open the posting to review it.'
+                : 'No explicit conflicts were found. Review the full posting before applying.'}
             </p>
           )}
         </div>

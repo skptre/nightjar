@@ -184,11 +184,27 @@ function checkLocation(
   if (profile.locations.length === 0) return [];
 
   const userLocationsLower = profile.locations.map((l) => l.toLowerCase());
-  if (userLocationsLower.includes('us') || userLocationsLower.includes('united states') || userLocationsLower.includes('any')) {
+  if (userLocationsLower.includes('any')) {
     return [];
   }
 
   if (postingLocations.length === 0) return [];
+
+  const wantsUnitedStates = userLocationsLower.includes('us') || userLocationsLower.includes('united states');
+  const usSignal = /\b(?:united states(?: of america)?|u\.?s\.?a\.?)\b|,\s*(?:AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC)\b/i;
+  const foreignSignal = /\b(?:canada|mexico|brazil|united kingdom|england|scotland|ireland|france|germany|netherlands|belgium|switzerland|austria|spain|portugal|italy|sweden|norway|denmark|finland|poland|romania|india|china|japan|south korea|singapore|hong kong|taiwan|philippines|australia|new zealand|israel|united arab emirates|south africa|shanghai|beijing|toronto|montreal|milan|bangkok|rayong|kuala lumpur|ho chi minh|london|berlin|amsterdam|sydney)\b/i;
+
+  if (wantsUnitedStates) {
+    if (postingLocations.some((location) => usSignal.test(location))) return [];
+    if (postingLocations.some((location) => foreignSignal.test(location))) {
+      return [{
+        type: 'location_mismatch' as const,
+        matched_sentence: `Location: ${postingLocations.join(', ')}`,
+        pattern: 'non-US location',
+      }];
+    }
+    return [];
+  }
 
   const hasMatchingLocation = postingLocations.some((loc) => {
     const lower = loc.toLowerCase();
@@ -208,7 +224,6 @@ function checkLocation(
         ', dc', 'new york', 'san francisco', 'los angeles', 'chicago', 'seattle',
         'austin', 'boston', 'denver', 'atlanta', 'miami', 'houston', 'dallas',
         'philadelphia', 'phoenix', 'san diego', 'san jose', 'minneapolis',
-        'remote',
       ];
       return !usIndicators.some((ind) => lower.includes(ind));
     });
@@ -235,7 +250,29 @@ export interface SourceMetadata {
 function checkSourceMetadata(
   metadata: SourceMetadata,
   profile: Profile,
+  includeSponsorship: boolean,
 ): EligibilityResult | null {
+  if (profile.degree_type && metadata.degrees && metadata.degrees.length > 0) {
+    const expected = profile.degree_type === 'bachelors'
+      ? "bachelor's"
+      : profile.degree_type === 'masters'
+        ? "master's"
+        : 'phd';
+    const degreeMatches = metadata.degrees.some((degree) => degree.toLowerCase() === expected);
+    if (!degreeMatches) {
+      const evidence = `Degree types: ${metadata.degrees.join(', ')}`;
+      return {
+        verdict: 'ineligible',
+        reasons: [`matched: '${evidence}'`],
+        flags: [{ type: 'degree_mismatch', matched_sentence: evidence, pattern: 'source_metadata.degrees' }],
+      };
+    }
+  }
+
+  // The metadata sponsorship field is a preliminary fallback. Once the
+  // posting description is available, its direct language takes precedence.
+  if (!includeSponsorship) return null;
+
   if (!profile.requires_sponsorship || isCitizenOrPR(profile.work_auth)) {
     return null;
   }
@@ -320,6 +357,11 @@ export function checkEligibility(
     };
   }
 
+  const metadataResult = sourceMetadata
+    ? checkSourceMetadata(sourceMetadata, profile, !description)
+    : null;
+  if (metadataResult?.verdict === 'ineligible') return metadataResult;
+
   if (eligibleFlags.length > 0) {
     const reasons = eligibleFlags.map((flag) => `matched: '${flag.matched_sentence}'`);
     return {
@@ -329,10 +371,7 @@ export function checkEligibility(
     };
   }
 
-  if (!description && sourceMetadata) {
-    const metaResult = checkSourceMetadata(sourceMetadata, profile);
-    if (metaResult) return metaResult;
-  }
+  if (metadataResult) return metadataResult;
 
   return {
     verdict: 'unclear',

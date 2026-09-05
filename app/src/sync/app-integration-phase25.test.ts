@@ -61,7 +61,8 @@ describe('parseWorkdayUrl', () => {
     expect(result).not.toBeNull();
     expect(result!.host).toBe('nvidia.wd5.myworkdayjobs.com');
     expect(result!.tenant).toBe('nvidia');
-    expect(result!.path).toBe('/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/SWE-Intern_JR12345');
+    expect(result!.site).toBe('NVIDIAExternalCareerSite');
+    expect(result!.path).toBe('/job/US-CA-Santa-Clara/SWE-Intern_JR12345');
   });
 
   it('handles URL without locale prefix', () => {
@@ -71,7 +72,8 @@ describe('parseWorkdayUrl', () => {
     expect(result).not.toBeNull();
     expect(result!.host).toBe('intel.wd1.myworkdayjobs.com');
     expect(result!.tenant).toBe('intel');
-    expect(result!.path).toBe('/IntelExternalCareers/job/US-OR-Hillsboro/SWE_JR99999');
+    expect(result!.site).toBe('IntelExternalCareers');
+    expect(result!.path).toBe('/job/US-OR-Hillsboro/SWE_JR99999');
   });
 
   it('strips fr-FR locale prefix', () => {
@@ -79,7 +81,8 @@ describe('parseWorkdayUrl', () => {
       'https://bosch.wd3.myworkdayjobs.com/fr-FR/BoschCareers/job/Stuttgart/Engineer_REQ123',
     );
     expect(result).not.toBeNull();
-    expect(result!.path).toBe('/BoschCareers/job/Stuttgart/Engineer_REQ123');
+    expect(result!.site).toBe('BoschCareers');
+    expect(result!.path).toBe('/job/Stuttgart/Engineer_REQ123');
   });
 
   it('returns null for non-Workday URLs', () => {
@@ -244,6 +247,30 @@ describe('DescriptionFetcher — SmartRecruiters', () => {
 
     expect(result.description).toBe('About the role Requirements: Python, TypeScript');
     expect(result.error).toBeNull();
+  });
+
+  it('reads the current jobAd sections response shape', async () => {
+    vi.stubGlobal('fetch', vi.fn(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve({
+        jobAd: {
+          sections: {
+            jobDescription: { text: '<p>Build products.</p>' },
+            qualifications: { text: '<p>Currently enrolled.</p>' },
+          },
+        },
+      }),
+    })));
+
+    const result = await new DescriptionFetcher().fetchOne({
+      id: 'sr-current',
+      url: 'https://jobs.smartrecruiters.com/Visa/current-shape',
+      source: 'smartrecruiters',
+      source_job_id: 'current-shape',
+      company_slug: 'visa',
+    });
+
+    expect(result.description).toBe('Build products. Currently enrolled.');
   });
 
   it('constructs correct API URL', async () => {

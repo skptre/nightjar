@@ -3,14 +3,14 @@ import { loadDatabase, saveDatabase } from './indexeddb';
 import { runMigrations } from './migrations';
 import { isTauri } from '@/lib/platform';
 import schemaSQL from './schema.sql?raw';
-import type { Database, SqlValue } from './types';
+import type { Database, DatabaseTransaction, SqlStatement, SqlValue } from './types';
 
 export type { Database, SqlValue } from './types';
 
 export class NightjarDB implements Database {
   private db: SqlJsDatabase;
   private readonly shouldPersist: boolean;
-  private inTransaction = false;
+  private operationTail: Promise<void> = Promise.resolve();
 
   private constructor(db: SqlJsDatabase, shouldPersist: boolean) {
     this.db = db;
@@ -26,7 +26,7 @@ export class NightjarDB implements Database {
     const instance = new NightjarDB(sqlDb, true);
 
     if (!savedData) {
-      instance.initSchema();
+      await instance.initSchema();
     }
 
     await runMigrations(instance);
@@ -37,7 +37,7 @@ export class NightjarDB implements Database {
     const SQL = await initSqlJs();
     const sqlDb = new SQL.Database();
     const instance = new NightjarDB(sqlDb, false);
-    instance.initSchema();
+    await instance.initSchema();
     return instance;
   }
 
@@ -49,26 +49,38 @@ export class NightjarDB implements Database {
     return instance;
   }
 
-  private initSchema(): void {
+  private async initSchema(): Promise<void> {
     this.db.exec(schemaSQL);
-    void this.persist();
+    await this.persist();
   }
 
   async run(sql: string, params?: SqlValue[]): Promise<void> {
-    this.db.run(sql, params as Parameters<SqlJsDatabase['run']>[1]);
-    if (!this.inTransaction) {
-      void this.persist();
-    }
+    await this.enqueue(async () => {
+      this.runDirect(sql, params);
+      await this.persist();
+    });
   }
 
   async exec(sql: string): Promise<void> {
-    this.db.exec(sql);
-    if (!this.inTransaction) {
-      void this.persist();
-    }
+    await this.enqueue(async () => {
+      this.db.exec(sql);
+      await this.persist();
+    });
+  }
+
+  async batch(statements: SqlStatement[]): Promise<void> {
+    if (statements.length === 0) return;
+
+    await this.transaction(async (transaction) => {
+      await transaction.batch(statements);
+    });
   }
 
   async query<T>(sql: string, params?: SqlValue[]): Promise<T[]> {
+    return this.enqueue(async () => this.queryDirect<T>(sql, params));
+  }
+
+  private queryDirect<T>(sql: string, params?: SqlValue[]): T[] {
     const stmt = this.db.prepare(sql);
     try {
       if (params) {
@@ -89,19 +101,34 @@ export class NightjarDB implements Database {
     return rows[0];
   }
 
-  async transaction(fn: () => Promise<void>): Promise<void> {
-    this.inTransaction = true;
-    this.db.run('BEGIN');
-    try {
-      await fn();
-      this.db.run('COMMIT');
-    } catch (e) {
-      this.db.run('ROLLBACK');
-      throw e;
-    } finally {
-      this.inTransaction = false;
-    }
-    void this.persist();
+  async transaction(fn: (transaction: DatabaseTransaction) => Promise<void>): Promise<void> {
+    await this.enqueue(async () => {
+      const transaction: DatabaseTransaction = {
+        run: async (sql, params) => this.runDirect(sql, params),
+        exec: async (sql) => { this.db.exec(sql); },
+        batch: async (statements) => {
+          for (const statement of statements) {
+            if (statement.params) this.runDirect(statement.sql, statement.params);
+            else this.db.exec(statement.sql);
+          }
+        },
+        query: async <T>(sql: string, params?: SqlValue[]) => this.queryDirect<T>(sql, params),
+        queryOne: async <T>(sql: string, params?: SqlValue[]) => {
+          const rows = this.queryDirect<T>(sql, params);
+          return rows[0];
+        },
+      };
+
+      this.db.run('BEGIN');
+      try {
+        await fn(transaction);
+        this.db.run('COMMIT');
+      } catch (error) {
+        this.db.run('ROLLBACK');
+        throw error;
+      }
+      await this.persist();
+    });
   }
 
   export(): Uint8Array {
@@ -109,13 +136,25 @@ export class NightjarDB implements Database {
   }
 
   async close(): Promise<void> {
-    this.db.close();
+    await this.enqueue(async () => {
+      this.db.close();
+    });
   }
 
   private async persist(): Promise<void> {
     if (!this.shouldPersist) return;
     const data = this.db.export();
     await saveDatabase(new Uint8Array(data));
+  }
+
+  private runDirect(sql: string, params?: SqlValue[]): void {
+    this.db.run(sql, params as Parameters<SqlJsDatabase['run']>[1]);
+  }
+
+  private async enqueue<T>(operation: () => Promise<T>): Promise<T> {
+    const result = this.operationTail.then(operation, operation);
+    this.operationTail = result.then(() => undefined, () => undefined);
+    return result;
   }
 }
 

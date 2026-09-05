@@ -19,9 +19,9 @@ function clearOwnedStorage(storage: Storage): void {
 }
 
 export async function clearAllLocalData(db: Database): Promise<void> {
-  await db.transaction(async () => {
+  await db.transaction(async (transaction) => {
     for (const table of TABLES_IN_DELETE_ORDER) {
-      await db.run(`DELETE FROM ${table}`);
+      await transaction.run(`DELETE FROM ${table}`);
     }
   });
   clearOwnedStorage(localStorage);

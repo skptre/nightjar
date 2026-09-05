@@ -86,9 +86,9 @@ export async function migrateFromBrowser(
       return false;
     }
 
-    await tauriDb.transaction(async () => {
+    await tauriDb.transaction(async (transaction) => {
       for (const p of postings) {
-        await tauriDb.run(
+        await transaction.run(
           `INSERT OR IGNORE INTO postings_cache
            (id, data, description, first_seen_at, closed_at, category, category_tags,
             term, eligibility, score, score_breakdown, synced_at)
@@ -102,7 +102,7 @@ export async function migrateFromBrowser(
       }
 
       for (const a of applications) {
-        await tauriDb.run(
+        await transaction.run(
           `INSERT OR IGNORE INTO applications
            (posting_id, status, applied_at, deadline, notes, next_action,
             next_action_at, outcome, outcome_at, interview_rounds, outcome_notes,
@@ -117,7 +117,7 @@ export async function migrateFromBrowser(
       }
 
       for (const event of outcomeEvents) {
-        await tauriDb.run(
+        await transaction.run(
           `INSERT INTO application_outcome_events
            (posting_id, outcome, occurred_at, interview_rounds, notes)
            VALUES (?, ?, ?, ?, ?)`,
@@ -129,7 +129,7 @@ export async function migrateFromBrowser(
       }
 
       for (const action of suggestionActions) {
-        await tauriDb.run(
+        await transaction.run(
           `INSERT OR IGNORE INTO recalibration_suggestion_actions
            (suggestion_id, status, acted_at)
            VALUES (?, ?, ?)`,

@@ -385,12 +385,12 @@ describe('NightjarDB', () => {
 
   describe('transactions', () => {
     it('commits all writes atomically', async () => {
-      await db.transaction(async () => {
-        await db.run(
+      await db.transaction(async (transaction) => {
+        await transaction.run(
           'INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)',
           ['tx1', '{}', '2026-01-01T00:00:00Z'],
         );
-        await db.run(
+        await transaction.run(
           'INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)',
           ['tx2', '{}', '2026-01-01T00:00:00Z'],
         );
@@ -404,8 +404,8 @@ describe('NightjarDB', () => {
 
     it('rolls back on error', async () => {
       await expect(
-        db.transaction(async () => {
-          await db.run(
+        db.transaction(async (transaction) => {
+          await transaction.run(
             'INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)',
             ['rb1', '{}', '2026-01-01T00:00:00Z'],
           );
@@ -454,9 +454,9 @@ describe('NightjarDB', () => {
     });
 
     it('query returns multiple rows correctly', async () => {
-      await db.transaction(async () => {
+      await db.transaction(async (transaction) => {
         for (let i = 1; i <= 5; i++) {
-          await db.run(
+          await transaction.run(
             'INSERT INTO postings_cache (id, data, synced_at) VALUES (?, ?, ?)',
             [`q${String(i)}`, '{}', '2026-01-01T00:00:00Z'],
           );

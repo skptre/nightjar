@@ -71,54 +71,42 @@ export async function classifyNewPostings(
   profile: Profile,
 ): Promise<Map<string, ClassificationResult>> {
   const results = new Map<string, ClassificationResult>();
+  if (postingIds.length === 0) return results;
 
-  await db.transaction(async () => {
-    for (const id of postingIds) {
-      const result = await classifyAndStoreInTransaction(db, id, profile);
-      if (result) {
-        results.set(id, result);
-      }
-    }
-  });
-
-  return results;
-}
-
-async function classifyAndStoreInTransaction(
-  db: Database,
-  postingId: string,
-  profile: Profile,
-): Promise<ClassificationResult | null> {
-  const row = await db.queryOne<{ data: string; description: string | null }>(
-    'SELECT data, description FROM postings_cache WHERE id = ?',
-    [postingId],
+  const requestedIds = new Set(postingIds);
+  const rows = await db.query<{ id: string; data: string; description: string | null }>(
+    'SELECT id, data, description FROM postings_cache',
   );
+  const statements: Parameters<Database['batch']>[0] = [];
 
-  if (!row) return null;
+  for (const row of rows) {
+    if (!requestedIds.has(row.id)) continue;
+    let posting: FeedPosting;
+    try {
+      posting = JSON.parse(row.data) as FeedPosting;
+    } catch {
+      continue;
+    }
 
-  let posting: FeedPosting;
-  try {
-    posting = JSON.parse(row.data) as FeedPosting;
-  } catch {
-    return null;
+    const result = classifyPosting(posting, row.description, profile);
+    results.set(row.id, result);
+    statements.push({
+      sql: `UPDATE postings_cache
+            SET category = ?, category_tags = ?, term = ?, eligibility = ?
+            WHERE id = ?`,
+      params: [
+        result.category.category,
+        JSON.stringify(result.category.category_tags),
+        result.term.term,
+        JSON.stringify(result.eligibility),
+        row.id,
+      ],
+    });
   }
 
-  const result = classifyPosting(posting, row.description, profile);
+  await db.batch(statements);
 
-  await db.run(
-    `UPDATE postings_cache
-     SET category = ?, category_tags = ?, term = ?, eligibility = ?
-     WHERE id = ?`,
-    [
-      result.category.category,
-      JSON.stringify(result.category.category_tags),
-      result.term.term,
-      JSON.stringify(result.eligibility),
-      postingId,
-    ],
-  );
-
-  return result;
+  return results;
 }
 
 export async function reclassifyAll(

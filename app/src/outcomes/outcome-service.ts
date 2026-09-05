@@ -1,4 +1,5 @@
 import type { Database } from '@/db/database';
+import type { DatabaseTransaction } from '@/db/types';
 import {
   outcomeForStatus,
   type ApplicationStatus,
@@ -46,7 +47,7 @@ async function requireApplication(db: Database, postingId: string): Promise<Appl
 }
 
 async function writeOutcome(
-  db: Database,
+  db: DatabaseTransaction,
   postingId: string,
   outcome: ApplicationOutcome,
   currentRounds: number,
@@ -78,9 +79,9 @@ export async function recordApplicationOutcome(
   const application = await requireApplication(db, postingId);
   const normalized = normalizeDetails(details);
   const occurredAt = now.toISOString();
-  await db.transaction(async () => {
+  await db.transaction(async (transaction) => {
     await writeOutcome(
-      db,
+      transaction,
       postingId,
       outcome,
       application.interview_rounds,
@@ -106,8 +107,8 @@ export async function transitionApplicationStatus(
   const appliedAt = application.applied_at
     ?? (APPLIED_OR_LATER.has(newStatus) ? occurredAt : null);
 
-  await db.transaction(async () => {
-    await db.run(
+  await db.transaction(async (transaction) => {
+    await transaction.run(
       `UPDATE applications
        SET status = ?, applied_at = ?, updated_at = ?
        WHERE posting_id = ?`,
@@ -116,7 +117,7 @@ export async function transitionApplicationStatus(
 
     if (outcome) {
       await writeOutcome(
-        db,
+        transaction,
         postingId,
         outcome,
         application.interview_rounds,
@@ -124,7 +125,7 @@ export async function transitionApplicationStatus(
         occurredAt,
       );
     } else {
-      await db.run(
+      await transaction.run(
         `UPDATE applications
          SET outcome = NULL, outcome_at = NULL, outcome_notes = NULL
          WHERE posting_id = ?`,

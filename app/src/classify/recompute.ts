@@ -85,15 +85,56 @@ export async function recomputeNewPostings(
   now?: Date,
 ): Promise<Map<string, RecomputeResult>> {
   const results = new Map<string, RecomputeResult>();
+  if (postingIds.length === 0) return results;
 
-  await db.transaction(async () => {
-    for (const id of postingIds) {
-      const result = await recomputePostingInTransaction(db, id, profile, now);
-      if (result) {
-        results.set(id, result);
-      }
-    }
-  });
+  const requestedIds = new Set(postingIds);
+  const rows = await db.query<{
+    id: string;
+    data: string;
+    description: string | null;
+    first_seen_at: string | null;
+  }>(
+    'SELECT id, data, description, first_seen_at FROM postings_cache',
+  );
+  const statements: Parameters<Database['batch']>[0] = [];
+
+  for (const row of rows) {
+    if (!requestedIds.has(row.id)) continue;
+    const posting = parsePosting(row.data);
+    if (!posting) continue;
+
+    const classification = classifyPosting(posting, row.description, profile);
+    const firstSeenAt = row.first_seen_at ?? posting.first_seen_at;
+    const score = scorePosting(
+      {
+        company_slug: posting.company_slug,
+        first_seen_at: firstSeenAt,
+        eligibility_verdict: classification.eligibility.verdict,
+        category: classification.category.category,
+        category_tags: classification.category.category_tags,
+      },
+      profile,
+      now,
+    );
+    const result: RecomputeResult = { classification, score };
+    results.set(row.id, result);
+    statements.push({
+      sql: `UPDATE postings_cache
+            SET category = ?, category_tags = ?, term = ?, eligibility = ?, score = ?, score_breakdown = ?
+            WHERE id = ?`,
+      params: [
+        classification.category.category,
+        JSON.stringify(classification.category.category_tags),
+        classification.term.term,
+        JSON.stringify(classification.eligibility),
+        score.score,
+        JSON.stringify(score.breakdown),
+        row.id,
+      ],
+    });
+  }
+
+  await db.batch(statements);
 
   return results;
 }
@@ -188,56 +229,4 @@ export async function rescorePosting(
   );
 
   return score;
-}
-
-async function recomputePostingInTransaction(
-  db: Database,
-  postingId: string,
-  profile: Profile,
-  now?: Date,
-): Promise<RecomputeResult | null> {
-  const row = await db.queryOne<{ data: string; description: string | null; first_seen_at: string | null }>(
-    'SELECT data, description, first_seen_at FROM postings_cache WHERE id = ?',
-    [postingId],
-  );
-
-  if (!row) return null;
-
-  const posting = parsePosting(row.data);
-  if (!posting) return null;
-
-  const classification = classifyPosting(posting, row.description, profile);
-
-  const firstSeenAt = row.first_seen_at ?? posting.first_seen_at;
-
-  const score = scorePosting(
-    {
-      company_slug: posting.company_slug,
-      first_seen_at: firstSeenAt,
-      eligibility_verdict: classification.eligibility.verdict,
-      category: classification.category.category,
-      category_tags: classification.category.category_tags,
-    },
-    profile,
-    now,
-  );
-
-  const result: RecomputeResult = { classification, score };
-
-  await db.run(
-    `UPDATE postings_cache
-     SET category = ?, category_tags = ?, term = ?, eligibility = ?, score = ?, score_breakdown = ?
-     WHERE id = ?`,
-    [
-      result.classification.category.category,
-      JSON.stringify(result.classification.category.category_tags),
-      result.classification.term.term,
-      JSON.stringify(result.classification.eligibility),
-      result.score.score,
-      JSON.stringify(result.score.breakdown),
-      postingId,
-    ],
-  );
-
-  return result;
 }

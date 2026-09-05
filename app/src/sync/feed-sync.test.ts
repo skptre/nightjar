@@ -14,6 +14,7 @@ import {
   getStoredLastModified,
   setStoredLastModified,
   getStoredShardHashes,
+  setStoredShardHashes,
   type FeedData,
   type FeedPosting,
   type MetaData,
@@ -367,7 +368,7 @@ describe('feed-sync', () => {
       expect(row2!.closed_at).toBe('2026-08-11T00:00:00Z');
     });
 
-    it('does not overwrite existing closed_at with null', async () => {
+    it('reopens a cached posting when the authoritative feed says it is open', async () => {
       await db.run(
         'INSERT INTO postings_cache (id, data, first_seen_at, closed_at, synced_at) VALUES (?, ?, ?, ?, ?)',
         ['p1', '{}', '2026-08-01T00:00:00Z', '2026-08-10T00:00:00Z', '2026-08-12T00:00:00Z'],
@@ -382,7 +383,7 @@ describe('feed-sync', () => {
         'SELECT closed_at FROM postings_cache WHERE id = ?',
         ['p1'],
       );
-      expect(row!.closed_at).toBe('2026-08-10T00:00:00Z');
+      expect(row!.closed_at).toBeNull();
     });
 
     it('sets closed_at on postings missing from feed', async () => {
@@ -646,6 +647,40 @@ describe('feed-sync', () => {
       const storedShardHashes = getStoredShardHashes();
       expect(storedShardHashes['greenhouse']).toBe(gh.sha256);
       expect(storedShardHashes['lever']).toBe(lv.sha256);
+    });
+
+    it('repairs an incomplete local cache even when remote hashes match', async () => {
+      const p1 = makePosting({ id: 'p1', source: 'greenhouse' });
+      const p2 = makePosting({ id: 'p2', source: 'lever' });
+      const gh = await makeShardWithHash('greenhouse', { p1 });
+      const lv = await makeShardWithHash('lever', { p2 });
+      const meta = makeShardedMeta('current-feed-hash', 2, {
+        greenhouse: { sha256: gh.sha256, count: 1, updated_at: '2026-08-12T00:00:00Z' },
+        lever: { sha256: lv.sha256, count: 1, updated_at: '2026-08-12T00:00:00Z' },
+      });
+
+      await db.run(
+        'INSERT INTO postings_cache (id, data, first_seen_at, synced_at) VALUES (?, ?, ?, ?)',
+        ['p1', JSON.stringify(p1), p1.first_seen_at, '2026-08-12T00:00:00Z'],
+      );
+      setStoredMetaHash(meta.sha256);
+      setStoredShardHashes({ greenhouse: gh.sha256, lever: lv.sha256 });
+      mockFetchResponses({
+        'meta.json': { ok: true, body: meta },
+        'greenhouse.json': { ok: true, rawText: gh.text },
+        'lever.json': { ok: true, rawText: lv.text },
+        'index.json': { ok: false, body: null },
+      });
+
+      const result = await syncFeed(db, '/test');
+
+      expect(result.skipped).toBe(false);
+      expect(result.error).toBeUndefined();
+      const rows = await db.query<{ id: string }>('SELECT id FROM postings_cache ORDER BY id');
+      expect(rows.map((row) => row.id)).toEqual(['p1', 'p2']);
+      const fetchCalls = vi.mocked(fetch).mock.calls.map((call) => call[0] as string);
+      expect(fetchCalls.some((url) => url.includes('greenhouse.json'))).toBe(true);
+      expect(fetchCalls.some((url) => url.includes('lever.json'))).toBe(true);
     });
 
     it('rejects shard with mismatched shard_id — zero writes', async () => {

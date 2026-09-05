@@ -104,9 +104,9 @@ export async function runMigrations(
     .sort((a, b) => a.version - b.version);
 
   for (const migration of pending) {
-    await db.transaction(async () => {
-      await db.exec(migration.sql);
-      await db.run('UPDATE schema_version SET version = ?', [migration.version]);
+    await db.transaction(async (transaction) => {
+      await transaction.exec(migration.sql);
+      await transaction.run('UPDATE schema_version SET version = ?', [migration.version]);
     });
   }
 }

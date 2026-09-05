@@ -125,17 +125,17 @@ export async function acceptSuggestion(
   };
   const outcome = outcomeMap[suggestion.signal_type];
 
-  await db.transaction(async () => {
-    await db.run(
+  await db.transaction(async (transaction) => {
+    await transaction.run(
       `UPDATE gmail_suggestions SET status = 'accepted' WHERE id = ?`,
       [suggestionId],
     );
-    await db.run(
+    await transaction.run(
       `UPDATE applications SET status = ?, updated_at = ? WHERE posting_id = ?`,
       [newStatus, now, suggestion.posting_id],
     );
     if (outcome) {
-      await db.run(
+      await transaction.run(
         `INSERT INTO application_outcome_events
          (posting_id, outcome, occurred_at, interview_rounds, notes)
          VALUES (?, ?, ?, ?, ?)`,

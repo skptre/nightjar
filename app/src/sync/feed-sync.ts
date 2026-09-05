@@ -1,4 +1,5 @@
 import type { Database } from '@/db/database';
+import { isTauri } from '@/lib/platform';
 
 export interface FeedPosting {
   id: string;
@@ -66,6 +67,8 @@ const META_HASH_KEY = 'nightjar_feed_meta_sha';
 const LAST_SYNCED_KEY = 'nightjar_last_synced_at';
 const LAST_MODIFIED_KEY = 'nightjar_feed_last_modified';
 const SHARD_HASHES_KEY = 'nightjar_shard_hashes';
+const CACHE_INTEGRITY_KEY = 'nightjar_cache_integrity';
+const CACHE_INTEGRITY_VERSION = 'tauri-atomic-batch-v1';
 const PRODUCTION_FEED_BASE_URL = 'https://raw.githubusercontent.com/skptre/nightjar/main/data';
 const FETCH_TIMEOUT_MS = 15_000;
 const RETRY_DELAYS_MS = [250, 750] as const;
@@ -132,12 +135,12 @@ export async function fetchMeta(baseUrl?: string): Promise<MetaData> {
   return data;
 }
 
-export async function fetchFeed(baseUrl?: string): Promise<FeedData | null> {
+export async function fetchFeed(baseUrl?: string, forceRefresh = false): Promise<FeedData | null> {
   const base = baseUrl ?? getFeedBaseUrl();
   const url = `${base}/feed.json`;
   try {
     const headers: Record<string, string> = {};
-    const lastModified = getStoredLastModified();
+    const lastModified = forceRefresh ? null : getStoredLastModified();
     if (lastModified) {
       headers['If-Modified-Since'] = lastModified;
     }
@@ -377,6 +380,23 @@ export function setLastSyncedAt(iso: string): void {
   }
 }
 
+function getCacheIntegrityVersion(): string | null {
+  try {
+    return localStorage.getItem(CACHE_INTEGRITY_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function setCacheIntegrityVersion(): void {
+  if (!isTauri()) return;
+  try {
+    localStorage.setItem(CACHE_INTEGRITY_KEY, CACHE_INTEGRITY_VERSION);
+  } catch {
+    // localStorage unavailable; the next desktop sync safely repeats the repair.
+  }
+}
+
 export async function syncFeed(
   db: Database,
   baseUrl?: string,
@@ -390,18 +410,25 @@ export async function syncFeed(
   }
 
   const storedHash = getStoredMetaHash();
-  if (storedHash === meta.sha256) {
+  const localCount = await db.queryOne<{ count: number }>(
+    'SELECT COUNT(*) AS count FROM postings_cache',
+  );
+  const needsIntegrityRepair = isTauri() && getCacheIntegrityVersion() !== CACHE_INTEGRITY_VERSION;
+  const forceFullSync = needsIntegrityRepair || (localCount?.count ?? 0) < meta.count;
+  if (storedHash === meta.sha256 && !forceFullSync) {
     setLastSyncedAt(new Date().toISOString());
     return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: true };
   }
 
   if (meta.sharded && meta.shards) {
-    return syncFeedSharded(db, meta, baseUrl);
+    const result = await syncFeedSharded(db, meta, baseUrl, forceFullSync);
+    if (!result.error && !result.skipped) setCacheIntegrityVersion();
+    return result;
   }
 
   let feed: FeedData | null;
   try {
-    feed = await fetchFeed(baseUrl);
+    feed = await fetchFeed(baseUrl, forceFullSync);
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : 'Feed fetch failed';
     return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: false, error: message };
@@ -414,6 +441,7 @@ export async function syncFeed(
 
   setStoredMetaHash(meta.sha256);
   setLastSyncedAt(new Date().toISOString());
+  setCacheIntegrityVersion();
 
   return result;
 }
@@ -422,9 +450,10 @@ async function syncFeedSharded(
   db: Database,
   meta: MetaData,
   baseUrl?: string,
+  forceFullSync = false,
 ): Promise<SyncResult> {
   const shards = meta.shards!;
-  const storedShardHashes = getStoredShardHashes();
+  const storedShardHashes = forceFullSync ? {} : getStoredShardHashes();
 
   const changedShardIds: string[] = [];
   for (const [shardId, info] of Object.entries(shards)) {
@@ -523,19 +552,19 @@ async function upsertShardedPostings(
 
   const changedSources = new Set(changedShardIds);
 
-  await db.transaction(async () => {
+  await db.transaction(async (transaction) => {
     for (const [id, posting] of Object.entries(feed.postings)) {
       const postingJson = JSON.stringify(posting);
 
       if (!existingById.has(id)) {
-        await db.run(
+        await transaction.run(
           `INSERT INTO postings_cache (id, data, description, first_seen_at, closed_at, synced_at)
            VALUES (?, ?, ?, ?, ?, ?)`,
           [id, postingJson, posting.description_text ?? null, posting.first_seen_at, posting.closed_at ?? null, now],
         );
         newPostingIds.push(id);
       } else {
-        await db.run(
+        await transaction.run(
           `UPDATE postings_cache
            SET data = ?,
                description = COALESCE(?, description),
@@ -548,7 +577,7 @@ async function upsertShardedPostings(
                  ELSE score
                END,
                description_error = CASE WHEN ? IS NOT NULL THEN NULL ELSE description_error END,
-               synced_at = ?, closed_at = COALESCE(?, closed_at), first_seen_at = MIN(first_seen_at, ?)
+               synced_at = ?, closed_at = ?, first_seen_at = MIN(first_seen_at, ?)
            WHERE id = ?`,
           [
             postingJson,
@@ -577,7 +606,7 @@ async function upsertShardedPostings(
       try {
         const parsed = JSON.parse(existingData) as FeedPosting;
         if (changedSources.has(parsed.source) || removedShardIds.includes(parsed.source)) {
-          await db.run(
+          await transaction.run(
             'UPDATE postings_cache SET closed_at = COALESCE(closed_at, ?) WHERE id = ?',
             [now, existingId],
           );
@@ -589,7 +618,7 @@ async function upsertShardedPostings(
 
     if (feed.companies) {
       for (const [slug, companyMeta] of Object.entries(feed.companies)) {
-        await db.run(
+        await transaction.run(
           `INSERT OR REPLACE INTO companies_meta (slug, name, typical_open) VALUES (?, ?, ?)`,
           [slug, companyMeta.name, companyMeta.typical_open ?? null],
         );
@@ -617,20 +646,20 @@ export async function upsertPostings(db: Database, feed: FeedData): Promise<Sync
 
   const feedPostingIds = new Set<string>();
 
-  await db.transaction(async () => {
+  await db.transaction(async (transaction) => {
     for (const [id, posting] of Object.entries(feed.postings)) {
       feedPostingIds.add(id);
       const postingJson = JSON.stringify(posting);
 
       if (!existingIds.has(id)) {
-        await db.run(
+        await transaction.run(
           `INSERT INTO postings_cache (id, data, description, first_seen_at, closed_at, synced_at)
            VALUES (?, ?, ?, ?, ?, ?)`,
           [id, postingJson, posting.description_text ?? null, posting.first_seen_at, posting.closed_at ?? null, now],
         );
         newPostingIds.push(id);
       } else {
-        await db.run(
+        await transaction.run(
           `UPDATE postings_cache
            SET data = ?,
                description = COALESCE(?, description),
@@ -643,7 +672,7 @@ export async function upsertPostings(db: Database, feed: FeedData): Promise<Sync
                  ELSE score
                END,
                description_error = CASE WHEN ? IS NOT NULL THEN NULL ELSE description_error END,
-               synced_at = ?, closed_at = COALESCE(?, closed_at), first_seen_at = MIN(first_seen_at, ?)
+               synced_at = ?, closed_at = ?, first_seen_at = MIN(first_seen_at, ?)
            WHERE id = ?`,
           [
             postingJson,
@@ -669,7 +698,7 @@ export async function upsertPostings(db: Database, feed: FeedData): Promise<Sync
 
     for (const existingId of existingIds) {
       if (!feedPostingIds.has(existingId)) {
-        await db.run(
+        await transaction.run(
           'UPDATE postings_cache SET closed_at = COALESCE(closed_at, ?) WHERE id = ?',
           [now, existingId],
         );
@@ -678,7 +707,7 @@ export async function upsertPostings(db: Database, feed: FeedData): Promise<Sync
 
     if (feed.companies) {
       for (const [slug, meta] of Object.entries(feed.companies)) {
-        await db.run(
+        await transaction.run(
           `INSERT OR REPLACE INTO companies_meta (slug, name, typical_open) VALUES (?, ?, ?)`,
           [slug, meta.name, meta.typical_open ?? null],
         );

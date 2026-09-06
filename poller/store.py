@@ -24,6 +24,7 @@ class RunState:
     absent_ids: dict[str, str] = field(default_factory=dict)
     http_cache: dict[str, dict[str, str]] = field(default_factory=dict)
     hot_watch_stats: dict[str, HotWatchStats] = field(default_factory=dict)
+    description_attempts: dict[str, dict[str, Any]] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         d: dict[str, Any] = {
@@ -52,6 +53,8 @@ class RunState:
         d["absent_ids"] = dict(sorted(self.absent_ids.items()))
         if self.http_cache:
             d["http_cache"] = dict(sorted(self.http_cache.items()))
+        if self.description_attempts:
+            d["description_attempts"] = dict(sorted(self.description_attempts.items()))
         if self.hot_watch_stats:
             d["hot_watch_stats"] = {
                 key: {
@@ -115,6 +118,7 @@ class RunState:
             absent_ids=dict(d.get("absent_ids", {})),
             http_cache=dict(d.get("http_cache", {})),
             hot_watch_stats=hot_watch_stats,
+            description_attempts=dict(d.get("description_attempts", {})),
         )
 
 

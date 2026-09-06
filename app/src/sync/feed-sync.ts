@@ -17,6 +17,9 @@ export interface FeedPosting {
   last_seen_at: string;
   closed_at: string | null;
   description_text?: string;
+  description_status?: string;
+  description_version?: number;
+  department?: string | null;
   compensation?: string;
   merged_from?: string[];
   source_metadata?: {
@@ -26,6 +29,7 @@ export interface FeedPosting {
     category?: string;
     department?: string;
     occupational_category?: string;
+    source_compensation?: unknown;
   };
 }
 

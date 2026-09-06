@@ -506,7 +506,7 @@ describe('recompute — DB integration', () => {
 
   describe('description triggers rescore', () => {
     it('scoring changes when description reveals ineligibility', async () => {
-      const posting = makePosting({ id: 'desc1' });
+      const posting = makePosting({ id: 'desc1', description_status: 'available' });
       await insertPosting(posting);
 
       const profile = makeProfile({ tiers: { testco: 1 }, target_categories: ['swe'] });
@@ -528,7 +528,7 @@ describe('recompute — DB integration', () => {
       expect(after!.score.score).toBeLessThanOrEqual(5);
     });
 
-    it('scoring improves when description shows positive sponsorship', async () => {
+    it('positive sponsorship is not a general eligibility claim or ranking bonus', async () => {
       const posting = makePosting({ id: 'desc2' });
       await insertPosting(posting);
 
@@ -545,9 +545,9 @@ describe('recompute — DB integration', () => {
       );
 
       const after = await recomputePosting(db, 'desc2', profile, now);
-      expect(after!.classification.eligibility.verdict).toBe('eligible');
-      expect(after!.score.breakdown.eligibility).toBe(20);
-      expect(after!.score.score).toBeGreaterThan(before!.score.score);
+      expect(after!.classification.eligibility.verdict).toBe('unclear');
+      expect(after!.score.breakdown.eligibility).toBe(15);
+      expect(after!.score.score).toBe(before!.score.score);
     });
   });
 

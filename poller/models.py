@@ -26,6 +26,8 @@ class Posting:
     first_seen_at: str
     last_seen_at: str
     description_text: str = ""
+    description_status: str | None = None
+    description_version: int | None = None
     closed_at: str | None = None
     compensation: str | None = None
     employment_type: str | None = None
@@ -67,7 +69,11 @@ class Posting:
         if self.valid_through is not None:
             d["valid_through"] = self.valid_through
         if self.description_text:
-            d["description_text"] = self.description_text[:5_000]
+            d["description_text"] = self.description_text
+        if self.description_status is not None:
+            d["description_status"] = self.description_status
+        if self.description_version is not None:
+            d["description_version"] = self.description_version
         if self.merged_from:
             d["merged_from"] = list(self.merged_from)
         if self.source_metadata is not None:
@@ -91,6 +97,8 @@ class Posting:
             first_seen_at=d["first_seen_at"],
             last_seen_at=d["last_seen_at"],
             description_text=d.get("description_text", ""),
+            description_status=d.get("description_status"),
+            description_version=d.get("description_version"),
             closed_at=d.get("closed_at"),
             compensation=d.get("compensation"),
             employment_type=d.get("employment_type"),

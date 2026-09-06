@@ -1,10 +1,12 @@
 import type { Database } from '@/db/database';
 import type { Profile } from '@/profile/types';
-import type { ClassificationResult } from './types';
+import type { ClassificationResult, EligibilityResult } from './types';
 import type { FeedPosting } from '@/sync/feed-sync';
 import { classifyTerm } from './term-classifier';
 import { classifyCategory } from './category-classifier';
-import { checkEligibility } from './eligibility';
+import { extractJobDetails } from '@/details/extract';
+import { assessRequirements } from '@/details/requirements';
+import { acquisitionStatus } from '@/details/cache';
 
 export function classifyPosting(
   posting: FeedPosting,
@@ -12,19 +14,25 @@ export function classifyPosting(
   profile: Profile,
 ): ClassificationResult {
   const term = classifyTerm(posting.title, description, posting.posted_at);
+  const context = { ...posting.source_metadata };
+  if (posting.department?.trim()) context.department = posting.department.trim();
   const category = classifyCategory(
     posting.title,
     description,
     posting.source_metadata?.category,
-    posting.source_metadata,
+    context,
   );
-  const eligibility = checkEligibility(
-    posting.title,
-    description,
-    posting.locations ?? [],
-    profile,
-    posting.source_metadata,
-  );
+  const assessment = assessRequirements(extractJobDetails(description, {
+    acquisition: acquisitionStatus(posting.description_status),
+  }), profile);
+  // Compatibility storage for scoring/notifications; kept jobs carry no eligibility claim.
+  // Graduation affects ordering separately and never becomes an authorization exclusion.
+  const eligibility: EligibilityResult = {
+    verdict: assessment.exclude ? 'ineligible' : 'unclear',
+    reasons: assessment.exclusionEvidence.map(e => e.text),
+    flags: assessment.exclusionEvidence.map(e => ({ type: 'explicit_authorization_conflict',
+      matched_sentence: e.text, pattern: 'verified_description_requirement' })),
+  };
 
   return { term, category, eligibility };
 }

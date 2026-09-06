@@ -20,12 +20,7 @@ class DiffResult:
 
     @property
     def has_changes(self) -> bool:
-        return bool(
-            self.new_ids
-            or self.bootstrapped_ids
-            or self.closed_ids
-            or self.expired_ids
-        )
+        return bool(self.new_ids or self.bootstrapped_ids or self.closed_ids or self.expired_ids)
 
 
 def _source_key(posting: Posting) -> str:
@@ -64,9 +59,7 @@ def compute_diff(
 
     reappeared_ids = set(previously_absent.keys()) & current_ids
 
-    raw_new_ids = (
-        current_ids - previously_active - set(previously_absent.keys())
-    )
+    raw_new_ids = current_ids - previously_active - set(previously_absent.keys())
 
     # --- Bootstrapping ---
     bootstrapped_ids: set[str] = set()
@@ -91,8 +84,7 @@ def compute_diff(
             posting,
             first_seen_at=previous.first_seen_at if previous else posting.first_seen_at,
             description_text=(
-                posting.description_text
-                or (previous.description_text if previous else "")
+                posting.description_text or (previous.description_text if previous else "")
             ),
             last_seen_at=now,
         )
@@ -144,9 +136,11 @@ def compute_diff(
         active_ids=current_ids,
         absent_ids=new_absent,
         http_cache=dict(state.http_cache),
+        description_attempts={
+            key: dict(value) for key, value in state.description_attempts.items()
+        },
         hot_watch_stats={
-            key: dataclasses.replace(value)
-            for key, value in state.hot_watch_stats.items()
+            key: dataclasses.replace(value) for key, value in state.hot_watch_stats.items()
         },
     )
 

@@ -482,14 +482,14 @@ describe('classifyPosting — source_metadata integration', () => {
     expect(result.category.matched_rule).toBe('simplify:Software Engineering');
   });
 
-  it('passes source_metadata.sponsorship to eligibility checker', () => {
+  it('does not turn source sponsorship labels into an eligibility claim', () => {
     const posting = makePosting({
       id: 'p1',
       title: 'Intern',
       source_metadata: { sponsorship: 'Offers Sponsorship' },
     });
     const result = classifyPosting(posting, null, f1Profile);
-    expect(result.eligibility.verdict).toBe('eligible');
+    expect(result.eligibility.verdict).toBe('unclear');
   });
 
   it('works without source_metadata (backward compatibility)', () => {
@@ -514,7 +514,7 @@ describe('source_metadata lifecycle — DB integration', () => {
     await db.close();
   });
 
-  it('metadata gives preliminary verdict, description overrides', async () => {
+  it('metadata and positive sponsorship do not create eligibility verdicts', async () => {
     const posting = makePosting({
       id: 'lifecycle1',
       title: 'SWE Intern',
@@ -531,8 +531,8 @@ describe('source_metadata lifecycle — DB integration', () => {
 
     const before = await recomputePosting(db, 'lifecycle1', h1bProfile, now);
     expect(before).not.toBeNull();
-    expect(before!.classification.eligibility.verdict).toBe('ineligible');
-    expect(before!.score.score).toBeLessThanOrEqual(5);
+    expect(before!.classification.eligibility.verdict).toBe('unclear');
+    expect(before!.score.score).toBeGreaterThan(5);
 
     await db.run(
       'UPDATE postings_cache SET description = ? WHERE id = ?',
@@ -541,14 +541,15 @@ describe('source_metadata lifecycle — DB integration', () => {
 
     const after = await recomputePosting(db, 'lifecycle1', h1bProfile, now);
     expect(after).not.toBeNull();
-    expect(after!.classification.eligibility.verdict).toBe('eligible');
+    expect(after!.classification.eligibility.verdict).toBe('unclear');
     expect(after!.score.score).toBeGreaterThan(5);
-    expect(after!.score.breakdown.eligibility).toBe(20);
+    expect(after!.score.breakdown.eligibility).toBe(15);
   });
 
   it('F-1 ignores no_sponsorship metadata, then description with hard block → ineligible', async () => {
     const posting = makePosting({
       id: 'lifecycle2',
+      description_status: 'available',
       title: 'SWE Intern',
       source_metadata: { sponsorship: "Doesn't Offer Sponsorship" },
     });

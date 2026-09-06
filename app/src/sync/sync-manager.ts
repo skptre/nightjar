@@ -3,8 +3,8 @@ import type { Profile } from '@/profile/types';
 import { DEFAULT_SYNC_INTERVAL_MS } from '@/profile/types';
 import { syncFeed, getLastSyncedAt, type SyncResult } from './feed-sync';
 import { fireNewPostingNotifications, requestNotificationPermission } from './notifications';
-import { prefetchDescriptions } from './description-fetch';
 import { recomputePendingCategoryTaxonomy } from '@/classify/recompute';
+import { refreshJobDetails } from '@/details/cache';
 import { runAutoGhost } from '@/views/Pipeline/auto-ghost';
 import { isTauri, updateTrayInfo, GMAIL_ENABLED } from '@/lib/platform';
 import { isGmailConnected } from '@/integrations/gmail-auth';
@@ -110,6 +110,7 @@ export class SyncManager {
     try {
       // Notify feed views before a local migration too, including offline launches.
       this.updateState({ status: 'syncing', lastError: null });
+      await refreshJobDetails(this.db, this.profile);
       // Category migration is local and must not depend on network availability.
       if (this.profile) {
         await recomputePendingCategoryTaxonomy(this.db, this.profile);
@@ -126,6 +127,7 @@ export class SyncManager {
       }
 
       const result = await syncFeed(this.db);
+      if (!result.error) await refreshJobDetails(this.db, this.profile);
 
       if (result.error) {
         this.updateState({ status: 'error', lastError: result.error });
@@ -156,7 +158,8 @@ export class SyncManager {
 
       void updateTrayInfo('just now', updatedCount);
 
-      void prefetchDescriptions(this.db, undefined, this.profile ?? undefined);
+      // Shared public descriptions are the default. Retain the direct ATS helper for
+      // explicit diagnostics, rather than multiplying employer requests per installation.
 
       if (GMAIL_ENABLED && isTauri()) {
         try {

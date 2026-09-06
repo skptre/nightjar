@@ -175,6 +175,7 @@ export interface CategoryResult {
 export type EligibilityVerdict = 'eligible' | 'ineligible' | 'unclear';
 
 export type EligibilityFlagType =
+  | 'explicit_authorization_conflict'
   | 'no_sponsorship'
   | 'clearance_required'
   | 'citizenship_required'

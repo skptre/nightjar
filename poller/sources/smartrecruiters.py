@@ -3,9 +3,10 @@ from __future__ import annotations
 import logging
 from typing import TYPE_CHECKING, Any
 
+from poller.descriptions import smartrecruiters_description
 from poller.exceptions import SourceParseError
 from poller.models import Posting, RawPosting, compute_posting_id
-from poller.normalize import clean_title, html_to_plaintext, normalize_location, normalize_locations
+from poller.normalize import clean_title, normalize_location, normalize_locations
 from poller.sources.base import SourceAdapter
 
 logger = logging.getLogger(__name__)
@@ -139,19 +140,7 @@ class SmartRecruitersAdapter(SourceAdapter):
     ) -> Posting:
         pid = compute_posting_id(raw.source, raw.company_slug, raw.source_job_id)
 
-        description = raw.description
-        sections = raw.raw_data.get("jobDescription", {})
-        if isinstance(sections, dict):
-            parts = sections.get("sections", [])
-            if isinstance(parts, list):
-                html_chunks = []
-                for section in parts:
-                    if isinstance(section, dict):
-                        text = section.get("text", "")
-                        if text:
-                            html_chunks.append(text)
-                if html_chunks:
-                    description = html_to_plaintext("\n".join(html_chunks))
+        description = smartrecruiters_description(raw.raw_data) or raw.description
 
         source_meta: dict[str, Any] | None = None
         if raw.experience_requirements:

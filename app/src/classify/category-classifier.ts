@@ -1,3 +1,4 @@
+import { extractEvidence } from '../details/sections';
 import type { CategoryResult, CategoryValue } from './types';
 import { normalizeCategoryValue } from './types';
 import { CLASSIFICATION_VERSION, type DomainValue, type EvidenceSource, type RoleEvidence } from './role-taxonomy';
@@ -87,7 +88,8 @@ function findRoles(text: string, source: EvidenceSource): Match[] {
 function dutySentences(description: string | null): string[] {
   if (!description) return [];
   const plain = description.replace(/<[^>]*>/g, '\n');
-  return plain.split(/[\n.!?;]+/).map(text => text.trim()).filter(text => {
+  return extractEvidence(plain).filter(p => p.section === 'responsibilities')
+    .flatMap(p => p.text.split(/[\n.!?;]+/)).map(text => text.trim()).filter(text => {
     if (/\b(?:we (?:build|develop|design|serve|provide)|our team|will not|won't|does not)\b/i.test(text)) return false;
     if (/\b(qualifications?|requirements?|degree|major(?:s|ing)?|bachelor|master|phd|experience (?:in|with)|familiarity|knowledge of|equal opportunity|we are|our company|work (?:with|alongside)|collaborat\w*|partner with)\b/i.test(text)) return false;
     return /\b(?:you will|you'll|work on|responsibilit\w*|duties|(?:develop|build|design|implement|train|analy[sz]e|research|test|maintain|support|create|conduct|perform|optimi[sz]e)(?:ing)?)\b/i.test(text);

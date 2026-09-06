@@ -68,7 +68,7 @@ async def test_greenhouse_new_hostname_is_enriched() -> None:
     result = await fetch_description(client, posting, {}, asyncio.Lock())
 
     assert result == "Build reliable systems."
-    assert client.calls == [(api_url, {"content": "true"})]
+    assert client.calls == [(api_url, {"content": "true", "pay_transparency": "true"})]
 
 
 @pytest.mark.asyncio
@@ -123,7 +123,7 @@ async def test_smartrecruiters_reads_documented_job_ad_sections() -> None:
 
     result = await fetch_description(client, posting, {}, asyncio.Lock())
 
-    assert result == "Build products. Currently enrolled."
+    assert result == "Build products.\n\nCurrently enrolled."
 
 
 @pytest.mark.asyncio

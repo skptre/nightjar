@@ -1,7 +1,7 @@
 // Offline audit of public postings. No profile data, network, or feed mutations.
-import { readFileSync, writeFileSync, mkdtempSync, unlinkSync, rmdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdtempSync, mkdirSync, unlinkSync, rmdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { join, resolve } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 import ts from 'typescript';
@@ -11,19 +11,20 @@ const feedPath = resolve(process.argv[2] ?? join(app, '../data/feed.json'));
 const feedBytes = readFileSync(feedPath);
 const feed = JSON.parse(feedBytes);
 const temporary = mkdtempSync(join(tmpdir(), 'nightjar-classification-'));
-const modules = ['types', 'role-taxonomy', 'category-classifier'];
+const modules = ['classify/types', 'classify/role-taxonomy', 'classify/category-classifier', 'details/sections', 'details/types'];
+for (const folder of ['classify', 'details']) mkdirSync(join(temporary, folder));
 try {
   for (const name of modules) {
-    const source = readFileSync(join(app, `src/classify/${name}.ts`), 'utf8');
+    const source = readFileSync(join(app, `src/${name}.ts`), 'utf8');
     let code = ts.transpileModule(source, {
       compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2023 },
     }).outputText;
     code = code.replace(/import (\w+) from '(.+\.json)';/g, (_, variable, path) =>
-      `const ${variable} = ${readFileSync(join(app, 'src/classify', path), 'utf8')};`);
-    code = code.replace(/from '(\.\/[^']+)';/g, "from '$1.mjs';");
+      `const ${variable} = ${readFileSync(join(app, 'src', dirname(name), path), 'utf8')};`);
+    code = code.replace(/from '(\.\.?\/[^']+)';/g, "from '$1.mjs';");
     writeFileSync(join(temporary, `${name}.mjs`), code);
   }
-  const { classifyCategory } = await import(pathToFileURL(join(temporary, 'category-classifier.mjs')));
+  const { classifyCategory } = await import(pathToFileURL(join(temporary, 'classify/category-classifier.mjs')));
   const report = {
     feed_sha256: createHash('sha256').update(feedBytes).digest('hex'),
     feed_updated_at: feed.updated_at,
@@ -36,7 +37,8 @@ try {
     if (posting.closed_at) continue;
     report.active++;
     const result = classifyCategory(posting.title, posting.description_text ?? null,
-      posting.source_metadata?.category, posting.source_metadata);
+      posting.source_metadata?.category, { ...posting.source_metadata,
+        department: posting.department?.trim() || posting.source_metadata?.department });
     increment(report.by_role, result.category);
     increment(report.by_confidence, result.confidence);
     for (const domain of result.domain_tags) increment(report.by_field, domain);
@@ -61,5 +63,6 @@ try {
   for (const name of modules) {
     try { unlinkSync(join(temporary, `${name}.mjs`)); } catch (error) { if (error.code !== 'ENOENT') throw error; }
   }
+  for (const folder of ['classify', 'details']) rmdirSync(join(temporary, folder));
   rmdirSync(temporary);
 }

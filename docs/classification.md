@@ -59,4 +59,23 @@ Unknowns still include generic titles such as Systems Engineer, Engineering Inte
 
 Before claiming production precision/recall, label a source-stratified sample, including unresolved postings and source/title conflicts, and keep a separate evaluation holdout. Measure each role and field independently and test filter retrieval, not only the primary label.
 
-Collection coverage is the next phase. Classification cannot produce NASA or startup internships that are absent from the feed. The audit's per-source unresolved counts establish a baseline for improving description/department enrichment and measuring discovery yield across industries. Source acquisition and registry changes are intentionally outside this classification change.
+The active sequence is now [the expansion plan](expansion.md): description fidelity and
+delivery, posting expansion and evidence, then broader acquisition. Classification cannot
+produce NASA or startup internships that are absent from the feed.
+
+September 6 correction: version 1's app integration and audit looked for department only
+inside source metadata, while the feed publishes it at the top level. Version 2 wires
+that field into both paths (with the old metadata location as fallback) and refreshes
+cached classifications. On the same snapshot, 12 additional titles resolve through
+department evidence: 359 remain unresolved (8.34%), with 12 medium-confidence results.
+The original 371/8.62% figures above are historical version-1 results; neither rate is
+a measure of overall accuracy. Complete descriptions are now preserved by collection
+and serialization, but the public snapshot has not been backfilled by this change.
+
+Version 3 adds section-aware duty evidence: preferred qualifications and company sections
+cannot classify a vague title as software work. Runtime requirement interpretation now
+uses the local details engine: only current explicit authorization conflicts affect
+exclusion/scoring/notifications; graduation is a separate ordering assessment. Evidence
+cache changes invalidate old classifications. The unchanged public snapshot still has
+359 unknowns because it contains no descriptions; real description gains await backfill.
+Engine evaluation comes before the final expanded posting UI.

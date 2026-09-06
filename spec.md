@@ -163,7 +163,11 @@ Every source adapter normalizes to this shape. This is the contract between the 
 
 `description_text` is published when an adapter provides it. Job descriptions are public source data; profile matching and eligibility remain local. This avoids relying on cross-origin browser requests that ATS providers may block. A transient source failure never replaces a previously captured description with an empty value.
 
-For listings whose aggregate source omits the description, production poller runs hydrate a rotating batch of up to 200 supported ATS detail URLs (Greenhouse, Lever, Ashby, Workday, and SmartRecruiters). Successful descriptions are retained across later runs, capped at 5,000 plaintext characters, and published in the appropriate source shard. Failures are isolated to the posting and the rotating window prevents one broken URL from starving the queue.
+For listings whose aggregate source omits the description, poller runs hydrate up to 200 supported ATS detail URLs (Greenhouse, Lever, Ashby, Workday, SmartRecruiters), ordered by oldest attempt. `state.json.description_attempts` persists source identity, attempt/version, successes, retry schedule and errors. Refresh is due after 72 hours; failures back off exponentially up to 72 hours and preserve prior text. Public `description_status` distinguishes available, stale, unavailable and unsupported; absent legacy state is unknown locally. `description_version` tracks acquisition semantics. Identity changes invalidate retry state. Neither field establishes applicant eligibility.
+
+`source_metadata.ats_identity` retains provider/board/job identity for custom application URLs; `source_compensation` retains provider compensation facts (excluding Ashby fields explicitly marked not for display). The Apply URL remains the original employer/ATS URL. Generic first-party fallback respects robots.txt and accepts a unique JobPosting JSON-LD object matching the title and URL; ambiguous pages, redirects and prohibited domains are declined.
+
+Descriptions preserve complete plaintext, paragraphs, headings and bullets; scripts/styles are excluded and there is no silent 5,000-character cutoff. Lever qualification/closing/salary sections, SmartRecruiters section titles, Ashby HTML/plain variants and Workday nested/top-level text are assembled. Dedupe retains richer duplicate evidence. Delivery uses existing hashed source shards. Offline fixtures verify these contracts; live backfill and completeness measurement remain release gates in `docs/expansion.md`.
 
 No eligibility, no score, no category. Those are computed by the app.
 
@@ -613,24 +617,54 @@ The local cache stores the full versioned result in `role_classification` plus `
 
 `cd app && npm run audit:classification` audits the local public snapshot without network access. It reports the feed hash, denominator, per-source counts, unresolved/source-fallback rates, conflicts and a review queue. Unknown-rate reduction is not an accuracy metric. `role-corpus.test.ts` supplies reviewed title and boilerplate regression cases; `role-engine.test.ts` and the rendered feed tests enforce evidence and filter semantics. Larger independently labeled evaluation sets are needed before claiming production precision/recall.
 
-**Eligibility.**
+**Approved replacement: requirements and evidence (September 6, 2026).**
+
+The active delivery plan is [docs/expansion.md](docs/expansion.md). Collection and local
+evidence extraction are implemented; live evaluation precedes the final UI changes.
+The approved behavior supersedes broad exclusions and visible verdicts:
+
+- Clicking a list posting expands original responsibility/required/preferred passages,
+  with full-description access and an Apply button linking to the employer/ATS. Source
+  labels, provenance, retrieval times, and authorization verdict badges are not displayed.
+- Display relevant authorization passages for users with authorization concerns. If no
+  passage exists, omit the section and keep the job. Failed retrieval is separately tracked
+  internally and cannot establish an employer policy or exclude a posting.
+- Default authorization exclusions require explicit mandatory wording that demonstrably
+  conflicts with the user's situation, including exceptions. `No sponsorship` alone is
+  not a blanket F-1 rejection. Preserve evidence and access to excluded/saved postings.
+- Explicit mandatory graduation-window mismatches remain in the filtered list after
+  ordinary results, with `Outside grad window`. Preserve the selected sort within groups.
+  Preferred/ambiguous/missing windows or imprecise profiles cause no demotion. Enrollment,
+  returning to school, degree, and graduation dates are separate facts.
+- Every row has consistent advertised-pay placement/formatting. `Pay not listed` requires
+  acquired evidence; `Pay unavailable` represents unavailable details. Preserve currency,
+  period, conditions, and tiers; no silent estimates or annualization.
+- Timing appears only when decision-relevant. Resume-based fit is a later separate feature.
+
+**Runtime requirements compatibility storage.**
 
 ```jsonc
 {
-  "verdict": "eligible | ineligible | unclear",
-  "reasons": ["matched: 'must not require sponsorship'"],
-  "flags": ["no_sponsorship"]
+  "verdict": "ineligible | unclear",
+  "reasons": ["Candidates must be a U.S. citizen."],
+  "flags": [{"type": "explicit_authorization_conflict", "matched_sentence": "Candidates must be a U.S. citizen.", "pattern": "verified_description_requirement"}]
 }
 ```
 
-Rules:
-- **Degree type.** Compare the local profile against structured source degree metadata when available. An explicit mismatch → `ineligible` with the source degree list as evidence.
-- **Graduation window.** Parse stated windows from the description. If the user's date falls outside → `ineligible`.
-- **Work authorization.** Detect: "U.S. citizen", "US Person", "permanent resident", "security clearance", "ITAR", "unable to sponsor", "no visa sponsorship". → `ineligible`.
-- **Class year.** The engine retains this signal for compatibility tests and future explicit profile types. MVP profiles use `current_class_year: "unknown"`, which skips the check; the app does not infer class year from graduation date.
-- **Location.** Non-US → `ineligible` (configurable).
+Only explicit current acquired authorization conflicts produce `ineligible` in runtime
+classification/scoring/notifications. Kept jobs remain neutral (`unclear` in the legacy
+storage shape) without flags or an eligibility claim. Graduation mismatch is stored
+separately and never lowers the authorization score. Legacy direct eligibility helpers
+remain for compatibility tests, but the classifier no longer calls them. The current UI
+still needs its final badge/ordering migration; these stored terms are not the target UX.
 
-**Default is `unclear`, never `ineligible`.** Every `ineligible` verdict must cite description text or structured source/location evidence. The default **For you** view omits evidence-backed mismatches and ranks the remainder by local profile score; **All jobs** always restores the complete current feed. The UI distinguishes a missing description ("Details needed") from a read description with no explicit conflict ("Review").
+Schema version 8 adds `job_details_cache(posting_id, context_key, details_json,
+assessment_json)`. Details retain the normalized source document, exact-offset passages,
+structured/text pay, acquisition state and graduation windows. Assessment is local and
+profile-specific. Content/status/pay/profile/extractor changes rebuild details and
+invalidate classification/score, preserving applications and notes. Optional local
+`authorization_path` (`cpt`, `opt`, `stem_opt`) refines explicitly known training status;
+combined F-1 profiles do not assume which path applies. No private input leaves the app.
 
 ### 8.4 Scoring (runs locally)
 
@@ -744,7 +778,8 @@ Calendar, Companies, and Insights are not MVP routes or primary navigation. Thei
 - Primary navigation is limited to Jobs, Applications, and Settings.
 - Light mode is the only supported MVP presentation until the visual system is redesigned.
 - Filters open on demand and close on outside click, an explicit close action, or Escape.
-- Every eligibility verdict is clickable → shows the matched sentence.
+- During the requirements migration, remove eligibility verdict badges. Expanded postings
+  show original requirement passages, without generated authorization verdicts.
 - Keyboard-first: `j`/`k` move, `s` save, `x` skip, `o` open, `/` search.
 - No destructive action without undo.
 
@@ -888,7 +923,7 @@ Property: running the pipeline twice on identical input produces zero diffs.
 
 1. **Graduation date** — spec assumes May 2029, window Dec 2028 – Jun 2029. Confirm.
 2. **Term filtering in the app** — default to showing all terms, or only the user's selected target terms?
-3. **Ineligible postings in the app** — collapsed-but-visible (spec's assumption) or fully hidden behind a filter?
+3. **Resolved September 6: requirement conflicts** — hide only explicit, evidenced authorization conflicts from default results, with inspection available; demote definite mandatory graduation-window mismatches. See `docs/expansion.md`. No general eligibility badge.
 4. **Data model expansion fields** — Option A (first-class `Posting` fields for key fields like `employment_type`, `department`) vs Option B (pack everything into `source_metadata`), or hybrid.
 5. **Generic adapter dependency** — Scrapling for sitemap spiders, RSS parsing, and cached dev responses? Only non-stealth features permitted. Or stick with raw httpx + stdlib.
 

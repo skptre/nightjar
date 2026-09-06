@@ -97,6 +97,15 @@ export const MIGRATIONS: Migration[] = [
       ALTER TABLE postings_cache ADD COLUMN classification_version INTEGER;
     `,
   },
+  {
+    version: 8,
+    sql: `CREATE TABLE job_details_cache (
+      posting_id TEXT PRIMARY KEY REFERENCES postings_cache(id),
+      context_key TEXT NOT NULL,
+      details_json TEXT NOT NULL,
+      assessment_json TEXT NOT NULL
+    );`,
+  },
 ];
 
 export async function runMigrations(

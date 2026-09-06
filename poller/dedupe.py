@@ -178,6 +178,13 @@ def _merge(canonical: Posting, discarded: Posting) -> Posting:
         first_seen_at=earliest,
         merged_from=merged_ids,
         source_metadata=merged_metadata,
+        description_text=canonical.description_text or discarded.description_text,
+        description_status=(canonical.description_status if canonical.description_text
+                            else discarded.description_status),
+        description_version=(canonical.description_version if canonical.description_text
+                             else discarded.description_version),
+        department=canonical.department or discarded.department,
+        compensation=canonical.compensation or discarded.compensation,
     )
 
 

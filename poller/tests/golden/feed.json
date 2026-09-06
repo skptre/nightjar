@@ -22,7 +22,17 @@
       "closed_at": null,
       "employment_type": "Intern",
       "workplace_type": "onsite",
-      "description_text": "Join Palantir for a summer internship building forward-deployed software."
+      "description_text": "Join Palantir for a summer internship building forward-deployed software.",
+      "description_status": "available",
+      "description_version": 2,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "lever",
+          "board": "palantir",
+          "job_id": "fe2a8c69-49b7-405f-816c-a6c6f894399a",
+          "eu": "false"
+        }
+      }
     },
     "96c97d0ed8249fd9": {
       "id": "96c97d0ed8249fd9",
@@ -47,7 +57,55 @@
       "employment_type": "Intern",
       "department": "Engineering",
       "workplace_type": "onsite",
-      "description_text": "Join us for a summer internship! Must be authorized to work in the United States. Graduating in 2027 or 2028."
+      "description_text": "Join us for a summer internship! Must be authorized to work in the United States. Graduating in 2027 or 2028.",
+      "description_status": "available",
+      "description_version": 2,
+      "source_metadata": {
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$60/hr",
+              "scrapeableCompensationSalarySummary": "$60/hr",
+              "compensationTiers": [
+                {
+                  "id": "tier-003",
+                  "tierSummary": "$60/hr",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "comp-005",
+                      "summary": "$60/hr",
+                      "compensationType": "Salary",
+                      "interval": "1 HOUR",
+                      "currencyCode": "USD",
+                      "minValue": 60,
+                      "maxValue": 60
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 HOUR",
+                  "currencyCode": "USD",
+                  "minValue": 60,
+                  "maxValue": 60
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "testco",
+          "job_id": "d4e5f6a7-b8c9-0123-defa-234567890123",
+          "eu": "false"
+        }
+      }
     },
     "e65b735a1daf59b0": {
       "id": "e65b735a1daf59b0",
@@ -68,7 +126,17 @@
       "last_seen_at": "2026-09-15T12:00:00Z",
       "closed_at": null,
       "department": "Engineering",
-      "description_text": "Join our engineering team for a summer internship."
+      "description_text": "Join our engineering team for a summer internship.",
+      "description_status": "available",
+      "description_version": 2,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "greenhouse",
+          "board": "watershed",
+          "job_id": "7001001001",
+          "eu": "false"
+        }
+      }
     }
   },
   "companies": {

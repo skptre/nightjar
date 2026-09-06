@@ -245,7 +245,7 @@ describe('DescriptionFetcher — SmartRecruiters', () => {
       company_slug: 'visa',
     });
 
-    expect(result.description).toBe('About the role Requirements: Python, TypeScript');
+    expect(result.description).toBe('About the role\n\nRequirements: Python, TypeScript');
     expect(result.error).toBeNull();
   });
 
@@ -270,7 +270,7 @@ describe('DescriptionFetcher — SmartRecruiters', () => {
       company_slug: 'visa',
     });
 
-    expect(result.description).toBe('Build products. Currently enrolled.');
+    expect(result.description).toBe('Build products.\n\nCurrently enrolled.');
   });
 
   it('constructs correct API URL', async () => {

@@ -168,9 +168,9 @@ describe('htmlToPlaintext', () => {
     expect(htmlToPlaintext('  foo   bar  ')).toBe('foo bar');
   });
 
-  it('caps output at 5000 chars', () => {
+  it('preserves the complete description beyond 5000 chars', () => {
     const long = 'x'.repeat(6000);
-    expect(htmlToPlaintext(long)).toHaveLength(5000);
+    expect(htmlToPlaintext(long)).toHaveLength(6000);
   });
 
   it('returns empty string for empty input', () => {

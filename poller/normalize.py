@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import html
 import re
+from html.parser import HTMLParser
 
 _DASH_CHARS = re.compile(
     "[‐‑‒–—―﹘﹣－]"
@@ -26,9 +27,6 @@ _LOCATION_ALIASES: dict[str, str] = {
 }
 
 _REMOTE_SYNONYMS = frozenset({"remote", "anywhere", "work from anywhere", "worldwide"})
-
-PLAINTEXT_CAP = 5000
-
 
 def clean_title(title: str | None) -> str:
     if not title:
@@ -86,14 +84,65 @@ def strip_tags(text: str) -> str:
     return collapsed.strip()
 
 
+class _DescriptionParser(HTMLParser):
+    """Keep document boundaries and inline wording; never emit executable markup."""
+
+    _BLOCKS = frozenset({
+        "p", "div", "section", "article", "header", "footer", "blockquote",
+        "h1", "h2", "h3", "h4", "h5", "h6", "ul", "ol", "dl", "dt", "dd", "table",
+    })
+    _IGNORE = frozenset({"script", "style", "noscript", "template", "head"})
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.parts: list[str] = []
+        self.ignored: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag in self._IGNORE:
+            self.ignored.append(tag)
+        if self.ignored:
+            return
+        if tag in self._BLOCKS:
+            self.parts.append("\n\n")
+        elif tag == "li":
+            self.parts.append("\n- ")
+        elif tag in {"br", "hr", "tr"}:
+            self.parts.append("\n")
+        elif tag in {"td", "th"}:
+            self.parts.append(" ")
+
+    def handle_endtag(self, tag: str) -> None:
+        if self.ignored:
+            if tag == self.ignored[-1]:
+                self.ignored.pop()
+            return
+        if tag in self._BLOCKS:
+            self.parts.append("\n\n")
+        elif tag == "tr":
+            self.parts.append("\n")
+        elif tag in {"td", "th"}:
+            self.parts.append(" ")
+
+    def handle_data(self, data: str) -> None:
+        if not self.ignored:
+            self.parts.append(data)
+
+
 def html_to_plaintext(raw_html: str | None) -> str:
+    """Normalize complete description text; presentation limits belong in the app.
+
+    Preserve paragraph/list boundaries for evidence extraction. This is plaintext,
+    not sanitized HTML: consumers must render it as text, never inject it as markup.
+    """
     if not raw_html:
         return ""
-    unescaped = unescape_html(raw_html)
-    plaintext = strip_tags(unescaped)
-    if len(plaintext) > PLAINTEXT_CAP:
-        plaintext = plaintext[:PLAINTEXT_CAP]
-    return plaintext
+    parser = _DescriptionParser()
+    parser.feed(unescape_html(raw_html))
+    parser.close()
+    lines = [re.sub(r"[^\S\n]+", " ", line).strip()
+             for line in "".join(parser.parts).replace("\r\n", "\n").split("\n")]
+    return re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip()
 
 
 def safe_string(value: object | None, default: str = "") -> str:

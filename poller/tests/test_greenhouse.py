@@ -284,10 +284,10 @@ class TestHtmlEntityDecoding:
         )
         assert "  " not in result
 
-    def test_content_capped_at_5000(self) -> None:
+    def test_preserves_complete_content(self) -> None:
         long_content = "&lt;p&gt;" + "x" * 6000 + "&lt;/p&gt;"
         result = html_to_plaintext(long_content)
-        assert len(result) <= 5000
+        assert len(result) == 6000
 
     def test_empty_content_returns_empty(self) -> None:
         result = html_to_plaintext("")

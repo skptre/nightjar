@@ -1,10 +1,11 @@
 import type { Database } from '@/db/database';
 import type { Profile } from '@/profile/types';
 import { recomputePosting } from '@/classify/recompute';
+import { htmlToPlaintext, descriptionField, leverDescription, smartRecruitersDescription } from './description-content';
+export { htmlToPlaintext, unescapeHtml } from './description-content';
 
 const MAX_CONCURRENT = 3;
 const MIN_HOST_DELAY_MS = 500;
-const PLAINTEXT_CAP = 5000;
 const DEFAULT_PREFETCH_LIMIT = 50;
 
 interface PostingInfo {
@@ -61,40 +62,6 @@ export function parseSmartRecruitersUrl(url: string): { company: string; posting
   return { company: match[1], postingId: match[2] };
 }
 
-export function unescapeHtml(text: string): string {
-  return text
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&#x27;/g, "'")
-    .replace(/&#x2F;/g, '/')
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&#(\d+);/g, (_match, dec: string) => String.fromCharCode(Number(dec)))
-    .replace(/&#x([0-9a-fA-F]+);/g, (_match, hex: string) => String.fromCharCode(parseInt(hex, 16)));
-}
-
-export function htmlToPlaintext(rawHtml: string): string {
-  if (!rawHtml) return '';
-
-  let text = rawHtml;
-  for (let i = 0; i < 5; i++) {
-    const unescaped = unescapeHtml(text);
-    if (unescaped === text) break;
-    text = unescaped;
-  }
-
-  text = text.replace(/<[^>]+>/g, ' ');
-  text = text.replace(/\s+/g, ' ').trim();
-
-  if (text.length > PLAINTEXT_CAP) {
-    text = text.substring(0, PLAINTEXT_CAP);
-  }
-
-  return text;
-}
-
 async function fetchGreenhouseDescription(posting: PostingInfo): Promise<string | null> {
   const parsed = parseGreenhouseUrl(posting.url);
   if (!parsed) return null;
@@ -124,11 +91,7 @@ async function fetchLeverDescription(posting: PostingInfo): Promise<string | nul
   const data: unknown = await response.json();
   if (typeof data !== 'object' || data === null) return null;
 
-  const description = (data as Record<string, unknown>)['descriptionPlain'];
-  if (typeof description !== 'string') return null;
-
-  const trimmed = description.trim();
-  return trimmed.length > PLAINTEXT_CAP ? trimmed.substring(0, PLAINTEXT_CAP) : trimmed;
+  return leverDescription(data as Record<string, unknown>) || null;
 }
 
 async function fetchWorkdayDescription(posting: PostingInfo): Promise<string | null> {
@@ -142,10 +105,14 @@ async function fetchWorkdayDescription(posting: PostingInfo): Promise<string | n
   const data: unknown = await response.json();
   if (typeof data !== 'object' || data === null) return null;
 
-  const description = (data as Record<string, unknown>)['jobDescription'];
-  if (typeof description !== 'string') return null;
-
-  return htmlToPlaintext(description);
+  const record = data as Record<string, unknown>;
+  const nested = record['jobPostingInfo'];
+  const nestedValue = typeof nested === 'object' && nested !== null
+    ? (nested as Record<string, unknown>)['jobDescription'] : null;
+  const nestedText = typeof nestedValue === 'string' ? htmlToPlaintext(nestedValue) : '';
+  if (nestedText) return nestedText;
+  const value = record['jobDescription'];
+  return typeof value === 'string' ? htmlToPlaintext(value) || null : null;
 }
 
 async function fetchSmartRecruitersDescription(posting: PostingInfo): Promise<string | null> {
@@ -159,36 +126,7 @@ async function fetchSmartRecruitersDescription(posting: PostingInfo): Promise<st
   const data: unknown = await response.json();
   if (typeof data !== 'object' || data === null) return null;
 
-  const jobDesc = (data as Record<string, unknown>)['jobDescription'];
-
-  const parts: string[] = [];
-  const jobAd = (data as Record<string, unknown>)['jobAd'];
-  if (typeof jobAd === 'object' && jobAd !== null) {
-    const sections = (jobAd as Record<string, unknown>)['sections'];
-    if (typeof sections === 'object' && sections !== null) {
-      for (const section of Object.values(sections)) {
-        if (typeof section === 'object' && section !== null) {
-          const text = (section as Record<string, unknown>)['text'];
-          if (typeof text === 'string') parts.push(text);
-        }
-      }
-    }
-  }
-
-  if (parts.length === 0 && typeof jobDesc === 'object' && jobDesc !== null) {
-    const sections = (jobDesc as Record<string, unknown>)['sections'];
-    if (Array.isArray(sections)) {
-      for (const section of sections) {
-        if (typeof section === 'object' && section !== null) {
-          const text = (section as Record<string, unknown>)['text'];
-          if (typeof text === 'string') parts.push(text);
-        }
-      }
-    }
-  }
-
-  if (parts.length === 0) return null;
-  return htmlToPlaintext(parts.join(' '));
+  return smartRecruitersDescription(data as Record<string, unknown>) || null;
 }
 
 async function fetchAshbyDescription(
@@ -220,11 +158,7 @@ async function fetchAshbyDescription(
   );
   if (!matchingJob) return null;
 
-  const description = matchingJob['descriptionPlain'];
-  if (typeof description !== 'string') return null;
-
-  const trimmed = description.trim();
-  return trimmed.length > PLAINTEXT_CAP ? trimmed.substring(0, PLAINTEXT_CAP) : trimmed;
+  return descriptionField(matchingJob, 'descriptionHtml', 'descriptionPlain') || null;
 }
 
 function getHostForSource(ats: string, url?: string): string {

@@ -290,6 +290,20 @@ describe('cached category migration', () => {
     db = await NightjarDB.createInMemory();
   });
 
+  it('refreshes version-one classifications with already cached top-level departments', async () => {
+    const posting = { ...makePosting('department-1', 'Summer Intern'),
+      department: 'Software Engineering - Avionics' };
+    await db.run(`INSERT INTO postings_cache
+      (id, data, first_seen_at, category, category_tags, classification_version, synced_at)
+      VALUES (?, ?, ?, 'other', '[]', 1, ?)`,
+    [posting.id, JSON.stringify(posting), posting.first_seen_at, posting.first_seen_at]);
+    expect(await recomputePendingCategoryTaxonomy(db, makeProfile(['swe']))).toBe(1);
+    const row = await db.queryOne<{ category: string; classification_version: number }>(
+      'SELECT category, classification_version FROM postings_cache WHERE id = ?', [posting.id]);
+    expect(row).toMatchObject({ category: 'swe', classification_version: 3 });
+    expect(await recomputePendingCategoryTaxonomy(db, makeProfile(['swe']))).toBe(0);
+  });
+
   it('reclassifies open rows whose category tags have not been populated', async () => {
     const posting = makePosting('mechanical-1', 'Mechanical Engineering Intern');
     await db.run(

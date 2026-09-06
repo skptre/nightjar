@@ -57,6 +57,7 @@ export interface Profile {
   grad_window: [string, string];
   current_class_year: string;
   work_auth: string;
+  authorization_path?: 'cpt' | 'opt' | 'stem_opt';
   requires_sponsorship: boolean;
   target_categories: string[];
   locations: string[];

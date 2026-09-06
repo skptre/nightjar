@@ -7,6 +7,12 @@ from dataclasses import replace
 from typing import TYPE_CHECKING, Any, Protocol
 from urllib.parse import urlparse
 
+from poller.descriptions import (
+    description_field,
+    lever_description,
+    smartrecruiters_description,
+    source_facts,
+)
 from poller.normalize import html_to_plaintext
 
 if TYPE_CHECKING:
@@ -14,27 +20,30 @@ if TYPE_CHECKING:
 
 logger = logging.getLogger(__name__)
 
-DESCRIPTION_CAP = 5_000
 DEFAULT_ENRICHMENT_LIMIT = 200
 MAX_CONCURRENT = 5
-SUPPORTED_ATS = frozenset({
-    "greenhouse",
-    "lever",
-    "ashby",
-    "workday",
-    "smartrecruiters",
-})
+SUPPORTED_ATS = frozenset(
+    {
+        "greenhouse",
+        "lever",
+        "ashby",
+        "workday",
+        "smartrecruiters",
+    }
+)
 
 _GREENHOUSE_RE = re.compile(
     r"(?:boards|job-boards)\.greenhouse\.io/([^/]+)/jobs/([^/?#]+)",
     re.IGNORECASE,
 )
 _LEVER_RE = re.compile(
-    r"jobs\.(?:eu\.)?lever\.co/([^/]+)/([^/?#]+)", re.IGNORECASE,
+    r"jobs\.(?:eu\.)?lever\.co/([^/]+)/([^/?#]+)",
+    re.IGNORECASE,
 )
 _ASHBY_RE = re.compile(r"jobs\.ashbyhq\.com/([^/]+)/([^/?#]+)", re.IGNORECASE)
 _SMARTRECRUITERS_RE = re.compile(
-    r"jobs\.smartrecruiters\.com/([^/]+)/([^/?#]+)", re.IGNORECASE,
+    r"jobs\.smartrecruiters\.com/([^/]+)/([^/?#]+)",
+    re.IGNORECASE,
 )
 
 
@@ -51,8 +60,7 @@ class JsonClient(Protocol):
 
 
 def _clean_description(value: str) -> str:
-    text = html_to_plaintext(value).strip()
-    return text[:DESCRIPTION_CAP]
+    return html_to_plaintext(value) if isinstance(value, str) else ""
 
 
 def _workday_detail_url(url: str) -> str | None:
@@ -63,7 +71,11 @@ def _workday_detail_url(url: str) -> str | None:
         return None
 
     segments = [segment for segment in parsed.path.split("/") if segment]
-    if segments and re.fullmatch(r"[a-z]{2}(?:-[A-Z]{2})?", segments[0], re.I):
+    if (
+        len(segments) > 1
+        and segments[1] != "job"
+        and re.fullmatch(r"[a-z]{2}(?:-[A-Z]{2})?", segments[0], re.I)
+    ):
         segments.pop(0)
     try:
         job_index = segments.index("job")
@@ -78,36 +90,13 @@ def _workday_detail_url(url: str) -> str | None:
     return f"https://{hostname}/wday/cxs/{tenant}/{site}/{job_path}"
 
 
-def _smartrecruiters_description(data: dict[str, Any]) -> str:
-    job_ad = data.get("jobAd")
-    if isinstance(job_ad, dict):
-        sections = job_ad.get("sections")
-        if isinstance(sections, dict):
-            parts = [
-                section.get("text", "")
-                for section in sections.values()
-                if isinstance(section, dict) and isinstance(section.get("text"), str)
-            ]
-            if parts:
-                return _clean_description(" ".join(parts))
-
-    legacy = data.get("jobDescription")
-    if isinstance(legacy, dict) and isinstance(legacy.get("sections"), list):
-        parts = [
-            section.get("text", "")
-            for section in legacy["sections"]
-            if isinstance(section, dict) and isinstance(section.get("text"), str)
-        ]
-        if parts:
-            return _clean_description(" ".join(parts))
-    return ""
-
-
 async def fetch_description(
     client: JsonClient,
     posting: Posting,
     ashby_cache: dict[str, list[dict[str, Any]]],
     ashby_lock: asyncio.Lock,
+    *,
+    facts: dict[str, Any] | None = None,
 ) -> str:
     ats = posting.ats
     if ats == "greenhouse":
@@ -118,8 +107,10 @@ async def fetch_description(
             f"https://boards-api.greenhouse.io/v1/boards/{match.group(1)}/jobs/{match.group(2)}",
             source="description",
             company_slug=posting.company_slug,
-            params={"content": "true"},
+            params={"content": "true", "pay_transparency": "true"},
         )
+        if facts is not None and isinstance(data, dict):
+            facts.update(source_facts(data, ats))
         return _clean_description(data.get("content", "")) if isinstance(data, dict) else ""
 
     if ats == "lever":
@@ -132,8 +123,9 @@ async def fetch_description(
             source="description",
             company_slug=posting.company_slug,
         )
-        value = data.get("descriptionPlain", "") if isinstance(data, dict) else ""
-        return _clean_description(value) if isinstance(value, str) else ""
+        if facts is not None and isinstance(data, dict):
+            facts.update(source_facts(data, ats))
+        return lever_description(data) if isinstance(data, dict) else ""
 
     if ats == "ashby":
         match = _ASHBY_RE.search(posting.url)
@@ -153,8 +145,11 @@ async def fetch_description(
                 jobs = [job for job in raw_jobs if isinstance(job, dict)]
                 ashby_cache[board_slug] = jobs
         match_job = next((job for job in jobs if str(job.get("id")) == job_id), None)
-        value = match_job.get("descriptionPlain", "") if match_job else ""
-        return _clean_description(value) if isinstance(value, str) else ""
+        if match_job:
+            if facts is not None:
+                facts.update(source_facts(match_job, ats))
+            return description_field(match_job, "descriptionHtml", "descriptionPlain")
+        return ""
 
     if ats == "workday":
         api_url = _workday_detail_url(posting.url)
@@ -165,8 +160,14 @@ async def fetch_description(
             source="description",
             company_slug=posting.company_slug,
         )
-        value = data.get("jobDescription", "") if isinstance(data, dict) else ""
-        return _clean_description(value) if isinstance(value, str) else ""
+        if not isinstance(data, dict):
+            return ""
+        nested = data.get("jobPostingInfo")
+        if isinstance(nested, dict):
+            text = _clean_description(nested.get("jobDescription", ""))
+            if text:
+                return text
+        return _clean_description(data.get("jobDescription", ""))
 
     if ats == "smartrecruiters":
         match = _SMARTRECRUITERS_RE.search(posting.url)
@@ -177,7 +178,7 @@ async def fetch_description(
             source="description",
             company_slug=posting.company_slug,
         )
-        return _smartrecruiters_description(data) if isinstance(data, dict) else ""
+        return smartrecruiters_description(data) if isinstance(data, dict) else ""
 
     return ""
 
@@ -221,7 +222,10 @@ async def enrich_posting_descriptions(
         async with semaphore:
             try:
                 return index, await fetch_description(
-                    client, posting, ashby_cache, ashby_lock,
+                    client,
+                    posting,
+                    ashby_cache,
+                    ashby_lock,
                 )
             except Exception as exc:  # One stale job must not fail the poller run.
                 logger.info(

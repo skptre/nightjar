@@ -3,6 +3,7 @@ from __future__ import annotations
 import logging
 from typing import TYPE_CHECKING, Any
 
+from poller.descriptions import description_field
 from poller.exceptions import SourceParseError
 from poller.models import Company, Posting, RawPosting, SourceConfig, compute_posting_id
 from poller.normalize import clean_title, normalize_location, normalize_locations
@@ -93,7 +94,7 @@ class AshbyAdapter(SourceAdapter):
 
     def _parse_job(self, job: dict[str, Any], company: Company) -> RawPosting:
         location = normalize_location(job.get("location", "") or "")
-        description = job.get("descriptionPlain", "") or ""
+        description = description_field(job, "descriptionHtml", "descriptionPlain")
 
         employment_type = job.get("employmentType") or None
         department = job.get("department") or None

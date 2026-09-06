@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Any
 
 from poller.dedupe import dedupe_postings
-from poller.description_enrich import enrich_posting_descriptions
+from poller.description_pipeline import attach_source_context, collect_descriptions
 from poller.diff import compute_diff
 from poller.exceptions import SourceFetchError, SourceParseError
 from poller.filter import (
@@ -179,7 +179,8 @@ async def _poll_source(
 
     try:
         raw_postings = await adapter.fetch(client, company, source)
-        postings = [adapter.normalize(raw, company, now_str) for raw in raw_postings]
+        postings = [attach_source_context(adapter.normalize(raw, company, now_str), raw, source)
+                    for raw in raw_postings]
 
         truncated = getattr(adapter, "potentially_truncated", False)
 
@@ -397,11 +398,12 @@ async def run_pipeline(
     if should_enrich_descriptions:
         async with RateLimitedClient() as description_client:
             description_client.load_cache(state.http_cache)
-            current_postings, _ = await enrich_posting_descriptions(
+            current_postings, _ = await collect_descriptions(
                 current_postings,
                 previous_feed,
                 description_client,
-                run_number=state.run_count,
+                state=state.description_attempts,
+                now=now_str,
             )
             state.http_cache.update(description_client.dump_cache())
 

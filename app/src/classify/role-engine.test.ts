@@ -3,6 +3,12 @@ import { classifyCategory } from './category-classifier';
 import { matchesRoleSelection } from './role-taxonomy';
 
 describe('work and field classification', () => {
+  it('does not turn preferred skills or employer prose into duties after section extraction', () => {
+    expect(classifyCategory('Summer Intern', 'Preferred qualifications\n\nBuild software with Python.').category).toBe('other');
+    expect(classifyCategory('Summer Intern', 'About us\n\nBuild software for aerospace customers.').category).toBe('other');
+    expect(classifyCategory('Summer Intern', 'Responsibilities\n\nBuild avionics software.'))
+      .toMatchObject({ category: 'swe', domain_tags: ['aerospace'], confidence: 'medium' });
+  });
   it('keeps avionics software out of core aerospace engineering', () => {
     const role = classifyCategory('Avionics Software Engineer Intern', null);
     expect(role.category_tags).toEqual(['swe']);

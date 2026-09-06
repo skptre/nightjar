@@ -4,6 +4,7 @@ import logging
 from datetime import UTC, datetime
 from typing import TYPE_CHECKING, Any
 
+from poller.descriptions import lever_description
 from poller.exceptions import SourceParseError
 from poller.models import Company, Posting, RawPosting, SourceConfig, compute_posting_id
 from poller.normalize import clean_title, normalize_location, normalize_locations
@@ -90,7 +91,7 @@ class LeverAdapter(SourceAdapter):
         if created_at is not None:
             posted_at = _ms_to_iso(created_at)
 
-        description = job.get("descriptionPlain", "") or ""
+        description = lever_description(job)
 
         commitment = categories.get("commitment", "") or ""
         employment_type: str | None = commitment if commitment else None

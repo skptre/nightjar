@@ -1,4 +1,5 @@
 import { CLASSIFICATION_VERSION } from './role-taxonomy';
+import { refreshJobDetails } from '@/details/cache';
 import type { Database } from '@/db/database';
 import type { Profile } from '@/profile/types';
 import type { FeedPosting } from '@/sync/feed-sync';
@@ -149,6 +150,7 @@ export async function recomputeAll(
   profile: Profile,
   now?: Date,
 ): Promise<number> {
+  await refreshJobDetails(db, profile);
   const rows = await db.query<{ id: string }>(
     'SELECT id FROM postings_cache WHERE closed_at IS NULL',
   );

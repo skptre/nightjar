@@ -59,6 +59,22 @@ const f1Profile = makeProfile({ work_auth: 'f1_opt_cpt', requires_sponsorship: t
 const h1bProfile = makeProfile({ work_auth: 'h1b', requires_sponsorship: true });
 const citizenProfile = makeProfile({ work_auth: 'us_citizen', requires_sponsorship: false });
 
+describe('published department evidence', () => {
+  it('uses the first-class department for an otherwise ambiguous title', () => {
+    const posting = { ...makePosting({ id: 'dept', title: 'Summer Intern' }),
+      department: 'Software Engineering - Avionics' };
+    expect(classifyPosting(posting, null, citizenProfile).category).toMatchObject({
+      category: 'swe', domain_tags: ['aerospace'], confidence: 'medium',
+    });
+  });
+
+  it('keeps explicit role evidence ahead of department context', () => {
+    const posting = { ...makePosting({ id: 'dept', title: 'Mechanical Engineer Intern' }),
+      department: 'Software Engineering' };
+    expect(classifyPosting(posting, null, citizenProfile).category.category_tags).toEqual(['mechE']);
+  });
+});
+
 describe('term-classifier', () => {
   describe('explicit term patterns', () => {
     it('extracts "Summer 2027" from title', () => {
@@ -1123,6 +1139,17 @@ describe('classifier orchestrator', () => {
   });
 
   describe('classifyPosting', () => {
+    it.each([
+      ['Candidates must be a U.S. citizen.', undefined],
+      ['Candidates must be a U.S. citizen.', 'stale'],
+      ['No visa sponsorship is available.', 'available'],
+      ['Must graduate in 2027.', 'available'],
+      ['Must be a U.S. person or eligible for an export license.', 'available'],
+    ] as const)('keeps jobs unless current evidence proves an authorization conflict: %s', (description, status) => {
+      const posting = makePosting({ id: 'guard', ...(status ? { description_status: status } : {}) });
+      const result = classifyPosting(posting, description, makeProfile({ work_auth: 'f1_opt_cpt' }));
+      expect(result.eligibility).toEqual({ verdict: 'unclear', reasons: [], flags: [] });
+    });
     it('returns all three classification results', () => {
       const posting = makePosting({
         id: 'p1',
@@ -1140,8 +1167,9 @@ describe('classifier orchestrator', () => {
       const posting = makePosting({
         id: 'p1',
         title: 'Summer 2027 Intern',
+        description_status: 'available',
       });
-      const description = 'Work on machine learning models. Must be a U.S. citizen.';
+      const description = 'Work on machine learning models. Candidates must be a U.S. citizen.';
       const profile = makeProfile({ requires_sponsorship: true });
       const result = classifyPosting(posting, description, profile);
 
@@ -1189,14 +1217,14 @@ describe('classifier orchestrator', () => {
     });
 
     it('uses description column for eligibility checks — hard block still works for F-1', async () => {
-      const posting = makePosting({ id: 'p1', title: 'SWE Intern - Summer 2027' });
+      const posting = makePosting({ id: 'p1', title: 'SWE Intern - Summer 2027', description_status: 'available' });
       await db.run(
         `INSERT INTO postings_cache (id, data, description, first_seen_at, synced_at)
          VALUES (?, ?, ?, ?, ?)`,
         [
           'p1',
           JSON.stringify(posting),
-          'Must be a U.S. citizen for this government contract role.',
+          'Candidates must be a U.S. citizen for this government contract role.',
           '2026-09-15T00:00:00Z',
           '2026-10-01T00:00:00Z',
         ],

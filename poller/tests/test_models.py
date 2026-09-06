@@ -122,9 +122,9 @@ class TestPostingRoundTrip:
         posting = self._make_posting(description_text="Public job description")
         assert posting.to_dict()["description_text"] == "Public job description"
 
-    def test_published_description_is_capped(self) -> None:
+    def test_published_description_is_complete(self) -> None:
         posting = self._make_posting(description_text="x" * 6_000)
-        assert len(posting.to_dict()["description_text"]) == 5_000
+        assert len(posting.to_dict()["description_text"]) == 6_000
 
     def test_empty_description_text_omitted(self) -> None:
         posting = self._make_posting(description_text="")

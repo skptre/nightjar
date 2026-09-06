@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from poller.normalize import (
-    PLAINTEXT_CAP,
     clean_title,
     html_to_plaintext,
     normalize_location,
@@ -211,12 +210,12 @@ class TestHtmlToPlaintext:
     def test_complex_html(self) -> None:
         raw = "<div><h1>Title</h1><p>Some &amp;amp; text</p><ul><li>Item</li></ul></div>"
         result = html_to_plaintext(raw)
-        assert result == "Title Some & text Item"
+        assert result == "Title\n\nSome & text\n\n- Item"
 
-    def test_cap_at_5000(self) -> None:
+    def test_preserves_complete_description(self) -> None:
         long_input = "<p>" + "x" * 6000 + "</p>"
         result = html_to_plaintext(long_input)
-        assert len(result) == PLAINTEXT_CAP
+        assert len(result) == 6000
 
     def test_none_returns_empty(self) -> None:
         assert html_to_plaintext(None) == ""

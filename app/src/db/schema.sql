@@ -2,7 +2,7 @@ CREATE TABLE schema_version (
   version INTEGER NOT NULL
 );
 
-INSERT INTO schema_version (version) VALUES (7);
+INSERT INTO schema_version (version) VALUES (8);
 
 CREATE TABLE postings_cache (
   id              TEXT PRIMARY KEY,
@@ -21,6 +21,13 @@ CREATE TABLE postings_cache (
   description_attempted_at TEXT,
   description_error TEXT,
   synced_at       TEXT NOT NULL
+);
+
+CREATE TABLE job_details_cache (
+  posting_id TEXT PRIMARY KEY REFERENCES postings_cache(id),
+  context_key TEXT NOT NULL,
+  details_json TEXT NOT NULL,
+  assessment_json TEXT NOT NULL
 );
 
 CREATE TABLE applications (

@@ -31,13 +31,14 @@ const EXPECTED_CATEGORIES = [
   'design',
   'operations',
   'supply-chain',
+  'product', 'it', 'marketing', 'sales', 'people', 'legal', 'healthcare',
   'other',
 ] as const;
 
 const EXPECTED_GROUPED_CATEGORIES = [
-  'swe', 'data-ml', 'hardware', 'mechE', 'ECE', 'aero', 'civil', 'chemE', 'bioE',
-  'quant', 'finance', 'accounting', 'consulting',
-  'research', 'design', 'operations', 'supply-chain',
+  'it', 'swe', 'data-ml', 'hardware', 'mechE', 'ECE', 'aero', 'civil', 'chemE', 'bioE',
+  'quant', 'product', 'marketing', 'sales', 'people', 'legal', 'finance', 'accounting', 'consulting',
+  'healthcare', 'research', 'design', 'operations', 'supply-chain',
 ] as const;
 
 function makeProfile(targetCategories: string[]): Profile {
@@ -116,10 +117,11 @@ describe('Block 7 category taxonomy', () => {
     expect(result.category_tags).toEqual(['data-ml', 'swe']);
   });
 
-  it('keeps quant primary while tagging quantitative software roles as SWE', () => {
+  it('classifies quant software by its work and records its field', () => {
     const result = classifyCategory('Quantitative Software Developer Intern', null);
-    expect(result.category).toBe('quant');
-    expect(result.category_tags).toEqual(['quant', 'swe']);
+    expect(result.category).toBe('swe');
+    expect(result.domain_tags).toContain('quant');
+    expect(result.category_tags).toEqual(['swe']);
   });
 
   it('keeps a title match primary even when the description has a higher-priority rule', () => {
@@ -128,7 +130,7 @@ describe('Block 7 category taxonomy', () => {
       'Train machine learning models for computer vision.',
     );
     expect(result.category).toBe('swe');
-    expect(result.category_tags).toEqual(['swe', 'data-ml']);
+    expect(result.category_tags).toEqual(['swe']);
     expect(result.matched_in).toBe('title');
   });
 
@@ -145,36 +147,36 @@ describe('Block 7 category taxonomy', () => {
     expect(classifyCategory(title, null).category).toBe(expected);
   });
 
-  it('uses title evidence for primary while retaining description tags', () => {
+  it('does not turn tools used in a description into additional professions', () => {
     const result = classifyCategory(
       'Mechanical Engineering Intern',
       'Build circuit design prototypes and web developer tools.',
     );
     expect(result.category).toBe('mechE');
-    expect(result.category_tags).toEqual(['mechE', 'ECE', 'swe']);
+    expect(result.category_tags).toEqual(['mechE']);
     expect(result.matched_in).toBe('title');
   });
 
-  it('assigns the planned robotics tags in specificity order', () => {
+  it('does not invent three professions from robotics alone', () => {
     const result = classifyCategory('Robotics Engineering Intern', null);
     expect(result.category).toBe('mechE');
-    expect(result.category_tags).toEqual(['mechE', 'ECE', 'swe']);
+    expect(result.category_tags).toEqual(['mechE']);
   });
 
-  it('assigns aerospace controls to aerospace and ECE', () => {
+  it('classifies aerospace controls as aerospace work', () => {
     const result = classifyCategory('Aerospace Controls Intern', null);
     expect(result.category).toBe('aero');
-    expect(result.category_tags).toEqual(['aero', 'ECE']);
+    expect(result.category_tags).toEqual(['aero']);
   });
 
-  it('caps category tags at three without duplicates', () => {
+  it('does not add unrelated tags to robotics software', () => {
     const result = classifyCategory(
       'Robotics Software Engineering Intern',
       'Machine learning research for biomedical flight-control hardware.',
     );
-    expect(result.category_tags).toHaveLength(3);
-    expect(new Set(result.category_tags).size).toBe(3);
-    expect(result.category_tags).toEqual(['mechE', 'ECE', 'swe']);
+    expect(result.category_tags).toHaveLength(1);
+    expect(new Set(result.category_tags).size).toBe(1);
+    expect(result.category_tags).toEqual(['swe']);
   });
 
   it('keeps an ambiguous engineering internship in other', () => {

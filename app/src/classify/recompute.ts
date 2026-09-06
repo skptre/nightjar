@@ -1,3 +1,4 @@
+import { CLASSIFICATION_VERSION } from './role-taxonomy';
 import type { Database } from '@/db/database';
 import type { Profile } from '@/profile/types';
 import type { FeedPosting } from '@/sync/feed-sync';
@@ -26,11 +27,13 @@ async function storeResult(
 ): Promise<void> {
   await db.run(
     `UPDATE postings_cache
-     SET category = ?, category_tags = ?, term = ?, eligibility = ?, score = ?, score_breakdown = ?
+     SET category = ?, category_tags = ?, role_classification = ?, classification_version = ?, term = ?, eligibility = ?, score = ?, score_breakdown = ?
      WHERE id = ?`,
     [
       result.classification.category.category,
       JSON.stringify(result.classification.category.category_tags),
+      JSON.stringify(result.classification.category),
+      result.classification.category.version,
       result.classification.term.term,
       JSON.stringify(result.classification.eligibility),
       result.score.score,
@@ -120,11 +123,13 @@ export async function recomputeNewPostings(
     results.set(row.id, result);
     statements.push({
       sql: `UPDATE postings_cache
-            SET category = ?, category_tags = ?, term = ?, eligibility = ?, score = ?, score_breakdown = ?
+            SET category = ?, category_tags = ?, role_classification = ?, classification_version = ?, term = ?, eligibility = ?, score = ?, score_breakdown = ?
             WHERE id = ?`,
       params: [
         classification.category.category,
         JSON.stringify(classification.category.category_tags),
+        JSON.stringify(classification.category),
+        classification.category.version,
         classification.term.term,
         JSON.stringify(classification.eligibility),
         score.score,
@@ -159,7 +164,10 @@ export async function recomputePendingCategoryTaxonomy(
 ): Promise<number> {
   const rows = await db.query<{ id: string }>(
     `SELECT id FROM postings_cache
-     WHERE category_tags IS NULL OR category IS NULL OR score IS NULL`,
+     WHERE category_tags IS NULL OR category IS NULL OR score IS NULL
+       OR role_classification IS NULL
+       OR classification_version IS NULL OR classification_version != ?`,
+    [CLASSIFICATION_VERSION],
   );
   if (rows.length === 0) return 0;
 

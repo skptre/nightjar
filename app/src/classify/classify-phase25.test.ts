@@ -268,7 +268,7 @@ describe('category-classifier — Simplify metadata fallback', () => {
   });
 
   it('returns other for unknown Simplify category', () => {
-    const result = classifyCategory('Business Intern', null, 'Product Management');
+    const result = classifyCategory('Business Intern', null, 'Unrecognized Vendor Label');
     expect(result.category).toBe('other');
     expect(result.matched_rule).toBeNull();
   });

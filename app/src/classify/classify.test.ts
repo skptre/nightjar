@@ -261,9 +261,9 @@ describe('category-classifier', () => {
       expect(result.category).toBe('data-ml');
     });
 
-    it('classifies "FPGA Design Intern" as ECE', () => {
+    it('classifies "FPGA Design Intern" as hardware', () => {
       const result = classifyCategory('FPGA Design Intern', null);
-      expect(result.category).toBe('ECE');
+      expect(result.category).toBe('hardware');
     });
 
     it('classifies "Embedded Software Engineer" as hardware', () => {
@@ -308,9 +308,10 @@ describe('category-classifier', () => {
   });
 
   describe('priority ordering', () => {
-    it('quant matches before swe for "Trading Systems Engineer"', () => {
+    it('trading systems engineering is software in the quant field', () => {
       const result = classifyCategory('Trading Systems Engineer Intern', null);
-      expect(result.category).toBe('quant');
+      expect(result.category).toBe('swe');
+      expect(result.domain_tags).toContain('quant');
     });
 
     it('data-ml matches before swe for "ML Engineer"', () => {
@@ -326,15 +327,15 @@ describe('category-classifier', () => {
 
   describe('other category', () => {
     it('returns other for unrecognized titles', () => {
-      const result = classifyCategory('Marketing Intern', null);
+      const result = classifyCategory('Summer Intern', null);
       expect(result.category).toBe('other');
       expect(result.matched_rule).toBeNull();
       expect(result.matched_in).toBeNull();
     });
 
-    it('returns other for "Product Manager Intern"', () => {
+    it('recognizes "Product Manager Intern"', () => {
       const result = classifyCategory('Product Manager Intern', null);
-      expect(result.category).toBe('other');
+      expect(result.category).toBe('product');
     });
   });
 

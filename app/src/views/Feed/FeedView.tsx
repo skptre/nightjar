@@ -1,3 +1,4 @@
+import { DOMAIN_OPTIONS, matchesRoleSelection, parseRoleDomains } from '@/classify/role-taxonomy';
 import { createRef, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useDatabase } from '@/providers/DatabaseProvider';
 import { useProfile } from '@/providers/ProfileProvider';
@@ -9,7 +10,6 @@ import { useToast } from '@/components/Toast';
 import { PostingRow, UndoToast, type PostingAction, type PostingRowData } from './PostingRow';
 import {
   CATEGORY_OPTIONS,
-  matchesCategorySelection,
   parseCategoryTags,
   type CategoryOption,
 } from '@/classify/types';
@@ -26,6 +26,7 @@ interface PostingQueryRow {
   closed_at: string | null;
   category: string | null;
   category_tags: string | null;
+  role_classification?: string | null;
   term: string | null;
   eligibility: string | null;
   score: number | null;
@@ -35,20 +36,13 @@ interface PostingQueryRow {
 
 const POSTING_ROW_HEIGHT = 72;
 
-export const CURRENT_JOBS_QUERY = `SELECT p.id, p.data, p.first_seen_at, p.closed_at, p.category, p.category_tags,
+export const CURRENT_JOBS_QUERY = `SELECT p.id, p.data, p.first_seen_at, p.closed_at, p.category, p.category_tags, p.role_classification,
               p.term, p.eligibility, p.score, p.score_breakdown, p.description
        FROM postings_cache p
        LEFT JOIN applications a ON p.id = a.posting_id
        WHERE p.closed_at IS NULL
          AND (a.posting_id IS NULL OR a.status != 'skipped')
        ORDER BY p.first_seen_at DESC`;
-
-const RELATED_FIELD_CLUSTERS: readonly (readonly string[])[] = [
-  ['swe', 'data-ml', 'quant', 'research', 'hardware', 'ECE'],
-  ['hardware', 'mechE', 'ECE', 'aero', 'civil', 'chemE', 'bioE', 'research'],
-  ['quant', 'finance', 'accounting', 'consulting', 'operations'],
-  ['research', 'design', 'operations', 'supply-chain'],
-];
 
 function parsePostingRow(row: PostingQueryRow): PostingRowData | null {
   try {
@@ -66,6 +60,7 @@ function parsePostingRow(row: PostingQueryRow): PostingRowData | null {
       closed_at: row.closed_at,
       category: row.category,
       category_tags: parseCategoryTags(row.category_tags, row.category),
+      domain_tags: parseRoleDomains(row.role_classification),
       term: row.term,
       eligibility: row.eligibility,
       score: row.score,
@@ -78,16 +73,8 @@ function parsePostingRow(row: PostingQueryRow): PostingRowData | null {
   }
 }
 
-export function filterOptionsForProfile(targetCategories: readonly string[]): readonly CategoryOption[] {
-  if (targetCategories.length === 0) return CATEGORY_OPTIONS;
-  const targets = new Set(targetCategories);
-  const related = new Set(targetCategories);
-  for (const cluster of RELATED_FIELD_CLUSTERS) {
-    if (cluster.some((category) => targets.has(category))) {
-      for (const category of cluster) related.add(category);
-    }
-  }
-  return CATEGORY_OPTIONS.filter((option) => related.has(option.value));
+export function filterOptionsForProfile(_targetCategories: readonly string[]): readonly CategoryOption[] {
+  return CATEGORY_OPTIONS;
 }
 
 export function getFeedEmptyState(
@@ -112,6 +99,7 @@ export function FeedView(): React.ReactNode {
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(
     () => new Set(profile?.target_categories ?? []),
   );
+  const [selectedDomains, setSelectedDomains] = useState<Set<string>>(new Set());
   const [search, setSearch] = useState('');
   const [searchFocused, setSearchFocused] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -161,7 +149,7 @@ export function FeedView(): React.ReactNode {
           // Invalid cached eligibility stays visible for manual review.
         }
       }
-      if (!matchesCategorySelection(posting.category_tags, posting.category, selectedCategories)) continue;
+      if (!matchesRoleSelection(posting.category_tags, posting.domain_tags ?? [], selectedCategories, selectedDomains)) continue;
       if (
         query
         && !posting.title.toLowerCase().includes(query)
@@ -177,7 +165,7 @@ export function FeedView(): React.ReactNode {
       });
     }
     return result;
-  }, [rawRows, search, selectedCategories, viewMode, profile]);
+  }, [rawRows, search, selectedCategories, selectedDomains, viewMode, profile]);
 
   const postingIds = useMemo(() => postings.map((posting) => posting.id), [postings]);
   const emptyState = getFeedEmptyState(rawRows.length, syncStatus);
@@ -214,6 +202,7 @@ export function FeedView(): React.ReactNode {
 
   const clearFilters = useCallback((): void => {
     setSelectedCategories(new Set());
+    setSelectedDomains(new Set());
     setSearch('');
     resetListPosition();
   }, [resetListPosition]);
@@ -304,6 +293,7 @@ export function FeedView(): React.ReactNode {
               onClick={() => {
                 setViewMode('for-you');
                 setSelectedCategories(new Set(profile.target_categories));
+                setSelectedDomains(new Set());
                 resetListPosition();
               }}
               className={`rounded px-3 py-1.5 text-sm font-medium ${viewMode === 'for-you' ? 'bg-violet-700 text-white' : 'text-gray-600'}`}
@@ -316,6 +306,7 @@ export function FeedView(): React.ReactNode {
               onClick={() => {
                 setViewMode('all');
                 setSelectedCategories(new Set());
+                setSelectedDomains(new Set());
                 resetListPosition();
               }}
               className={`rounded px-3 py-1.5 text-sm font-medium ${viewMode === 'all' ? 'bg-violet-700 text-white' : 'text-gray-600'}`}
@@ -350,14 +341,14 @@ export function FeedView(): React.ReactNode {
             Filters
           </button>
           {filtersOpen && (
-            <div id="job-filter-menu" className="absolute right-0 z-30 mt-2 w-80 rounded-lg border border-gray-200 bg-white p-4 shadow-xl">
+            <div id="job-filter-menu" className="absolute right-0 z-30 mt-2 w-80 max-h-[70vh] overflow-y-auto rounded-lg border border-gray-200 bg-white p-4 shadow-xl">
               <div className="flex items-center justify-between">
-                <p className="text-sm font-semibold text-gray-900">Fields</p>
+                <p className="text-sm font-semibold text-gray-900">Roles</p>
                 <button type="button" onClick={() => setFiltersOpen(false)} className="text-xs text-gray-500 hover:text-gray-900">
                   Close
                 </button>
               </div>
-              <p className="mt-1 text-xs text-gray-500">Choose one or more fields to narrow the list.</p>
+              <p className="mt-1 text-xs text-gray-500">Choose the work you want to do. Multiple roles include either role.</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {filterOptions.map((option) => {
                   const active = selectedCategories.has(option.value);
@@ -374,21 +365,51 @@ export function FeedView(): React.ReactNode {
                   );
                 })}
               </div>
+              <p className="mt-4 text-sm font-semibold text-gray-900">Fields</p>
+              <p className="mt-1 text-xs text-gray-500">Optional: keep only roles in these fields. SWE + Aerospace shows aerospace software.</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {DOMAIN_OPTIONS.map(option => (
+                  <button key={option.value} type="button" aria-pressed={selectedDomains.has(option.value)}
+                    onClick={() => {
+                      setSelectedDomains(previous => {
+                        const next = new Set(previous);
+                        if (next.has(option.value)) next.delete(option.value);
+                        else next.add(option.value);
+                        return next;
+                      });
+                      resetListPosition();
+                    }}
+                    className={`rounded-full border px-3 py-1.5 text-xs font-medium ${selectedDomains.has(option.value) ? 'border-violet-700 bg-violet-700 text-white' : 'border-gray-300 text-gray-600 hover:border-gray-500'}`}>
+                    {option.label}
+                  </button>
+                ))}
+              </div>
+              {selectedDomains.size > 0 && (
+                <button type="button" onClick={() => setSelectedDomains(new Set())} className="mt-3 text-xs font-medium text-violet-700">Any field</button>
+              )}
               {selectedCategories.size > 0 && (
                 <button type="button" onClick={() => setSelectedCategories(new Set())} className="mt-4 text-xs font-medium text-violet-700 hover:text-violet-900">
-                  Show all fields
+                  Show all roles
                 </button>
               )}
             </div>
           )}
         </div>
 
-        {(selectedCategories.size > 0 || search) && (
+        {(selectedCategories.size > 0 || selectedDomains.size > 0 || search) && (
           <button type="button" onClick={clearFilters} className="px-2 py-2 text-sm text-gray-500 hover:text-gray-900">
             Reset
           </button>
         )}
       </div>
+
+      {(selectedCategories.size > 0 || selectedDomains.size > 0) && (
+        <p className="mb-3 text-xs text-gray-500" aria-live="polite">
+          Roles: {selectedCategories.size ? CATEGORY_OPTIONS.filter(option => selectedCategories.has(option.value)).map(option => option.shortLabel).join(' or ') : 'Any'}
+          {' · Fields: '}
+          {selectedDomains.size ? DOMAIN_OPTIONS.filter(option => selectedDomains.has(option.value)).map(option => option.label).join(' or ') : 'Any'}
+        </p>
+      )}
 
       {!loaded || (syncStatus === 'syncing' && rawRows.length === 0) ? (
         <div className="rounded-lg border border-gray-200 bg-white px-6 py-16 text-center text-sm text-gray-500">
@@ -401,7 +422,7 @@ export function FeedView(): React.ReactNode {
           </p>
           {emptyState.detail ? (
             <p className="mt-2 text-sm text-gray-500">{emptyState.detail}</p>
-          ) : (selectedCategories.size > 0 || search) && (
+          ) : (selectedCategories.size > 0 || selectedDomains.size > 0 || search) && (
             <button type="button" onClick={clearFilters} className="mt-3 text-sm font-medium text-violet-700 hover:text-violet-900">
               Show all jobs
             </button>

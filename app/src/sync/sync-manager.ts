@@ -108,6 +108,8 @@ export class SyncManager {
     this.syncing = true;
 
     try {
+      // Notify feed views before a local migration too, including offline launches.
+      this.updateState({ status: 'syncing', lastError: null });
       // Category migration is local and must not depend on network availability.
       if (this.profile) {
         await recomputePendingCategoryTaxonomy(this.db, this.profile);
@@ -117,8 +119,6 @@ export class SyncManager {
         this.updateState({ status: 'idle', lastError: 'Offline' });
         return null;
       }
-
-      this.updateState({ status: 'syncing', lastError: null });
 
       const ghosted = await runAutoGhost(this.db);
       if (ghosted > 0) {

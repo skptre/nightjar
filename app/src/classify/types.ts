@@ -1,3 +1,4 @@
+import type { DomainValue, RoleEvidence } from './role-taxonomy';
 export type Term =
   | 'summer_2025' | 'fall_2025' | 'winter_2025' | 'spring_2025'
   | 'summer_2026' | 'fall_2026' | 'winter_2026' | 'spring_2026'
@@ -35,6 +36,13 @@ export const CATEGORY_VALUES = [
   'design',
   'operations',
   'supply-chain',
+  'product',
+  'it',
+  'marketing',
+  'sales',
+  'people',
+  'legal',
+  'healthcare',
   'other',
 ] as const;
 
@@ -55,6 +63,7 @@ export const CATEGORY_GROUPS: readonly CategoryGroup[] = [
   {
     label: 'Engineering',
     options: [
+      { value: 'it', label: 'Information Technology', shortLabel: 'IT' },
       { value: 'swe', label: 'Software Engineering', shortLabel: 'SWE' },
       { value: 'data-ml', label: 'Data / Machine Learning', shortLabel: 'Data/ML' },
       { value: 'hardware', label: 'Hardware / Embedded', shortLabel: 'Hardware' },
@@ -69,7 +78,12 @@ export const CATEGORY_GROUPS: readonly CategoryGroup[] = [
   {
     label: 'Business',
     options: [
-      { value: 'quant', label: 'Quantitative Finance', shortLabel: 'Quant' },
+      { value: 'quant', label: 'Quant Research / Trading', shortLabel: 'Quant research / trading' },
+      { value: 'product', label: 'Product Management', shortLabel: 'Product' },
+      { value: 'marketing', label: 'Marketing / Communications', shortLabel: 'Marketing' },
+      { value: 'sales', label: 'Sales / Customer Success', shortLabel: 'Sales' },
+      { value: 'people', label: 'Human Resources / Recruiting', shortLabel: 'People' },
+      { value: 'legal', label: 'Legal / Policy / Compliance', shortLabel: 'Legal' },
       { value: 'finance', label: 'Finance', shortLabel: 'Finance' },
       { value: 'accounting', label: 'Accounting', shortLabel: 'Accounting' },
       { value: 'consulting', label: 'Consulting', shortLabel: 'Consulting' },
@@ -78,6 +92,7 @@ export const CATEGORY_GROUPS: readonly CategoryGroup[] = [
   {
     label: 'Other',
     options: [
+      { value: 'healthcare', label: 'Healthcare', shortLabel: 'Healthcare' },
       { value: 'research', label: 'Research', shortLabel: 'Research' },
       { value: 'design', label: 'Design', shortLabel: 'Design' },
       { value: 'operations', label: 'Operations', shortLabel: 'Operations' },
@@ -127,7 +142,7 @@ export function parseCategoryTags(
   const normalized = rawTags
     .map(normalizeCategoryValue)
     .filter((value): value is CategoryValue => value !== null && value !== 'other');
-  const unique = [...new Set(normalized)].slice(0, 3);
+  const unique = [...new Set(normalized)];
   if (unique.length > 0) return unique;
 
   return [normalizeCategoryValue(fallbackCategory) ?? 'other'];
@@ -146,6 +161,11 @@ export function matchesCategorySelection(
 }
 
 export interface CategoryResult {
+  version: number;
+  domain_tags: DomainValue[];
+  confidence: 'high' | 'medium' | 'low' | 'unknown';
+  evidence: RoleEvidence[];
+  warnings: string[];
   category: CategoryValue;
   category_tags: CategoryValue[];
   matched_rule: string | null;
@@ -215,7 +235,6 @@ export interface ClassificationRules {
   new_grad_patterns: string[];
   co_op_patterns: string[];
   year_round_patterns: string[];
-  category_rules: CategoryRule[];
   simplify_category_map: Record<string, CategoryValue>;
   sponsorship_patterns: SponsorshipPattern[];
   eligible_sponsorship_patterns: EligibleSponsorshipPattern[];

@@ -529,13 +529,12 @@ describe('Feed View Data Layer', () => {
 });
 
 describe('field filter choices', () => {
-  it('keeps a software profile focused on adjacent technical fields', () => {
+  it('keeps every role available when a profile targets software', () => {
     const values = filterOptionsForProfile(['swe']).map((option) => option.value);
-    expect(values).toEqual(['swe', 'data-ml', 'hardware', 'ECE', 'quant', 'research']);
-    expect(values).not.toContain('supply-chain');
-    expect(values).not.toContain('mechE');
-    expect(values).not.toContain('aero');
-    expect(values).not.toContain('civil');
+    expect(values).toEqual(filterOptionsForProfile([]).map(option => option.value));
+    expect(values).toContain('aero');
+    expect(values).toContain('product');
+    expect(values).toContain('supply-chain');
   });
 });
 

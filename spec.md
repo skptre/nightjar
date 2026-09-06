@@ -18,7 +18,7 @@ The split is the architecture. Everything upstream of the user is shared and pub
 
 Best open, privacy-first internship discovery feed. Not the largest job platform — the cleanest, most focused one. Beat Simplify on workflow, transparency, and UX.
 
-Multi-discipline: not just software engineering. Mechanical, electrical, aerospace, civil, chemical, biomedical engineering, finance, accounting, consulting, research, design, operations, and supply chain. Non-engineering fields (law, policy, marketing, healthcare) deferred until demand warrants.
+Multi-discipline: not just software engineering. Mechanical, electrical, aerospace, civil, chemical, biomedical engineering, finance, accounting, consulting, research, design, operations, and supply chain. Classification also covers product, IT, marketing, sales, human resources, legal/policy, and healthcare roles; source coverage varies by field.
 
 ### 1.2 Success criteria
 
@@ -593,14 +593,25 @@ Optional and stored locally, never transmitted. First launch presents a choice b
 
 **Term classification.** Extract from title + description: `Summer 2027`, `Fall 2026`, `New Grad`, etc. Postings with no explicit term are flagged `inferred` based on open date and title keywords.
 
-**Category classification.** Multi-label classification — many internships span fields (robotics = mechanical + electrical + software). Each posting gets a `primary_category` for display plus a `category_tags` array for all applicable disciplines (max 3 tags). Matching and filtering operate on `category_tags` (any match counts).
+**Role and field classification.** The app classifies two independent dimensions:
 
-Categories:
-- Engineering: `swe`, `data-ml`, `quant`, `hardware`, `mechE`, `ECE`, `aero`, `civil`, `chemE`, `bioE`
-- Business: `finance`, `accounting`, `consulting`
-- Other: `research`, `design`, `operations`, `supply-chain`, `other`
+- `category` and `category_tags`: the work performed (software, mechanical engineering, aerospace engineering, quantitative research/trading, etc.). A role tag is never added merely because its industry appears in the title or description.
+- `domain_tags`: the field served (aerospace, quantitative finance, finance/banking, robotics, semiconductors, healthcare/life sciences, energy, automotive). These describe posting context, never inferred from a hardcoded company list.
 
-Title match beats description match for `primary_category`. More specific category beats less specific. Cross-discipline postings are visible to users in any matching discipline.
+The feed exposes separate **Roles** and **Fields** controls. Multiple selections within a dimension are alternatives (OR); the dimensions must both match (AND). Empty means unrestricted for that dimension. SWE alone includes avionics and quantitative software; SWE + Aerospace field selects aerospace software; Aerospace Engineering alone excludes software roles; Quant field alone includes quantitative research/trading and software. No pair is blacklisted: unusual combinations such as FPGA hardware in quantitative finance require evidence for both dimensions. Profile target categories remain role preferences; feed field selections are temporary refinements. All role options remain available regardless of profile.
+
+Roles:
+- Engineering/technology: `swe`, `data-ml`, `hardware`, `mechE`, `ECE`, `aero`, `civil`, `chemE`, `bioE`, `it`
+- Business: `quant` (research/trading), `finance`, `accounting`, `consulting`, `product`, `marketing`, `sales`, `people`, `legal`
+- Other: `research`, `design`, `operations`, `supply-chain`, `healthcare`, `other`
+
+Classification is deterministic, offline and app-local. Explicit title evidence controls work tags; structured occupational text, responsibility sentences, department, then source categories provide fallbacks. Parenthetical specialties are preserved. Compound phrases own their matched spans, so generic substrings do not create extra professions. A known title's role tags are not expanded by description keyword lists. Company boilerplate, qualifications and collaboration sentences cannot add duties or fields. Evidence includes the rule, source and original text. Confidence describes role evidence strength (`high` title, `medium` duties/structured occupation/department, `low` source fallback, `unknown` unresolved), not a calibrated probability. Contradictory and unmapped source labels are retained as audit warnings.
+
+`other` means insufficient evidence or an unsupported occupation, not a deleted posting. Source labels are supplemental evidence; recognized source labels cannot override explicit work evidence. The public feed is never modified by classification. `role-rules.json` owns role vocabulary; `rules.json` owns source aliases plus term/eligibility rules. Field rules are separate from role vocabulary. No runtime model, external classification service, or user data transmission is introduced.
+
+The local cache stores the full versioned result in `role_classification` plus `classification_version`; legacy category columns remain for display/scoring compatibility. On launch, outdated cached classifications (including closed/tracked rows) are recomputed offline, preserving application state and notes. Re-running the current version does not rewrite classified rows. Bump `CLASSIFICATION_VERSION` whenever classification semantics or vocabulary change after release.
+
+`cd app && npm run audit:classification` audits the local public snapshot without network access. It reports the feed hash, denominator, per-source counts, unresolved/source-fallback rates, conflicts and a review queue. Unknown-rate reduction is not an accuracy metric. `role-corpus.test.ts` supplies reviewed title and boilerplate regression cases; `role-engine.test.ts` and the rendered feed tests enforce evidence and filter semantics. Larger independently labeled evaluation sets are needed before claiming production precision/recall.
 
 **Eligibility.**
 
@@ -655,7 +666,9 @@ CREATE TABLE postings_cache (
   closed_at      TIMESTAMP,
   -- local computed fields, refreshed on sync
   category       TEXT,               -- primary_category
-  category_tags  TEXT,               -- JSON array
+  category_tags  TEXT,               -- JSON array of work roles
+  role_classification TEXT,            -- complete local evidence + domain tags
+  classification_version INTEGER,
   eligibility    TEXT,               -- JSON
   score          REAL,
   description    TEXT,

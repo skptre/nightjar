@@ -16,6 +16,7 @@ export function classifyPosting(
     posting.title,
     description,
     posting.source_metadata?.category,
+    posting.source_metadata,
   );
   const eligibility = checkEligibility(
     posting.title,
@@ -51,11 +52,13 @@ export async function classifyAndStore(
 
   await db.run(
     `UPDATE postings_cache
-     SET category = ?, category_tags = ?, term = ?, eligibility = ?
+     SET category = ?, category_tags = ?, role_classification = ?, classification_version = ?, term = ?, eligibility = ?
      WHERE id = ?`,
     [
       result.category.category,
       JSON.stringify(result.category.category_tags),
+      JSON.stringify(result.category),
+      result.category.version,
       result.term.term,
       JSON.stringify(result.eligibility),
       postingId,
@@ -92,11 +95,13 @@ export async function classifyNewPostings(
     results.set(row.id, result);
     statements.push({
       sql: `UPDATE postings_cache
-            SET category = ?, category_tags = ?, term = ?, eligibility = ?
+            SET category = ?, category_tags = ?, role_classification = ?, classification_version = ?, term = ?, eligibility = ?
             WHERE id = ?`,
       params: [
         result.category.category,
         JSON.stringify(result.category.category_tags),
+        JSON.stringify(result.category),
+        result.category.version,
         result.term.term,
         JSON.stringify(result.eligibility),
         row.id,

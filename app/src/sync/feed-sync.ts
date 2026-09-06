@@ -24,6 +24,8 @@ export interface FeedPosting {
     terms?: string[];
     degrees?: string[];
     category?: string;
+    department?: string;
+    occupational_category?: string;
   };
 }
 

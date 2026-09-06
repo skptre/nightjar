@@ -90,6 +90,13 @@ export const MIGRATIONS: Migration[] = [
       ALTER TABLE postings_cache ADD COLUMN description_error TEXT;
     `,
   },
+  {
+    version: 7,
+    sql: `
+      ALTER TABLE postings_cache ADD COLUMN role_classification TEXT;
+      ALTER TABLE postings_cache ADD COLUMN classification_version INTEGER;
+    `,
+  },
 ];
 
 export async function runMigrations(

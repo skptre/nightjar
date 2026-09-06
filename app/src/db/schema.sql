@@ -2,7 +2,7 @@ CREATE TABLE schema_version (
   version INTEGER NOT NULL
 );
 
-INSERT INTO schema_version (version) VALUES (6);
+INSERT INTO schema_version (version) VALUES (7);
 
 CREATE TABLE postings_cache (
   id              TEXT PRIMARY KEY,
@@ -12,6 +12,8 @@ CREATE TABLE postings_cache (
   closed_at       TEXT,
   category        TEXT,
   category_tags   TEXT,
+  role_classification TEXT,
+  classification_version INTEGER,
   term            TEXT,
   eligibility     TEXT,
   score           REAL,

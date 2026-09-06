@@ -1,3 +1,4 @@
+import type { DomainValue } from '@/classify/role-taxonomy';
 import { useEffect, type RefObject } from 'react';
 import { EligibilityBadge } from '@/components/EligibilityBadge';
 import { CATEGORY_OPTIONS, type CategoryValue } from '@/classify/types';
@@ -15,6 +16,7 @@ export interface PostingRowData {
   closed_at: string | null;
   category: string | null;
   category_tags: CategoryValue[];
+  domain_tags?: DomainValue[];
   term: string | null;
   eligibility: string | null;
   score: number | null;

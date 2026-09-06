@@ -14,7 +14,7 @@ describe('TauriDatabase batching', () => {
     vi.clearAllMocks();
     mocks.invoke
       .mockResolvedValueOnce([{ name: 'schema_version' }])
-      .mockResolvedValueOnce([{ version: 6 }])
+      .mockResolvedValueOnce([{ version: 7 }])
       .mockResolvedValue(undefined);
   });
 

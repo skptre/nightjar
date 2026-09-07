@@ -3,6 +3,22 @@ import { classifyCategory } from './category-classifier';
 import { matchesRoleSelection } from './role-taxonomy';
 
 describe('work and field classification', () => {
+  it('does not interpret employer recruiting prose inside Job Description as intern duties', () => {
+    const text = 'Job Description\n\nExample is recruiting for Design and Development Co-ops.\n\nOur strength in healthcare innovation empowers us to build solutions.';
+    expect(classifyCategory('Summer Intern', text)).toMatchObject({ category: 'other', domain_tags: [] });
+  });
+  it('keeps hardware-in-the-loop software work in SWE', () => {
+    expect(classifyCategory('Software Engineer Intern - Hardware in the Loop', null).category_tags).toEqual(['swe']);
+    expect(classifyCategory('Hardware Engineer Intern - Hardware in the Loop', null).category_tags).toEqual(['hardware']);
+  });
+  it('does not create an operations profession from the use of a mechanical design', () => {
+    const text = 'Responsibilities\n\nCreate mechanical designs for spacecraft launch operations.';
+    expect(classifyCategory('Summer Intern', text).category_tags).toEqual(['mechE']);
+  });
+  it('leaves broad design and laboratory activities unresolved without occupational evidence', () => {
+    const text = 'Responsibilities\n\nPerform testing and validation to support product design.\n\nAssist in developing laboratory testing.';
+    expect(classifyCategory('Summer Intern', text).category).toBe('other');
+  });
   it('does not turn preferred skills or employer prose into duties after section extraction', () => {
     expect(classifyCategory('Summer Intern', 'Preferred qualifications\n\nBuild software with Python.').category).toBe('other');
     expect(classifyCategory('Summer Intern', 'About us\n\nBuild software for aerospace customers.').category).toBe('other');

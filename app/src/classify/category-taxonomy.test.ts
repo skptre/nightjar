@@ -300,7 +300,7 @@ describe('cached category migration', () => {
     expect(await recomputePendingCategoryTaxonomy(db, makeProfile(['swe']))).toBe(1);
     const row = await db.queryOne<{ category: string; classification_version: number }>(
       'SELECT category, classification_version FROM postings_cache WHERE id = ?', [posting.id]);
-    expect(row).toMatchObject({ category: 'swe', classification_version: 3 });
+    expect(row).toMatchObject({ category: 'swe', classification_version: 4 });
     expect(await recomputePendingCategoryTaxonomy(db, makeProfile(['swe']))).toBe(0);
   });
 

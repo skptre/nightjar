@@ -6,7 +6,9 @@ import re
 from collections import defaultdict
 from datetime import UTC, datetime
 from typing import TYPE_CHECKING, Any
+from urllib.parse import urlparse
 
+from poller.description_enrich import _workday_detail_url, detect_ats_from_url
 from poller.exceptions import SourceParseError
 from poller.models import Posting, RawPosting, compute_posting_id
 from poller.normalize import clean_title, normalize_location, normalize_locations
@@ -28,15 +30,6 @@ SIMPLIFY_URL = (
 _SLUG_UNSAFE = re.compile(r"[^a-z0-9]+")
 _MULTI_HYPHEN = re.compile(r"-{2,}")
 
-_GREENHOUSE_RE = re.compile(
-    r"(?:boards|job-boards)\.greenhouse\.io/([^/]+)"
-)
-_LEVER_RE = re.compile(r"jobs\.(?:eu\.)?lever\.co/([^/]+)")
-_ASHBY_RE = re.compile(r"jobs\.ashbyhq\.com/([^/]+)")
-_WORKDAY_RE = re.compile(
-    r"(([a-zA-Z0-9-]+)\.wd\d+\.myworkdayjobs\.com)/(?:[a-z]{2}-[A-Z]{2}/)?([^/]+)"
-)
-_SMARTRECRUITERS_RE = re.compile(r"jobs\.smartrecruiters\.com/([^/]+)")
 
 
 def slugify_company(name: str) -> str:
@@ -46,29 +39,23 @@ def slugify_company(name: str) -> str:
 
 
 def infer_ats_from_url(url: str) -> tuple[str, str | None]:
-    m = _GREENHOUSE_RE.search(url)
-    if m:
-        return "greenhouse", m.group(1)
+    provider = detect_ats_from_url(url)
+    if not provider:
+        return "other", None
+    parsed = urlparse(url)
+    if provider == "workday":
+        detail = _workday_detail_url(url)
+        assert detail is not None
+        site = urlparse(detail).path.split("/")[4]
+        return provider, f"{parsed.hostname}/{site}"
+    if provider == "greenhouse" and parsed.hostname not in {
+        "boards.greenhouse.io", "job-boards.greenhouse.io",
+    }:
+        return provider, None
+    if provider in {"icims", "jazzhr"}:
+        return provider, (parsed.hostname or "").split(".")[0]
+    return provider, parsed.path.strip("/").split("/")[0]
 
-    m = _LEVER_RE.search(url)
-    if m:
-        return "lever", m.group(1)
-
-    m = _ASHBY_RE.search(url)
-    if m:
-        return "ashby", m.group(1)
-
-    m = _WORKDAY_RE.search(url)
-    if m:
-        host = m.group(1)
-        site = m.group(3)
-        return "workday", f"{host}/{site}"
-
-    m = _SMARTRECRUITERS_RE.search(url)
-    if m:
-        return "smartrecruiters", m.group(1)
-
-    return "other", None
 
 
 class SimplifyAdapter(SourceAdapter):

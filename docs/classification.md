@@ -79,3 +79,15 @@ exclusion/scoring/notifications; graduation is a separate ordering assessment. E
 cache changes invalidate old classifications. The unchanged public snapshot still has
 359 unknowns because it contains no descriptions; real description gains await backfill.
 Engine evaluation comes before the final expanded posting UI.
+
+Version 4 was checked against the recovered 12-description backfill. Employer recruiting
+prose no longer counts as duties, generic laboratory/product-design/operations mentions
+do not establish professions from descriptions, and hardware-in-the-loop software titles
+stay in SWE. Additional employer headings protect required/preferred/company scope.
+The cached classification version is bumped so existing local rows recompute.
+
+The sample resolves Bosch's inventory/procurement internship from Other to Supply chain,
+while leaving the broad J&J design/development and Hitachi umbrella postings unresolved.
+See [the recovery audit](description-evaluation.md) for limitations and the reproducible
+`audit:details` command. These targeted regression cases are not a production accuracy
+benchmark; live source and held-out evaluation still precede UI work.

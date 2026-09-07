@@ -68,3 +68,25 @@ def test_duplicate_does_not_discard_available_description() -> None:
     merged = dedupe_postings([first, second])
     assert len(merged) == 1
     assert merged[0].description_text == second.description_text
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("ats,url", [
+    ("icims", "https://careers-acme.icims.com/jobs/123/job"),
+    ("jazzhr", "https://acme.applytojob.com/apply/ABC/Intern"),
+    ("rippling", "https://ats.rippling.com/acme/jobs/123"),
+])
+async def test_page_providers_require_matching_structured_job(ats: str, url: str) -> None:
+    posting = make_posting("1", ats=ats, url=url)
+    for wrong_job in (False, True):
+        client = PageClient(wrong_job=wrong_job)
+        rows, count = await collect_descriptions(
+            [posting], {}, client, state={}, now="2026-09-07T00:00:00Z"
+        )
+        assert count == (0 if wrong_job else 1)
+        assert rows[0].description_status == ("unavailable" if wrong_job else "available")
+    client = PageClient(disallow=True)
+    rows, count = await collect_descriptions(
+        [posting], {}, client, state={}, now="2026-09-07T00:00:00Z"
+    )
+    assert count == 0 and len(client.calls) == 1

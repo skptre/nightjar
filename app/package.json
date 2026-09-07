@@ -8,6 +8,7 @@
     "build": "vite build",
     "test": "vitest run",
     "audit:classification": "node scripts/classification-audit.mjs",
+    "audit:details": "node scripts/details-audit.mjs",
     "lint": "tsc --noEmit",
     "preview": "vite preview",
     "tauri": "tauri",

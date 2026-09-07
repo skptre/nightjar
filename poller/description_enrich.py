@@ -5,7 +5,7 @@ import logging
 import re
 from dataclasses import replace
 from typing import TYPE_CHECKING, Any, Protocol
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 
 from poller.descriptions import (
     description_field,
@@ -29,6 +29,10 @@ SUPPORTED_ATS = frozenset(
         "ashby",
         "workday",
         "smartrecruiters",
+        "workable",
+        "icims",
+        "jazzhr",
+        "rippling",
     }
 )
 
@@ -45,6 +49,48 @@ _SMARTRECRUITERS_RE = re.compile(
     r"jobs\.smartrecruiters\.com/([^/]+)/([^/?#]+)",
     re.IGNORECASE,
 )
+_WORKABLE_RE = re.compile(
+    r"apply\.workable\.com/([^/]+)/j/([^/?#]+)",
+    re.IGNORECASE,
+)
+PAGE_ATS = frozenset({"icims", "jazzhr", "rippling"})
+
+
+def detect_ats_from_url(url: str) -> str | None:
+    """Recognize provider hosts and full job paths, never embedded URL substrings."""
+    try:
+        parsed = urlparse(url)
+        if (parsed.scheme not in {"https", "http"} or parsed.username or parsed.password
+                or parsed.port not in {None, 80, 443}):
+            return None
+    except ValueError:
+        return None
+    host = (parsed.hostname or "").lower()
+    path = parsed.path.strip("/")
+    segment = r"[A-Za-z0-9_-]+"
+    providers = [
+        ("lever", host in {"jobs.lever.co", "jobs.eu.lever.co"},
+         rf"{segment}/{segment}(?:/apply)?"),
+        ("greenhouse", host in {"boards.greenhouse.io", "job-boards.greenhouse.io"},
+         rf"{segment}/jobs/{segment}(?:/apply)?"),
+        ("ashby", host == "jobs.ashbyhq.com", rf"{segment}/{segment}(?:/application)?"),
+        ("smartrecruiters", host == "jobs.smartrecruiters.com", rf"{segment}/{segment}"),
+        ("workable", host == "apply.workable.com", rf"{segment}/j/{segment}"),
+        ("icims", bool(re.fullmatch(r"[a-z0-9-]+\.icims\.com", host)),
+         r"jobs/\d+(?:/[^/]+)*"),
+        ("jazzhr", bool(re.fullmatch(r"[a-z0-9-]+\.applytojob\.com", host)),
+         rf"apply/{segment}(?:/[^/]+)*"),
+        ("rippling", host == "ats.rippling.com", rf"{segment}/jobs/{segment}"),
+    ]
+    for provider, valid_host, shape in providers:
+        if valid_host and re.fullmatch(shape, path):
+            return provider
+    if _workday_detail_url(url):
+        return "workday"
+    ids = parse_qs(parsed.query).get("gh_jid", [])
+    if len(ids) == 1 and re.fullmatch(r"\d+", ids[0]):
+        return "greenhouse"
+    return None
 
 
 class JsonClient(Protocol):
@@ -57,6 +103,7 @@ class JsonClient(Protocol):
         allow_plain_text: bool = False,
         use_conditional: bool = False,
     ) -> Any: ...
+
 
 
 def _clean_description(value: str) -> str:
@@ -179,6 +226,39 @@ async def fetch_description(
             company_slug=posting.company_slug,
         )
         return smartrecruiters_description(data) if isinstance(data, dict) else ""
+
+    if ats == "workable":
+        match = _WORKABLE_RE.search(posting.url)
+        if not match:
+            return ""
+        tenant, shortcode = match.groups()
+        data = await client.get_json(
+            f"https://apply.workable.com/api/v1/widget/accounts/{tenant}/jobs/{shortcode}",
+            source="description",
+            company_slug=posting.company_slug,
+        )
+        if not isinstance(data, dict) or not _clean_description(data.get("description", "")):
+            return ""
+        if any(field not in data or not isinstance(data[field], str | type(None))
+               for field in ("requirements", "benefits")):
+            return ""
+        if data.get("shortcode", shortcode) != shortcode:
+            return ""
+        parts: list[str] = []
+        for field in ("description", "requirements", "benefits"):
+            value = _clean_description(data.get(field, ""))
+            if value:
+                parts.append(value if field == "description" else f"{field.title()}\n\n{value}")
+        return "\n\n".join(parts)
+
+    if ats in PAGE_ATS and detect_ats_from_url(posting.url) == ats:
+        from poller.first_party_details import fetch_first_party, supports_first_party
+
+        if supports_first_party(posting, client):
+            text, compensation = await fetch_first_party(posting, client, {})
+            if facts is not None and compensation:
+                facts["advertised_compensation"] = compensation
+            return text
 
     return ""
 

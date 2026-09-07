@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING, Any
 from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
+from poller.description_enrich import PAGE_ATS, detect_ats_from_url
 from poller.http import USER_AGENT, is_public_hostname
 from poller.sources.generic import extract_json_ld
 
@@ -16,14 +17,19 @@ _BLOCKED = ("linkedin.com", "indeed.com", "simplify.jobs")
 
 
 def supports_first_party(posting: Posting, client: Any) -> bool:
-    parsed = urlparse(posting.url)
+    try:
+        parsed = urlparse(posting.url)
+        port = parsed.port
+    except ValueError:
+        return False
     host = parsed.hostname or ""
     return (
-        posting.ats in {"other", "generic"}
+        (posting.ats in {"other", "generic"}
+         or (posting.ats in PAGE_ATS and detect_ats_from_url(posting.url) == posting.ats))
         and parsed.scheme == "https"
         and not parsed.username
         and not parsed.password
-        and parsed.port in {None, 443}
+        and port in {None, 443}
         and is_public_hostname(host)
         and not any(host == domain or host.endswith("." + domain) for domain in _BLOCKED)
         and callable(getattr(client, "get_text", None))

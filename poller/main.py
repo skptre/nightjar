@@ -13,7 +13,11 @@ from pathlib import Path
 from typing import Any
 
 from poller.dedupe import dedupe_postings
-from poller.description_pipeline import attach_source_context, collect_descriptions
+from poller.description_pipeline import (
+    attach_source_context,
+    collect_descriptions,
+    greenhouse_board_map,
+)
 from poller.diff import compute_diff
 from poller.exceptions import SourceFetchError, SourceParseError
 from poller.filter import (
@@ -404,6 +408,7 @@ async def run_pipeline(
                 description_client,
                 state=state.description_attempts,
                 now=now_str,
+                greenhouse_boards=greenhouse_board_map(companies),
             )
             state.http_cache.update(description_client.dump_cache())
 

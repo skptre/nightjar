@@ -142,7 +142,10 @@ def html_to_plaintext(raw_html: str | None) -> str:
     parser.close()
     lines = [re.sub(r"[^\S\n]+", " ", line).strip()
              for line in "".join(parser.parts).replace("\r\n", "\n").split("\n")]
-    return re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip()
+    text = re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip()
+    # Rich-text editors wrap the first sentence inside <li><p> or <li><div>.
+    # Keep its marker attached while retaining subsequent paragraphs and nested lists.
+    return re.sub(r"(?m)^-[ \t]*\n+(?=[^\s-])", "- ", text)
 
 
 def safe_string(value: object | None, default: str = "") -> str:

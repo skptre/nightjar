@@ -200,6 +200,30 @@ preferred, negations and exceptions, multiple pay tiers/periods, no policy versu
 failure, year-only graduation profiles, excluded-job inspection, offline cache retention,
 and stable feed output. Offline suites use fixtures, not live employer requests.
 
+### Recovery checkpoint — September 7, 2026
+
+The committed work and Claude's isolated backfill survived the restart. The recovered
+run has 12 descriptions from 20 attempts across the five original ATS families.
+[The recovery audit](description-evaluation.md) records exact hashes, findings,
+validation, and remaining release gates; it supersedes the earlier statement that no
+live backfill existed.
+
+Acquisition version 3 completes guarded Workable detail assembly, structured-page
+fallback for iCIMS/JazzHR/Rippling, shared URL detection, and known-board Greenhouse
+resolution. It rejects listing teasers/whole-page HTML, avoids guessed board identities,
+invalidates retries when a board changes, and marks overdue queued content stale.
+The backfill tool uses the same resolution rules and reports provider outcomes/errors
+and payload sizes. Offline resolvable targets increase from 2,653 to 3,009 of 4,305.
+
+Details version 2 handles reviewed heading and repeated-pay-unit variants and keeps
+paragraph-wrapped bullets intact. Classification version 4 rejects employer recruiting
+prose as duties and fixes hardware-in-the-loop software role membership. The new
+`npm run audit:details -- <feed>` command produces an offline evidence review report.
+
+All local checks pass (1,120 Python tests, 1,073 app tests, lint/types/build).
+Live networking remains blocked in this session, so wider collection and a separately
+labeled evaluation remain outstanding. The final UI is still gated on that evaluation.
+
 ## Previous expansion work and retained backlog
 
 The former Blocks 0–10 are retired as the active sequence, not declared universally
@@ -233,3 +257,257 @@ Baseline examined during planning: September 5 public snapshot, 4,305 active pos
 zero published descriptions, 14 compensation values, and 539 top-level departments.
 Private app caches were not measured. Of 371 unresolved role classifications, 124 had
 departments, not necessarily informative ones. These are baselines, not promised gains.
+
+
+
+
+
+
+
+
+
+
+9/7/2026 classifier + description extractor proposal:
+
+
+I’d build a shared system that takes a job URL, finds the employer’s    
+  actual document, checks that it belongs to the right job, preserves it, 
+  and keeps it current. Every posting would have either a usable          
+  description or a specific, actionable reason collection hasn’t          
+  succeeded.                                                              
+                                                                          
+  That is a larger system than we currently have. We can reuse the        
+  existing work, but the completion criterion needs to become coverage and
+  accuracy on real postings, rather than implemented adapters and passing 
+  tests.                                                                  
+                                                                          
+  One boundary matters: no extractor can guarantee text from an expired   
+  page, a login wall, or a page that refuses access. We can design for    
+  broad automatic coverage and make those exceptions explicit.            
+                                                                          
+  Here is the design I recommend.                                         
+                                                                          
+  1. One URL-resolution layer, shared by every collection method          
+                                                                          
+  Before extracting anything, establish which job the URL represents.     
+                                                                          
+  It should handle regional ATS hosts, locale prefixes, application-page  
+  suffixes, custom employer domains, embedded job boards, and ordinary    
+  redirects. Preserve job-identifying query parameters and fragments;     
+  remove only known tracking parameters.                                  
+                                                                          
+  Retain these separately:                                                
+                                                                          
+  - Original URL and Apply URL.                                           
+  - Employer, provider, board and job identity.                           
+  - Verified alternative URLs for the same posting.                       
+                                                                          
+  A matching title alone must never justify attaching a description—      
+  companies reuse titles constantly. Exact provider IDs take precedence;  
+  otherwise, matching needs corroborating employer and job-page evidence. 
+                                                                          
+  This addresses real gaps already in our feed, including Workable /apply 
+  links and regional Greenhouse URLs.                                     
+                                                                          
+  2. Several extraction methods, with automatic fallback                  
+                                                                          
+  The collector should try the cheapest reliable method first, then       
+  continue when the result is missing, incomplete, or mismatched.         
+                                                                          
+   Method                          What it retrieves                      
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Public ATS API                  Complete advertised description        
+                                   fields, additional sections and        
+                                   structured pay.                        
+  ──────────────────────────────  ────────────────────────────────────────
+   Structured page data            JobPosting JSON-LD, microdata, or job  
+                                   data embedded in the page.             
+  ──────────────────────────────  ────────────────────────────────────────
+   Provider/template extraction    The job-description containers on      
+                                   recurring employer-site layouts.       
+  ──────────────────────────────  ────────────────────────────────────────
+   General HTML extraction         The relevant document blocks on        
+                                   unfamiliar employer pages.             
+  ──────────────────────────────  ────────────────────────────────────────
+   Job-document extraction         Text from a job PDF when that is the   
+                                   actual posting.                        
+                                                                          
+  The first method is valuable: Greenhouse documents full descriptions    
+  through its public API, while Lever explicitly separates additional     
+  lists and closing content. We must assemble those fields deliberately.  
+  Greenhouse documentation, Lever documentation.                          
+                                                                          
+  The important addition is general page extraction. Today, unfamiliar    
+  pages largely depend on matching JSON-LD. That misses descriptions      
+  available elsewhere in the document.                                    
+                                                                          
+  I would evaluate Trafilatura as a candidate generator, then apply       
+  Nightjar’s job-specific checks. Its extraction modes explicitly trade   
+  off retaining text against removing noise, so its output cannot itself  
+  prove completeness. Trafilatura documentation.                          
+                                                                          
+  We should preserve the entire job document, including closing           
+  restrictions and compensation. Selecting concise responsibilities and   
+  qualifications happens afterward.                                       
+                                                                          
+  For example, a TikTok URL currently unresolved by our engine exposes    
+  responsibilities, qualifications, compensation and closing clauses      
+  through the research browser. That is a concrete collection target—not  
+  proof that our collector already handles it. Example employer posting.  
+                                                                          
+  3. A validator decides whether an extraction is usable                  
+                                                                          
+  A successful request or a long string cannot mean “complete             
+  description.”                                                           
+                                                                          
+  Each candidate must be checked for:                                     
+                                                                          
+  - Identity: Is this the requested job?                                  
+  - Document boundaries: Did we capture the job rather than navigation, an
+    application form, or recommended jobs?                                
+
+  - Completeness: Did we retain all relevant source fields and document   
+    blocks, including the ending?                                         
+                                                                          
+  - Freshness: When was this version successfully checked?                
+                                                                          
+  Where multiple representations exist, compare them. A short JSON-LD     
+  description should not automatically beat a visibly fuller job document.
+  Conversely, taking whichever candidate is longest could accidentally    
+  include unrelated jobs.                                                 
+                                                                          
+  Track identity, completeness, freshness and fetch outcome separately. A 
+  complete older copy remains useful after a failed refresh; it simply    
+  becomes stale. Partial content can still be retained, but cannot justify
+  “pay not listed” or an authorization exclusion.                         
+                                                                          
+  Completeness checks need source-specific contracts plus reviewed        
+  examples. There is no universal word-count threshold that proves a      
+  document is complete.                                                   
+                                                                          
+  4. Collection becomes a maintained queue, with an explicit coverage     
+  backlog                                                                 
+                                                                          
+  New listings should appear promptly while description collection runs   
+  separately. A slow employer must not hold up the entire feed.           
+                                                                          
+  The queue would prioritize new jobs, then failed or incomplete          
+  acquisitions, while reserving capacity for refreshes. It would share    
+  board responses, enforce host delays, respect backoff, and avoid        
+  repeatedly hammering one broken source.                                 
+                                                                          
+  Every failure gets a reason: unresolved identity, unsupported template, 
+  blocked request, missing content, ambiguous job, or unavailable page.   
+  Group failures by provider/template and number of affected postings.    
+                                                                          
+  That gives us a rational implementation order. In the current unresolved
+  inventory:                                                              
+                                                                          
+  - TikTok/ByteDance account for 318 postings.                            
+  - Tesla accounts for 98.                                                
+  - Other substantial groups share Oracle, SuccessFactors and employer-   
+    site layouts.                                                         
+                                                                          
+  We should fix the largest reusable gaps while maintaining a separate    
+  sample of smaller employers so coverage doesn’t become big-company-only.
+                                                                          
+  Robots handling also needs to distinguish a missing file from an        
+  unreachable server; treating every robots error identically             
+  unnecessarily loses coverage. Robots protocol.                          
+                                                                          
+  5. Publish descriptions separately, and cache them locally
+                                                                          
+  Keep the browsable feed lightweight. Publish complete documents in      
+  small, versioned detail packs, referenced by content hash.              
+                                                                          
+  The app downloads changed packs in the background, stores them locally, 
+  and recomputes extraction/classification only when the document or      
+  engine version changes.                                                 
+                                                                          
+  A crucial requirement: background collection must cover the feed, not   
+  just postings the user opens. Otherwise, unopened jobs would still have 
+  poor classification and missing compensation, undermining filters.      
+                                                                          
+  Publish detail files before their manifest, verify hashes, and retain   
+  the previous cache on interrupted downloads. Routine checks of unchanged
+  text should not cause every user to download it again.                  
+                                                                          
+  The public side contains employer documents and source facts. Profile   
+  comparisons and personal decisions stay local.                          
+                                                                          
+  6. One document powers the product’s interpretation                     
+                                                                          
+  The same preserved document supplies:                                   
+                                                                          
+  - Responsibilities, required and preferred qualifications.              
+  - Compensation, including separate periods, currencies and conditions.  
+  - Authorization passages and narrow explicit conflicts.                 
+  - Graduation requirements and mismatch ordering.                        
+  - Role and field classification.                                        
+                                                                          
+  Every extracted value points back to its original passage or structured 
+  field. Ambiguous sections retain more context rather than receiving a   
+  confident but incorrect label.                                          
+                                                                          
+  Classification should use the candidate’s duties, with title and        
+  department as supporting evidence. Company activity, collaborators and  
+  preferred skills must not become the candidate’s profession.            
+                                                                          
+  Model assistance can be evaluated later against demonstrated            
+  classification gaps. It cannot recover text we never fetched, and it    
+  should not generate the description or decide authorization exclusions. 
+                                                                          
+  The agreed expanded-row UI remains the final integration step: faithful 
+  excerpts, full description, Apply, consistent compensation, and the     
+  previously agreed exclusion/graduation behavior.                        
+                                                                          
+  7. Define “done” before implementation starts                           
+                                                                          
+  I propose these acceptance conditions:                                  
+
+   Area                  Proposed requirement                             
+  ━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Accountability        Every active posting has a recorded collection   
+                         outcome.                                         
+  ────────────────────  ──────────────────────────────────────────────────
+   Automatic coverage    Target complete, identity-validated descriptions 
+                         for at least 95% of all active feed postings.    
+                         Blocked/unsupported jobs stay in the             
+                         denominator.                                     
+  ────────────────────  ──────────────────────────────────────────────────
+   Correctness           No wrong-job attachments in the reviewed release 
+                         set; measure missing material passages           
+                         separately.                                      
+  ────────────────────  ──────────────────────────────────────────────────
+   Interpretation        Separately measure section selection, pay        
+                         accuracy, role/field accuracy, false exclusions  
+                         and graduation demotions.                        
+  ────────────────────  ──────────────────────────────────────────────────
+   Reliability           Failed refreshes preserve content; retries       
+                         progress fairly; unchanged documents produce     
+                         stable output.                                   
+  ────────────────────  ──────────────────────────────────────────────────
+   Delivery              Successfully backfill, publish, sync and read    
+                         details offline in the actual app.               
+                                                                          
+  The 95% figure is a proposed target, not a claim that we can already    
+  reach it. If measured results fall short, we present the actual         
+  remaining blockers rather than silently changing the definition of      
+  completion.                                                             
+                                                                          
+  Start with a reviewed corpus spanning providers, occupations, small     
+  employers, malformed pages and failures. Keep a separate holdout split  
+  by employer/template, so we aren’t merely testing layouts we tuned      
+  against.                                                                
+                                                                          
+  The implementation order would be: corpus and baseline → resolver and   
+  validator → extraction methods → full backfill and gap repair → reliable
+  publication/cache → interpretation evaluation → UI integration.         
+                                                                          
+  For pages that only become readable in a user’s browser, an optional    
+  “Import this job” action could capture the opened description locally.  
+  Chrome supports temporary access following a user action. That would    
+  supplement shared coverage, without publishing someone’s browsing       
+  activity. Chrome documentation. Automated browser navigation would      
+  require revisiting the current project ban; it is not an assumed        
+  dependency of this design.

@@ -3,7 +3,7 @@ import type { AcquisitionStatus, Evidence, JobDetails, PayRange } from './types'
 const PERIODS: Array<[PayRange['period'], RegExp]> = [
   ['hour', /\b(?:hour(?:ly)?|hr)s?\b/i], ['day', /\b(?:day|daily)s?\b/i],
   ['week', /\bweek(?:ly)?s?\b/i], ['month', /\bmonth(?:ly)?s?\b/i],
-  ['year', /\b(?:year(?:ly)?|annual(?:ly)?|annum)s?\b/i],
+  ['year', /\b(?:year(?:ly)?|annual(?:ly|ized)?|annum)s?\b/i],
 ];
 function period(text: string): PayRange['period'] | null {
   return PERIODS.find(([, regex]) => regex.test(text))?.[0] ?? null;
@@ -75,18 +75,36 @@ export function extractCompensation(passages: Evidence[], acquisition: Acquisiti
   const candidates = [...relevant];
   if (advertised) candidates.push(structuredEvidence(advertised, advertised));
   for (const evidence of candidates) {
-    const regex = /(USD|CAD|GBP|EUR|US\$|C\$|\$|£|€)\s*(\d[\d,]*(?:\.\d+)?k?)(?:\s*(?:[-–—]|to)\s*(?:USD|CAD|GBP|EUR|US\$|C\$|\$|£|€)?\s*(\d[\d,]*(?:\.\d+)?k?))?/gi;
+    const regex = /(USD|CAD|GBP|EUR|US\$|C\$|\$|£|€)\s*(\d[\d,]*(?:\.\d+)?k?)(?:\s*(?:[-–—]|to)\s*(?:\1)?\s*(\d[\d,]*(?:\.\d+)?k?))?/gi;
     const matches = [...evidence.text.matchAll(regex)];
     for (let i = 0; i < matches.length; i++) {
       const match = matches[i]!;
+      const next = matches[i + 1];
+      let upper: string | undefined;
+      let combinedUnit: PayRange['period'] | null = null;
+      if (!match[3] && next && !next[3]) {
+        const gap = evidence.text.slice(match.index + match[0].length, next.index);
+        const connector = gap.match(/^\s*(?:(?:\/|per\s+)?(?:hours?|hrs?|days?|weeks?|months?|years?)\s*)?(to|[-–—]|and)\s*$/i);
+        const before = evidence.text.slice(0, match.index);
+        const rightUnit = period(evidence.text.slice(next.index + next[0].length, matches[i + 2]?.index).slice(0, 45));
+        const leftUnit = period(gap);
+        if (connector && (connector[1]?.toLowerCase() !== 'and' || /\bbetween\s*$/i.test(before))
+            && match[1]!.toUpperCase() === next[1]!.toUpperCase()
+            && (!leftUnit || !rightUnit || leftUnit === rightUnit)) {
+          upper = next[2];
+          combinedUnit = rightUnit ?? leftUnit;
+          i++;
+        }
+      }
       const tail = evidence.text.slice(match.index + match[0].length, matches[i + 1]?.index);
-      const unit = period(tail.slice(0, 45)) ?? (matches.length === 1 ? period(evidence.text) : null);
+      const unit = combinedUnit ?? period(tail.slice(0, 45)) ?? (matches.length === 1 ? period(evidence.text) : null);
       if (!unit) continue;
-      const min = amount(match[2]!), max = amount(match[3] ?? match[2]!);
+      const min = amount(match[2]!), max = amount(upper ?? match[3] ?? match[2]!);
       const symbol = match[1]!.toUpperCase();
       const currency = ({ '$': 'USD', 'US$': 'USD', 'C$': 'CAD', '£': 'GBP', '€': 'EUR' } as Record<string, string>)[symbol] ?? symbol;
       if (!Number.isFinite(min) || !Number.isFinite(max) || max < min) continue;
-      const prefix = evidence.text.slice(i ? matches[i - 1]!.index + matches[i - 1]![0].length : 0, match.index);
+      const previous = matches[upper ? i - 2 : i - 1];
+      const prefix = evidence.text.slice(previous ? previous.index + previous[0].length : 0, match.index);
       ranges.push({ min, max, currency, period: unit, kind: kind(prefix), evidence,
         source: evidence.start < 0 ? 'structured' : 'description' });
     }
@@ -114,7 +132,9 @@ export function compensationLabel(compensation: JobDetails['compensation']): str
   if (unique.length !== 1) return 'See pay details';
   const range = unique[0]!;
   const symbol = ({ USD: '$', CAD: 'C$', GBP: '£', EUR: '€' } as Record<string, string>)[range.currency] ?? `${range.currency} `;
-  const number = (n: number): string => n.toLocaleString('en-US', { maximumFractionDigits: 2 });
+  const number = (n: number): string => n.toLocaleString('en-US', {
+    minimumFractionDigits: Number.isInteger(n) ? 0 : 2, maximumFractionDigits: 2,
+  });
   const values = range.min === range.max ? number(range.min) : `${number(range.min)}–${number(range.max)}`;
   const unit = ({ hour: 'hr', day: 'day', week: 'week', month: 'month', year: 'year' } as const)[range.period];
   return `${symbol}${values}/${unit}`;

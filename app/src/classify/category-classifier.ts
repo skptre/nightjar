@@ -64,6 +64,10 @@ function findRoles(text: string, source: EvidenceSource): Match[] {
   // overlaps only part of it ('equity research' + 'research intern').
   const specializedResearch = /\b(equity research|ux research|user experience research|quantitative research|quant research)\b/.test(normalized);
   let resolved = specific.filter(match => !(specializedResearch && match.category === 'research')).filter(match => !(match.rule === 'assurance intern' && /quality assurance/.test(normalized)));
+  // These activities alone don't establish a profession in a duties paragraph.
+  if (source === 'description') {
+    resolved = resolved.filter(match => !['operations', 'laboratory', 'product design'].includes(match.rule));
+  }
   if (resolved.some(match => match.category === 'quant')) {
     resolved = resolved.filter(match => match.category !== 'research');
   }
@@ -72,6 +76,9 @@ function findRoles(text: string, source: EvidenceSource): Match[] {
   const hasSoftware = resolved.some(match => match.category === 'swe');
   if (hasSoftware) {
     resolved = resolved.filter(match => !['quant', 'aero'].includes(match.category));
+    if (/\bhardware in (?:the )?loop\b/.test(normalized)) {
+      resolved = resolved.filter(match => match.rule !== 'hardware');
+    }
   }
   // These modifiers describe the application of an explicitly named job.
   if (resolved.some(match => !['quant', 'aero', 'research'].includes(match.category))) {
@@ -92,6 +99,9 @@ function dutySentences(description: string | null): string[] {
     .flatMap(p => p.text.split(/[\n.!?;]+/)).map(text => text.trim()).filter(text => {
     if (/\b(?:we (?:build|develop|design|serve|provide)|our team|will not|won't|does not)\b/i.test(text)) return false;
     if (/\b(qualifications?|requirements?|degree|major(?:s|ing)?|bachelor|master|phd|experience (?:in|with)|familiarity|knowledge of|equal opportunity|we are|our company|work (?:with|alongside)|collaborat\w*|partner with)\b/i.test(text)) return false;
+    // A Job Description heading also contains employer prose. Require the candidate
+    // or an imperative action as the subject, not just an action word anywhere.
+    if (!/^(?:[-•*]\s*)?(?:you(?:'ll| will)|as\b[^.!?]*\byou(?:'ll| will)|(?:this|the) (?:role|position)\b|(?:develop|build|design|implement|train|analy[sz]e|research|test|maintain|support|create|conduct|perform|optimi[sz]e|work|assist|contribute|manage|monitor|drive|ensure|generate|issue|help|learn|gain|participate)\b)/i.test(text)) return false;
     return /\b(?:you will|you'll|work on|responsibilit\w*|duties|(?:develop|build|design|implement|train|analy[sz]e|research|test|maintain|support|create|conduct|perform|optimi[sz]e)(?:ing)?)\b/i.test(text);
   });
 }

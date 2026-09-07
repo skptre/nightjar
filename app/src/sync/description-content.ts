@@ -43,7 +43,8 @@ export function htmlToPlaintext(rawHtml: string): string {
   visit(template.content);
   return parts.join('').replace(/\r\n/g, '\n').split('\n')
     .map(line => line.replace(/[^\S\n]+/g, ' ').trim()).join('\n')
-    .replace(/\n{3,}/g, '\n\n').trim();
+    .replace(/\n{3,}/g, '\n\n').trim()
+    .replace(/^-[ \t]*\n+(?=[^\s-])/gm, '- ');
 }
 
 export function descriptionField(data: Record<string, unknown>, htmlKey: string, plainKey: string): string {

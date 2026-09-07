@@ -104,3 +104,12 @@ async def test_ashby_html_only_description_is_not_discarded() -> None:
     assert await fetch_description(client, posting, {}, asyncio.Lock()) == (
         'Required\n\nGraduating in 2028.'
     )
+
+
+def test_paragraph_wrapped_list_items_keep_their_bullets() -> None:
+    from poller.normalize import html_to_plaintext
+
+    assert html_to_plaintext(
+        '<ul><li><p>Must be enrolled.</p><p>Returning students only.</p></li>'
+        '<li><div>Exceptions may be approved.</div></li></ul>'
+    ) == '- Must be enrolled.\n\nReturning students only.\n\n- Exceptions may be approved.'

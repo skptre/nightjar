@@ -5,6 +5,11 @@ import { DescriptionFetcher, htmlToPlaintext } from './description-fetch';
 afterEach(() => vi.unstubAllGlobals());
 
 describe('complete source descriptions in client fallback', () => {
+  it('attaches paragraph-wrapped list items to their bullets', () => {
+    expect(htmlToPlaintext('<ul><li><p>Must be enrolled.</p><p>Returning students only.</p></li>' +
+      '<li><div>Exceptions may be approved.</div></li></ul>'))
+      .toBe('- Must be enrolled.\n\nReturning students only.\n\n- Exceptions may be approved.');
+  });
   it('preserves sections and inline conditions, excluding scripts and styles', () => {
     expect(htmlToPlaintext('<h2>Required</h2><ul><li>U.S. <b>citizens only</b>.</li>' +
       '<li>Graduating 2028.</li></ul><script>Sponsorship available.</script><style>p{}</style>'))

@@ -9,12 +9,12 @@ import re
 from dataclasses import replace
 from datetime import datetime, timedelta
 from typing import TYPE_CHECKING, Any
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 
 from poller.description_enrich import (
     DEFAULT_ENRICHMENT_LIMIT,
     MAX_CONCURRENT,
-    _workday_detail_url,
+    detect_ats_from_url,
     fetch_description,
 )
 from poller.descriptions import source_facts
@@ -24,16 +24,26 @@ if TYPE_CHECKING:
     from urllib.robotparser import RobotFileParser
 
     from poller.description_enrich import JsonClient
-    from poller.models import Posting, RawPosting, SourceConfig
+    from poller.models import Company, Posting, RawPosting, SourceConfig
 
-DESCRIPTION_VERSION = 2
+DESCRIPTION_VERSION = 3
 REFRESH_HOURS = 72
 _SEGMENT = re.compile(r"^[A-Za-z0-9_-]+$")
 
 
+def greenhouse_board_map(companies: list[Company]) -> dict[str, str]:
+    """Only unambiguous curated boards can resolve custom-domain job IDs."""
+    result = {}
+    for company in companies:
+        boards = {s.board_token for s in company.sources if s.type == "greenhouse"}
+        if len(boards) == 1:
+            result[company.slug] = boards.pop()
+    return result
+
+
 def attach_source_context(posting: Posting, raw: RawPosting, source: SourceConfig) -> Posting:
     metadata = {**(posting.source_metadata or {}), **source_facts(raw.raw_data, source.type)}
-    if source.type in {"greenhouse", "lever", "ashby", "smartrecruiters"}:
+    if source.type in {"greenhouse", "lever", "ashby", "smartrecruiters", "workable"}:
         metadata["ats_identity"] = {
             "provider": source.type,
             "board": source.board_token,
@@ -41,7 +51,9 @@ def attach_source_context(posting: Posting, raw: RawPosting, source: SourceConfi
             "eu": str(source.eu).lower(),
         }
     # These adapters read complete description fields, not listing-page teasers.
-    verified = bool(posting.description_text) and source.type in {"greenhouse", "lever", "ashby"}
+    verified = bool(posting.description_text) and source.type in {
+        "greenhouse", "lever", "ashby",
+    }
     return replace(
         posting,
         source_metadata=metadata or None,
@@ -50,32 +62,35 @@ def attach_source_context(posting: Posting, raw: RawPosting, source: SourceConfi
     )
 
 
-def resolve_detail_posting(posting: Posting) -> Posting | None:
-    parsed = urlparse(posting.url)
-    host = (parsed.hostname or "").lower()
-    if parsed.scheme not in {"http", "https"} or parsed.username or parsed.password:
+def resolve_detail_posting(
+    posting: Posting,
+    greenhouse_boards: dict[str, str] | None = None,
+) -> Posting | None:
+    try:
+        parsed = urlparse(posting.url)
+        if (parsed.scheme not in {"http", "https"} or parsed.username or parsed.password
+                or parsed.port not in {None, 80, 443}):
+            return None
+    except ValueError:
         return None
-    allowed = {
-        "greenhouse": {"boards.greenhouse.io", "job-boards.greenhouse.io"},
-        "lever": {"jobs.lever.co", "jobs.eu.lever.co"},
-        "ashby": {"jobs.ashbyhq.com"},
-        "smartrecruiters": {"jobs.smartrecruiters.com"},
+    detected = detect_ats_from_url(posting.url)
+    ats = detected if posting.ats in {"other", "generic"} and detected else posting.ats
+    posting = replace(posting, ats=ats)
+    ids = parse_qs(parsed.query).get("gh_jid", [])
+    custom_greenhouse = ats == "greenhouse" and parsed.hostname not in {
+        "boards.greenhouse.io", "job-boards.greenhouse.io",
     }
-    path = parsed.path.strip("/")
-    shape = (
-        r"[^/]+/jobs/[^/]+(?:/apply)?"
-        if posting.ats == "greenhouse"
-        else r"[^/]+/[^/]+(?:/apply|/application)?"
-    )
-    if host in allowed.get(posting.ats, set()) and re.fullmatch(shape, path):
+    if detected == ats and not custom_greenhouse:
         return posting
-    if posting.ats == "workday" and _workday_detail_url(posting.url):
-        return posting
+    # Source identity takes precedence over query parameters and company registry hints.
     identity = (posting.source_metadata or {}).get("ats_identity")
-    if not isinstance(identity, dict) or identity.get("provider") != posting.ats:
-        return None
+    if not isinstance(identity, dict) or identity.get("provider") != ats:
+        identity = {}
     board, job_id = identity.get("board"), identity.get("job_id")
-    if not all(isinstance(value, str) and _SEGMENT.fullmatch(value) for value in (board, job_id)):
+    if not identity and custom_greenhouse and len(ids) == 1 and ids[0].isdigit():
+        board, job_id = (greenhouse_boards or {}).get(posting.company_slug), ids[0]
+    if not (isinstance(board, str) and isinstance(job_id, str)
+            and _SEGMENT.fullmatch(board) and _SEGMENT.fullmatch(job_id)):
         return None
     lever_prefix = "eu." if identity.get("eu") == "true" else ""
     paths = {
@@ -83,8 +98,9 @@ def resolve_detail_posting(posting: Posting) -> Posting | None:
         "lever": f"https://jobs.{lever_prefix}lever.co/{board}/{job_id}",
         "ashby": f"https://jobs.ashbyhq.com/{board}/{job_id}",
         "smartrecruiters": f"https://jobs.smartrecruiters.com/{board}/{job_id}",
+        "workable": f"https://apply.workable.com/{board}/j/{job_id}/",
     }
-    url = paths.get(posting.ats)
+    url = paths.get(ats)
     return replace(posting, url=url) if url else None
 
 
@@ -103,6 +119,7 @@ async def collect_descriptions(
     state: dict[str, dict[str, Any]],
     now: str,
     limit: int = DEFAULT_ENRICHMENT_LIMIT,
+    greenhouse_boards: dict[str, str] | None = None,
 ) -> tuple[list[Posting], int]:
     current_time = datetime.fromisoformat(now.replace("Z", "+00:00"))
 
@@ -125,7 +142,9 @@ async def collect_descriptions(
         enriched.append(posting)
         if posting.closed_at:
             continue
-        key = _key(posting)
+        target = resolve_detail_posting(posting, greenhouse_boards)
+        # A corrected registry board must invalidate the old request's retry schedule.
+        key = _key(target or posting)
         attempt = state.get(posting.id, {})
         same = attempt.get("source_key") == key and attempt.get("version") == DESCRIPTION_VERSION
         if same and str(attempt.get("next_attempt_at", "")) > now:
@@ -147,7 +166,6 @@ async def collect_descriptions(
                 "next_attempt_at": later(REFRESH_HOURS),
             }
             continue
-        target = resolve_detail_posting(posting)
         if target is None and supports_first_party(posting, client):
             target = posting
         if target is None:
@@ -155,6 +173,8 @@ async def collect_descriptions(
                 posting, description_status="stale" if posting.description_text else "unsupported"
             )
             continue
+        if posting.description_text:
+            enriched[index] = replace(posting, description_status="stale")
         candidates.append((index, target, key))
     # Oldest attempts first, including never-attempted jobs: advancing queue, no rotating
     # index over a shrinking list and no failed URL monopolizing each batch.
@@ -180,6 +200,11 @@ async def collect_descriptions(
             except Exception as exc:
                 text = ""
                 error = type(exc).__name__
+                if isinstance(exc, ValueError) and str(exc) in {
+                    "robots_disallowed", "invalid_or_oversized_description_page",
+                    "no_unique_matching_jobposting",
+                }:
+                    error = str(exc)
         previous_attempt = state.get(target.id, {})
         entry = {"source_key": key, "version": DESCRIPTION_VERSION, "last_attempt_at": now}
         posting = enriched[index]

@@ -75,4 +75,18 @@ describe('ProfileProvider onboarding', () => {
     expect(localStorage.getItem('nightjar_profile_reset_v1')).toBe('done');
     expect(screen.getByRole('button', { name: 'Browse jobs' })).toBeTruthy();
   });
+  it('keeps existing preferences when opening and cancelling the editor', () => {
+    localStorage.setItem('nightjar_profile_reset_v1', 'done');
+    localStorage.setItem('nightjar_onboarding_dismissed', 'true');
+    const profile = JSON.stringify({ degree_type: 'bachelors', graduation: '2029-05',
+      work_auth: 'us_citizen', requires_sponsorship: false, target_categories: ['swe'],
+      tiers: { example: 1 }, contacts: { example: 'Private note' } });
+    localStorage.setItem('nightjar_profile', profile);
+    render(<ProfileProvider><TestApp /></ProfileProvider>);
+    fireEvent.click(screen.getByRole('button', { name: 'Set preferences' }));
+    expect(localStorage.getItem('nightjar_profile')).toBe(profile);
+    fireEvent.click(screen.getByRole('button', { name: /Back/ }));
+    expect(screen.getByText('profile loaded')).toBeTruthy();
+    expect(localStorage.getItem('nightjar_profile')).toBe(profile);
+  });
 });

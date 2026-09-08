@@ -47,7 +47,7 @@ export class ErrorBoundary extends Component<Props, State> {
       const isDbError = isDatabaseError(this.state.error);
 
       return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950">
+        <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-nj-bg">
           <div className="text-center p-8 max-w-md">
             <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
               <svg className="w-6 h-6 text-red-600 dark:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -57,12 +57,12 @@ export class ErrorBoundary extends Component<Props, State> {
             <h1 className="text-xl font-bold text-red-600 dark:text-red-400">
               {isDbError ? 'Database Error' : 'Something went wrong'}
             </h1>
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            <p className="mt-2 text-sm text-gray-600 dark:text-nj-muted">
               {isDbError
                 ? 'The local database may be corrupted. You can try reloading, or reset the database to start fresh.'
                 : 'An unexpected error occurred. Try reloading the page.'}
             </p>
-            <pre className="mt-3 text-xs text-gray-500 dark:text-gray-500 max-w-lg overflow-auto bg-gray-100 dark:bg-gray-900 p-2 rounded text-left">
+            <pre className="mt-3 text-xs text-gray-500 dark:text-nj-muted max-w-lg overflow-auto bg-gray-100 dark:bg-nj-surface p-2 rounded text-left">
               {this.state.error?.message}
             </pre>
             <div className="mt-6 flex gap-3 justify-center">

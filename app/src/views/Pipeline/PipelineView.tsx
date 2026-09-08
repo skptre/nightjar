@@ -1,673 +1,155 @@
-import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
+import { Fragment, useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDatabase } from '@/providers/DatabaseProvider';
+import { useToast } from '@/components/Toast';
+import { Icon } from '@/components/Icon';
 import { OutcomeDialog } from '@/outcomes/OutcomeDialog';
 import { transitionApplicationStatus } from '@/outcomes/outcome-service';
-import {
-  statusNeedsOutcomePrompt,
-  type ApplicationOutcome,
-  type OutcomeDetails,
-  type PipelineStatus,
-} from '@/outcomes/types';
-import { GmailSuggestionsPanel } from '@/integrations/GmailSuggestionsPanel';
-import { GMAIL_ENABLED } from '@/lib/platform';
+import { statusNeedsOutcomePrompt, type OutcomeDetails, type PipelineStatus } from '@/outcomes/types';
+import { exportApplicationsCSV } from '@/export/export-csv';
+import { saveFile } from '@/export/file-save';
+import { openExternal } from '@/lib/platform';
 
-const PIPELINE_COLUMNS: { status: PipelineStatus; label: string }[] = [
-  { status: 'saved', label: 'Saved' },
-  { status: 'applied', label: 'Applied' },
-  { status: 'oa', label: 'OA' },
-  { status: 'phone', label: 'Phone' },
-  { status: 'onsite', label: 'Onsite' },
-  { status: 'offer', label: 'Offer' },
-  { status: 'rejected', label: 'Rejected' },
-  { status: 'ghosted', label: 'Ghosted' },
+const stages: { value: PipelineStatus; label: string }[] = [
+  { value: 'saved', label: 'Saved' }, { value: 'applied', label: 'Applied' },
+  { value: 'oa', label: 'Assessment' }, { value: 'phone', label: 'Phone interview' },
+  { value: 'onsite', label: 'Final interview' }, { value: 'offer', label: 'Offer' },
+  { value: 'rejected', label: 'Rejected' }, { value: 'ghosted', label: 'No response' },
 ];
-
-interface PipelineCard {
-  id: string;
-  company: string;
-  title: string;
-  location: string;
-  url: string;
-  status: PipelineStatus | 'skipped';
-  applied_at: string | null;
-  deadline: string | null;
-  notes: string | null;
-  app_created_at: string;
-  app_updated_at: string;
-  eligibility: string | null;
-  score: number | null;
-  category: string | null;
-  term: string | null;
-  outcome: ApplicationOutcome | null;
-  outcome_at: string | null;
-  interview_rounds: number;
-  outcome_notes: string | null;
+type View = 'all' | 'saved' | 'progress' | 'archived';
+interface Row {
+  id: string; data: string; company: string; title: string; url: string; closed_at: string | null;
+  status: PipelineStatus; applied_at: string | null; next_action: string | null;
+  next_action_at: string | null; deadline: string | null; notes: string | null;
+  interview_count: number; offer_count: number;
 }
-
-interface PipelineQueryRow {
-  id: string;
-  data: string;
-  status: string;
-  applied_at: string | null;
-  deadline: string | null;
-  notes: string | null;
-  app_created_at: string;
-  app_updated_at: string;
-  eligibility: string | null;
-  score: number | null;
-  category: string | null;
-  term: string | null;
-  outcome: ApplicationOutcome | null;
-  outcome_at: string | null;
-  interview_rounds: number;
-  outcome_notes: string | null;
-}
-
-function parseCard(row: PipelineQueryRow): PipelineCard | null {
-  try {
-    const parsed = JSON.parse(row.data) as Record<string, unknown>;
-    return {
-      id: row.id,
-      company: (parsed['company'] as string) ?? '',
-      title: (parsed['title'] as string) ?? '',
-      location: (parsed['location'] as string) ?? '',
-      url: (parsed['url'] as string) ?? '',
-      status: row.status as PipelineCard['status'],
-      applied_at: row.applied_at,
-      deadline: row.deadline,
-      notes: row.notes,
-      app_created_at: row.app_created_at,
-      app_updated_at: row.app_updated_at,
-      eligibility: row.eligibility,
-      score: row.score,
-      category: row.category,
-      term: row.term,
-      outcome: row.outcome,
-      outcome_at: row.outcome_at,
-      interview_rounds: row.interview_rounds,
-      outcome_notes: row.outcome_notes,
-    };
-  } catch {
-    return null;
-  }
-}
-
-function daysAgo(iso: string): number {
-  return Math.floor((Date.now() - new Date(iso).getTime()) / (24 * 60 * 60 * 1000));
-}
-
-function formatDate(iso: string | null): string {
-  if (!iso) return '';
-  const d = new Date(iso);
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-}
-
-function daysInStatus(updatedAt: string): number {
-  return daysAgo(updatedAt);
-}
-
-const GHOST_WARNING_DAYS = 30;
-
-function stageColor(status: string): string {
-  switch (status) {
-    case 'saved': return 'bg-nj-accent';
-    case 'applied': return 'bg-nj-tier-2';
-    case 'oa': return 'bg-nj-cat-swe';
-    case 'phone': return 'bg-nj-cat-hw';
-    case 'onsite': return 'bg-nj-tier-1';
-    case 'offer': return 'bg-nj-eligible';
-    case 'rejected': return 'bg-nj-ineligible';
-    case 'ghosted': return 'bg-nj-cat-other';
-    default: return 'bg-nj-cat-other';
-  }
-}
-
 export function PipelineView(): React.ReactNode {
   const { db } = useDatabase();
-  const [refreshKey, setRefreshKey] = useState(0);
-  const [showSkipped, setShowSkipped] = useState(false);
-  const [expandedId, setExpandedId] = useState<string | null>(null);
-  const [editingNotes, setEditingNotes] = useState<string | null>(null);
-  const [notesValue, setNotesValue] = useState('');
-  const [dragOverColumn, setDragOverColumn] = useState<string | null>(null);
-  const [pendingTransition, setPendingTransition] = useState<{
-    card: PipelineCard;
-    status: PipelineStatus;
-  } | null>(null);
-  const [transitionError, setTransitionError] = useState<string | null>(null);
-  const [transitionBusy, setTransitionBusy] = useState(false);
-  const transitionInFlight = useRef(false);
-
-  const [cards, setCards] = useState<PipelineCard[]>([]);
-
+  const { toast } = useToast();
+  const [rows, setRows] = useState<Row[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [revision, setRevision] = useState(0);
+  const [view, setView] = useState<View>(() => new URLSearchParams(window.location.search).get('view') === 'saved' ? 'saved' : 'all');
+  const [search, setSearch] = useState('');
+  const [sort, setSort] = useState<'recent' | 'company' | 'due'>('recent');
+  const [expanded, setExpanded] = useState<string | null>(() => new URLSearchParams(window.location.search).get('job'));
+  const [pending, setPending] = useState<{ row: Row; status: PipelineStatus } | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [adding, setAdding] = useState(false);
+  const refresh = (): void => setRevision(n => n + 1);
   useEffect(() => {
     let cancelled = false;
-    void db.query<PipelineQueryRow>(
-      `SELECT p.id, p.data, a.status, a.applied_at, a.deadline, a.notes,
-              a.created_at as app_created_at, a.updated_at as app_updated_at,
-              a.outcome, a.outcome_at, a.interview_rounds, a.outcome_notes,
-              p.eligibility, p.score, p.category, p.term
-       FROM postings_cache p
-       INNER JOIN applications a ON p.id = a.posting_id
-       WHERE a.status != 'new'
-       ORDER BY a.updated_at DESC`,
-    ).then((rows) => {
-      if (cancelled) return;
-      const result: PipelineCard[] = [];
-      for (const row of rows) {
-        const card = parseCard(row);
-        if (card) result.push(card);
-      }
-      setCards(result);
-    });
+    void db.query<Row>(`SELECT p.id,p.data,p.closed_at,a.status,a.applied_at,a.next_action,a.next_action_at,a.deadline,a.notes,
+      (SELECT COUNT(*) FROM application_outcome_events e WHERE e.posting_id=p.id AND e.outcome='interview') AS interview_count,
+      (SELECT COUNT(*) FROM application_outcome_events e WHERE e.posting_id=p.id AND e.outcome='offer') AS offer_count
+      FROM applications a INNER JOIN postings_cache p ON p.id=a.posting_id
+      WHERE a.status NOT IN ('new','skipped') ORDER BY a.updated_at DESC`).then(result => {
+        if (cancelled) return;
+        setRows(result.flatMap(row => {
+          try { const data = JSON.parse(row.data) as Record<string, string>;
+            return [{ ...row, company: data.company ?? '', title: data.title ?? '', url: data.url ?? '' }];
+          } catch { return []; }
+        })); setLoading(false);
+      }).catch(() => { if (!cancelled) { setError('Could not load your applications. Please reopen this page.'); setLoading(false); } });
     return () => { cancelled = true; };
-  }, [db, refreshKey]);
-
-  const columnCards = useMemo(() => {
-    const map = new Map<string, PipelineCard[]>();
-    for (const col of PIPELINE_COLUMNS) {
-      map.set(col.status, []);
-    }
-    map.set('skipped', []);
-
-    for (const card of cards) {
-      const list = map.get(card.status);
-      if (list) list.push(card);
-    }
-    return map;
-  }, [cards]);
-
-  const handleDragStart = useCallback(
-    (e: React.DragEvent, cardId: string): void => {
-      e.dataTransfer.setData('text/plain', cardId);
-      e.dataTransfer.effectAllowed = 'move';
-    },
-    [],
-  );
-
-  const handleDragOver = useCallback(
-    (e: React.DragEvent, status: string): void => {
-      e.preventDefault();
-      e.dataTransfer.dropEffect = 'move';
-      setDragOverColumn(status);
-    },
-    [],
-  );
-
-  const handleDragLeave = useCallback((): void => {
-    setDragOverColumn(null);
-  }, []);
-
-  const commitStatusChange = useCallback(
-    (cardId: string, newStatus: PipelineStatus, details: OutcomeDetails = {}): void => {
-      if (transitionInFlight.current) return;
-      transitionInFlight.current = true;
-      setTransitionBusy(true);
-      setTransitionError(null);
-      void transitionApplicationStatus(db, cardId, newStatus, details)
-        .then(() => {
-          setPendingTransition(null);
-          setRefreshKey((key) => key + 1);
-        })
-        .catch((reason: unknown) => setTransitionError(String(reason)))
-        .finally(() => {
-          transitionInFlight.current = false;
-          setTransitionBusy(false);
-        });
-    },
-    [db],
-  );
-
-  const requestStatusChange = useCallback(
-    (card: PipelineCard, newStatus: PipelineStatus): void => {
-      if (card.status === newStatus) return;
-      if (statusNeedsOutcomePrompt(newStatus)) {
-        setPendingTransition({ card, status: newStatus });
-        return;
-      }
-      commitStatusChange(card.id, newStatus);
-    },
-    [commitStatusChange],
-  );
-
-  const handleDrop = useCallback(
-    (e: React.DragEvent, newStatus: PipelineStatus): void => {
-      e.preventDefault();
-      setDragOverColumn(null);
-      const cardId = e.dataTransfer.getData('text/plain');
-      if (!cardId) return;
-
-      const card = cards.find((c) => c.id === cardId);
-      if (card) requestStatusChange(card, newStatus);
-    },
-    [cards, requestStatusChange],
-  );
-
-  const handleStatusChange = useCallback(
-    (cardId: string, newStatus: PipelineStatus): void => {
-      const card = cards.find((c) => c.id === cardId);
-      if (card) requestStatusChange(card, newStatus);
-    },
-    [cards, requestStatusChange],
-  );
-
-  const handleToggleExpand = useCallback(
-    (cardId: string): void => {
-      setExpandedId((prev) => (prev === cardId ? null : cardId));
-      setEditingNotes(null);
-    },
-    [],
-  );
-
-  const handleStartEditNotes = useCallback(
-    (card: PipelineCard): void => {
-      setEditingNotes(card.id);
-      setNotesValue(card.notes ?? '');
-    },
-    [],
-  );
-
-  const handleSaveNotes = useCallback(
-    (cardId: string): void => {
-      const now = new Date().toISOString();
-      db.run(
-        `UPDATE applications SET notes = ?, updated_at = ? WHERE posting_id = ?`,
-        [notesValue || null, now, cardId],
-      );
-      setEditingNotes(null);
-      setRefreshKey((k) => k + 1);
-    },
-    [db, notesValue],
-  );
-
-  const handleCancelNotes = useCallback((): void => {
-    setEditingNotes(null);
-  }, []);
-
-  useEffect(() => {
-    const handler = (e: KeyboardEvent): void => {
-      if (e.key === 'Escape') {
-        setExpandedId(null);
-        setEditingNotes(null);
-      }
-    };
-    document.addEventListener('keydown', handler);
-    return () => document.removeEventListener('keydown', handler);
-  }, []);
-
-  const skippedCards = columnCards.get('skipped') ?? [];
-  const skippedCount = skippedCards.length;
-
-  const totalPipeline = cards.filter((c) => c.status !== 'skipped').length;
-
-  if (totalPipeline === 0) {
-    return (
-      <div>
-        <h1 className="text-xl font-semibold text-gray-950">Applications</h1>
-        <div className="mt-5 rounded-lg border border-gray-200 bg-white px-6 py-16 text-center">
-          <h2 className="text-base font-semibold text-gray-900">Your application tracker starts here.</h2>
-          <p className="mx-auto mt-2 max-w-md text-sm text-gray-500">
-            Save a job or mark it applied, and Nightjar will organize the next steps here.
-          </p>
-          <Link to="/" className="mt-5 inline-flex rounded-md bg-violet-700 px-4 py-2 text-sm font-medium text-white hover:bg-violet-800">
-            Browse jobs
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div>
-      {transitionError && (
-        <div
-          role="alert"
-          className="mb-3 rounded-md border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700 dark:border-nj-ineligible/30 dark:bg-nj-ineligible/5 dark:text-nj-ineligible"
-        >
-          Could not update this application. {transitionError}
-        </div>
-      )}
-
-      {GMAIL_ENABLED && <GmailSuggestionsPanel onStatusChange={() => setRefreshKey((k) => k + 1)} />}
-
-      <div className="flex items-center justify-between mb-4">
-        <div>
-          <h1 className="text-xl font-semibold text-gray-950">Applications</h1>
-          <p className="mt-1 text-sm text-gray-500">Move applications forward as their status changes.</p>
-        </div>
-        {skippedCount > 0 && (
-          <button
-            onClick={() => setShowSkipped(!showSkipped)}
-            className="text-xs text-gray-500 hover:text-gray-700 dark:text-nj-muted dark:hover:text-nj-text"
-          >
-            {showSkipped ? 'Hide' : 'Show'} {skippedCount} skipped
-          </button>
-        )}
-      </div>
-
-      <div className="flex gap-3 overflow-x-auto pb-4">
-        {PIPELINE_COLUMNS.map((col) => {
-          const colCards = columnCards.get(col.status) ?? [];
-          const isDragOver = dragOverColumn === col.status;
-
-          return (
-            <div
-              key={col.status}
-              className={`flex-shrink-0 w-56 rounded-lg border overflow-hidden transition-colors ${
-                isDragOver
-                  ? 'border-nj-accent bg-violet-50/50 dark:border-nj-accent dark:bg-nj-accent/5'
-                  : 'border-gray-200 dark:border-nj-border bg-gray-50 dark:bg-nj-bg'
-              }`}
-              onDragOver={(e) => handleDragOver(e, col.status)}
-              onDragLeave={handleDragLeave}
-              onDrop={(e) => handleDrop(e, col.status)}
-            >
-              <div className={`h-0.5 ${stageColor(col.status)}`} />
-              <div className="px-3 py-2 border-b border-gray-200 dark:border-nj-border">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold text-gray-700 dark:text-nj-text-dim uppercase tracking-wider">
-                    {col.label}
-                  </span>
-                  <span className="text-xs text-gray-400 dark:text-nj-muted tabular-nums">
-                    {colCards.length}
-                  </span>
-                </div>
-              </div>
-
-              <div className="p-2 space-y-2 min-h-[80px] max-h-[calc(100vh-220px)] overflow-y-auto">
-                {colCards.length === 0 && (
-                  <div className="text-xs text-gray-400 dark:text-nj-muted/50 text-center py-4">
-                    Empty
-                  </div>
-                )}
-                {colCards.map((card) => (
-                  <PipelineCardComponent
-                    key={card.id}
-                    card={card}
-                    expanded={expandedId === card.id}
-                    editingNotes={editingNotes === card.id}
-                    notesValue={notesValue}
-                    onDragStart={handleDragStart}
-                    onToggleExpand={handleToggleExpand}
-                    onStatusChange={handleStatusChange}
-                    onStartEditNotes={handleStartEditNotes}
-                    onSaveNotes={handleSaveNotes}
-                    onCancelNotes={handleCancelNotes}
-                    onNotesChange={setNotesValue}
-                  />
-                ))}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {showSkipped && skippedCards.length > 0 && (
-        <div className="mt-4">
-          <h3 className="text-sm font-medium text-gray-500 dark:text-nj-muted mb-2">
-            Skipped ({skippedCards.length})
-          </h3>
-          <div className="grid grid-cols-4 gap-2">
-            {skippedCards.map((card) => (
-              <div
-                key={card.id}
-                className="p-2 rounded-md border border-gray-200 dark:border-nj-border bg-gray-50 dark:bg-nj-bg opacity-60"
-              >
-                <p className="text-xs font-medium text-gray-700 dark:text-nj-text truncate">
-                  {card.title}
-                </p>
-                <p className="text-xs text-gray-500 dark:text-nj-text-dim truncate">
-                  {card.company}
-                </p>
-                <button
-                  onClick={() => handleStatusChange(card.id, 'saved')}
-                  className="mt-1 text-xs text-nj-accent dark:text-nj-accent-bright hover:underline"
-                >
-                  Restore to Saved
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {pendingTransition && (
-        <OutcomeDialog
-          company={pendingTransition.card.company}
-          title={pendingTransition.card.title}
-          status={pendingTransition.status}
-          busy={transitionBusy}
-          onCancel={() => setPendingTransition(null)}
-          onSubmit={(details) => {
-            commitStatusChange(
-              pendingTransition.card.id,
-              pendingTransition.status,
-              details,
-            );
-          }}
-        />
-      )}
+  }, [db, revision]);
+  const filtered = useMemo(() => rows.filter(row => {
+    if (view === 'saved' && row.status !== 'saved') return false;
+    if (view === 'progress' && ['saved','rejected','ghosted'].includes(row.status)) return false;
+    if (view === 'archived' && !['rejected','ghosted'].includes(row.status)) return false;
+    return `${row.company} ${row.title}`.toLowerCase().includes(search.toLowerCase());
+  }).sort((a,b) => sort === 'company' ? a.company.localeCompare(b.company)
+    : sort === 'due' ? (a.next_action_at || a.deadline || '9999').localeCompare(b.next_action_at || b.deadline || '9999') : 0), [rows, view, search, sort]);
+  const update = useCallback(async (id: string, field: 'notes' | 'applied_at' | 'next_action' | 'next_action_at' | 'deadline', value: string): Promise<void> => {
+    try {
+      await db.run(`UPDATE applications SET ${field}=?, updated_at=? WHERE posting_id=?`, [value || null, new Date().toISOString(), id]);
+      setRevision(n => n + 1);
+    } catch { toast('Could not save your change. Please try again.', 'error'); }
+  }, [db, toast]);
+  const commit = async (row: Row, status: PipelineStatus, details: OutcomeDetails = {}): Promise<void> => {
+    if (busy) return;
+    setBusy(true); setError(null);
+    try { await transitionApplicationStatus(db, row.id, status, details); setPending(null); refresh(); }
+    catch { setError('Could not change the stage. Please try again.'); }
+    finally { setBusy(false); }
+  };
+  const changeStage = (row: Row, status: PipelineStatus): void => {
+    if (row.status === status) return;
+    if (statusNeedsOutcomePrompt(status)) setPending({ row, status });
+    else void commit(row, status);
+  };
+  return <div className="tracker-page">
+    <div className="tracker-top"><div className="page-heading"><p className="eyebrow">ONE PLACE FOR YOUR NEXT STEPS</p><h1>Your applications<span className="accent-dot">.</span></h1><p>From a possibility to an offer. Keep it all here.</p></div>
+      <button className="button-secondary" onClick={() => setAdding(!adding)} aria-label={adding ? 'Close new application' : 'Add application'} aria-expanded={adding}><Icon name={adding ? 'close' : 'plus'} size={15} /><span className="hidden sm:inline">Add application</span></button></div>
+    {error && <p role="alert" className="connection-notice">{error}</p>}
+    {adding && <ManualApplication onDone={() => { setAdding(false); refresh(); }} />}
+    <div className="tracker-stats" aria-label="Application milestones">
+      <div><strong>{rows.filter(r => r.applied_at).length}</strong><span>Applied</span></div>
+      <div><strong>{rows.filter(r => r.interview_count > 0 || ['phone','onsite'].includes(r.status)).length}</strong><span>Interviews</span></div>
+      <div><strong>{rows.filter(r => r.offer_count > 0 || r.status === 'offer').length}</strong><span>Offers</span></div>
     </div>
-  );
+    <div className="tracker-toolbar"><div className="segmented" aria-label="Application views">
+      {([{ value: 'all', label: 'All' }, { value: 'saved', label: 'Saved' }, { value: 'progress', label: 'In progress' }, { value: 'archived', label: 'Archived' }] as const).map(item =>
+        <button key={item.value} aria-pressed={view === item.value} onClick={() => setView(item.value)}>{item.label}</button>)}
+    </div><div className="flex items-center gap-4"><input className="tracker-search" aria-label="Search applications" placeholder="Find an application…" value={search} onChange={e => setSearch(e.target.value)} />
+      <button className="icon-button" aria-label="Export applications as CSV" onClick={() => {
+        void exportApplicationsCSV(db).then(csv => saveFile({ content: csv, defaultName: 'nightjar-applications.csv', filters: [{ name: 'CSV', extensions: ['csv'] }] })).catch(() => toast('Could not export applications.', 'error'));
+      }}><Icon name="download" size={17} /></button></div></div>
+    {loading ? <div className="skeleton-block" role="status" aria-label="Loading applications" /> : filtered.length === 0 ?
+      <div className="tracker-empty"><Icon name="tracker" size={30} /><h2>{rows.length ? 'A little too narrow.' : 'Your next chapter starts with a save.'}</h2>
+        <p>{rows.length ? 'Try a different view or search.' : 'Save a role in Jobs, or add an application you already started.'}</p>
+        <Link className="button-primary" to="/jobs">Explore jobs <Icon name="arrow" size={16} /></Link></div> :
+      <div className="tracker-table-wrap"><table className="tracker-table"><thead><tr>
+        <th style={{ width: '32%' }} aria-sort={sort === 'company' ? 'ascending' : 'none'}><button onClick={() => setSort(sort === 'company' ? 'recent' : 'company')}>Company / role {sort === 'company' ? '↑' : ''}</button></th>
+        <th style={{ width: '17%' }}>Stage</th><th style={{ width: '15%' }}>Applied</th><th style={{ width: '21%' }}>Next step</th>
+        <th style={{ width: '15%' }} aria-sort={sort === 'due' ? 'ascending' : 'none'}><button onClick={() => setSort(sort === 'due' ? 'recent' : 'due')}>Due {sort === 'due' ? '↑' : ''}</button></th>
+      </tr></thead><tbody>{filtered.map(row => <Fragment key={row.id}>
+        <tr><td><button className="tracker-title" aria-expanded={expanded === row.id} onClick={() => setExpanded(expanded === row.id ? null : row.id)}><strong>{row.company}{row.closed_at && <small className="closed-label">Posting closed</small>}</strong><span>{row.title}</span></button></td>
+          <td><select aria-label={`Stage for ${row.company}`} value={row.status} disabled={busy} onChange={e => changeStage(row, e.target.value as PipelineStatus)}>{stages.map(stage => <option key={stage.value} value={stage.value}>{stage.label}</option>)}</select></td>
+          <td><DateCell label={`Applied date for ${row.company}`} value={row.applied_at} onSave={value => void update(row.id, 'applied_at', value)} /></td>
+          <td><EditableCell label={`Next step for ${row.company}`} value={row.next_action} placeholder="Add next step" onSave={value => void update(row.id, 'next_action', value)} /></td>
+          <td><DateCell label={`Due date for ${row.company}`} value={row.next_action_at || row.deadline} onSave={value => void update(row.id, row.next_action_at || !row.deadline ? 'next_action_at' : 'deadline', value)} /></td>
+        </tr>
+        {expanded === row.id && <tr><td colSpan={5} className="notes-cell">
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-4"><div><strong>{row.title}</strong><p className="muted text-xs mt-1">{row.company}{row.closed_at ? ' · Public posting closed; your application stays here.' : ''}</p></div>
+            <button className="button-secondary" onClick={() => { void openExternal(row.url); }}>Open posting <Icon name="external" size={14} /></button></div>
+          <div className="mobile-tracker-fields"><label>Applied<DateCell label={`Edit applied date for ${row.company}`} value={row.applied_at} onSave={v => void update(row.id,'applied_at',v)} /></label>
+            <label>Next step<EditableCell label={`Edit next step for ${row.company}`} value={row.next_action} placeholder="Add next step" onSave={v => void update(row.id,'next_action',v)} /></label>
+            <label>Due<DateCell label={`Edit due date for ${row.company}`} value={row.next_action_at || row.deadline} onSave={v => void update(row.id,row.next_action_at || !row.deadline ? 'next_action_at' : 'deadline',v)} /></label></div>
+          <label className="text-xs muted">Notes<Notes key={`${row.id}-${row.notes}`} value={row.notes} onSave={value => void update(row.id, 'notes', value)} /></label>
+        </td></tr>}
+      </Fragment>)}</tbody></table></div>}
+    <p className="home-note">Saved on this device. Export a copy whenever you need it.</p>
+    {pending && <OutcomeDialog company={pending.row.company} title={pending.row.title} status={pending.status} busy={busy}
+      onCancel={() => setPending(null)} onSubmit={details => { void commit(pending.row, pending.status, details); }} />}
+  </div>;
 }
-
-interface PipelineCardProps {
-  card: PipelineCard;
-  expanded: boolean;
-  editingNotes: boolean;
-  notesValue: string;
-  onDragStart: (e: React.DragEvent, id: string) => void;
-  onToggleExpand: (id: string) => void;
-  onStatusChange: (id: string, status: PipelineStatus) => void;
-  onStartEditNotes: (card: PipelineCard) => void;
-  onSaveNotes: (id: string) => void;
-  onCancelNotes: () => void;
-  onNotesChange: (value: string) => void;
+function EditableCell({ label, value, placeholder, onSave }: { label: string; value: string | null; placeholder: string; onSave: (value: string) => void }): React.ReactNode {
+  const [draft, setDraft] = useState(value ?? '');
+  useEffect(() => setDraft(value ?? ''), [value]);
+  return <input aria-label={label} value={draft} placeholder={placeholder} onChange={e => setDraft(e.target.value)} onBlur={() => { if (draft !== (value ?? '')) onSave(draft); }} onKeyDown={e => { if (e.key === 'Enter') e.currentTarget.blur(); if (e.key === 'Escape') setDraft(value ?? ''); }} />;
 }
-
-function PipelineCardComponent({
-  card,
-  expanded,
-  editingNotes,
-  notesValue,
-  onDragStart,
-  onToggleExpand,
-  onStatusChange,
-  onStartEditNotes,
-  onSaveNotes,
-  onCancelNotes,
-  onNotesChange,
-}: PipelineCardProps): React.ReactNode {
-  const days = daysInStatus(card.app_updated_at);
-  const isApplied = card.status === 'applied';
-  const nearGhost = isApplied && days >= GHOST_WARNING_DAYS;
-  const ghostUrgent = isApplied && days >= 40;
-
-  let eligVerdict = 'unclear';
-  try {
-    const parsed = JSON.parse(card.eligibility ?? '{}') as { verdict?: string };
-    eligVerdict = parsed.verdict ?? 'unclear';
-  } catch { /* keep default */ }
-
-  return (
-    <div
-      draggable
-      onDragStart={(e) => onDragStart(e, card.id)}
-      className={`rounded-md border cursor-grab active:cursor-grabbing transition-colors ${
-        nearGhost
-          ? ghostUrgent
-            ? 'border-red-300 bg-red-50 dark:border-nj-ineligible/30 dark:bg-nj-ineligible/5'
-            : 'border-amber-300 bg-amber-50 dark:border-nj-unclear/30 dark:bg-nj-unclear/5'
-          : 'border-gray-200 bg-white dark:border-nj-border dark:bg-nj-surface'
-      }`}
-    >
-      <div
-        className="p-2"
-        onClick={() => onToggleExpand(card.id)}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onToggleExpand(card.id); }}
-      >
-        <p className="text-xs font-medium text-gray-900 dark:text-nj-text leading-tight truncate" title={card.title}>
-          {card.title || '—'}
-        </p>
-        <p className="text-xs text-gray-500 dark:text-nj-text-dim truncate mt-0.5">
-          {card.company || '—'}
-        </p>
-        <div className="flex items-center justify-between mt-1.5">
-          <span className="text-[10px] text-gray-400 dark:text-nj-muted">
-            {card.applied_at ? formatDate(card.applied_at) : formatDate(card.app_updated_at)}
-          </span>
-          <span
-            className={`text-[10px] ${
-              ghostUrgent
-                ? 'text-red-600 dark:text-nj-ineligible font-medium'
-                : nearGhost
-                  ? 'text-amber-600 dark:text-nj-unclear'
-                  : 'text-gray-400 dark:text-nj-muted'
-            }`}
-          >
-            {days}d
-          </span>
-        </div>
-        {nearGhost && (
-          <p className="text-[10px] mt-1 text-amber-600 dark:text-nj-unclear">
-            {ghostUrgent ? 'Auto-ghost in ' + String(45 - days) + 'd' : 'No response in ' + String(days) + 'd'}
-          </p>
-        )}
-      </div>
-
-      {expanded && (
-        <div className="border-t border-gray-100 dark:border-nj-border p-2 space-y-2">
-          <div className="space-y-1">
-            <div className="flex items-center gap-1.5">
-              <span className="text-[10px] text-gray-500 dark:text-nj-text-dim">
-                {card.location || 'Remote'}
-              </span>
-              {card.category && (
-                <>
-                  <span className="text-[10px] text-gray-300 dark:text-nj-muted">&middot;</span>
-                  <span className="text-[10px] text-indigo-600 dark:text-nj-accent-bright">
-                    {card.category.toUpperCase()}
-                  </span>
-                </>
-              )}
-              <span className="text-[10px] text-gray-300 dark:text-nj-muted">&middot;</span>
-              <span
-                className={`text-[10px] ${
-                  eligVerdict === 'eligible'
-                    ? 'text-green-600 dark:text-nj-eligible'
-                    : eligVerdict === 'ineligible'
-                      ? 'text-red-600 dark:text-nj-ineligible'
-                      : 'text-yellow-600 dark:text-nj-unclear'
-                }`}
-              >
-                {eligVerdict}
-              </span>
-            </div>
-
-            <a
-              href={card.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[10px] text-nj-accent dark:text-nj-accent-bright hover:underline break-all"
-              onClick={(e) => e.stopPropagation()}
-            >
-              Open posting
-            </a>
-          </div>
-
-          {/* Notes */}
-          <div>
-            {editingNotes ? (
-              <div className="space-y-1" onClick={(e) => e.stopPropagation()}>
-                <textarea
-                  value={notesValue}
-                  onChange={(e) => onNotesChange(e.target.value)}
-                  rows={3}
-                  className="w-full text-xs p-1.5 border border-gray-200 dark:border-nj-border-bright rounded bg-white dark:bg-nj-surface-2 text-gray-900 dark:text-nj-text resize-none focus:outline-none focus:ring-1 focus:ring-nj-accent"
-                  placeholder="Add notes..."
-                  autoFocus
-                />
-                <div className="flex gap-1">
-                  <button
-                    onClick={() => onSaveNotes(card.id)}
-                    className="text-[10px] px-1.5 py-0.5 bg-nj-accent text-white rounded hover:bg-nj-accent-dim"
-                  >
-                    Save
-                  </button>
-                  <button
-                    onClick={onCancelNotes}
-                    className="text-[10px] px-1.5 py-0.5 text-gray-500 hover:text-gray-700 dark:text-nj-text-dim dark:hover:text-nj-text"
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            ) : (
-              <div onClick={(e) => e.stopPropagation()}>
-                {card.notes ? (
-                  <div>
-                    <p className="text-[10px] text-gray-600 dark:text-nj-text-dim whitespace-pre-wrap">
-                      {card.notes}
-                    </p>
-                    <button
-                      onClick={() => onStartEditNotes(card)}
-                      className="text-[10px] text-nj-accent dark:text-nj-accent-bright hover:underline mt-0.5"
-                    >
-                      Edit notes
-                    </button>
-                  </div>
-                ) : (
-                  <button
-                    onClick={() => onStartEditNotes(card)}
-                    className="text-[10px] text-gray-400 hover:text-gray-600 dark:text-nj-muted dark:hover:text-nj-text"
-                  >
-                    + Add notes
-                  </button>
-                )}
-              </div>
-            )}
-          </div>
-
-          {card.outcome && (
-            <div className="rounded bg-gray-50 px-2 py-1.5 text-[10px] text-gray-600 dark:bg-nj-surface-2 dark:text-nj-text-dim">
-              <div className="flex items-center justify-between gap-2">
-                <span className="font-medium capitalize">{card.outcome}</span>
-                {card.outcome_at && <span>{formatDate(card.outcome_at)}</span>}
-              </div>
-              {card.interview_rounds > 0 && (
-                <p className="mt-0.5">
-                  {card.interview_rounds} interview round{card.interview_rounds === 1 ? '' : 's'}
-                </p>
-              )}
-              {card.outcome_notes && (
-                <p className="mt-0.5 whitespace-pre-wrap">{card.outcome_notes}</p>
-              )}
-            </div>
-          )}
-
-          {/* Quick status change */}
-          <div className="pt-1 border-t border-gray-100 dark:border-nj-border">
-            <p className="text-[10px] text-gray-400 dark:text-nj-muted mb-1">Move to:</p>
-            <div className="flex flex-wrap gap-1">
-              {PIPELINE_COLUMNS.filter((c) => c.status !== card.status).map((col) => (
-                <button
-                  key={col.status}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onStatusChange(card.id, col.status);
-                  }}
-                  className="text-[10px] px-1.5 py-0.5 rounded border border-gray-200 dark:border-nj-border text-gray-600 dark:text-nj-text-dim hover:bg-gray-100 dark:hover:bg-nj-surface-2"
-                >
-                  {col.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
+function DateCell({ label, value, onSave }: { label: string; value: string | null; onSave: (value: string) => void }): React.ReactNode {
+  return <input type="date" aria-label={label} value={value?.slice(0, 10) ?? ''} onChange={e => onSave(e.target.value)} />;
+}
+function Notes({ value, onSave }: { value: string | null; onSave: (value: string) => void }): React.ReactNode {
+  const [draft, setDraft] = useState(value ?? '');
+  return <div><textarea className="mt-2" aria-label="Application notes" value={draft} onChange={e => setDraft(e.target.value)} placeholder="People you spoke with, questions to ask, things to remember…" />
+    <button className="button-secondary mt-2" disabled={draft === (value ?? '')} onClick={() => onSave(draft)}>Save notes</button></div>;
+}
+function ManualApplication({ onDone }: { onDone: () => void }): React.ReactNode {
+  const { db } = useDatabase(); const { toast } = useToast(); const [busy, setBusy] = useState(false);
+  return <form className="manual-application" onSubmit={e => {
+    e.preventDefault(); if (busy) return;
+    const form = new FormData(e.currentTarget); const company = String(form.get('company')).trim(); const title = String(form.get('title')).trim(); const url = String(form.get('url')).trim();
+    if (!company || !title) return;
+    try { if (!['https:', 'http:'].includes(new URL(url).protocol)) throw new Error(); } catch { toast('Enter a valid company job URL.', 'error'); return; }
+    const id = `local-${crypto.randomUUID()}`; const now = new Date().toISOString();
+    const data = JSON.stringify({ id, company, title, url, source: 'manual', company_slug: '', location: '', locations: [], first_seen_at: now, closed_at: null });
+    setBusy(true);
+    void db.batch([{ sql: 'INSERT INTO postings_cache (id,data,first_seen_at,synced_at) VALUES (?,?,?,?)', params: [id,data,now,now] },
+      { sql: "INSERT INTO applications (posting_id,status,created_at,updated_at) VALUES (?,'saved',?,?)", params: [id,now,now] }])
+      .then(onDone).catch(() => toast('Could not add the application. Please try again.', 'error')).finally(() => setBusy(false));
+  }}><label>Company<input name="company" required autoFocus placeholder="Company name" /></label><label>Role<input name="title" required placeholder="Position title" /></label><label>Job URL<input name="url" required type="url" placeholder="https://…" /></label><button className="button-primary" disabled={busy}>Add to tracker</button></form>;
 }

@@ -12,6 +12,7 @@ describe('clearAllLocalData', () => {
   });
 
   it('clears both database records and Nightjar-owned browser storage', async () => {
+    await db.exec('PRAGMA foreign_keys=ON');
     await db.run(
       `INSERT INTO postings_cache (id, data, synced_at) VALUES ('p1', '{}', '2026-09-04T00:00:00Z')`,
     );
@@ -20,12 +21,14 @@ describe('clearAllLocalData', () => {
        VALUES ('p1', 'saved', '2026-09-04T00:00:00Z', '2026-09-04T00:00:00Z')`,
     );
     localStorage.setItem('nightjar_profile', '{}');
+    await db.run("INSERT INTO job_details_cache VALUES ('p1','context','{}','null')");
     sessionStorage.setItem('gmail_code_verifier', 'secret');
     localStorage.setItem('unrelated_app_key', 'keep');
 
     await clearAllLocalData(db);
 
     expect(await db.query<{ id: string }>('SELECT id FROM postings_cache')).toEqual([]);
+    expect(await db.query('SELECT * FROM job_details_cache')).toEqual([]);
     expect(await db.query<{ posting_id: string }>('SELECT posting_id FROM applications')).toEqual([]);
     expect(localStorage.getItem('nightjar_profile')).toBeNull();
     expect(sessionStorage.getItem('gmail_code_verifier')).toBeNull();

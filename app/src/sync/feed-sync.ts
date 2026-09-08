@@ -719,6 +719,8 @@ export async function upsertPostings(db: Database, feed: FeedData): Promise<Sync
     }
 
     for (const existingId of existingIds) {
+      // Locally entered tracker records are not governed by the public feed.
+      if (existingId.startsWith('local-')) continue;
       if (!feedPostingIds.has(existingId)) {
         await transaction.run(
           'UPDATE postings_cache SET closed_at = COALESCE(closed_at, ?) WHERE id = ?',

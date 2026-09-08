@@ -27,16 +27,25 @@ export function OutcomeDialog({
   const [notes, setNotes] = useState('');
   const [rounds, setRounds] = useState('');
   const notesRef = useRef<HTMLTextAreaElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
   const label = outcomeLabel(status);
   const titleId = 'outcome-dialog-title';
 
   useEffect(() => {
+    const previousFocus = document.activeElement as HTMLElement | null;
     notesRef.current?.focus();
     const handleKeyDown = (event: KeyboardEvent): void => {
       if (event.key === 'Escape' && !busy) onCancel();
+      if (event.key === 'Tab') {
+        const controls = dialogRef.current?.querySelectorAll<HTMLElement>('button:not(:disabled), input:not(:disabled), textarea:not(:disabled)');
+        const first = controls?.[0];
+        const last = controls?.[controls.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+      }
     };
     document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    return () => { document.removeEventListener('keydown', handleKeyDown); previousFocus?.focus({ preventScroll: true }); };
   }, [busy, onCancel]);
 
   const submitDetails = (): void => {
@@ -49,6 +58,7 @@ export function OutcomeDialog({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
       <div
+        ref={dialogRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}

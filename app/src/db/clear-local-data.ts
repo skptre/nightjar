@@ -1,6 +1,7 @@
 import type { Database } from './types';
 
 const TABLES_IN_DELETE_ORDER = [
+  'job_details_cache',
   'gmail_suggestions',
   'application_outcome_events',
   'recalibration_suggestion_actions',

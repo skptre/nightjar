@@ -25,7 +25,7 @@ export function ToastProvider({ children }: { children: ReactNode }): ReactNode 
 
   const addToast = useCallback((message: string, variant: ToastItem['variant'] = 'success') => {
     const id = nextId++;
-    setToasts((prev) => [...prev, { id, message, variant }]);
+    setToasts([{ id, message, variant }]);
   }, []);
 
   const removeToast = useCallback((id: number) => {
@@ -35,7 +35,7 @@ export function ToastProvider({ children }: { children: ReactNode }): ReactNode 
   return (
     <ToastContext.Provider value={{ toast: addToast }}>
       {children}
-      <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-2" aria-live="polite">
+      <div className="toast-container" aria-live="polite">
         {toasts.map((t) => (
           <ToastNotification key={t.id} item={t} onDismiss={removeToast} />
         ))}
@@ -57,9 +57,9 @@ function ToastNotification({
   }, [item.id, onDismiss]);
 
   const variantStyles: Record<ToastItem['variant'], string> = {
-    success: 'bg-emerald-600 dark:bg-emerald-700',
-    error: 'bg-red-600 dark:bg-red-700',
-    info: 'bg-gray-700 dark:bg-nj-surface-2 dark:border dark:border-nj-border-bright',
+    success: 'toast-neutral',
+    error: 'toast-error',
+    info: 'toast-neutral',
   };
 
   const iconPath: Record<ToastItem['variant'], string> = {
@@ -70,7 +70,7 @@ function ToastNotification({
 
   return (
     <div
-      className={`flex items-center gap-2 px-4 py-2.5 rounded-lg shadow-lg text-white text-sm ${variantStyles[item.variant]}`}
+      className={`flex items-center gap-2 px-4 py-2.5 rounded-lg shadow-lg text-sm ${variantStyles[item.variant]}`}
       role="status"
     >
       <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

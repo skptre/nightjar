@@ -2,7 +2,8 @@ import type { Database } from '@/db/database';
 import type { Profile } from '@/profile/types';
 import { DEFAULT_SYNC_INTERVAL_MS } from '@/profile/types';
 import { syncFeed, getLastSyncedAt, type SyncResult } from './feed-sync';
-import { fireNewPostingNotifications, requestNotificationPermission } from './notifications';
+import { notifyWatchedJobs } from './watch-alerts';
+import { recomputeGuestCategories } from '@/classify/guest-classification';
 import { recomputePendingCategoryTaxonomy } from '@/classify/recompute';
 import { refreshJobDetails } from '@/details/cache';
 import { runAutoGhost } from '@/views/Pipeline/auto-ghost';
@@ -36,7 +37,6 @@ export class SyncManager {
   };
   private visibilityHandler: (() => void) | null = null;
   private onlineHandler: (() => void) | null = null;
-  private permissionRequested = false;
   private syncIntervalMs: number = DEFAULT_SYNC_INTERVAL_MS;
 
   constructor(db: Database) {
@@ -137,13 +137,10 @@ export class SyncManager {
       if (!result.skipped && this.profile) {
         await recomputePendingCategoryTaxonomy(this.db, this.profile);
       }
+      if (!this.profile) await recomputeGuestCategories(this.db);
 
       if (!result.skipped && result.newPostingIds.length > 0) {
-        if (!this.permissionRequested) {
-          await requestNotificationPermission();
-          this.permissionRequested = true;
-        }
-        await fireNewPostingNotifications(this.db, result.newPostingIds);
+        await notifyWatchedJobs(this.db, result.newPostingIds);
       }
 
       const updatedCount = result.skipped

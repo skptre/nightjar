@@ -1,3 +1,4 @@
+import { Brand, Icon } from '@/components/Icon';
 import { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
 import type { Profile } from '@/profile/types';
 import { clearProfile, loadProfile, saveProfile } from '@/profile/profile-store';
@@ -64,13 +65,11 @@ export function ProfileProvider({ children }: { children: ReactNode }): ReactNod
   const browseWithoutProfile = useCallback((): void => {
     localStorage.setItem(ONBOARDING_DISMISSED_KEY, 'true');
     setSetupDismissed(true);
+    window.history.replaceState(null, '', '/jobs');
+    window.dispatchEvent(new PopStateEvent('popstate'));
   }, []);
 
   const beginProfileSetup = useCallback((): void => {
-    clearProfile();
-    localStorage.removeItem(ONBOARDING_DISMISSED_KEY);
-    setProfile(null);
-    setSetupDismissed(false);
     setShowSetup(true);
   }, []);
 
@@ -82,15 +81,10 @@ export function ProfileProvider({ children }: { children: ReactNode }): ReactNod
     setShowSetup(false);
   }, []);
 
+  if (showSetup) {
+    return <ProfileSetup initialProfile={profile} onComplete={handleSetupComplete} onBack={() => setShowSetup(false)} />;
+  }
   if (!profile && !setupDismissed) {
-    if (showSetup) {
-      return (
-        <ProfileSetup
-          onComplete={handleSetupComplete}
-          onBack={() => setShowSetup(false)}
-        />
-      );
-    }
     return (
       <WelcomeScreen
         onBrowse={browseWithoutProfile}
@@ -113,34 +107,16 @@ function WelcomeScreen({
   onBrowse: () => void;
   onPersonalize: () => void;
 }): ReactNode {
-  return (
-    <main className="min-h-screen bg-gray-50 px-4 flex items-center justify-center">
-      <section className="w-full max-w-xl rounded-xl border border-gray-200 bg-white p-8 shadow-sm">
-        <p className="text-sm font-semibold tracking-wide text-violet-700">NIGHTJAR</p>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-gray-950">
-          Find internships without the noise.
-        </h1>
-        <p className="mt-3 max-w-md text-gray-600">
-          Browse current postings immediately, or answer a few optional questions to narrow the list.
-        </p>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <button
-            type="button"
-            onClick={onBrowse}
-            className="rounded-md bg-violet-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-violet-800"
-          >
-            Browse jobs
-          </button>
-          <button
-            type="button"
-            onClick={onPersonalize}
-            className="rounded-md border border-gray-300 px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50"
-          >
-            Personalize results
-          </button>
-        </div>
-        <p className="mt-4 text-xs text-gray-500">No account required. Your preferences stay on this device.</p>
-      </section>
-    </main>
-  );
+  return <main className="welcome-page"><Brand />
+    <div className="welcome-body"><section className="welcome-copy"><div className="eyebrow">A LITTLE LESS NOISE. A LOT MORE POSSIBILITY.</div>
+      <h1>Your next chapter.<br />A clearer start<span className="accent-dot">.</span></h1>
+      <p>Find the work that interests you. Keep your applications together. Make your next move with a little more clarity.</p>
+      <div className="welcome-actions"><button className="button-primary" onClick={onBrowse}>Browse jobs <Icon name="arrow" size={16} /></button><button className="button-secondary" onClick={onPersonalize}>Personalize results</button></div>
+      <p className="!text-xs !mt-5">No account required. Start exploring in one click.</p>
+    </section><section className="welcome-preview" aria-label="How Nightjar works"><div className="section-label"><span>Your next move</span><Icon name="jobs" size={16} /></div>
+      <div className="welcome-step"><span>01</span><div><h2>Find your kind of work.</h2><p>Explore roles across fields. Read the details that matter.</p></div></div>
+      <div className="welcome-step"><span>02</span><div><h2>Keep the good ones close.</h2><p>Save opportunities. Follow companies you care about.</p></div></div>
+      <div className="welcome-step"><span>03</span><div><h2>Make space for what’s next.</h2><p>Applications, dates and notes. All in one familiar place.</p></div></div>
+    </section></div><footer className="welcome-footer"><span>Built for the beginning of something.</span><span>Your tracker stays in this browser or device.</span></footer>
+  </main>;
 }

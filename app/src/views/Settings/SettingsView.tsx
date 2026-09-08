@@ -1,3 +1,7 @@
+import { applyAppearance, setTheme, useAppearance, type Theme } from '@/hooks/useAppearance';
+import { Icon } from '@/components/Icon';
+import { requestNotificationPermission } from '@/sync/notifications';
+import { useWatchlist } from '@/hooks/useWatchlist';
 import { useState, useEffect, useCallback, type ReactNode } from 'react';
 import { useProfile } from '@/providers/ProfileProvider';
 import { useDatabase } from '@/providers/DatabaseProvider';
@@ -8,8 +12,6 @@ import {
   DEGREE_TYPE_OPTIONS,
   type DegreeType,
   CATEGORY_GROUPS,
-  SYNC_INTERVAL_OPTIONS,
-  DEFAULT_SYNC_INTERVAL_MS,
   computeGradWindow,
   inferRequiresSponsorship,
 } from '@/profile/types';
@@ -25,10 +27,11 @@ import { clearAllLocalData } from '@/db/clear-local-data';
 
 export function SettingsView(): ReactNode {
   return (
-    <div className="max-w-2xl mx-auto space-y-8 pb-12">
-      <h1 className="text-xl font-semibold text-gray-900 dark:text-nj-text">Settings</h1>
+    <div className="settings-page space-y-8 pb-12">
+      <div className="page-heading"><p className="eyebrow">MAKE YOURSELF AT HOME</p><h1>Settings<span className="accent-dot">.</span></h1><p>Your workspace, the way you like it.</p></div>
       <GeneralSection />
-      <SyncSection />
+      <AppearanceSection />
+      <AlertsSection />
       <ProfileSection />
       {GMAIL_ENABLED && isTauri() && <GmailSection />}
       <DataSection />
@@ -107,97 +110,37 @@ function AutoLaunchRow(): ReactNode {
 
 /* ── Sync ───────────────────────────────────────────── */
 
-function SyncSection(): ReactNode {
-  const { profile, updateProfile } = useProfile();
-  const { toast } = useToast();
-  const [showFeedUrl, setShowFeedUrl] = useState(false);
-  const [feedUrl, setFeedUrl] = useState(() =>
-    localStorage.getItem('nightjar_feed_url_override') ?? '',
-  );
-
-  const currentInterval = profile?.sync_interval_ms ?? DEFAULT_SYNC_INTERVAL_MS;
-
-  const handleIntervalChange = useCallback(
-    (e: React.ChangeEvent<HTMLSelectElement>) => {
-      const ms = Number(e.target.value);
-      updateProfile({ sync_interval_ms: ms });
-      toast('Sync interval updated');
-    },
-    [updateProfile, toast],
-  );
-
-  const handleFeedUrlSave = useCallback(() => {
-    const trimmed = feedUrl.trim();
-    if (trimmed) {
-      localStorage.setItem('nightjar_feed_url_override', trimmed);
-    } else {
-      localStorage.removeItem('nightjar_feed_url_override');
-    }
-    toast('Feed URL saved');
-  }, [feedUrl, toast]);
-
-  return (
-    <Section title="Sync">
-      <label className="flex items-center justify-between">
-        <div>
-          <p className="text-sm font-medium text-gray-900 dark:text-nj-text">Sync interval</p>
-          <p className="text-xs text-gray-500 dark:text-nj-muted">
-            How often Nightjar checks for new postings
-          </p>
-        </div>
-        <select
-          value={currentInterval}
-          onChange={handleIntervalChange}
-          className="rounded-md border border-gray-300 dark:border-nj-border bg-white dark:bg-nj-bg text-sm text-gray-900 dark:text-nj-text px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-nj-accent"
-        >
-          {SYNC_INTERVAL_OPTIONS.map((opt) => (
-            <option key={opt.value} value={opt.value}>
-              {opt.label}
-            </option>
-          ))}
-        </select>
-      </label>
-
-      <div className="border-t border-gray-100 dark:border-nj-border pt-4">
-        <button
-          type="button"
-          onClick={() => setShowFeedUrl((p) => !p)}
-          className="text-xs text-gray-400 dark:text-nj-muted hover:text-gray-600 dark:hover:text-nj-text transition-colors"
-        >
-          {showFeedUrl ? 'Hide' : 'Show'} advanced
-        </button>
-        {showFeedUrl && (
-          <div className="mt-3 space-y-2">
-            <label className="block text-sm font-medium text-gray-700 dark:text-nj-text-dim">
-              Feed URL override
-            </label>
-            <div className="flex gap-2">
-              <input
-                type="url"
-                value={feedUrl}
-                onChange={(e) => setFeedUrl(e.target.value)}
-                placeholder="https://raw.githubusercontent.com/..."
-                className="flex-1 rounded-md border border-gray-300 dark:border-nj-border bg-white dark:bg-nj-bg text-sm text-gray-900 dark:text-nj-text px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-nj-accent"
-              />
-              <button
-                type="button"
-                onClick={handleFeedUrlSave}
-                className="rounded-md bg-nj-accent px-3 py-1.5 text-sm font-medium text-white hover:bg-nj-accent-bright transition-colors"
-              >
-                Save
-              </button>
-            </div>
-            <p className="text-xs text-gray-400 dark:text-nj-muted">
-              Point to a different feed source. Leave empty to use default. Requires app restart.
-            </p>
-          </div>
-        )}
-      </div>
-    </Section>
-  );
+function AppearanceSection(): ReactNode {
+  const theme = useAppearance();
+  const [density, setDensity] = useState(() => localStorage.getItem('nightjar_density') ?? 'comfortable');
+  return <Section title="Appearance">
+    <div className="appearance-row"><div><p className="text-sm">Theme</p><p className="home-note !mt-1">A comfortable view, day or night.</p></div>
+      <div className="segmented" aria-label="Theme">{(['dark','light','system'] as Theme[]).map(value => <button key={value} aria-pressed={theme === value} onClick={() => setTheme(value)}><span className="flex items-center gap-2"><Icon name={value === 'dark' ? 'moon' : value === 'light' ? 'sun' : 'settings'} size={14} />{value[0]!.toUpperCase() + value.slice(1)}</span></button>)}</div>
+    </div>
+    <div className="appearance-row"><div><p className="text-sm">Tracker rows</p><p className="home-note !mt-1">Choose how much room your applications have.</p></div>
+      <div className="segmented" aria-label="Tracker density">{['comfortable','compact'].map(value => <button key={value} aria-pressed={density === value} onClick={() => { localStorage.setItem('nightjar_density',value); setDensity(value); applyAppearance(); }}>{value[0]!.toUpperCase() + value.slice(1)}</button>)}</div>
+    </div>
+  </Section>;
 }
 
-/* ── Profile ────────────────────────────────────────── */
+function AlertsSection(): ReactNode {
+  const watched = useWatchlist();
+  const { toast } = useToast();
+  const [enabled, setEnabled] = useState(() => localStorage.getItem('nightjar_watch_alerts') === 'true');
+  const [busy, setBusy] = useState(false);
+  return <Section title="Alerts"><div className="appearance-row"><div><p className="text-sm">Watched companies</p>
+    <p className="home-note !mt-1">One bundled heads-up when new roles arrive while Nightjar is open in the background.</p>
+    <p className="home-note !mt-1">{watched.length} companies followed. Updates also stay on Home.</p></div>
+    <button className="button-secondary" disabled={busy || (!enabled && watched.length === 0)} onClick={() => {
+      if (enabled) { localStorage.setItem('nightjar_watch_alerts', 'false'); setEnabled(false); return; }
+      setBusy(true);
+      void requestNotificationPermission().then(permission => {
+        if (permission === 'granted') { localStorage.setItem('nightjar_watch_alerts', 'true'); setEnabled(true); }
+        else toast('Alerts are not enabled. You can allow notifications in your browser or device settings.', 'info');
+      }).catch(() => toast('Notifications are unavailable here. Your updates still appear on Home.', 'info')).finally(() => setBusy(false));
+    }}>{busy ? 'Setting up…' : enabled ? 'Turn off alerts' : 'Set up alerts'}</button>
+  </div></Section>;
+}
 
 function ProfileSection(): ReactNode {
   const { profile, updateProfile, beginProfileSetup } = useProfile();
@@ -350,12 +293,12 @@ function ProfileSection(): ReactNode {
             onClick={() => setShowWizardConfirm(true)}
             className="text-sm text-nj-accent hover:text-nj-accent-bright transition-colors"
           >
-            Re-run profile setup wizard
+            Edit preferences
           </button>
         ) : (
           <div className="flex items-center gap-3">
             <p className="text-sm text-gray-600 dark:text-nj-text-dim">
-              This will reset your profile and open the setup wizard. Continue?
+              Open your preferences setup? Your applications and notes will stay here.
             </p>
             <button
               type="button"
@@ -657,7 +600,7 @@ function DataSection(): ReactNode {
           <div>
             <p className="text-sm font-medium text-gray-900 dark:text-nj-text">Export all postings</p>
             <p className="text-xs text-gray-500 dark:text-nj-muted">
-              Full backup of cached postings with scores and classifications
+              A copy of the job listings saved on this device
             </p>
           </div>
           <button
@@ -693,8 +636,7 @@ function DataSection(): ReactNode {
       {!isTauri() && (
         <div className="border-t border-gray-100 dark:border-nj-border pt-4">
           <p className="text-sm text-gray-500 dark:text-nj-muted">
-            Database stored in browser IndexedDB. Data persists across sessions but is
-            browser-specific.
+            Your tracker is saved in this browser. Export a copy before changing browsers or clearing browser data.
           </p>
         </div>
       )}
@@ -757,7 +699,7 @@ function Section({ title, children }: { title: string; children: ReactNode }): R
       <h2 className="text-sm font-medium uppercase tracking-wider text-gray-500 dark:text-nj-muted">
         {title}
       </h2>
-      <div className="rounded-lg border border-gray-200 dark:border-nj-border bg-white dark:bg-nj-surface p-4 space-y-4">
+      <div className="space-y-5">
         {children}
       </div>
     </section>

@@ -624,7 +624,9 @@ The local cache stores the full versioned result in `role_classification` plus `
 **Approved replacement: requirements and evidence (September 6, 2026).**
 
 The active delivery plan is [docs/expansion.md](docs/expansion.md). Collection and local
-evidence extraction are implemented; live evaluation precedes the final UI changes.
+evidence extraction are implemented. The September 8 MVP UI request authorizes rendering
+the existing detail contracts while live source validation continues separately. Missing
+and partial descriptions must remain explicit; the UI does not certify collection coverage.
 The approved behavior supersedes broad exclusions and visible verdicts:
 
 - Clicking a list posting expands original responsibility/required/preferred passages,
@@ -769,25 +771,30 @@ Privacy guarantees: email content never leaves the local machine. No email body 
 
 ### 8.9 Views
 
-**Jobs** — all current, non-dismissed postings sorted newest-first. Search is always available. Field filters live behind one dismissible filter button; a saved profile seeds the selected fields. Term, eligibility, tier, age, and source are not user-facing filters in the MVP. No total-posting or ineligible-posting counts are shown. Row actions: `Save`, `Skip`, `Open`, `Mark applied`.
+**Home** (`/`) — upcoming tracker deadlines/next steps, saved-role shortcuts and bundled updates from watched companies. Quiet days have an actionable empty state. Company watches work without a profile and stay local. Counts and activities use actual records, never sample activity.
 
-**Applications** — the application tracker. Its empty state first explains how saved/applied jobs arrive here; the status board appears only after the user has something to track. The internal route name `pipeline` may remain for compatibility, but the product label is “Applications.”
+**Jobs** (`/jobs`) — current, non-dismissed public postings, with search and separate Role/Field filters (OR within each axis, AND across axes). Guest users receive role classification without a personal profile or eligibility assessment. Selected rows open a detail pane on wide screens and a reading view on mobile. Source excerpts, complete descriptions, pay when present, and partial/stale/missing states are supported. Apply opens the employer page; only explicit Mark applied records submission. Saving again cannot reset application history. New arrivals wait behind a quiet Show control, while existing description evidence refreshes. Manual tracker records do not enter the public job catalog.
+
+**Tracker** (`/applications`, legacy `/pipeline` redirects here) — an editable table of company/role, stage, applied date, next step and due date. All/Saved/In progress/Archived views, search, company/due sorting, notes, manual URL entries and CSV export are implemented. Mobile rows expose dates/next steps when expanded. Public posting closure remains separate from application status. Three modest milestone counts show Applied, Interviews and Offers; interview/offer history survives subsequent status changes. Historical assessments are not yet counted because the existing event schema does not retain that milestone. Public feed updates never close manually entered local records solely because they are absent upstream.
 
 Calendar, Companies, and Insights are not MVP routes or primary navigation. Their underlying local data code may remain dormant until product/design decisions justify a new experience.
 
 ### 8.10 UI principles
 
-- Default view is the current job catalog, with explicitly skipped postings omitted.
+- First-time visitors can browse Jobs immediately or opt into personalization. Returning users resume Home, Jobs or Tracker at their last destination.
 - Browsing does not require onboarding, a profile, or an account.
-- Primary navigation is limited to Jobs, Applications, and Settings.
-- Light mode is the only supported MVP presentation until the visual system is redesigned.
+- Three primary destinations: Home, Jobs and Tracker. Settings is a utility destination. Browser navigation is at the top, Tauri navigation at the side, and narrow-screen navigation at the bottom.
+- Default presentation is warm charcoal with restrained borders, readable secondary text and a pale chartreuse primary action. Light and System themes are supported; appearance and tracker density persist locally.
+- Settings exposes preferences, appearance, alerts and data export/deletion. Polling intervals, feed URLs and persistent sync labels are not product controls. Meaningful failures explain their consequence; successful background work stays invisible.
 - Filters open on demand and close on outside click, an explicit close action, or Escape.
 - During the requirements migration, remove eligibility verdict badges. Expanded postings
   show original requirement passages, without generated authorization verdicts.
-- Keyboard-first: `j`/`k` move, `s` save, `x` skip, `o` open, `/` search.
+- Keyboard-first: `j`/`k` or arrows move through Jobs, `s` saves, `x` skips untracked jobs, `o`/`a` open the employer page, `/` focuses search and Escape closes details/filters. Detail controls keep their normal keyboard behavior. Outcome dialogs contain keyboard focus and return it on close.
 - No destructive action without undo.
 
 ### 8.11 Company logos
+
+The current MVP uses neutral company initials with no third-party image requests. The logo service below is a future integration, not an implemented dependency.
 
 Display company logos alongside postings in jobs and application-tracker views. Logos are fetched app-side at render time — never stored in feed.json or the repo.
 
@@ -805,7 +812,7 @@ Display company logos alongside postings in jobs and application-tracker views. 
 
 ### 8.12 Notifications
 
-OS-native system notifications on new eligible postings. Volume cap: max 15 notifications per sync. If exceeded, send one summary notification and let the feed view carry the detail.
+Home accumulates watched-company updates quietly. Following a company does not grant notification permission. A dismissible Home invitation leads to Settings, where the user explicitly enables available system notifications. The MVP sends at most one bundled watched-company notice per update, only while the app is running in the background and permission is granted. Already-notified job IDs are retained locally to prevent repeat batches. Notifications never request permission automatically or fail a job update if delivery fails. Notifications while the app is fully closed, quiet-hour scheduling and saved-search alerts remain later work. The architectural maximum of 15 notices per sync remains a ceiling, not a target.
 
 ### 8.13 Build approach
 

@@ -1,6 +1,6 @@
-import { render, screen } from '@testing-library/react';
+import { cleanup, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 const testState = vi.hoisted(() => ({
   online: true,
@@ -30,19 +30,21 @@ function renderLayout(): void {
 }
 
 describe('Layout sync status', () => {
+  afterEach(cleanup);
   beforeEach(() => {
     testState.online = true;
     testState.status = 'idle';
     testState.lastSyncedAt = null;
   });
 
-  it('keeps the last-update time instead of showing a sync failure over usable data', () => {
+  it('explains a failed update without persistent technical status labels', () => {
     testState.status = 'error';
     testState.lastSyncedAt = new Date().toISOString();
 
     renderLayout();
 
-    expect(screen.getByText('Updated just now')).toBeTruthy();
+    expect(screen.queryByText(/Updated just now/)).toBeNull();
+    expect(screen.getByRole('status').textContent).toContain("Couldn't check for new jobs.");
     expect(screen.queryByText(/sync error/i)).toBeNull();
     expect(screen.queryByText(/cached/i)).toBeNull();
   });
@@ -52,7 +54,14 @@ describe('Layout sync status', () => {
 
     renderLayout();
 
-    expect(screen.getByRole('alert').textContent).toBe("You're offline.");
+    expect(screen.getByRole('alert').textContent).toBe("You're offline. Your saved information is still available.");
     expect(screen.queryByText(/cached/i)).toBeNull();
+  });
+  it('keeps successful background work invisible and exposes three destinations', () => {
+    testState.status = 'syncing';
+    renderLayout();
+    expect(screen.queryByText(/syncing|not synced|updated/i)).toBeNull();
+    for (const name of ['Home', 'Jobs', 'Tracker']) expect(screen.getByRole('link', { name })).toBeTruthy();
+    expect(document.documentElement.classList.contains('dark')).toBe(true);
   });
 });

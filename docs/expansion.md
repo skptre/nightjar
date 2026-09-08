@@ -1,5 +1,11 @@
 # Nightjar expansion: job descriptions, requirements, and coverage
 
+> **UI update — September 8, 2026:** The user prioritized the MVP interface while Claude
+> handles employer additions. Home, Jobs/details, the table tracker, appearance and
+> opt-in watched-company alerts now have a working interface. See
+> [the UI checkpoint](ui-mvp-checkpoint.md). This does not complete live description
+> backfill or the automated coverage engine; those gates remain separate.
+
 > **Latest checkpoint — September 7, 2026:** Acquisition v4, classifier v5 and
 > details v3 are implemented with immutable description packs and regression coverage.
 > See [implementation and validation](description-engine-validation.md) for completed

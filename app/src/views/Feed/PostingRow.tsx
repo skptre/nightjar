@@ -1,7 +1,7 @@
 import type { DomainValue } from '@/classify/role-taxonomy';
 import { useEffect, type RefObject } from 'react';
-import { EligibilityBadge } from '@/components/EligibilityBadge';
-import { CATEGORY_OPTIONS, type CategoryValue } from '@/classify/types';
+import { Icon } from '@/components/Icon';
+import { type CategoryValue } from '@/classify/types';
 
 export interface PostingRowData {
   id: string;
@@ -23,6 +23,9 @@ export interface PostingRowData {
   score_breakdown: string | null;
   compensation: string | null;
   description_available?: boolean;
+  description_text?: string | null;
+  description_status?: string | undefined;
+  application_status?: string | null;
 }
 
 export type PostingAction = 'save' | 'skip' | 'apply' | 'open';
@@ -32,6 +35,7 @@ interface PostingRowProps {
   selected: boolean;
   rowRef: RefObject<HTMLDivElement | null>;
   onAction: (id: string, action: PostingAction) => void;
+  onSelect?: (() => void) | undefined;
 }
 
 function formatRelativeDate(iso: string): string {
@@ -46,112 +50,20 @@ function formatRelativeDate(iso: string): string {
   return `${String(Math.floor(days / 30))}mo`;
 }
 
-function categoryLabel(cat: string | null): string | null {
-  if (!cat) return null;
-  return CATEGORY_OPTIONS.find((option) => option.value === cat)?.shortLabel ?? cat;
-}
-
-function categoryTagStyle(cat: string | null): string {
-  switch (cat) {
-    case 'swe': return 'bg-cyan-50 text-cyan-700 dark:bg-nj-cat-swe/10 dark:text-nj-cat-swe';
-    case 'quant': return 'bg-orange-50 text-orange-700 dark:bg-nj-cat-quant/10 dark:text-nj-cat-quant';
-    case 'data-ml': return 'bg-purple-50 text-purple-700 dark:bg-nj-cat-ml/10 dark:text-nj-cat-ml';
-    case 'hardware': return 'bg-teal-50 text-teal-700 dark:bg-nj-cat-hw/10 dark:text-nj-cat-hw';
-    default: return 'bg-gray-100 text-gray-600 dark:bg-nj-cat-other/10 dark:text-nj-cat-other';
-  }
-}
-
-export function PostingRow({ posting, selected, rowRef, onAction }: PostingRowProps): React.ReactNode {
-  const category = categoryLabel(posting.category);
-
-  return (
-    <div
-      ref={rowRef}
-      role="listitem"
-      aria-selected={selected}
-      className={`flex items-center gap-3 px-4 py-3 border-b border-gray-100 dark:border-nj-border transition-colors ${
-        selected
-          ? 'border-l-2 border-l-nj-accent bg-violet-50/50 dark:bg-nj-accent/5'
-          : 'border-l-2 border-l-transparent hover:bg-gray-50 dark:hover:bg-nj-surface-2/60'
-      }`}
-      data-posting-id={posting.id}
-    >
-      {/* Company + Title */}
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => onAction(posting.id, 'open')}
-            className="truncate text-left text-sm font-medium text-gray-900 hover:text-violet-700 hover:underline dark:text-nj-text"
-            title={`Open ${posting.title}`}
-          >
-            {posting.title || '—'}
-          </button>
-        </div>
-        <div className="flex items-center gap-2 mt-0.5">
-          <span className="text-xs text-gray-600 dark:text-nj-text-dim">{posting.company || '—'}</span>
-          <span className="text-xs text-gray-400 dark:text-nj-muted">·</span>
-          <span className="text-xs text-gray-500 dark:text-nj-muted truncate" title={posting.location || 'Remote'}>
-            {posting.location || 'Remote'}
-          </span>
-          {posting.compensation && (
-            <>
-              <span className="text-xs text-gray-400 dark:text-nj-muted">·</span>
-              <span className="text-xs text-green-600 dark:text-nj-eligible">{posting.compensation}</span>
-            </>
-          )}
-        </div>
-      </div>
-
-      {/* Tags */}
-      <div className="flex items-center gap-1.5 flex-shrink-0">
-        {category && (
-          <span className={`px-1.5 py-0.5 text-xs rounded ${categoryTagStyle(posting.category)}`}>
-            {category}
-          </span>
-        )}
-      </div>
-
-      {/* Age */}
-      <span className="text-xs text-gray-400 dark:text-nj-muted w-8 text-right flex-shrink-0">
-        {formatRelativeDate(posting.first_seen_at)}
-      </span>
-
-      <EligibilityBadge
-        eligibilityJson={posting.eligibility}
-        descriptionAvailable={Boolean(posting.description_available)}
-      />
-
-      {/* Actions */}
-      <div className="flex items-center gap-1 flex-shrink-0">
-        <ActionButton label="Save" shortcut="s" onClick={() => onAction(posting.id, 'save')} />
-        <ActionButton label="Skip" shortcut="x" onClick={() => onAction(posting.id, 'skip')} />
-        <ActionButton label="Open" shortcut="o" onClick={() => onAction(posting.id, 'open')} />
-        <ActionButton label="Apply" shortcut="a" onClick={() => onAction(posting.id, 'apply')} />
-      </div>
-    </div>
-  );
-}
-
-function ActionButton({
-  label,
-  shortcut,
-  onClick,
-}: {
-  label: string;
-  shortcut: string;
-  onClick: () => void;
-}): React.ReactNode {
-  return (
-    <button
-      onClick={onClick}
-      className="px-2 py-1 text-xs text-gray-500 hover:text-gray-800 dark:text-nj-muted dark:hover:text-nj-text hover:bg-gray-100 dark:hover:bg-nj-surface-2 rounded transition-colors"
-      title={`${label} (${shortcut})`}
-      aria-label={`${label} (keyboard: ${shortcut})`}
-    >
-      {label}
+export function PostingRow({ posting, selected, rowRef, onAction, onSelect }: PostingRowProps): React.ReactNode {
+  const saved = posting.application_status && !['new', 'skipped'].includes(posting.application_status);
+  return <div ref={rowRef} role="listitem" className={`job-row ${selected ? 'selected' : ''}`} data-posting-id={posting.id}>
+    <span className="company-monogram">{posting.company.slice(0, 2).toUpperCase()}</span>
+    <button className="job-row-main" aria-label={posting.title || 'Untitled role'} onClick={onSelect ?? (() => onAction(posting.id, 'open'))} aria-current={selected ? 'true' : undefined}>
+      <span className="job-row-title">{posting.title || 'Untitled role'}</span>
+      <span className="job-row-meta"><span>{posting.company}</span><span>·</span><span>{posting.location || posting.locations.join(', ') || 'Location not specified'}</span></span>
     </button>
-  );
+    <div className="job-row-end"><span className="job-age">{formatRelativeDate(posting.first_seen_at)}</span>
+      <button className="icon-button row-save" disabled={Boolean(saved)} onClick={() => onAction(posting.id, 'save')} aria-label={saved ? `Saved ${posting.title}` : `Save ${posting.title}`}>
+        <Icon name={saved ? 'check' : 'bookmark'} size={16} />
+      </button>
+    </div>
+  </div>;
 }
 
 export function UndoToast({

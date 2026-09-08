@@ -6,6 +6,7 @@ import vocabulary from './role-rules.json';
 import rules from './rules.json';
 
 export interface RoleContext {
+  company?: string;
   department?: string;
   occupational_category?: string;
 }
@@ -101,9 +102,26 @@ function dutySentences(description: string | null): string[] {
     if (/\b(qualifications?|requirements?|degree|major(?:s|ing)?|bachelor|master|phd|experience (?:in|with)|familiarity|knowledge of|equal opportunity|we are|our company|work (?:with|alongside)|collaborat\w*|partner with)\b/i.test(text)) return false;
     // A Job Description heading also contains employer prose. Require the candidate
     // or an imperative action as the subject, not just an action word anywhere.
-    if (!/^(?:[-•*]\s*)?(?:you(?:'ll| will)|as\b[^.!?]*\byou(?:'ll| will)|(?:this|the) (?:role|position)\b|(?:develop|build|design|implement|train|analy[sz]e|research|test|maintain|support|create|conduct|perform|optimi[sz]e|work|assist|contribute|manage|monitor|drive|ensure|generate|issue|help|learn|gain|participate)\b)/i.test(text)) return false;
+    if (!/^(?:[-•*]\s*)?(?:you(?:'ll| will)|your (?:responsibilities|duties)\b|as\b[^.!?]*\byou(?:'ll| will)|(?:this|the) (?:role|position)\b|(?:develop|build|design|implement|train|analy[sz]e|research|test|maintain|support|create|conduct|perform|optimi[sz]e|work|assist|contribute|manage|monitor|drive|ensure|generate|issue|help|learn|gain|participate)\b)/i.test(text)) return false;
     return /\b(?:you will|you'll|work on|responsibilit\w*|duties|(?:develop|build|design|implement|train|analy[sz]e|research|test|maintain|support|create|conduct|perform|optimi[sz]e)(?:ing)?)\b/i.test(text);
   });
+}
+
+// Explicit self-description supplies employer field only, never candidate duties.
+// Keep this distinct in evidence so consumers can distinguish employer context
+// from work directly involving the domain. Customer lists don't establish it.
+function employerFields(description: string | null, company?: string): Array<{text:string;source:EvidenceSource}> {
+  if (!description) return [];
+  return extractEvidence(description).filter(p => p.section === 'company' || p.section === 'other')
+    .flatMap(p => p.text.split(/(?<=[.!?])\s+/)).filter(text => {
+      let normalized = normalize(text);
+      if (company && normalized.startsWith(`${normalize(company)} is `)) {
+        normalized = `we are ${normalized.slice(normalize(company).length + 4)}`;
+      }
+      return /^(?:we are|our company is) (?:an? |the )?(?:leading |global )?(?:aerospace|quantitative trading|systematic trading|semiconductor|biotechnology|pharmaceutical|automotive|renewable energy|financial services) (?:company|firm|manufacturer|organization)\b/i.test(normalized)
+        && !/\b(?:not|customers?|clients?|partners?|serving)\b/i.test(normalized);
+    })
+    .map(text => ({ text, source: 'employer' as const }));
 }
 
 function roleEvidence(match: Match): RoleEvidence {
@@ -130,6 +148,11 @@ export function classifyCategory(
   let matches = titleMatches.length ? titleMatches
     : occupationMatches.length ? occupationMatches
       : dutyMatches.length ? dutyMatches : departmentMatches;
+  // A generic research title leaves its specialization to explicit duties.
+  if (titleMatches.length && titleMatches.every(match => match.category === 'research')) {
+    const specialized = dutyMatches.filter(match => !['research', 'other'].includes(match.category));
+    if (specialized.length) matches = specialized;
+  }
   const categoryMap: Record<string, string> = rules.simplify_category_map;
   const sourceKey = Object.keys(categoryMap).find(key => normalize(key) === normalize(simplifyCategory ?? ''));
   const mapped = sourceKey ? normalizeCategoryValue(categoryMap[sourceKey]) : null;
@@ -144,10 +167,17 @@ export function classifyCategory(
   const domainInputs: Array<{text:string;source:EvidenceSource}> = [
     {text:title,source:'title'}, ...duties.map(text => ({text,source:'description' as const})),
     ...(context.department ? [{text:context.department,source:'department' as const}] : []),
+    ...employerFields(description, context.company),
   ];
   const domainTags: DomainValue[] = [];
   for (const rule of domainRules) {
-    const input = domainInputs.find(input => rule.pattern.test(normalize(input.text)));
+    const input = domainInputs.find(input => {
+      const text = normalize(input.text);
+      if (rule.value === 'aerospace' && /\bflight (?:tickets?|bookings?|discounts?|benefits?)\b/.test(text)) {
+        return rule.pattern.test(text.replace(/\bflight (?:tickets?|bookings?|discounts?|benefits?)\b/g, ''));
+      }
+      return rule.pattern.test(text);
+    });
     if (input) {
       domainTags.push(rule.value);
       evidence.push({axis:'field',value:rule.value,source:input.source,text:input.text,rule:normalize(input.text).match(rule.pattern)![0]});

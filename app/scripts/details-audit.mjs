@@ -39,7 +39,7 @@ try {
     if (!posting.description_text) continue;
     report.with_description++;
     report.by_ats[posting.ats] = (report.by_ats[posting.ats] ?? 0) + 1;
-    const context = { ...posting.source_metadata,
+    const context = { ...posting.source_metadata, company: posting.company,
       department: posting.department?.trim() || posting.source_metadata?.department };
     const before = classifyCategory(posting.title, null, posting.source_metadata?.category, context);
     const after = classifyCategory(posting.title, posting.description_text, posting.source_metadata?.category, context);

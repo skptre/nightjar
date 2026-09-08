@@ -421,7 +421,9 @@ def _format_salary(value: object) -> str | None:
     return " ".join(part for part in (currency, rendered, f"per {unit}" if unit else "") if part)
 
 
-def _json_ld_posting(value: dict[str, Any], company_slug: str, page_url: str) -> RawPosting | None:
+def _json_ld_posting(
+    value: dict[str, Any], company_slug: str, page_url: str, *, include_sections: bool = False,
+) -> RawPosting | None:
     title = _string(value.get("title")) or _string(value.get("name"))
     url = _string(value.get("url")) or page_url
     explicit_identifier = _identifier(value.get("identifier"))
@@ -445,6 +447,20 @@ def _json_ld_posting(value: dict[str, Any], company_slug: str, page_url: str) ->
         "direct_apply": value.get("directApply"),
         "applicant_location_requirements": applicant_location,
     }
+    description = html_to_plaintext(_string(value.get("description")))
+    if include_sections and description:
+        for name, label in (
+            ("responsibilities", "Responsibilities"), ("qualifications", "Qualifications"),
+            ("educationRequirements", "Education and Experience"),
+            ("experienceRequirements", "Required Experience"), ("skills", "Skills"),
+            ("jobBenefits", "Benefits"),
+        ):
+            content = value.get(name)
+            items = content if isinstance(content, list) else [content]
+            for item in items:
+                text = html_to_plaintext(item) if isinstance(item, str) else ""
+                if text and " ".join(text.split()) not in " ".join(description.split()):
+                    description += f"\n\n{label}\n\n{text}"
     return RawPosting(
         source="generic",
         company_slug=company_slug,
@@ -454,7 +470,7 @@ def _json_ld_posting(value: dict[str, Any], company_slug: str, page_url: str) ->
         locations=locations,
         url=urljoin(page_url, url),
         posted_at=_string(value.get("datePosted")) or None,
-        description=html_to_plaintext(_string(value.get("description"))),
+        description=description.strip(),
         raw_data={key: item for key, item in metadata.items() if item not in {None, ""}},
         compensation=_format_salary(value.get("baseSalary")),
         employment_type=employment_type,
@@ -467,7 +483,10 @@ def _json_ld_posting(value: dict[str, Any], company_slug: str, page_url: str) ->
     )
 
 
-def extract_json_ld(html: str, company_slug: str, page_url: str) -> list[RawPosting]:
+def extract_json_ld(
+    html: str, company_slug: str, page_url: str, *, deduplicate: bool = True,
+    include_sections: bool = False,
+) -> list[RawPosting]:
     parser = _parse_html(html)
     postings: list[RawPosting] = []
     for block in parser.json_ld:
@@ -478,10 +497,11 @@ def extract_json_ld(html: str, company_slug: str, page_url: str) -> list[RawPost
         for candidate in _walk_json(value):
             if not _is_job_posting(candidate):
                 continue
-            posting = _json_ld_posting(candidate, company_slug, page_url)
+            posting = _json_ld_posting(candidate, company_slug, page_url,
+                                       include_sections=include_sections)
             if posting is not None:
                 postings.append(posting)
-    return _dedupe_raw(postings)
+    return _dedupe_raw(postings) if deduplicate else postings
 
 
 def _balanced_json_after(script: str, marker: str) -> object | None:

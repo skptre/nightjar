@@ -1,6 +1,6 @@
 import type { CategoryValue } from './types';
 
-export const CLASSIFICATION_VERSION = 4;
+export const CLASSIFICATION_VERSION = 5;
 export const DOMAIN_OPTIONS = [
   { value: 'aerospace', label: 'Aerospace' },
   { value: 'quant', label: 'Quant finance' },
@@ -12,7 +12,7 @@ export const DOMAIN_OPTIONS = [
   { value: 'automotive', label: 'Automotive' },
 ] as const;
 export type DomainValue = typeof DOMAIN_OPTIONS[number]['value'];
-export type EvidenceSource = 'title' | 'description' | 'department' | 'occupation' | 'source-category';
+export type EvidenceSource = 'title' | 'description' | 'department' | 'occupation' | 'source-category' | 'employer';
 export interface RoleEvidence {
   axis: 'role' | 'field';
   value: CategoryValue | DomainValue;

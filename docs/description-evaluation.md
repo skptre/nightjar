@@ -1,5 +1,9 @@
 # Description engine recovery audit — September 7, 2026
 
+> Historical recovery audit. The latest acquisition v4 / classifier v5 / details v3
+> implementation, test results and remaining live gates are recorded in
+> [description engine validation](description-engine-validation.md).
+
 The committed extractor (`be45984`) survived the restart. Four uncommitted files
 contained additional ATS work. That work is now integrated with regression coverage;
 production validation and the final UI remain outstanding.
@@ -102,7 +106,6 @@ No further live backfill, public feed publication, workflow restart or UI rollou
 occurred. Continue with a source-stratified live run, separately reviewed occupation
 and section labels, pay/exclusion/graduation evaluation, full-backfill shard sizes and
 real app cache latency. Keep the UI-last release gate in `expansion.md`.
-
 
 
 

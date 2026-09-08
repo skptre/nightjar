@@ -1,5 +1,13 @@
 # Nightjar expansion: job descriptions, requirements, and coverage
 
+> **Latest checkpoint — September 7, 2026:** Acquisition v4, classifier v5 and
+> details v3 are implemented with immutable description packs and regression coverage.
+> See [implementation and validation](description-engine-validation.md) for completed
+> behavior, measured evidence and remaining release steps. Live full-feed validation
+> is blocked by this workspace's outbound network policy; the published feed still
+> has zero descriptions. The 95% target is not yet proven. Earlier checkpoints below
+> are historical; this checkpoint takes precedence. Coverage and UI work are pending.
+
 Approved direction: September 6, 2026. This is the active implementation plan.
 `spec.md` remains the product specification. This document records the complete
 agreed behavior and the order of work, including work that is not implemented yet.

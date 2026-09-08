@@ -1,5 +1,15 @@
 # Role classification and the September 2026 audit
 
+Latest checkpoint: classifier **v5**, details **v3**, acquisition **v4**. Explicit
+employer self-description can add industry fields, never employee duties. This keeps
+software + aerospace/quant intersections useful without classifying every employee
+as an aerospace engineer or trader. Customer/partner prose does not establish employer
+industry. Generic research titles can specialize from explicit duties; specialized
+titles retain control. Mixed mandatory/preferred paragraphs preserve sentence-level
+evidence. Cached rows recompute at the new version without losing tracker state.
+See [current validation and remaining gates](description-engine-validation.md).
+Version-specific results below are historical, not current accuracy measurements.
+
 Nightjar separates the work performed from the field it serves. Industry context must not make an avionics software internship appear as aerospace engineering work.
 
 | Selection | Results |

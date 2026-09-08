@@ -4,7 +4,7 @@ import { extractGraduation } from './graduation';
 import { extractEvidence } from './sections';
 export { extractEvidence } from './sections';
 
-export const DETAILS_VERSION = 2;
+export const DETAILS_VERSION = 3;
 const AUTH = /\b(?:citizens?(?:hip)?|work authori[sz]ation|authori[sz]ed to work|sponsor(?:ship|ing)?|visas?|CPT|OPT|F[ -]?1|ITAR|EAR|export control|U\.?S\.? persons?|permanent residents?|security clearance)\b/i;
 const PAY = /(?:[$£€]|\b(?:USD|CAD|GBP|EUR|salary|compensation|stipend|hourly (?:pay|rate)|base pay)\b)/i;
 

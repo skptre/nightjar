@@ -15,6 +15,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from poller.description_pipeline import (
+    DESCRIPTION_VERSION,
     collect_descriptions,
     greenhouse_board_map,
     resolve_detail_posting,
@@ -29,6 +30,8 @@ def main() -> None:
     parser.add_argument("--feed", type=Path, default=Path("data/feed.json"))
     parser.add_argument("--output", type=Path, default=Path(".tmp/description-backfill"))
     parser.add_argument("--limit", type=int, default=200)
+    parser.add_argument("--rounds", type=int, default=1,
+                        help="Bounded batches (1-100), stopping when none are due")
     parser.add_argument("--registry", type=Path, default=Path("companies.yaml"))
     parser.add_argument("--live", action="store_true")
     args = parser.parse_args()
@@ -45,6 +48,8 @@ def main() -> None:
     }
     if args.limit < 0:
         parser.error("limit must be nonnegative")
+    if not 1 <= args.rounds <= 100:
+        parser.error("rounds must be between 1 and 100")
     if args.live:
         output = args.output.resolve()
         if (output / "feed.json").resolve() == args.feed.resolve():
@@ -58,15 +63,20 @@ def main() -> None:
         async def run() -> tuple[int, int]:
             async with RateLimitedClient() as client:
                 client.load_cache(state.http_cache)
-                enriched, count = await collect_descriptions(
-                    active,
-                    previous,
-                    client,
-                    state=state.description_attempts,
-                    now=now,
-                    limit=args.limit,
-                    greenhouse_boards=boards,
-                )
+                enriched = active
+                count = 0
+                for _ in range(args.rounds):
+                    before = sum(entry.get("last_attempt_at") == now
+                                 for entry in state.description_attempts.values())
+                    enriched, successes = await collect_descriptions(
+                        enriched, previous, client, state=state.description_attempts,
+                        now=now, limit=args.limit, greenhouse_boards=boards,
+                    )
+                    count += successes
+                    after = sum(entry.get("last_attempt_at") == now
+                                for entry in state.description_attempts.values())
+                    if after == before:
+                        break
                 state.http_cache.update(client.dump_cache())
             combined = {**postings, **{p.id: p for p in enriched}}
             save_feed(output / "feed.json", combined, now)
@@ -93,6 +103,15 @@ def main() -> None:
             report["shard_bytes"] = {
                 path.name: path.stat().st_size for path in sorted((output / "feed").glob("*.json"))
             }
+            report["detail_pack_bytes"] = sum(
+                path.stat().st_size for path in (output / "feed" / "details").glob("*.json"))
+            complete = sum(p.description_status == "available"
+                           and p.description_version == DESCRIPTION_VERSION for p in enriched)
+            report["complete_available"] = complete
+            report["complete_percent"] = round(complete / len(active) * 100, 2) if active else 0.0
+            report["collection_outcomes"] = dict(Counter(
+                state.description_attempts.get(p.id, {}).get("status", "pending")
+                for p in enriched))
             return count, sum(bool(p.description_text) for p in enriched)
 
         fetched, available = asyncio.run(run())

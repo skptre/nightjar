@@ -1,6 +1,8 @@
 import type { Evidence, SectionKind } from './types';
 
 const HEADINGS: Array<[SectionKind, RegExp]> = [
+  ['required', /^(?:education and experience|(?:required|minimum|essential) skills and experience)$/i],
+  ['responsibilities', /^(?:responsibilities and duties|duties and responsibilities)$/i],
   ['other', /^(?:additional information|identity statement|candidate AI usage policy|work model|professional development)$/i],
   ['preferred', /^(?:preferred(?: qualifications| requirements| skills| experience)?|nice[- ]to[- ]haves?|nice if you have|bonus(?: points)?|what (?:would|will) make you stand out|desired qualifications)$/i],
   ['required', /^(?:(?:basic|minimum|required|essential) (?:qualifications|requirements|skills)|qualifications|requirements|what (?:you(?:'ll| will)? need|we(?:'re| are) looking for)|who you are|what you bring|you have|your background|skills you(?:'ll| will) need to bring)$/i],
@@ -32,6 +34,20 @@ export function extractEvidence(document: string): Evidence[] {
   const flush = (): void => {
     if (start === null || end <= start) { start = null; return; }
     const text = document.slice(start, end);
+    if (section !== 'company' && PREFERRED_SENTENCE.test(text) && REQUIRED_SENTENCE.test(text)) {
+      const parts = [...text.matchAll(/\S[\s\S]*?(?:[.!?](?=\s+[A-Z]|\s*$)|$)/g)];
+      if (parts.length > 1) {
+        for (const part of parts) {
+          const body = part[0].trimEnd();
+          const offset = start + part.index;
+          const kind = PREFERRED_SENTENCE.test(body) ? 'preferred'
+            : REQUIRED_SENTENCE.test(body) ? 'required' : section;
+          evidence.push({ text: body, start: offset, end: offset + body.length, section: kind });
+        }
+        start = null;
+        return;
+      }
+    }
     let kind = section;
     if (PREFERRED_SENTENCE.test(text) && kind !== 'company') kind = 'preferred';
     else if (kind === 'other' && DUTY.test(text)) kind = 'responsibilities';

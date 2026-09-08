@@ -242,6 +242,22 @@ def save_feed_sharded(
 ) -> dict[str, ShardMeta]:
     feed_dir.mkdir(parents=True, exist_ok=True)
 
+    from poller.description_packs import write_description_packs
+
+    references = write_description_packs(feed_dir, postings)
+
+    def listing(posting: Posting) -> dict[str, Any]:
+        row = posting.to_dict()
+        if posting.id in references:
+            row.pop("description_text", None)
+            row["description_ref"] = {
+                **references[posting.id], "status": posting.description_status,
+            }
+            # Legacy consumers cannot verify external text. The updated client
+            # restores acquisition status only after validating its document.
+            row["description_status"] = "unavailable"
+        return row
+
     partitions = _partition_by_source(postings)
     shard_hashes: dict[str, ShardMeta] = {}
 
@@ -251,7 +267,7 @@ def save_feed_sharded(
             "updated_at": updated_at,
             "count": len(shard_postings),
             "postings": {
-                pid: shard_postings[pid].to_dict()
+                pid: listing(shard_postings[pid])
                 for pid in sorted(shard_postings)
             },
         }
@@ -308,6 +324,8 @@ def save_feed_sharded(
 
 
 def load_feed_sharded(feed_dir: Path) -> dict[str, Posting]:
+    from poller.description_packs import read_description_pack
+
     index_path = feed_dir / "index.json"
     if not index_path.exists():
         return {}
@@ -324,6 +342,11 @@ def load_feed_sharded(feed_dir: Path) -> dict[str, Posting]:
         shard_text = shard_path.read_text(encoding="utf-8")
         shard_data = json.loads(shard_text)
         for pid, pdata in shard_data.get("postings", {}).items():
+            if "description_ref" in pdata:
+                pdata["description_text"] = read_description_pack(
+                    feed_dir, pdata["description_ref"])
+                if "status" in pdata["description_ref"]:
+                    pdata["description_status"] = pdata["description_ref"]["status"]
             postings[pid] = Posting.from_dict(pdata)
 
     return postings

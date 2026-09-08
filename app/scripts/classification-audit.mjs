@@ -37,7 +37,7 @@ try {
     if (posting.closed_at) continue;
     report.active++;
     const result = classifyCategory(posting.title, posting.description_text ?? null,
-      posting.source_metadata?.category, { ...posting.source_metadata,
+      posting.source_metadata?.category, { ...posting.source_metadata, company: posting.company,
         department: posting.department?.trim() || posting.source_metadata?.department });
     increment(report.by_role, result.category);
     increment(report.by_confidence, result.confidence);

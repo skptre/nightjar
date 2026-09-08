@@ -14,6 +14,7 @@ from urllib.parse import parse_qs, urlparse
 from poller.description_enrich import (
     DEFAULT_ENRICHMENT_LIMIT,
     MAX_CONCURRENT,
+    PAGE_ATS,
     detect_ats_from_url,
     fetch_description,
 )
@@ -21,12 +22,11 @@ from poller.descriptions import source_facts
 from poller.first_party_details import fetch_first_party, supports_first_party
 
 if TYPE_CHECKING:
-    from urllib.robotparser import RobotFileParser
-
     from poller.description_enrich import JsonClient
     from poller.models import Company, Posting, RawPosting, SourceConfig
+    from poller.sources.generic import RobotsPolicy
 
-DESCRIPTION_VERSION = 3
+DESCRIPTION_VERSION = 4
 REFRESH_HOURS = 72
 _SEGMENT = re.compile(r"^[A-Za-z0-9_-]+$")
 
@@ -79,6 +79,7 @@ def resolve_detail_posting(
     ids = parse_qs(parsed.query).get("gh_jid", [])
     custom_greenhouse = ats == "greenhouse" and parsed.hostname not in {
         "boards.greenhouse.io", "job-boards.greenhouse.io",
+        "job-boards.eu.greenhouse.io", "boards.eu.greenhouse.io",
     }
     if detected == ats and not custom_greenhouse:
         return posting
@@ -172,60 +173,97 @@ async def collect_descriptions(
             enriched[index] = replace(
                 posting, description_status="stale" if posting.description_text else "unsupported"
             )
+            state[posting.id] = {
+                "source_key": key, "version": DESCRIPTION_VERSION, "status": "unsupported",
+                "error": "unresolved_source_or_unsupported_client",
+            }
             continue
         if posting.description_text:
             enriched[index] = replace(posting, description_status="stale")
+        if not same:
+            state[posting.id] = {
+                "source_key": key, "version": DESCRIPTION_VERSION, "status": "pending",
+            }
         candidates.append((index, target, key))
     # Oldest attempts first, including never-attempted jobs: advancing queue, no rotating
     # index over a shrinking list and no failed URL monopolizing each batch.
     candidates.sort(
         key=lambda item: (str(state.get(item[1].id, {}).get("last_attempt_at", "")), item[1].id)
     )
+    budget = max(0, limit)
+    refreshes = [item for item in candidates if state.get(item[1].id, {}).get("last_success_at")]
+    reserved = refreshes[:max(1, budget // 4)] if budget else []
+    reserved_ids = {item[1].id for item in reserved}
+    selected = (reserved + [item for item in candidates if item[1].id not in reserved_ids])[:budget]
     semaphore = asyncio.Semaphore(MAX_CONCURRENT)
     cache: dict[str, list[dict[str, Any]]] = {}
     lock = asyncio.Lock()
-    robots_cache: dict[str, RobotFileParser] = {}
+    robots_cache: dict[str, RobotsPolicy] = {}
 
     async def hydrate(index: int, target: Posting, key: str) -> bool:
         facts: dict[str, Any] = {}
         error = "empty_or_unrecognized_response"
         async with semaphore:
             try:
-                if supports_first_party(target, client):
-                    text, compensation = await fetch_first_party(target, client, robots_cache)
+                text = ""
+                api_target = resolve_detail_posting(target)
+                if api_target is not None and target.ats not in PAGE_ATS:
+                    try:
+                        text = await fetch_description(client, target, cache, lock, facts=facts)
+                        if text:
+                            facts["description_acquisition"] = {
+                                "method": f"{target.ats}_api", "completeness": "available",
+                                "identity": "provider_job_endpoint",
+                            }
+                    except Exception:
+                        if not supports_first_party(enriched[index], client):
+                            raise
+                if not text and supports_first_party(enriched[index], client):
+                    facts.clear()
+                    text, compensation = await fetch_first_party(
+                        enriched[index], client, robots_cache, facts=facts)
                     if compensation:
                         facts["advertised_compensation"] = compensation
-                else:
-                    text = await fetch_description(client, target, cache, lock, facts=facts)
             except Exception as exc:
                 text = ""
                 error = type(exc).__name__
-                if isinstance(exc, ValueError) and str(exc) in {
-                    "robots_disallowed", "invalid_or_oversized_description_page",
-                    "no_unique_matching_jobposting",
-                }:
+                if isinstance(exc, ValueError) and re.fullmatch(r"[a-z_]{1,80}", str(exc)):
                     error = str(exc)
         previous_attempt = state.get(target.id, {})
         entry = {"source_key": key, "version": DESCRIPTION_VERSION, "last_attempt_at": now}
         posting = enriched[index]
         if text:
+            acquisition = facts.get("description_acquisition", {})
+            status = str(acquisition.get("completeness", "available"))
             state[target.id] = {
                 **entry,
-                "status": "available",
-                "last_success_at": now,
+                "status": status,
+                **({"last_success_at": now} if status == "available" else {
+                    "error": "completeness_unverified",
+                    **({"last_success_at": previous_attempt["last_success_at"]}
+                       if previous_attempt.get("last_success_at") else {}),
+                }),
                 "failures": 0,
                 "next_attempt_at": later(REFRESH_HOURS),
             }
             metadata = {**(posting.source_metadata or {}), **facts}
+            # A partial refresh must not erase an earlier complete document.
+            old_acquisition = (posting.source_metadata or {}).get("description_acquisition", {})
+            old_complete = bool(posting.description_text and posting.description_version
+                                and posting.description_status in {"available", "stale"}
+                                and old_acquisition.get("completeness") != "partial")
+            if status == "partial" and old_complete:
+                enriched[index] = replace(posting, description_status="stale")
+                return False
             enriched[index] = replace(
                 posting,
                 description_text=text,
-                description_status="available",
+                description_status=status,
                 description_version=DESCRIPTION_VERSION,
                 source_metadata=metadata or None,
                 compensation=facts.get("advertised_compensation") or posting.compensation,
             )
-            return True
+            return status == "available"
         failures = min(int(previous_attempt.get("failures", 0)) + 1, 20)
         state[target.id] = {
             **previous_attempt,
@@ -240,7 +278,7 @@ async def collect_descriptions(
         )
         return False
 
-    results = await asyncio.gather(*(hydrate(*item) for item in candidates[: max(0, limit)]))
+    results = await asyncio.gather(*(hydrate(*item) for item in selected))
     active_ids = {posting.id for posting in postings}
     for posting_id in list(state):
         if posting_id not in active_ids:

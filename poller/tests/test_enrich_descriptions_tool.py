@@ -60,3 +60,26 @@ def test_isolated_tool_resolves_registry_board_reports_and_resumes(
     assert len(client.calls) == 1
     assert report["fetched_this_run"] == 0 and report["with_description_after"] == 1
     assert feed.read_bytes() == original
+
+
+def test_multiple_bounded_rounds_advance_and_report_complete_denominator(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    feed = tmp_path / "input.json"
+    registry = tmp_path / "companies.yaml"
+    output = tmp_path / "backfill"
+    registry.write_text('[]', encoding="utf-8")
+    postings = {str(i): make_posting(str(i), ats="greenhouse",
+                url=f"https://job-boards.greenhouse.io/acme/jobs/{i}") for i in (123, 456)}
+    save_feed(feed, postings, "2026-09-07T00:00:00Z")
+    client = ToolClient({f"https://boards-api.greenhouse.io/v1/boards/acme/jobs/{i}":
+                         {"id": i, "content": "Complete job description."} for i in (123, 456)})
+    monkeypatch.setattr(enrich_descriptions, "RateLimitedClient", lambda: client)
+    monkeypatch.setattr(sys, "argv", ["enrich_descriptions", "--live", "--feed", str(feed),
+        "--registry", str(registry), "--output", str(output), "--limit", "1", "--rounds", "3"])
+    enrich_descriptions.main()
+    report = json.loads((output / "report.json").read_text())
+    assert report["fetched_this_run"] == report["complete_available"] == 2
+    assert report["complete_percent"] == 100.0
+    assert report["detail_pack_bytes"] > 0
+    assert len(client.calls) == 2

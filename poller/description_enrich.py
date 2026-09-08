@@ -37,7 +37,7 @@ SUPPORTED_ATS = frozenset(
 )
 
 _GREENHOUSE_RE = re.compile(
-    r"(?:boards|job-boards)\.greenhouse\.io/([^/]+)/jobs/([^/?#]+)",
+    r"(?:boards|job-boards)\.(?:eu\.)?greenhouse\.io/([^/]+)/jobs/([^/?#]+)",
     re.IGNORECASE,
 )
 _LEVER_RE = re.compile(
@@ -71,7 +71,8 @@ def detect_ats_from_url(url: str) -> str | None:
     providers = [
         ("lever", host in {"jobs.lever.co", "jobs.eu.lever.co"},
          rf"{segment}/{segment}(?:/apply)?"),
-        ("greenhouse", host in {"boards.greenhouse.io", "job-boards.greenhouse.io"},
+        ("greenhouse", host in {"boards.greenhouse.io", "job-boards.greenhouse.io",
+                               "job-boards.eu.greenhouse.io", "boards.eu.greenhouse.io"},
          rf"{segment}/jobs/{segment}(?:/apply)?"),
         ("ashby", host == "jobs.ashbyhq.com", rf"{segment}/{segment}(?:/application)?"),
         ("smartrecruiters", host == "jobs.smartrecruiters.com", rf"{segment}/{segment}"),
@@ -156,6 +157,9 @@ async def fetch_description(
             company_slug=posting.company_slug,
             params={"content": "true", "pay_transparency": "true"},
         )
+        if (isinstance(data, dict) and data.get("id") is not None
+                and str(data["id"]) != match.group(2)):
+            raise ValueError("job_identity_mismatch")
         if facts is not None and isinstance(data, dict):
             facts.update(source_facts(data, ats))
         return _clean_description(data.get("content", "")) if isinstance(data, dict) else ""
@@ -170,6 +174,9 @@ async def fetch_description(
             source="description",
             company_slug=posting.company_slug,
         )
+        if (isinstance(data, dict) and data.get("id") is not None
+                and str(data["id"]) != match.group(2)):
+            raise ValueError("job_identity_mismatch")
         if facts is not None and isinstance(data, dict):
             facts.update(source_facts(data, ats))
         return lever_description(data) if isinstance(data, dict) else ""
@@ -255,7 +262,7 @@ async def fetch_description(
         from poller.first_party_details import fetch_first_party, supports_first_party
 
         if supports_first_party(posting, client):
-            text, compensation = await fetch_first_party(posting, client, {})
+            text, compensation = await fetch_first_party(posting, client, {}, facts=facts)
             if facts is not None and compensation:
                 facts["advertised_compensation"] = compensation
             return text

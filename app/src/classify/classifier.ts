@@ -14,7 +14,7 @@ export function classifyPosting(
   profile: Profile,
 ): ClassificationResult {
   const term = classifyTerm(posting.title, description, posting.posted_at);
-  const context = { ...posting.source_metadata };
+  const context = { ...posting.source_metadata, company: posting.company };
   if (posting.department?.trim()) context.department = posting.department.trim();
   const category = classifyCategory(
     posting.title,

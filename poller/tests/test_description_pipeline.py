@@ -65,9 +65,33 @@ async def test_empty_success_is_not_complete_and_fair_queue_advances() -> None:
     client = FakeClient({API: {"content": ""}})
     first, _ = await collect_descriptions(jobs, {}, client, state=state, now=NOW, limit=1)
     assert first[0].description_status == "unavailable"
-    assert set(state) == {"0"}
+    assert state["0"]["status"] == "failed"
+    assert state["1"]["status"] == state["2"]["status"] == "pending"
     await collect_descriptions(first, {}, client, state=state, now=NOW, limit=1)
-    assert set(state) == {"0", "1"}
+    assert state["1"]["status"] == "failed"
+    assert state["2"]["status"] == "pending"
+
+
+@pytest.mark.asyncio
+async def test_every_active_job_has_a_collection_outcome_even_without_budget() -> None:
+    jobs = [make_posting("1", ats="greenhouse", url=URL),
+            make_posting("2", ats="other", url="https://example.com/custom")]
+    state: dict[str, dict[str, Any]] = {}
+    await collect_descriptions(jobs, {}, FakeClient({}), state=state, now=NOW, limit=0)
+    assert set(state) == {"1", "2"}
+    assert state["1"]["status"] == "pending"
+    assert state["2"]["status"] == "unsupported"
+
+
+@pytest.mark.asyncio
+async def test_api_wrong_job_identifier_is_rejected() -> None:
+    posting = make_posting("1", ats="greenhouse", url=URL)
+    state: dict[str, dict[str, Any]] = {}
+    rows, count = await collect_descriptions([posting], {}, FakeClient({
+        API: {"id": 456, "content": "Different job requirements."},
+    }), state=state, now=NOW)
+    assert count == 0 and not rows[0].description_text
+    assert state["1"]["error"] == "job_identity_mismatch"
 
 
 @pytest.mark.asyncio
@@ -280,3 +304,34 @@ async def test_expired_description_waiting_for_budget_is_stale() -> None:
                                            now="2026-09-10T12:00:00Z", limit=0)
     assert count == 0 and rows[0].description_text == "Full text"
     assert rows[0].description_status == "stale"
+
+
+@pytest.mark.asyncio
+async def test_due_refresh_gets_capacity_alongside_never_attempted_jobs() -> None:
+    state: dict[str, dict[str, Any]] = {}
+    old = make_posting("old", ats="greenhouse", url=URL)
+    rows, _ = await collect_descriptions([old], {}, FakeClient({API: {"content": "Full text"}}),
+                                        state=state, now=NOW)
+    new = [make_posting(f"new{i}", ats="greenhouse", url=URL) for i in range(8)]
+    await collect_descriptions(new + rows, {}, FakeClient({API: {"content": "Full text"}}),
+                               state=state, now="2026-09-10T12:00:00Z", limit=4)
+    assert state["old"]["last_success_at"] == "2026-09-10T12:00:00Z"
+
+
+@pytest.mark.asyncio
+async def test_supported_api_failure_can_fall_back_to_its_verified_public_page() -> None:
+    from poller.tests.test_first_party_details import PageClient
+
+    class FallbackClient(PageClient):
+        async def get_json(self, *args: Any, **kwargs: Any) -> Any:
+            raise ValueError("api_unavailable")
+
+    rows, count = await collect_descriptions([make_posting("1", ats="greenhouse", url=URL)],
+                                            {}, FallbackClient(), state={}, now=NOW)
+    assert count == 1 and rows[0].description_status == "available"
+
+
+def test_regional_greenhouse_url_retains_job_identity() -> None:
+    posting = make_posting("1", ats="other", url="https://job-boards.eu.greenhouse.io/acme/jobs/123")
+    result = resolve_detail_posting(posting)
+    assert result is not None and result.ats == "greenhouse"

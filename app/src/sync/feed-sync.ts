@@ -1,5 +1,6 @@
 import type { Database } from '@/db/database';
 import { isTauri } from '@/lib/platform';
+import { DescriptionPackCache, hydrateDescriptions, type DescriptionReference } from './description-packs';
 
 export interface FeedPosting {
   id: string;
@@ -17,6 +18,7 @@ export interface FeedPosting {
   last_seen_at: string;
   closed_at: string | null;
   description_text?: string;
+  description_ref?: DescriptionReference;
   description_status?: string;
   description_version?: number;
   department?: string | null;
@@ -255,6 +257,7 @@ export async function fetchShard(
   shardId: string,
   expectedInfo: ShardInfo,
   baseUrl?: string,
+  documentCache?: DescriptionPackCache,
 ): Promise<ShardData> {
   const base = baseUrl ?? getFeedBaseUrl();
   const url = `${base}/feed/${shardId}.json`;
@@ -295,7 +298,16 @@ export async function fetchShard(
     );
   }
 
-  return data;
+  const cache = documentCache ?? createDocumentCache(base);
+  return { ...data, postings: await hydrateDescriptions(data.postings, cache) };
+}
+
+function createDocumentCache(base: string): DescriptionPackCache {
+  return new DescriptionPackCache(async relative => {
+    const response = await fetchWithRetry(`${base}/feed/${relative}`);
+    if (!response.ok) throw new Error(`Description pack unavailable (HTTP ${String(response.status)})`);
+    return response.text();
+  });
 }
 
 function isShardIndex(value: unknown): value is ShardIndex {
@@ -478,8 +490,12 @@ async function syncFeedSharded(
     return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: true };
   }
 
+  const documentCache = createDocumentCache(baseUrl ?? getFeedBaseUrl());
+  const localDocuments = await db.query<{ description: string | null }>(
+    'SELECT description FROM postings_cache WHERE description IS NOT NULL');
+  await Promise.all(localDocuments.map(row => documentCache.remember(row.description ?? '')));
   const shardResults = await Promise.allSettled(
-    changedShardIds.map((id) => fetchShard(id, shards[id]!, baseUrl)),
+    changedShardIds.map((id) => fetchShard(id, shards[id]!, baseUrl, documentCache)),
   );
 
   const failedShards: string[] = [];

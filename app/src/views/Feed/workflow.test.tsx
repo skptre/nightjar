@@ -1,3 +1,4 @@
+import type { Profile } from '@/profile/types';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
@@ -5,16 +6,16 @@ import { NightjarDB } from '@/db/database';
 import { FeedView } from './FeedView';
 import { PipelineView } from '@/views/Pipeline/PipelineView';
 import { upsertPostings } from '@/sync/feed-sync';
-const state = vi.hoisted(() => ({ db: null as unknown, lastSyncedAt: null as string | null, open: vi.fn(async () => true), toast: vi.fn(), clear: vi.fn() }));
+const state = vi.hoisted(() => ({ db: null as unknown, profile: null as Profile | null, lastSyncedAt: null as string | null, open: vi.fn(async () => true), toast: vi.fn(), clear: vi.fn() }));
 vi.mock('@/providers/DatabaseProvider', () => ({ useDatabase: () => ({ db: state.db }) }));
-vi.mock('@/providers/ProfileProvider', () => ({ useProfile: () => ({ profile: null }) }));
+vi.mock('@/providers/ProfileProvider', () => ({ useProfile: () => ({ profile: state.profile }) }));
 vi.mock('@/providers/SyncProvider', () => ({ useSync: () => ({ status: 'idle', lastSyncedAt: state.lastSyncedAt, clearNewPostingCount: state.clear }) }));
 vi.mock('@/components/Toast', () => ({ useToast: () => ({ toast: state.toast }) }));
 vi.mock('@/lib/platform', () => ({ openExternal: state.open, isTauri: () => false }));
 let db: NightjarDB;
 beforeEach(async () => {
   localStorage.clear(); window.history.replaceState(null, '', '/'); state.open.mockClear();
-  state.lastSyncedAt = null;
+  state.lastSyncedAt = null; state.profile = null;
   db = await NightjarDB.createInMemory(); state.db = db;
   vi.stubGlobal('ResizeObserver', class { observe() {} disconnect() {} });
   HTMLElement.prototype.scrollTo = vi.fn();
@@ -68,4 +69,21 @@ it('refreshes an open description while keeping newly arrived rows behind Show',
   expect(screen.queryByRole('button', { name: 'Propulsion Intern' })).toBeNull();
   fireEvent.click(screen.getByRole('button', { name: /1 new role available/ }));
   expect(await screen.findByRole('button', { name: 'Propulsion Intern' })).toBeTruthy();
+});
+
+it('filters graduate jobs by graduation in For you while All jobs remains browsable', async () => {
+  const nextYear = new Date().getFullYear() + 1;
+  state.profile = { graduation: `${nextYear + 2}-05`, target_categories: [] } as unknown as Profile;
+  await db.run('INSERT INTO postings_cache (id,data,term,first_seen_at,synced_at) VALUES (?,?,?,?,?)', ['graduate',
+    JSON.stringify({ title: 'Software Engineer New Grad', company: 'Test Aerospace', locations: [] }), 'new_grad', '2026-09-01', '2026-09-01']);
+  const view = render(<FeedView />);
+  await screen.findByRole('button', { name: 'Avionics Software Intern' });
+  expect(screen.queryByRole('button', { name: 'Software Engineer New Grad' })).toBeNull();
+  fireEvent.click(screen.getByRole('button', { name: 'All jobs' }));
+  expect(await screen.findByRole('button', { name: 'Software Engineer New Grad' })).toBeTruthy();
+  fireEvent.click(screen.getByRole('button', { name: 'For you' }));
+  expect(screen.queryByRole('button', { name: 'Software Engineer New Grad' })).toBeNull();
+  state.profile = { ...state.profile, graduation: `${nextYear}-05` };
+  view.rerender(<FeedView />);
+  expect(await screen.findByRole('button', { name: 'Software Engineer New Grad' })).toBeTruthy();
 });

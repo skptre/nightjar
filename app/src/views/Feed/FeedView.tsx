@@ -1,4 +1,5 @@
 import { JobDetail } from '@/components/JobDetail';
+import { matchesGraduationStage } from './opportunity-stage';
 import { Icon } from '@/components/Icon';
 import { saveJob, markJobApplied } from './job-actions';
 import { recomputeGuestCategories } from '@/classify/guest-classification';
@@ -165,6 +166,7 @@ export function FeedView(): React.ReactNode {
     for (const row of rawRows) {
       const posting = parsePostingRow(row);
       if (!posting) continue;
+      if (viewMode === 'for-you' && !matchesGraduationStage(posting, profile?.graduation)) continue;
       if (companyFilter && posting.company_slug !== companyFilter) continue;
       if (viewMode === 'for-you' && profile && posting.eligibility) {
         try {

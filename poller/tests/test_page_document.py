@@ -97,6 +97,28 @@ def test_structured_fields_outside_description_are_not_lost() -> None:
     assert result.text.endswith("Housing is provided.")
 
 
+def test_structured_identity_is_url_not_upstream_normalized_title() -> None:
+    # Feed titles are shortened by the poller/Simplify; the source's own JobPosting
+    # title is the fuller original. A JSON-LD JobPosting whose url matches exactly is
+    # the job regardless of title wording; requiring title equality discarded valid
+    # descriptions (e.g. jazzhr "...Internship or Co-op 2027" vs feed "...Intern Co-op").
+    html = '<script type="application/ld+json">' + json.dumps({
+        "@type": "JobPosting", "title": "Flight Software Internship or Co-op 2027",
+        "url": URL, "description": "Build flight software.",
+    }) + '</script>'
+    result = extract_document(html, URL, TITLE)
+    assert result.text == "Build flight software."
+    assert result.status == "available"
+    assert result.method == "json_ld"
+
+
+def test_structured_url_mismatch_still_rejected_even_with_matching_title() -> None:
+    # Relaxing the title gate must not weaken url identity: a JobPosting at a different
+    # job id is not this job even when its title equals the requested title.
+    with pytest.raises(ValueError, match="matching"):
+        extract_document(structured("Another requisition", URL.replace("123", "456")), URL, TITLE)
+
+
 def test_conflicts_in_one_json_array_remain_visible_to_validator() -> None:
     jobs = [{"@type": "JobPosting", "url": URL, "title": TITLE, "description": text}
             for text in ("First description", "Different description")]

@@ -29,6 +29,34 @@ def normalized_title(value: str) -> str:
     return " ".join(re.findall(r"\w+", unicodedata.normalize("NFKC", value).casefold()))
 
 
+def title_is_shortening(expected: str, source_title: str) -> bool:
+    """True when the feed title is a shortened form of the source's own title.
+
+    Upstream (the poller/Simplify) normalizes titles by dropping or truncating
+    words, so the feed's title differs from the source JobPosting title even for
+    the same job (e.g. feed "Electrical/Computer Engineering Intern Co-op" vs
+    source "Electrical/Computer Engineering Internship or Co-op 2027"). Exact
+    equality wrongly discarded those. Every feed token must still appear in the
+    source (exact or a shared prefix, which covers intern/internship); upstream
+    never swaps in unrelated words, so a genuinely different job served at the
+    same url ("Different job") is still rejected.
+
+    ``expected`` is an already-normalized feed title; ``source_title`` is raw.
+    """
+    feed = expected.split()
+    if not feed:
+        return True
+    remaining = normalized_title(source_title).split()
+    for token in feed:
+        for index, candidate in enumerate(remaining):
+            if candidate == token or candidate.startswith(token) or token.startswith(candidate):
+                del remaining[index]
+                break
+        else:
+            return False
+    return True
+
+
 def same_job_url(left: str, right: str) -> bool:
     """Ignore known tracking only; query parameters can identify different jobs."""
     def key(value: str) -> tuple[str, str, list[tuple[str, str]]]:
@@ -120,12 +148,16 @@ def extract_document(html: str, url: str, title: str) -> JobDocument:
     blocks = ["".join(c for c in node.children if isinstance(c, str)) for node in nodes
               if node.tag == "script" and node.attrs.get("type", "").lower()
               == "application/ld+json"]
+    # Identity is the url plus a shortened-title check, not exact title equality:
+    # feed titles are shortened upstream so the source title routinely differs for
+    # the same job, yet a different job served at the same url must still be rejected
+    # (see title_is_shortening). _unique() below rejects conflicting same-url docs.
     structured = [JobDocument(p.description, "available", "json_ld", p.compensation)
                   for block in blocks
                   for p in extract_json_ld(
                       '<script type="application/ld+json">' + block + '</script>', "document", url,
                       deduplicate=False, include_sections=True)
-                  if same_job_url(p.url, url) and normalized_title(p.title) == expected]
+                  if same_job_url(p.url, url) and title_is_shortening(expected, p.title)]
 
     for root in nodes:
         if not any(t.rstrip("/").endswith("/JobPosting")

@@ -955,3 +955,13 @@ Property: running the pipeline twice on identical input produces zero diffs.
 | Hot-watch overloads a single host | Low | Per-host rate limits, request budgets, mandatory expiry, three-failure circuit breaker |
 | Gmail sync privacy perception | Medium | Read-only scope, local-only processing, no email body stored, explicit opt-in, instant disconnect |
 | Project becomes a substitute for applying | **Highest** | Core app ships fast; extension follows real usage |
+
+### Graduation-based browsing default (September 8, 2026)
+
+For you hides identified new-graduate/entry-level postings when the user's graduation
+is later than the current calendar year plus one (2029: hidden in 2026; 2027: shown).
+This is a local browsing preference, not an eligibility verdict. Explicit internships,
+co-ops and seasonal analyst/associate student programs remain visible despite broad
+cached new-grad labels. Unknown postings stay visible. All jobs and guest browsing
+remain unrestricted; saved applications are unaffected. Editing graduation immediately
+updates the default results. Explicit opportunity preferences can replace this MVP rule later.

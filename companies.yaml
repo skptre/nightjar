@@ -3110,3 +3110,22 @@
   sources:
     - type: workday
       board_token: kla.wd1.myworkdayjobs.com/Search
+
+# == iCIMS + USAJOBS adapters (Sept 2026) - Joby Aviation (iCIMS), NASA (USAJOBS agency NN, verify org code on first authed run) ==
+
+- slug: joby-aviation
+  name: Joby Aviation
+  tags: [aerospace, evtol, santa-cruz-ca]
+  sources:
+    - type: icims
+      board_token: jobyaviation
+  high_priority: true
+
+- slug: nasa
+  name: NASA
+  tags: [aerospace, space, government]
+  sources:
+    - type: usajobs
+      board_token: NN
+  high_priority: true
+  seasonal_pattern: year_round

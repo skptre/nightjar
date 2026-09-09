@@ -13,7 +13,7 @@ it.skipIf(!release)('imports every staged public description intact through real
   vi.stubGlobal('fetch', vi.fn(async (input) => {
     const url = new URL(String(input), 'https://release.example');
     const path = url.pathname.replace(/^\/candidate\//, '');
-    if (!/^(?:meta\.json|feed\.json|feed\/(?:[a-z_-]+\.json|details\/[a-f0-9-]+\.json))$/.test(path)) {
+    if (!/^(?:meta\.json|feed\.json|feed\/(?:[a-z_-]+\.json|details\/(?:descriptions-[a-f0-9]|[a-f0-9-]+)\.json))$/.test(path)) {
       return new Response('', { status: 404 });
     }
     try { return new Response(readFileSync(resolve(root, path), 'utf8')); }

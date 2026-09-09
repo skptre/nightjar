@@ -1,4 +1,4 @@
-// Immutable public documents only. A failed pack never mutates the caller's rows.
+// Verified public documents only. A failed pack never mutates the caller's rows.
 export interface DescriptionReference {
   sha256: string; pack: string; pack_sha256: string; status?: string | null;
 }
@@ -22,12 +22,14 @@ export class DescriptionPackCache {
 
   async get(ref: DescriptionReference): Promise<string> {
     if (!ref || !/^[a-f0-9]{64}$/.test(ref.sha256) || !/^[a-f0-9]{64}$/.test(ref.pack_sha256)
-      || ref.pack !== `details/${ref.sha256.slice(0, 2)}-${ref.pack_sha256}.json`) {
+      || (ref.pack !== `details/${ref.sha256.slice(0, 2)}-${ref.pack_sha256}.json`
+        && ref.pack !== `details/descriptions-${ref.sha256[0]}.json`)) {
       throw new Error('Invalid description reference');
     }
     const known = this.documents.get(ref.sha256);
     if (known !== undefined) return known;
-    let pending = this.packs.get(ref.pack);
+    const key = `${ref.pack}:${ref.pack_sha256}`;
+    let pending = this.packs.get(key);
     if (!pending) {
       const lane = this.nextLane++ % this.lanes.length;
       pending = this.lanes[lane]!.then(async () => {
@@ -40,7 +42,7 @@ export class DescriptionPackCache {
         return data.documents as Record<string, unknown>;
       });
       this.lanes[lane] = pending.then(() => {}, () => {});
-      this.packs.set(ref.pack, pending);
+      this.packs.set(key, pending);
     }
     const documents = await pending;
     const text = documents[ref.sha256];

@@ -109,6 +109,7 @@ class USAJobsAdapter(SourceAdapter):
 
         all_postings: list[RawPosting] = []
         page = 1
+        seen: set[str] = set()
         while True:
             params = {
                 "Organization": source.board_token,
@@ -144,7 +145,13 @@ class USAJobsAdapter(SourceAdapter):
 
             for item in items:
                 try:
-                    all_postings.append(self._parse_job(item, company))
+                    posting = self._parse_job(item, company)
+                    if posting.source_job_id in seen:
+                        raise SourceParseError(
+                            "usajobs", company.slug, "duplicate job in pagination"
+                        )
+                    seen.add(posting.source_job_id)
+                    all_postings.append(posting)
                 except (KeyError, TypeError, AttributeError) as exc:
                     raise SourceParseError("usajobs", company.slug, "malformed job item") from exc
 

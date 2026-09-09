@@ -12,7 +12,7 @@ async function fixture(text = 'Responsibilities\n\nDevelop flight software.') {
   const sha256 = await hash(text);
   const payload = JSON.stringify({ version: 1, documents: { [sha256]: text } });
   const packHash = await hash(payload);
-    const ref = { sha256, pack: `details/${sha256.slice(0, 2)}-${packHash}.json`,
+    const ref = { sha256, pack: `details/descriptions-${sha256[0]}.json`,
       pack_sha256: packHash, status: 'available' };
   return { text, payload, ref };
 }
@@ -109,4 +109,26 @@ describe('verified public documents for all jobs', () => {
     }
     expect(fetchText).not.toHaveBeenCalled();
   });
+});
+
+
+it('reads fixed bundles and separates versions of the same filename', async () => {
+  const first = await fixture('First description');
+  // Put two distinct documents in the same fixed bucket.
+  let second = await fixture('Second description');
+  for (let n = 0; second.ref.sha256[0] !== first.ref.sha256[0]; n++) {
+    second = await fixture(`Second description ${n}`);
+  }
+  const name = `details/descriptions-${first.ref.sha256[0]}.json`;
+  const fetchText = vi.fn().mockResolvedValueOnce(first.payload).mockResolvedValueOnce(second.payload);
+  const cache = new DescriptionPackCache(fetchText);
+  expect(await cache.get({ ...first.ref, pack: name })).toBe(first.text);
+  expect(await cache.get({ ...second.ref, pack: name })).toBe(second.text);
+  expect(fetchText).toHaveBeenCalledTimes(2);
+});
+
+it('still reads legacy immutable bundle references during migration', async () => {
+  const f = await fixture();
+  const ref = { ...f.ref, pack: `details/${f.ref.sha256.slice(0, 2)}-${f.ref.pack_sha256}.json` };
+  expect(await new DescriptionPackCache(async () => f.payload).get(ref)).toBe(f.text);
 });

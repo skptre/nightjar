@@ -304,7 +304,7 @@ export async function fetchShard(
 
 function createDocumentCache(base: string): DescriptionPackCache {
   return new DescriptionPackCache(async relative => {
-    const response = await fetchWithRetry(`${base}/feed/${relative}`);
+    const response = await fetchWithRetry(`${base}/feed/${relative}`, { cache: 'no-cache' });
     if (!response.ok) throw new Error(`Description pack unavailable (HTTP ${String(response.status)})`);
     return response.text();
   });

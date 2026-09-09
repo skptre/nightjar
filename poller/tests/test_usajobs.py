@@ -189,3 +189,15 @@ async def test_usajobs_missing_results_array_is_failure_not_empty_board() -> Non
             await USAJobsAdapter().fetch(client, _company(), _company().sources[0])
     finally:
         await client.close()
+
+
+@pytest.mark.asyncio
+async def test_repeated_page_is_failure_not_a_complete_agency_snapshot() -> None:
+    first = _load("page1.json")
+    transport = MockTransport([json_response(first), json_response(first)])
+    client = await make_mock_client(transport)
+    try:
+        with pytest.raises(SourceParseError, match="duplicate"):
+            await USAJobsAdapter().fetch(client, _company(), _company().sources[0])
+    finally:
+        await client.close()

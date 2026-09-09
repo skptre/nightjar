@@ -6,9 +6,7 @@ meets the 200+ company target, and maintains data integrity.
 
 from __future__ import annotations
 
-from poller.registry import load_registry
-
-VALID_SOURCE_TYPES = {"greenhouse", "lever", "ashby", "workday", "smartrecruiters"}
+from poller.registry import VALID_SOURCE_TYPES, load_registry
 
 
 class TestRegistryPhase25:

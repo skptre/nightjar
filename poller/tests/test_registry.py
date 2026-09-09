@@ -5,7 +5,7 @@ from textwrap import dedent
 import pytest
 
 from poller.models import Company, SourceConfig, SourceHealth
-from poller.registry import is_poll_due, load_registry
+from poller.registry import VALID_SOURCE_TYPES, is_poll_due, load_registry
 
 
 @pytest.fixture()
@@ -245,7 +245,7 @@ class TestLoadRegistry:
             assert c.name
             assert len(c.sources) >= 1
             for s in c.sources:
-                assert s.type in {"greenhouse", "lever", "ashby", "workday", "smartrecruiters"}
+                assert s.type in VALID_SOURCE_TYPES
                 assert s.board_token
 
 

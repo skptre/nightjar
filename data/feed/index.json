@@ -6,37 +6,37 @@
     {
       "id": "ashby",
       "count": 78,
-      "sha256": "4ce23542fb522161a0f9ed6f11637757938f4ea3012c7ed4c8922de3acda58cc",
+      "sha256": "6b695821c133d1e8554e46d7fae4fd0c0fc39f2fe3a84c89900b0f4a98c9e1b6",
       "updated_at": "2026-09-09T02:28:46.794887Z"
     },
     {
       "id": "greenhouse",
       "count": 444,
-      "sha256": "2fbff57f8af240e2162b6e5dace950a181e112ed1904124c570bbd11bc7a0857",
+      "sha256": "6e896e4c783ac9415f1ea57ee7895b5a35074f4f06416ca982acf58a35711062",
       "updated_at": "2026-09-09T02:28:46.794887Z"
     },
     {
       "id": "lever",
       "count": 96,
-      "sha256": "8581b3f3db6b3a08f59cd751b342ed07bbe88b928feb48429083ccde55300e80",
+      "sha256": "8a6a0db4c2c0c380defe350c7974c4efe496f402eb94fa86188d14bbd76265df",
       "updated_at": "2026-09-09T02:28:46.794887Z"
     },
     {
       "id": "simplify",
       "count": 3113,
-      "sha256": "53405128dd5bd6791498b4e78c605d83a995647b7758949259ac6917b1abff6e",
+      "sha256": "46a1b9de8221c60e4e1679049ce81bf7d590c1779de24b001ffe9f9cf32d9146",
       "updated_at": "2026-09-09T02:28:46.794887Z"
     },
     {
       "id": "smartrecruiters",
       "count": 105,
-      "sha256": "d605ec106a0fa6933df2080000f8b3ad578b8c526fd56ad52a34320a53e09e09",
+      "sha256": "82d59c4231d4b65ebf3422bd5e3bd9151d67bb98598c3ad59f43be6af32022d3",
       "updated_at": "2026-09-09T02:28:46.794887Z"
     },
     {
       "id": "workday",
       "count": 635,
-      "sha256": "6c3b8e445f9867145a8bdeeb3f28fd450f2f29600190f8ae45756f4987e7ad79",
+      "sha256": "93df64cbc39614ae7c9c3d50dcba06a4895c5f1a63fd39f4475d62ee86ceff95",
       "updated_at": "2026-09-09T02:28:46.794887Z"
     }
   ],
@@ -825,6 +825,10 @@
       "name": "Jane Street",
       "typical_open": null
     },
+    "joby-aviation": {
+      "name": "Joby Aviation",
+      "typical_open": null
+    },
     "johnson-johnson": {
       "name": "Johnson & Johnson",
       "typical_open": null
@@ -1055,6 +1059,10 @@
     },
     "muon-space": {
       "name": "Muon Space",
+      "typical_open": null
+    },
+    "nasa": {
+      "name": "NASA",
       "typical_open": null
     },
     "nasa-jpl": {

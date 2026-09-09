@@ -1,5 +1,11 @@
 # Nightjar expansion: job descriptions, requirements, and coverage
 
+> **September 9 update:** Description delivery now uses at most 16 named bundles;
+> old generated versions are cleaned automatically. All 3,202 texts survived the
+> local migration and app import. Registry has 430 companies and seven source types.
+> Joby was verified live; NASA authentication awaits a runtime with the configured
+> secrets. See [release details](description-release-v5.md#september-9-follow-up-bounded-storage-and-source-readiness).
+
 > **Latest description checkpoint - September 8, 2026:** Live backfill is now working.
 > Acquisition v5 tightens identity and adds observed iCIMS, Oracle, Rippling,
 > TikTok/ByteDance and Workable recovery paths. See

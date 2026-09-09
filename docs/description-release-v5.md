@@ -115,3 +115,40 @@ Primary source references used during implementation:
 and [USAJOBS full search fields](https://developer.usajobs.gov/api-reference/get-api-search).
 Live first-party page captures and minimized public fixtures substantiate the other
 contracts; these observations are not claims that every page from a provider works.
+
+
+## September 9 follow-up: bounded storage and source readiness
+
+This supersedes the immutable-pack retention policy above. The feed now writes at
+most 16 named `details/descriptions-0.json` through `descriptions-f.json` bundles.
+Unused generated bundles are removed after shard/index generation; Git retains
+history. Both readers accept legacy references, but old app builds need updating
+before publishing the new layout. Pack and document hashes remain mandatory.
+The app revalidates HTTP caches and retains all local data on a deployment mismatch;
+the next sync retries without advancing the stored feed hash. Bundle replacements
+can transfer more text per changed job; this change bounds file count, not bytes.
+
+Claude's two registry additions and shared-type test fixes were reviewed and kept.
+Registry: 430 companies, all seven source types. Live Joby fetch on September 9
+returned 218 total postings and two U.S. internships (the earlier 20 count was not
+this complete live snapshot). NASA's credentials were absent in this terminal and
+Windows user environment; GitHub Actions already maps both secrets. Do not infer
+that missing local credentials means the user's GitHub secrets are missing.
+USAJOBS now rejects duplicate job IDs across pages rather than reporting an
+incomplete agency snapshot as successful. The offline repeated-page regression
+failed before the fix and passes afterward.
+
+Evidence: `.tmp/source-readiness.json`, `.tmp/readiness-tests.log` (1,207 passed),
+`.tmp/storage-app-tests.log`. Staged migration: `.tmp/storage-release`.
+
+
+The migration is installed in local `data/`: **335 files / 19,340,357 bytes became
+16 files / 14,768,629 bytes**, retaining all 3,202 descriptions. `feed.json` and
+`state.json` are byte-identical to their pre-migration versions; only delivery
+shards, manifest and bundles changed. Backup: `.tmp/storage-before`.
+Final validation: 1,207 Python tests, ruff and strict mypy clean; 1,122 app tests
+across 45 files including the real full-feed import, plus TypeScript clean.
+An initial fully parallel app run timed out in an unrelated tracker test; isolated
+recheck and the complete suite with four workers passed. Final evidence is
+`.tmp/storage-app-final.log`. No preview server, publishing or recurring poll was
+started. Commit the app reader and generated bundles together before publishing.

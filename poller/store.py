@@ -242,7 +242,7 @@ def save_feed_sharded(
 ) -> dict[str, ShardMeta]:
     feed_dir.mkdir(parents=True, exist_ok=True)
 
-    from poller.description_packs import write_description_packs
+    from poller.description_packs import prune_description_packs, write_description_packs
 
     references = write_description_packs(feed_dir, postings)
 
@@ -320,6 +320,7 @@ def save_feed_sharded(
     for name in stale - live:
         (feed_dir / name).unlink()
 
+    prune_description_packs(feed_dir, references)
     return shard_hashes
 
 

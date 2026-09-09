@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 VALID_SOURCE_TYPES = {
     "greenhouse", "lever", "ashby", "workday", "simplify", "smartrecruiters",
-    "google_careers", "microsoft_careers",
+    "google_careers", "microsoft_careers", "usajobs", "icims",
     "recruitee", "bamboohr", "workable", "breezy",
     "jazzhr", "teamtailor", "pinpoint", "comeet",
     "generic",

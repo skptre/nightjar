@@ -1,6 +1,6 @@
 import type { CategoryValue } from './types';
 
-export const CLASSIFICATION_VERSION = 5;
+export const CLASSIFICATION_VERSION = 6;
 export const DOMAIN_OPTIONS = [
   { value: 'aerospace', label: 'Aerospace' },
   { value: 'quant', label: 'Quant finance' },

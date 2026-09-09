@@ -27,6 +27,8 @@ SOURCE_PRIORITY: dict[str, int] = {
     "pinpoint": 3,
     "comeet": 3,
     "workday": 4,
+    "usajobs": 3,
+    "icims": 4,
     "generic": 5,
     "simplify": 99,
 }

@@ -300,7 +300,7 @@ describe('cached category migration', () => {
     expect(await recomputePendingCategoryTaxonomy(db, makeProfile(['swe']))).toBe(1);
     const row = await db.queryOne<{ category: string; classification_version: number }>(
       'SELECT category, classification_version FROM postings_cache WHERE id = ?', [posting.id]);
-    expect(row).toMatchObject({ category: 'swe', classification_version: 5 });
+    expect(row).toMatchObject({ category: 'swe', classification_version: 6 });
     expect(await recomputePendingCategoryTaxonomy(db, makeProfile(['swe']))).toBe(0);
   });
 
@@ -391,5 +391,21 @@ describe('cached category migration', () => {
         Object.defineProperty(Navigator.prototype, 'onLine', originalOnLine);
       }
     }
+  });
+});
+
+
+describe('recovered physical design responsibilities', () => {
+  const duty = 'Opportunities to receive intermediate CAD training, if applicable, including building simulation models, developing kinematics models, and performing stack-up analysis.';
+  it('rescues a generic design co-op using specific mechanical modeling duties', () => {
+    const result = classifyCategory('Design and Development Co-Op, Summer 2027', `Responsibilities\n\n${duty}`);
+    expect(result.category).toBe('mechE');
+    expect(result.matched_in).toBe('description');
+  });
+  it('does not turn degree or preferred-experience lists into job duties', () => {
+    expect(classifyCategory('Summer Intern', 'Qualifications\n\nExperience developing kinematics models is preferred.').category).toBe('other');
+  });
+  it('keeps an explicitly software role even when mechanical modeling is mentioned', () => {
+    expect(classifyCategory('Software Engineer Intern', `Responsibilities\n\n${duty}`).category).toBe('swe');
   });
 });

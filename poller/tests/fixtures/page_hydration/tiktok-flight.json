@@ -1,0 +1,639 @@
+{
+  "f": [
+    "$",
+    "div",
+    null,
+    {
+      "className": "flex flex-col",
+      "children": [
+        "$",
+        "$L2d",
+        null,
+        {
+          "module": {
+            "type": "tt.jobDetailsCommon",
+            "sectionBackgroundColor": {
+              "backgroundColor": "#f2f2f2",
+              "textColor": "#000000",
+              "theme": "TikTok Black @ 5%"
+            }
+          },
+          "children": [
+            [
+              "$",
+              "$L30",
+              null,
+              {
+                "jobId": "7668584916620527925"
+              }
+            ],
+            [
+              "$",
+              "div",
+              null,
+              {
+                "className": "flex flex-col",
+                "children": [
+                  [
+                    "$",
+                    "div",
+                    null,
+                    {
+                      "style": {
+                        "backgroundColor": "#f2f2f2",
+                        "color": "black"
+                      },
+                      "className": "flex justify-center ",
+                      "data-testid": "",
+                      "id": "",
+                      "children": [
+                        "$",
+                        "div",
+                        null,
+                        {
+                          "style": {
+                            "width": "min(1440px, var(--tt-ai-assistant-content-width, 1440px))"
+                          },
+                          "className": " ",
+                          "children": [
+                            "$",
+                            "div",
+                            null,
+                            {
+                              "className": "px-[100px] pt-[64px] pb-[80px] flex gap-[27px] min-h-[611px] h-fit",
+                              "children": [
+                                [
+                                  "$",
+                                  "div",
+                                  null,
+                                  {
+                                    "className": "flex flex-col gap-[59px] w-[711px]",
+                                    "style": {
+                                      "color": "#000000"
+                                    },
+                                    "children": [
+                                      [
+                                        "$",
+                                        "div",
+                                        null,
+                                        {
+                                          "className": "min-h-[220px] h-fit flex flex-col gap-[24px]",
+                                          "children": [
+                                            [
+                                              "$",
+                                              "div",
+                                              null,
+                                              {
+                                                "className": "inline-block",
+                                                "children": [
+                                                  "$",
+                                                  "div",
+                                                  null,
+                                                  {
+                                                    "className": "h-[32px] rounded-[40px] inline-block",
+                                                    "style": {
+                                                      "backgroundColor": "#2dccd3"
+                                                    },
+                                                    "data-testid": "chip-label",
+                                                    "children": [
+                                                      "$",
+                                                      "p",
+                                                      null,
+                                                      {
+                                                        "className": "tt-text py-[8px] px-[16px] font-[500] text-[14px] tracking-tight leading-[16px] text-center",
+                                                        "style": {
+                                                          "color": "#000000"
+                                                        },
+                                                        "children": "Technology"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ],
+                                            [
+                                              "$",
+                                              "div",
+                                              null,
+                                              {
+                                                "className": "flex flex-col gap-[10px]",
+                                                "children": [
+                                                  [
+                                                    "$",
+                                                    "h2",
+                                                    null,
+                                                    {
+                                                      "className": "w-[609px] font-[700] text-[48px] leading-[48px] tracking-tight",
+                                                      "children": "Software Engineer Intern (Business Integrity) - 2027 Summer"
+                                                    }
+                                                  ],
+                                                  null
+                                                ]
+                                              }
+                                            ]
+                                          ]
+                                        }
+                                      ],
+                                      [
+                                        "$",
+                                        "div",
+                                        null,
+                                        {
+                                          "className": "h-[84px]",
+                                          "children": [
+                                            "$",
+                                            "div",
+                                            null,
+                                            {
+                                              "className": "flex flex-col gap-0 tt-text text-[18px] leading-[28px] tracking-tight",
+                                              "children": [
+                                                [
+                                                  "$",
+                                                  "div",
+                                                  "Location",
+                                                  {
+                                                    "className": "flex gap-1",
+                                                    "children": [
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[700]",
+                                                          "children": [
+                                                            "Location",
+                                                            ":"
+                                                          ]
+                                                        }
+                                                      ],
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[400] ",
+                                                          "children": "San Jose"
+                                                        }
+                                                      ]
+                                                    ]
+                                                  }
+                                                ],
+                                                [
+                                                  "$",
+                                                  "div",
+                                                  "Employment Type",
+                                                  {
+                                                    "className": "flex gap-1",
+                                                    "children": [
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[700]",
+                                                          "children": [
+                                                            "Employment Type",
+                                                            ":"
+                                                          ]
+                                                        }
+                                                      ],
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[400] ",
+                                                          "children": "Intern"
+                                                        }
+                                                      ]
+                                                    ]
+                                                  }
+                                                ],
+                                                [
+                                                  "$",
+                                                  "div",
+                                                  "Job Code",
+                                                  {
+                                                    "className": "flex gap-1",
+                                                    "children": [
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[700]",
+                                                          "children": [
+                                                            "Job Code",
+                                                            ":"
+                                                          ]
+                                                        }
+                                                      ],
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[400] ",
+                                                          "children": "A90620A"
+                                                        }
+                                                      ]
+                                                    ]
+                                                  }
+                                                ]
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      [
+                                        "$",
+                                        "div",
+                                        null,
+                                        {
+                                          "className": "h-[64px]",
+                                          "children": [
+                                            "$",
+                                            "div",
+                                            null,
+                                            {
+                                              "className": "flex gap-[20px] items-center",
+                                              "children": [
+                                                [
+                                                  "$",
+                                                  "$L31",
+                                                  null,
+                                                  {
+                                                    "size": "middle",
+                                                    "id": "7668584916620527925",
+                                                    "label": "Apply to this job"
+                                                  }
+                                                ],
+                                                [
+                                                  "$",
+                                                  "$L32",
+                                                  null,
+                                                  {
+                                                    "className": "items-center justify-center",
+                                                    "title": "Share this listing:",
+                                                    "socialMediaList": [
+                                                      {
+                                                        "channelName": "Linkedin",
+                                                        "channelType": "social-media-sharing",
+                                                        "socialMediaLink": "https://www.linkedin.com/shareArticle?mini=true&url=",
+                                                        "socialMediaLogo": {
+                                                          "imageAlt": null,
+                                                          "imageUrl": {
+                                                            "backupUrl": "https://cdn.sanity.io/images/sq5fussn/production/e96c17da338ecfab8f31d4c345b090fe9e7d8aeb-512x512.png",
+                                                            "primaryUrl": "https://sf16-sg.tiktokcdn.com/obj/eden-sg/0eh7lpquhpanuhf/overseaCMSAssets/images/e96c17da338ecfab8f31d4c345b090fe9e7d8aeb-512x512.png",
+                                                            "secondaryUrl": "https://lf16-recruit-overseas-cdn-sg-sign.larksuite.com/obj/recruit-overseas-flie-sg/160327607/250822401/718640455/e96c17da338ecfab8f31d4c345b090fe9e7d8aeb-512x512.png?x-expires=1762030695&x-signature=XOp%2BOPBOUgoE8q7%2Bgpn8Ty6%2BRJA%3D&lfo_sfgoy4s7=vg7vSjeF"
+                                                          }
+                                                        }
+                                                      }
+                                                    ],
+                                                    "size": 32,
+                                                    "itemGap": 16,
+                                                    "shouldAddCurrentUrl": true
+                                                  }
+                                                ]
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                ],
+                                [
+                                  "$",
+                                  "figure",
+                                  null,
+                                  {
+                                    "className": "w-[502px] h-[467px] overflow-hidden",
+                                    "children": [
+                                      "$",
+                                      "$L10",
+                                      null,
+                                      {
+                                        "src": {
+                                          "backupUrl": "https://cdn.sanity.io/images/sq5fussn/production/890feac21b237a8a017e6beb3a1865a7acad1b7e-1482x1365.jpg",
+                                          "primaryUrl": "https://sf16-sg.tiktokcdn.com/obj/eden-sg/0eh7lpquhpanuhf/overseaCMSAssets/images/890feac21b237a8a017e6beb3a1865a7acad1b7e-1482x1365.jpg",
+                                          "secondaryUrl": "https://lf16-recruit-overseas-cdn-sg-sign.larksuite.com/obj/recruit-overseas-flie-sg/40490327/112574859/1684274191/890feac21b237a8a017e6beb3a1865a7acad1b7e-1482x1365.jpg?x-expires=1757642405&x-signature=C%2BrDgtDhrxv8f4G5aA2PzfHjhyc%3D&lfo_sfgoy4s7=vg7vSjeF"
+                                        },
+                                        "alt": "",
+                                        "width": 502,
+                                        "height": 467,
+                                        "style": {
+                                          "objectFit": "cover"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    "$",
+                    "div",
+                    null,
+                    {
+                      "style": {
+                        "backgroundColor": "#FFF",
+                        "color": "black"
+                      },
+                      "className": "flex justify-center ",
+                      "data-testid": "",
+                      "id": "",
+                      "children": [
+                        "$",
+                        "div",
+                        null,
+                        {
+                          "style": {
+                            "width": "min(1440px, var(--tt-ai-assistant-content-width, 1440px))"
+                          },
+                          "className": " ",
+                          "children": [
+                            "$",
+                            "div",
+                            null,
+                            {
+                              "className": "px-[100px] pb-[100px]",
+                              "children": [
+                                [
+                                  [
+                                    "$",
+                                    "div",
+                                    null,
+                                    {
+                                      "children": [
+                                        [
+                                          "$",
+                                          "div",
+                                          null,
+                                          {
+                                            "className": "py-[80px] flex flex-col gap-[32px]",
+                                            "children": [
+                                              [
+                                                "$",
+                                                "p",
+                                                null,
+                                                {
+                                                  "className": "text-[32px] leading-[36x] font-[700]",
+                                                  "children": "Responsibilities"
+                                                }
+                                              ],
+                                              [
+                                                "$",
+                                                "p",
+                                                null,
+                                                {
+                                                  "className": "tt-text text-[20px] leading-[30x] font-[400] whitespace-pre-line",
+                                                  "children": "$33"
+                                                }
+                                              ]
+                                            ]
+                                          }
+                                        ],
+                                        [
+                                          "$",
+                                          "hr",
+                                          null,
+                                          {
+                                            "className": "bg-black h-[1px] border-none"
+                                          }
+                                        ]
+                                      ]
+                                    }
+                                  ],
+                                  [
+                                    "$",
+                                    "div",
+                                    null,
+                                    {
+                                      "children": [
+                                        [
+                                          "$",
+                                          "div",
+                                          null,
+                                          {
+                                            "className": "py-[80px] flex flex-col gap-[32px]",
+                                            "children": [
+                                              [
+                                                "$",
+                                                "p",
+                                                null,
+                                                {
+                                                  "className": "text-[32px] leading-[36x] font-[700]",
+                                                  "children": "Qualifications"
+                                                }
+                                              ],
+                                              [
+                                                "$",
+                                                "p",
+                                                null,
+                                                {
+                                                  "className": "tt-text text-[20px] leading-[30x] font-[400] whitespace-pre-line",
+                                                  "children": "Minimum Qualifications:\n- Currently pursuing an Bachelor's or Master's degree in Computer Science or related fields or equivalent practical experience\n- Excellent programming, debugging, and optimization skills in general purpose programming languages\n- Ability to think critically and to formulate solutions to problems in a clear and concise way.\n- Proactive communication with team members\n\nPreferred Qualifications:\n- Experience with one or more general purpose programming languages including but not limited to: Go, C/C++, Python, Java.\n- Knowledge in one of the following areas: full-stack, large-scale systems, data.\n\nBy submitting an application for this role, you accept and agree to our global applicant privacy policy, which may be accessed here: https://careers.tiktok.com/legal/privacy"
+                                                }
+                                              ]
+                                            ]
+                                          }
+                                        ],
+                                        [
+                                          "$",
+                                          "hr",
+                                          null,
+                                          {
+                                            "className": "bg-black h-[1px] border-none"
+                                          }
+                                        ]
+                                      ]
+                                    }
+                                  ],
+                                  [
+                                    "$",
+                                    "div",
+                                    null,
+                                    {
+                                      "children": [
+                                        [
+                                          "$",
+                                          "div",
+                                          null,
+                                          {
+                                            "className": "py-[80px] flex flex-col gap-[32px]",
+                                            "children": [
+                                              [
+                                                "$",
+                                                "p",
+                                                null,
+                                                {
+                                                  "className": "text-[32px] leading-[36x] font-[700]",
+                                                  "children": "Job Information"
+                                                }
+                                              ],
+                                              [
+                                                [
+                                                  "$",
+                                                  "div",
+                                                  null,
+                                                  {
+                                                    "className": "flex flex-col text-[20px] leading-[30px] whitespace-pre-line",
+                                                    "children": [
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[700]",
+                                                          "children": "\u3010For Pay Transparency\u3011Compensation Description (Hourly) - Campus Intern"
+                                                        }
+                                                      ],
+                                                      [
+                                                        "$",
+                                                        "div",
+                                                        null,
+                                                        {
+                                                          "className": "components_jobInfoDesktop__oc4U6",
+                                                          "dangerouslySetInnerHTML": {
+                                                            "__html": "$34"
+                                                          }
+                                                        }
+                                                      ]
+                                                    ]
+                                                  }
+                                                ],
+                                                [
+                                                  "$",
+                                                  "div",
+                                                  null,
+                                                  {
+                                                    "className": "flex flex-col text-[20px] leading-[30px] whitespace-pre-line",
+                                                    "children": [
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[700]",
+                                                          "children": "About TikTok"
+                                                        }
+                                                      ],
+                                                      [
+                                                        "$",
+                                                        "div",
+                                                        null,
+                                                        {
+                                                          "className": "components_jobInfoDesktop__oc4U6",
+                                                          "dangerouslySetInnerHTML": {
+                                                            "__html": "<div class=\"editor-content\" style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Roboto', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; color: #1f2329; word-wrap: break-word; white-space: pre-wrap;\"><p style=\"font-size: 14px; text-align: left;\">TikTok is the leading destination for short-form mobile video. At TikTok, our mission is to inspire creativity and bring joy. TikTok's global headquarters are in Los Angeles and Singapore, and we also have offices in New York City, London, Dublin, Paris, Berlin, Dubai, Jakarta, Seoul, and Tokyo.<span>&#8203;</span></p></div>"
+                                                          }
+                                                        }
+                                                      ]
+                                                    ]
+                                                  }
+                                                ],
+                                                [
+                                                  "$",
+                                                  "div",
+                                                  null,
+                                                  {
+                                                    "className": "flex flex-col text-[20px] leading-[30px] whitespace-pre-line",
+                                                    "children": [
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[700]",
+                                                          "children": "Why Join Us"
+                                                        }
+                                                      ],
+                                                      [
+                                                        "$",
+                                                        "div",
+                                                        null,
+                                                        {
+                                                          "className": "components_jobInfoDesktop__oc4U6",
+                                                          "dangerouslySetInnerHTML": {
+                                                            "__html": "$35"
+                                                          }
+                                                        }
+                                                      ]
+                                                    ]
+                                                  }
+                                                ],
+                                                [
+                                                  "$",
+                                                  "div",
+                                                  null,
+                                                  {
+                                                    "className": "flex flex-col text-[20px] leading-[30px] whitespace-pre-line",
+                                                    "children": [
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[700]",
+                                                          "children": "TikTok Accommodation"
+                                                        }
+                                                      ],
+                                                      [
+                                                        "$",
+                                                        "div",
+                                                        null,
+                                                        {
+                                                          "className": "components_jobInfoDesktop__oc4U6",
+                                                          "dangerouslySetInnerHTML": {
+                                                            "__html": "<div class=\"editor-content\" style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Roboto', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; color: #1f2329; word-wrap: break-word; white-space: pre-wrap;\"><p style=\"font-size: 14px; text-align: left;\">TikTok is committed to providing reasonable accommodations in our recruitment processes for candidates with disabilities, pregnancy, sincerely held religious beliefs or other reasons protected by applicable laws. If you need assistance or a reasonable accommodation, please reach out to us at <a href=\"https://bytedance.us.larkoffice.com/share/base/form/shrusW6pfDVzkZRjoYkIUjlOhth\" rel=\"noopener noreferrer nofollow\" elementtiming=\"admin-element-timing\">https://tinyurl.com/RA-request</a><span>&#8203;</span></p></div>"
+                                                          }
+                                                        }
+                                                      ]
+                                                    ]
+                                                  }
+                                                ]
+                                              ]
+                                            ]
+                                          }
+                                        ],
+                                        "$undefined"
+                                      ]
+                                    }
+                                  ]
+                                ],
+                                [
+                                  "$",
+                                  "$L31",
+                                  null,
+                                  {
+                                    "size": "middle",
+                                    "id": "7668584916620527925",
+                                    "label": "Apply to this job"
+                                  }
+                                ]
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            "$L36"
+          ]
+        }
+      ]
+    }
+  ],
+  "33": "Our Business Integrity team has a strong user focus and a dedication to technical excellence. We build industry leading Ads Risk Control system that rewards high quality user experience and establishes trust between customers and business service providers. We aim to meet our users\u2019 needs with reliable and high-performing platforms and services. You will learn comprehensive domain knowledge in ads moderation, risk control and policy. \n\nWe are looking for talented individuals to join us for an internship. Our internship program offers students hands-on experience, industry exposure, and opportunities to apply their knowledge to real-world challenges while building a strong foundation for personal and professional growth.\nInterns will gain practical experience, explore potential career paths, and participate in social events, learning programs, and development workshops alongside industry professionals.\nCandidates may apply to a maximum of two positions across Our Company and its affiliates globally. Applications will be considered in the order they are submitted.\nApplications are reviewed on a rolling basis, so we encourage you to apply early. Please clearly state your availability in your resume, including your start and end dates.\n\nKey Responsibilities\n- Build highly scalable systems including ad fraud detection, risk control, ads integrity systems, to improve user's experiences with ads across the platform.\n- Collaborate with users to build next-gen knowledge base systems including search engines, workflow automation, AI-empowered tools, etc.\n- Contribute to the success of a rapidly growing and evolving organization with speediness and quality.\n- Collaborate with PM and R&D teams globally, in a fast paced environment.",
+  "34": "<div class=\"editor-content\" style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Roboto', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; color: #1f2329; word-wrap: break-word; white-space: pre-wrap;\"><p style=\"font-size: 14px; text-align: left;\">The hourly rate range for this position in the selected city is $45- $60. <span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">Benefits may vary depending on the nature of employment and the country work location. Interns have day one access to health insurance, life insurance, wellbeing benefits and more. Interns also receive 10 paid holidays per year and paid sick time (56 hours if hired in first half of year, 40 if hired in second half of year). Interns who are not working 100% remote may also be eligible for housing allowance.<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">The Company reserves the right to modify or change these benefits programs at any time, with or without notice.<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">For Los Angeles County (unincorporated) Candidates:<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">Qualified applicants with arrest or conviction records will be considered for employment in accordance with all federal, state, and local laws including the Los Angeles County Fair Chance Ordinance for Employers and the California Fair Chance Act. Our company believes that criminal history may have a direct, adverse and negative relationship on the following job duties, potentially resulting in the withdrawal of the conditional offer of employment:<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">1. Interacting and occasionally having unsupervised contact with internal/external clients and/or colleagues;<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">2. Appropriately handling and managing confidential information including proprietary and trade secret information and access to information technology systems; and<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">3. Exercising sound judgment.<span>&#8203;</span></p></div>",
+  "35": "<div class=\"editor-content\" style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Roboto', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; color: #1f2329; word-wrap: break-word; white-space: pre-wrap;\"><p style=\"font-size: 14px; text-align: left;\">Inspiring creativity is at the core of TikTok's mission. Our innovative product is built to help people authentically express themselves, discover and connect \u2013 and our global, diverse teams make that possible. Together, we create value for our communities, inspire creativity and bring joy - a mission we work towards every day.<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">We strive to do great things with great people. We lead with curiosity, humility, and a desire to make impact in a rapidly growing tech company. Every challenge is an opportunity to learn and innovate as one team. We're resilient and embrace challenges as they come. By constantly iterating and fostering an \"Always Day 1\" mindset, we achieve meaningful breakthroughs for ourselves, our company, and our users. When we create and grow together, the possibilities are limitless. Join us.<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\"><span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">Diversity &amp; Inclusion<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">TikTok is committed to creating an inclusive space where employees are valued for their skills, experiences, and unique perspectives. Our platform connects people from across the globe and so does our workplace. At TikTok, our mission is to inspire creativity and bring joy. To achieve that goal, we are committed to celebrating our diverse voices and to creating an environment that reflects the many communities we reach. We are passionate about this and hope you are too.<span>&#8203;</span></p></div>"
+}

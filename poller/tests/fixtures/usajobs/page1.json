@@ -1,0 +1,36 @@
+{
+  "SearchResult": {
+    "SearchResultCount": 2,
+    "SearchResultCountAll": 4,
+    "SearchResultItems": [
+      {
+        "MatchedObjectId": "900000001",
+        "MatchedObjectDescriptor": {
+          "PositionID": "P-1",
+          "PositionTitle": "Intern, Propulsion",
+          "PositionURI": "https://www.usajobs.gov/job/900000001",
+          "PositionLocation": [{"LocationName": "Huntsville, Alabama", "CountryCode": "United States"}],
+          "PositionLocationDisplay": "Huntsville, Alabama",
+          "OrganizationName": "NASA",
+          "PublicationStartDate": "2026-09-01",
+          "ApplicationCloseDate": "2026-10-01",
+          "UserArea": {"Details": {"JobSummary": "Propulsion internship."}}
+        }
+      },
+      {
+        "MatchedObjectId": "900000002",
+        "MatchedObjectDescriptor": {
+          "PositionID": "P-2",
+          "PositionTitle": "Intern, Avionics",
+          "PositionURI": "https://www.usajobs.gov/job/900000002",
+          "PositionLocation": [{"LocationName": "Hampton, Virginia", "CountryCode": "United States"}],
+          "PositionLocationDisplay": "Hampton, Virginia",
+          "OrganizationName": "NASA",
+          "PublicationStartDate": "2026-09-01",
+          "ApplicationCloseDate": "2026-10-01",
+          "UserArea": {"Details": {"JobSummary": "Avionics internship."}}
+        }
+      }
+    ]
+  }
+}

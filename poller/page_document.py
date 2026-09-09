@@ -26,44 +26,44 @@ _CONTAINER = re.compile(r"(?:^|[\s_-])(?:job[\s_-]?description|job[\s_-]?details
 
 
 def normalized_title(value: str) -> str:
-    return " ".join(re.findall(r"\w+", unicodedata.normalize("NFKC", value).casefold()))
+    return " ".join(re.findall(r"c\+\+|c#|\w+", unicodedata.normalize("NFKC", value).casefold()))
 
 
 def title_is_shortening(expected: str, source_title: str) -> bool:
-    """True when the feed title is a shortened form of the source's own title.
+    """Match explicit shortening, never arbitrary prefixes or changed seniority.
 
-    Upstream (the poller/Simplify) normalizes titles by dropping or truncating
-    words, so the feed's title differs from the source JobPosting title even for
-    the same job (e.g. feed "Electrical/Computer Engineering Intern Co-op" vs
-    source "Electrical/Computer Engineering Internship or Co-op 2027"). Exact
-    equality wrongly discarded those. Every feed token must still appear in the
-    source (exact or a shared prefix, which covers intern/internship); upstream
-    never swaps in unrelated words, so a genuinely different job served at the
-    same url ("Different job") is still rejected.
-
-    ``expected`` is an already-normalized feed title; ``source_title`` is raw.
+    Finance program names remain analyst/associate; no internship word is required.
+    URL/requisition identity is independently mandatory.
     """
-    feed = expected.split()
-    if not feed:
-        return True
-    remaining = normalized_title(source_title).split()
-    for token in feed:
-        for index, candidate in enumerate(remaining):
-            if candidate == token or candidate.startswith(token) or token.startswith(candidate):
-                del remaining[index]
-                break
-        else:
-            return False
-    return True
+    aliases = {"internship": "intern", "internships": "intern", "interns": "intern",
+               "sr": "senior", "jr": "junior", "engineering": "engineer"}
+    def tokens(value: str) -> set[str]:
+        return {aliases.get(token, token) for token in normalized_title(value).split()
+                if token not in {"or", "and", "the"}}
+    feed, source = tokens(expected), tokens(source_title)
+    levels = {"senior", "junior", "staff", "principal", "lead", "manager", "director",
+              "ii", "iii", "iv", "v"}
+    if (feed & levels) != (source & levels):
+        return False
+    return bool(feed) and feed <= source
 
 
 def same_job_url(left: str, right: str) -> bool:
     """Ignore known tracking only; query parameters can identify different jobs."""
     def key(value: str) -> tuple[str, str, list[tuple[str, str]]]:
         parsed = urlparse(value)
+        path = parsed.path.rstrip("/") or "/"
+        host = parsed.hostname or ""
+        # iCIMS job IDs are stable; slugs and mobile presentation flags are not.
+        if re.fullmatch(r"[a-z0-9-]+\.icims\.com", host):
+            match = re.fullmatch(r"/jobs/(\d+)/(?:[^/]+/)?job", path)
+            if match:
+                path = "/jobs/" + match[1]
         query = sorted((k, v) for k, v in parse_qsl(parsed.query, keep_blank_values=True)
-                       if not k.lower().startswith("utm_") and k.lower() not in _TRACKING)
-        return (parsed.netloc.casefold(), parsed.path.rstrip("/") or "/", query)
+                       if not k.lower().startswith("utm_") and k.lower() not in _TRACKING
+                       and not (host.endswith(".icims.com")
+                                and k.lower() in {"mobile", "needsredirect", "in_iframe"}))
+        return (parsed.netloc.casefold(), path, query)
     return key(left) == key(right)
 
 
@@ -221,6 +221,15 @@ def extract_document(html: str, url: str, title: str) -> JobDocument:
         return document
     if visible:
         return visible
+    from poller.page_hydration import extract_page_data
+
+    scripts = ["".join(c for c in node.children if isinstance(c, str)) for node in nodes
+               if node.tag == "script"]
+    page_data = [JobDocument(text, "partial", method)
+                 for text, method in extract_page_data(scripts, url, title)]
+    document = _unique(page_data)
+    if document:
+        return document
     hydration = [JobDocument(p.description, "partial", "hydration")
                  for p in extract_hydration(html, "document", url)
                  if same_job_url(p.url, url) and normalized_title(p.title) == expected]

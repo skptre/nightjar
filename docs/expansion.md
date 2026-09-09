@@ -1,5 +1,17 @@
 # Nightjar expansion: job descriptions, requirements, and coverage
 
+> **Latest description checkpoint - September 8, 2026:** Live backfill is now working.
+> Acquisition v5 tightens identity and adds observed iCIMS, Oracle, Rippling,
+> TikTok/ByteDance and Workable recovery paths. See
+> [the release checkpoint](description-release-v5.md) for measurements, adapter
+> integration review, validated artifacts and the steps before enabling polling.
+> Local `data/` now includes 3,202 descriptions / 4,305 active jobs (74.38%):
+> 2,875 complete, 321 partial, six stale. App import verified every string.
+> 1,205 Python tests and 1,119 app tests passed, plus the full-feed import check.
+> Publishing/scheduled polling remain off. The older network-blocked checkpoint
+> below is historical; the automated coverage engine remains separate.
+
+
 > **UI update — September 8, 2026:** The user prioritized the MVP interface while Claude
 > handles employer additions. Home, Jobs/details, the table tracker, appearance and
 > opt-in watched-company alerts now have a working interface. See

@@ -2517,3 +2517,596 @@
   sources:
     - type: greenhouse
       board_token: bungie
+
+# == Aero Expansion (Sept 2026) - verified aero/defense/robotics/hardware/energy/quant ==
+
+- slug: relativity-space
+  name: Relativity Space
+  tags: [aerospace, launch, long-beach]
+  sources:
+    - type: greenhouse
+      board_token: relativity
+  high_priority: true
+
+- slug: vast-space
+  name: Vast
+  tags: [aerospace, space-station, long-beach]
+  sources:
+    - type: greenhouse
+      board_token: vast
+
+- slug: muon-space
+  name: Muon Space
+  tags: [aerospace, satellite, mountain-view]
+  sources:
+    - type: greenhouse
+      board_token: muonspace
+
+- slug: planet-labs
+  name: Planet Labs
+  tags: [aerospace, satellite, sf]
+  sources:
+    - type: greenhouse
+      board_token: planetlabs
+
+- slug: albedo
+  name: Albedo
+  tags: [aerospace, satellite, denver]
+  sources:
+    - type: greenhouse
+      board_token: albedo
+
+- slug: ursa-major
+  name: Ursa Major
+  tags: [aerospace, propulsion, berthoud-co]
+  sources:
+    - type: greenhouse
+      board_token: ursamajor
+
+- slug: portal-space-systems
+  name: Portal Space Systems
+  tags: [aerospace, satellite, bothell-wa]
+  sources:
+    - type: greenhouse
+      board_token: portalspacesystems
+
+- slug: loft-orbital
+  name: Loft Orbital
+  tags: [aerospace, satellite, sf]
+  sources:
+    - type: lever
+      board_token: loftorbital
+
+- slug: momentus
+  name: Momentus
+  tags: [aerospace, satellite, san-jose]
+  sources:
+    - type: greenhouse
+      board_token: momentus
+
+- slug: impulse-space
+  name: Impulse Space
+  tags: [aerospace, propulsion, redondo-beach]
+  sources:
+    - type: ashby
+      board_token: impulse
+  high_priority: true
+
+- slug: firefly-aerospace
+  name: Firefly Aerospace
+  tags: [aerospace, launch, cedar-park-tx]
+  sources:
+    - type: ashby
+      board_token: firefly-co
+  high_priority: true
+
+- slug: stoke-space
+  name: Stoke Space
+  tags: [aerospace, launch, kent-wa]
+  sources:
+    - type: greenhouse
+      board_token: stokespacetechnologies
+  high_priority: true
+
+- slug: true-anomaly
+  name: True Anomaly
+  tags: [aerospace, defense, denver]
+  sources:
+    - type: greenhouse
+      board_token: trueanomalyinc
+
+- slug: turion-space
+  name: Turion Space
+  tags: [aerospace, satellite, irvine-ca]
+  sources:
+    - type: ashby
+      board_token: turion-space
+
+- slug: xona-space-systems
+  name: Xona Space Systems
+  tags: [aerospace, satellite, burlingame-ca]
+  sources:
+    - type: ashby
+      board_token: xona-space
+
+- slug: gravitics
+  name: Gravitics
+  tags: [aerospace, space-station, marysville-wa]
+  sources:
+    - type: greenhouse
+      board_token: graviticsinc
+
+- slug: slingshot-aerospace
+  name: Slingshot Aerospace
+  tags: [aerospace, space-domain-awareness, austin]
+  sources:
+    - type: greenhouse
+      board_token: slingshotaerospace
+
+- slug: leolabs
+  name: LeoLabs
+  tags: [aerospace, space-domain-awareness, menlo-park]
+  sources:
+    - type: greenhouse
+      board_token: leolabsinc
+
+- slug: archer-aviation
+  name: Archer Aviation
+  tags: [aerospace, evtol, san-jose]
+  sources:
+    - type: greenhouse
+      board_token: archer56
+  high_priority: true
+
+- slug: regent-craft
+  name: Regent
+  tags: [aerospace, seaglider, north-kingstown-ri]
+  sources:
+    - type: ashby
+      board_token: regent
+
+- slug: hadrian
+  name: Hadrian
+  tags: [aerospace, defense, manufacturing, la]
+  sources:
+    - type: ashby
+      board_token: hadrian-automation
+  high_priority: true
+
+- slug: divergent
+  name: Divergent Technologies
+  tags: [manufacturing, aerospace, automotive, la]
+  sources:
+    - type: greenhouse
+      board_token: divergent
+
+- slug: saronic
+  name: Saronic
+  tags: [defense, naval, autonomy, austin]
+  sources:
+    - type: ashby
+      board_token: saronic
+  high_priority: true
+
+- slug: havoc-ai
+  name: Havoc AI
+  tags: [defense, naval, autonomy, fort-lauderdale]
+  sources:
+    - type: ashby
+      board_token: havocai
+
+- slug: vannevar-labs
+  name: Vannevar Labs
+  tags: [defense, ai, sf]
+  sources:
+    - type: greenhouse
+      board_token: vannevarlabs
+
+- slug: epirus
+  name: Epirus
+  tags: [defense, directed-energy, torrance-ca]
+  sources:
+    - type: greenhouse
+      board_token: epirus
+
+- slug: mach-industries
+  name: Mach Industries
+  tags: [defense, hardware, huntington-beach-ca]
+  sources:
+    - type: greenhouse
+      board_token: machindustries
+
+- slug: chaos-industries
+  name: CHAOS Industries
+  tags: [defense, hardware, la]
+  sources:
+    - type: greenhouse
+      board_token: chaosindustries
+
+- slug: allen-control-systems
+  name: Allen Control Systems
+  tags: [defense, robotics, austin]
+  sources:
+    - type: greenhouse
+      board_token: allencontrolsystems
+
+- slug: neros
+  name: Neros
+  tags: [defense, drones, el-segundo]
+  sources:
+    - type: greenhouse
+      board_token: nerostechnologies
+
+- slug: castelion
+  name: Castelion
+  tags: [defense, hypersonics, el-segundo]
+  sources:
+    - type: greenhouse
+      board_token: castelioncorporation
+
+- slug: caci
+  name: CACI International
+  tags: [defense, intelligence, reston-va]
+  sources:
+    - type: smartrecruiters
+      board_token: CACI
+  seasonal_pattern: year_round
+
+- slug: reliable-robotics
+  name: Reliable Robotics
+  tags: [aerospace, autonomy, mountain-view]
+  sources:
+    - type: ashby
+      board_token: reliable-robotics
+
+- slug: physical-intelligence
+  name: Physical Intelligence
+  tags: [robotics, ai, sf]
+  sources:
+    - type: ashby
+      board_token: physicalintelligence
+  high_priority: true
+
+- slug: gecko-robotics
+  name: Gecko Robotics
+  tags: [robotics, inspection, pittsburgh]
+  sources:
+    - type: ashby
+      board_token: gecko-robotics
+
+- slug: standard-bots
+  name: Standard Bots
+  tags: [robotics, manufacturing, nyc]
+  sources:
+    - type: ashby
+      board_token: standardbots
+
+- slug: skild-ai
+  name: Skild AI
+  tags: [robotics, ai, pittsburgh]
+  sources:
+    - type: greenhouse
+      board_token: skildai-careers
+
+- slug: kodiak-robotics
+  name: Kodiak Robotics
+  tags: [av, trucking, mountain-view]
+  sources:
+    - type: greenhouse
+      board_token: kodiak
+
+- slug: may-mobility
+  name: May Mobility
+  tags: [av, mobility, ann-arbor]
+  sources:
+    - type: greenhouse
+      board_token: maymobility
+
+- slug: stack-av
+  name: Stack AV
+  tags: [av, trucking, pittsburgh]
+  sources:
+    - type: greenhouse
+      board_token: stackav
+
+- slug: bot-auto
+  name: Bot Auto
+  tags: [av, trucking, houston]
+  sources:
+    - type: greenhouse
+      board_token: botauto
+
+- slug: scout-motors
+  name: Scout Motors
+  tags: [automotive, ev, columbia-sc]
+  sources:
+    - type: greenhouse
+      board_token: scoutmotors
+
+- slug: wayve
+  name: Wayve
+  tags: [av, ai, london]
+  sources:
+    - type: greenhouse
+      board_token: wayve
+
+- slug: diligent-robotics
+  name: Diligent Robotics
+  tags: [robotics, healthcare, austin]
+  sources:
+    - type: greenhouse
+      board_token: diligentrobotics
+
+- slug: nimble-robotics
+  name: Nimble Robotics
+  tags: [robotics, logistics, sf]
+  sources:
+    - type: greenhouse
+      board_token: nimblerobotics
+
+- slug: formic
+  name: Formic
+  tags: [robotics, automation, chicago]
+  sources:
+    - type: greenhouse
+      board_token: formic
+
+- slug: waabi
+  name: Waabi
+  tags: [av, ai, toronto]
+  sources:
+    - type: lever
+      board_token: waabi
+
+- slug: merlin-labs
+  name: Merlin Labs
+  tags: [aerospace, autonomy, boston]
+  sources:
+    - type: lever
+      board_token: merlinlabs
+
+- slug: dexterity
+  name: Dexterity
+  tags: [robotics, logistics, redwood-city]
+  sources:
+    - type: lever
+      board_token: dexterity
+
+- slug: bright-machines
+  name: Bright Machines
+  tags: [robotics, manufacturing, sf]
+  sources:
+    - type: lever
+      board_token: brightmachines
+
+- slug: field-ai
+  name: Field AI
+  tags: [robotics, ai, mission-viejo-ca]
+  sources:
+    - type: lever
+      board_token: field-ai
+
+- slug: anybotics
+  name: ANYbotics
+  tags: [robotics, inspection, zurich]
+  sources:
+    - type: lever
+      board_token: anybotics
+
+- slug: saildrone
+  name: Saildrone
+  tags: [defense, maritime, autonomy, alameda]
+  sources:
+    - type: greenhouse
+      board_token: saildroneinc
+
+- slug: d-matrix
+  name: d-Matrix
+  tags: [semiconductor, ai, santa-clara]
+  sources:
+    - type: ashby
+      board_token: d-matrix
+
+- slug: axelera-ai
+  name: Axelera AI
+  tags: [semiconductor, ai, eindhoven]
+  sources:
+    - type: ashby
+      board_token: axelera
+
+- slug: lightmatter
+  name: Lightmatter
+  tags: [semiconductor, photonics, mountain-view]
+  sources:
+    - type: greenhouse
+      board_token: lightmatter
+
+- slug: psiquantum
+  name: PsiQuantum
+  tags: [quantum, hardware, palo-alto]
+  sources:
+    - type: greenhouse
+      board_token: psiquantum
+
+- slug: atom-computing
+  name: Atom Computing
+  tags: [quantum, hardware, berkeley]
+  sources:
+    - type: lever
+      board_token: atomcomputing
+
+- slug: helion-energy
+  name: Helion Energy
+  tags: [energy, fusion, everett-wa]
+  sources:
+    - type: ashby
+      board_token: helion
+
+- slug: form-energy
+  name: Form Energy
+  tags: [energy, storage, somerville-ma]
+  sources:
+    - type: ashby
+      board_token: formenergy
+
+- slug: twelve
+  name: Twelve
+  tags: [energy, carbon, berkeley]
+  sources:
+    - type: ashby
+      board_token: twelve
+
+- slug: crusoe
+  name: Crusoe
+  tags: [energy, ai-infrastructure, denver]
+  sources:
+    - type: ashby
+      board_token: crusoe
+
+- slug: sila-nanotechnologies
+  name: Sila Nanotechnologies
+  tags: [energy, battery, alameda]
+  sources:
+    - type: greenhouse
+      board_token: silananotechnologies
+
+- slug: kairos-power
+  name: Kairos Power
+  tags: [energy, nuclear, alameda]
+  sources:
+    - type: greenhouse
+      board_token: kairospower
+
+- slug: mainspring-energy
+  name: Mainspring Energy
+  tags: [energy, generators, menlo-park]
+  sources:
+    - type: lever
+      board_token: mainspringenergy
+
+- slug: antora-energy
+  name: Antora Energy
+  tags: [energy, thermal-storage, sunnyvale]
+  sources:
+    - type: greenhouse
+      board_token: antora
+
+- slug: exoduspoint
+  name: ExodusPoint Capital
+  tags: [quant, trading, nyc]
+  sources:
+    - type: greenhouse
+      board_token: exoduspoint
+
+- slug: squarepoint-capital
+  name: Squarepoint Capital
+  tags: [quant, trading, nyc]
+  sources:
+    - type: greenhouse
+      board_token: squarepointcapital
+
+- slug: man-group
+  name: Man Group
+  tags: [quant, asset-management, london]
+  sources:
+    - type: greenhouse
+      board_token: mangroup
+
+- slug: pdt-partners
+  name: PDT Partners
+  tags: [quant, trading, nyc]
+  sources:
+    - type: greenhouse
+      board_token: pdtpartners
+
+- slug: worldquant
+  name: WorldQuant
+  tags: [quant, trading, nyc]
+  sources:
+    - type: greenhouse
+      board_token: worldquant
+
+- slug: flow-traders
+  name: Flow Traders
+  tags: [quant, trading, amsterdam]
+  sources:
+    - type: greenhouse
+      board_token: flowtraders
+
+- slug: qube-rt
+  name: Qube Research & Technologies
+  tags: [quant, trading, london]
+  sources:
+    - type: greenhouse
+      board_token: quberesearchandtechnologies
+
+- slug: xtx-markets
+  name: XTX Markets
+  tags: [quant, trading, london]
+  sources:
+    - type: greenhouse
+      board_token: xtxmarketstechnologies
+
+# == Aero Expansion Workday primes (Sept 2026) - NASA JPL, Blue Origin, Sierra Space/Nevada, AeroVironment, GDIT, Applied Materials, KLA ==
+
+- slug: nasa-jpl
+  name: NASA Jet Propulsion Laboratory
+  tags: [aerospace, space, national-lab, pasadena]
+  sources:
+    - type: workday
+      board_token: citjpl.wd5.myworkdayjobs.com/Jobs
+  high_priority: true
+  seasonal_pattern: year_round
+
+- slug: sierra-space
+  name: Sierra Space
+  tags: [aerospace, defense, space, louisville-co]
+  sources:
+    - type: workday
+      board_token: sierraspace.wd1.myworkdayjobs.com/Sierra_Space_External_Career_Site
+  high_priority: true
+
+- slug: sierra-nevada-corporation
+  name: Sierra Nevada Corporation
+  tags: [aerospace, defense, sparks-nv]
+  sources:
+    - type: workday
+      board_token: snc.wd1.myworkdayjobs.com/SNC_External_Career_Site
+  high_priority: true
+
+- slug: aerovironment
+  name: AeroVironment
+  tags: [defense, drones, autonomy, arlington-va]
+  sources:
+    - type: workday
+      board_token: avav.wd1.myworkdayjobs.com/AVAV
+
+- slug: blue-origin
+  name: Blue Origin
+  tags: [aerospace, launch, kent-wa]
+  sources:
+    - type: workday
+      board_token: blueorigin.wd5.myworkdayjobs.com/BlueOrigin
+  high_priority: true
+
+- slug: gdit
+  name: General Dynamics Information Technology
+  tags: [defense, it, intelligence, falls-church-va]
+  sources:
+    - type: workday
+      board_token: gdit.wd5.myworkdayjobs.com/External_Career_Site
+  seasonal_pattern: year_round
+
+- slug: applied-materials
+  name: Applied Materials
+  tags: [semiconductor, hardware, santa-clara]
+  sources:
+    - type: workday
+      board_token: amat.wd1.myworkdayjobs.com/External
+
+- slug: kla
+  name: KLA Corporation
+  tags: [semiconductor, hardware, milpitas-ca]
+  sources:
+    - type: workday
+      board_token: kla.wd1.myworkdayjobs.com/Search

@@ -1,0 +1,36 @@
+{
+  "SearchResult": {
+    "SearchResultCount": 2,
+    "SearchResultCountAll": 4,
+    "SearchResultItems": [
+      {
+        "MatchedObjectId": "900000003",
+        "MatchedObjectDescriptor": {
+          "PositionID": "P-3",
+          "PositionTitle": "Intern, Thermal",
+          "PositionURI": "https://www.usajobs.gov/job/900000003",
+          "PositionLocation": [{"LocationName": "Pasadena, California", "CountryCode": "United States"}],
+          "PositionLocationDisplay": "Pasadena, California",
+          "OrganizationName": "NASA",
+          "PublicationStartDate": "2026-09-01",
+          "ApplicationCloseDate": "2026-10-01",
+          "UserArea": {"Details": {"JobSummary": "Thermal internship."}}
+        }
+      },
+      {
+        "MatchedObjectId": "900000004",
+        "MatchedObjectDescriptor": {
+          "PositionID": "P-4",
+          "PositionTitle": "Intern, Structures",
+          "PositionURI": "https://www.usajobs.gov/job/900000004",
+          "PositionLocation": [{"LocationName": "Cleveland, Ohio", "CountryCode": "United States"}],
+          "PositionLocationDisplay": "Cleveland, Ohio",
+          "OrganizationName": "NASA",
+          "PublicationStartDate": "2026-09-01",
+          "ApplicationCloseDate": "2026-10-01",
+          "UserArea": {"Details": {"JobSummary": "Structures internship."}}
+        }
+      }
+    ]
+  }
+}

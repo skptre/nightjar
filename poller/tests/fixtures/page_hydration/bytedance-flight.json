@@ -1,0 +1,624 @@
+{
+  "10": [
+    "$",
+    "div",
+    null,
+    {
+      "className": "flex flex-col",
+      "children": [
+        "$",
+        "$L21",
+        null,
+        {
+          "moduleType": "bd.jobDetailsCommon",
+          "children": [
+            [
+              "$",
+              "$L23",
+              null,
+              {
+                "jobId": "7670316084662339845"
+              }
+            ],
+            [
+              "$",
+              "div",
+              null,
+              {
+                "className": "flex flex-col",
+                "children": [
+                  [
+                    "$",
+                    "div",
+                    null,
+                    {
+                      "style": {
+                        "backgroundColor": "#ffffff",
+                        "color": "black"
+                      },
+                      "className": "flex justify-center ",
+                      "data-testid": "",
+                      "id": "",
+                      "children": [
+                        "$",
+                        "div",
+                        null,
+                        {
+                          "className": "w-[1440px]",
+                          "children": [
+                            "$",
+                            "div",
+                            null,
+                            {
+                              "className": "px-[100px] py-[100px] flex gap-[24px] min-h-[670px] h-fit",
+                              "children": [
+                                [
+                                  "$",
+                                  "div",
+                                  null,
+                                  {
+                                    "className": "flex flex-col gap-[48px] w-[607px]",
+                                    "style": {
+                                      "color": "#000000"
+                                    },
+                                    "children": [
+                                      [
+                                        "$",
+                                        "div",
+                                        null,
+                                        {
+                                          "className": "flex flex-col gap-[24px]",
+                                          "children": [
+                                            "$",
+                                            "div",
+                                            null,
+                                            {
+                                              "className": "flex flex-col gap-[2px]",
+                                              "children": [
+                                                [
+                                                  "$",
+                                                  "h2",
+                                                  null,
+                                                  {
+                                                    "className": "font-[600] text-[46px] leading-[56px] tracking-tight",
+                                                    "children": "Student Researcher - Compiler (Seed Infra) - 2026 Start"
+                                                  }
+                                                ],
+                                                null
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      [
+                                        "$",
+                                        "div",
+                                        null,
+                                        {
+                                          "className": "h-[150px]",
+                                          "children": [
+                                            "$",
+                                            "div",
+                                            null,
+                                            {
+                                              "className": "flex flex-col text-[18px] leading-[28px] tracking-tight",
+                                              "children": [
+                                                [
+                                                  "$",
+                                                  "div",
+                                                  "Location",
+                                                  {
+                                                    "className": "flex gap-[4px]",
+                                                    "children": [
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[700]",
+                                                          "children": [
+                                                            "Location",
+                                                            ":"
+                                                          ]
+                                                        }
+                                                      ],
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[400] ",
+                                                          "children": "San Jose"
+                                                        }
+                                                      ]
+                                                    ]
+                                                  }
+                                                ],
+                                                [
+                                                  "$",
+                                                  "div",
+                                                  "Team",
+                                                  {
+                                                    "className": "flex gap-[4px]",
+                                                    "children": [
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[700]",
+                                                          "children": [
+                                                            "Team",
+                                                            ":"
+                                                          ]
+                                                        }
+                                                      ],
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[400] ",
+                                                          "children": "Technology"
+                                                        }
+                                                      ]
+                                                    ]
+                                                  }
+                                                ],
+                                                [
+                                                  "$",
+                                                  "div",
+                                                  "Employment Type",
+                                                  {
+                                                    "className": "flex gap-[4px]",
+                                                    "children": [
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[700]",
+                                                          "children": [
+                                                            "Employment Type",
+                                                            ":"
+                                                          ]
+                                                        }
+                                                      ],
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[400] ",
+                                                          "children": "Intern"
+                                                        }
+                                                      ]
+                                                    ]
+                                                  }
+                                                ],
+                                                [
+                                                  "$",
+                                                  "div",
+                                                  "Job Code",
+                                                  {
+                                                    "className": "flex gap-[4px]",
+                                                    "children": [
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[700]",
+                                                          "children": [
+                                                            "Job Code",
+                                                            ":"
+                                                          ]
+                                                        }
+                                                      ],
+                                                      [
+                                                        "$",
+                                                        "p",
+                                                        null,
+                                                        {
+                                                          "className": "font-[400] ",
+                                                          "children": "A92858"
+                                                        }
+                                                      ]
+                                                    ]
+                                                  }
+                                                ]
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      [
+                                        "$",
+                                        "div",
+                                        null,
+                                        {
+                                          "className": "h-[56px]",
+                                          "children": [
+                                            "$",
+                                            "div",
+                                            null,
+                                            {
+                                              "className": "flex gap-[17px] items-center",
+                                              "children": [
+                                                [
+                                                  "$",
+                                                  "$L24",
+                                                  null,
+                                                  {
+                                                    "size": "middle",
+                                                    "id": "7670316084662339845",
+                                                    "label": "Apply to this job"
+                                                  }
+                                                ],
+                                                [
+                                                  "$",
+                                                  "$L25",
+                                                  null,
+                                                  {
+                                                    "className": "items-center justify-center",
+                                                    "title": "Share this listing:",
+                                                    "socialMediaList": [
+                                                      {
+                                                        "channelName": "LinkedIn",
+                                                        "channelType": "social-media-sharing",
+                                                        "socialMediaLink": "https://www.linkedin.com/shareArticle?mini=true&url=",
+                                                        "socialMediaLogo": {
+                                                          "imageAlt": null,
+                                                          "imageUrl": {
+                                                            "backupUrl": "https://cdn.sanity.io/images/sq5fussn/production/481d1ef14e30d4903582398fefbeb0d7e1c66d23-32x32.png",
+                                                            "primaryUrl": "https://sf16-sg.tiktokcdn.com/obj/eden-sg/0eh7lpquhpanuhf/overseaCMSAssets/images/481d1ef14e30d4903582398fefbeb0d7e1c66d23-32x32.png",
+                                                            "secondaryUrl": "https://lf16-recruit-overseas-cdn-sg-sign.larksuite.com/obj/recruit-overseas-flie-sg/256767495/2083967580/1484634004/481d1ef14e30d4903582398fefbeb0d7e1c66d23-32x32.png?x-expires=1757642405&x-signature=NmenR5uXMcuR74RhgEGu%2Fzh%2FHr8%3D&lfo_sfgoy4s7=vg7vSjeF"
+                                                          }
+                                                        }
+                                                      },
+                                                      {
+                                                        "channelName": "Twitter",
+                                                        "channelType": "social-media-sharing",
+                                                        "socialMediaLink": "http://twitter.com/share?url=",
+                                                        "socialMediaLogo": {
+                                                          "imageAlt": null,
+                                                          "imageUrl": {
+                                                            "backupUrl": "https://cdn.sanity.io/images/sq5fussn/production/2008a426d8e7f04f3ddbefe9d2493e2ce1c36ac2-32x32.png",
+                                                            "primaryUrl": "https://sf16-sg.tiktokcdn.com/obj/eden-sg/0eh7lpquhpanuhf/overseaCMSAssets/images/2008a426d8e7f04f3ddbefe9d2493e2ce1c36ac2-32x32.png",
+                                                            "secondaryUrl": "https://lf16-recruit-overseas-cdn-sg-sign.larksuite.com/obj/recruit-overseas-flie-sg/78675159/1680390159/1650917525/2008a426d8e7f04f3ddbefe9d2493e2ce1c36ac2-32x32.png?x-expires=1757642405&x-signature=xwP7WQnVgcIdsaQ%2Beu1SOr5QaWU%3D&lfo_sfgoy4s7=vg7vSjeF"
+                                                          }
+                                                        }
+                                                      }
+                                                    ],
+                                                    "size": 32,
+                                                    "itemGap": 16,
+                                                    "shouldAddCurrentUrl": true
+                                                  }
+                                                ]
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                ],
+                                [
+                                  "$",
+                                  "figure",
+                                  null,
+                                  {
+                                    "className": "w-[607px] h-[470px] overflow-hidden",
+                                    "children": [
+                                      "$",
+                                      "$L1f",
+                                      null,
+                                      {
+                                        "src": {
+                                          "backupUrl": "https://cdn.sanity.io/images/sq5fussn/production/0990c2be942e23165bb8a834e4f3b142488cc518-1102x853.jpg",
+                                          "primaryUrl": "https://sf16-sg.tiktokcdn.com/obj/eden-sg/0eh7lpquhpanuhf/overseaCMSAssets/images/0990c2be942e23165bb8a834e4f3b142488cc518-1102x853.jpg",
+                                          "secondaryUrl": "https://lf16-recruit-overseas-cdn-sg-sign.larksuite.com/obj/recruit-overseas-flie-sg/66829799/651091118/300758350/0990c2be942e23165bb8a834e4f3b142488cc518-1102x853.jpg?x-expires=1757642405&x-signature=b%2F8Meq0cQFTrdsggXzTLlGsnOYs%3D&lfo_sfgoy4s7=vg7vSjeF"
+                                        },
+                                        "alt": "default team image",
+                                        "width": 607,
+                                        "height": 470,
+                                        "style": {
+                                          "objectFit": "cover"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    "$",
+                    "div",
+                    null,
+                    {
+                      "style": {
+                        "backgroundColor": "#FFF",
+                        "color": "black"
+                      },
+                      "className": "flex justify-center ",
+                      "data-testid": "",
+                      "id": "",
+                      "children": [
+                        "$",
+                        "div",
+                        null,
+                        {
+                          "className": "w-[1440px]",
+                          "children": [
+                            [
+                              "$",
+                              "div",
+                              null,
+                              {
+                                "className": "px-[100px] pb-[28px]",
+                                "children": [
+                                  [
+                                    "$",
+                                    "div",
+                                    null,
+                                    {
+                                      "children": [
+                                        "$",
+                                        "div",
+                                        null,
+                                        {
+                                          "className": "pt-[80px] flex flex-col gap-[52px] pb-[152px]",
+                                          "children": [
+                                            [
+                                              "$",
+                                              "p",
+                                              null,
+                                              {
+                                                "className": "text-[34px] leading-[44px] font-[600] bd-title",
+                                                "children": "Responsibilities"
+                                              }
+                                            ],
+                                            [
+                                              "$",
+                                              "p",
+                                              null,
+                                              {
+                                                "className": "text-[20px] leading-[30px] font-[400] whitespace-pre-line",
+                                                "children": "About the Team\nThe Seed Infrastructures team oversees the distributed training, reinforcement learning framework, high-performance inference, and heterogeneous hardware compilation technologies for AI foundation models.\n\nResponsibilities\n- Contribute to AI compiler optimizations for training and inference workloads\n- Develop and extend MLIR-based compiler passes for graph lowering, optimization, and code generation\n- Optimize model execution on GPU and NPU accelerators, focusing on performance, memory efficiency, and scalability\n- Support model deployment pipelines, including compilation, packaging, and runtime integration\n- Assist with distributed training and inference acceleration, such as parallel execution, communication optimization, and runtime scheduling\n- Benchmark, profile, and analyze performance of large-scale models across different hardware backends\n- Collaborate with researchers and engineers to translate model and system requirements into compiler and runtime improvements"
+                                              }
+                                            ],
+                                            false
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  [
+                                    "$",
+                                    "div",
+                                    null,
+                                    {
+                                      "children": [
+                                        "$",
+                                        "div",
+                                        null,
+                                        {
+                                          "className": "pt-[80px] flex flex-col gap-[52px] pb-[152px]",
+                                          "children": [
+                                            [
+                                              "$",
+                                              "p",
+                                              null,
+                                              {
+                                                "className": "text-[34px] leading-[44px] font-[600] bd-title",
+                                                "children": "Qualifications"
+                                              }
+                                            ],
+                                            [
+                                              "$",
+                                              "p",
+                                              null,
+                                              {
+                                                "className": "text-[20px] leading-[30px] font-[400] whitespace-pre-line",
+                                                "children": "$26"
+                                              }
+                                            ],
+                                            false
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  [
+                                    "$",
+                                    "div",
+                                    null,
+                                    {
+                                      "children": [
+                                        "$",
+                                        "div",
+                                        null,
+                                        {
+                                          "className": "pt-[80px] flex flex-col gap-[52px] pb-[152px]",
+                                          "children": [
+                                            [
+                                              "$",
+                                              "p",
+                                              null,
+                                              {
+                                                "className": "text-[34px] leading-[44px] font-[600] bd-title",
+                                                "children": "Job Information"
+                                              }
+                                            ],
+                                            [
+                                              [
+                                                "$",
+                                                "div",
+                                                null,
+                                                {
+                                                  "className": "flex flex-col text-[20px] leading-[30px] whitespace-pre-line",
+                                                  "children": [
+                                                    [
+                                                      "$",
+                                                      "p",
+                                                      null,
+                                                      {
+                                                        "className": "font-[600]",
+                                                        "children": "\u3010For Pay Transparency\u3011Compensation Description (Hourly) - Campus Intern"
+                                                      }
+                                                    ],
+                                                    [
+                                                      "$",
+                                                      "div",
+                                                      null,
+                                                      {
+                                                        "className": "components_jobInfoDesktop__oc4U6",
+                                                        "dangerouslySetInnerHTML": {
+                                                          "__html": "$27"
+                                                        }
+                                                      }
+                                                    ]
+                                                  ]
+                                                }
+                                              ],
+                                              [
+                                                "$",
+                                                "div",
+                                                null,
+                                                {
+                                                  "className": "flex flex-col text-[20px] leading-[30px] whitespace-pre-line",
+                                                  "children": [
+                                                    [
+                                                      "$",
+                                                      "p",
+                                                      null,
+                                                      {
+                                                        "className": "font-[600]",
+                                                        "children": "About Doubao (Seed)"
+                                                      }
+                                                    ],
+                                                    [
+                                                      "$",
+                                                      "div",
+                                                      null,
+                                                      {
+                                                        "className": "components_jobInfoDesktop__oc4U6",
+                                                        "dangerouslySetInnerHTML": {
+                                                          "__html": "$28"
+                                                        }
+                                                      }
+                                                    ]
+                                                  ]
+                                                }
+                                              ],
+                                              [
+                                                "$",
+                                                "div",
+                                                null,
+                                                {
+                                                  "className": "flex flex-col text-[20px] leading-[30px] whitespace-pre-line",
+                                                  "children": [
+                                                    [
+                                                      "$",
+                                                      "p",
+                                                      null,
+                                                      {
+                                                        "className": "font-[600]",
+                                                        "children": "Why Join ByteDance"
+                                                      }
+                                                    ],
+                                                    [
+                                                      "$",
+                                                      "div",
+                                                      null,
+                                                      {
+                                                        "className": "components_jobInfoDesktop__oc4U6",
+                                                        "dangerouslySetInnerHTML": {
+                                                          "__html": "$29"
+                                                        }
+                                                      }
+                                                    ]
+                                                  ]
+                                                }
+                                              ],
+                                              [
+                                                "$",
+                                                "div",
+                                                null,
+                                                {
+                                                  "className": "flex flex-col text-[20px] leading-[30px] whitespace-pre-line",
+                                                  "children": [
+                                                    [
+                                                      "$",
+                                                      "p",
+                                                      null,
+                                                      {
+                                                        "className": "font-[600]",
+                                                        "children": "Reasonable Accommodation"
+                                                      }
+                                                    ],
+                                                    [
+                                                      "$",
+                                                      "div",
+                                                      null,
+                                                      {
+                                                        "className": "components_jobInfoDesktop__oc4U6",
+                                                        "dangerouslySetInnerHTML": {
+                                                          "__html": "<div class=\"editor-content\" style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Roboto', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; color: #1f2329; word-wrap: break-word; white-space: pre-wrap;\"><p style=\"font-size: 14px; text-align: left;\">ByteDance is committed to providing reasonable accommodations in our recruitment processes for candidates with disabilities, pregnancy, sincerely held religious beliefs or other reasons protected by applicable laws. If you need assistance or a reasonable accommodation, please reach out to us at <a href=\"https://bytedance.us.larkoffice.com/share/base/form/shrusW6pfDVzkZRjoYkIUjlOhth\" rel=\"noopener noreferrer nofollow\" elementtiming=\"admin-element-timing\">https://tinyurl.com/RA-request</a><span>&#8203;</span></p></div>"
+                                                        }
+                                                      }
+                                                    ]
+                                                  ]
+                                                }
+                                              ]
+                                            ],
+                                            [
+                                              "$",
+                                              "$L24",
+                                              null,
+                                              {
+                                                "size": "middle",
+                                                "id": "7670316084662339845",
+                                                "label": "Apply to this job"
+                                              }
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            [
+                              "$",
+                              "hr",
+                              null,
+                              {
+                                "className": "bg-[#CCC] h-[1px] border-none"
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            "$L2a"
+          ]
+        }
+      ]
+    }
+  ],
+  "26": "Minimum Qualifications\n- Currently pursuing a Bachelor\u2019s or Master\u2019s degree in Computer Science, Electrical Engineering, or related technical fields\n- Experience using or developing open source frameworks for LLM inference such as vLLM or SGLang. Proficient in at least one deep learning framework (e.g., PyTorch, Megatron, DeepSpeed, JAX), with experience in model inference workflows\n- Understanding of modern computing systems, including hardware, storage, and networking, and how they impact ML workloads\n- Familiarity with compilers or model optimization pipelines (e.g., PyTorch Dynamo), or related model execution workflows\n- Able to commit to working for 12 weeks in 2026\n\nPreferred Qualifications\n- Experience with distributed or large-scale ML systems, including training or inference pipelines and related optimizations (e.g., FSDP, DeepSpeed, Megatron, GSPMD)\n- Experience with GPU/TPU/NPU programming and performance optimization, or high-performance computing and communication (e.g., CUDA, Triton, NCCL, RDMA)\n- Understanding of AI compiler and model optimization stacks (e.g., torch.fx, PyTorch Dynamo, XLA, MLIR)",
+  "27": "<div class=\"editor-content\" style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Roboto', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; color: #1f2329; word-wrap: break-word; white-space: pre-wrap;\"><p style=\"font-size: 14px; text-align: left;\">The hourly rate range for this position in the selected city is $55- $55. <span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">Benefits may vary depending on the nature of employment and the country work location. Interns have day one access to health insurance, life insurance, wellbeing benefits and more. Interns also receive 10 paid holidays per year and paid sick time (56 hours if hired in first half of year, 40 if hired in second half of year). Interns who are not working 100% remote may also be eligible for housing allowance.<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">The Company reserves the right to modify or change these benefits programs at any time, with or without notice.<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">For Los Angeles County (unincorporated) Candidates:<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">Qualified applicants with arrest or conviction records will be considered for employment in accordance with all federal, state, and local laws including the Los Angeles County Fair Chance Ordinance for Employers and the California Fair Chance Act. Our company believes that criminal history may have a direct, adverse and negative relationship on the following job duties, potentially resulting in the withdrawal of the conditional offer of employment:<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">1. Interacting and occasionally having unsupervised contact with internal/external clients and/or colleagues;<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">2. Appropriately handling and managing confidential information including proprietary and trade secret information and access to information technology systems; and<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">3. Exercising sound judgment.<span>&#8203;</span></p></div>",
+  "28": "<div class=\"editor-content\" style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Roboto', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; color: #1f2329; word-wrap: break-word; white-space: pre-wrap;\"><p style=\"font-size: 14px; text-align: left;\">Established in 2023, the ByteDance Seed team is dedicated to pioneering new paths toward artificial general intelligence. We aspire to advance the frontier of intelligence to drive progress for both technology and society.<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\"><span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">With a long-term vision for the AI sector, the Seed team's research spans MLLM, GenMedia, AI for Science, and Robotics. We maintain a global presence with laboratories and career opportunities across China, Singapore, and the United States. To date, we have launched industry-leading general foundation models and cutting-edge multimodal capabilities. Our technology powers over 50 application scenarios \u2014 including Doubao, Jimeng, TRAE, Dola and Dreamnia \u2014 and serves enterprise customers through Volcano Engine and BytePlus. Third-party data shows that the Doubao App ranks first in user volume in the Chinese market, while Doubao foundation models lead the industry in average daily token consumption.<span>&#8203;</span></p></div>",
+  "29": "<div class=\"editor-content\" style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Roboto', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; color: #1f2329; word-wrap: break-word; white-space: pre-wrap;\"><p style=\"font-size: 14px; text-align: left;\">Inspiring creativity is at the core of ByteDance's mission. Our innovative products are built to help people authentically express themselves, discover and connect \u2013 and our global, diverse teams make that possible. Together, we create value for our communities, inspire creativity and enrich life - a mission we work towards every day.<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">As ByteDancers, we strive to do great things with great people. We lead with curiosity, humility, and a desire to make impact in a rapidly growing tech company. By constantly iterating and fostering an \"Always Day 1\" mindset, we achieve meaningful breakthroughs for ourselves, our Company, and our users. When we create and grow together, the possibilities are limitless. Join us.<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">Diversity &amp; Inclusion<span>&#8203;</span></p><p style=\"font-size: 14px; text-align: left;\">ByteDance is committed to creating an inclusive space where employees are valued for their skills, experiences, and unique perspectives. Our platform connects people from across the globe and so does our workplace. At ByteDance, our mission is to inspire creativity and enrich life. To achieve that goal, we are committed to celebrating our diverse voices and to creating an environment that reflects the many communities we reach. We are passionate about this and hope you are too.<span>&#8203;</span></p></div>"
+}

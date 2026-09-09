@@ -19,11 +19,13 @@ from poller.tests.conftest import (
 class TestRetryLogic:
     @pytest.mark.asyncio
     async def test_429_twice_then_200(self) -> None:
-        transport = MockTransport([
-            json_response({"error": "rate limited"}, status=429),
-            json_response({"error": "rate limited"}, status=429),
-            json_response({"jobs": []}),
-        ])
+        transport = MockTransport(
+            [
+                json_response({"error": "rate limited"}, status=429),
+                json_response({"error": "rate limited"}, status=429),
+                json_response({"jobs": []}),
+            ]
+        )
         client = await make_mock_client(transport)
         result = await client.get_json("https://api.example.com/jobs")
         assert result == {"jobs": []}
@@ -32,11 +34,13 @@ class TestRetryLogic:
 
     @pytest.mark.asyncio
     async def test_500_three_times_raises(self) -> None:
-        transport = MockTransport([
-            json_response({"error": "server error"}, status=500),
-            json_response({"error": "server error"}, status=500),
-            json_response({"error": "server error"}, status=500),
-        ])
+        transport = MockTransport(
+            [
+                json_response({"error": "server error"}, status=500),
+                json_response({"error": "server error"}, status=500),
+                json_response({"error": "server error"}, status=500),
+            ]
+        )
         client = await make_mock_client(transport)
         with pytest.raises(SourceFetchError, match="HTTP 500 after 3 attempts"):
             await client.get_json(
@@ -49,14 +53,16 @@ class TestRetryLogic:
 
     @pytest.mark.asyncio
     async def test_429_with_retry_after_header(self) -> None:
-        transport = MockTransport([
-            json_response(
-                {"error": "rate limited"},
-                status=429,
-                headers={"Retry-After": "0.1"},
-            ),
-            json_response({"ok": True}),
-        ])
+        transport = MockTransport(
+            [
+                json_response(
+                    {"error": "rate limited"},
+                    status=429,
+                    headers={"Retry-After": "0.1"},
+                ),
+                json_response({"ok": True}),
+            ]
+        )
         client = await make_mock_client(transport)
         result = await client.get_json("https://api.example.com/jobs")
         assert result == {"ok": True}
@@ -65,9 +71,11 @@ class TestRetryLogic:
 
     @pytest.mark.asyncio
     async def test_4xx_no_retry(self) -> None:
-        transport = MockTransport([
-            json_response({"error": "not found"}, status=404),
-        ])
+        transport = MockTransport(
+            [
+                json_response({"error": "not found"}, status=404),
+            ]
+        )
         client = await make_mock_client(transport)
         with pytest.raises(SourceFetchError, match="HTTP 404"):
             await client.get_json(
@@ -82,10 +90,12 @@ class TestRetryLogic:
 class TestRateLimiting:
     @pytest.mark.asyncio
     async def test_same_host_has_delay(self) -> None:
-        transport = MockTransport([
-            json_response({"a": 1}),
-            json_response({"b": 2}),
-        ])
+        transport = MockTransport(
+            [
+                json_response({"a": 1}),
+                json_response({"b": 2}),
+            ]
+        )
         client = await make_mock_client(transport)
 
         start = time.monotonic()
@@ -190,4 +200,23 @@ class TestErrorContext:
         request = transport.requests[0]
         assert b"content=true" in request.url.raw_path
         assert b"limit=100" in request.url.raw_path
+        await client.close()
+
+
+@pytest.mark.asyncio
+async def test_custom_api_key_is_not_forwarded_on_redirect() -> None:
+    transport = MockTransport(
+        [
+            json_response({}, status=302, headers={"Location": "https://other.example.com/search"}),
+            json_response({"jobs": []}),
+        ]
+    )
+    client = await make_mock_client(transport)
+    try:
+        with pytest.raises(SourceFetchError, match="authenticated request redirected"):
+            await client.get_json(
+                "https://data.usajobs.gov/api/search", headers={"Authorization-Key": "fixture-key"}
+            )
+        assert len(transport.requests) == 1
+    finally:
         await client.close()

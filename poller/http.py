@@ -138,9 +138,11 @@ class RateLimitedClient:
         params: dict[str, str] | None = None,
         allow_plain_text: bool = False,
         use_conditional: bool = False,
+        headers: dict[str, str] | None = None,
     ) -> Any:
         host = urlparse(url).hostname or ""
         lock = self._get_host_lock(host)
+        extra_headers = headers or {}
 
         if not self._check_host_budget(host):
             raise SourceFetchError(
@@ -161,7 +163,8 @@ class RateLimitedClient:
                 client = await self._get_client()
                 try:
                     response = await client.get(
-                        url, params=params, headers=cond_headers,
+                        url, params=params, headers={**extra_headers, **cond_headers},
+                        follow_redirects=not bool(extra_headers),
                     )
                 except httpx.HTTPError as exc:
                     last_body = str(exc)
@@ -175,6 +178,9 @@ class RateLimitedClient:
                 last_status = response.status_code
                 last_body = response.text[:500]
 
+                if (extra_headers and 300 <= response.status_code < 400
+                        and response.status_code != 304):
+                    raise SourceFetchError(source, company_slug, "authenticated request redirected")
                 if response.status_code == 304:
                     if use_conditional:
                         return NOT_MODIFIED

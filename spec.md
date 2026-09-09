@@ -965,3 +965,18 @@ co-ops and seasonal analyst/associate student programs remain visible despite br
 cached new-grad labels. Unknown postings stay visible. All jobs and guest browsing
 remain unrestricted; saved applications are unaffected. Editing graduation immediately
 updates the default results. Explicit opportunity preferences can replace this MVP rule later.
+
+
+### Description acquisition v5 (September 8, 2026)
+
+Use source job identity plus conservative title normalization, never arbitrary
+prefix matching. Finance program titles such as Summer Analyst remain valid names.
+iCIMS uses employer-scoped requisition IDs; Oracle public candidate details preserve
+all external description fields. Rippling and TikTok/ByteDance embedded page data,
+and explicitly advertised Workable Markdown, supply partial evidence without running
+JavaScript. JazzHR canonical vanity pages require a checked identical job path.
+Backfill checkpoints completed batches and stages descriptions without replacing
+poller history. Classifier v6 recognizes specific mechanical modeling duties while
+preserving role/field separation. USAJOBS Full responses retain all supported long
+text fields; summaries alone remain partial. See docs/description-release-v5.md for
+measured results and remaining launch gates; 100% coverage is not claimed.

@@ -1,43 +1,43 @@
 {
   "version": 1,
-  "updated_at": "2026-09-05T03:51:52Z",
+  "updated_at": "2026-09-09T02:28:46.794887Z",
   "total_count": 4471,
   "shards": [
     {
       "id": "ashby",
       "count": 78,
-      "sha256": "c0ad07629b62d356e79dfc47356b2384c9342565b042b97baa97aca90f604464",
-      "updated_at": "2026-09-05T03:51:52Z"
+      "sha256": "4ce23542fb522161a0f9ed6f11637757938f4ea3012c7ed4c8922de3acda58cc",
+      "updated_at": "2026-09-09T02:28:46.794887Z"
     },
     {
       "id": "greenhouse",
       "count": 444,
-      "sha256": "fe0f8c9f9fec19bb47955dcc9cc4fcd7cbad1b64b6c09c9ff1b293b4f0c5b407",
-      "updated_at": "2026-09-05T03:51:52Z"
+      "sha256": "2fbff57f8af240e2162b6e5dace950a181e112ed1904124c570bbd11bc7a0857",
+      "updated_at": "2026-09-09T02:28:46.794887Z"
     },
     {
       "id": "lever",
       "count": 96,
-      "sha256": "5f103cb6368b42b539ea4dad0b110ac03eac9f4142cda0469485f347ffb40f10",
-      "updated_at": "2026-09-05T03:51:52Z"
+      "sha256": "8581b3f3db6b3a08f59cd751b342ed07bbe88b928feb48429083ccde55300e80",
+      "updated_at": "2026-09-09T02:28:46.794887Z"
     },
     {
       "id": "simplify",
       "count": 3113,
-      "sha256": "48a2a1f13b5a3424635f5afca8db7fa19df9a922ddc9d8fdc13ed2e997c8547d",
-      "updated_at": "2026-09-05T03:51:52Z"
+      "sha256": "53405128dd5bd6791498b4e78c605d83a995647b7758949259ac6917b1abff6e",
+      "updated_at": "2026-09-09T02:28:46.794887Z"
     },
     {
       "id": "smartrecruiters",
       "count": 105,
-      "sha256": "9627729be1c134e06e01a21edc6fc1bf07ea806f039d3d27fa533c861f814e84",
-      "updated_at": "2026-09-05T03:51:52Z"
+      "sha256": "d605ec106a0fa6933df2080000f8b3ad578b8c526fd56ad52a34320a53e09e09",
+      "updated_at": "2026-09-09T02:28:46.794887Z"
     },
     {
       "id": "workday",
       "count": 635,
-      "sha256": "800472bccde2d7a19bc6bca68ea88bbd71391d823677d63f209e02f443cd1103",
-      "updated_at": "2026-09-05T03:51:52Z"
+      "sha256": "6c3b8e445f9867145a8bdeeb3f28fd450f2f29600190f8ae45756f4987e7ad79",
+      "updated_at": "2026-09-09T02:28:46.794887Z"
     }
   ],
   "companies": {
@@ -65,6 +65,10 @@
       "name": "Abridge",
       "typical_open": null
     },
+    "aerovironment": {
+      "name": "AeroVironment",
+      "typical_open": null
+    },
     "affirm": {
       "name": "Affirm",
       "typical_open": null
@@ -85,8 +89,16 @@
       "name": "Akuna Capital",
       "typical_open": null
     },
+    "albedo": {
+      "name": "Albedo",
+      "typical_open": null
+    },
     "alchemy": {
       "name": "Alchemy",
+      "typical_open": null
+    },
+    "allen-control-systems": {
+      "name": "Allen Control Systems",
       "typical_open": null
     },
     "amcor": {
@@ -113,6 +125,14 @@
       "name": "Anthropic",
       "typical_open": null
     },
+    "antora-energy": {
+      "name": "Antora Energy",
+      "typical_open": null
+    },
+    "anybotics": {
+      "name": "ANYbotics",
+      "typical_open": null
+    },
     "anyscale": {
       "name": "Anyscale",
       "typical_open": null
@@ -123,6 +143,10 @@
     },
     "applied-intuition": {
       "name": "Applied Intuition",
+      "typical_open": null
+    },
+    "applied-materials": {
+      "name": "Applied Materials",
       "typical_open": null
     },
     "apptronik": {
@@ -139,6 +163,10 @@
     },
     "aquatic-capital-management": {
       "name": "Aquatic Capital Management",
+      "typical_open": null
+    },
+    "archer-aviation": {
+      "name": "Archer Aviation",
       "typical_open": null
     },
     "argonne-national-laboratory": {
@@ -181,8 +209,16 @@
       "name": "Atlan",
       "typical_open": null
     },
+    "atom-computing": {
+      "name": "Atom Computing",
+      "typical_open": null
+    },
     "autodesk": {
       "name": "Autodesk",
+      "typical_open": null
+    },
+    "axelera-ai": {
+      "name": "Axelera AI",
       "typical_open": null
     },
     "bank-of-montreal": {
@@ -225,6 +261,10 @@
       "name": "Block",
       "typical_open": null
     },
+    "blue-origin": {
+      "name": "Blue Origin",
+      "typical_open": null
+    },
     "boeing": {
       "name": "Boeing",
       "typical_open": null
@@ -235,6 +275,10 @@
     },
     "bosch": {
       "name": "Bosch",
+      "typical_open": null
+    },
+    "bot-auto": {
+      "name": "Bot Auto",
       "typical_open": null
     },
     "bp": {
@@ -249,6 +293,10 @@
       "name": "Brex",
       "typical_open": null
     },
+    "bright-machines": {
+      "name": "Bright Machines",
+      "typical_open": null
+    },
     "bristol-myers-squibb": {
       "name": "Bristol-Myers Squibb",
       "typical_open": null
@@ -259,6 +307,10 @@
     },
     "bungie": {
       "name": "Bungie",
+      "typical_open": null
+    },
+    "caci": {
+      "name": "CACI International",
       "typical_open": null
     },
     "cadence-design-systems": {
@@ -289,8 +341,16 @@
       "name": "Carvana",
       "typical_open": null
     },
+    "castelion": {
+      "name": "Castelion",
+      "typical_open": null
+    },
     "cerebras": {
       "name": "Cerebras Systems",
+      "typical_open": null
+    },
+    "chaos-industries": {
+      "name": "CHAOS Industries",
       "typical_open": null
     },
     "chevron-corporation": {
@@ -369,12 +429,20 @@
       "name": "Crowe",
       "typical_open": null
     },
+    "crusoe": {
+      "name": "Crusoe",
+      "typical_open": null
+    },
     "cursor": {
       "name": "Cursor",
       "typical_open": null
     },
     "cybernetic-labs": {
       "name": "Cybernetic Labs",
+      "typical_open": null
+    },
+    "d-matrix": {
+      "name": "d-Matrix",
       "typical_open": null
     },
     "danaher": {
@@ -413,6 +481,14 @@
       "name": "Descript",
       "typical_open": null
     },
+    "dexterity": {
+      "name": "Dexterity",
+      "typical_open": null
+    },
+    "diligent-robotics": {
+      "name": "Diligent Robotics",
+      "typical_open": null
+    },
     "dimensional-fund-advisors": {
       "name": "Dimensional Fund Advisors",
       "typical_open": null
@@ -423,6 +499,10 @@
     },
     "disney": {
       "name": "Disney",
+      "typical_open": null
+    },
+    "divergent": {
+      "name": "Divergent Technologies",
       "typical_open": null
     },
     "diversified-automation": {
@@ -481,6 +561,10 @@
       "name": "Epic Games",
       "typical_open": null
     },
+    "epirus": {
+      "name": "Epirus",
+      "typical_open": null
+    },
     "equifax": {
       "name": "Equifax",
       "typical_open": null
@@ -497,6 +581,10 @@
       "name": "Excellus BCBS",
       "typical_open": null
     },
+    "exoduspoint": {
+      "name": "ExodusPoint Capital",
+      "typical_open": null
+    },
     "faire": {
       "name": "Faire",
       "typical_open": null
@@ -505,12 +593,20 @@
       "name": "Fannie Mae",
       "typical_open": null
     },
+    "field-ai": {
+      "name": "Field AI",
+      "typical_open": null
+    },
     "figma": {
       "name": "Figma",
       "typical_open": null
     },
     "figure": {
       "name": "Figure AI",
+      "typical_open": null
+    },
+    "firefly-aerospace": {
+      "name": "Firefly Aerospace",
       "typical_open": null
     },
     "fireworks": {
@@ -533,6 +629,18 @@
       "name": "Flexport",
       "typical_open": null
     },
+    "flow-traders": {
+      "name": "Flow Traders",
+      "typical_open": null
+    },
+    "form-energy": {
+      "name": "Form Energy",
+      "typical_open": null
+    },
+    "formic": {
+      "name": "Formic",
+      "typical_open": null
+    },
     "formlabs": {
       "name": "Formlabs",
       "typical_open": null
@@ -543,6 +651,10 @@
     },
     "g-research": {
       "name": "G-Research",
+      "typical_open": null
+    },
+    "gdit": {
+      "name": "General Dynamics Information Technology",
       "typical_open": null
     },
     "ge-aerospace": {
@@ -559,6 +671,10 @@
     },
     "ge-vernova": {
       "name": "GE Vernova",
+      "typical_open": null
+    },
+    "gecko-robotics": {
+      "name": "Gecko Robotics",
       "typical_open": null
     },
     "generac": {
@@ -581,12 +697,28 @@
       "name": "Granola",
       "typical_open": null
     },
+    "gravitics": {
+      "name": "Gravitics",
+      "typical_open": null
+    },
     "gusto": {
       "name": "Gusto",
       "typical_open": null
     },
+    "hadrian": {
+      "name": "Hadrian",
+      "typical_open": null
+    },
     "harvey": {
       "name": "Harvey",
+      "typical_open": null
+    },
+    "havoc-ai": {
+      "name": "Havoc AI",
+      "typical_open": null
+    },
+    "helion-energy": {
+      "name": "Helion Energy",
       "typical_open": null
     },
     "heliux": {
@@ -639,6 +771,10 @@
     },
     "imc": {
       "name": "IMC Trading",
+      "typical_open": null
+    },
+    "impulse-space": {
+      "name": "Impulse Space",
       "typical_open": null
     },
     "infinitequant": {
@@ -701,6 +837,10 @@
       "name": "K-ID",
       "typical_open": null
     },
+    "kairos-power": {
+      "name": "Kairos Power",
+      "typical_open": null
+    },
     "kalshi": {
       "name": "Kalshi",
       "typical_open": null
@@ -715,6 +855,14 @@
     },
     "keybank": {
       "name": "KeyBank",
+      "typical_open": null
+    },
+    "kla": {
+      "name": "KLA Corporation",
+      "typical_open": null
+    },
+    "kodiak-robotics": {
+      "name": "Kodiak Robotics",
       "typical_open": null
     },
     "kraft-heinz": {
@@ -741,8 +889,16 @@
       "name": "Lawrence Livermore National Laboratory",
       "typical_open": null
     },
+    "leolabs": {
+      "name": "LeoLabs",
+      "typical_open": null
+    },
     "lever": {
       "name": "Lever",
+      "typical_open": null
+    },
+    "lightmatter": {
+      "name": "Lightmatter",
       "typical_open": null
     },
     "lila-sciences": {
@@ -761,6 +917,10 @@
       "name": "Locus Robotics",
       "typical_open": null
     },
+    "loft-orbital": {
+      "name": "Loft Orbital",
+      "typical_open": null
+    },
     "loom": {
       "name": "Loom",
       "typical_open": null
@@ -777,8 +937,20 @@
       "name": "Lyft",
       "typical_open": null
     },
+    "mach-industries": {
+      "name": "Mach Industries",
+      "typical_open": null
+    },
     "magnet-forensics": {
       "name": "Magnet Forensics",
+      "typical_open": null
+    },
+    "mainspring-energy": {
+      "name": "Mainspring Energy",
+      "typical_open": null
+    },
+    "man-group": {
+      "name": "Man Group",
       "typical_open": null
     },
     "mapjects": {
@@ -803,6 +975,10 @@
     },
     "maven-securities": {
       "name": "Maven Securities",
+      "typical_open": null
+    },
+    "may-mobility": {
+      "name": "May Mobility",
       "typical_open": null
     },
     "mckesson": {
@@ -833,6 +1009,10 @@
       "name": "Mercury",
       "typical_open": null
     },
+    "merlin-labs": {
+      "name": "Merlin Labs",
+      "typical_open": null
+    },
     "meshy": {
       "name": "Meshy",
       "typical_open": null
@@ -853,6 +1033,10 @@
       "name": "Modal",
       "typical_open": null
     },
+    "momentus": {
+      "name": "Momentus",
+      "typical_open": null
+    },
     "mondelez": {
       "name": "Mondelez",
       "typical_open": null
@@ -869,8 +1053,20 @@
       "name": "Multiply Labs",
       "typical_open": null
     },
+    "muon-space": {
+      "name": "Muon Space",
+      "typical_open": null
+    },
+    "nasa-jpl": {
+      "name": "NASA Jet Propulsion Laboratory",
+      "typical_open": null
+    },
     "neon": {
       "name": "Neon",
+      "typical_open": null
+    },
+    "neros": {
+      "name": "Neros",
       "typical_open": null
     },
     "neuralink": {
@@ -887,6 +1083,10 @@
     },
     "nightwing-intelligence-solutions": {
       "name": "Nightwing",
+      "typical_open": null
+    },
+    "nimble-robotics": {
+      "name": "Nimble Robotics",
       "typical_open": null
     },
     "nio": {
@@ -977,6 +1177,10 @@
       "name": "Path Robotics",
       "typical_open": null
     },
+    "pdt-partners": {
+      "name": "PDT Partners",
+      "typical_open": null
+    },
     "perplexity": {
       "name": "Perplexity",
       "typical_open": null
@@ -991,6 +1195,10 @@
     },
     "phantom": {
       "name": "Phantom",
+      "typical_open": null
+    },
+    "physical-intelligence": {
+      "name": "Physical Intelligence",
       "typical_open": null
     },
     "pimco": {
@@ -1009,6 +1217,10 @@
       "name": "Plaid",
       "typical_open": null
     },
+    "planet-labs": {
+      "name": "Planet Labs",
+      "typical_open": null
+    },
     "pnc-financial-services": {
       "name": "PNC Financial Services",
       "typical_open": null
@@ -1019,6 +1231,10 @@
     },
     "polymarket": {
       "name": "Polymarket",
+      "typical_open": null
+    },
+    "portal-space-systems": {
+      "name": "Portal Space Systems",
       "typical_open": null
     },
     "postman": {
@@ -1041,8 +1257,16 @@
       "name": "Propel",
       "typical_open": null
     },
+    "psiquantum": {
+      "name": "PsiQuantum",
+      "typical_open": null
+    },
     "quadrillion": {
       "name": "Quadrillion Labs",
+      "typical_open": null
+    },
+    "qube-rt": {
+      "name": "Qube Research & Technologies",
       "typical_open": null
     },
     "railway": {
@@ -1063,6 +1287,18 @@
     },
     "redwood-materials": {
       "name": "Redwood Materials",
+      "typical_open": null
+    },
+    "regent-craft": {
+      "name": "Regent",
+      "typical_open": null
+    },
+    "relativity-space": {
+      "name": "Relativity Space",
+      "typical_open": null
+    },
+    "reliable-robotics": {
+      "name": "Reliable Robotics",
       "typical_open": null
     },
     "render": {
@@ -1121,12 +1357,20 @@
       "name": "Runway",
       "typical_open": null
     },
+    "saildrone": {
+      "name": "Saildrone",
+      "typical_open": null
+    },
     "sambanova": {
       "name": "SambaNova Systems",
       "typical_open": null
     },
     "samsara": {
       "name": "Samsara",
+      "typical_open": null
+    },
+    "saronic": {
+      "name": "Saronic",
       "typical_open": null
     },
     "scaleai": {
@@ -1139,6 +1383,10 @@
     },
     "schweitzer-engineering-laboratories": {
       "name": "Schweitzer Engineering",
+      "typical_open": null
+    },
+    "scout-motors": {
+      "name": "Scout Motors",
       "typical_open": null
     },
     "semgrep": {
@@ -1161,12 +1409,32 @@
       "name": "Sierra",
       "typical_open": null
     },
+    "sierra-nevada-corporation": {
+      "name": "Sierra Nevada Corporation",
+      "typical_open": null
+    },
+    "sierra-space": {
+      "name": "Sierra Space",
+      "typical_open": null
+    },
+    "sila-nanotechnologies": {
+      "name": "Sila Nanotechnologies",
+      "typical_open": null
+    },
     "skechers": {
       "name": "Skechers",
       "typical_open": null
     },
+    "skild-ai": {
+      "name": "Skild AI",
+      "typical_open": null
+    },
     "skydio": {
       "name": "Skydio",
+      "typical_open": null
+    },
+    "slingshot-aerospace": {
+      "name": "Slingshot Aerospace",
       "typical_open": null
     },
     "smartsheet": {
@@ -1205,8 +1473,24 @@
       "name": "Spotify",
       "typical_open": null
     },
+    "squarepoint-capital": {
+      "name": "Squarepoint Capital",
+      "typical_open": null
+    },
     "squarespace": {
       "name": "Squarespace",
+      "typical_open": null
+    },
+    "stack-av": {
+      "name": "Stack AV",
+      "typical_open": null
+    },
+    "standard-bots": {
+      "name": "Standard Bots",
+      "typical_open": null
+    },
+    "stoke-space": {
+      "name": "Stoke Space",
       "typical_open": null
     },
     "stripe": {
@@ -1301,6 +1585,18 @@
       "name": "TransMarket Group",
       "typical_open": null
     },
+    "true-anomaly": {
+      "name": "True Anomaly",
+      "typical_open": null
+    },
+    "turion-space": {
+      "name": "Turion Space",
+      "typical_open": null
+    },
+    "twelve": {
+      "name": "Twelve",
+      "typical_open": null
+    },
     "twilio": {
       "name": "Twilio",
       "typical_open": null
@@ -1321,6 +1617,10 @@
       "name": "Upstart",
       "typical_open": null
     },
+    "ursa-major": {
+      "name": "Ursa Major",
+      "typical_open": null
+    },
     "valstad": {
       "name": "Valstad",
       "typical_open": null
@@ -1329,8 +1629,16 @@
       "name": "Vanguard",
       "typical_open": null
     },
+    "vannevar-labs": {
+      "name": "Vannevar Labs",
+      "typical_open": null
+    },
     "varda-space": {
       "name": "Varda Space Industries",
+      "typical_open": null
+    },
+    "vast-space": {
+      "name": "Vast",
       "typical_open": null
     },
     "vercel": {
@@ -1351,6 +1659,10 @@
     },
     "voloridge": {
       "name": "Voloridge Investment Management",
+      "typical_open": null
+    },
+    "waabi": {
+      "name": "Waabi",
       "typical_open": null
     },
     "wabtec": {
@@ -1377,6 +1689,10 @@
       "name": "Waymo",
       "typical_open": null
     },
+    "wayve": {
+      "name": "Wayve",
+      "typical_open": null
+    },
     "weaviate": {
       "name": "Weaviate",
       "typical_open": null
@@ -1393,6 +1709,10 @@
       "name": "WorkOS",
       "typical_open": null
     },
+    "worldquant": {
+      "name": "WorldQuant",
+      "typical_open": null
+    },
     "writer": {
       "name": "Writer",
       "typical_open": null
@@ -1401,8 +1721,16 @@
       "name": "Xantium",
       "typical_open": null
     },
+    "xona-space-systems": {
+      "name": "Xona Space Systems",
+      "typical_open": null
+    },
     "xsolla": {
       "name": "Xsolla",
+      "typical_open": null
+    },
+    "xtx-markets": {
+      "name": "XTX Markets",
       "typical_open": null
     },
     "zed": {

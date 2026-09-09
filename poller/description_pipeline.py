@@ -26,7 +26,7 @@ if TYPE_CHECKING:
     from poller.models import Company, Posting, RawPosting, SourceConfig
     from poller.sources.generic import RobotsPolicy
 
-DESCRIPTION_VERSION = 4
+DESCRIPTION_VERSION = 5
 REFRESH_HOURS = 72
 _SEGMENT = re.compile(r"^[A-Za-z0-9_-]+$")
 

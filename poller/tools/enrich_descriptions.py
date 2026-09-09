@@ -10,7 +10,9 @@ import argparse
 import asyncio
 import hashlib
 import json
+import sys
 from collections import Counter
+from dataclasses import replace
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -22,7 +24,15 @@ from poller.description_pipeline import (
 )
 from poller.http import RateLimitedClient
 from poller.registry import load_registry
-from poller.store import RunState, load_feed, load_state, save_feed, save_feed_sharded, save_state
+from poller.store import (
+    RunState,
+    load_feed,
+    load_state,
+    save_feed,
+    save_feed_sharded,
+    save_meta,
+    save_state,
+)
 
 
 def main() -> None:
@@ -30,8 +40,9 @@ def main() -> None:
     parser.add_argument("--feed", type=Path, default=Path("data/feed.json"))
     parser.add_argument("--output", type=Path, default=Path(".tmp/description-backfill"))
     parser.add_argument("--limit", type=int, default=200)
-    parser.add_argument("--rounds", type=int, default=1,
-                        help="Bounded batches (1-100), stopping when none are due")
+    parser.add_argument(
+        "--rounds", type=int, default=1, help="Bounded batches (1-100), stopping when none are due"
+    )
     parser.add_argument("--registry", type=Path, default=Path("companies.yaml"))
     parser.add_argument("--live", action="store_true")
     args = parser.parse_args()
@@ -63,18 +74,66 @@ def main() -> None:
         async def run() -> tuple[int, int]:
             async with RateLimitedClient() as client:
                 client.load_cache(state.http_cache)
-                enriched = active
+                enriched = []
+                for posting in active:
+                    old = previous.get(posting.id)
+                    if (
+                        old
+                        and old.description_text
+                        and old.url == posting.url
+                        and old.title == posting.title
+                        and (old.description_version or 0) >= (posting.description_version or 0)
+                    ):
+                        posting = replace(
+                            posting,
+                            description_text=old.description_text,
+                            description_status=old.description_status,
+                            description_version=old.description_version,
+                            source_metadata={
+                                **(posting.source_metadata or {}),
+                                **(old.source_metadata or {}),
+                            },
+                        )
+                    enriched.append(posting)
                 count = 0
-                for _ in range(args.rounds):
-                    before = sum(entry.get("last_attempt_at") == now
-                                 for entry in state.description_attempts.values())
+                for batch in range(args.rounds):
+                    before = sum(
+                        entry.get("last_attempt_at") == now
+                        for entry in state.description_attempts.values()
+                    )
                     enriched, successes = await collect_descriptions(
-                        enriched, previous, client, state=state.description_attempts,
-                        now=now, limit=args.limit, greenhouse_boards=boards,
+                        enriched,
+                        previous,
+                        client,
+                        state=state.description_attempts,
+                        now=now,
+                        limit=args.limit,
+                        greenhouse_boards=boards,
                     )
                     count += successes
-                    after = sum(entry.get("last_attempt_at") == now
-                                for entry in state.description_attempts.values())
+                    # Persist each completed batch so interruption does not discard a long run.
+                    state.http_cache.update(client.dump_cache())
+                    checkpoint = {**postings, **{p.id: p for p in enriched}}
+                    save_feed(output / "feed.json", checkpoint, now)
+                    shards = save_feed_sharded(output / "feed", checkpoint, now)
+                    save_meta(
+                        output / "meta.json",
+                        output / "feed.json",
+                        now,
+                        len(checkpoint),
+                        shard_hashes=shards,
+                    )
+                    save_state(state_path, state)
+                    print(
+                        f"Description batch {batch + 1}: {count} complete fetched; "
+                        f"{sum(bool(p.description_text) for p in enriched)} with text",
+                        file=sys.stderr,
+                        flush=True,
+                    )
+                    after = sum(
+                        entry.get("last_attempt_at") == now
+                        for entry in state.description_attempts.values()
+                    )
                     if after == before:
                         break
                 state.http_cache.update(client.dump_cache())
@@ -92,26 +151,34 @@ def main() -> None:
                 provider: dict(counts) for provider, counts in sorted(by_provider.items())
             }
             report["attempted_this_run"] = sum(
-                entry.get("last_attempt_at") == now
-                for entry in state.description_attempts.values()
+                entry.get("last_attempt_at") == now for entry in state.description_attempts.values()
             )
-            report["failure_reasons"] = dict(Counter(
-                entry.get("error", "unknown") for entry in state.description_attempts.values()
-                if entry.get("status") == "failed"
-            ))
+            report["failure_reasons"] = dict(
+                Counter(
+                    entry.get("error", "unknown")
+                    for entry in state.description_attempts.values()
+                    if entry.get("status") == "failed"
+                )
+            )
             report["feed_bytes"] = (output / "feed.json").stat().st_size
             report["shard_bytes"] = {
                 path.name: path.stat().st_size for path in sorted((output / "feed").glob("*.json"))
             }
             report["detail_pack_bytes"] = sum(
-                path.stat().st_size for path in (output / "feed" / "details").glob("*.json"))
-            complete = sum(p.description_status == "available"
-                           and p.description_version == DESCRIPTION_VERSION for p in enriched)
+                path.stat().st_size for path in (output / "feed" / "details").glob("*.json")
+            )
+            complete = sum(
+                p.description_status == "available" and p.description_version == DESCRIPTION_VERSION
+                for p in enriched
+            )
             report["complete_available"] = complete
             report["complete_percent"] = round(complete / len(active) * 100, 2) if active else 0.0
-            report["collection_outcomes"] = dict(Counter(
-                state.description_attempts.get(p.id, {}).get("status", "pending")
-                for p in enriched))
+            report["collection_outcomes"] = dict(
+                Counter(
+                    state.description_attempts.get(p.id, {}).get("status", "pending")
+                    for p in enriched
+                )
+            )
             return count, sum(bool(p.description_text) for p in enriched)
 
         fetched, available = asyncio.run(run())

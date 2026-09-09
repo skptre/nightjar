@@ -76,7 +76,7 @@ def detect_ats_from_url(url: str) -> str | None:
          rf"{segment}/jobs/{segment}(?:/apply)?"),
         ("ashby", host == "jobs.ashbyhq.com", rf"{segment}/{segment}(?:/application)?"),
         ("smartrecruiters", host == "jobs.smartrecruiters.com", rf"{segment}/{segment}"),
-        ("workable", host == "apply.workable.com", rf"{segment}/j/{segment}"),
+        ("workable", host == "apply.workable.com", rf"{segment}/j/{segment}(?:/apply)?"),
         ("icims", bool(re.fullmatch(r"[a-z0-9-]+\.icims\.com", host)),
          r"jobs/\d+(?:/[^/]+)*"),
         ("jazzhr", bool(re.fullmatch(r"[a-z0-9-]+\.applytojob\.com", host)),

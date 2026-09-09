@@ -31,6 +31,9 @@ jobs:
         run: uv sync
 
       - name: Run poller
+        env:
+          USAJOBS_API_KEY: ${{ secrets.USAJOBS_API_KEY }}
+          USAJOBS_EMAIL: ${{ secrets.USAJOBS_EMAIL }}
         run: uv run python -m poller --once
 
       - name: Check for changes

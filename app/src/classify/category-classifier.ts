@@ -102,7 +102,7 @@ function dutySentences(description: string | null): string[] {
     if (/\b(qualifications?|requirements?|degree|major(?:s|ing)?|bachelor|master|phd|experience (?:in|with)|familiarity|knowledge of|equal opportunity|we are|our company|work (?:with|alongside)|collaborat\w*|partner with)\b/i.test(text)) return false;
     // A Job Description heading also contains employer prose. Require the candidate
     // or an imperative action as the subject, not just an action word anywhere.
-    if (!/^(?:[-•*]\s*)?(?:you(?:'ll| will)|your (?:responsibilities|duties)\b|as\b[^.!?]*\byou(?:'ll| will)|(?:this|the) (?:role|position)\b|(?:develop|build|design|implement|train|analy[sz]e|research|test|maintain|support|create|conduct|perform|optimi[sz]e|work|assist|contribute|manage|monitor|drive|ensure|generate|issue|help|learn|gain|participate)\b)/i.test(text)) return false;
+    if (!/^(?:[-•*]\s*)?(?:opportunities to|you(?:'ll| will)|your (?:responsibilities|duties)\b|as\b[^.!?]*\byou(?:'ll| will)|(?:this|the) (?:role|position)\b|(?:develop|build|design|implement|train|analy[sz]e|research|test|maintain|support|create|conduct|perform|optimi[sz]e|work|assist|contribute|manage|monitor|drive|ensure|generate|issue|help|learn|gain|participate)\b)/i.test(text)) return false;
     return /\b(?:you will|you'll|work on|responsibilit\w*|duties|(?:develop|build|design|implement|train|analy[sz]e|research|test|maintain|support|create|conduct|perform|optimi[sz]e)(?:ing)?)\b/i.test(text);
   });
 }

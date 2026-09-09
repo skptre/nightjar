@@ -11,9 +11,18 @@ TITLE = "Flight Software Intern"
 
 
 def structured(description: str, url: str = URL) -> str:
-    return '<script type="application/ld+json">' + json.dumps({
-        "@type": "JobPosting", "title": TITLE, "url": url, "description": description,
-    }) + '</script>'
+    return (
+        '<script type="application/ld+json">'
+        + json.dumps(
+            {
+                "@type": "JobPosting",
+                "title": TITLE,
+                "url": url,
+                "description": description,
+            }
+        )
+        + "</script>"
+    )
 
 
 def test_query_job_identity_must_not_be_discarded() -> None:
@@ -34,16 +43,20 @@ def test_duplicate_identical_structured_representations_are_one_document() -> No
 
 def test_conflicting_structured_representations_are_not_arbitrarily_selected() -> None:
     with pytest.raises(ValueError, match="ambiguous"):
-        extract_document(structured("First requirement") + structured("Different requirement"),
-                         URL, TITLE)
+        extract_document(
+            structured("First requirement") + structured("Different requirement"), URL, TITLE
+        )
 
 
 def test_visible_description_retains_ending_missing_from_json_ld_without_certifying_it() -> None:
-    html = structured("Build flight software.") + f'''<h1>{TITLE}</h1>
+    html = (
+        structured("Build flight software.")
+        + f"""<h1>{TITLE}</h1>
     <section class="job-description"><p>Build flight software.</p>
     <h2>Requirements</h2><ul><li>Must be enrolled in a degree program.</li></ul>
     <h2>Compensation</h2><p>$35 per hour. No relocation allowance.</p></section>
-    <aside>Recommended jobs: Senior Trader</aside>'''
+    <aside>Recommended jobs: Senior Trader</aside>"""
+    )
     result = extract_document(html, URL, TITLE)
     assert "No relocation allowance." in result.text
     assert "- Must be enrolled" in result.text
@@ -66,32 +79,44 @@ def test_microdata_job_scope_preserves_separate_material_fields() -> None:
 
 
 def test_generic_main_text_is_partial_and_requires_matching_page_title() -> None:
-    html = f'<main><h1>{TITLE}</h1><p>You will build flight software.</p></main>'
+    html = f"<main><h1>{TITLE}</h1><p>You will build flight software.</p></main>"
     assert extract_document(html, URL, TITLE).status == "partial"
     with pytest.raises(ValueError, match="matching"):
         extract_document(html.replace(TITLE, "Senior Trader"), URL, TITLE)
 
 
 def test_application_form_is_not_a_description() -> None:
-    html = f'<main><h1>{TITLE}</h1><form>Name<input>Upload resume<input></form></main>'
+    html = f"<main><h1>{TITLE}</h1><form>Name<input>Upload resume<input></form></main>"
     with pytest.raises(ValueError):
         extract_document(html, URL, TITLE)
 
 
 def test_hydration_is_matched_by_url_and_title_and_kept_as_partial() -> None:
-    data = {"props": {"job": {"id": "123", "title": TITLE, "url": URL,
-                              "description": "You will develop flight software."}}}
-    html = '<script id="__NEXT_DATA__" type="application/json">' + json.dumps(data) + '</script>'
+    data = {
+        "props": {
+            "job": {
+                "id": "123",
+                "title": TITLE,
+                "url": URL,
+                "description": "You will develop flight software.",
+            }
+        }
+    }
+    html = '<script id="__NEXT_DATA__" type="application/json">' + json.dumps(data) + "</script>"
     assert extract_document(html, URL, TITLE).status == "partial"
 
 
 def test_structured_fields_outside_description_are_not_lost() -> None:
-    job = {"@type": "JobPosting", "url": URL, "title": TITLE,
-           "description": "Build flight software.",
-           "qualifications": "Must be enrolled in a degree program.",
-           "responsibilities": "Test navigation systems.",
-           "jobBenefits": "Housing is provided."}
-    html = '<script type="application/ld+json">' + json.dumps(job) + '</script>'
+    job = {
+        "@type": "JobPosting",
+        "url": URL,
+        "title": TITLE,
+        "description": "Build flight software.",
+        "qualifications": "Must be enrolled in a degree program.",
+        "responsibilities": "Test navigation systems.",
+        "jobBenefits": "Housing is provided.",
+    }
+    html = '<script type="application/ld+json">' + json.dumps(job) + "</script>"
     result = extract_document(html, URL, TITLE)
     assert "Must be enrolled in a degree program." in result.text
     assert result.text.endswith("Housing is provided.")
@@ -102,10 +127,18 @@ def test_structured_identity_is_url_not_upstream_normalized_title() -> None:
     # title is the fuller original. A JSON-LD JobPosting whose url matches exactly is
     # the job regardless of title wording; requiring title equality discarded valid
     # descriptions (e.g. jazzhr "...Internship or Co-op 2027" vs feed "...Intern Co-op").
-    html = '<script type="application/ld+json">' + json.dumps({
-        "@type": "JobPosting", "title": "Flight Software Internship or Co-op 2027",
-        "url": URL, "description": "Build flight software.",
-    }) + '</script>'
+    html = (
+        '<script type="application/ld+json">'
+        + json.dumps(
+            {
+                "@type": "JobPosting",
+                "title": "Flight Software Internship or Co-op 2027",
+                "url": URL,
+                "description": "Build flight software.",
+            }
+        )
+        + "</script>"
+    )
     result = extract_document(html, URL, TITLE)
     assert result.text == "Build flight software."
     assert result.status == "available"
@@ -120,8 +153,86 @@ def test_structured_url_mismatch_still_rejected_even_with_matching_title() -> No
 
 
 def test_conflicts_in_one_json_array_remain_visible_to_validator() -> None:
-    jobs = [{"@type": "JobPosting", "url": URL, "title": TITLE, "description": text}
-            for text in ("First description", "Different description")]
-    html = '<script type="application/ld+json">' + json.dumps(jobs) + '</script>'
+    jobs = [
+        {"@type": "JobPosting", "url": URL, "title": TITLE, "description": text}
+        for text in ("First description", "Different description")
+    ]
+    html = '<script type="application/ld+json">' + json.dumps(jobs) + "</script>"
     with pytest.raises(ValueError, match="ambiguous"):
         extract_document(html, URL, TITLE)
+
+
+@pytest.mark.parametrize(
+    ("feed_title", "source_title"),
+    [
+        ("Intern", "Internal Auditor"),
+        ("Engineer II", "Engineer III"),
+        ("Software Engineer", "Senior Software Engineer"),
+        ("Summer Analyst", "Summer Associate"),
+        ("Summer Analyst 2027", "Summer Analyst 2026"),
+        ("C++ Engineer Intern", "C# Engineer Intern"),
+        ("", "Software Intern"),
+    ],
+)
+def test_title_shortening_rejects_changed_role(feed_title: str, source_title: str) -> None:
+    html = (
+        '<script type="application/ld+json">'
+        + json.dumps(
+            {
+                "@type": "JobPosting",
+                "url": URL,
+                "title": source_title,
+                "description": "Source job duties.",
+            }
+        )
+        + "</script>"
+    )
+    with pytest.raises(ValueError, match="matching"):
+        extract_document(html, URL, feed_title)
+
+
+@pytest.mark.parametrize(
+    ("feed_title", "source_title"),
+    [
+        ("Summer Analyst", "2027 Investment Banking Summer Analyst"),
+        ("Summer Associate", "2027 Summer Associate - Investment Banking"),
+        ("Software Engineer Intern", "Software Engineering Intern"),
+        ("Flight Software Intern", "Flight Software Internship or Co-op 2027"),
+        (
+            "Engineering Technician Co-op - Nanoready",
+            "NanoReady- Engineering Technician-Co-Op Fall 2026",
+        ),
+    ],
+)
+def test_shortened_student_titles_keep_their_actual_role(
+    feed_title: str, source_title: str
+) -> None:
+    html = (
+        '<script type="application/ld+json">'
+        + json.dumps(
+            {
+                "@type": "JobPosting",
+                "url": URL,
+                "title": source_title,
+                "description": "Source job duties.",
+            }
+        )
+        + "</script>"
+    )
+    assert extract_document(html, URL, feed_title).text == "Source job duties."
+
+
+def test_icims_matches_requisition_not_cosmetic_slug_or_mobile_options() -> None:
+    url = "https://careers-example.icims.com/jobs/123/job?mobile=true&needsRedirect=false"
+    canonical = "https://careers-example.icims.com/jobs/123/flight-software-intern/job"
+    assert extract_document(structured("Full duties", canonical), url, TITLE).text == "Full duties"
+    with pytest.raises(ValueError, match="matching"):
+        extract_document(
+            structured("Wrong requisition", canonical.replace("/123/", "/124/")), url, TITLE
+        )
+    with pytest.raises(ValueError, match="matching"):
+        extract_document(
+            structured("Wrong employer", canonical.replace("careers-example.", "careers-other.")),
+            url,
+            TITLE,
+        )

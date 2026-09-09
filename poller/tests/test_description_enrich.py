@@ -152,3 +152,8 @@ async def test_enrichment_preserves_success_and_rotates_failures() -> None:
     assert count == 0
     assert result[0].description_text == "Saved detail"
     assert result[1].description_text == ""
+
+
+def test_workable_application_url_still_resolves_provider() -> None:
+    from poller.description_enrich import detect_ats_from_url
+    assert detect_ats_from_url('https://apply.workable.com/example/j/ABC123/apply') == 'workable'

@@ -71,11 +71,14 @@ def test_duplicate_does_not_discard_available_description() -> None:
 
 
 @pytest.mark.asyncio
-@pytest.mark.parametrize("ats,url", [
-    ("icims", "https://careers-acme.icims.com/jobs/123/job"),
-    ("jazzhr", "https://acme.applytojob.com/apply/ABC/Intern"),
-    ("rippling", "https://ats.rippling.com/acme/jobs/123"),
-])
+@pytest.mark.parametrize(
+    "ats,url",
+    [
+        ("icims", "https://careers-acme.icims.com/jobs/123/job"),
+        ("jazzhr", "https://acme.applytojob.com/apply/ABC/Intern"),
+        ("rippling", "https://ats.rippling.com/acme/jobs/123"),
+    ],
+)
 async def test_page_providers_require_matching_structured_job(ats: str, url: str) -> None:
     posting = make_posting("1", ats=ats, url=url)
     for wrong_job in (False, True):
@@ -104,8 +107,9 @@ async def test_missing_robots_differs_from_unreachable_robots(status: int, succe
             return await super().get_text(url, **kwargs)
 
     posting = make_posting("1", ats="other", url="https://careers.example.com/jobs/1")
-    rows, count = await collect_descriptions([posting], {}, MissingRobots(), state={},
-                                            now="2026-09-07T00:00:00Z")
+    rows, count = await collect_descriptions(
+        [posting], {}, MissingRobots(), state={}, now="2026-09-07T00:00:00Z"
+    )
     assert (count == 1) is success
     assert rows[0].description_status == ("available" if success else "unavailable")
 
@@ -116,25 +120,30 @@ async def test_generic_partial_document_is_not_certified() -> None:
         async def get_text(self, url: str, **kwargs: Any) -> str:
             if url.endswith("/robots.txt"):
                 return "User-agent: *\nAllow: /"
-            return '<main><h1>Software Engineer Intern</h1><p>You will build software.</p></main>'
+            return "<main><h1>Software Engineer Intern</h1><p>You will build software.</p></main>"
 
     posting = make_posting("1", ats="other", url="https://careers.example.com/jobs/1")
     state: dict[str, dict[str, Any]] = {}
-    rows, count = await collect_descriptions([posting], {}, HtmlClient(), state=state,
-                                            now="2026-09-07T00:00:00Z")
+    rows, count = await collect_descriptions(
+        [posting], {}, HtmlClient(), state=state, now="2026-09-07T00:00:00Z"
+    )
     assert count == 0
     assert "build software" in rows[0].description_text
     assert rows[0].description_status == state["1"]["status"] == "partial"
 
 
 @pytest.mark.asyncio
-@pytest.mark.parametrize("destination,allowed", [
-    ("https://jobs.example.com/job/1", True),
-    ("https://127.0.0.1/job/1", False),
-    ("https://indeed.com/job/1", False),
-])
+@pytest.mark.parametrize(
+    "destination,allowed",
+    [
+        ("https://jobs.example.com/job/1", True),
+        ("https://127.0.0.1/job/1", False),
+        ("https://indeed.com/job/1", False),
+    ],
+)
 async def test_bounded_redirect_checks_destination_before_request(
-    destination: str, allowed: bool,
+    destination: str,
+    allowed: bool,
 ) -> None:
     from poller.exceptions import SourceFetchError
 
@@ -148,8 +157,13 @@ async def test_bounded_redirect_checks_destination_before_request(
             return await super().get_text(url, **kwargs)
 
     client = RedirectClient()
-    rows, count = await collect_descriptions([make_posting("1", ats="other", url=original)],
-                                            {}, client, state={}, now="2026-09-07T00:00:00Z")
+    rows, count = await collect_descriptions(
+        [make_posting("1", ats="other", url=original)],
+        {},
+        client,
+        state={},
+        now="2026-09-07T00:00:00Z",
+    )
     assert count == int(allowed)
     assert rows[0].url == original
     if allowed:
@@ -162,17 +176,19 @@ async def test_bounded_redirect_checks_destination_before_request(
 async def test_partial_refresh_keeps_previous_complete_document() -> None:
     posting = make_posting("1", ats="other", url="https://careers.example.com/job/1")
     state: dict[str, dict[str, Any]] = {}
-    original, _ = await collect_descriptions([posting], {}, PageClient(), state=state,
-                                             now="2026-09-07T00:00:00Z")
+    original, _ = await collect_descriptions(
+        [posting], {}, PageClient(), state=state, now="2026-09-07T00:00:00Z"
+    )
 
     class PartialClient(PageClient):
         async def get_text(self, url: str, **kwargs: Any) -> str:
             if url.endswith("/robots.txt"):
                 return "User-agent: *\nAllow: /"
-            return '<main><h1>Software Engineer Intern</h1><p>Build software.</p></main>'
+            return "<main><h1>Software Engineer Intern</h1><p>Build software.</p></main>"
 
-    refreshed, count = await collect_descriptions(original, {}, PartialClient(), state=state,
-                                                  now="2026-09-11T00:00:00Z")
+    refreshed, count = await collect_descriptions(
+        original, {}, PartialClient(), state=state, now="2026-09-11T00:00:00Z"
+    )
     assert count == 0
     assert refreshed[0].description_text == original[0].description_text
     assert refreshed[0].description_status == "stale"
@@ -186,15 +202,123 @@ async def test_redirect_destination_robots_can_disallow_collection() -> None:
     class RedirectClient(PageClient):
         async def get_text(self, url: str, **kwargs: Any) -> str:
             if url == "https://careers.example.com/job/1":
-                raise SourceFetchError("description", "example",
-                                       "redirect 301: https://jobs.example.com/job/1")
+                raise SourceFetchError(
+                    "description", "example", "redirect 301: https://jobs.example.com/job/1"
+                )
             if url == "https://jobs.example.com/robots.txt":
                 return "User-agent: *\nDisallow: /"
             return await super().get_text(url, **kwargs)
 
     client = RedirectClient()
     posting = make_posting("1", ats="other", url="https://careers.example.com/job/1")
-    _, count = await collect_descriptions([posting], {}, client, state={},
-                                         now="2026-09-07T00:00:00Z")
+    _, count = await collect_descriptions(
+        [posting], {}, client, state={}, now="2026-09-07T00:00:00Z"
+    )
     assert count == 0
     assert "https://jobs.example.com/job/1" not in client.calls
+
+
+@pytest.mark.asyncio
+async def test_jazzhr_vanity_requires_matching_path_and_checked_canonical_page() -> None:
+    from poller.first_party_details import fetch_first_party
+
+    original = "https://example.applytojob.com/apply/AbC123/Software-Intern"
+    canonical = "https://careers.example.com/apply/AbC123/Software-Intern"
+
+    class VanityClient(PageClient):
+        async def get_text(self, url: str, **kwargs: Any) -> str:
+            if url == original:
+                self.calls.append(url)
+                return '<link rel="canonical" href="' + canonical + '">'
+            return await super().get_text(url, **kwargs)
+
+    client = VanityClient()
+    posting = make_posting("vanity", ats="jazzhr", url=original)
+    text, _ = await fetch_first_party(posting, client, {})
+    assert "Must graduate" in text
+    assert canonical in client.calls
+    assert "https://careers.example.com/robots.txt" in client.calls
+
+
+@pytest.mark.asyncio
+async def test_oracle_public_details_match_id_and_keep_all_external_sections() -> None:
+    from pathlib import Path
+
+    from poller.first_party_details import fetch_first_party
+
+    url = "https://edbz.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/25017705"
+    payload = json.loads(
+        (Path(__file__).parent / "fixtures/page_hydration/oracle.json").read_text(encoding="utf-8")
+    )
+
+    class OracleClient(PageClient):
+        async def get_text(self, url: str, **kwargs: Any) -> str:
+            self.calls.append(url)
+            if url.endswith("/robots.txt"):
+                return "User-agent: *\nAllow: /"
+            if "/hcmRestApi/" in url:
+                return json.dumps(payload)
+            return '<base data-sitenumber="CX">'
+
+    client = OracleClient()
+    facts: dict[str, Any] = {}
+    posting = make_posting("oracle", ats="other", url=url)
+    from dataclasses import replace
+
+    posting = replace(posting, title="Systems Engineering Intern")
+    text, _ = await fetch_first_party(posting, client, {}, facts=facts)
+    assert "Generative AI" in text
+    assert facts["description_acquisition"]["method"] == "oracle_public_api"
+    payload["items"][0]["Id"] = "different-job"
+    with pytest.raises(ValueError, match="identity"):
+        await fetch_first_party(posting, client, {})
+
+
+@pytest.mark.asyncio
+async def test_workable_advertised_markdown_keeps_ending_and_checks_job_link() -> None:
+    from poller.first_party_details import fetch_first_party
+
+    url = "https://apply.workable.com/example/j/ABC123/apply"
+    markdown = "https://apply.workable.com/example/jobs/view/ABC123.md"
+    application_url = url
+
+    class MarkdownClient(PageClient):
+        async def get_text(self, url: str, **kwargs: Any) -> str:
+            target = url
+            if target.endswith("/robots.txt"):
+                return "User-agent: *\nAllow: /"
+            if target == markdown:
+                return (
+                    "# Software Engineer Intern\n\n## Description\nBuild software."
+                    "\n\nFinal clause.\n[Apply](" + application_url + ")"
+                )
+            return '<link rel="alternate" type="text/markdown" href="' + markdown + '">'
+
+    posting = make_posting("markdown", ats="workable", url=url)
+    text, _ = await fetch_first_party(posting, MarkdownClient(), {})
+    assert "Final clause." in text
+
+
+@pytest.mark.asyncio
+async def test_icims_embedded_detail_follows_only_same_requisition() -> None:
+    from dataclasses import replace
+
+    from poller.first_party_details import fetch_first_party
+
+    page = "https://careers-example.icims.com/jobs/123/software-engineer-intern/job"
+    frame = page + "?in_iframe=1"
+
+    class FrameClient(PageClient):
+        async def get_text(self, url: str, **kwargs: Any) -> str:
+            if url == page:
+                return '<iframe id="noscript_icims_content_iframe" src="' + frame + '"></iframe>'
+            return await super().get_text(url, **kwargs)
+
+    posting = replace(
+        make_posting("frame", ats="icims", url=page), title="Software Engineer Intern"
+    )
+    text, _ = await fetch_first_party(posting, FrameClient(), {})
+    assert "Must graduate" in text
+    frame = page.replace("/123/", "/456/") + "?in_iframe=1"
+    with pytest.raises(ValueError):
+        await fetch_first_party(posting, FrameClient(), {})

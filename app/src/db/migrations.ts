@@ -99,7 +99,7 @@ export const MIGRATIONS: Migration[] = [
   },
   {
     version: 8,
-    sql: `CREATE TABLE job_details_cache (
+    sql: `CREATE TABLE IF NOT EXISTS job_details_cache (
       posting_id TEXT PRIMARY KEY REFERENCES postings_cache(id),
       context_key TEXT NOT NULL,
       details_json TEXT NOT NULL,
@@ -121,7 +121,21 @@ export async function runMigrations(
 
   for (const migration of pending) {
     await db.transaction(async (transaction) => {
-      await transaction.exec(migration.sql);
+      // Older desktop builds could commit ALTERs before recording the version.
+      // Inspect existing columns before queueing any writes (native transactions
+      // require reads first). Retain their data and apply only missing additions.
+      let sql = migration.sql;
+      const additions = migration.sql.matchAll(
+        /\bALTER TABLE (\w+) ADD COLUMN (\w+) [^;]+;/gi,
+      );
+      for (const addition of additions) {
+        const column = await transaction.queryOne<{ name: string }>(
+          'SELECT name FROM pragma_table_info(?) WHERE name = ? COLLATE NOCASE',
+          [addition[1]!, addition[2]!],
+        );
+        if (column) sql = sql.replace(addition[0], '');
+      }
+      await transaction.exec(sql);
       await transaction.run('UPDATE schema_version SET version = ?', [migration.version]);
     });
   }

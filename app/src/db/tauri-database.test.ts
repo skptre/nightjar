@@ -93,3 +93,33 @@ describe('TauriDatabase batching', () => {
     });
   });
 });
+
+it('repairs partial migrations through the native batch interface without erasing data', async () => {
+  const { NightjarDB } = await import('./database');
+  const backing = await NightjarDB.createInMemory();
+  try {
+    await backing.run('UPDATE schema_version SET version = 6');
+    await backing.exec('ALTER TABLE postings_cache DROP COLUMN classification_version');
+    await backing.run("INSERT INTO postings_cache(id,data,synced_at,role_classification) VALUES ('saved','{}','today','keep')");
+    mocks.invoke.mockReset().mockImplementation(async (command: string, args: {
+      query?: string; values?: (string | number | null)[];
+      statements?: { query: string; values: (string | number | null)[] }[];
+    }) => {
+      if (command === 'execute_sql_query') {
+        return backing.query(args.query!.replace(/\$\d+/g, '?'), args.values);
+      }
+      if (command === 'execute_sql_batch') {
+        return backing.transaction(async tx => {
+          for (const statement of args.statements!) {
+            await tx.run(statement.query.replace(/\$\d+/g, '?'), statement.values);
+          }
+        });
+      }
+      throw new Error(`Unexpected command: ${command}`);
+    });
+    await TauriDatabase.create();
+    expect(await backing.queryOne('SELECT version FROM schema_version')).toEqual({ version: 8 });
+    expect(await backing.queryOne('SELECT role_classification,classification_version FROM postings_cache'))
+      .toEqual({ role_classification: 'keep', classification_version: null });
+  } finally { await backing.close(); }
+});

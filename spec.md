@@ -980,3 +980,14 @@ poller history. Classifier v6 recognizes specific mechanical modeling duties whi
 preserving role/field separation. USAJOBS Full responses retain all supported long
 text fields; summaries alone remain partial. See docs/description-release-v5.md for
 measured results and remaining launch gates; 100% coverage is not claimed.
+
+
+Database startup recovery (September 9, 2026): concurrent app initialization shares
+one in-flight database open, including migrations and browser-to-native import.
+Pending migrations inspect existing columns using read-only SQLite metadata before
+queueing writes, so partially applied older desktop migrations resume without
+erasing classification or application data. Migration 8 tolerates an already-created
+job_details_cache. Missing columns and migration version updates still commit as
+one batch; other migration errors still roll back. Regression coverage includes
+partial v7 schemas, repeat startup, saved data preservation and the native batch
+interface backed by real SQLite. No user database reset is required.

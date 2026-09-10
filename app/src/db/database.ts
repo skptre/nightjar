@@ -158,7 +158,15 @@ export class NightjarDB implements Database {
   }
 }
 
-export async function createDatabase(): Promise<Database> {
+let openingDatabase: Promise<Database> | undefined;
+
+export function createDatabase(): Promise<Database> {
+  // StrictMode mounts providers twice. Both callers must share schema initialization.
+  openingDatabase ??= openDatabase().finally(() => { openingDatabase = undefined; });
+  return openingDatabase;
+}
+
+async function openDatabase(): Promise<Database> {
   if (isTauri()) {
     const { TauriDatabase } = await import('./tauri-database');
     const db = await TauriDatabase.create();

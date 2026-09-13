@@ -415,7 +415,28 @@ function setCacheIntegrityVersion(): void {
   }
 }
 
-export async function syncFeed(
+export async function syncFeed(db: Database, baseUrl?: string): Promise<SyncResult> {
+  if (!baseUrl && !import.meta.env.DEV && typeof navigator !== 'undefined' && !navigator.onLine) {
+    const count = await db.queryOne<{ count: number }>('SELECT COUNT(*) AS count FROM postings_cache');
+    if ((count?.count ?? 0) === 0) return syncFeedFromSource(db, '/data');
+    return { newPostingIds: [], updatedCount: 0, closedCount: 0,
+      totalCount: count!.count, skipped: false, error: 'Offline' };
+  }
+  const result = await syncFeedFromSource(db, baseUrl);
+  // Packaged MVPs include the public snapshot used to build them. If the remote
+  // feed is unreachable on a fresh launch, show that snapshot instead of nothing.
+  // Never replace an existing cache with an older bundled snapshot.
+  if (result.error && !baseUrl && !import.meta.env.DEV) {
+    const count = await db.queryOne<{ count: number }>('SELECT COUNT(*) AS count FROM postings_cache');
+    if ((count?.count ?? 0) === 0) {
+      const bundled = await syncFeedFromSource(db, '/data');
+      if (!bundled.error) return bundled;
+    }
+  }
+  return result;
+}
+
+async function syncFeedFromSource(
   db: Database,
   baseUrl?: string,
 ): Promise<SyncResult> {

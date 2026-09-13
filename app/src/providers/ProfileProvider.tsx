@@ -12,18 +12,6 @@ interface ProfileContextValue {
 }
 
 const ONBOARDING_DISMISSED_KEY = 'nightjar_onboarding_dismissed';
-const PROFILE_RESET_KEY = 'nightjar_profile_reset_v1';
-
-function loadInitialProfile(): Profile | null {
-  if (localStorage.getItem(PROFILE_RESET_KEY) !== 'done') {
-    clearProfile();
-    localStorage.removeItem(ONBOARDING_DISMISSED_KEY);
-    localStorage.setItem(PROFILE_RESET_KEY, 'done');
-    return null;
-  }
-  return loadProfile();
-}
-
 const ProfileContext = createContext<ProfileContextValue | null>(null);
 
 export function useProfile(): ProfileContextValue {
@@ -33,7 +21,7 @@ export function useProfile(): ProfileContextValue {
 }
 
 export function ProfileProvider({ children }: { children: ReactNode }): ReactNode {
-  const [profile, setProfile] = useState<Profile | null>(() => loadInitialProfile());
+  const [profile, setProfile] = useState<Profile | null>(() => loadProfile());
   const [setupDismissed, setSetupDismissed] = useState(
     () => localStorage.getItem(ONBOARDING_DISMISSED_KEY) === 'true',
   );

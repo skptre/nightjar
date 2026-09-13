@@ -37,7 +37,6 @@ describe('ProfileProvider onboarding', () => {
   });
 
   it('allows a guest to open personalization later', () => {
-    localStorage.setItem('nightjar_profile_reset_v1', 'done');
     localStorage.setItem('nightjar_onboarding_dismissed', 'true');
     render(<ProfileProvider><TestApp /></ProfileProvider>);
 
@@ -47,7 +46,6 @@ describe('ProfileProvider onboarding', () => {
   });
 
   it('deletes a saved profile and returns to the welcome screen', () => {
-    localStorage.setItem('nightjar_profile_reset_v1', 'done');
     localStorage.setItem('nightjar_onboarding_dismissed', 'true');
     localStorage.setItem('nightjar_profile', JSON.stringify({
       graduation: '2029-05',
@@ -64,19 +62,19 @@ describe('ProfileProvider onboarding', () => {
     expect(screen.getByRole('button', { name: 'Browse jobs' })).toBeTruthy();
   });
 
-  it('clears the pre-redesign profile once in each runtime', () => {
+  it('preserves saved preferences without a reset marker', () => {
     localStorage.setItem('nightjar_onboarding_dismissed', 'true');
-    localStorage.setItem('nightjar_profile', '{"graduation":"2029-05"}');
+    const saved = JSON.stringify({ degree_type: 'bachelors', graduation: '2029-05', work_auth: 'us_citizen', requires_sponsorship: false, target_categories: ['swe'], tiers: {}, contacts: {} });
+    localStorage.setItem('nightjar_profile', saved);
 
     render(<ProfileProvider><TestApp /></ProfileProvider>);
 
-    expect(localStorage.getItem('nightjar_profile')).toBeNull();
-    expect(localStorage.getItem('nightjar_onboarding_dismissed')).toBeNull();
-    expect(localStorage.getItem('nightjar_profile_reset_v1')).toBe('done');
-    expect(screen.getByRole('button', { name: 'Browse jobs' })).toBeTruthy();
+    expect(localStorage.getItem('nightjar_profile')).toBe(saved);
+    expect(localStorage.getItem('nightjar_onboarding_dismissed')).toBe('true');
+    expect(localStorage.getItem('nightjar_profile_reset_v1')).toBeNull();
+    expect(screen.getByText('profile loaded')).toBeTruthy();
   });
   it('keeps existing preferences when opening and cancelling the editor', () => {
-    localStorage.setItem('nightjar_profile_reset_v1', 'done');
     localStorage.setItem('nightjar_onboarding_dismissed', 'true');
     const profile = JSON.stringify({ degree_type: 'bachelors', graduation: '2029-05',
       work_auth: 'us_citizen', requires_sponsorship: false, target_categories: ['swe'],

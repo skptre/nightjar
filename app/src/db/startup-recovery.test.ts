@@ -26,5 +26,6 @@ it('shares concurrent startup so React remounts cannot race migrations', async (
     const [first, second] = await Promise.all([createDatabase(), createDatabase()]);
     expect(first).toBe(second);
     expect(open).toHaveBeenCalledTimes(1);
+    expect(open).toHaveBeenCalledWith();
   } finally { await db.close(); }
 });

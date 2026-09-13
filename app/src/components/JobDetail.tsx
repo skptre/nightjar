@@ -21,12 +21,19 @@ export function JobDetail({ posting, onClose, onAction }: {
   const [documentState, setDocumentState] = useState<{ id: string; details: JobDetails } | null>(null);
   const [full, setFull] = useState(false);
   const [loadFailed, setLoadFailed] = useState(false);
+  const immediateDetails = useMemo(() => posting.description_text !== undefined
+    ? extractJobDetails(posting.description_text, {
+      acquisition: acquisitionStatus(posting.description_status),
+      ...(posting.compensation ? { advertisedCompensation: posting.compensation } : {}),
+    }) : null, [posting.description_text, posting.description_status, posting.compensation]);
   const titleRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => { titleRef.current?.focus({ preventScroll: true }); }, [posting.id]);
   useEffect(() => {
     let cancelled = false;
     setFull(false);
     setLoadFailed(false);
+    if (immediateDetails) return;
+    const timeout = setTimeout(() => { if (!cancelled) setLoadFailed(true); }, 10000);
     void (async () => {
       const cached = await getJobDetails(db, posting.id);
       let details = cached?.details;
@@ -40,9 +47,9 @@ export function JobDetail({ posting, onClose, onAction }: {
       }
       if (!cancelled) setDocumentState({ id: posting.id, details });
     })().catch(() => { if (!cancelled) { setLoadFailed(true); toast('Could not load the description. You can still open the employer page.', 'error'); } });
-    return () => { cancelled = true; };
-  }, [db, posting.id, posting.compensation, posting.description_text, posting.description_status, toast]);
-  const details = documentState?.id === posting.id ? documentState.details : null;
+    return () => { cancelled = true; clearTimeout(timeout); };
+  }, [db, posting.id, posting.compensation, posting.description_text, posting.description_status, toast, immediateDetails]);
+  const details = immediateDetails ?? (documentState?.id === posting.id ? documentState.details : null);
   const sections = useMemo(() => details ? [
     { label: 'The role', passages: details.sections.responsibilities },
     { label: 'What you bring', passages: details.sections.required },

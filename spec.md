@@ -1,5 +1,15 @@
 # SPEC — Nightjar
 
+September 10 clarified persistence contract (supersedes the earlier fresh-session
+request): browser IndexedDB and native SQLite persist across launches. Startup never
+clears profiles, watches, tracker history or public cache, including one-time reset
+markers. Resets happen only through explicit Settings actions. A failed fetch never
+closes or deletes existing records. Packaged cold starts may use the bundled public
+snapshot, including when the OS reports offline; existing caches are never replaced
+by that fallback. Development uses the local /data feed. A private upstream repo
+cannot supply anonymous live updates; no app credentials or private-repo token are
+introduced to work around that. Normal window close allows orderly WebView teardown.
+
 An open internship feed and local desktop tracker.
 
 ---

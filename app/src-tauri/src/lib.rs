@@ -528,6 +528,12 @@ pub fn run() {
                 )?;
             }
 
+            if let Some(window) = app.get_webview_window("main") {
+                if let Some(icon) = app.default_window_icon() {
+                    window.set_icon(icon.clone())?;
+                }
+            }
+
             // System tray menu items
             let open = MenuItem::with_id(app, "open", "Open Nightjar", true, None::<&str>)?;
             let sync_info =
@@ -584,16 +590,8 @@ pub fn run() {
                 })
                 .build(app)?;
 
-            // Minimize to tray on window close instead of quitting
+            // Let the normal close event tear down the WebView before app exit.
             if let Some(window) = app.get_webview_window("main") {
-                let w = window.clone();
-                window.on_window_event(move |event| {
-                    if let tauri::WindowEvent::CloseRequested { api, .. } = event {
-                        api.prevent_close();
-                        let _ = w.hide();
-                    }
-                });
-
                 // Auto-launch with --minimized: start hidden, tray only
                 if std::env::args().any(|a| a == "--minimized") {
                     let _ = window.hide();

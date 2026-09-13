@@ -10,7 +10,7 @@ const TABLES_IN_DELETE_ORDER = [
   'companies_meta',
 ] as const;
 
-function clearOwnedStorage(storage: Storage): void {
+export function clearOwnedStorage(storage: Storage): void {
   const keys: string[] = [];
   for (let index = 0; index < storage.length; index++) {
     const key = storage.key(index);

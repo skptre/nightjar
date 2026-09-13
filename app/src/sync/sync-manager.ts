@@ -117,8 +117,12 @@ export class SyncManager {
       }
 
       if (typeof navigator !== 'undefined' && !navigator.onLine) {
-        this.updateState({ status: 'idle', lastError: 'Offline' });
-        return null;
+        const cached = await this.db.queryOne<{ count: number }>('SELECT COUNT(*) AS count FROM postings_cache');
+        if ((cached?.count ?? 0) > 0) {
+          this.updateState({ status: 'idle', lastError: 'Offline' });
+          return null;
+        }
+        // An empty cache still needs the local/bundled feed on first launch.
       }
 
       const ghosted = await runAutoGhost(this.db);

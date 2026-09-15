@@ -13,9 +13,9 @@
   </p>
 
   <p>
-    <a href="#get-nightjar">Get Nightjar</a> &nbsp;?&nbsp;
-    <a href="#what-you-can-do">Features</a> &nbsp;?&nbsp;
-    <a href="#your-data">Privacy</a> &nbsp;?&nbsp;
+    <a href="#get-nightjar">Get Nightjar</a> &nbsp;|&nbsp;
+    <a href="#what-you-can-do">Features</a> &nbsp;|&nbsp;
+    <a href="#your-data">Privacy</a> &nbsp;|&nbsp;
     <a href="https://github.com/skptre/nightjar/issues">Feedback</a>
   </p>
 </div>
@@ -144,4 +144,4 @@ See [spec.md](spec.md) for architecture and data contracts, and
 
 ## License
 
-[MIT](LICENSE) ? Copyright 2026 Yash Singh
+[MIT](LICENSE) | Copyright 2026 Yash Singh

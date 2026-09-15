@@ -4,7 +4,10 @@ import { Icon } from '@/components/Icon';
 import { saveJob, markJobApplied } from './job-actions';
 import { recomputeGuestCategories } from '@/classify/guest-classification';
 import { DOMAIN_OPTIONS, matchesRoleSelection, parseRoleDomains } from '@/classify/role-taxonomy';
-import { createRef, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  createRef, useCallback, useDeferredValue, useEffect, useLayoutEffect, useMemo, useRef, useState,
+  useSyncExternalStore,
+} from 'react';
 import { useDatabase } from '@/providers/DatabaseProvider';
 import { useProfile } from '@/providers/ProfileProvider';
 import { useSync } from '@/providers/SyncProvider';
@@ -14,6 +17,10 @@ import { useDensity } from '@/hooks/useAppearance';
 import { openExternal } from '@/lib/platform';
 import { useToast } from '@/components/Toast';
 import { PostingRow, UndoToast, type PostingAction, type PostingRowData } from './PostingRow';
+import {
+  feedSnapshot, feedSubscribe, setFeed, setScrollTopSilent, nextLoadEpoch, currentLoadEpoch,
+  profileSignature,
+} from './feed-store';
 import {
   CATEGORY_OPTIONS,
   parseCategoryTags,
@@ -37,13 +44,19 @@ interface PostingQueryRow {
   eligibility: string | null;
   score: number | null;
   score_breakdown: string | null;
-  description: string | null;
+  has_description: number | null;
   application_status: string | null;
 }
 
 
+// The list needs only whether a description exists (a boolean); the full text is
+// fetched on demand by JobDetail. Selecting the description column for every row
+// serialised thousands of full descriptions across the native bridge on each
+// load, so `has_description` replaces it here.
 export const CURRENT_JOBS_QUERY = `SELECT p.id, p.data, p.first_seen_at, p.closed_at, p.category, p.category_tags, p.role_classification,
-              p.term, p.eligibility, p.score, p.score_breakdown, p.description, a.status AS application_status
+              p.term, p.eligibility, p.score, p.score_breakdown,
+              (CASE WHEN p.description IS NOT NULL AND p.description != '' THEN 1 ELSE 0 END) AS has_description,
+              a.status AS application_status
        FROM postings_cache p
        LEFT JOIN applications a ON p.id = a.posting_id
        WHERE p.closed_at IS NULL
@@ -73,8 +86,11 @@ function parsePostingRow(row: PostingQueryRow): PostingRowData | null {
       score: row.score,
       score_breakdown: row.score_breakdown,
       compensation: (parsed['compensation'] as string) ?? null,
-      description_available: Boolean(row.description),
-      description_text: row.description,
+      description_available: row.has_description === 1,
+      // description_text is intentionally omitted (left absent, i.e. undefined).
+      // The list no longer carries full description text; JobDetail treats an
+      // absent value as "not yet loaded" and fetches it on demand, rather than
+      // rendering null as an empty description.
       description_status: typeof parsed['description_status'] === 'string' ? parsed['description_status'] : undefined,
       application_status: row.application_status,
     };
@@ -106,51 +122,94 @@ export function FeedView(): React.ReactNode {
   const { toast } = useToast();
   const { profile } = useProfile();
   const { clearNewPostingCount, status: syncStatus, lastSyncedAt } = useSync();
-  // The feed starts fresh every session: no view mode or filter selection is
-  // carried over from a previous visit or seeded from the saved profile.
-  const [viewMode, setViewMode] = useState<'for-you' | 'all'>('all');
-  const [selectedCategories, setSelectedCategories] = useState<Set<string>>(() => new Set());
-  const [selectedDomains, setSelectedDomains] = useState<Set<string>>(new Set());
-  const [search, setSearch] = useState(() => new URLSearchParams(window.location.search).get('q') ?? '');
-  const [detailId, setDetailId] = useState<string | null>(null);
-  const [companyFilter, setCompanyFilter] = useState(() => new URLSearchParams(window.location.search).get('company'));
+
+  // Persisted feed state (rows, filters, sort, selection, scroll) lives in the
+  // store above the router, so navigating away and back does not reset it or
+  // re-query the database.
+  const feed = useSyncExternalStore(feedSubscribe, feedSnapshot);
+  const {
+    rawRows, pendingRows, loaded, viewMode, selectedCategories, selectedDomains,
+    search, companyFilter, detailId, selectedIndex,
+  } = feed;
+
+  // Ephemeral UI state — intentionally reset on remount.
   const [searchFocused, setSearchFocused] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const [undoState, setUndoState] = useState<UndoState | null>(null);
-  const [refreshKey, setRefreshKey] = useState(0);
-  const [rawRows, setRawRows] = useState<PostingQueryRow[]>([]);
-  const currentRows = useRef<PostingQueryRow[]>([]);
-  currentRows.current = rawRows;
-  const [pendingRows, setPendingRows] = useState<PostingQueryRow[] | null>(null);
-  const [loaded, setLoaded] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
   const filterMenuRef = useRef<HTMLDivElement>(null);
+
+  // Deferring the search term keeps typing responsive: the input updates
+  // immediately while the (heavier) filtered list recomputes at lower priority.
+  const deferredSearch = useDeferredValue(search);
+
+  const bumpReload = useCallback((): void => {
+    setFeed({ reloadKey: feedSnapshot().reloadKey + 1 });
+  }, []);
 
   useEffect(() => {
     clearNewPostingCount();
   }, [clearNewPostingCount]);
 
+  // On first visit, honour explicit ?company / ?q navigation intent; otherwise
+  // leave the persisted filters untouched so returning to Jobs is unchanged.
+  const appliedUrlParams = useRef(false);
   useEffect(() => {
+    if (appliedUrlParams.current) return;
+    appliedUrlParams.current = true;
+    const params = new URLSearchParams(window.location.search);
+    const company = params.get('company');
+    const query = params.get('q');
+    if (company !== null || query !== null) {
+      setFeed({
+        ...(company !== null ? { companyFilter: company } : {}),
+        ...(query !== null ? { search: query } : {}),
+      });
+    }
+  }, []);
+
+  // The feed reloads only when its underlying data could have changed: a sync
+  // completed (lastSyncedAt), relevant preferences changed (profileSignature),
+  // or a local mutation occurred (reloadKey). Pure navigation leaves the
+  // signature identical, so a remount is served from the cached rows.
+  const loadSignature = `${lastSyncedAt ?? ''}::${profileSignature(profile)}::${String(feed.reloadKey)}`;
+  useEffect(() => {
+    const snapshot = feedSnapshot();
+    if (snapshot.loaded && snapshot.loadedSignature === loadSignature) return;
     let cancelled = false;
-    void (profile ? Promise.resolve() : recomputeGuestCategories(db)).then(() => db.query<PostingQueryRow>(CURRENT_JOBS_QUERY)).then((rows) => {
-      if (!cancelled) {
-        const previous = currentRows.current;
-        const known = new Set(previous.map(row => row.id));
-        if (previous.length > 0 && rows.some(row => !known.has(row.id))) {
-          // Refresh existing evidence without inserting rows under someone's cursor.
-          setPendingRows(rows);
-          const updated = new Map(rows.map(row => [row.id, row]));
-          setRawRows(previous.flatMap(row => updated.has(row.id) ? [updated.get(row.id)!] : []));
+    const myEpoch = nextLoadEpoch();
+    void (profile ? Promise.resolve() : recomputeGuestCategories(db))
+      .then(() => db.query<PostingQueryRow>(CURRENT_JOBS_QUERY))
+      .then((rows) => {
+        // Discard if this view unmounted or a newer load superseded us — a stale
+        // result must never overwrite fresher rows.
+        if (cancelled || myEpoch !== currentLoadEpoch()) return;
+        const parsed = rows
+          .map(parsePostingRow)
+          .filter((row): row is PostingRowData => row !== null);
+        const previous = feedSnapshot().rawRows;
+        const known = new Set(previous.map((row) => row.id));
+        if (previous.length > 0 && parsed.some((row) => !known.has(row.id))) {
+          // Refresh existing evidence in place; hold genuinely new rows behind
+          // "Show" so nothing is inserted under the user's cursor.
+          const updated = new Map(parsed.map((row) => [row.id, row]));
+          setFeed({
+            pendingRows: parsed,
+            rawRows: previous.flatMap((row) => (updated.has(row.id) ? [updated.get(row.id)!] : [])),
+            loaded: true,
+            loadedSignature: loadSignature,
+          });
         } else {
-          setRawRows(rows);
-          setPendingRows(null);
+          setFeed({ rawRows: parsed, pendingRows: null, loaded: true, loadedSignature: loadSignature });
         }
-        setLoaded(true);
-      }
-    }).catch(() => { if (!cancelled) { setLoaded(true); toast('Could not load your jobs. Please reopen this page.', 'error'); } });
+      })
+      .catch(() => {
+        if (cancelled || myEpoch !== currentLoadEpoch()) return;
+        setFeed({ loaded: true, loadedSignature: loadSignature });
+        toast('Could not load your jobs. Please reopen this page.', 'error');
+      });
     return () => { cancelled = true; };
-  }, [db, refreshKey, syncStatus, lastSyncedAt, profile, toast]);
+  }, [db, profile, loadSignature, toast]);
 
   useEffect(() => {
     if (!filtersOpen) return;
@@ -162,11 +221,9 @@ export function FeedView(): React.ReactNode {
   }, [filtersOpen]);
 
   const postings = useMemo(() => {
-    const query = search.trim().toLowerCase();
+    const query = deferredSearch.trim().toLowerCase();
     const result: PostingRowData[] = [];
-    for (const row of rawRows) {
-      const posting = parsePostingRow(row);
-      if (!posting) continue;
+    for (const posting of rawRows) {
       if (viewMode === 'for-you' && !matchesGraduationStage(posting, profile?.graduation)) continue;
       if (companyFilter && posting.company_slug !== companyFilter) continue;
       if (viewMode === 'for-you' && profile && posting.eligibility) {
@@ -193,7 +250,7 @@ export function FeedView(): React.ReactNode {
       });
     }
     return result;
-  }, [rawRows, search, selectedCategories, selectedDomains, viewMode, profile, companyFilter]);
+  }, [rawRows, deferredSearch, selectedCategories, selectedDomains, viewMode, profile, companyFilter]);
 
   const postingIds = useMemo(() => postings.map((posting) => posting.id), [postings]);
   const emptyState = getFeedEmptyState(rawRows.length, syncStatus);
@@ -209,30 +266,53 @@ export function FeedView(): React.ReactNode {
     scrollToIndex,
   } = useVirtualList({ itemCount: postings.length, itemHeight: density === 'compact' ? 56 : 72 });
 
+  // Persist the scroll offset (silently, no re-render) and restore it once when
+  // the list re-mounts, so returning to Jobs lands where the user left off.
+  useEffect(() => {
+    const container = virtualContainerRef.current;
+    if (!container) return;
+    const onScroll = (): void => setScrollTopSilent(container.scrollTop);
+    container.addEventListener('scroll', onScroll, { passive: true });
+    return () => container.removeEventListener('scroll', onScroll);
+  }, [virtualContainerRef, loaded, postings.length]);
+
+  const scrollRestored = useRef(false);
+  useLayoutEffect(() => {
+    if (scrollRestored.current || !loaded) return;
+    const container = virtualContainerRef.current;
+    if (!container) return;
+    if (feed.scrollTop > 0) container.scrollTop = feed.scrollTop;
+    scrollRestored.current = true;
+  }, [loaded, feed.scrollTop, virtualContainerRef]);
+
   useEffect(() => {
     if (selectedIndex >= 0 && selectedIndex < postings.length) scrollToIndex(selectedIndex);
   }, [selectedIndex, postings.length, scrollToIndex]);
 
   const resetListPosition = useCallback((): void => {
-    setSelectedIndex(0);
+    setFeed({ selectedIndex: 0 });
+    setScrollTopSilent(0);
     virtualContainerRef.current?.scrollTo(0, 0);
   }, [virtualContainerRef]);
 
   const toggleCategory = useCallback((category: string): void => {
-    setSelectedCategories((previous) => {
-      const next = new Set(previous);
-      if (next.has(category)) next.delete(category);
-      else next.add(category);
-      return next;
-    });
+    const next = new Set(feedSnapshot().selectedCategories);
+    if (next.has(category)) next.delete(category);
+    else next.add(category);
+    setFeed({ selectedCategories: next });
+    resetListPosition();
+  }, [resetListPosition]);
+
+  const toggleDomain = useCallback((domain: string): void => {
+    const next = new Set(feedSnapshot().selectedDomains);
+    if (next.has(domain)) next.delete(domain);
+    else next.add(domain);
+    setFeed({ selectedDomains: next });
     resetListPosition();
   }, [resetListPosition]);
 
   const clearFilters = useCallback((): void => {
-    setSelectedCategories(new Set());
-    setSelectedDomains(new Set());
-    setSearch('');
-    setCompanyFilter(null);
+    setFeed({ selectedCategories: new Set(), selectedDomains: new Set(), search: '', companyFilter: null });
     resetListPosition();
   }, [resetListPosition]);
 
@@ -249,7 +329,7 @@ export function FeedView(): React.ReactNode {
     }
     if (action === 'save' || action === 'apply') {
       void (action === 'save' ? saveJob(db, id) : markJobApplied(db, id)).then(() => {
-        setRefreshKey(key => key + 1);
+        bumpReload();
         toast(action === 'save' ? 'Saved to your tracker.' : 'Application recorded.');
       }).catch(() => toast('Could not save this change. Please try again.', 'error'));
       return;
@@ -264,25 +344,25 @@ export function FeedView(): React.ReactNode {
       [id, id, now, now],
     ).then(() => {
       setUndoState({ postingId: id, title: posting.title });
-      setRefreshKey((key) => key + 1);
+      bumpReload();
     });
-  }, [db, postings, toast]);
+  }, [db, postings, toast, bumpReload]);
 
   const handleUndo = useCallback((): void => {
     if (!undoState) return;
     void db.run('DELETE FROM applications WHERE posting_id = ?', [undoState.postingId])
-      .then(() => setRefreshKey((key) => key + 1));
+      .then(() => bumpReload());
     setUndoState(null);
-  }, [db, undoState]);
+  }, [db, undoState, bumpReload]);
 
   const handleEscape = useCallback((): void => {
-    if (detailId) { setDetailId(null); return; }
+    if (detailId) { setFeed({ detailId: null }); return; }
     if (filtersOpen) {
       setFiltersOpen(false);
       return;
     }
     if (searchFocused) {
-      setSearch('');
+      setFeed({ search: '' });
       setSearchFocused(false);
       searchRef.current?.blur();
     }
@@ -291,7 +371,7 @@ export function FeedView(): React.ReactNode {
   useKeyboard({
     postingIds,
     selectedIndex,
-    onSelectIndex: (index) => { setSelectedIndex(index); if (detailId) setDetailId(postings[index]?.id ?? null); },
+    onSelectIndex: (index) => { setFeed({ selectedIndex: index, ...(detailId ? { detailId: postings[index]?.id ?? null } : {}) }); },
     onAction: (id, action) => handleAction(id, action === 'apply' ? 'open' : action),
     onSearchFocus: () => { searchRef.current?.focus(); setSearchFocused(true); },
     onEscape: handleEscape,
@@ -320,9 +400,7 @@ export function FeedView(): React.ReactNode {
               type="button"
               aria-pressed={viewMode === 'for-you'}
               onClick={() => {
-                setViewMode('for-you');
-                setSelectedCategories(new Set(profile.target_categories));
-                setSelectedDomains(new Set());
+                setFeed({ viewMode: 'for-you', selectedCategories: new Set(profile.target_categories), selectedDomains: new Set() });
                 resetListPosition();
               }}
               className={`rounded px-3 py-1.5 text-sm font-medium ${viewMode === 'for-you' ? 'bg-violet-700 text-white' : 'text-gray-600'}`}
@@ -333,9 +411,7 @@ export function FeedView(): React.ReactNode {
               type="button"
               aria-pressed={viewMode === 'all'}
               onClick={() => {
-                setViewMode('all');
-                setSelectedCategories(new Set());
-                setSelectedDomains(new Set());
+                setFeed({ viewMode: 'all', selectedCategories: new Set(), selectedDomains: new Set() });
                 resetListPosition();
               }}
               className={`rounded px-3 py-1.5 text-sm font-medium ${viewMode === 'all' ? 'bg-violet-700 text-white' : 'text-gray-600'}`}
@@ -351,7 +427,7 @@ export function FeedView(): React.ReactNode {
           ref={searchRef}
           type="search"
           value={search}
-          onChange={(event) => { setSearch(event.target.value); resetListPosition(); }}
+          onChange={(event) => { setFeed({ search: event.target.value }); resetListPosition(); }}
           onFocus={() => setSearchFocused(true)}
           onBlur={() => setSearchFocused(false)}
           placeholder="Search title or company"
@@ -399,25 +475,17 @@ export function FeedView(): React.ReactNode {
               <div className="mt-3 flex flex-wrap gap-2">
                 {DOMAIN_OPTIONS.map(option => (
                   <button key={option.value} type="button" aria-pressed={selectedDomains.has(option.value)}
-                    onClick={() => {
-                      setSelectedDomains(previous => {
-                        const next = new Set(previous);
-                        if (next.has(option.value)) next.delete(option.value);
-                        else next.add(option.value);
-                        return next;
-                      });
-                      resetListPosition();
-                    }}
+                    onClick={() => toggleDomain(option.value)}
                     className={`rounded-full border px-3 py-1.5 text-xs font-medium ${selectedDomains.has(option.value) ? 'border-violet-700 bg-violet-700 text-white' : 'border-gray-300 text-gray-600 hover:border-gray-500'}`}>
                     {option.label}
                   </button>
                 ))}
               </div>
               {selectedDomains.size > 0 && (
-                <button type="button" onClick={() => setSelectedDomains(new Set())} className="mt-3 text-xs font-medium text-violet-700">Any field</button>
+                <button type="button" onClick={() => { setFeed({ selectedDomains: new Set() }); resetListPosition(); }} className="mt-3 text-xs font-medium text-violet-700">Any field</button>
               )}
               {selectedCategories.size > 0 && (
-                <button type="button" onClick={() => setSelectedCategories(new Set())} className="mt-4 text-xs font-medium text-violet-700 hover:text-violet-900">
+                <button type="button" onClick={() => { setFeed({ selectedCategories: new Set() }); resetListPosition(); }} className="mt-4 text-xs font-medium text-violet-700 hover:text-violet-900">
                   Show all roles
                 </button>
               )}
@@ -441,7 +509,7 @@ export function FeedView(): React.ReactNode {
       )}
 
       <div className="results-heading"><span>{postings.length.toLocaleString()} opportunities{companyFilter ? ' at this company' : ''}</span><span>{viewMode === 'for-you' ? 'For your preferences' : 'Newest first'}</span></div>
-      {pendingRows && <button className="new-results" onClick={() => { setRawRows(pendingRows); setPendingRows(null); resetListPosition(); }}>
+      {pendingRows && <button className="new-results" onClick={() => { setFeed({ rawRows: feedSnapshot().pendingRows ?? [], pendingRows: null }); resetListPosition(); }}>
         {newPostingTotal} new {newPostingTotal === 1 ? 'role' : 'roles'} available <span>Show <Icon name="arrow" size={14} /></span>
       </button>}
       <div className={`jobs-workspace ${selectedPosting ? 'has-detail' : ''}`}>
@@ -473,7 +541,7 @@ export function FeedView(): React.ReactNode {
                     selected={index === selectedIndex}
                     rowRef={rowRefs[index]!}
                     onAction={handleAction}
-                    onSelect={() => { setSelectedIndex(index); setDetailId(posting.id); }}
+                    onSelect={() => { setFeed({ selectedIndex: index, detailId: posting.id }); }}
                   />
                 );
               })}
@@ -482,8 +550,8 @@ export function FeedView(): React.ReactNode {
         </div>
       )}
 
-      {selectedPosting ? <JobDetail key={selectedPosting.id} posting={selectedPosting} onClose={() => {
-        setDetailId(null);
+      {selectedPosting ? <JobDetail key={selectedPosting.id} posting={selectedPosting} dataToken={lastSyncedAt} onClose={() => {
+        setFeed({ detailId: null });
         requestAnimationFrame(() => rowRefs[selectedIndex]?.current?.querySelector('button')?.focus({ preventScroll: true }));
       }} onAction={handleAction} />
         : <div className="detail-placeholder"><Icon name="jobs" size={28} /><h2>A closer look.</h2><p>Select a role to explore the details,<br />save it, or take the next step.</p><span className="keyboard-hint"><kbd>↑</kbd><kbd>↓</kbd> to browse</span></div>}

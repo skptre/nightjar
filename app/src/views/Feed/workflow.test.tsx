@@ -6,6 +6,7 @@ import { NightjarDB } from '@/db/database';
 import { FeedView } from './FeedView';
 import { PipelineView } from '@/views/Pipeline/PipelineView';
 import { upsertPostings } from '@/sync/feed-sync';
+import { resetFeedStore } from './feed-store';
 const state = vi.hoisted(() => ({ db: null as unknown, profile: null as Profile | null, lastSyncedAt: null as string | null, open: vi.fn(async () => true), toast: vi.fn(), clear: vi.fn() }));
 vi.mock('@/providers/DatabaseProvider', () => ({ useDatabase: () => ({ db: state.db }) }));
 vi.mock('@/providers/ProfileProvider', () => ({ useProfile: () => ({ profile: state.profile }) }));
@@ -14,6 +15,7 @@ vi.mock('@/components/Toast', () => ({ useToast: () => ({ toast: state.toast }) 
 vi.mock('@/lib/platform', () => ({ openExternal: state.open, isTauri: () => false }));
 let db: NightjarDB;
 beforeEach(async () => {
+  resetFeedStore();
   localStorage.clear(); window.history.replaceState(null, '', '/'); state.open.mockClear();
   state.lastSyncedAt = null; state.profile = null;
   db = await NightjarDB.createInMemory(); state.db = db;

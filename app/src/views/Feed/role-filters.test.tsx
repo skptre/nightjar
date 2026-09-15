@@ -4,6 +4,7 @@ import { NightjarDB } from '@/db/database';
 import { recomputePendingCategoryTaxonomy } from '@/classify/recompute';
 import type { Profile } from '@/profile/types';
 import { FeedView } from './FeedView';
+import { resetFeedStore } from './feed-store';
 
 const state = vi.hoisted(() => ({ db: null as unknown, clear: vi.fn(), toast: vi.fn() }));
 vi.mock('@/providers/DatabaseProvider', () => ({ useDatabase: () => ({ db: state.db }) }));
@@ -20,6 +21,7 @@ const profile: Profile = {
 describe('role filters with migrated cached postings', () => {
   let db: NightjarDB;
   beforeEach(async () => {
+    resetFeedStore();
     db = await NightjarDB.createInMemory();
     state.db = db;
     vi.stubGlobal('ResizeObserver', class { observe() {} disconnect() {} });

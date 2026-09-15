@@ -43,8 +43,12 @@ function DescriptionBlocks({ blocks }: { blocks: DescBlock[] }): React.ReactNode
   })}</>;
 }
 
-export function JobDetail({ posting, onClose, onAction }: {
+export function JobDetail({ posting, onClose, onAction, dataToken }: {
   posting: PostingRowData; onClose: () => void; onAction: (id: string, action: PostingAction) => void;
+  // Changes when the underlying feed data could have changed (e.g. a sync wrote
+  // a new description). The list no longer carries description text, so an open
+  // detail re-reads it from the database when this token changes.
+  dataToken?: string | number | null;
 }): React.ReactNode {
   const { db } = useDatabase();
   const { toast } = useToast();
@@ -80,7 +84,7 @@ export function JobDetail({ posting, onClose, onAction }: {
       if (!cancelled) setDocumentState({ id: posting.id, details });
     })().catch(() => { if (!cancelled) { setLoadFailed(true); toast('Could not load the description. You can still open the employer page.', 'error'); } });
     return () => { cancelled = true; clearTimeout(timeout); };
-  }, [db, posting.id, posting.compensation, posting.description_text, posting.description_status, toast, immediateDetails]);
+  }, [db, posting.id, posting.compensation, posting.description_text, posting.description_status, toast, immediateDetails, dataToken]);
 
   const details = immediateDetails ?? (documentState?.id === posting.id ? documentState.details : null);
   const blocks = useMemo(() => details?.document ? formatDescription(details.document) : [], [details]);

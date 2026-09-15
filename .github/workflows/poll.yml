@@ -1,8 +1,8 @@
 name: Poll ATS feeds
 
 on:
-  # schedule:
-  #   - cron: "3,18,33,48 * * * *"
+  schedule:
+    - cron: "3,18,33,48 * * * *"
   workflow_dispatch:
 
 concurrency:
@@ -15,6 +15,7 @@ permissions:
 jobs:
   poll:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,7 +33,7 @@ jobs:
 
       - name: Run poller
         env:
-          USAJOBS_API_KEY: ${{ secrets.USAJOBS_API_KEY }}
+          USAJOBS_API_KEY: ${{ secrets.USAJOBS_API_KEY || secrets.USAJOBS_KEY }}
           USAJOBS_EMAIL: ${{ secrets.USAJOBS_EMAIL }}
         run: uv run python -m poller --once
 

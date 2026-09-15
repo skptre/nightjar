@@ -1,7 +1,7 @@
 {
-  "last_run_at": "2026-09-15T17:49:47Z",
-  "run_count": 33,
-  "run_duration_seconds": 465.8,
+  "last_run_at": "2026-09-15T19:47:06Z",
+  "run_count": 34,
+  "run_duration_seconds": 490.7,
   "sources": {
     "ashby:1password": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -82,17 +82,17 @@
       "last_content_hash": "ae1731eb98574c30"
     },
     "ashby:applied-intuition": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 42.89,
-      "activity_poll_count": 13,
-      "last_content_hash": "3ff25e465c7a91d3"
+      "estimated_poll_cost": 35.23,
+      "activity_poll_count": 14,
+      "last_content_hash": "f40a4ee25e16cf70"
     },
     "ashby:ashby": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -264,16 +264,16 @@
       "last_content_hash": "fce6cb54f72c1390"
     },
     "ashby:cursor": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 30.83,
-      "activity_poll_count": 13,
+      "estimated_poll_cost": 27.27,
+      "activity_poll_count": 14,
       "last_content_hash": "2fd27ccda2b247c1"
     },
     "ashby:cybernetic-labs": {
@@ -368,29 +368,29 @@
       "last_content_hash": "7ead9c198438e0fa"
     },
     "ashby:etched": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 57.74,
-      "activity_poll_count": 13,
+      "estimated_poll_cost": 49.28,
+      "activity_poll_count": 14,
       "last_content_hash": "381a79e4e9ab560e"
     },
     "ashby:firefly-aerospace": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 107.51,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 90.21,
+      "activity_poll_count": 3,
       "last_content_hash": "267571773b3eff95"
     },
     "ashby:fireworks": {
@@ -446,16 +446,16 @@
       "last_content_hash": "3e2ccbb5ef342b5b"
     },
     "ashby:hadrian": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 110.36,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 90.24,
+      "activity_poll_count": 3,
       "last_content_hash": "e657d4d445ffb3b1"
     },
     "ashby:harvey": {
@@ -563,16 +563,16 @@
       "last_content_hash": "e3b0c44298fc1c14"
     },
     "ashby:impulse-space": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 106.16,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 88.24,
+      "activity_poll_count": 3,
       "last_content_hash": "b207db594af086e0"
     },
     "ashby:infisical": {
@@ -823,17 +823,17 @@
       "last_content_hash": "d7ed197f06fdab86"
     },
     "ashby:openai": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 14.83,
-      "activity_poll_count": 13,
-      "last_content_hash": "418972c893b59d21"
+      "estimated_poll_cost": 12.46,
+      "activity_poll_count": 14,
+      "last_content_hash": "8878c4ed6d13ea83"
     },
     "ashby:opusclip": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -914,16 +914,16 @@
       "last_content_hash": "10565023f2556b4a"
     },
     "ashby:physical-intelligence": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 116.3,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 97.81,
+      "activity_poll_count": 3,
       "last_content_hash": "4665a41d1fc8e284"
     },
     "ashby:pinecone": {
@@ -1018,16 +1018,16 @@
       "last_content_hash": "71ee8024ec19132a"
     },
     "ashby:ramp": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 34.11,
-      "activity_poll_count": 13,
+      "estimated_poll_cost": 30.21,
+      "activity_poll_count": 14,
       "last_content_hash": "9215dc43e26a6a27"
     },
     "ashby:regent-craft": {
@@ -1122,16 +1122,16 @@
       "last_content_hash": "b72c749a225e6641"
     },
     "ashby:saronic": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 113.56,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 95.41,
+      "activity_poll_count": 3,
       "last_content_hash": "6e4067db9108e0e3"
     },
     "ashby:semgrep": {
@@ -1499,17 +1499,17 @@
       "last_content_hash": "16023781436b9d91"
     },
     "greenhouse:airbnb": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 27.94,
-      "activity_poll_count": 13,
-      "last_content_hash": "d2a83b7fc00216e5"
+      "estimated_poll_cost": 22.48,
+      "activity_poll_count": 14,
+      "last_content_hash": "d20b35a136f46f23"
     },
     "greenhouse:airtable": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -1564,30 +1564,30 @@
       "last_content_hash": "d25cb66b078e5fc0"
     },
     "greenhouse:anduril": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 7.59,
-      "activity_poll_count": 13,
-      "last_content_hash": "ee05eca6a0d2450a"
+      "estimated_poll_cost": 10.26,
+      "activity_poll_count": 14,
+      "last_content_hash": "08b06ceb203dfeaa"
     },
     "greenhouse:anthropic": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 8.6,
-      "activity_poll_count": 13,
-      "last_content_hash": "51195fb6cd90e480"
+      "estimated_poll_cost": 11.34,
+      "activity_poll_count": 14,
+      "last_content_hash": "d857af2bd382c933"
     },
     "greenhouse:antora-energy": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -1655,17 +1655,17 @@
       "last_content_hash": "513f7c32e7bf378a"
     },
     "greenhouse:archer-aviation": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 184.44,
-      "activity_poll_count": 2,
-      "last_content_hash": "6b023a6165aebb41"
+      "estimated_poll_cost": 157.04,
+      "activity_poll_count": 3,
+      "last_content_hash": "94bfba4244f1d2fb"
     },
     "greenhouse:asana": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -1694,16 +1694,16 @@
       "last_content_hash": "f2f0665ea96db0e2"
     },
     "greenhouse:astranis": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 65.44,
-      "activity_poll_count": 13,
+      "estimated_poll_cost": 62.65,
+      "activity_poll_count": 14,
       "last_content_hash": "fe8b986822322f06"
     },
     "greenhouse:blackedge-capital": {
@@ -1850,16 +1850,16 @@
       "last_content_hash": "8ef7c22991e0c8ae"
     },
     "greenhouse:chicago-trading-company": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 100.03,
-      "activity_poll_count": 13,
+      "estimated_poll_cost": 90.54,
+      "activity_poll_count": 14,
       "last_content_hash": "df32107a40dcc707"
     },
     "greenhouse:chime": {
@@ -1967,17 +1967,17 @@
       "last_content_hash": "9bd4b08d0fe751ba"
     },
     "greenhouse:databricks": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 15.01,
-      "activity_poll_count": 13,
-      "last_content_hash": "64ffeb768d8bbece"
+      "estimated_poll_cost": 16.76,
+      "activity_poll_count": 14,
+      "last_content_hash": "b8b8d4982ead72d6"
     },
     "greenhouse:datadog": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -2084,17 +2084,17 @@
       "last_content_hash": "7fdc6077eb7c3613"
     },
     "greenhouse:drw": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 90.57,
-      "activity_poll_count": 13,
-      "last_content_hash": "fbd96ac6070bfaa5"
+      "estimated_poll_cost": 79.38,
+      "activity_poll_count": 14,
+      "last_content_hash": "1e65a9ccdaee7a48"
     },
     "greenhouse:duolingo": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -2188,30 +2188,30 @@
       "last_content_hash": "536b80faad7a6a05"
     },
     "greenhouse:figma": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 70.07,
-      "activity_poll_count": 13,
-      "last_content_hash": "242c4bb9e6a8f06a"
+      "estimated_poll_cost": 60.86,
+      "activity_poll_count": 14,
+      "last_content_hash": "f1ab255e29afc3ec"
     },
     "greenhouse:figure": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 82.06,
-      "activity_poll_count": 13,
-      "last_content_hash": "1a8391623f518653"
+      "estimated_poll_cost": 72.81,
+      "activity_poll_count": 14,
+      "last_content_hash": "cf31d6e08d5b2394"
     },
     "greenhouse:five-rings": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -2422,29 +2422,29 @@
       "last_content_hash": "c215885bf46475ea"
     },
     "greenhouse:jane-street": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 71.31,
-      "activity_poll_count": 13,
+      "estimated_poll_cost": 66.85,
+      "activity_poll_count": 14,
       "last_content_hash": "d142830970b3e300"
     },
     "greenhouse:jump-trading": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 72.18,
-      "activity_poll_count": 13,
+      "estimated_poll_cost": 67.75,
+      "activity_poll_count": 14,
       "last_content_hash": "5facb01d63ba8b9d"
     },
     "greenhouse:kairos-power": {
@@ -2721,16 +2721,16 @@
       "last_content_hash": "4e5d8d0565d2b9fa"
     },
     "greenhouse:neuralink": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 103.52,
-      "activity_poll_count": 13,
+      "estimated_poll_cost": 90.26,
+      "activity_poll_count": 14,
       "last_content_hash": "a319f2d0118c0df6"
     },
     "greenhouse:nextdoor": {
@@ -2877,16 +2877,16 @@
       "last_content_hash": "305eef3576b924eb"
     },
     "greenhouse:point72": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 87.81,
-      "activity_poll_count": 13,
+      "estimated_poll_cost": 81.11,
+      "activity_poll_count": 14,
       "last_content_hash": "95c1b4241ea525fa"
     },
     "greenhouse:portal-space-systems": {
@@ -2981,17 +2981,17 @@
       "last_content_hash": "627782070ef6ff2f"
     },
     "greenhouse:relativity-space": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 172.22,
-      "activity_poll_count": 2,
-      "last_content_hash": "429d9fda6b3faa5a"
+      "estimated_poll_cost": 146.99,
+      "activity_poll_count": 3,
+      "last_content_hash": "aeb083040ca1a1db"
     },
     "greenhouse:riot-games": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -3241,17 +3241,17 @@
       "last_content_hash": "7d619b2dcd769f08"
     },
     "greenhouse:spacex": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 41.94,
-      "activity_poll_count": 13,
-      "last_content_hash": "62743b1932b07d4e"
+      "estimated_poll_cost": 39.64,
+      "activity_poll_count": 14,
+      "last_content_hash": "b858da08620ff0b0"
     },
     "greenhouse:squarepoint-capital": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -3293,42 +3293,42 @@
       "last_content_hash": "acc277f925daefde"
     },
     "greenhouse:stoke-space": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 181.03,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 156.17,
+      "activity_poll_count": 3,
       "last_content_hash": "7d65bd54c61de657"
     },
     "greenhouse:stripe": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 59.42,
-      "activity_poll_count": 13,
-      "last_content_hash": "c296a85d943d7dd0"
+      "estimated_poll_cost": 53.77,
+      "activity_poll_count": 14,
+      "last_content_hash": "f17c98f7c04c7318"
     },
     "greenhouse:tenstorrent": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 102.81,
-      "activity_poll_count": 13,
+      "estimated_poll_cost": 93.29,
+      "activity_poll_count": 14,
       "last_content_hash": "ed87f97954c0980c"
     },
     "greenhouse:the-nuclear-company": {
@@ -3696,17 +3696,17 @@
       "last_content_hash": "62251b807c1da9d7"
     },
     "icims:joby-aviation": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 21.23,
-      "activity_poll_count": 2,
-      "last_content_hash": "48a163d514d64b83"
+      "estimated_poll_cost": 20.42,
+      "activity_poll_count": 3,
+      "last_content_hash": "6232b392e8a0ef5a"
     },
     "lever:anybotics": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -3930,16 +3930,16 @@
       "last_content_hash": "b52996adf97f93ee"
     },
     "lever:palantir": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": true,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 25.13,
-      "activity_poll_count": 13,
+      "estimated_poll_cost": 23.07,
+      "activity_poll_count": 14,
       "last_content_hash": "080df5fb1e0ed5aa"
     },
     "lever:spotify": {
@@ -3982,20 +3982,20 @@
       "last_content_hash": "bbf766a17596da2b"
     },
     "lever:zoox": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 23.82,
-      "activity_poll_count": 13,
-      "last_content_hash": "e26bc06e831c30ad"
+      "estimated_poll_cost": 21.77,
+      "activity_poll_count": 14,
+      "last_content_hash": "c4650443b70a6130"
     },
     "simplify:__meta__": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
@@ -4437,30 +4437,30 @@
       "last_content_hash": "9a747e94ebea32b6"
     },
     "workday:blackstone": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 3.96,
-      "activity_poll_count": 13,
+      "estimated_poll_cost": 3.87,
+      "activity_poll_count": 14,
       "last_content_hash": "e78661683c9a5e45"
     },
     "workday:blue-origin": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 4.87,
-      "activity_poll_count": 2,
-      "last_content_hash": "7615654629254686"
+      "estimated_poll_cost": 4.64,
+      "activity_poll_count": 3,
+      "last_content_hash": "2174e29c6f565152"
     },
     "workday:boeing": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -4541,17 +4541,17 @@
       "last_content_hash": "38f673e998988bd6"
     },
     "workday:capital-one": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 172.76,
-      "activity_poll_count": 13,
-      "last_content_hash": "ebe2f26f07985074"
+      "estimated_poll_cost": 173.83,
+      "activity_poll_count": 14,
+      "last_content_hash": "1a0a6a5618766cdd"
     },
     "workday:chevron-corporation": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -4647,7 +4647,7 @@
     "workday:dell": {
       "last_polled_at": "2026-09-02T09:29:57Z",
       "healthy": false,
-      "error": "[workday:dell] fetch failed: HTTP 422: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"591EA8MU2YVHEP\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
+      "error": "[workday:dell] fetch failed: HTTP 422: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"A488A8MU332CK4\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
       "bootstrapped": false,
       "potentially_truncated": false,
       "last_change_at": null,
@@ -4775,16 +4775,16 @@
       "last_content_hash": "0e0dbc496e516b5e"
     },
     "workday:g-research": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 4.29,
-      "activity_poll_count": 13,
+      "estimated_poll_cost": 4.14,
+      "activity_poll_count": 14,
       "last_content_hash": "c8a1003309d27fed"
     },
     "workday:gdit": {
@@ -5152,17 +5152,17 @@
       "last_content_hash": "a1398a5f5d06d7d8"
     },
     "workday:nasa-jpl": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 11.7,
-      "activity_poll_count": 2,
-      "last_content_hash": "7fae5b6feab344ce"
+      "estimated_poll_cost": 10.73,
+      "activity_poll_count": 3,
+      "last_content_hash": "b19b4ea86c26ff90"
     },
     "workday:nidec": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -5193,7 +5193,7 @@
     "workday:nio": {
       "last_polled_at": "2026-09-05T00:50:25Z",
       "healthy": false,
-      "error": "[workday:nio] fetch failed: HTTP 422: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"2310D5MU2YVHMH\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
+      "error": "[workday:nio] fetch failed: HTTP 422: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"BE8E47MU332D4Z\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
       "bootstrapped": true,
       "potentially_truncated": false,
       "last_change_at": "2026-09-05T00:50:25Z",
@@ -5204,17 +5204,17 @@
       "last_content_hash": null
     },
     "workday:northrop-grumman": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 395.34,
-      "activity_poll_count": 13,
-      "last_content_hash": "8506fd72ee0864f2"
+      "estimated_poll_cost": 399.37,
+      "activity_poll_count": 14,
+      "last_content_hash": "6746f3143686c3ad"
     },
     "workday:novanta": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -5243,17 +5243,17 @@
       "last_content_hash": "c242814c4afda909"
     },
     "workday:nvidia": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 4.57,
-      "activity_poll_count": 13,
-      "last_content_hash": "38d788710af7ace8"
+      "estimated_poll_cost": 4.58,
+      "activity_poll_count": 14,
+      "last_content_hash": "77bb73eb9cd28ce4"
     },
     "workday:nxp-semiconductors": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -5295,17 +5295,17 @@
       "last_content_hash": "45f076fed2392617"
     },
     "workday:palo-alto-networks": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 141.77,
-      "activity_poll_count": 13,
-      "last_content_hash": "3fab4b14a13a7efd"
+      "estimated_poll_cost": 143.07,
+      "activity_poll_count": 14,
+      "last_content_hash": "4b7ea64df6669bad"
     },
     "workday:pfizer": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -5399,17 +5399,17 @@
       "last_content_hash": "1fedb53fcfb8ac2a"
     },
     "workday:rtx": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 17.92,
-      "activity_poll_count": 13,
-      "last_content_hash": "c63043dc4eed996a"
+      "estimated_poll_cost": 16.81,
+      "activity_poll_count": 14,
+      "last_content_hash": "bb36108054017926"
     },
     "workday:schweitzer-engineering-laboratories": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -5425,30 +5425,30 @@
       "last_content_hash": "8875a43e1ff155e9"
     },
     "workday:sierra-nevada-corporation": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 44.76,
-      "activity_poll_count": 2,
+      "estimated_poll_cost": 44.01,
+      "activity_poll_count": 3,
       "last_content_hash": "b0a51dc62d0bcd41"
     },
     "workday:sierra-space": {
-      "last_polled_at": "2026-09-15T17:49:47Z",
+      "last_polled_at": "2026-09-15T19:47:06Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-15T17:49:47Z",
+      "last_change_at": "2026-09-15T19:47:06Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 22.69,
-      "activity_poll_count": 2,
-      "last_content_hash": "b47dc39fbbaa2321"
+      "estimated_poll_cost": 22.91,
+      "activity_poll_count": 3,
+      "last_content_hash": "38929b83c966b096"
     },
     "workday:sony": {
       "last_polled_at": "2026-09-15T16:26:04Z",
@@ -5863,6 +5863,7 @@
     "0afbfdd2b54b953d",
     "0b08b2f3c7fb79c9",
     "0b0afa07b1ada9c7",
+    "0b0c22b3d3d72021",
     "0b1bcfa306cb757f",
     "0b240cae25690b11",
     "0b2eef1e70030268",
@@ -6679,6 +6680,7 @@
     "30e481b69096f531",
     "30e97c1e0cbb6f46",
     "30eae19e0e8e82b7",
+    "30f3b9dea4bc399f",
     "30f884d6f8cb9654",
     "310196672e8bab14",
     "3105a5afe5f8dd55",
@@ -6758,6 +6760,7 @@
     "34716f198036c21a",
     "34717af03abf6899",
     "34797f1fd60def0e",
+    "347c38193aeadfac",
     "347dc4bd021f2acc",
     "3488cd3d7e0ceab7",
     "349b9fe121a03804",
@@ -6822,7 +6825,6 @@
     "377d8248f3e21ddb",
     "377f02b9f3621a56",
     "3780324611029d5e",
-    "37980f93b4a56073",
     "37bb7ed450094c1e",
     "37c9f4c03e79ce12",
     "37cf0860486f5747",
@@ -7081,6 +7083,7 @@
     "426ff9acdbc98d08",
     "4283694ef9a0101a",
     "42a7ae7456a0fd93",
+    "42b7b70ed630dc38",
     "42cf5361df1f8975",
     "42d04893f8d6c4d1",
     "42d3a13d42b9c7fd",
@@ -7092,6 +7095,7 @@
     "4354d54685aafc27",
     "435e4ff2289497a0",
     "43635c1d92b396c1",
+    "4368fbc599143562",
     "4374ba12b49cb9ef",
     "437d2aac6ca7fd96",
     "437f4f2931442c93",
@@ -9137,6 +9141,7 @@
     "9e93364729e9bd6c",
     "9e93b3cfda017f67",
     "9e9791199d198295",
+    "9e98e85d38ce8b24",
     "9e9c8578e5020aa3",
     "9ea3faeabab71b2b",
     "9eaacb58d32e65b9",
@@ -9347,7 +9352,6 @@
     "a8925a5eb048a5f4",
     "a896cb2971f0e107",
     "a8a2b67dc0a019a5",
-    "a8ac4d409625657c",
     "a8b214ed95782c21",
     "a8c3b7bdeada49bc",
     "a8cdca6bb44d6840",
@@ -9430,6 +9434,7 @@
     "ada7d7e229bfbc13",
     "adc3e1b0195294b1",
     "adc78cde7094f0e0",
+    "add57c42531c5b65",
     "ade0e817de12ac8b",
     "adeff231f2350357",
     "adf700701baa54a9",
@@ -9787,7 +9792,6 @@
     "be772b5477c0ecad",
     "be7b7104b05c8bfe",
     "be7c49154c1f73b8",
-    "be85cb12c4b2041d",
     "be91aec4d91ad7bd",
     "bea4cda1396f6166",
     "bea6b632d662b476",
@@ -10860,6 +10864,7 @@
     "ee963ece5ce3e9d6",
     "ee9cee3e105007e5",
     "eea0a09f91328f9e",
+    "eeab82350fc13b1e",
     "eeb2c153b9185c0c",
     "eebc54a52cb318cd",
     "eed0fd807ea4ed0f",
@@ -11013,11 +11018,13 @@
     "f6272123d8b4c39b",
     "f63445b3dbc7c4ab",
     "f64a449a4dcb689b",
+    "f650920b5068a127",
     "f6681f6d5e8d2716",
     "f66d5fce0c5008ec",
     "f67ed4a5f3d2eaaf",
     "f6803dff4e0fa6c0",
     "f68e9cb1724de69d",
+    "f6955290f4c38047",
     "f695b9008a6a077b",
     "f698dae8299c986e",
     "f699760f7226b382",
@@ -11103,6 +11110,7 @@
     "fa30bd0549dcaa00",
     "fa336097f041446b",
     "fa3f42b6dbb49196",
+    "fa45d69be5ce5f1c",
     "fa54367c5f8490ab",
     "fa574b101f5c819c",
     "fa5950dd6a5a3077",
@@ -11201,6 +11209,7 @@
     "ff0e40e2560bd13f",
     "ff13d0e36952edab",
     "ff16742a44c0daee",
+    "ff1a712825e2f6d0",
     "ff33a6159ee91659",
     "ff382af29be60599",
     "ff45aed5aeaabe56",
@@ -11219,55 +11228,9 @@
     "ffff10677bed8202"
   ],
   "absent_ids": {
-    "06cc42558373fe38": "2026-09-15T17:49:47Z",
-    "0a9e611d15d71f06": "2026-09-15T17:49:47Z",
-    "0db31c06ede493cf": "2026-09-15T17:49:47Z",
-    "1fa1f91d77fe2b15": "2026-09-15T17:49:47Z",
-    "24a642a6b868b711": "2026-09-15T17:49:47Z",
-    "29f6fd887e58d7e3": "2026-09-15T17:49:47Z",
-    "2a944595d1c694f7": "2026-09-15T17:49:47Z",
-    "2d63338ff3cb4c5e": "2026-09-15T17:49:47Z",
-    "2f9c502793b6ec0c": "2026-09-15T17:49:47Z",
-    "377fcd82aa096464": "2026-09-15T17:49:47Z",
-    "3b6927f497a35436": "2026-09-15T17:49:47Z",
-    "45e72d00284a8668": "2026-09-15T17:49:47Z",
-    "4d923593aee88474": "2026-09-15T17:49:47Z",
-    "5d0d0b677b609add": "2026-09-15T17:49:47Z",
-    "6139729107449462": "2026-09-15T17:49:47Z",
-    "721019779e1524c9": "2026-09-15T17:49:47Z",
-    "72d3a0a08d7b1074": "2026-09-15T17:49:47Z",
-    "73b3960be12fdbc2": "2026-09-15T17:49:47Z",
-    "772d3fd380507d5f": "2026-09-15T17:49:47Z",
-    "7cb9720264b5dbb0": "2026-09-15T17:49:47Z",
-    "8592011cc9f2fc8d": "2026-09-15T17:49:47Z",
-    "85e07cb287ff9daa": "2026-09-15T17:49:47Z",
-    "88d523f2bc2f8018": "2026-09-15T17:49:47Z",
-    "89c34f86c9aa94c5": "2026-09-15T17:49:47Z",
-    "8d9f9af8336606fd": "2026-09-15T17:49:47Z",
-    "93b5aaa76efa0500": "2026-09-15T17:49:47Z",
-    "94f65cdbdf3d452c": "2026-09-15T17:49:47Z",
-    "963c527135447d8b": "2026-09-15T17:49:47Z",
-    "9685f70432215e83": "2026-09-15T17:49:47Z",
-    "9d3cb65f6eb517bc": "2026-09-15T17:49:47Z",
-    "9d5b3b648c3ea6ba": "2026-09-15T17:49:47Z",
-    "a44a19a130a76fc7": "2026-09-15T17:49:47Z",
-    "a640896ca2fcfa22": "2026-09-15T17:49:47Z",
-    "b808241f535787d4": "2026-09-15T17:49:47Z",
-    "bffec69d14b34b9b": "2026-09-15T17:49:47Z",
-    "d4cf6d68e0ab2492": "2026-09-15T17:49:47Z",
-    "d99ed69be2c435c5": "2026-09-15T17:49:47Z",
-    "dbb1176f1564ae08": "2026-09-15T17:49:47Z",
-    "e0c801ad51b6b46b": "2026-09-15T17:49:47Z",
-    "e2321485cd8ac246": "2026-09-15T17:49:47Z",
-    "e5d115deb9b69367": "2026-09-15T17:49:47Z",
-    "eb929918e7d9dff1": "2026-09-15T17:49:47Z",
-    "eec3aa6a44b9dc12": "2026-09-15T17:49:47Z",
-    "f0504cc8f4267937": "2026-09-15T17:49:47Z",
-    "f0ae5452746bf6a5": "2026-09-15T17:49:47Z",
-    "f21eb82230bcb09f": "2026-09-15T17:49:47Z",
-    "f74cf05991d99264": "2026-09-15T17:49:47Z",
-    "fdeaa14a447fa921": "2026-09-15T17:49:47Z",
-    "fe4c740ee7be9fd5": "2026-09-15T17:49:47Z"
+    "37980f93b4a56073": "2026-09-15T19:47:06Z",
+    "a8ac4d409625657c": "2026-09-15T19:47:06Z",
+    "be85cb12c4b2041d": "2026-09-15T19:47:06Z"
   },
   "http_cache": {
     "https://api.ashbyhq.com/posting-api/job-board/1password": {
@@ -11276,11 +11239,17 @@
     "https://api.ashbyhq.com/posting-api/job-board/1x": {
       "etag": "W/\"job-board:2b10fd1b771061f851cda89938a32fee926dfd513f10234fdd9be360530eff61\""
     },
+    "https://api.ashbyhq.com/posting-api/job-board/AfterQuery": {
+      "etag": "W/\"job-board:e837a40830847b842b52cc6eb45591c569e4d29adbcfee667ae521c976d16ad1\""
+    },
     "https://api.ashbyhq.com/posting-api/job-board/Etched": {
       "etag": "W/\"job-board:f8f850704370a584602d3a3536018ebafd1921b4b9bb04c834a56ef95fa8a0ff\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/NorthwoodSpace": {
       "etag": "W/\"job-board:9d7cc1397df10ab14b2ece8f6087abb4d6a51c6c558b029431435c460d797e47\""
+    },
+    "https://api.ashbyhq.com/posting-api/job-board/Sierra": {
+      "etag": "W/\"job-board:fa7337e9139a91f735a35da82bec4594e2199a53304663e2ed92ee0d8423e768\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/a16z-crypto": {
       "etag": "W/\"job-board:ccb5e209ddd2663a022f3d49ac0b6c999843cd39835e26c55c5f2e7c451c6663\""
@@ -11295,7 +11264,7 @@
       "etag": "W/\"job-board:86fe9c80a204eb961a1f12c224f8c3b3ffcf5e9dd3aefedca25bafc958f30183\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/applied": {
-      "etag": "W/\"job-board:c2bc1c1d6029f3d1ccdd1aa105b37de8c629caf40e3935ac343ddace384ba9ce\""
+      "etag": "W/\"job-board:3ba3278d7400b979876062442f91e29beba1915e3c6832e4937cfa642dc9959a\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/architect": {
       "etag": "W/\"job-board:7a6d6c66db58491229802a4a55d1c646f90043a3f3d49ac1d3a59127d36a0b9e\""
@@ -11304,7 +11273,7 @@
       "etag": "W/\"job-board:ed2cee83600ddbdaf593fed173da9a1031c8dd07df672364b7147482bdb1f84b\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/astera": {
-      "etag": "W/\"job-board:80f72a6cf677e9fabeaabc2cd2393af647ecab36155560e115b5ffb24d9f87bc\""
+      "etag": "W/\"job-board:1a256f6ed99dfe1f4e08a5408c375fc8f7bc33b0cf260ba4cbb5acc6fb731574\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/atlan": {
       "etag": "W/\"job-board:be8da6897e8e3c4311d772b2d92cd880c79ed0ff6a0be7042d6e6f35bee1d669\""
@@ -11326,6 +11295,9 @@
     },
     "https://api.ashbyhq.com/posting-api/job-board/cerebras": {
       "etag": "W/\"job-board:2bfd7fa98ebeef5dcb52eda4fc01f4762b35c476a797bbbc4001a2f2647208cc\""
+    },
+    "https://api.ashbyhq.com/posting-api/job-board/chartahealth": {
+      "etag": "W/\"job-board:af1262be8df998c265d44a5d212e1f1f129b783899474a865540acd0078ab4cd\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/coder": {
       "etag": "W/\"job-board:36cb5dba01c3f9a6588c2583b3ebbe2c6c24066c5d2a4313b4cd032276f20727\""
@@ -11394,7 +11366,7 @@
       "etag": "W/\"job-board:fe3f5872c8b0771ed71e83f6e32a2b4c9a178ebf105ef21f10735e2c0f0c6832\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/hadrian-automation": {
-      "etag": "W/\"job-board:f774344867b0656aec8d43a67c8c353269aee6dd40f15fc5a7b1fe83a9b549af\""
+      "etag": "W/\"job-board:5804361822bef22cbc5d9d28b709656ee8ada9c1508a1b48c341552dd027f576\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/harvey": {
       "etag": "W/\"job-board:dfe7c9377727ca2b26f792c3f6b1cbf98630d6f9977ccd63e1caaaf5a8a728cf\""
@@ -11487,7 +11459,10 @@
       "etag": "W/\"job-board:eca110ced9edc6939906195fcf513b57d8daec93ba00765693c6f9481992e1e3\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/openai": {
-      "etag": "W/\"job-board:9685f42b4ef190a85df7d9679ec8b66fe36e064beacb206c1b6971052cccba73\""
+      "etag": "W/\"job-board:a36c8e65c6fffe2d096c6f27965982692ad6ac0beb6d293169f70b572d410537\""
+    },
+    "https://api.ashbyhq.com/posting-api/job-board/opengov": {
+      "etag": "W/\"job-board:e87122ec0721bd1887923b128a4e321c04b56fe38fce1d9401bd85aa1f29fbf6\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/opusclip": {
       "etag": "W/\"job-board:c202d1f2a5df55f714b1f956c97446ea525df2b41f3f787c6b8f0112e7b6e78d\""
@@ -11512,6 +11487,9 @@
     },
     "https://api.ashbyhq.com/posting-api/job-board/physicalintelligence": {
       "etag": "W/\"job-board:120134235713f939de930e1b591e82bf06bd378e4496dc16d3ed79c374c1ce53\""
+    },
+    "https://api.ashbyhq.com/posting-api/job-board/pika": {
+      "etag": "W/\"job-board:bcbdf894ded4f1f7a3c305b4446a5877a68359e17293dcb806ce6732cf0a4e84\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/pinecone": {
       "etag": "W/\"job-board:69fbf6f10d944ba0fa6817aab3ee0cb655611c6b43aeba6dd1033c73a4484eaa\""
@@ -11556,7 +11534,7 @@
       "etag": "W/\"job-board:2c5af795d1b2ed6df4b7b25779d6ab1739bce6a8098d67d99947afa89a126b6a\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/revel": {
-      "etag": "W/\"job-board:2d16c95faefa558c07cb339321b9442ced3b193385fee26442c3857268e803d1\""
+      "etag": "W/\"job-board:4a08cfa6d8d4435c5fca3dee3644718ae339c7142d0e53db488b4e84e3a6ae55\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/rewind": {
       "etag": "W/\"job-board:889a2ba5db37cd517fc37664250271c865ccee02872e2d99ef4a904ab90d0571\""
@@ -11600,11 +11578,17 @@
     "https://api.ashbyhq.com/posting-api/job-board/synthesia": {
       "etag": "W/\"job-board:831ce14851994105670d731e1657f1fc61232faad4ac49c6327a1f8190a1f508\""
     },
+    "https://api.ashbyhq.com/posting-api/job-board/tacit": {
+      "etag": "W/\"job-board:1fe676bd4fd364b3b2cce3110dbcda74ecc2054e69889430d27c03523cd9f7d1\""
+    },
     "https://api.ashbyhq.com/posting-api/job-board/temporal": {
       "etag": "W/\"job-board:3343740209c9f69e798e564f702da9dbd379c8abe08d9a14313471339de55c5c\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/terranova": {
       "etag": "W/\"job-board:58e0963d6b6e6118600ea7a3a73c599e2c80ba3c803f1b704fa2fdab12f65fc6\""
+    },
+    "https://api.ashbyhq.com/posting-api/job-board/the-exploration-company": {
+      "etag": "W/\"job-board:e91aef347068036aec24ae7b513a69e2dfb3f860d92581f253e06d396fac398f\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/tilderesearch": {
       "etag": "W/\"job-board:2a0c7b444f06ed9782a85a27c8401a89d5a86f2e8d23dc9dafdbc5d5171f4747\""
@@ -11650,6 +11634,9 @@
     },
     "https://api.eu.lever.co/v0/postings/quantinuum/782bea0b-1959-48cc-8872-1305aece51bf": {
       "etag": "W/\"251c-h8dL5udyIvFT24TlAPwEeCmQdw4\""
+    },
+    "https://api.eu.lever.co/v0/postings/quantinuum/efec30da-9a57-46b3-b891-6973a44c86ff": {
+      "etag": "W/\"29ee-20UJk9Ja7kyEQOBMqdWFqBiRTbQ\""
     },
     "https://api.lever.co/v0/postings/acronaviation/34cf5ad0-840a-4c1b-8231-02a433d0479e": {
       "etag": "W/\"2973-o/7oSoLOmKDnFXYbFdZYnGP1Lmc\""
@@ -11736,7 +11723,7 @@
       "etag": "W/\"143e06-szbcSQ1opVcBX6oBbshsh3hQT8U\""
     },
     "https://api.lever.co/v0/postings/zoox": {
-      "etag": "W/\"73094-yLYhKRAiN6SXs9An1kcVmiIKm1Y\""
+      "etag": "W/\"6de6e-87s9t7SSD1JHNdSUlAsruKUE7sQ\""
     },
     "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings": {
       "etag": "W/\"f7d1-4Khg1Q5cQtgcMvAVadx1CEcBBGk\""
@@ -11768,11 +11755,23 @@
     "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings/744000145511458": {
       "etag": "W/\"2221-oV8yuRuZ0CirKMBUVnu6qifo0vk\""
     },
+    "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings/744000146524429": {
+      "etag": "W/\"2623-Jf3ti85zc9IxATgGI5ZFKLHh+1w\""
+    },
+    "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings/744000146546699": {
+      "etag": "W/\"2623-SJEP7A7pMhJbwAFbylEw6rNv5KM\""
+    },
+    "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings/744000148246120": {
+      "etag": "W/\"1df7-wi70tDNQcdcZXR61cA6b/fXon80\""
+    },
     "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings/744000148250171": {
       "etag": "W/\"1dbc-/0973f9AOQXYKyCC9/t1lwHyCCM\""
     },
     "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings/744000148518808": {
       "etag": "W/\"1d7c-ycVON9aeNljxJ0Kcd5jJnxkgGIQ\""
+    },
+    "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings/744000148542054": {
+      "etag": "W/\"1e59-DrihKFDGztC2SfBr4+/prYxcNb4\""
     },
     "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings/744000148843109": {
       "etag": "W/\"1b75-spzkq6q+rKgo15cHbNWgnZN3WNI\""
@@ -11795,11 +11794,17 @@
     "https://api.smartrecruiters.com/v1/companies/FannieMae1SB/postings/743999743086145": {
       "etag": "W/\"fb3-s6fEsTWI6bc7H8gzcEJZo5OCAwU\""
     },
+    "https://api.smartrecruiters.com/v1/companies/HuckAdventures/postings/743999747985535": {
+      "etag": "W/\"fcd-ik6xXILYqL2fhTpVTI686VakV9I\""
+    },
     "https://api.smartrecruiters.com/v1/companies/IkanoRetail/postings": {
       "etag": "W/\"161e7-HYLJh2lN4HcJHtdY5+9Q13fLhMk\""
     },
     "https://api.smartrecruiters.com/v1/companies/InfiniteQuant/postings": {
       "etag": "W/\"1242-xD6ZauwycsZxGv8cAM9US46gCdU\""
+    },
+    "https://api.smartrecruiters.com/v1/companies/Interco/postings/744000149591449": {
+      "etag": "W/\"14cd-jujg9yuMBT24RCVYPbXqkHLEXZ0\""
     },
     "https://api.smartrecruiters.com/v1/companies/KnobelsdorffEnterprises/postings/744000148834290": {
       "etag": "W/\"1d7e-jBPCNF8Nt3K6wRr7yKj+5kXrHn4\""
@@ -11810,6 +11815,9 @@
     "https://api.smartrecruiters.com/v1/companies/LLNL/postings/3743990013626030": {
       "etag": "W/\"2c02-n/4nfUnuI8ZaCKyj9htEcU7f/zU\""
     },
+    "https://api.smartrecruiters.com/v1/companies/LLNL/postings/3743990014981656": {
+      "etag": "W/\"311c-A4O0vHXoRJ4+qIrYmTRBJcJIVhY\""
+    },
     "https://api.smartrecruiters.com/v1/companies/LLNL/postings/3743990014982439": {
       "etag": "W/\"329d-ETbgW5rRQ6wPQrz8fUiTPKtdxM0\""
     },
@@ -11818,6 +11826,9 @@
     },
     "https://api.smartrecruiters.com/v1/companies/LLNL/postings/3743990015127776": {
       "etag": "W/\"3014-9pUvtBrasNnZOx/sN6gtsIlJQ54\""
+    },
+    "https://api.smartrecruiters.com/v1/companies/M3USA/postings/744000148244649": {
+      "etag": "W/\"1557-Uielyf3FsNLYE3dpReiu3EDMfsI\""
     },
     "https://api.smartrecruiters.com/v1/companies/Mapjectscom/postings": {
       "etag": "W/\"eea5-aqErgtz4kf2KukE0hKjRh5E7z0A\""
@@ -11837,14 +11848,26 @@
     "https://api.smartrecruiters.com/v1/companies/NorthwesternMutual/postings/85751711": {
       "etag": "W/\"131b-TRvrN4312LucpsBskq15VO/n9ZI\""
     },
+    "https://api.smartrecruiters.com/v1/companies/PilotCompany/postings/744000148575429": {
+      "etag": "W/\"280f-Tao3ljz+lYCNthVc2393EL0PkJo\""
+    },
     "https://api.smartrecruiters.com/v1/companies/PilotCompany/postings/744000148576444": {
       "etag": "W/\"2877-QS0NaiQwEmHhIOTJ29Tv3rCFQ4U\""
     },
     "https://api.smartrecruiters.com/v1/companies/RRSGroup/postings": {
       "etag": "W/\"8e3-WnmL01oHp/SSyjHRvUsqCd08N18\""
     },
+    "https://api.smartrecruiters.com/v1/companies/RedBull/postings/744000139168339": {
+      "etag": "W/\"1a6b-K/v/aFuAxi+FNcbZnSFFHCZo6BY\""
+    },
     "https://api.smartrecruiters.com/v1/companies/Skechers/postings": {
       "etag": "W/\"34-9OOhSVEDROgIrhGdnm+aEVKWBd8\""
+    },
+    "https://api.smartrecruiters.com/v1/companies/Solidigm/postings/744000147613769": {
+      "etag": "W/\"1f47-m4OzAYzUMOXTCV7Yebixc7Yt23I\""
+    },
+    "https://api.smartrecruiters.com/v1/companies/Solidigm/postings/744000147954459": {
+      "etag": "W/\"1759-88D0p8sunrHYMzxBE/mTCtwgjp8\""
     },
     "https://api.smartrecruiters.com/v1/companies/Solidigm/postings/744000148610610": {
       "etag": "W/\"2933-o+bor0sx5SqKwWYjHFCeAfWuvxs\""
@@ -11873,11 +11896,20 @@
     "https://api.smartrecruiters.com/v1/companies/WesternDigital/postings": {
       "etag": "W/\"182fb-7/iY5DxHuNMzzZaMFfKH5uA/VWk\""
     },
+    "https://api.smartrecruiters.com/v1/companies/WesternDigital/postings/744000148348049": {
+      "etag": "W/\"3325-nGHGhfnjxQoes02Pex0ZlUBRotQ\""
+    },
     "https://api.smartrecruiters.com/v1/companies/equinox/postings": {
       "etag": "W/\"794d-46uZtrWKbce7r18jki+IJsm2uP8\""
     },
     "https://api.smartrecruiters.com/v1/companies/equinox/postings/744000047250005": {
       "etag": "W/\"22a3-JKk0WJHo/EGPFJjP+bujExii0iU\""
+    },
+    "https://api.smartrecruiters.com/v1/companies/equinox/postings/744000047838195": {
+      "etag": "W/\"2394-gvf6uOy0y6ekNQNrwjY/MUdvxQY\""
+    },
+    "https://api.smartrecruiters.com/v1/companies/equinox/postings/744000130055120": {
+      "etag": "W/\"22ab-FTyi5bFT9MwTmNx0d44XLl1tHVU\""
     },
     "https://boards-api.greenhouse.io/v1/boards/affirm/jobs": {
       "etag": "W/\"f2446f20d83faece398af0efffc31270\""
@@ -11886,7 +11918,7 @@
       "etag": "W/\"73e4b8a78a9870883e5866b0a2cb8dcb\""
     },
     "https://boards-api.greenhouse.io/v1/boards/airbnb/jobs": {
-      "etag": "W/\"de981524dae8ef425944ec58b7cb3ed5\""
+      "etag": "W/\"7d431babd7dbb9c25455b71bc80c239b\""
     },
     "https://boards-api.greenhouse.io/v1/boards/airtable/jobs": {
       "etag": "W/\"ffc7efeb61e133fa0e6dd2053a06b85e\""
@@ -11901,10 +11933,10 @@
       "etag": "W/\"5125f03ce3cda40962d4fd8d1590b17a\""
     },
     "https://boards-api.greenhouse.io/v1/boards/andurilindustries/jobs": {
-      "etag": "W/\"302525cd6500dec120de078139c52b19\""
+      "etag": "W/\"c821cbe857183d7d5a7455b73eef270c\""
     },
     "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs": {
-      "etag": "W/\"1a3ba96ef149f0be57ea5d48f6a84fd5\""
+      "etag": "W/\"a69eb5a569048181f65c29c176b86c00\""
     },
     "https://boards-api.greenhouse.io/v1/boards/antora/jobs": {
       "etag": "W/\"255be06d50d7ecd049baae4b79c0eccd\""
@@ -11922,7 +11954,7 @@
       "etag": "W/\"1778ae95fa2ce5e79b288758244ffac2\""
     },
     "https://boards-api.greenhouse.io/v1/boards/archer56/jobs": {
-      "etag": "W/\"d7f9fc85531d1f1e08d580dde385ad46\""
+      "etag": "W/\"48a5a06964c47c3ef41eefd78be55008\""
     },
     "https://boards-api.greenhouse.io/v1/boards/asana/jobs": {
       "etag": "W/\"5e459d666ffff77142c5f6edd32da554\""
@@ -11993,11 +12025,14 @@
     "https://boards-api.greenhouse.io/v1/boards/cresta/jobs": {
       "etag": "W/\"b96506ca78c64842e9e9bb6d7d1da54a\""
     },
+    "https://boards-api.greenhouse.io/v1/boards/cssmerge/jobs/8695475002": {
+      "etag": "W/\"e1deb6269b1b8334be453c6d3ee09dbb\""
+    },
     "https://boards-api.greenhouse.io/v1/boards/ctccampusboard/jobs": {
       "etag": "W/\"b432cb3fc7cb0f0759330176d912bf5c\""
     },
     "https://boards-api.greenhouse.io/v1/boards/databricks/jobs": {
-      "etag": "W/\"672216212fb5a095c80339bda23c1b1e\""
+      "etag": "W/\"b92b13bdcc6fc64c1ea91b1db1a8b64b\""
     },
     "https://boards-api.greenhouse.io/v1/boards/datadog/jobs": {
       "etag": "W/\"5c00ed01bef5acd13de12a98916df8f5\""
@@ -12030,7 +12065,7 @@
       "etag": "W/\"9c68b9ce4d868bc8f70101a7b31d25ae\""
     },
     "https://boards-api.greenhouse.io/v1/boards/drweng/jobs": {
-      "etag": "W/\"d21ad565add8bd597460cc2f0f204c5d\""
+      "etag": "W/\"9d6b927ee9e409af70b7632a170a22db\""
     },
     "https://boards-api.greenhouse.io/v1/boards/duolingo/jobs": {
       "etag": "W/\"8415274a2d30deee007d806e3e2e196b\""
@@ -12057,10 +12092,10 @@
       "etag": "W/\"af3f7769abdb11f8ba651d4eeea54b91\""
     },
     "https://boards-api.greenhouse.io/v1/boards/figma/jobs": {
-      "etag": "W/\"0941042144cf1c101e1f2e4d33410696\""
+      "etag": "W/\"f94f1b0b7f9d3590471cb3b429cf1cd0\""
     },
     "https://boards-api.greenhouse.io/v1/boards/figureai/jobs": {
-      "etag": "W/\"638b7d2856760950f25f45a8304d8ed4\""
+      "etag": "W/\"38205980685a9d71d5f17809a77f8276\""
     },
     "https://boards-api.greenhouse.io/v1/boards/fiveringsllc/jobs": {
       "etag": "W/\"65e0e271fb21db0adfff7083539737e9\""
@@ -12085,6 +12120,9 @@
     },
     "https://boards-api.greenhouse.io/v1/boards/formlabs/jobs": {
       "etag": "W/\"763f94f6e6d258b45320afc17cebb1dc\""
+    },
+    "https://boards-api.greenhouse.io/v1/boards/fspco-op012325/jobs/8783960002": {
+      "etag": "W/\"6ea4f465149d2cc4ce9cb9574271bc72\""
     },
     "https://boards-api.greenhouse.io/v1/boards/ginkgobioworks/jobs": {
       "etag": "W/\"7f10bcc5cb909bbcc8ad733d3c5cd260\""
@@ -12127,6 +12165,9 @@
     },
     "https://boards-api.greenhouse.io/v1/boards/k2spacecorporation/jobs/5411918008": {
       "etag": "W/\"f4877f586793d0a2f4c7af4ecf6254f5\""
+    },
+    "https://boards-api.greenhouse.io/v1/boards/k2spacecorporation/jobs/5418727008": {
+      "etag": "W/\"9e9da0703cd002584b58fb366b564440\""
     },
     "https://boards-api.greenhouse.io/v1/boards/kairospower/jobs": {
       "etag": "W/\"cfaf3a4ee7a33b630d7789e98e951ab2\""
@@ -12201,7 +12242,7 @@
       "etag": "W/\"df847e887e41e04a440224dbd3d68b51\""
     },
     "https://boards-api.greenhouse.io/v1/boards/neuralink/jobs": {
-      "etag": "W/\"54b8bc4d45a435cb87e2e1855c8fdede\""
+      "etag": "W/\"7130cdfab1017dadbefd7f53d27282c1\""
     },
     "https://boards-api.greenhouse.io/v1/boards/newsbreak/jobs/4712896006": {
       "etag": "W/\"a48ad43c317f6b4fd841c1af7390f35b\""
@@ -12264,7 +12305,7 @@
       "etag": "W/\"2623a2b366bb5b688084839648e4e178\""
     },
     "https://boards-api.greenhouse.io/v1/boards/relativity/jobs": {
-      "etag": "W/\"9160217db3b5c9ff0142c0881ce69922\""
+      "etag": "W/\"c7912eafb6c6e4f2e33d3bb22e5b24f5\""
     },
     "https://boards-api.greenhouse.io/v1/boards/rfsmart/jobs/5409030008": {
       "etag": "W/\"f2fc457248288214a3cdb65c41771aef\""
@@ -12277,6 +12318,9 @@
     },
     "https://boards-api.greenhouse.io/v1/boards/robinhood/jobs": {
       "etag": "W/\"2143828864e801ee862ff29bd257cedd\""
+    },
+    "https://boards-api.greenhouse.io/v1/boards/robinhood/jobs/8123225": {
+      "etag": "W/\"83f09e7ae3646988a12ce64fe9b231e1\""
     },
     "https://boards-api.greenhouse.io/v1/boards/roblox/jobs": {
       "etag": "W/\"f71a1c2e9d8a9c6bf29ab01d4192845e\""
@@ -12330,7 +12374,7 @@
       "etag": "W/\"a4ef3f344ff1812025fdd2f7f7f83d26\""
     },
     "https://boards-api.greenhouse.io/v1/boards/spacex/jobs": {
-      "etag": "W/\"c0861464ab4332db876a0588039eedd2\""
+      "etag": "W/\"d3ba0b992ddee2527e02aea64e06f215\""
     },
     "https://boards-api.greenhouse.io/v1/boards/squarepointcapital/jobs": {
       "etag": "W/\"dac766ce4eb0ab3c2770630cd66ef19c\""
@@ -12345,7 +12389,7 @@
       "etag": "W/\"2e425f91d2c2e4a8da6286ccef11d4a1\""
     },
     "https://boards-api.greenhouse.io/v1/boards/stripe/jobs": {
-      "etag": "W/\"1b8a0fdb823b3e490a01dd527d98d633\""
+      "etag": "W/\"743b431588855aeccabf0d02812ee48e\""
     },
     "https://boards-api.greenhouse.io/v1/boards/tenstorrentuniversity/jobs": {
       "etag": "W/\"af0b55e36b535cf871015c8777f21e01\""
@@ -12400,6 +12444,9 @@
     },
     "https://boards-api.greenhouse.io/v1/boards/verkada/jobs": {
       "etag": "W/\"cc1bf696cc351e5a6789f227faebecdf\""
+    },
+    "https://boards-api.greenhouse.io/v1/boards/viamrobotics/jobs/6185046004": {
+      "etag": "W/\"9bb9a59a740af7a57bfb8846c757d909\""
     },
     "https://boards-api.greenhouse.io/v1/boards/virtu/jobs": {
       "etag": "W/\"dba04b0be5c044f677cfe7bbac88e158\""
@@ -14699,6 +14746,15 @@
       "failures": 0,
       "next_attempt_at": "2026-09-11T16:58:54.651032Z"
     },
+    "0b0c22b3d3d72021": {
+      "source_key": "1336b43b7b7af4edc9476121662b6d29a30f5a0d5e8f028c29990dfbd2ba613f",
+      "version": 5,
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
+    },
     "0b1bcfa306cb757f": {
       "source_key": "15d27e6fa9f0a22a7c8fd76efc854bf75a68e6fcf7769864e0e32e0862747023",
       "version": 5,
@@ -15241,11 +15297,11 @@
     "0da007fc53e7ac1e": {
       "source_key": "27555413f442c97f33690cc98ba5c5bdb6eabd8d5d5a07b7a1bb07de8643e307",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0daa986dac87bee0": {
       "source_key": "ca30a6bc15c7d8ff9f92fd95d3c5bd969015c2cd75408fbb75ba588c1f3b0551",
@@ -15267,11 +15323,11 @@
     "0dc83305f6a80581": {
       "source_key": "b2277183a1ef639d961b4d922adfd4361d2d6dd4859e445c334bdc1cc1671be4",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0dcb7d44c8a48d59": {
       "source_key": "c3c4be4720b887674062b2c9f6ea5aef94794e1de1dd43e79daadb52bb29a01c",
@@ -15294,11 +15350,11 @@
     "0dd8ad8a9f5b01de": {
       "source_key": "11b655ddaa5a5c7e90b47b7264291cb05bce94e7b63c9d436a66e1dcbd8b1698",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0de2f48495a0d36f": {
       "source_key": "6d6e5c6f9a92d897af6c8baf491680e793edccbf17775a75a6746f9867ed5260",
@@ -15329,11 +15385,11 @@
     "0e04c3ef7538e545": {
       "source_key": "f163f8b4ed8aefbd455bb63a923014fe3dd6b5e1d01ad97fdf18260f52000bca",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0e09d6e4ce13aec2": {
       "source_key": "192ab726b67a37da1eb11402c4b7877862432040ccea64b375a50dede183a00b",
@@ -15355,20 +15411,20 @@
     "0e58a86d36e6a162": {
       "source_key": "710f5af46c67c9d8970279be86940345d532758ea774f0b89e0933402d2ce14d",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0e591966e9f94220": {
       "source_key": "036ab8051f2cb28adb991e658bbc8c500a5a954fa657b51627429c0cd65ac7e4",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0e68bef197d1193e": {
       "source_key": "1e053e7e03ab59bdf27150577cf314bc74760a4a89c3290d4c27b0f3b3f5add0",
@@ -15426,38 +15482,38 @@
     "0eab0718acde2b5b": {
       "source_key": "2e1752f97d883cfd18c1e4d06f2d0b1ab303442c491083427c80f83914fb456e",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0ebe0f8629a6bead": {
       "source_key": "3cdb8aa4c563fb977652d8ee15046626910eb7751ff97bf7228112909cf80ecd",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0ec4dd224ef8f511": {
       "source_key": "a43fd2ab1c7313fdd435da3445dfc35a4bc0f9ec11ee55047e6743a86358c674",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0ecf8b9b61040d19": {
       "source_key": "a3570b2105deabf96ea74bb7884faff0bb64ad1a3a6aebab5a58319559500ea1",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0ed0759a7c209f61": {
       "source_key": "959d6bfa615bff77a0a17f14f0333877449803048522b545cb7ace1ca78bfc69",
@@ -15514,11 +15570,11 @@
     "0ef3fcb56bbc6dbb": {
       "source_key": "9b890651b50d1301e41a1273591cfb034d7e6f5974cbd3bbadbdbf0cff845449",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0f0715a376329a23": {
       "source_key": "e1da4a552df97315e1d7fc1fc22829ecc25f937e70cb6ff772be5e057a9541a3",
@@ -15532,11 +15588,11 @@
     "0f1f26eecc40892d": {
       "source_key": "3c91d60b97c920ec8e50874dc8fa0156aa7fdde9fef89394d3428371452824b3",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0f253c573e089737": {
       "source_key": "79b49c5a4a69282fc4dae6bf237ed3b4198f60db11cfaa54157a083f952bc1b3",
@@ -15576,11 +15632,11 @@
     "0f50babf3372c0e8": {
       "source_key": "4e140b8b514caa3d270978de4da0bef1d1fe91849aa42a8ce9f84b54e7349963",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0f5d096cf9c277b0": {
       "source_key": "fd658bf18cd039d1667911a670bbbc8c9d0f47046d38119786f5feac5bf39d17",
@@ -15594,20 +15650,20 @@
     "0f678a97f6c130da": {
       "source_key": "bcfb9b9decf8a517bf9ea01080b757658d259dc5f1aacfc7d3c7d7d23b2e06ac",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0f6b82b77c4d6126": {
       "source_key": "a4217e91851702b9189ae4da5e8f70462383bffbd13a94705d21c06905007fa2",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0f79bfcdbf07c078": {
       "source_key": "a399208868d5e76911dc697d997e8e29ec94c8bcfa37c98c0192f0d46a61515c",
@@ -15638,20 +15694,20 @@
     "0fa8ed4d4a7b1d87": {
       "source_key": "d055e953b069adc10e475f875c800462db5d046937f22ebec8fd461c06e7f4cb",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0fa955baed098729": {
       "source_key": "96514635b89d128c9064fb394c80f05e8e28b7debc976be65c788a88138199bf",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0fc1bd59767dc966": {
       "source_key": "bdf2f7e040c1c414bcff3e5959fc0e6e9166ccd21fc6211efe93ec6db39b99fe",
@@ -15664,20 +15720,20 @@
     "0fc6fe5ec0c2eba0": {
       "source_key": "d22aab8cdded88e134b378249f53e54ce0205a973ddb7239d83bfcddd10988d8",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0fdcdb827f2d3bab": {
       "source_key": "bc06d5d14ad7c9b8d87a8137b472ae35aeaa6bc4ed8580dba185219cce5aeb04",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "0fdd70c19010ceb9": {
       "source_key": "e6dcdd2aace79bae0270a903c703767e9241ab31309adda6e295dcdee96b7e5b",
@@ -15725,11 +15781,11 @@
     "100d0e3a22dd5881": {
       "source_key": "f83ab8d93c8574e47bc38bb74ad7db6d9b028e3bf58004501555391daec01c4f",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "1012fa1be567b733": {
       "source_key": "1610acb6f66091206ba82cfe2ed9dd36c74b74843e5e0e5aee5540c3a6587924",
@@ -15752,11 +15808,11 @@
     "103167e2beb37de5": {
       "source_key": "458b18821a9d0a32de3b721922713cd223d4ecb7ab6214c43322967a02b5b8f0",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "1037838df22b52f7": {
       "source_key": "0eeade0d4aa392ccb241931538ab582e65be1cba66283ae9940f6ed8bad762b6",
@@ -15779,20 +15835,20 @@
     "1050796f89c4f3b0": {
       "source_key": "7b80686cdcfff412e76fb57b5bfa1dae4bcf731cb5ec07b209a74f31365a722a",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "105623ece6e65f4c": {
       "source_key": "eba1c86454e9e030678e0fe4f9d4be009663038d70cc08858c4f00a5a13864c8",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "105edd75d5292714": {
       "source_key": "29d8c1811c5be909bd2aa4a403a48cdfdde262a0c9006a1215c02265b399b34b",
@@ -15806,20 +15862,20 @@
     "10612304bb4a8fc9": {
       "source_key": "b30d939b45a1e11c7798278b5faefbac4beb2cd553557cc64965896c9898beaa",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "106bf550656c27a5": {
       "source_key": "c76a6edc53d7f522dbcb34ac5dddc2a112a2fd42d64b73391fdd4c737ec97005",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "106d636b453fc7d1": {
       "source_key": "59d09c4ba97f0ccb1d934fb85f65799d256f88ebd915e0aadfe782ae2c6ccca8",
@@ -15842,11 +15898,11 @@
     "107def1dc6579fab": {
       "source_key": "a57ba4a85cbe3093aa5658fb41aad0130e104bd49d7a924aec63c65f7ca9c65d",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "109d364b5e0ca71b": {
       "source_key": "0b04941007468e8bbe40c0b687516a5ac42c48c4600a3d436f7aacfad3741252",
@@ -15869,11 +15925,11 @@
     "10a88505c0e90c57": {
       "source_key": "9a561b3f9c68fcb02755c45449d24923ac558860a9a4fec3614f77846bb0e07a",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "10a99814a316269f": {
       "source_key": "3fe24f951f7469afe4a4fcbc6ae0ec97a4d9908ebaf4292c69480211947660b4",
@@ -15894,20 +15950,21 @@
     "10b780046386b13c": {
       "source_key": "6d49d8437c65fa8ae4bba988f8d93abd6a528abadfafbded2947027e6c4ffb06",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
-      "status": "available",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "failed",
       "last_success_at": "2026-09-08T16:58:54.651032Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z",
+      "error": "no_unique_matching_jobposting"
     },
     "10be7c5f65c20de8": {
       "source_key": "8d908015e9696b20911b7e3bf231d4e568e4f089bf6a01fdd6b7158850ab62ee",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "10c1bf80ba975dd1": {
       "source_key": "54c10f5f6ce29c0befdb42824d3411ea3fcfcadc94219fff9298b0af1256ed56",
@@ -15945,11 +16002,11 @@
     "10dbf5c57f63b7a1": {
       "source_key": "7ae8621093267588d8cf6cfabcf45ed211e3a6e6b0d46de02be9b4c3e5dd8a47",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "10e9041d8580d65c": {
       "source_key": "e48ab1786d314da04c3cf1be3b0ecd95132ffe0c9088a19da7a91e28deaf6b20",
@@ -15988,11 +16045,11 @@
     "112d6a04963beefe": {
       "source_key": "8cf17c7bd7474a4a17d2d2cdc8180693d100624927a969d7b51e16d24f2300f6",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "11379d818808137f": {
       "source_key": "293d095f84226e0c640421c0f741648f2f6c6a01f2a372d770c7e06d52347d60",
@@ -16006,11 +16063,11 @@
     "113eb974bf2835e4": {
       "source_key": "7798c79807e61e9ac70593ef2f4db39016a684111547736228f469831456d4ce",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "11444a44916b18e3": {
       "source_key": "54d8e692211c6ae917d4ae749c053ac3096c32ee803afe7b1c06136dc4992531",
@@ -16076,11 +16133,11 @@
     "119129e7d413c445": {
       "source_key": "59ba3b7e2e4558ce5dedd757779dc37728d246d021c88bfb956cd1f2f02ae488",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "119b3621cc8e415d": {
       "source_key": "91642cc7442c1193eca0332918cc5d767b9d24fbb91327adb6a11e7a1dd17978",
@@ -16094,11 +16151,11 @@
     "11c0d3f269c40d4c": {
       "source_key": "a254fc91d89d7e4fe5b0b259197187691d7902b779eb855fb94a2fbb1c6e0875",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "11c2a77f49d61533": {
       "source_key": "0d1560c38351b7523334d1814ce4d507b1a5b77076e38b82ac2d848c1f28d05c",
@@ -16137,11 +16194,11 @@
     "123ae57dcbaf1289": {
       "source_key": "6c78d75da16b7663afa998fe91fc38882250b57aafae8b8bf471adf5e08b3cc6",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "123b7353276c217f": {
       "source_key": "b51a0fc99c1b453a15afb1bcc107fd23f64a9d0995fd2deb09b9c1ad78e9f005",
@@ -16180,29 +16237,29 @@
     "126fe96cdf0de74b": {
       "source_key": "fcf0779ea7851296bd18d17b8a84744a7d3711caedce3057b56f1a11201b9231",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "12718ad5f7c8702a": {
       "source_key": "36927010e1c44807ff67cf70f91310c739b56449b7774e61e42dabc835dcb7f3",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "1284b4f5ee01dc27": {
       "source_key": "ad930278da92344c29247ad519d1a1995a5368c0852a11296d0184bb5f05bc23",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "128c83fb8b10ace7": {
       "source_key": "40de8883d5fd0dde6a398af5cc67a5ce63cb36edf5af7d4259c42801f708cb42",
@@ -16215,11 +16272,11 @@
     "128f79b7858efc37": {
       "source_key": "c9c007eeade2e8f7a28366d1e0bed86de182470bbf508e33878a2cc764aa7989",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "12940e6a1c28d243": {
       "source_key": "32f43f83900a512ae48140d5b090fa89f0b99bfdf1910f258de0955fe31f2458",
@@ -16232,11 +16289,11 @@
     "129608425f6a04f6": {
       "source_key": "70b8b685f3bc96e339f9eb86552ff680bc95f2b4496ec5dd08fb8f8c6a8771b2",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "12975602c929b5f0": {
       "source_key": "803d8bc6f7e7bf071285c1edb0afcac3911557b2c91a19998e99666053524252",
@@ -16268,11 +16325,11 @@
     "12be1d82b5bc1158": {
       "source_key": "b00d6d55bea28ee77189d5c63754e1f160670f6c8b36cedc7c8fdb9318e2a509",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "12be99014d088070": {
       "source_key": "b3ed290cee35dec451de58801c6a409b3ffa1b627812455201d4b5284d27a2c1",
@@ -16302,20 +16359,20 @@
     "12de680d67f404f6": {
       "source_key": "882e85d7a873765cfecac65f02ccbdc5871a63dab251d65ccea40dbc96b8ea48",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "12e69a71c1a73c9f": {
       "source_key": "370536fbaaaca463b4de1413f867691a983afe21aded3521dc675058be3986b7",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "12e9acd6795c21a3": {
       "source_key": "a07fac6937a9e6e742354b33d5fa93518f047ed2df273ef03b96b7da2c8c3012",
@@ -16347,11 +16404,11 @@
     "1332cb0a6dc716de": {
       "source_key": "7ba11b33371c51058856d5e26dca3fdaf8805f368fdc26f2e61bc6d64989fd53",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "133f884466522de6": {
       "source_key": "10752adeb3c7fe4154962ea11fe6cad7e06759896de5d40bb322468a801ce0bb",
@@ -16365,11 +16422,11 @@
     "134909cb82bad091": {
       "source_key": "a02474a8de4a696669ada22cee93c5397032eadb57405815503e70cc44e31def",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "1353e4054c647d27": {
       "source_key": "097dc321c96ced279bf53f3e00c0660018626b8944a4eeb261709697de5b71e8",
@@ -16392,11 +16449,11 @@
     "1362d06a674afea4": {
       "source_key": "eaf5d53bd1c4efb18f4403d12a07cd2f9663f69dac7f66993a760c3fc5d3c698",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "1369ae45aabd809e": {
       "source_key": "88211fcd57a8a3cca6f17ea8bc4776dcab7da0c971be8da309ddc2711c224211",
@@ -16427,11 +16484,11 @@
     "138c0535bca8e538": {
       "source_key": "338514874e828343fce96af57cd5e7881844171b2ba7eca11cd04af9310977c6",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "1393ea4b3fcedd0d": {
       "source_key": "025a7e35fc8ea845e4a9c0ee47bcf66db3d5520fe7350caa81d95e3499948001",
@@ -16453,20 +16510,20 @@
     "13ca5918e77c1ede": {
       "source_key": "00851839d1ca14ec8160b91be626f55b9387c193561f65e60f99c4beb0fe7b2e",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "13d1356eb5a786f9": {
       "source_key": "ae57bfdac005d40233e5b982cf49a80351ab494665196d1dac4d2a83871eb2c1",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "13e6e95a722d8427": {
       "source_key": "e34059e89b89c11e97cb043f03a85de613f1f12e8c090aaee7af51d92bb6cdbb",
@@ -16480,11 +16537,11 @@
     "13fc117ecd074252": {
       "source_key": "f79f6e36a494e546ce80da3438115adce676034bd4680d04f68d516a64e9fc90",
       "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
       "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
+      "last_success_at": "2026-09-15T19:47:06Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "13ff1024769eeafd": {
       "source_key": "8a055913f37a60f84a72ac7034739fb0c347245fc13e98469ec1cfe9f63471c7",
@@ -21893,6 +21950,14 @@
       "failures": 0,
       "next_attempt_at": "2026-09-11T16:58:54.651032Z"
     },
+    "30f3b9dea4bc399f": {
+      "source_key": "e1e7902f74324abbdab162e882379b14040f59b34075274a6d79bb6cec3f1b71",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "next_attempt_at": "2026-09-18T19:47:06Z"
+    },
     "30f884d6f8cb9654": {
       "source_key": "60cc85438b3f86f0271648e11d9a87b467de2b153e4875032eb107a193be2b36",
       "version": 5,
@@ -22593,6 +22658,14 @@
       "failures": 0,
       "next_attempt_at": "2026-09-18T17:49:47Z"
     },
+    "347c38193aeadfac": {
+      "source_key": "ff3717b8d961d0a7c32021bdd00afd623c2610c2845ff951e319cebd0a2b9465",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "next_attempt_at": "2026-09-18T19:47:06Z"
+    },
     "347dc4bd021f2acc": {
       "source_key": "c1911caa6477f62cc734c90b04dd10496aa4df4ac72049510246c0f99423f356",
       "version": 5,
@@ -23058,12 +23131,20 @@
     "371db13136344b87": {
       "source_key": "53a8fe44daae893c7b404169e86d39e34f06e03d27e56b45472b897de2d470b9",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "372ab4797526fbda": {
       "source_key": "18a93acd02886730bef0361c2e0f1fce73cfc66e9f0ef8bf1175ce1c2135fff0",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3733983470a47406": {
       "source_key": "03b049b61eb0c463efa745040d8a3d85aa1763a52a742c831db0d04752b73f69",
@@ -23103,7 +23184,11 @@
     "376de7e3f8a83061": {
       "source_key": "8dd91137a0f301af12095ce1bff18d31c2c5fd2b6ea4776a450b094d67dd21f3",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "376e9b267b269c26": {
       "source_key": "f2aaa0307f66029ac10514a947d52a7c145cac4c65b17895881948bf48137236",
@@ -23150,11 +23235,6 @@
       "failures": 0,
       "next_attempt_at": "2026-09-11T16:58:54.651032Z"
     },
-    "37980f93b4a56073": {
-      "source_key": "b8c17728ef654c8a47c787f24999d79c0898f5924f40f010c629934e81e4ea88",
-      "version": 5,
-      "status": "pending"
-    },
     "37bb7ed450094c1e": {
       "source_key": "88c6bb64310046baad29c6ba83a5dfff46b7a0d0b063a59f1c7ed2037379a424",
       "version": 5,
@@ -23193,22 +23273,38 @@
     "37df2ce708c5cbf3": {
       "source_key": "a622ece50f392b7a912662465954777de51f47d867dfa7625d6ee7e5b09acc93",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "37e2ad92c9ae7038": {
       "source_key": "9251e8c379f4ea709ad954cdf76ff3f0c20a783a599cfd4afb32407b250aae2c",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "37f3df7fffb9a9fb": {
       "source_key": "39ba6c1427f979c934a3b63236b6407c6a375b00689870068fc148ffa0d2b4c1",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "37fdea17e972f7ae": {
       "source_key": "095e9758148d3a43d41b4e0d7014775054ac72ca34b4d9d7153e59b9f19ffa62",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3802de429d207afa": {
       "source_key": "d43d98654c0d8a9467b940565ab11b03a5e0f88a2362761ff61cbeb8d2e89205",
@@ -23240,12 +23336,20 @@
     "3834fd577eadfcfd": {
       "source_key": "9cf295cb5b34666a0fe82c0f2c8d59359eba90f647f2467e8ac6f2d3e1d74dbf",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "383c0ec502108d0f": {
       "source_key": "4109ca0c7391de5e038f99d8f065e57085ce187e7d7ff97a2e81df8f22f8c99e",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "383ca92d83717920": {
       "source_key": "16f887679869bb5cef1a38e587599f52143bf24e364e248c514f84217b0a1ecc",
@@ -23295,7 +23399,11 @@
     "38620b815f7e9e49": {
       "source_key": "78faa84ef924c137cb3184dbe361e79f1d664795e14195834cce625751e11622",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "386e33387d79af6f": {
       "source_key": "4c08fe5769fe958c1af6ec553ecdd36ced249f3772e1798c1d678508c5892b5c",
@@ -23318,7 +23426,11 @@
     "3878623a56362b74": {
       "source_key": "6718f383d84f292b3e33b76198abe44bcec589fe24df70aaf0b19d5ec85c0c37",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "387b60925cd0d8fb": {
       "source_key": "cba2f9cf961f33ed6cc1a393b284e6ff853e7324d4e201e8f27f283277ea2238",
@@ -23340,7 +23452,11 @@
     "38a648d074a1e3be": {
       "source_key": "e90e188ba305a3d9fd3b533eb81e0996a39d629647d6801e3140aec3e4478bf2",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "38aabb6cb7801420": {
       "source_key": "edef8de921b9f1096b65ae19863e580338e863b7829363a86677c1848ac876c6",
@@ -23362,7 +23478,11 @@
     "38b2aaab756f3e82": {
       "source_key": "384a5f8a122f5667fa8b202c38cff682d953d2aef284822c269a18d5155a4e6f",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "38bd4fdcd554c97e": {
       "source_key": "0cd6dd79fd622b8b43ba4cc121bb8075a55987648d1750296da4ecfab0756a3c",
@@ -23385,7 +23505,11 @@
     "38db8a5a9cc01c25": {
       "source_key": "f62bfb8660e2ec8488c182fcc96df0fb90e749111925f3f288d952db661668ac",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "38e0f7d9ce962cc1": {
       "source_key": "ccffe3bde43a28a54c62eb211bda9eed3e619c3e6393f969d8fba227afd7aa28",
@@ -23407,7 +23531,11 @@
     "390167c6812642af": {
       "source_key": "f4817c479b3b23f89b9c4e73e3dc39687a836a17fa413b961f70612a741bfadc",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "39076a3b0573df9c": {
       "source_key": "3518d53c4dda5dd7b07aab7a61b44a06ff876055e8b90bb2c3d708b1a8cc02d3",
@@ -23595,7 +23723,11 @@
     "3a283a93ef61c372": {
       "source_key": "a03faf2ac12dd5894b653aad299e06e7a1034bc0ad2b4f719b2f43193db6f129",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "3a326f4f5a638063": {
       "source_key": "bb73a6a8ebc3a61ba3dee3ed6543e46f773099c7fc15cd635feb52c00cd4388c",
@@ -23645,17 +23777,29 @@
     "3a57e6d6e703d175": {
       "source_key": "55f39fff85b653ec5b3da703266514aae53344b97bd4ae22bf472373c74191c0",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3a58d3715675ec20": {
       "source_key": "7e5139b9adc25eeecbbd42d3a4a0f9dfc729da1b416fa805dc8ac704f7ad8db1",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "SourceFetchError",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "3a660eb300c44ba2": {
       "source_key": "a9fefa1a02cfddb26233b85dfb6c739116a4706b4c8218dca228acd0685e5169",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "3a8030855ded2fbf": {
       "source_key": "ea90d660f08035e64d4a9487ecbe9dc8763c8cc6865a02cddab4fbf0a60c7116",
@@ -23732,12 +23876,20 @@
     "3aaeb33f333f6733": {
       "source_key": "22a33ceb81a6058f3c599a92c33cd4ccc02591c6b0ccfc0105ca9077572bab25",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3ab70768beba190e": {
       "source_key": "ddb5d685119b8c82bfec3dfb0dfda3b7f4226e1e90c2b82b80ecfd9026fd4d15",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3ad64ee44860aa83": {
       "source_key": "6022df623821f800815efae199230f4721cab96a0d4daa8a503cdd961c62305a",
@@ -23787,7 +23939,11 @@
     "3b03882c4607b9f0": {
       "source_key": "e58d53eeb63ffe09c6de55878ae1e22a79cb8f3d992452f03c0702d345fa6d29",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3b05e84d9f675434": {
       "source_key": "cef9617438191c509651c353c4beb673d55131b3ea5dc0a6a1413fc76ca2c9ba",
@@ -23809,12 +23965,20 @@
     "3b08367e8b2b77a1": {
       "source_key": "75f8a869b13ee520ad83958c696fc12003226622ce59bbe987dbdc52a682e3f9",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "robots_disallowed",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "3b1806218146da9f": {
       "source_key": "d292be9dbd6a4b088f378c3da3e37ac37ef4e3a1beec92faeb23a235b7904cfd",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "3b1a74857c04c31f": {
       "source_key": "c8b769d74a3eaf4c6e42c0ae6e8af801ebee4054530f9fc90f8b83f0d5ce880f",
@@ -23889,7 +24053,11 @@
     "3b668bd7da49466c": {
       "source_key": "b82631b2c217bb3b00cbe18b4f67f13d7bb803775c99359a373048cdd2568e26",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3b7d625d3716bbdd": {
       "source_key": "68592e8e74a623ca5bfe675760bd7e69ff6f2429d29f44b5e48ed666d9f9e062",
@@ -23903,12 +24071,20 @@
     "3b9157ac9a19ed47": {
       "source_key": "66d7dd19a8f4bbbc3903275f1f84b416a6068b699de2e8fda040a852960b92dc",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3b9a64f039033790": {
       "source_key": "59a5a573468b6e7b08ca5a19aaa04e5292923f1ed8c74c736d4a68dec589bce9",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3bb1906e5e9cb8b2": {
       "source_key": "c1eea5f6f3757e1f878f64711cbef0a804d614c451bf51ef2c2b8ed522607943",
@@ -23931,7 +24107,11 @@
     "3bc44ad1d674c026": {
       "source_key": "9ef373ed388dac5a83819cc44bceb9b8cff32ecb55707009eddc02af72cee2e0",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "3bdbcc1511ac44ba": {
       "source_key": "55327eea01c191048271bb3e08a50bc6c97eebe731b804bf881dd75fd75419c9",
@@ -24031,12 +24211,20 @@
     "3c4e2b86bf39f346": {
       "source_key": "8eee32661950883a7030eb452237745fe402d332b2b6d4f39a59776f8de95a88",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3c587766da97e3df": {
       "source_key": "0b44f5a80a95546aa9357bd3d88686b6cea9aa0d58775582cee72b8cbaf22ef9",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3c7cbcbdd20f6281": {
       "source_key": "a66e52d7e0af312c0967c4aa1c9e5ffe0622e2b61ab1118c855274be387cada7",
@@ -24129,12 +24317,20 @@
     "3cd316b602cf14da": {
       "source_key": "1e4f98b771edef4d099270de4c61b20627c2555b06937f2cf5830a071acb1242",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3cd62ba51bb62e99": {
       "source_key": "5978ba49dc069761cee1e7c8820a92f677088f11a91565e79c9211c1469adeed",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3cdcf50b20f0b90e": {
       "source_key": "abbd10d969af9f20d0fe45600db2a5f1eb91003cf51709250aa4b1a0247fc5c4",
@@ -24219,7 +24415,11 @@
     "3d6f1dac3b9faff0": {
       "source_key": "2c19de87b143716f9901ba6c2ff7aa016726acf26626238f4f5f2b14e5ac3611",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3d74bde4f580a3f9": {
       "source_key": "1ed0fcd4437a357f4b4c59111c5a3fa5cf7cabaa92a9a8f0c3b252023dd7ad15",
@@ -24233,7 +24433,11 @@
     "3d78a44c58eaf419": {
       "source_key": "df02884feebb9298382f07573b8e60476a82ac0f19391a34dc50862082492240",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "SourceFetchError",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "3d817c7a56f514d8": {
       "source_key": "9fea3e6b8e9991e8274a9545908acdafa70e8289c184b25c84b1ea3d42093e00",
@@ -24247,7 +24451,11 @@
     "3d87fecf1534b774": {
       "source_key": "3e8a80dcfbae60b5849eeafb0443a295c9e82a7ae32fe5ca90ba933960531c64",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3d8b94680e0c4cab": {
       "source_key": "682dec5a85eb518af024a3b4cbbeac97b53047f034fffedc2effd945718d2f83",
@@ -24277,7 +24485,11 @@
     "3dae693abfa06b6c": {
       "source_key": "0fc583a22abed19c4c565998330219cd8fe5bfa6a44baa1139ac602f8db9f9cd",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3daef85df903bd4c": {
       "source_key": "9be64fdd54e8bb86514e74ddb21e541b4935c2d7d226c162b119f6786a39ac34",
@@ -24300,12 +24512,20 @@
     "3dca189ef622ca65": {
       "source_key": "727c6a3013cb9279ec33915ca8128c702598a6134a32ecbe0e6f2c37e7c64a73",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3de2b3f1e1213572": {
       "source_key": "53a20b89dbd276c63deb173633391c53c5f2f08ab5ff9625a4ecb8b9fbbe3bf3",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3de41a488d68f3d7": {
       "source_key": "e2f1b16959abc0566e094e32d3b5b5405e6c4fc98c582e930d528636791c8bb3",
@@ -24337,12 +24557,20 @@
     "3e00213754f35ce3": {
       "source_key": "536fe0c9176732c989e81728f36fe5f22f0cbd746471dbcf306587ea162b45ed",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3e0a48c8d6535ab9": {
       "source_key": "f82024d66ffdd97860f33870c4bee7dcd7b310ca0b3efb0f4224679b76481793",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3e3e158bebe4c5a7": {
       "source_key": "6161f50ec97ae26cece1415398f5d1ff84ed7f70cb361c0491e634a288820d9a",
@@ -24365,17 +24593,29 @@
     "3e500f77c8ecf76e": {
       "source_key": "8e12fd0a970d690c2fe3d89a9d43a8711735c6328cfaf13957d286b9a3282a1d",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3e55bbcc77b47c1a": {
       "source_key": "78c76a49ebbea8b47a06278bb8966f208bfec7687f0ab1e0ede4cf59378bd9ce",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3e5653b04e1d325f": {
       "source_key": "8f69730bf26f1d7d360f4422e1a81621cd07cd47d7ebe2486dc25d9f215ad430",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3e5ed199ce1ab277": {
       "source_key": "cbdd43984c4ba57456452034707e9cce319d291b8fc706f345a4411f33f5c692",
@@ -24424,7 +24664,11 @@
     "3e94e1a0a34eec11": {
       "source_key": "e4bf73f5d988f65d4462f61bab4a02b1d63d23c90ec61cb84ac97a09a1d61e99",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3e9b104256964473": {
       "source_key": "11ef29d9a4852960178d338ed6259a70b5016e78d78fb9a61b88f9582508166e",
@@ -24438,7 +24682,11 @@
     "3e9e8807f1a9c0cb": {
       "source_key": "86930ac436bf5d15acfd33eff635e25495bf44a8f7aa4625698637cbbc3b97d2",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3ebbf19acf34a63b": {
       "source_key": "8b4f6bcff5fee0585baa4d16e4230436abf71646eb9e4407a6ae38e5eef11b7e",
@@ -24451,7 +24699,11 @@
     "3ec5c9538137cc0a": {
       "source_key": "3e2270f737363ad269955f76fc8c64f134098001400a0ce189543e16da808a50",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3eccef70ae9f153f": {
       "source_key": "332e64aea55a21bb557ede368ef9b586eb4e5d2c6a0818a2082df79ae3002201",
@@ -24621,7 +24873,11 @@
     "3f5dc4d7f06ad4cf": {
       "source_key": "7433b488f69b157c294674a5f4c2e4105ca079637765ad58b3d7e1fe1940f6cb",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3f6b96523990f08b": {
       "source_key": "b3e2c6202338bf0c7187ef8df74c82d017302ac0b8d404c1f874ce28dfa02af2",
@@ -24688,12 +24944,20 @@
     "3fbaa9081b1c5628": {
       "source_key": "a73fc39aba7086e6547b974567a8a42ba3a0c83a44aac12ae19751ad33b7a58d",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3fbae66f921d82b6": {
       "source_key": "fece6ad5f72217463ae20fb987d4e1304f1b5a4d5e3f7558260a3a3a29c447b5",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "3fc0f07b92d7d630": {
       "source_key": "c5703dc085480ec552ca112facdca002d5e826e6dc0394750b203da599fbb396",
@@ -24742,7 +25006,11 @@
     "40199b2e5784cfa6": {
       "source_key": "005d0ad7338fd499e995a0f99852138eea0e24224ab859a57cafac0c0c3e43e5",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "401f283f85ee0406": {
       "source_key": "c56cd0e17c3db6656770bf6a7a013e8f595d074206fc9bbd2fa5e4e61d4e9710",
@@ -24773,7 +25041,11 @@
     "40287ee2aab41047": {
       "source_key": "a926a89df2d388224d31157802869938dd116dff6c3a64270ca910fb4b842181",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "4031da551b9d2a57": {
       "source_key": "ca3c07e8be987ebf046c4f205c9cf7eea9f70db786df38bf26609b314a4e20f2",
@@ -24822,7 +25094,11 @@
     "40746d3af50d80cc": {
       "source_key": "f167600735c78961f11fdc29c65ca988b4167ee95ccdf45acaa2f9929dbac5f2",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "40797a2dde3037b3": {
       "source_key": "2f46dceb5eeca452d7a18dfce48237d75cca3c0d1a949fc844ea5c21f8b055e6",
@@ -24863,7 +25139,11 @@
     "4092aa4361a7eaed": {
       "source_key": "2c6b30631a65f2f41b9a5a29e926b19ad9e66e52881869d520d90cbcd952c175",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4095df9039172e64": {
       "source_key": "47f56b804b505d87c81f2fc137becbd4fa7ce1f987a67f02a22a160ce03bec15",
@@ -24877,7 +25157,11 @@
     "4097b32951a06da2": {
       "source_key": "d07799b94fe4c7ce5251ef9c648ee255ecfd4e90f56bb41ece583d7caf9e51fd",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "409ce6d036505e8b": {
       "source_key": "0e00a5ad34fb797874f7e0557c6833d9fa936241f764034580aa21d2f9f7297e",
@@ -24890,12 +25174,20 @@
     "40a593d1123b7ace": {
       "source_key": "cc466ee32e404624d5e340bd19eb84718e82a6b5d04ad4dd6a139cfe16faddf6",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "40a5f161dd5854e5": {
       "source_key": "730fdf08bf904cc405d0fd8bc4697e65ee77837f56b3e5d79fb24bf28a7d1854",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4105741fb7d0b831": {
       "source_key": "ad1f31d3115714da96c49bad5d5abbed62ac09bdb3c7cf16519a08b7941d4ec2",
@@ -24909,12 +25201,20 @@
     "41307ded157c0ca2": {
       "source_key": "c45fac751cad3ca00e6f08ab2391be136a3c8f58ed3880342745427ecd166f11",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "413418ede3bddd8d": {
       "source_key": "e7e410e406fbddae1053c1350fd990e5b221870f3fcd50c644eb66569bd269da",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4142d55f1ace85d3": {
       "source_key": "210a92e874914867a6c3f1635280cb1733b355f85ecc9399a60535f974f19088",
@@ -24937,7 +25237,11 @@
     "417176781efd6e07": {
       "source_key": "abbeea203787a8285c1784f0d594b101eaaaa75bde97b435c3032d637f357b2e",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "417b947701488593": {
       "source_key": "fc94663d2ac901016170b346355a1e07afc26bded148ced0410a1c5897a04d08",
@@ -24978,7 +25282,11 @@
     "41a3e9036fa09664": {
       "source_key": "eb1852636e83c11e4410364ff0f32a08808623d742e8c2ddc56df76dd592130b",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "41ae56511b692bb3": {
       "source_key": "e3b5de53d23786f07d6d3d40a634b076100905aac34f1d4257bc7eb7f7d8000e",
@@ -24991,7 +25299,11 @@
     "41b82934169c857e": {
       "source_key": "395d11de54b2e1c2087133207312f6dc7a729141fecc8b54b6329b512c0c851b",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "41c22ef68cbcfb6e": {
       "source_key": "36f553fa78293e366beb1497f9d3d21567641a0c34108922152c91bb0e2bf5f7",
@@ -25066,7 +25378,11 @@
     "4208db4a5c983ab4": {
       "source_key": "21be87e931514e32765bf9eb83c6f6a5bbc0571ce8515ec2c882470d466fe6ff",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "421b23842014afa5": {
       "source_key": "27f4bc7e0e0a3a29891fdd2d060fc1ef4e2a35ca80ac7d2e48c7b0c699222bbc",
@@ -25089,7 +25405,11 @@
     "4228c37822fe1422": {
       "source_key": "f50cf90ea5440dac0e16e2f5aa937080f2800262c5c274d28b9ef8f6b1dc9172",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "42296e3b1efc60d0": {
       "source_key": "2ad7fd472368519c89a65bdd9c4cfeca7161d16dc1aab3b55e41236a3a998c82",
@@ -25112,7 +25432,11 @@
     "42394944315aaa39": {
       "source_key": "81cd4a1b94eaebaa408cd7b2c0c51fcded74a83cf33820e61f6b47658e6e8586",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "SourceFetchError",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "424bb4f105a0f6b0": {
       "source_key": "d53535b6157f2737cf4484f80f8169cd73aa1241accaa2859f71f593ebf9aafe",
@@ -25134,7 +25458,11 @@
     "42615e7ba6a8d3be": {
       "source_key": "61fc9b76c391a3f6d1a6f315c7d4831bb96e9a8635a21527c9a8651af9832fe0",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "SourceFetchError",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "42646642c0f2d6b7": {
       "source_key": "3448a7456d4a0c55aadf16079c8622d69b2659fe167c94d99f1cbdff5c6d2ac5",
@@ -25148,12 +25476,20 @@
     "4266b3797bb34812": {
       "source_key": "fa9f61e43415e2356c7177aee5e812fb2e96971e9803499bf682695943eb88b7",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "426aa4f3c0ce604e": {
       "source_key": "6c73aae9d3df71afb6029db4bae732d4406fbc5fb62762869ab161b4732c6b3b",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "426ff9acdbc98d08": {
       "source_key": "3d62ddedb8ad83f7a35cd9e74e4242fd8e629243fdbbff61e97d87d13ca2a8a9",
@@ -25181,6 +25517,14 @@
       "error": "no_unique_matching_jobposting",
       "failures": 1,
       "next_attempt_at": "2026-09-08T18:58:54.651032Z"
+    },
+    "42b7b70ed630dc38": {
+      "source_key": "a9191aa684cd4b9b665a613c69457384c8d0adabcbd18d4bfe6aed1317d4522a",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "42cf5361df1f8975": {
       "source_key": "838becea4c8966539144fe7eaa9cd792abd3bfddb7c6d13156147dfedc7a4ab4",
@@ -25268,12 +25612,29 @@
     "43635c1d92b396c1": {
       "source_key": "1728648cea5c51dea7522edf208477ecfb24cb7208ae269196cd6fd57728fb34",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
+    },
+    "4368fbc599143562": {
+      "source_key": "a5b6229c623dbd6d51c6c851ad325c7c39f2a8903e670f533138ae0fe06f1e07",
+      "version": 5,
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4374ba12b49cb9ef": {
       "source_key": "ad44fd331f0bbd8e287d3547fb1d8e695614e3aa9d22272801a9dd58d7bfee9b",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "437d2aac6ca7fd96": {
       "source_key": "c95d3bf1950918c47b0ec67f7230bf07b900f93a503f470a38764d38ed309212",
@@ -25348,7 +25709,11 @@
     "43f2c9f29d0171ec": {
       "source_key": "fd2c9dd055106faf7bd587afe4ca7133ada638b209417c5be088cd40cbd03358",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "440311c11b38c4e8": {
       "source_key": "9e7756cbe95972d848134a02231b63d1c062bd91cb66d3566db088d8248e73af",
@@ -25414,7 +25779,11 @@
     "44424c86f9e40aac": {
       "source_key": "d9c247295a7611f31e2e939f58403a228461bc3364744f454f56e661216c6d32",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4444033ebdc673e7": {
       "source_key": "0e5bd3557a5c114750bca802a9ee0e4097eaf96cc9962ee45370ba70fb804e7e",
@@ -25568,12 +25937,20 @@
     "4544cd022b02535a": {
       "source_key": "d7549679fe66e8396e6291515ad905fa770781437c30a35fa3939f7f5b77e894",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "45563fc7b7381685": {
       "source_key": "5d0f81014f8dd7d3a38c5c8674d5b9b205a14cc9d11e3cea89415826709be06e",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "455cb2eed03f0c3b": {
       "source_key": "a0f2c90a0173799b88e5605e5c95d046676e1862557095e49e3b1bafcd89cf0f",
@@ -25613,12 +25990,20 @@
     "459b4d00fbcff3a0": {
       "source_key": "51c9b8f932186ca49e496377721accdcd9e9fc787ed6e872222f62a632780b64",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "45b1a2d50f29c191": {
       "source_key": "d3037d3bd3a5783d4af47e2746a1b1b9e3433d47f8b4b740986f2d99ff658451",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "45c4d4ea44cbd369": {
       "source_key": "b9128c8d8f609d2a6d50b759f873b61359aac9e68297eea2808695a8df301077",
@@ -25666,7 +26051,11 @@
     "461ac472befc7bd9": {
       "source_key": "c61bda116b4f0acb2a73b13c51b40dbd0348d0f61ffb7b2f98612191d746af38",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "461def1738c85a24": {
       "source_key": "001d64289822fa0a0d8ccfb7ba05b1828496d429ffdf49c7850ebbc57e99ecf3",
@@ -25695,7 +26084,11 @@
     "464400e2cbc631b7": {
       "source_key": "cae025fe585ddfd5db54fa631af2d6129dd1010df0e6d76248e278901e31c7ff",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "464d285ca0b3aa08": {
       "source_key": "55fbfe0b6ef8a29c575a4f1dd9f372687f1893c3bf6d639f59e4d24985ade469",
@@ -25725,7 +26118,11 @@
     "4675d65dfe991a56": {
       "source_key": "d560f9f46236dba0d81bff97acc0e50aba5c883efcb69cab01e710aa27c54057",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4684f77b9ac121f1": {
       "source_key": "e8fc426f34064e66984e8a1d6faf7bc8df4400eea6fab1c8d0172a5ae8ff1f69",
@@ -25757,7 +26154,11 @@
     "46a061738fd1e7f3": {
       "source_key": "0dbabc1e16434e81ea9f158d446b5822c3d40e2e3179fff932cfb0d44b4a1d78",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "robots_disallowed",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "46a713790d90d255": {
       "source_key": "fe4aa1d8e3d3b3b69134e843a9ba1c1e494aa19afc387095e359a6b5e229cdc1",
@@ -25796,7 +26197,11 @@
     "46e41ae194e6cb16": {
       "source_key": "390604f9cf33bc8affee401730c25d42f9ac2e166123ee3d843070d125eca0da",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "46f486575b77471b": {
       "source_key": "1f88f250b7272e700418acd325a82db3c49f85a16deea7135cf78fb25f5ed05d",
@@ -25818,7 +26223,11 @@
     "47017be17bdc18ca": {
       "source_key": "d3cd365055d1e33d55cb9d0781d816ac95f39d58dfccdb0a0075967a197fffe0",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "47067550999b0d43": {
       "source_key": "67cb55d3ee3df3ba63e23a8809d1b0fa1d745bb4b3a433bc86bf39d7f29dd09a",
@@ -25850,7 +26259,11 @@
     "4763b22c8c7cf0a6": {
       "source_key": "945ac0ddf3c820961abb25f5c104d7b7489ad6cb62b1360899d3cd3631385b7f",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "477126a7fb3930fd": {
       "source_key": "2ed3ad75f08c02090281a8d317b60958516d7a6fb27175641b16d3e5a1ec9ca1",
@@ -25890,7 +26303,11 @@
     "479ee28030b1b6fa": {
       "source_key": "c6d15e948df750c94d708194b34950c45cd2ae76a4a23a45c2d8751503ee7a6f",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "47a2a12c0323995d": {
       "source_key": "ec66f86063db45cc7a4fc0b024a38912b35d309ec8177ad974797e1e5206576d",
@@ -25904,7 +26321,11 @@
     "47a5b01d6d3f4c14": {
       "source_key": "c6494305a16981d7ed9e8dfc1484f8c5a4f85181e1449d88715cf20a6d9912c8",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "47b0a5ac77978887": {
       "source_key": "4b78f5feac47f8d5ae1fe6cbe99b1599eb3bfb20e55bc24dfcb6835e61cc07c4",
@@ -25945,7 +26366,11 @@
     "47ceb00fbffd42be": {
       "source_key": "438bccb0165a52d8a3c311fa3d9787c0a2183b3c020815731e608790b956cfc4",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "47d428475f6073ca": {
       "source_key": "fdec8ce4256f5437a0dfcf25b870433836669922f7c2feeadc96cec084521263",
@@ -25968,7 +26393,11 @@
     "47eaf2c6c2fb06f7": {
       "source_key": "9abbb3df3a042c012981f5f1bb7c882bc4bcbc98fe37bc4bb3961a63e802b181",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "47ed27f1d244429f": {
       "source_key": "923bd7beb67c34cfe11b84c140d107290aa9066fa0497381c20f6bc3675a4b77",
@@ -25982,12 +26411,20 @@
     "47f73d66cbf54277": {
       "source_key": "f58e7e0063149d0f601a28977d71e3ea7cac2572c6baefb69049eb70dae3c111",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "4804ce30b3bf42b4": {
       "source_key": "929464c03e8ad80c4b4e1d559932a65754eeea9580befda5f8c7a00c80499b88",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4806cb6667895687": {
       "source_key": "a2b9a146973655be9ca62e15b2b5caeda0a35961cb0606c2bf2f11d03b2a8eda",
@@ -26070,7 +26507,11 @@
     "482d3958c75bd27e": {
       "source_key": "bde92ea60f54d927789c67ea07af0d751508441223ff2b616417aa47ae07ac89",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "483bcb88e23bced0": {
       "source_key": "daba04be2c0727a40ece791c0bc4eb563026de12857dc8e83c44b2b01affeb48",
@@ -26101,17 +26542,29 @@
     "486b1d6a9b7e63bc": {
       "source_key": "74fe92ba86893bcee21fe7ea99b6c9e1689940e25743becba9ab2bc914a80b34",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "486f8bb00f404758": {
       "source_key": "215839d072e69d53f91a8b642b38721560e2d9b5c63cac69993bc4979f30eac2",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "48768de4c95b4278": {
       "source_key": "afa5e17ff804fad38dc4b71aacf6338c9d9acb50865d08f76e07ce164168329a",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "487d076a1b70b486": {
       "source_key": "117492f13c3ebb8dc8f33647b5655a3955fab8a2c4246e8f624abf4d13a0fe52",
@@ -26133,12 +26586,20 @@
     "48842260fdd80f79": {
       "source_key": "d87e6a4a893ef9fd84b88451c1d4f070f54b7fa851c58a976fbc3f309da7b507",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "48ad9b96d51447e1": {
       "source_key": "b54df79ec470faf89dda6b527a44a35b0c021d447760ecabe7c6578c3b0d8041",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "48c237766ccdf8b0": {
       "source_key": "16fac4fb5529fd75abf32e879a42ff0fdf579b9c8b71b471adff5ec1aee13107",
@@ -26170,12 +26631,20 @@
     "48e8bfc99378c6e8": {
       "source_key": "ee079173abd2a359fd1aaf1f4338b92ce4336bd095372c9159e4575a6ef8254c",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "48f582954cac487d": {
       "source_key": "940a2f5aaf2403d7df8e144418a1aa31931f28d04230ecfa6c36e8d1f9504be7",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4902a223942accd6": {
       "source_key": "43fc964c924d5b142df04848cb9711198c1e0b2cfe3e01f61e00c84f9799ca3a",
@@ -26198,7 +26667,11 @@
     "490489777f6b6202": {
       "source_key": "efa5422a0bc46b398c0e952595d861a5ed33ff80d1007ebb20162d6e80f91b98",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4910c57747331555": {
       "source_key": "d1b4c303594da11451982727f0899f35f483820f9a83e6fdc790de2774dfd303",
@@ -26221,7 +26694,11 @@
     "492f26545d2314c7": {
       "source_key": "9d35e09bcaae6609156ccda6fabcd5fa2cf4442609cdc39c49de706ba1f735dd",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "493c699e57f221ed": {
       "source_key": "e3296b26aa5522deae2845906f293477386de46661efd2f305b3e43d43ddb025",
@@ -26286,7 +26763,11 @@
     "49970aeb43269c9c": {
       "source_key": "75363f96eda3463cda11e4c10c5b4333afe5035c898b60fed8aa9e272afc6c4b",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "49af7694977ee4c6": {
       "source_key": "41969a10244bdd2a84966af356798c0cc6f70d3790ee7a0655dda1d37ee58c1e",
@@ -26308,7 +26789,11 @@
     "49c7b95925efdefe": {
       "source_key": "162f3f6157db738150dab4d97ba42676b9ffef37fd101349ef7b195917f7f02a",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "49c9f119b0f56f40": {
       "source_key": "eb7d585fbdd098709e00d74fbb16bffbb103d301ada1ee8ab50f4e4c1486aa44",
@@ -26321,7 +26806,11 @@
     "49cb86c225bcaf5f": {
       "source_key": "c93e8f21ecbcfd25ba03de9b9827eb271fcd9aa60fa945b6a1516742c6a11951",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "49d67bb8c361a6fe": {
       "source_key": "a3d15747b2e96046624b2653f698ba8c24929809fc213754f83576f71dc351ca",
@@ -26380,7 +26869,11 @@
     "49fd4e3286178bc8": {
       "source_key": "f6383dc336ba5c942657470bf8572c8ddb08d72c6ec838907c7376294ea523e7",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4a02d578dac0ff37": {
       "source_key": "80d27c298db59a033c0a6a128a763b0fa86e556b92ded30ccf658c1b06f2cdd1",
@@ -26401,7 +26894,11 @@
     "4a2712bcb5293c11": {
       "source_key": "68a6a390ed40cda26ed38ef6448b3b25dbe8b960066a04171dd3ccf86708d363",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4a2c8a8b25fb35e7": {
       "source_key": "a3baa0f0869645ef3185ec8ef161355e2df7083049f1e61af9b11f106b0556dc",
@@ -26414,7 +26911,11 @@
     "4a3c7a0ca6b1d163": {
       "source_key": "de8862d8271289b50b0be5a3ece9c845212cee916fc028827ce800347d497a5d",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "4a4067956c8279c7": {
       "source_key": "59dc2a22fd281d416b9a04e7e3257ece130ea64c72684340c2d80956c90097af",
@@ -26444,12 +26945,20 @@
     "4a675f79982b6db7": {
       "source_key": "dc1d1d8fc76ac3a6dd1ba35b14ea056c2ba146a81234ec27c58e90b4d6b1675e",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "robots_disallowed",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "4a74a88c39bae375": {
       "source_key": "340731fb6d1359f77f1570c5f1d8f49178d57feaf032436c119d8cecd079707f",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4a8da8b3f1f65d20": {
       "source_key": "70aa7bfbf7d483155e35f2fb7ccb43bdf564653eab0572e45e090820493706c0",
@@ -26524,7 +27033,11 @@
     "4aeae88ad91f6d79": {
       "source_key": "3825d7e8d082fa229f73f2af4b101f4a9bc196820da3888af794e515e4a194d5",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4aedab217b066435": {
       "source_key": "7f808840b6e012601f329b9de6528773216cd430440f7e267743fe1243b00841",
@@ -26556,7 +27069,11 @@
     "4afdb1fd590919d1": {
       "source_key": "0026cc6766d4e65f855029233a1ab8ddc8cb146153ac6caa35e9705cae6ac98a",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4b03364d8caef20e": {
       "source_key": "4a5b960e526299041dc80d7c59c9d2d701eb18a66679457db79ebbd805749436",
@@ -26613,7 +27130,11 @@
     "4b3a37f792432320": {
       "source_key": "133ef38d17314f57496fd3af56c7b53f5cb4896bd1143ea4bc3d4d31c2f99c4d",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4b4aaf78670c5edf": {
       "source_key": "cd27dc1b051a2e586b18e11386451f52cefb109b8f6b83bc6f89691bc35b6d21",
@@ -26627,7 +27148,11 @@
     "4b5270a0663e4718": {
       "source_key": "d33faf639af1970af4571618b77cb4c1cb386858cf888be2b21f98f70ac10eba",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "4b5e91872edbdf44": {
       "source_key": "35db89e224a1bebee01f0652e71223c599bfbf9da8e1c8f27d24e0fd1c8f1a20",
@@ -26641,7 +27166,11 @@
     "4b73cefcd3bc7072": {
       "source_key": "863dd5014fb88a28a6ed5008c6b259762e1d03bbc5ae0e5ce7b3bed79930cfc8",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4b748e8ced71f377": {
       "source_key": "73153d5342c22ac7c53f411488704e4e76b36c22af7b00351cae8a0978b8dbad",
@@ -26671,7 +27200,11 @@
     "4bc153e157e01e5d": {
       "source_key": "8296083a45e61d16fd86c10a1aa98597d362b24e125aa0993dca3f1a83e67652",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4bd33c099814ee56": {
       "source_key": "9bbeb350e040eaf7f438de81803567ff4d6bc5e282c3aef456c6a9cb491d9559",
@@ -26684,7 +27217,11 @@
     "4bd73cd857735106": {
       "source_key": "a71081122d7e8c948b07c40bee0537c2b7c0baffad58c5645701c073c6264856",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4be8182b90d0b05f": {
       "source_key": "9baa638473c83ffb892e3879b20477da08db1e715136125a803628c808de48cc",
@@ -26707,7 +27244,11 @@
     "4c16f25e17e361c3": {
       "source_key": "58b217fab5dd7558eebaa8d465b91f26eb932d86c148f5325d0bf5cedc44a234",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4c2150b24b91adce": {
       "source_key": "de85a6941d6a3d400f69a2d4b69657b43877d3b4c96e47a22dbee066cfd7f362",
@@ -26739,7 +27280,11 @@
     "4c41b487d9e0c775": {
       "source_key": "22014976cd74b4dd51ac0bd10612afda0293eb49c6c8d582cf2de9c03132c523",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4c4c2ac4bd20b434": {
       "source_key": "070b1928a9fc7189ea0538c370980308787caede3e6f42e8a9b20382490e7498",
@@ -26753,12 +27298,20 @@
     "4c66e2e2e0ed1f7e": {
       "source_key": "a6acb918e8b80f74f5cc9d192cc9cfe78559815397dd7fee27c332f355f1f14c",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4c6bc857ac4408da": {
       "source_key": "6117cbdbc4f5946dd2dca8371a1eadb88e0a8093267f409e2a3ef1a2fe48c349",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4c6bf3375143033e": {
       "source_key": "981129678037149f25ff344260bc81607537ff8c899d9a985a4063d522f6b801",
@@ -26771,7 +27324,11 @@
     "4c713b6f221e9a5a": {
       "source_key": "da726513510eec76ab5e8056e5d98875ff48a64f2b7a41aa26266ee407bf157d",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4c7d5e88e7239a5b": {
       "source_key": "21c9c9b3467fcba383efc453cadb1cfa7b1158a4b1e69b105837a4fe8e72e4f2",
@@ -26855,7 +27412,11 @@
     "4cbbdf4382ffffbe": {
       "source_key": "187fd90b5bf8d1a0ccb45d50c5cbec5359705a93e0e5b6c39514c5d182281dfe",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4ccb52502cd9117b": {
       "source_key": "ce7c958b4016a8f2dc7b77ecb84b70abcd52de660a208679a96233449a08eec2",
@@ -26928,12 +27489,20 @@
     "4d06f95174ed2b22": {
       "source_key": "06297fbc480502840db7a8978f3e21aee504ff079eefd041d21b2236244094bf",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4d0888edde60af9a": {
       "source_key": "ebf1b95956169a613c925b9c7a041faf4bf95f3980666f93919b45ae4b05642c",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "SourceFetchError",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "4d1e6a25dace4190": {
       "source_key": "3712a648c6af9911de1c93233f678ea77da5f7cba7519be102fdd1c7ca0aa894",
@@ -26947,12 +27516,20 @@
     "4d30b5ac19228516": {
       "source_key": "e653dbd6aab8ac1f1c2827cc4d8ca3bfc7d5b74961e5c1d7faf067ec57c9ecab",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4d318bd28fd250d4": {
       "source_key": "6aeb695afecb67932c0b33ca7dcddfd9685e554a15629cdc72eb4a7eb21798ac",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4d3820cd7898cdee": {
       "source_key": "8898969e678090fa743458cc2e354a89e0d08c825d6eddbcebc6b7488fcce14e",
@@ -27038,7 +27615,11 @@
     "4da63ea0cfd10c07": {
       "source_key": "0760bd122f41f0191919861d47d71fc2349eae1f2daf6b451c14bc46212ca368",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "robots_disallowed",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "4dae4279880ec148": {
       "source_key": "06a11e253d6f9aa78bbedfe31b525e881e1fdb64cfd5fc861c23bdeb86064239",
@@ -27079,7 +27660,11 @@
     "4dd0866a3bd99adb": {
       "source_key": "32b4bd67044e8b18da0e642d6f5e751c2bbb9f283716b0279f44ae5a951cb8a7",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4dd3738ae2c0b6d8": {
       "source_key": "fb17eced14b0b4c5c75c6600f9f00cc94781f82dd7ee938f48bf03992261388a",
@@ -27110,7 +27695,11 @@
     "4e0d9964ae2d6bcb": {
       "source_key": "34422825515e8db6f818eabd040d11a113cd1abf12a420d8692a94fc19279460",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "oracle_description_identity_mismatch",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "4e2d1105af15d1db": {
       "source_key": "9080b834c4b602d521a866f67369bb35c8608f2f920123398541c5f59e068418",
@@ -27132,7 +27721,11 @@
     "4e3c0fdaac2846a1": {
       "source_key": "a2313a3d930640f325b9cd13511581d6a1a5f2f591e3a4b00dbbfe5370156c73",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4e44a8a328e0417e": {
       "source_key": "c0f7a79bec464be828ec094133d1ff52d58d5cc5a62993b605bb3e6d058e21d9",
@@ -27180,12 +27773,20 @@
     "4e7d6bc1b5be993c": {
       "source_key": "0cf47b23b18d223a226650c2e19d4bc765bbf5b0902162b6d846d3d8d0f012cd",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4e855283c0850025": {
       "source_key": "31be6401281f5c49207c5f5df0fcf10590990556d9ec1ce296fc2c77a33068d1",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4e8672e530fca87a": {
       "source_key": "6f71811c753c34be7c4c492f76810d493c4cd651f02f8b15e20c0f15ada35e67",
@@ -27242,7 +27843,11 @@
     "4eefca4f820470e2": {
       "source_key": "1fdeb5c72bead7fd407631054e9f784d5de5d8ddace2600bd5b8cca73c196267",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4ef3e710aff7de7d": {
       "source_key": "3e752f9ea35f2163200de13f8274a40df4ffa25f1dd9e26f95ae634468fb36d0",
@@ -27322,7 +27927,11 @@
     "4f915e4bfdd52a90": {
       "source_key": "1e4f93fbf597fb8a19132a478e0319def4c295e5be02e82516547f2f0cc44015",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "4f91a43f86f88ba2": {
       "source_key": "29b40e087aa9c8a3581ca4f35d28da079a60f3260a2d41014727f9020f87eadf",
@@ -27396,7 +28005,11 @@
     "5007f3bf8f219d4c": {
       "source_key": "013372c6972aaf366e24be1e609c740e8d97e78752fb8dfb0b3bc3fc4c79fd12",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "500cf45211f6df09": {
       "source_key": "09c180e93a80cdcfd8de089b084e96eabf4c34c23ff656c14fdd98191aea5a2a",
@@ -27445,17 +28058,29 @@
     "503f20790e80d29b": {
       "source_key": "aed3a2e72031b0f14134f55f571622d07ab192bc87bc80204830363b8f3b13c3",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "50492d3b4b719866": {
       "source_key": "912ffcea1cf69fa657c3d50df952ba5a6cd6f3e15c7f158db3828a5266179cb8",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "504a1294ba437e02": {
       "source_key": "f58f27e7f9e03416ccd91513c2db3545b94e486a0a26c24184717eec4a8a6d91",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "505168a368b15ba1": {
       "source_key": "e2319adcc7e2b1b8715626426c11a5fa2f5d41af6f71fc4dc7de74e258a58dbf",
@@ -27487,12 +28112,20 @@
     "5070656d19f2b52a": {
       "source_key": "4d1a5e3317786ea7a73574f81de00ecb8d9fe9fbbf9c8d1f7982ce01befb577f",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "50752fa288c094d5": {
       "source_key": "053b6b14ef3bd7c279733778054a39cab573385a040491f48af52c7b06562750",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "507dd0b7e17488ba": {
       "source_key": "99c23f4540a835f6d0260c7c60d50123df7df04b0421de9ca8c3728e67e866fc",
@@ -27559,7 +28192,11 @@
     "50a7c9af3bddf1e7": {
       "source_key": "02e4d68df1332fa09224b4f390df97781d8e90a5a01d23422f397fb85372c128",
       "version": 5,
-      "status": "pending"
+      "status": "failed",
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-15T21:47:06Z"
     },
     "50b678bc9fe8d831": {
       "source_key": "c0710196267a32ba5d2082d244d9a98f85c9f3197badd30f038fff5715c8c2d5",
@@ -27590,12 +28227,20 @@
     "50e05348007d1634": {
       "source_key": "ea568c85528f2e351cfe980564408b3038355509065c2e944599ede1adf455b9",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "50e424584b07e681": {
       "source_key": "0c5b6273e08214c47c1c94157ba45ddeb2794b2133437a5548170520b59e6e0a",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "50e69346583d5220": {
       "source_key": "c0a90e26dc7a3fbf8e9d5683cf5199b3f3d0945477a2b7bc2d7c07173b78b570",
@@ -27661,12 +28306,20 @@
     "5121d7f851c07068": {
       "source_key": "fd058b6bf86246cf366cd868ac92e97426aab7800605650d847e35ce94d39435",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "513d403451eef0fb": {
       "source_key": "912508a995a65b8b9ab666b1645409eae2325da46b01484cd5aad7fdf6459291",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "513d8bc3e1245df4": {
       "source_key": "f2cb07d00c3ff7377cf00dc7cc8bfe098e81840879d98058280cda261a12913d",
@@ -27680,7 +28333,11 @@
     "514fe42514ad9661": {
       "source_key": "8942db3a4820c6a5e1a3ff25df11711674ed8d88a829bdd9194c1d62286c5be9",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "516745481bbc11d2": {
       "source_key": "77fbfead6ffaf10b236bf6e6a9e6142fdde7a1ba18c06ff307b72edb948fe349",
@@ -27694,7 +28351,11 @@
     "51780f32dd0f3c35": {
       "source_key": "a64287edb160f2bb61aba2f65e3a44463cf0a7ed5eb17e9ef04f9f843a691bc2",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "51b90be7c2aa91df": {
       "source_key": "0fa3a1b75d86e6f47625bfe69f69974eac25b219f0eaf84477bc3544d5384d85",
@@ -27725,7 +28386,11 @@
     "51d86ed19c0b812e": {
       "source_key": "237155939d7b3e4cc4794b56e731f97163b4272d27eaf67df1dfce576e875e42",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "51dab14f76774a90": {
       "source_key": "e4939f471df299875d8a8c43b09584b3af6feb322cead37c0fbc2f4a3b7ba0aa",
@@ -27739,7 +28404,11 @@
     "51de75f38d481105": {
       "source_key": "e8a30332973f710bf587119f244ef001b06963267aa770f644d9849f4defee8f",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "51ed5dc66ed940a5": {
       "source_key": "050abeea3f0f10cd77555c4340a3304b8a9f211f662766f9a9818b30b2d10ab8",
@@ -27762,12 +28431,20 @@
     "5209c5a4c92de044": {
       "source_key": "83ca5f733ddf2b97ce80f63b582159263cad4944938b9d254447db95c2eb2198",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "520b9c00ac24e223": {
       "source_key": "d9cdb903c5ae950f7a0c73d4766a17168966958a5e74371e534b1d2d1755b9a2",
       "version": 5,
-      "status": "pending"
+      "last_attempt_at": "2026-09-15T19:47:06Z",
+      "status": "available",
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "failures": 0,
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "52118ed2ceb8f8ee": {
       "source_key": "da7c5abd156e894063f89eff1d86e42e5855cbfe7bce825dfc2ca3b23b151a08",
@@ -41088,6 +41765,11 @@
       "failures": 1,
       "next_attempt_at": "2026-09-08T23:00:57.722261Z"
     },
+    "9e98e85d38ce8b24": {
+      "source_key": "5abf761f9ab8311a89d72927403051b4fc0feb1c04505d40f58dd04f8138f5fe",
+      "version": 5,
+      "status": "pending"
+    },
     "9e9c8578e5020aa3": {
       "source_key": "ab54213b592c87931d495453735b879834a00152ec04156274e5075f6ec701be",
       "version": 5,
@@ -42748,15 +43430,6 @@
       "last_success_at": "2026-09-15T16:26:04Z",
       "next_attempt_at": "2026-09-18T16:26:04Z"
     },
-    "a8ac4d409625657c": {
-      "source_key": "cf66b1886ead23c4494d61fe9cb3d6afff471464121dfff8288a6352eb019ece",
-      "version": 5,
-      "last_attempt_at": "2026-09-08T16:58:54.651032Z",
-      "status": "available",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-11T16:58:54.651032Z"
-    },
     "a8b214ed95782c21": {
       "source_key": "fcec3b33775247d8b18e84b488aa85e0b04d11d549ab4f859a8cc36255858768",
       "version": 5,
@@ -43370,6 +44043,14 @@
       "error": "SourceFetchError",
       "failures": 1,
       "next_attempt_at": "2026-09-08T18:58:54.651032Z"
+    },
+    "add57c42531c5b65": {
+      "source_key": "b83e6924d8a773322fd63d3595ce6074453432f67e6a6c9880ad95e0bc492399",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "ade0e817de12ac8b": {
       "source_key": "96211dbe5fa096c769f72037a0f912fa62584f80a175d65572f439ccdaf9c67c",
@@ -46138,14 +46819,6 @@
       "error": "SourceFetchError",
       "failures": 1,
       "next_attempt_at": "2026-09-08T18:58:54.651032Z"
-    },
-    "be85cb12c4b2041d": {
-      "source_key": "fa1d096c7359816f4dfd976f75b2fe8ac8312b6504ee0669c6d6b2bead438309",
-      "version": 5,
-      "status": "available",
-      "failures": 0,
-      "last_success_at": "2026-09-15T16:26:04Z",
-      "next_attempt_at": "2026-09-18T16:26:04Z"
     },
     "be91aec4d91ad7bd": {
       "source_key": "db8c622b830e73e2166dfc9a9d503f1364eb25d3ba5fa0f759ff0e6589be81ee",
@@ -54464,6 +55137,14 @@
       "last_success_at": "2026-09-15T17:49:47Z",
       "next_attempt_at": "2026-09-18T17:49:47Z"
     },
+    "eeab82350fc13b1e": {
+      "source_key": "a12db88c506d83b29abaa43efa3f994732dfdc983037b5dfa53b24d6453211f0",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "next_attempt_at": "2026-09-18T19:47:06Z"
+    },
     "eeb2c153b9185c0c": {
       "source_key": "313d314573ae51d65951d6e3a6dfdb64d2601a9932ff9db39fbeda502da8ea73",
       "version": 5,
@@ -55681,6 +56362,14 @@
       "last_success_at": "2026-09-15T16:26:04Z",
       "next_attempt_at": "2026-09-18T16:26:04Z"
     },
+    "f650920b5068a127": {
+      "source_key": "1477e530a71d451876771d25d40cb72fa99894a56f5f27064f59f6104b946df2",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "next_attempt_at": "2026-09-18T19:47:06Z"
+    },
     "f6681f6d5e8d2716": {
       "source_key": "49b901f2dc3ec8ed3a4334c54b846fb064fe9f156a7fcfe24396ea3902d70381",
       "version": 5,
@@ -55720,6 +56409,14 @@
       "failures": 0,
       "last_success_at": "2026-09-15T16:26:04Z",
       "next_attempt_at": "2026-09-18T16:26:04Z"
+    },
+    "f6955290f4c38047": {
+      "source_key": "9d8d5d5389f71c8d00280b840257f74391605dfc9ae7dbfcdf89116482277c7b",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "f695b9008a6a077b": {
       "source_key": "e2fddc1dff0de7a053a2df21a93405e399bb0981d53202d98caa4aa3a70f0aa5",
@@ -56355,6 +57052,14 @@
       "source_key": "8f487043c60abc3139262ff194c63169f17e5d325c760af9f33400ebbef7d077",
       "version": 5,
       "status": "pending"
+    },
+    "fa45d69be5ce5f1c": {
+      "source_key": "52d969e69014755135595ada3ad32247bf1ce19afb57bf4331224d392079a1f5",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-15T19:47:06Z",
+      "next_attempt_at": "2026-09-18T19:47:06Z"
     },
     "fa54367c5f8490ab": {
       "source_key": "0f4813ce13a9ec27f0e4a38f1a52fee4fc31b497f65329cf8f0b2e7a2b53e43e",
@@ -57110,6 +57815,11 @@
       "error": "no_unique_matching_jobposting",
       "failures": 1,
       "next_attempt_at": "2026-09-08T18:58:54.651032Z"
+    },
+    "ff1a712825e2f6d0": {
+      "source_key": "61eb371492c81b1092c505dcab86238c6f85fc685ef73ecb344654a0215202a1",
+      "version": 5,
+      "status": "pending"
     },
     "ff33a6159ee91659": {
       "source_key": "0b4a43d0cf894d071e8afade648a14576c663c4a5d67bdb6aabb1ed2b3fadfd4",

@@ -1,0 +1,75 @@
+{
+  "shard_id": "icims",
+  "updated_at": "2026-09-15T16:26:04Z",
+  "count": 2,
+  "postings": {
+    "0d7863521e259085": {
+      "id": "0d7863521e259085",
+      "company": "Joby Aviation",
+      "company_slug": "joby-aviation",
+      "title": "Technical Program Management Intern",
+      "location": "San Carlos, CA",
+      "locations": [
+        "San Carlos, CA"
+      ],
+      "url": "https://careers-jobyaviation.icims.com/jobs/5345/technical-program-management-intern/job",
+      "source": "icims",
+      "source_job_id": "5345",
+      "ats": "icims",
+      "posted_at": null,
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://careers-jobyaviation.icims.com/jobs/5345/technical-program-management-intern/job?in_iframe=1"
+        }
+      },
+      "description_ref": {
+        "sha256": "068eeb03661bd4998fc8c101ec78b5c1ad49845b5986d57ba73921a8b5c844ca",
+        "pack": "details/descriptions-0.json",
+        "pack_sha256": "f0ac431a67b65863559041aaba38bcdcda3f59c86811ba7121b6e53578442e8e",
+        "status": "available"
+      }
+    },
+    "1459c2e841d5522a": {
+      "id": "1459c2e841d5522a",
+      "company": "Joby Aviation",
+      "company_slug": "joby-aviation",
+      "title": "Quality Engineering Intern",
+      "location": "Marina, CA",
+      "locations": [
+        "Marina, CA"
+      ],
+      "url": "https://careers-jobyaviation.icims.com/jobs/5221/quality-engineering-intern/job",
+      "source": "icims",
+      "source_job_id": "5221",
+      "ats": "icims",
+      "posted_at": null,
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://careers-jobyaviation.icims.com/jobs/5221/quality-engineering-intern/job?in_iframe=1"
+        }
+      },
+      "description_ref": {
+        "sha256": "5a07ad4e40856cd7be87be124ed30e6e14c5434353d5d76b39804a345fcf548d",
+        "pack": "details/descriptions-5.json",
+        "pack_sha256": "3705a149ca4dd20484bdcfcfc31d1ea7779e9241b61f00f170206f2e4670b62e",
+        "status": "available"
+      }
+    }
+  }
+}

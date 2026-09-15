@@ -6,6 +6,7 @@ import { expect, it, vi } from 'vitest';
 import { NightjarDB } from '@/db/database';
 import { syncFeed } from '@/sync/feed-sync';
 import { FeedView } from '@/views/Feed/FeedView';
+import { formatDescription, pruneHeadings } from '@/details/format';
 const state = vi.hoisted(() => ({ db: null, clear: () => {}, toast: () => {} }));
 vi.mock('@/providers/DatabaseProvider', () => ({ useDatabase: () => ({ db: state.db }) }));
 vi.mock('@/providers/ProfileProvider', () => ({ useProfile: () => ({ profile: null }) }));
@@ -35,6 +36,8 @@ it.skipIf(!process.env.NIGHTJAR_RELEASE_DIR)('renders all active jobs and opens 
     fireEvent.click(buttons[0]);
     const full = screen.queryByRole('button', { name: 'Read full description' });
     if (full) fireEvent.click(full);
-    await waitFor(() => expect(document.querySelector('.full-description')?.textContent).toBe(target.description_text));
+    const expectedBlocks = pruneHeadings(formatDescription(target.description_text));
+    const expectedText = expectedBlocks.flatMap(block => block.kind === 'list' ? block.items : [block.text]).join('');
+    await waitFor(() => expect(document.querySelector('.desc')?.textContent).toBe(expectedText));
   } finally { cleanup(); vi.unstubAllGlobals(); await db.close(); }
 }, 60000);

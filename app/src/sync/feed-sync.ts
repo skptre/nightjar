@@ -79,6 +79,15 @@ const CACHE_INTEGRITY_KEY = 'nightjar_cache_integrity';
 const CACHE_INTEGRITY_VERSION = 'tauri-atomic-batch-v1';
 const PRODUCTION_FEED_BASE_URL = 'https://raw.githubusercontent.com/skptre/nightjar/main/data';
 const FETCH_TIMEOUT_MS = 15_000;
+export function getFeedFreshness(): {updatedAt: string | null; source: string | null} {
+  return {updatedAt:localStorage.getItem('nightjar_feed_published_at'),source:localStorage.getItem('nightjar_feed_source')};
+}
+function recordFeedFreshness(meta: MetaData, baseUrl?: string): void {
+  try {
+    localStorage.setItem('nightjar_feed_published_at',meta.updated_at);
+    localStorage.setItem('nightjar_feed_source',baseUrl === '/data' && !import.meta.env.DEV ? 'bundled' : import.meta.env.DEV ? 'development' : 'live');
+  } catch { /* Metadata failure must not invalidate an imported feed. */ }
+}
 const RETRY_DELAYS_MS = [250, 750] as const;
 
 export function getFeedBaseUrl(isDevelopment: boolean = import.meta.env.DEV): string {
@@ -456,11 +465,13 @@ async function syncFeedFromSource(
   const forceFullSync = needsIntegrityRepair || (localCount?.count ?? 0) < meta.count;
   if (storedHash === meta.sha256 && !forceFullSync) {
     setLastSyncedAt(new Date().toISOString());
+    recordFeedFreshness(meta, baseUrl);
     return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: true };
   }
 
   if (meta.sharded && meta.shards) {
     const result = await syncFeedSharded(db, meta, baseUrl, forceFullSync);
+    if (!result.error) recordFeedFreshness(meta, baseUrl);
     if (!result.error && !result.skipped) setCacheIntegrityVersion();
     return result;
   }
@@ -480,6 +491,7 @@ async function syncFeedFromSource(
 
   setStoredMetaHash(meta.sha256);
   setLastSyncedAt(new Date().toISOString());
+  recordFeedFreshness(meta, baseUrl);
   setCacheIntegrityVersion();
 
   return result;

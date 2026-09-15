@@ -5,12 +5,16 @@ import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 import { applyAppearance, useAppearance } from '@/hooks/useAppearance';
 import { isTauri } from '@/lib/platform';
 import { Brand, Icon } from './Icon';
+import { getFeedFreshness } from '@/sync/feed-sync';
 
 export function Layout({ children }: { children: ReactNode }): ReactNode {
   const { status } = useSync();
   const { online } = useNetworkStatus();
   const theme = useAppearance();
   const location = useLocation();
+  const freshness = getFeedFreshness();
+  const feedDate = freshness.updatedAt ? new Date(freshness.updatedAt) : null;
+  const stale = feedDate && Number.isFinite(feedDate.getTime()) && Date.now() - feedDate.getTime() > 48 * 60 * 60 * 1000;
   useEffect(() => {
     applyAppearance();
     const media = window.matchMedia?.('(prefers-color-scheme: dark)');
@@ -40,6 +44,10 @@ export function Layout({ children }: { children: ReactNode }): ReactNode {
     <main id="main-content" tabIndex={-1} className="app-main">
       {!online ? <div className="connection-notice" role="alert" data-testid="offline-banner">You're offline. Your saved information is still available.</div>
         : status === 'error' ? <div className="connection-notice" role="status">Couldn't check for new jobs. Your saved information is still available.</div> : null}
+      {(freshness.source === 'bundled' || stale) && <div className="connection-notice" role="status">
+        {freshness.source === 'bundled' ? 'Showing jobs included with this app version.' : 'The published job feed is more than two days old.'}
+        {feedDate && Number.isFinite(feedDate.getTime()) && ` Published ${feedDate.toLocaleDateString()}.`} <NavLink to="/settings">Check for new jobs</NavLink>
+      </div>}
       {children}
     </main>
   </div>;

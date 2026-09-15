@@ -1,4 +1,4 @@
-import { applyAppearance, setTheme, useAppearance, type Theme } from '@/hooks/useAppearance';
+import { setDensity, useDensity, setTheme, useAppearance, type Theme, type Density } from '@/hooks/useAppearance';
 import { Icon } from '@/components/Icon';
 import { requestNotificationPermission } from '@/sync/notifications';
 import { useWatchlist } from '@/hooks/useWatchlist';
@@ -24,6 +24,9 @@ import type { GmailAuthState } from '@/integrations/types';
 import { getAuthState, startOAuthFlow, disconnectGmail } from '@/integrations/gmail-auth';
 import { clearAllGmailData } from '@/integrations/gmail-service';
 import { clearAllLocalData } from '@/db/clear-local-data';
+import { BackupSection } from '@/backup/BackupSection';
+import { UpdateSection } from '@/updates/UpdateSection';
+import { SupportSection } from '@/support/SupportSection';
 
 export function SettingsView(): ReactNode {
   return (
@@ -33,6 +36,9 @@ export function SettingsView(): ReactNode {
       <AppearanceSection />
       <AlertsSection />
       <ProfileSection />
+      <BackupSection />
+      <UpdateSection />
+      <SupportSection />
       {GMAIL_ENABLED && isTauri() && <GmailSection />}
       <DataSection />
     </div>
@@ -49,8 +55,7 @@ function GeneralSection(): ReactNode {
       <AutoLaunchRow />
       <div className="border-t border-gray-100 pt-4">
         <p className="text-sm text-gray-500">
-          Closing the window minimizes Nightjar to the system tray. Use the tray icon or
-          &ldquo;Quit&rdquo; from the tray menu to exit completely.
+          Closing the window quits Nightjar. Minimize it to keep checking for jobs and receiving alerts in the background.
         </p>
       </div>
     </Section>
@@ -58,6 +63,7 @@ function GeneralSection(): ReactNode {
 }
 
 function AutoLaunchRow(): ReactNode {
+  const { toast } = useToast();
   const [autoLaunch, setAutoLaunch] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -72,7 +78,7 @@ function AutoLaunchRow(): ReactNode {
           setLoading(false);
         }
       } catch {
-        if (!cancelled) setLoading(false);
+        if (!cancelled) { setLoading(false); toast('Could not read the startup setting. Try changing it again.', 'error'); }
       }
     })();
     return () => { cancelled = true; };
@@ -91,11 +97,11 @@ function AutoLaunchRow(): ReactNode {
         setAutoLaunch(true);
       }
     } catch (err: unknown) {
-      console.error('Failed to toggle auto-launch:', err);
+      toast('Could not change launch on startup. Your previous setting is unchanged.', 'error');
     } finally {
       setLoading(false);
     }
-  }, [autoLaunch]);
+  }, [autoLaunch, toast]);
 
   return (
     <ToggleRow
@@ -112,13 +118,13 @@ function AutoLaunchRow(): ReactNode {
 
 function AppearanceSection(): ReactNode {
   const theme = useAppearance();
-  const [density, setDensity] = useState(() => localStorage.getItem('nightjar_density') ?? 'comfortable');
+  const density = useDensity();
   return <Section title="Appearance">
     <div className="appearance-row"><div><p className="text-sm">Theme</p><p className="home-note !mt-1">A comfortable view, day or night.</p></div>
       <div className="segmented" aria-label="Theme">{(['dark','light','system'] as Theme[]).map(value => <button key={value} aria-pressed={theme === value} onClick={() => setTheme(value)}><span className="flex items-center gap-2"><Icon name={value === 'dark' ? 'moon' : value === 'light' ? 'sun' : 'settings'} size={14} />{value[0]!.toUpperCase() + value.slice(1)}</span></button>)}</div>
     </div>
-    <div className="appearance-row"><div><p className="text-sm">Tracker rows</p><p className="home-note !mt-1">Choose how much room your applications have.</p></div>
-      <div className="segmented" aria-label="Tracker density">{['comfortable','compact'].map(value => <button key={value} aria-pressed={density === value} onClick={() => { localStorage.setItem('nightjar_density',value); setDensity(value); applyAppearance(); }}>{value[0]!.toUpperCase() + value.slice(1)}</button>)}</div>
+    <div className="appearance-row"><div><p className="text-sm">Row spacing</p><p className="home-note !mt-1">Choose how much room Jobs and Tracker rows have.</p></div>
+      <div className="segmented" aria-label="Row density">{(['comfortable','compact'] as Density[]).map(value => <button key={value} aria-pressed={density === value} onClick={() => setDensity(value)}>{value[0]!.toUpperCase() + value.slice(1)}</button>)}</div>
     </div>
   </Section>;
 }
@@ -169,6 +175,7 @@ function ProfileSection(): ReactNode {
 
   const handleGraduationChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const graduation = e.target.value;
+    if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(graduation)) return;
     updateProfile({
       graduation,
       grad_window: computeGradWindow(graduation),
@@ -305,7 +312,7 @@ function ProfileSection(): ReactNode {
               onClick={handleResetProfile}
               className="rounded-md bg-red-600 px-3 py-1 text-sm font-medium text-white hover:bg-red-700 transition-colors"
             >
-              Reset
+              Open editor
             </button>
             <button
               type="button"
@@ -654,7 +661,7 @@ function DataSection(): ReactNode {
           <div className="space-y-3">
             <p className="text-sm text-red-600 dark:text-red-400 font-medium">
               This will permanently delete all local data including your profile, cached postings,
-              application history, and preferences. This cannot be undone.
+              application history, preferences, and automatic recovery copies. Files you exported elsewhere are kept. This cannot be undone.
             </p>
             <div className="flex items-center gap-3">
               <input
@@ -728,6 +735,7 @@ function ToggleRow({
       <button
         type="button"
         role="switch"
+        aria-label={label}
         aria-checked={checked}
         disabled={disabled}
         onClick={onChange}

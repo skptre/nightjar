@@ -1,4 +1,5 @@
 import type { Profile, ScoringAdjustments } from './types';
+import { saveLocalValue } from '@/lib/storage';
 
 const STORAGE_KEY = 'nightjar_profile';
 
@@ -165,7 +166,7 @@ export function loadProfile(): Profile | null {
 }
 
 export function saveProfile(profile: Profile): void {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(profile));
+  saveLocalValue(STORAGE_KEY, JSON.stringify(profile));
 }
 
 export function clearProfile(): void {

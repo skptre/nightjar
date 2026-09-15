@@ -1,4 +1,5 @@
 use serde::Deserialize;
+mod recovery;
 use serde_json::Value as JsonValue;
 use sqlx::{Column, Row, TypeInfo, ValueRef};
 use std::process::Command;
@@ -504,6 +505,10 @@ fn show_main_window(app: &tauri::AppHandle) {
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_single_instance::init(|app, _args, _cwd| show_main_window(app)))
+        .plugin(tauri_plugin_updater::Builder::new().build())
+        .plugin(tauri_plugin_notification::init())
+        .plugin(tauri_plugin_process::init())
         .plugin(tauri_plugin_sql::Builder::default().build())
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_fs::init())
@@ -517,7 +522,11 @@ pub fn run() {
             open_external_url,
             execute_sql_batch,
             execute_sql_query,
-            close_nightjar_db
+            close_nightjar_db,
+            recovery::save_recovery_copy,
+            recovery::load_recovery_copy,
+            recovery::clear_recovery_copies,
+            recovery::backup_before_migration
         ])
         .setup(|app| {
             if cfg!(debug_assertions) {

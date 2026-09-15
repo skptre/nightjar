@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'node:url';
+import { publicDataPath } from './scripts/public-data-path.mjs';
 
 const appDirectory = path.dirname(fileURLToPath(import.meta.url));
 
@@ -39,9 +40,12 @@ export default defineConfig({
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
           if (req.url?.startsWith('/data/')) {
-            const relativePath = req.url.slice(6);
-            const filePath = path.resolve(appDirectory, '..', 'data', relativePath);
-            if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+            const dataRoot = path.resolve(appDirectory, '..', 'data');
+            const filePath = publicDataPath(dataRoot, req.url);
+            const realRelative = filePath && fs.existsSync(filePath)
+              ? path.relative(fs.realpathSync(dataRoot), fs.realpathSync(filePath)) : null;
+            if (filePath && realRelative && !realRelative.startsWith('..') && !path.isAbsolute(realRelative)
+              && fs.statSync(filePath).isFile()) {
               const ext = path.extname(filePath).toLowerCase();
               const contentType = ext === '.json' ? 'application/json' : 'text/plain';
               res.setHeader('Content-Type', contentType);

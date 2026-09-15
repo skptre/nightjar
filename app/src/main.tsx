@@ -9,18 +9,10 @@ import { SyncProvider } from '@/providers/SyncProvider';
 import { App } from '@/App';
 import './index.css';
 import { applyAppearance } from '@/hooks/useAppearance';
+import { restoreDestination } from '@/lib/startup';
 applyAppearance();
-// FOR NOW: every launch starts fresh on the landing page with no remembered
-// personalization, filters, or last destination. The local tracker (applications,
-// watched companies, cached postings) is preserved — only profile/session UI resets.
-try {
-  localStorage.removeItem('nightjar_profile');
-  localStorage.removeItem('nightjar_onboarding_dismissed');
-  localStorage.removeItem('nightjar_last_destination');
-} catch { /* localStorage unavailable */ }
-if (window.location.pathname !== '/') {
-  window.history.replaceState(null, '', '/');
-}
+restoreDestination();
+// A launch must never clear personal data. Explicit Settings actions own resets.
 
 const root = document.getElementById('root');
 if (!root) throw new Error('Root element not found');

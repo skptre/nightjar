@@ -3,6 +3,7 @@ import { useDatabase } from '@/providers/DatabaseProvider';
 import { useToast } from './Toast';
 import { Icon } from './Icon';
 import { openExternal } from '@/lib/platform';
+import { issueUrl } from '@/support/SupportSection';
 import { useWatchlist, toggleWatch } from '@/hooks/useWatchlist';
 import { getJobDetails, acquisitionStatus } from '@/details/cache';
 import { extractJobDetails } from '@/details/extract';
@@ -134,6 +135,9 @@ export function JobDetail({ posting, onClose, onAction }: {
           </div>
           {!showFull && highlights.blocks.length > 0 && <button className="button-secondary full-width mt-4" onClick={() => setShowFull(true)}>Read full description<Icon name="arrow" size={16} /></button>}
         </>}
+      <button className="text-button text-xs mt-6" onClick={() => void openExternal(issueUrl(posting.id)).then(ok => {
+        if (!ok) toast('Could not open the report page. Please try again.', 'error');
+      })}>Report a problem with this listing</button>
     </div>
   </section>;
 }

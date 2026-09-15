@@ -4,10 +4,12 @@ import { FeedView } from '@/views/Feed/FeedView';
 import { PipelineView } from '@/views/Pipeline/PipelineView';
 import { SettingsView } from '@/views/Settings/SettingsView';
 import { HomeView } from '@/views/Home/HomeView';
+import { WorkspaceServices } from '@/components/WorkspaceServices';
 
 export function App(): React.ReactNode {
   return (
     <Layout>
+      <WorkspaceServices />
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route path="/jobs" element={<FeedView />} />

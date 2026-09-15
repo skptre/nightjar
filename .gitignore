@@ -1,9 +1,20 @@
 # --- claude code ---
-.claude/settings.local.json
-.claude/plans/
+.claude/
+.codex/
+.agents/
+/AGENTS.md
+/CLAUDE.md
 
 # --- session handoff ---
 .session-handoff.md
+
+# Local credentials and release signing material (public updater key lives in config)
+*.key
+*.pem
+*.p12
+*.pfx
+.env
+.env.local
 
 # --- python ---
 __pycache__/
@@ -32,3 +43,21 @@ data/commit_msg.txt
 # --- os ---
 .DS_Store
 Thumbs.db
+
+# Local screenshots, investigations and session notes
+/app full window.png
+/description new.png
+/probe3_out.json
+/docs/core-app-september10.md
+/docs/ui-mvp-checkpoint.md
+
+# Local runtime data and diagnostic output
+*.log
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+.env.*
+!.env.example
+!app/.env.production

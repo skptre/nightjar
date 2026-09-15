@@ -10,6 +10,7 @@ import { runAutoGhost } from '@/views/Pipeline/auto-ghost';
 import { isTauri, updateTrayInfo, GMAIL_ENABLED } from '@/lib/platform';
 import { isGmailConnected } from '@/integrations/gmail-auth';
 import { runGmailScan } from '@/integrations/gmail-service';
+import { maintenanceActive, trackWorkspaceTask } from '@/lib/maintenance';
 
 export type SyncStatus = 'idle' | 'syncing' | 'error';
 
@@ -104,6 +105,11 @@ export class SyncManager {
   }
 
   async doSync(): Promise<SyncResult | null> {
+    if (maintenanceActive()) return null;
+    return trackWorkspaceTask(this.syncNow());
+  }
+
+  private async syncNow(): Promise<SyncResult | null> {
     if (this.syncing) return null;
     this.syncing = true;
 

@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { createDatabase, type Database } from '@/db/database';
+import { finishPendingRestore } from '@/backup/workspace';
 
 interface DatabaseContextValue {
   db: Database;
@@ -20,6 +21,7 @@ export function DatabaseProvider({ children }: { children: ReactNode }): ReactNo
   useEffect(() => {
     let cancelled = false;
     createDatabase()
+      .then(async instance => { await finishPendingRestore(instance); return instance; })
       .then((instance) => {
         if (!cancelled) setDb(instance);
       })

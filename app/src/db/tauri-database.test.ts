@@ -15,6 +15,7 @@ describe('TauriDatabase batching', () => {
     mocks.invoke
       .mockResolvedValueOnce([{ name: 'schema_version' }])
       .mockResolvedValueOnce([{ version: 8 }])
+      .mockResolvedValueOnce([{ version: 8 }])
       .mockResolvedValue(undefined);
   });
 
@@ -115,9 +116,11 @@ it('repairs partial migrations through the native batch interface without erasin
           }
         });
       }
+      if (command === 'backup_before_migration') return;
       throw new Error(`Unexpected command: ${command}`);
     });
     await TauriDatabase.create();
+    expect(mocks.invoke).toHaveBeenCalledWith('backup_before_migration', expect.objectContaining({version:6}));
     expect(await backing.queryOne('SELECT version FROM schema_version')).toEqual({ version: 8 });
     expect(await backing.queryOne('SELECT role_classification,classification_version FROM postings_cache'))
       .toEqual({ role_classification: 'keep', classification_version: null });

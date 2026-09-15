@@ -1,8 +1,9 @@
 import type { Database } from '@/db/database';
 import { readWatchlist } from '@/hooks/useWatchlist';
+import { notificationsGranted, sendNotice } from './notifications';
 export async function notifyWatchedJobs(db: Database, ids: string[]): Promise<void> {
-  if (localStorage.getItem('nightjar_watch_alerts') !== 'true' || !('Notification' in globalThis)
-    || Notification.permission !== 'granted' || document.visibilityState === 'visible') return;
+  if (localStorage.getItem('nightjar_watch_alerts') !== 'true' || document.visibilityState === 'visible') return;
+  try { if (!await notificationsGranted()) return; } catch { return; }
   const watched = new Set(readWatchlist().map(company => company.slug));
   if (!watched.size) return;
   let seen: string[] = [];
@@ -21,9 +22,7 @@ export async function notifyWatchedJobs(db: Database, ids: string[]): Promise<vo
   }
   if (!matching.length) return;
   try {
-    const notice = new Notification('Nightjar', { body: `${matching.length} new ${matching.length === 1 ? 'role' : 'roles'} at ${[...companies].slice(0, 2).join(' and ')}${companies.size > 2 ? ` + ${companies.size - 2} more companies` : ''}`,
-      tag: 'nightjar-watched-roles' });
-    notice.onclick = () => { window.focus(); notice.close(); };
+    await sendNotice('Nightjar', `${matching.length} new ${matching.length === 1 ? 'role' : 'roles'} at ${[...companies].slice(0, 2).join(' and ')}${companies.size > 2 ? ` + ${companies.size - 2} more companies` : ''}`, 'nightjar-watched-roles');
     localStorage.setItem('nightjar_watch_alert_seen', JSON.stringify([...seen, ...matching].slice(-2000)));
   } catch { /* Notification failure must never fail job collection. */ }
 }

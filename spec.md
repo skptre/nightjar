@@ -1,5 +1,50 @@
 # SPEC — Nightjar
 
+September 15 friends-beta contract: use a private local workspace, without accounts.
+Startup never deletes the profile or onboarding state and resumes the remembered
+destination unless opened with a deep link. Browser persistence waits for IndexedDB
+transaction completion. Failed personal-data saves are visible. Desktop startup is
+single-instance, so opening Nightjar twice focuses the existing window.
+
+Settings provides version-1 workspace JSON backup/restore, including cached postings,
+applications, outcome history, recalibration actions, company metadata, profile,
+watches and appearance. Credentials and remote URL overrides are excluded. Restore
+validates identifiers, columns, value types, supported statuses, relationships,
+settings, file size (60 MB) and record count (100,000) before any writes. It replaces
+personal tracker state and settings, retains all existing posting records, and
+invalidates derived details. SQL values are bound parameters. A database journal
+finishes restored preferences after an interrupted launch. Sync and automatic backup
+work pause during restore, reset and app installation; the UI blocks concurrent edits.
+
+Recovery copies are saved after one minute and hourly while open, and before restore
+and app updates. Copies stay in the desktop app-local backups folder or browser
+IndexedDB, with Settings previews for recovery. Database upgrades save a separate
+pre-migration snapshot; failure to save that snapshot prevents migration. Explicit
+Clear all local data also deletes automatic recovery copies; exported files elsewhere
+remain the user's responsibility. Workspace backups contain personal data and are
+not encrypted by Nightjar; treat them as private files protected by the OS account.
+
+Desktop updates use the official Tauri updater, the public GitHub Releases latest.json
+manifest, HTTPS and required cryptographic signatures. The private signing key is a
+GitHub Actions secret and must be backed up outside the repository. The public key is
+embedded in the app. Checks run ten seconds after opening and every six hours;
+installation is explicit, creates a recovery copy first, verifies the download and
+restarts. GitHub jobs build a Windows NSIS installer and draft release. Publishing a
+tested release is what makes it available to installed clients; committing app source
+alone does not update anyone's app. Keep com.nightjar.app stable across releases.
+
+Jobs uses the available viewport height and centers within the area beside the
+desktop sidebar. Compact changes both Jobs (56px versus 72px) and Tracker rows; the
+virtual list uses the matching row height. Welcome has no footer slogans. Settings
+accurately says that closing quits; minimizing keeps background checks active. Native
+watched alerts use the Tauri notification plugin. Feed age and bundled snapshots are
+visible, with manual job checks, local diagnostics export and explicit issue reporting.
+
+The main polling schedule is prepared for every 15 minutes. Scheduled feed/discovery
+jobs require a public repository. The USAJOBS workflow accepts either USAJOBS_API_KEY
+or the existing USAJOBS_KEY secret and still requires USAJOBS_EMAIL. See
+docs/beta-release.md for validation evidence and outstanding distribution gates.
+
 September 10 clarified persistence contract (supersedes the earlier fresh-session
 request): browser IndexedDB and native SQLite persist across launches. Startup never
 clears profiles, watches, tracker history or public cache, including one-time reset

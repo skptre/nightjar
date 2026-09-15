@@ -105,6 +105,6 @@ function WelcomeScreen({
       <div className="welcome-step"><span>01</span><div><h2>Find your kind of work.</h2><p>Explore roles across fields. Read the details that matter.</p></div></div>
       <div className="welcome-step"><span>02</span><div><h2>Keep the good ones close.</h2><p>Save opportunities. Follow companies you care about.</p></div></div>
       <div className="welcome-step"><span>03</span><div><h2>Make space for what’s next.</h2><p>Applications, dates and notes. All in one familiar place.</p></div></div>
-    </section></div><footer className="welcome-footer"><span>Built for the beginning of something.</span><span>Your tracker stays in this browser or device.</span></footer>
+    </section></div>
   </main>;
 }

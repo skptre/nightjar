@@ -49,6 +49,13 @@ export class TauriDatabase implements Database {
       await instance.initSchema();
     }
 
+    const { getSchemaVersion, MIGRATIONS } = await import('./migrations');
+    const version = await getSchemaVersion(instance);
+    if (version < Math.max(...MIGRATIONS.map(m => m.version))) {
+      const { invoke } = await import('@tauri-apps/api/core');
+      const { readWorkspaceSettings } = await import('@/backup/workspace');
+      await invoke('backup_before_migration', { version, settings: JSON.stringify(readWorkspaceSettings()) });
+    }
     await runMigrations(instance);
 
     return instance;
@@ -92,7 +99,7 @@ export class TauriDatabase implements Database {
     await invoke('execute_sql_batch', {
       db: NIGHTJAR_DB,
       statements: nativeStatements,
-    });
+    }).catch((error: unknown) => { window.dispatchEvent(new Event('nightjar:save-error')); throw error; });
   }
 
   async query<T>(sql: string, params?: SqlValue[]): Promise<T[]> {

@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const pkg = JSON.parse(fs.readFileSync('package.json','utf8'));
+const config = JSON.parse(fs.readFileSync('src-tauri/tauri.conf.json','utf8'));
+const rust = fs.readFileSync('src-tauri/Cargo.toml','utf8').match(/^version = "([^"]+)"/m)?.[1];
+assert.equal(pkg.version, config.version, 'Frontend and desktop versions differ');
+assert.equal(rust, config.version, 'Rust and desktop versions differ');
+if (process.env.GITHUB_REF_TYPE === 'tag') assert.equal(process.env.GITHUB_REF_NAME, `v${config.version}`, 'Tag does not match app version');
+assert.equal(config.identifier, 'com.nightjar.app', 'Changing app identity can orphan existing user data');
+assert.equal(config.bundle.createUpdaterArtifacts, true);
+assert.ok(config.plugins.updater.pubkey.length > 40, 'Updater public key is missing');
+assert.deepEqual(config.plugins.updater.endpoints, ['https://github.com/skptre/nightjar/releases/latest/download/latest.json']);
+console.log(`Release configuration verified: ${config.version}`);

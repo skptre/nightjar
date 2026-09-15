@@ -1,5 +1,7 @@
 import { useSyncExternalStore } from 'react';
+import { saveLocalValue } from '@/lib/storage';
 export type Theme = 'dark' | 'light' | 'system';
+export type Density = 'comfortable' | 'compact';
 const event = 'nightjar:appearance';
 export function getTheme(): Theme {
   const value = localStorage.getItem('nightjar_theme');
@@ -12,7 +14,7 @@ export function applyAppearance(): void {
   document.documentElement.dataset.density = localStorage.getItem('nightjar_density') ?? 'comfortable';
 }
 export function setTheme(theme: Theme): void {
-  localStorage.setItem('nightjar_theme', theme);
+  saveLocalValue('nightjar_theme', theme);
   applyAppearance();
   window.dispatchEvent(new Event(event));
 }
@@ -22,3 +24,8 @@ function subscribe(callback: () => void): () => void {
   return () => { window.removeEventListener(event, callback); window.removeEventListener('storage', callback); };
 }
 export function useAppearance(): Theme { return useSyncExternalStore(subscribe, getTheme); }
+export function getDensity(): Density { return localStorage.getItem('nightjar_density') === 'compact' ? 'compact' : 'comfortable'; }
+export function setDensity(density: Density): void {
+  saveLocalValue('nightjar_density', density); applyAppearance(); window.dispatchEvent(new Event(event));
+}
+export function useDensity(): Density { return useSyncExternalStore(subscribe, getDensity); }

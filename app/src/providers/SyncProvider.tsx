@@ -5,6 +5,7 @@ import { SyncManager, type SyncStatus } from '@/sync/sync-manager';
 import { DEFAULT_SYNC_INTERVAL_MS } from '@/profile/types';
 import { listenForTraySync } from '@/lib/platform';
 import { recomputeAll } from '@/classify/recompute';
+import { trackWorkspaceTask } from '@/lib/maintenance';
 
 interface SyncContextValue {
   status: SyncStatus;
@@ -12,6 +13,7 @@ interface SyncContextValue {
   lastError: string | null;
   newPostingCount: number;
   clearNewPostingCount: () => void;
+  refreshJobs: () => Promise<void>;
 }
 
 const SyncContext = createContext<SyncContextValue | null>(null);
@@ -45,7 +47,7 @@ export function SyncProvider({ children }: { children: ReactNode }): ReactNode {
         : db.run(
           'UPDATE postings_cache SET eligibility = NULL, score = NULL, score_breakdown = NULL',
         );
-      void refresh.catch((error: unknown) => {
+      void trackWorkspaceTask<unknown>(refresh).catch((error: unknown) => {
         console.warn('[nightjar] profile classification refresh failed:', error);
       });
     }, 0);
@@ -82,9 +84,10 @@ export function SyncProvider({ children }: { children: ReactNode }): ReactNode {
   const clearNewPostingCount = useCallback(() => {
     manager.clearNewPostingCount();
   }, [manager]);
+  const refreshJobs = useCallback(async () => { await manager.doSync(); }, [manager]);
 
   return (
-    <SyncContext.Provider value={{ status, lastSyncedAt, lastError, newPostingCount, clearNewPostingCount }}>
+    <SyncContext.Provider value={{ status, lastSyncedAt, lastError, newPostingCount, clearNewPostingCount, refreshJobs }}>
       {children}
     </SyncContext.Provider>
   );

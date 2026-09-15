@@ -3,6 +3,7 @@ import { resolve } from 'node:path';
 import { afterEach, expect, it, vi } from 'vitest';
 import { NightjarDB } from '@/db/database';
 import { syncFeed } from '@/sync/feed-sync';
+import { createWorkspaceBackup, parseWorkspaceBackup, restoreWorkspace } from '@/backup/workspace';
 
 // Explicit local release check. Never makes network requests or uses personal data.
 const release = process.env['NIGHTJAR_RELEASE_DIR'];
@@ -32,6 +33,16 @@ it.skipIf(!release)('imports every staged public description intact through real
       if (row.description) descriptions++;
     }
     expect(descriptions).toBeGreaterThan(0);
+    const first = rows[0].id;
+    await db.run("INSERT INTO applications(posting_id,status,notes,created_at,updated_at) VALUES (?,'oa','Recovery test note','2026-09-15','2026-09-15')", [first]);
+    const backup = parseWorkspaceBackup(await createWorkspaceBackup(db));
+    const restored = await NightjarDB.createInMemory();
+    try {
+      await restoreWorkspace(restored, backup);
+      expect(await restored.queryOne('SELECT notes,status FROM applications')).toEqual({notes:'Recovery test note',status:'oa'});
+      expect((await restored.query('SELECT id FROM postings_cache')).length).toBe(rows.length);
+      expect((await restored.query('SELECT id FROM postings_cache WHERE description IS NOT NULL')).length).toBe(descriptions);
+    } finally { await restored.close(); }
     console.info(`Release verified: ${rows.length} postings; ${descriptions} exact descriptions.`);
   } finally { await db.close(); }
 }, 60000);

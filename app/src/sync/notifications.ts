@@ -1,4 +1,5 @@
 import type { Database } from '@/db/database';
+import { isTauri } from '@/lib/platform';
 
 const NOTIFICATION_CAP = 15;
 
@@ -55,10 +56,25 @@ export async function getNewPostingSummaries(
 }
 
 export async function requestNotificationPermission(): Promise<NotificationPermission> {
+  if (isTauri()) {
+    const api = await import('@tauri-apps/plugin-notification');
+    return await api.isPermissionGranted() ? 'granted' : api.requestPermission();
+  }
   if (!('Notification' in globalThis)) return 'denied';
   if (Notification.permission === 'granted') return 'granted';
   if (Notification.permission === 'denied') return 'denied';
   return Notification.requestPermission();
+}
+
+export async function notificationsGranted(): Promise<boolean> {
+  if (isTauri()) return (await import('@tauri-apps/plugin-notification')).isPermissionGranted();
+  return 'Notification' in globalThis && Notification.permission === 'granted';
+}
+
+export async function sendNotice(title: string, body: string, tag: string): Promise<void> {
+  if (isTauri()) { (await import('@tauri-apps/plugin-notification')).sendNotification({ title, body }); return; }
+  const notice = new Notification(title, {body, tag});
+  notice.onclick = () => { window.focus(); notice.close(); };
 }
 
 export async function fireNewPostingNotifications(

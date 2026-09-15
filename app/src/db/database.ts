@@ -1,6 +1,6 @@
 import initSqlJs, { type Database as SqlJsDatabase } from 'sql.js';
 import { loadDatabase, saveDatabase } from './indexeddb';
-import { runMigrations } from './migrations';
+import { runMigrations, MIGRATIONS, getSchemaVersion } from './migrations';
 import { isTauri } from '@/lib/platform';
 import schemaSQL from './schema.sql?raw';
 import type { Database, DatabaseTransaction, SqlStatement, SqlValue } from './types';
@@ -29,6 +29,9 @@ export class NightjarDB implements Database {
       await instance.initSchema();
     }
 
+    if (savedData && await getSchemaVersion(instance) < Math.max(...MIGRATIONS.map(m => m.version))) {
+      await saveDatabase(savedData, 'before-migration');
+    }
     await runMigrations(instance);
     return instance;
   }
@@ -144,7 +147,8 @@ export class NightjarDB implements Database {
   private async persist(): Promise<void> {
     if (!this.shouldPersist) return;
     const data = this.db.export();
-    await saveDatabase(new Uint8Array(data));
+    try { await saveDatabase(new Uint8Array(data)); }
+    catch (error) { window.dispatchEvent(new Event('nightjar:save-error')); throw error; }
   }
 
   private runDirect(sql: string, params?: SqlValue[]): void {

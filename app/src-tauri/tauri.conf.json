@@ -29,18 +29,32 @@
   },
   "plugins": {
     "sql": {
-      "preload": ["sqlite:nightjar.db"]
+      "preload": [
+        "sqlite:nightjar.db"
+      ]
+    },
+    "updater": {
+      "endpoints": [
+        "https://github.com/skptre/nightjar/releases/latest/download/latest.json"
+      ],
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDVBNTZFMTY0NjQ5MzBFNQpSV1RsTUVsR0ZtNmxCWlRhQkptQW9wZlZpa09PUzlTTlJ4bExQQmluME1jL3l4Tm0rQXZyQnVaUAo=",
+      "windows": {
+        "installMode": "passive"
+      }
     }
   },
   "bundle": {
     "active": true,
-    "targets": ["nsis"],
+    "targets": [
+      "nsis"
+    ],
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
       "icons/128x128@2x.png",
       "icons/icon.icns",
       "icons/icon.ico"
-    ]
+    ],
+    "createUpdaterArtifacts": true
   }
 }

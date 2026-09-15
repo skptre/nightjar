@@ -10,6 +10,7 @@ import { useProfile } from '@/providers/ProfileProvider';
 import { useSync } from '@/providers/SyncProvider';
 import { useKeyboard } from '@/hooks/useKeyboard';
 import { useVirtualList } from '@/hooks/useVirtualList';
+import { useDensity } from '@/hooks/useAppearance';
 import { openExternal } from '@/lib/platform';
 import { useToast } from '@/components/Toast';
 import { PostingRow, UndoToast, type PostingAction, type PostingRowData } from './PostingRow';
@@ -40,7 +41,6 @@ interface PostingQueryRow {
   application_status: string | null;
 }
 
-const POSTING_ROW_HEIGHT = 72;
 
 export const CURRENT_JOBS_QUERY = `SELECT p.id, p.data, p.first_seen_at, p.closed_at, p.category, p.category_tags, p.role_classification,
               p.term, p.eligibility, p.score, p.score_breakdown, p.description, a.status AS application_status
@@ -101,6 +101,7 @@ export function getFeedEmptyState(
 }
 
 export function FeedView(): React.ReactNode {
+  const density = useDensity();
   const { db } = useDatabase();
   const { toast } = useToast();
   const { profile } = useProfile();
@@ -206,7 +207,7 @@ export function FeedView(): React.ReactNode {
     offsetTop,
     containerRef: virtualContainerRef,
     scrollToIndex,
-  } = useVirtualList({ itemCount: postings.length, itemHeight: POSTING_ROW_HEIGHT });
+  } = useVirtualList({ itemCount: postings.length, itemHeight: density === 'compact' ? 56 : 72 });
 
   useEffect(() => {
     if (selectedIndex >= 0 && selectedIndex < postings.length) scrollToIndex(selectedIndex);

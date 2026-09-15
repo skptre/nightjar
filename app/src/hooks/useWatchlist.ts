@@ -1,4 +1,5 @@
 import { useSyncExternalStore } from 'react';
+import { saveLocalValue } from '@/lib/storage';
 export interface WatchedCompany { slug: string; name: string; since: string }
 const key = 'nightjar_watched_companies';
 const event = 'nightjar:watchlist';
@@ -17,7 +18,7 @@ export function toggleWatch(slug: string, name: string): void {
   const current = readWatchlist();
   const next = current.some(c => c.slug === slug) ? current.filter(c => c.slug !== slug)
     : [...current, { slug, name, since: new Date().toISOString() }];
-  localStorage.setItem(key, JSON.stringify(next)); window.dispatchEvent(new Event(event));
+  saveLocalValue(key, JSON.stringify(next)); window.dispatchEvent(new Event(event));
 }
 export function useWatchlist(): WatchedCompany[] {
   useSyncExternalStore(subscribe, () => localStorage.getItem(key));

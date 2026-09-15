@@ -1,7 +1,7 @@
 {
   "shard_id": "ashby",
-  "updated_at": "2026-09-09T02:28:46.794887Z",
-  "count": 78,
+  "updated_at": "2026-09-15T16:26:04Z",
+  "count": 117,
   "postings": {
     "005ae9660f943a0a": {
       "id": "005ae9660f943a0a",
@@ -19,7 +19,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-14T19:05:18.297+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Early Career",
@@ -27,16 +27,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "notion",
+          "job_id": "e66c6658-9e65-4c58-8db2-844628b6e8f8",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "01e6519ddd22e02751706de12b02388cba582d2c8911c4b553b7407c5dc2c50e",
         "pack": "details/descriptions-0.json",
-        "pack_sha256": "db390bd6ee04c19e460fdf06c7ef87e5616ffaebc7a158af7c4df6b813904497",
+        "pack_sha256": "f0ac431a67b65863559041aaba38bcdcda3f59c86811ba7121b6e53578442e8e",
         "status": "available"
       }
     },
@@ -55,7 +56,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-07T01:31:31.243+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Intern",
@@ -66,49 +67,182 @@
         "328089fdd1eda763"
       ],
       "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "kastle",
+          "job_id": "6f32db51-de45-472f-a9c8-d9419d3634ee",
+          "eu": "false"
+        },
+        "sponsorship": "Other",
+        "terms": [
+          "Summer 2026"
+        ],
+        "degrees": [
+          "Bachelor's",
+          "Master's",
+          "Bootcamp"
+        ],
+        "category": "Software",
         "provenance": [
           {
             "source": "simplify",
             "source_job_id": "600d65ac-5918-4d2c-80ed-c6a5ba2a90d4",
             "url": "https://jobs.ashbyhq.com/kastle/6f32db51-de45-472f-a9c8-d9419d3634ee/application?embed=true",
-            "discovered_at": "2026-09-05T00:50:25Z"
+            "discovered_at": "2026-09-15T16:26:04Z"
           }
-        ],
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
-        }
+        ]
       },
       "description_ref": {
         "sha256": "fd5985686fbe5a326a6652fda924cd2b3096eaaf44ad8a93d53f97180252b2ef",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "ddbb04d8ce6e0292c6ffa65835cafa87dcd6eb5ffdd183b7dbf95a1548e2e882",
+        "pack_sha256": "4a02dc930a2c4ff5da2d6137599e4f674842c7e8775fe7f5e159988c07c77876",
         "status": "available"
       }
     },
-    "01b5c5a4364966bf": {
-      "id": "01b5c5a4364966bf",
-      "company": "Ramp",
-      "company_slug": "ramp",
-      "title": "Software Engineer Internship, Android",
-      "location": "New York, NY (HQ)",
+    "0278a0d4c0f862da": {
+      "id": "0278a0d4c0f862da",
+      "company": "Replit",
+      "company_slug": "replit",
+      "title": "Software Engineer - New Grad (2027)",
+      "location": "Foster City, CA",
       "locations": [
-        "New York, NY (HQ)",
-        "San Francisco, CA"
+        "Foster City, CA"
       ],
-      "url": "https://jobs.ashbyhq.com/ramp/67fadb77-43d8-4449-954b-d4cf2c6d3b8b",
+      "url": "https://jobs.ashbyhq.com/replit/b5e81eae-06f9-4798-8988-2d06ca936dbc",
       "source": "ashby",
-      "source_job_id": "67fadb77-43d8-4449-954b-d4cf2c6d3b8b",
+      "source_job_id": "b5e81eae-06f9-4798-8988-2d06ca936dbc",
       "ats": "ashby",
-      "posted_at": "2025-08-07T20:49:38.961+00:00",
-      "first_seen_at": "2026-09-03T21:23:54Z",
-      "last_seen_at": "2026-09-03T21:23:54Z",
-      "closed_at": "2026-09-04T01:18:49Z",
-      "compensation": "$11.7K per month",
-      "employment_type": "Intern",
+      "posted_at": "2026-09-09T18:23:24.396+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "compensation": "$140K - $180K",
+      "employment_type": "FullTime",
       "department": "Engineering",
-      "workplace_type": "remote"
+      "workplace_type": "remote",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$140K – $180K • Offers Equity • Offers Bonus • Performance Based Bonus",
+              "scrapeableCompensationSalarySummary": "$140K - $180K",
+              "compensationTiers": [
+                {
+                  "id": "8f718576-d408-4be5-bd0a-a14040f378a0",
+                  "tierSummary": "Compensation is determined based on career level, with the base salary for this role ranging from $140K – $180K • Offers Equity • Offers Bonus • Performance Based Bonus",
+                  "title": null,
+                  "additionalInformation": "Performance Based Bonus",
+                  "components": [
+                    {
+                      "id": "8b61b786-d75f-4605-a9af-9ce349a77346",
+                      "summary": "Offers Equity",
+                      "compensationType": "EquityPercentage",
+                      "interval": "NONE",
+                      "currencyCode": null,
+                      "minValue": null,
+                      "maxValue": null
+                    },
+                    {
+                      "id": "08f82e35-ef45-4ebf-b7ce-cc856e912136",
+                      "summary": "Offers Bonus",
+                      "compensationType": "Bonus",
+                      "interval": "1 YEAR",
+                      "currencyCode": "USD",
+                      "minValue": null,
+                      "maxValue": null
+                    },
+                    {
+                      "id": "d2f34349-441c-43c9-ac4b-077b352670f0",
+                      "summary": "Compensation is determined based on career level, with the base salary for this role ranging from $140K – $180K",
+                      "compensationType": "Salary",
+                      "interval": "1 YEAR",
+                      "currencyCode": "USD",
+                      "minValue": 140000,
+                      "maxValue": 180000
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "EquityPercentage",
+                  "interval": "NONE",
+                  "currencyCode": null,
+                  "minValue": null,
+                  "maxValue": null
+                },
+                {
+                  "compensationType": "Bonus",
+                  "interval": "1 YEAR",
+                  "currencyCode": "USD",
+                  "minValue": null,
+                  "maxValue": null
+                },
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 YEAR",
+                  "currencyCode": "USD",
+                  "minValue": 140000,
+                  "maxValue": 180000
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "replit",
+          "job_id": "b5e81eae-06f9-4798-8988-2d06ca936dbc",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "d2b84cadece197e5bca559568c8f3f4226e35c2c5c50144e190d5ebb8a2b5eca",
+        "pack": "details/descriptions-d.json",
+        "pack_sha256": "ff5cb490346190370686fa1c71e42337bccd54097db2fd1e3ce0e645a6bf2e69",
+        "status": "available"
+      }
+    },
+    "035ab38e8a56aed8": {
+      "id": "035ab38e8a56aed8",
+      "company": "Saronic",
+      "company_slug": "saronic",
+      "title": "Information Technology Intern (Summer 2027)",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/saronic/0fa1ca8f-0dca-43cc-a5fa-59c40840986f",
+      "source": "ashby",
+      "source_job_id": "0fa1ca8f-0dca-43cc-a5fa-59c40840986f",
+      "ats": "ashby",
+      "posted_at": "2026-09-09T19:46:54.426+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Internships & Co-Ops",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "saronic",
+          "job_id": "0fa1ca8f-0dca-43cc-a5fa-59c40840986f",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "c46a8216380706b95d676d03c623a54bab2f27a53c4bef99de47bc6bab660529",
+        "pack": "details/descriptions-c.json",
+        "pack_sha256": "5c3d23d75ef6e5e9deb218a8d40d283c2980465acc53731f3aedd5a452c04a0d",
+        "status": "available"
+      }
     },
     "0391a4e7cbc12cca": {
       "id": "0391a4e7cbc12cca",
@@ -125,7 +259,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-28T18:27:38.466+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Operations",
@@ -133,16 +267,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "skydio",
+          "job_id": "3444dc8a-1b2a-4bb1-9bfb-15252d2a25e5",
+          "eu": "false"
         }
       },
       "description_ref": {
-        "sha256": "736f86dfc9a4f6ef1eb64e0252640aaebc0cf495ae7034ad597b3f0caae47ab0",
-        "pack": "details/descriptions-7.json",
-        "pack_sha256": "8d0721fb162252aa6d40de9127de78bbba0a9211d760cee115ef9de94fa3fc77",
+        "sha256": "93dd51c437cb36975a814f655dc061f34ae50a5b71dff1607dc78dd610442cc8",
+        "pack": "details/descriptions-9.json",
+        "pack_sha256": "830afdf187116b7c0497d02edb84cf5e1d1d40c1f22161dee2a9e0fd8f2b3056",
         "status": "available"
       }
     },
@@ -161,7 +296,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-03T23:28:02.086+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "R&D",
@@ -169,16 +304,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "skydio",
+          "job_id": "ae4a6f7d-a240-4fa2-8c8e-04cc906e4ef9",
+          "eu": "false"
         }
       },
       "description_ref": {
-        "sha256": "b768ae57d6eca508e1a13d51db2c70ef3a4db63b2792e07cef1c964e2d94a42b",
-        "pack": "details/descriptions-b.json",
-        "pack_sha256": "343f7d07bf1059570d5b5e0985528a9444792e21c82cda9e758e97b68b39328b",
+        "sha256": "462de6a9bc667f8848878877bbaac159c150f48afc30145d9683184115d7f721",
+        "pack": "details/descriptions-4.json",
+        "pack_sha256": "72c70f750ff3eaf4149aad192433cefb9a6f92e1efd22969bd785b76979853b3",
         "status": "available"
       }
     },
@@ -198,7 +334,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-14T19:07:13.459+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Early Career",
@@ -206,16 +342,91 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "notion",
+          "job_id": "3fba1c39-c5cb-47d7-9ad2-1cec4d7e9d0c",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "612f4a5ca07263b010efa5e74619a2154f3499b2a6181c4217cc692e69adb471",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "4ba855f997906341c9a413b8fa9718daac44736bff81d6ed54d5e3f76b897a2a",
+        "pack_sha256": "8af3b06e9701a166370edcb4aa95228de724c5ef3120939aa8b5e6a41ccdceb0",
+        "status": "available"
+      }
+    },
+    "0dfa572a8a2b3faf": {
+      "id": "0dfa572a8a2b3faf",
+      "company": "Base Power",
+      "company_slug": "base-power",
+      "title": "Deployments Operations Intern",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/base-power/7be0dc29-e42c-4a1f-8512-fd94c13aabf2",
+      "source": "ashby",
+      "source_job_id": "7be0dc29-e42c-4a1f-8512-fd94c13aabf2",
+      "ats": "ashby",
+      "posted_at": "2026-09-15T14:21:41.748+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Deployments",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "7be0dc29-e42c-4a1f-8512-fd94c13aabf2",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "504b559124a94021f0b9b5ccfc370147c0d963374e21b9b9c15bfabb51843378",
+        "pack": "details/descriptions-5.json",
+        "pack_sha256": "3705a149ca4dd20484bdcfcfc31d1ea7779e9241b61f00f170206f2e4670b62e",
+        "status": "available"
+      }
+    },
+    "0f79bfcdbf07c078": {
+      "id": "0f79bfcdbf07c078",
+      "company": "Physical Intelligence",
+      "company_slug": "physical-intelligence",
+      "title": "Research Internships",
+      "location": "San Francisco, CA",
+      "locations": [
+        "San Francisco, CA"
+      ],
+      "url": "https://jobs.ashbyhq.com/physicalintelligence/f020ff1a-4b4c-4415-8434-2da5010a7076",
+      "source": "ashby",
+      "source_job_id": "f020ff1a-4b4c-4415-8434-2da5010a7076",
+      "ats": "ashby",
+      "posted_at": "2024-08-24T23:26:05.122+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "AI & Robotics Research",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "physicalintelligence",
+          "job_id": "f020ff1a-4b4c-4415-8434-2da5010a7076",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "fdace68f2395fbf88502610063d402c1062142309844a2953964e51b11c892a7",
+        "pack": "details/descriptions-f.json",
+        "pack_sha256": "4a02dc930a2c4ff5da2d6137599e4f674842c7e8775fe7f5e159988c07c77876",
         "status": "available"
       }
     },
@@ -232,25 +443,63 @@
       "source": "ashby",
       "source_job_id": "c546e532-4378-41d3-8ef3-4861cc3427e6",
       "ats": "ashby",
-      "posted_at": "2026-09-01T02:03:06.664+00:00",
+      "posted_at": "2026-09-10T00:12:00.378+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Campus Recruiting",
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "shield-ai",
+          "job_id": "c546e532-4378-41d3-8ef3-4861cc3427e6",
+          "eu": "false"
         }
       },
       "description_ref": {
-        "sha256": "b9bf2e2af27468fd33e388a6ea5ce2aca0412283fa67f45847236c646da9db58",
-        "pack": "details/descriptions-b.json",
-        "pack_sha256": "343f7d07bf1059570d5b5e0985528a9444792e21c82cda9e758e97b68b39328b",
+        "sha256": "9c5eb240028bc86a36b6345b55c501b7f91e005d0e2a818783214b4887ca2d40",
+        "pack": "details/descriptions-9.json",
+        "pack_sha256": "830afdf187116b7c0497d02edb84cf5e1d1d40c1f22161dee2a9e0fd8f2b3056",
+        "status": "available"
+      }
+    },
+    "12940e6a1c28d243": {
+      "id": "12940e6a1c28d243",
+      "company": "Base Power",
+      "company_slug": "base-power",
+      "title": "Business Operations Intern, Commercial Partnerships",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/base-power/db6bb778-21d3-47d1-8f97-a42543f88b8f",
+      "source": "ashby",
+      "source_job_id": "db6bb778-21d3-47d1-8f97-a42543f88b8f",
+      "ats": "ashby",
+      "posted_at": "2026-09-14T23:46:55.705+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Business Operations",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "db6bb778-21d3-47d1-8f97-a42543f88b8f",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "ad4cab9a2c067ec78744f0b7bb608b5a37949a35a4ece3eb90b94781418ce197",
+        "pack": "details/descriptions-a.json",
+        "pack_sha256": "160588a09dba2f79eeb975e778caa11095a369ae4fa4ec9c08bbaf0b4be80d5a",
         "status": "available"
       }
     },
@@ -269,24 +518,24 @@
       "ats": "ashby",
       "posted_at": "2026-08-03T20:09:43.070+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Persona AI",
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "json_ld",
-          "completeness": "available",
-          "identity": "matched_url_and_title",
-          "resolved_url": "https://jobs.ashbyhq.com/persona.ai/fd514a3f-4138-48d5-9862-05ff74a4ca08"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "persona.ai",
+          "job_id": "fd514a3f-4138-48d5-9862-05ff74a4ca08",
+          "eu": "false"
         }
       },
       "description_ref": {
-        "sha256": "5d56eb975d36557e272ee887c68b738e69304e601e5ae90254e5b229ad19aefb",
-        "pack": "details/descriptions-5.json",
-        "pack_sha256": "3a0c200792b5419180fae58bb4f5a771ff97024791bdf94c5dbf69123f84d3a2",
+        "sha256": "402193adcbda2445ea1687592ce4da2e4d2c8de6c53cd007d730892811c97270",
+        "pack": "details/descriptions-4.json",
+        "pack_sha256": "72c70f750ff3eaf4149aad192433cefb9a6f92e1efd22969bd785b76979853b3",
         "status": "available"
       }
     },
@@ -305,7 +554,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-15T23:32:19.419+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "University",
@@ -313,16 +562,54 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "netic",
+          "job_id": "f2d170eb-c4c3-4715-9d2e-84dd4fe857c8",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "fb6fa7a32beaa3fbe1b00bd14dbe09b33399719cf709e5393d1f2b56495daddd",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "ddbb04d8ce6e0292c6ffa65835cafa87dcd6eb5ffdd183b7dbf95a1548e2e882",
+        "pack_sha256": "4a02dc930a2c4ff5da2d6137599e4f674842c7e8775fe7f5e159988c07c77876",
+        "status": "available"
+      }
+    },
+    "189870f0ef3ebbed": {
+      "id": "189870f0ef3ebbed",
+      "company": "Base Power",
+      "company_slug": "base-power",
+      "title": "Finance - Analytics Intern",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/base-power/eea685b7-23a1-4a86-b661-9aeb737c9866",
+      "source": "ashby",
+      "source_job_id": "eea685b7-23a1-4a86-b661-9aeb737c9866",
+      "ats": "ashby",
+      "posted_at": "2026-09-14T23:47:52.939+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Business Operations",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "eea685b7-23a1-4a86-b661-9aeb737c9866",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "f57a51a02d2bc224f2f5fb8d046bd814be43d4b6f1f7f90db9aa362744c0d5c6",
+        "pack": "details/descriptions-f.json",
+        "pack_sha256": "4a02dc930a2c4ff5da2d6137599e4f674842c7e8775fe7f5e159988c07c77876",
         "status": "available"
       }
     },
@@ -341,7 +628,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-15T02:00:46.815+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Engineering",
@@ -349,16 +636,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "dedalus-labs",
+          "job_id": "fab1accf-2b21-453b-869f-a08759fa605c",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "5cc3b332615d67fad779255dff09d3abbd1b2bf476a80da95633f293e01c7140",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "3a0c200792b5419180fae58bb4f5a771ff97024791bdf94c5dbf69123f84d3a2",
+        "pack_sha256": "3705a149ca4dd20484bdcfcfc31d1ea7779e9241b61f00f170206f2e4670b62e",
         "status": "available"
       }
     },
@@ -377,7 +665,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-31T01:21:03.429+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Engineering",
@@ -385,16 +673,66 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "heliux",
+          "job_id": "c71c0650-b6f7-491f-b291-6b280f58ee9c",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "b03ae5078fb6275fc71773f3f718507b5fffc94e613589ef8b3fc0f494f2ddc2",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "343f7d07bf1059570d5b5e0985528a9444792e21c82cda9e758e97b68b39328b",
+        "pack_sha256": "e59fe657d00b546993cb578406dfcb5a782ea92d110436753d401245f46f939b",
+        "status": "available"
+      }
+    },
+    "22b89222105168b4": {
+      "id": "22b89222105168b4",
+      "company": "Hex",
+      "company_slug": "hex",
+      "title": "Product Engineer Intern",
+      "location": "San Francisco, CA",
+      "locations": [
+        "San Francisco, CA"
+      ],
+      "url": "https://jobs.ashbyhq.com/hex/45022740-b0ca-4a54-a98b-b90f9b4a9a30",
+      "source": "ashby",
+      "source_job_id": "45022740-b0ca-4a54-a98b-b90f9b4a9a30",
+      "ats": "ashby",
+      "posted_at": "2026-09-09T05:39:11.708+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "FullTime",
+      "department": "University",
+      "workplace_type": "remote",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": null,
+              "scrapeableCompensationSalarySummary": null,
+              "compensationTiers": [],
+              "summaryComponents": []
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "hex",
+          "job_id": "45022740-b0ca-4a54-a98b-b90f9b4a9a30",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "473ddd8e25b438e4447f5037eedf918d4e28654b1379f6e358b6b7256e5f949e",
+        "pack": "details/descriptions-4.json",
+        "pack_sha256": "72c70f750ff3eaf4149aad192433cefb9a6f92e1efd22969bd785b76979853b3",
         "status": "available"
       }
     },
@@ -413,7 +751,7 @@
       "ats": "ashby",
       "posted_at": "2026-05-21T21:09:03.523+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Hardware Engineering",
@@ -421,16 +759,54 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "f22cee0e-55d9-42cd-806e-1c1fc7217770",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "d89e0ac2168014946e3094e0aa999fc67f930b3f1d0ec103e9cb6697c836fc0f",
         "pack": "details/descriptions-d.json",
-        "pack_sha256": "bdb8f1b74cea364a79bb5b9623cf0140bb6540d0401136d9ccc14fb7771c6fa0",
+        "pack_sha256": "ff5cb490346190370686fa1c71e42337bccd54097db2fd1e3ce0e645a6bf2e69",
+        "status": "available"
+      }
+    },
+    "296cee9de3ccbd39": {
+      "id": "296cee9de3ccbd39",
+      "company": "Saronic",
+      "company_slug": "saronic",
+      "title": "Software Engineer Intern (Summer 2027)",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/saronic/60afb634-5515-4347-824a-3816735541c2",
+      "source": "ashby",
+      "source_job_id": "60afb634-5515-4347-824a-3816735541c2",
+      "ats": "ashby",
+      "posted_at": "2026-09-09T19:45:15.873+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Internships & Co-Ops",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "saronic",
+          "job_id": "60afb634-5515-4347-824a-3816735541c2",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "3874e3421e75a9cd4d2f68ec4bc17d40c8542185d17efef4de4a6a1729c87f9a",
+        "pack": "details/descriptions-3.json",
+        "pack_sha256": "d8c6a9fb682073251abb19b5fee5733b776bf072b21bec5d739741ecb1dd659c",
         "status": "available"
       }
     },
@@ -456,6 +832,100 @@
       "workplace_type": "remote",
       "description_status": "unavailable"
     },
+    "2a7c8a05748a05b1": {
+      "id": "2a7c8a05748a05b1",
+      "company": "Ramp",
+      "company_slug": "ramp",
+      "title": "University Grad | Customer Experience Associate",
+      "location": "New York, NY (HQ)",
+      "locations": [
+        "New York, NY (HQ)",
+        "San Francisco, CA",
+        "Remote (US)"
+      ],
+      "url": "https://jobs.ashbyhq.com/ramp/fc971889-db1d-4a20-a25e-f282f9296936",
+      "source": "ashby",
+      "source_job_id": "fc971889-db1d-4a20-a25e-f282f9296936",
+      "ats": "ashby",
+      "posted_at": "2026-09-09T12:19:47.141+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "compensation": "$60K - $70K",
+      "employment_type": "FullTime",
+      "department": "Customer Experience",
+      "workplace_type": "remote",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$60K – $70K • Offers Equity • This role will be paid hourly with a minimum hourly expectation.",
+              "scrapeableCompensationSalarySummary": "$60K - $70K",
+              "compensationTiers": [
+                {
+                  "id": "369b0676-ad89-479e-8140-d728ccbc4c66",
+                  "tierSummary": "$60K – $70K • Offers Equity • This role will be paid hourly with a minimum hourly expectation.",
+                  "title": null,
+                  "additionalInformation": "This role will be paid hourly with a minimum hourly expectation.",
+                  "components": [
+                    {
+                      "id": "befac08c-ec9f-49a8-a25c-211bab30581b",
+                      "summary": "Offers Equity",
+                      "compensationType": "EquityPercentage",
+                      "interval": "NONE",
+                      "currencyCode": null,
+                      "minValue": null,
+                      "maxValue": null
+                    },
+                    {
+                      "id": "e793ae09-1aeb-4701-bff2-e2b4788924bf",
+                      "summary": "$60K – $70K",
+                      "compensationType": "Salary",
+                      "interval": "1 YEAR",
+                      "currencyCode": "USD",
+                      "minValue": 60000,
+                      "maxValue": 70000
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "EquityPercentage",
+                  "interval": "NONE",
+                  "currencyCode": null,
+                  "minValue": null,
+                  "maxValue": null
+                },
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 YEAR",
+                  "currencyCode": "USD",
+                  "minValue": 60000,
+                  "maxValue": 70000
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "ramp",
+          "job_id": "fc971889-db1d-4a20-a25e-f282f9296936",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "c916986c75729246a7d3cee282b82f0b3472b4c9a45d4c0aff15612fccd37fb6",
+        "pack": "details/descriptions-c.json",
+        "pack_sha256": "5c3d23d75ef6e5e9deb218a8d40d283c2980465acc53731f3aedd5a452c04a0d",
+        "status": "available"
+      }
+    },
     "2c005405ee0cef1b": {
       "id": "2c005405ee0cef1b",
       "company": "Cybernetic Labs",
@@ -471,7 +941,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-15T23:48:14.247+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "University",
@@ -479,16 +949,108 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "netic",
+          "job_id": "ffd6af1a-cebb-41f5-ac1d-e695adfd067c",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "49cb62f4c21cdb02d5ac7e6b02f81df4619ddc4c67834a2b8ca683c3fa201aeb",
         "pack": "details/descriptions-4.json",
-        "pack_sha256": "448f64cf8c6678671990cf8b4ce911ef5e37165d3329fc48dde0de7ac5a7d46c",
+        "pack_sha256": "72c70f750ff3eaf4149aad192433cefb9a6f92e1efd22969bd785b76979853b3",
+        "status": "available"
+      }
+    },
+    "2d501377633adbda": {
+      "id": "2d501377633adbda",
+      "company": "Impulse Space",
+      "company_slug": "impulse-space",
+      "title": "General Application - Engineering (Full-Time + Internships)",
+      "location": "San Francisco, CA",
+      "locations": [
+        "San Francisco, CA"
+      ],
+      "url": "https://jobs.ashbyhq.com/impulse/0b03563e-e0b8-4774-b3da-5a072170614f",
+      "source": "ashby",
+      "source_job_id": "0b03563e-e0b8-4774-b3da-5a072170614f",
+      "ats": "ashby",
+      "posted_at": "2025-05-02T22:17:24.811+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "compensation": "$75K - $215K",
+      "employment_type": "FullTime",
+      "department": "Engineering (general)",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$75K – $215K • Offers Equity",
+              "scrapeableCompensationSalarySummary": "$75K - $215K",
+              "compensationTiers": [
+                {
+                  "id": "e5aeec37-0838-41d8-bb04-56a82f5d3768",
+                  "tierSummary": "$75K – $215K • Offers Equity",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "098c6d6f-c503-4932-ae7d-d0c7e45cd972",
+                      "summary": "$75K – $215K",
+                      "compensationType": "Salary",
+                      "interval": "1 YEAR",
+                      "currencyCode": "USD",
+                      "minValue": 75000,
+                      "maxValue": 215000
+                    },
+                    {
+                      "id": "fd994fa3-f74e-4ea2-94b5-df3f4d7a94e9",
+                      "summary": "Offers Equity",
+                      "compensationType": "EquityPercentage",
+                      "interval": "NONE",
+                      "currencyCode": null,
+                      "minValue": null,
+                      "maxValue": null
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 YEAR",
+                  "currencyCode": "USD",
+                  "minValue": 75000,
+                  "maxValue": 215000
+                },
+                {
+                  "compensationType": "EquityPercentage",
+                  "interval": "NONE",
+                  "currencyCode": null,
+                  "minValue": null,
+                  "maxValue": null
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "impulse",
+          "job_id": "0b03563e-e0b8-4774-b3da-5a072170614f",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "e2d9557ac23e82d27b6a21462c63f1f46367147ead9d2596ef1d7a655fb2ce89",
+        "pack": "details/descriptions-e.json",
+        "pack_sha256": "925d56d62c30a7e3e20025b0b40d34cb6d8c49814cb1b0c84387ffb27e73ac0d",
         "status": "available"
       }
     },
@@ -507,7 +1069,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-16T00:17:14.429+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "University",
@@ -515,16 +1077,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "netic",
+          "job_id": "f291394a-f3c5-4f46-9b87-77aea3d487ef",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "8b825e1b196d62c1386b7e47257cd6b05fb5fbed66d373124eaeed6604669385",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "7b470937bb0697dc8fad6331ccf8988dabfc5244ba3ab3333372eb826719cc66",
+        "pack_sha256": "60be8934c420655dac56f3e633d2fa67d97a2c3a79d42b6fc91d4f8141cad7d7",
         "status": "available"
       }
     },
@@ -562,7 +1125,7 @@
       "ats": "ashby",
       "posted_at": "2024-06-06T20:33:14.190+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Software Engineering",
@@ -570,16 +1133,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "droyd",
+          "job_id": "8d46ed05-1b38-4c68-938e-f10b4c7d4694",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "f1dab6b1b2c0c444192e131a6401812c16c3a7e85d2c0ee4a14b472966c3d5c2",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "ddbb04d8ce6e0292c6ffa65835cafa87dcd6eb5ffdd183b7dbf95a1548e2e882",
+        "pack_sha256": "4a02dc930a2c4ff5da2d6137599e4f674842c7e8775fe7f5e159988c07c77876",
         "status": "available"
       }
     },
@@ -599,7 +1163,7 @@
       "ats": "ashby",
       "posted_at": "2025-10-02T14:29:11.101+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Product, Design & Engineering",
@@ -607,16 +1171,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "k-id",
+          "job_id": "18619df2-45d8-4732-8815-9a340d498d48",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "7feab51748aebf0168854a4a01e00072abb935768dbebe36dac83914e82833cd",
         "pack": "details/descriptions-7.json",
-        "pack_sha256": "8d0721fb162252aa6d40de9127de78bbba0a9211d760cee115ef9de94fa3fc77",
+        "pack_sha256": "d1c5b2a423e828b6d1d7aa89a3428e5f4c2a7c0885c612ad65e80cada351a3bc",
         "status": "available"
       }
     },
@@ -635,23 +1200,61 @@
       "ats": "ashby",
       "posted_at": "2026-07-28T00:23:24.906+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "R&D",
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "color-health",
+          "job_id": "41fa6f16-b2f2-46c6-bdb4-9aae3b9b5b96",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "3d584da2250bb4717d8125a4619ad1336749d715a4830aff832293ce92bf89a4",
         "pack": "details/descriptions-3.json",
-        "pack_sha256": "69071e5b4170cbf51c1d486398f97bd450ac790eecf1d679e61feafdc052c9d4",
+        "pack_sha256": "d8c6a9fb682073251abb19b5fee5733b776bf072b21bec5d739741ecb1dd659c",
+        "status": "available"
+      }
+    },
+    "3ebbf19acf34a63b": {
+      "id": "3ebbf19acf34a63b",
+      "company": "Base Power",
+      "company_slug": "base-power",
+      "title": "Quantitative Developer Intern",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/base-power/b6b2332e-1226-4575-b2c9-9e5258f2540e",
+      "source": "ashby",
+      "source_job_id": "b6b2332e-1226-4575-b2c9-9e5258f2540e",
+      "ats": "ashby",
+      "posted_at": "2026-09-14T17:28:27.165+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Software Engineering",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "b6b2332e-1226-4575-b2c9-9e5258f2540e",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "99088a0b994434bf31f0f9fd9d118ee0c8b95f95663f8bc55b7bac980659df0f",
+        "pack": "details/descriptions-9.json",
+        "pack_sha256": "830afdf187116b7c0497d02edb84cf5e1d1d40c1f22161dee2a9e0fd8f2b3056",
         "status": "available"
       }
     },
@@ -670,7 +1273,7 @@
       "ats": "ashby",
       "posted_at": "2026-01-09T01:27:35.614+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Mechanical Engineering",
@@ -678,16 +1281,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "droyd",
+          "job_id": "d5a416f2-3d96-44d4-8b48-dc80dcea7f33",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "a379210419447752e57adb039d739af80fe88cdbd223373bd2e46712e60cd9e0",
         "pack": "details/descriptions-a.json",
-        "pack_sha256": "84d5a548988a55308382a04853963485cc2f543ef5b09ed684576613c039ea21",
+        "pack_sha256": "160588a09dba2f79eeb975e778caa11095a369ae4fa4ec9c08bbaf0b4be80d5a",
         "status": "available"
       }
     },
@@ -706,7 +1310,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-20T19:28:47.381+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Growth",
@@ -714,16 +1318,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "kalshi",
+          "job_id": "5f00f02c-002e-4e93-891f-650a0c296e15",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "6ff2caabee8097c8e99abeb9b39f8e704cb72ce70fd71bb95161e39fa961586d",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "4ba855f997906341c9a413b8fa9718daac44736bff81d6ed54d5e3f76b897a2a",
+        "pack_sha256": "8af3b06e9701a166370edcb4aa95228de724c5ef3120939aa8b5e6a41ccdceb0",
         "status": "available"
       }
     },
@@ -742,7 +1347,7 @@
       "ats": "ashby",
       "posted_at": "2024-06-06T08:35:16.360+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Research",
@@ -750,16 +1355,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "droyd",
+          "job_id": "fd533fd8-65a7-41eb-bdf0-e75f02e739e9",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "a148d2eeef4c6d41757e594893b624d56135f1f3a1be59ad070444d8b8e1a7ca",
         "pack": "details/descriptions-a.json",
-        "pack_sha256": "84d5a548988a55308382a04853963485cc2f543ef5b09ed684576613c039ea21",
+        "pack_sha256": "160588a09dba2f79eeb975e778caa11095a369ae4fa4ec9c08bbaf0b4be80d5a",
         "status": "available"
       }
     },
@@ -796,7 +1402,7 @@
       "description_ref": {
         "sha256": "642a5d3771920f21f2832b4b9e147e8e365f929fac5b5c3d4ea2c0e58e24ddd2",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "4ba855f997906341c9a413b8fa9718daac44736bff81d6ed54d5e3f76b897a2a",
+        "pack_sha256": "8af3b06e9701a166370edcb4aa95228de724c5ef3120939aa8b5e6a41ccdceb0",
         "status": "available"
       }
     },
@@ -815,7 +1421,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-04T18:58:21.127+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "R&D",
@@ -823,16 +1429,128 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "skydio",
+          "job_id": "e541e878-567c-4c03-add8-baf19c63418f",
+          "eu": "false"
         }
       },
       "description_ref": {
-        "sha256": "e404f8d9b965b85ea3ed61454c0697533435ec6941e7b182733af393f555b5b1",
-        "pack": "details/descriptions-e.json",
-        "pack_sha256": "a555f8e8e4e183ad6056c369047ab860ad203cbdd25f84985160a6acb926662b",
+        "sha256": "5f33ca6502325fe3500fba4d8ba122b1f5dc16b64689173978a21b4ecbf3a1d9",
+        "pack": "details/descriptions-5.json",
+        "pack_sha256": "3705a149ca4dd20484bdcfcfc31d1ea7779e9241b61f00f170206f2e4670b62e",
+        "status": "available"
+      }
+    },
+    "49c9f119b0f56f40": {
+      "id": "49c9f119b0f56f40",
+      "company": "Saronic",
+      "company_slug": "saronic",
+      "title": "Manufacturing Engineer Intern (Summer 2027)",
+      "location": "Franklin, LA",
+      "locations": [
+        "Franklin, LA"
+      ],
+      "url": "https://jobs.ashbyhq.com/saronic/2b037fca-754c-4077-b224-eb35cf2b2b97",
+      "source": "ashby",
+      "source_job_id": "2b037fca-754c-4077-b224-eb35cf2b2b97",
+      "ats": "ashby",
+      "posted_at": "2026-09-09T19:46:42.155+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Internships & Co-Ops",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "saronic",
+          "job_id": "2b037fca-754c-4077-b224-eb35cf2b2b97",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "884824248ba2b5993a5c76e9c01020cc437462202fb641643cb4142756289821",
+        "pack": "details/descriptions-8.json",
+        "pack_sha256": "60be8934c420655dac56f3e633d2fa67d97a2c3a79d42b6fc91d4f8141cad7d7",
+        "status": "available"
+      }
+    },
+    "4a4067956c8279c7": {
+      "id": "4a4067956c8279c7",
+      "company": "Base Power",
+      "company_slug": "base-power",
+      "title": "Marketing Intern",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/base-power/0bf4aae8-95fa-49d8-89c9-10c3784770ad",
+      "source": "ashby",
+      "source_job_id": "0bf4aae8-95fa-49d8-89c9-10c3784770ad",
+      "ats": "ashby",
+      "posted_at": "2026-09-15T14:22:43.077+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Growth",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "0bf4aae8-95fa-49d8-89c9-10c3784770ad",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "a5c71b14f83fbae744c0fb1ea27fbe21a62fe0f1ed7362244c1d76843c50f112",
+        "pack": "details/descriptions-a.json",
+        "pack_sha256": "160588a09dba2f79eeb975e778caa11095a369ae4fa4ec9c08bbaf0b4be80d5a",
+        "status": "available"
+      }
+    },
+    "4b748e8ced71f377": {
+      "id": "4b748e8ced71f377",
+      "company": "Base Power",
+      "company_slug": "base-power",
+      "title": "Material Planning Intern",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/base-power/8546526d-e545-48b4-8537-0bc85e986f93",
+      "source": "ashby",
+      "source_job_id": "8546526d-e545-48b4-8537-0bc85e986f93",
+      "ats": "ashby",
+      "posted_at": "2026-09-14T23:42:17.989+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Supply Chain",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "8546526d-e545-48b4-8537-0bc85e986f93",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "7cf846dad9ef3647d06d922a44754cb3f1546e59fbb61455ad9ce17412b787e2",
+        "pack": "details/descriptions-7.json",
+        "pack_sha256": "d1c5b2a423e828b6d1d7aa89a3428e5f4c2a7c0885c612ad65e80cada351a3bc",
         "status": "available"
       }
     },
@@ -851,7 +1569,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-23T19:33:16.660+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "University Departments",
@@ -859,16 +1577,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "cerebras",
+          "job_id": "9c7da4b8-446b-4bf2-8d07-23241590bf2e",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "177734f0b3211ef648c55c8434479b5800a1981c4d12b0cd31ee1ed920abbf85",
         "pack": "details/descriptions-1.json",
-        "pack_sha256": "1f3abc91f1519dda009fec84122ca6a47ac8597fd49bd538324a080f0d2d13b1",
+        "pack_sha256": "25c3bf9665f826a14c95023d63ec312cf0e441fdff290c073d3cadfe1a1edefb",
         "status": "available"
       }
     },
@@ -887,7 +1606,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-31T14:00:47.682+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "compensation": "$11K per month",
       "employment_type": "Intern",
@@ -896,16 +1615,55 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$11K per month",
+              "scrapeableCompensationSalarySummary": null,
+              "compensationTiers": [
+                {
+                  "id": "285db541-66ad-4c5d-be56-72b6ee4fc9d9",
+                  "tierSummary": "$11,000 monthly $11K per month",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "8bed2093-1147-445f-afce-85dffa0deb3a",
+                      "summary": "$11,000 monthly $11K per month",
+                      "compensationType": "Salary",
+                      "interval": "1 MONTH",
+                      "currencyCode": "USD",
+                      "minValue": 11000,
+                      "maxValue": 11000
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 MONTH",
+                  "currencyCode": "USD",
+                  "minValue": 11000,
+                  "maxValue": 11000
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "melius",
+          "job_id": "b61f063a-4f94-4e50-a4ef-05aaab552280",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "5dbfc11616b082b07b9a7fbb2406324e37adb34ecaa71b7fd424fb32a10c8260",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "3a0c200792b5419180fae58bb4f5a771ff97024791bdf94c5dbf69123f84d3a2",
+        "pack_sha256": "3705a149ca4dd20484bdcfcfc31d1ea7779e9241b61f00f170206f2e4670b62e",
         "status": "available"
       }
     },
@@ -931,6 +1689,119 @@
       "workplace_type": "remote",
       "description_status": "unavailable"
     },
+    "59489a9c9b717006": {
+      "id": "59489a9c9b717006",
+      "company": "Base Power",
+      "company_slug": "base-power",
+      "title": "Factory Construction Intern",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/base-power/8e6ffc4c-a470-41d2-bb2d-1c3021380e04",
+      "source": "ashby",
+      "source_job_id": "8e6ffc4c-a470-41d2-bb2d-1c3021380e04",
+      "ats": "ashby",
+      "posted_at": "2026-09-11T21:05:23.041+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Infrastructure & Construction",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "8e6ffc4c-a470-41d2-bb2d-1c3021380e04",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "73e77823b4a11a17ae2e62f371bc463d13bd9cef84256ca9f557aebfeda68202",
+        "pack": "details/descriptions-7.json",
+        "pack_sha256": "d1c5b2a423e828b6d1d7aa89a3428e5f4c2a7c0885c612ad65e80cada351a3bc",
+        "status": "available"
+      }
+    },
+    "5981545692bae970": {
+      "id": "5981545692bae970",
+      "company": "Temporal",
+      "company_slug": "temporal",
+      "title": "Business Development Intern (Fall 2026)",
+      "location": "Atlanta, Georgia",
+      "locations": [
+        "Atlanta, Georgia"
+      ],
+      "url": "https://jobs.ashbyhq.com/temporal/70cee4cb-ce31-43b7-89a1-c7067822317a",
+      "source": "ashby",
+      "source_job_id": "70cee4cb-ce31-43b7-89a1-c7067822317a",
+      "ats": "ashby",
+      "posted_at": "2026-09-14T19:01:05.547+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "compensation": "$30 – $35 per hour",
+      "employment_type": "FullTime",
+      "department": "Sales",
+      "workplace_type": "remote",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$30 – $35 per hour",
+              "scrapeableCompensationSalarySummary": null,
+              "compensationTiers": [
+                {
+                  "id": "5aebf053-dc3b-454f-9b3b-301009972ed5",
+                  "tierSummary": "$30 – $35 per hour",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "d258bb16-38d6-4e84-9f91-b6c8cf3133ad",
+                      "summary": "$30 – $35 per hour",
+                      "compensationType": "Salary",
+                      "interval": "1 HOUR",
+                      "currencyCode": "USD",
+                      "minValue": 30,
+                      "maxValue": 35
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 HOUR",
+                  "currencyCode": "USD",
+                  "minValue": 30,
+                  "maxValue": 35
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "temporal",
+          "job_id": "70cee4cb-ce31-43b7-89a1-c7067822317a",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "935bec6485617359c88a86881689284fbd4c7907dcda85127b485144642afb33",
+        "pack": "details/descriptions-9.json",
+        "pack_sha256": "830afdf187116b7c0497d02edb84cf5e1d1d40c1f22161dee2a9e0fd8f2b3056",
+        "status": "available"
+      }
+    },
     "5aef43857a1b3172": {
       "id": "5aef43857a1b3172",
       "company": "Cohere",
@@ -953,24 +1824,37 @@
       "ats": "ashby",
       "posted_at": "2026-05-01T20:26:46.572+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
-      "employment_type": "FullTime",
+      "employment_type": "Intern",
       "department": "Internships",
       "workplace_type": "remote",
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": null,
+              "scrapeableCompensationSalarySummary": null,
+              "compensationTiers": [],
+              "summaryComponents": []
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "cohere",
+          "job_id": "73bd3e2b-6597-4124-b64b-1e5dbc32e785",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "88f03822e2378eb3f4d8805a1e820eea3430ee5c3788ac9903ad0757e71bb48f",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "7b470937bb0697dc8fad6331ccf8988dabfc5244ba3ab3333372eb826719cc66",
+        "pack_sha256": "60be8934c420655dac56f3e633d2fa67d97a2c3a79d42b6fc91d4f8141cad7d7",
         "status": "available"
       }
     },
@@ -989,7 +1873,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-04T19:01:54.953+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "R&D",
@@ -997,16 +1881,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "skydio",
+          "job_id": "3eb06d6e-b6f0-4814-a80a-f1c43075873b",
+          "eu": "false"
         }
       },
       "description_ref": {
-        "sha256": "9edd6b94b8f5763f25b50d3fc83d5befbe2bb6ce9b43b978f26ad40710b21f8e",
-        "pack": "details/descriptions-9.json",
-        "pack_sha256": "72dcd0203c95552621e291769966db5a0ffd165fcdeb851e87202399ff51abdc",
+        "sha256": "5f095f0adbd8008a5cf270e5bc9be2659ac247507f68aceecfab31de81fde4f7",
+        "pack": "details/descriptions-5.json",
+        "pack_sha256": "3705a149ca4dd20484bdcfcfc31d1ea7779e9241b61f00f170206f2e4670b62e",
         "status": "available"
       }
     },
@@ -1025,7 +1910,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-15T02:12:26.309+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Product",
@@ -1036,24 +1921,171 @@
         "f15bf5357ce25919"
       ],
       "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "dedalus-labs",
+          "job_id": "ca4245ff-0dee-4f16-80ca-24912d72079c",
+          "eu": "false"
+        },
+        "sponsorship": "Other",
+        "terms": [
+          "Fall 2026"
+        ],
+        "category": "Product",
         "provenance": [
           {
             "source": "simplify",
             "source_job_id": "8cfb1bdb-94da-41c0-be36-e516586909b0",
             "url": "https://jobs.ashbyhq.com/dedalus-labs/ca4245ff-0dee-4f16-80ca-24912d72079c/application?embed=true",
-            "discovered_at": "2026-09-05T00:50:25Z"
+            "discovered_at": "2026-09-15T16:26:04Z"
           }
-        ],
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
-        }
+        ]
       },
       "description_ref": {
         "sha256": "cc445d7f25d6f3c4d45a5987ef3f660c3a7c069be94786b86b7eee0f265b7602",
         "pack": "details/descriptions-c.json",
-        "pack_sha256": "ac5df9e97d62379d54d893edc5c6188e0ecdd685b4e883794260da26e080e3c0",
+        "pack_sha256": "5c3d23d75ef6e5e9deb218a8d40d283c2980465acc53731f3aedd5a452c04a0d",
+        "status": "available"
+      }
+    },
+    "5c59f3551c97efb2": {
+      "id": "5c59f3551c97efb2",
+      "company": "Fireworks AI",
+      "company_slug": "fireworks",
+      "title": "Member of Technical Staff, Research (2026 PhD New Grad)",
+      "location": "San Mateo",
+      "locations": [
+        "San Mateo",
+        "New York"
+      ],
+      "url": "https://jobs.ashbyhq.com/fireworks/82b41f4a-a945-4aee-a1fd-1ef9ab513e58",
+      "source": "ashby",
+      "source_job_id": "82b41f4a-a945-4aee-a1fd-1ef9ab513e58",
+      "ats": "ashby",
+      "posted_at": "2026-09-08T20:36:20.819+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "compensation": "$200K - $300K",
+      "employment_type": "FullTime",
+      "department": "Engineering",
+      "workplace_type": "remote",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$200K – $300K",
+              "scrapeableCompensationSalarySummary": "$200K - $300K",
+              "compensationTiers": [
+                {
+                  "id": "f19a916c-ce46-4007-b6bb-6ab0603c5b82",
+                  "tierSummary": "$200K – $300K",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "1c05590c-5d55-492c-baf7-b76a1212ff45",
+                      "summary": "$200K – $300K",
+                      "compensationType": "Salary",
+                      "interval": "1 YEAR",
+                      "currencyCode": "USD",
+                      "minValue": 200000,
+                      "maxValue": 300000
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 YEAR",
+                  "currencyCode": "USD",
+                  "minValue": 200000,
+                  "maxValue": 300000
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "fireworks",
+          "job_id": "82b41f4a-a945-4aee-a1fd-1ef9ab513e58",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "a2fff2b69f06165e10c49a79eaf2e40cc4cd8b5399ad73b3603de81e24f18d4d",
+        "pack": "details/descriptions-a.json",
+        "pack_sha256": "160588a09dba2f79eeb975e778caa11095a369ae4fa4ec9c08bbaf0b4be80d5a",
+        "status": "available"
+      }
+    },
+    "5e4d4f62e3924b26": {
+      "id": "5e4d4f62e3924b26",
+      "company": "Hadrian",
+      "company_slug": "hadrian",
+      "title": "Software Engineer Intern",
+      "location": "Los Angeles, CA",
+      "locations": [
+        "Los Angeles, CA"
+      ],
+      "url": "https://jobs.ashbyhq.com/hadrian-automation/2b0423c6-947d-4226-8d23-90743bd5e63e",
+      "source": "ashby",
+      "source_job_id": "2b0423c6-947d-4226-8d23-90743bd5e63e",
+      "ats": "ashby",
+      "posted_at": "2026-09-02T21:46:58.459+00:00",
+      "first_seen_at": "2026-09-03T11:05:21Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "FullTime",
+      "department": "Engineering, Product, Design",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "merged_from": [
+        "414f41798736de3b"
+      ],
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "hadrian-automation",
+          "job_id": "2b0423c6-947d-4226-8d23-90743bd5e63e",
+          "eu": "false"
+        },
+        "sponsorship": "Other",
+        "terms": [
+          "Fall 2026",
+          "Spring 2027",
+          "Summer 2027"
+        ],
+        "degrees": [
+          "Bachelor's",
+          "Master's"
+        ],
+        "category": "Software",
+        "description_acquisition": {
+          "method": "ashby_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        },
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "ad9376a4-7196-4ce6-a3b4-e88763b96811",
+            "url": "https://jobs.ashbyhq.com/hadrian-automation/2b0423c6-947d-4226-8d23-90743bd5e63e/application?embed=true",
+            "discovered_at": "2026-09-03T11:05:21Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "f0664ad5a4e6f1237a1b54bd99e49b1a6a330ec887188b6bcef95a98064aba48",
+        "pack": "details/descriptions-f.json",
+        "pack_sha256": "4a02dc930a2c4ff5da2d6137599e4f674842c7e8775fe7f5e159988c07c77876",
         "status": "available"
       }
     },
@@ -1072,7 +2104,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-05T22:01:53.470+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "compensation": "$11K per month",
       "employment_type": "Intern",
@@ -1081,16 +2113,55 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$11K per month",
+              "scrapeableCompensationSalarySummary": null,
+              "compensationTiers": [
+                {
+                  "id": "6775702c-6bbb-4332-9c11-e20de6b0c935",
+                  "tierSummary": "$11,000 monthly $11K per month",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "4e3b9842-6ffa-4392-9e1e-de573314d72b",
+                      "summary": "$11,000 monthly $11K per month",
+                      "compensationType": "Salary",
+                      "interval": "1 MONTH",
+                      "currencyCode": "USD",
+                      "minValue": 11000,
+                      "maxValue": 11000
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 MONTH",
+                  "currencyCode": "USD",
+                  "minValue": 11000,
+                  "maxValue": 11000
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "melius",
+          "job_id": "6a944911-dbbf-44c7-ba52-7866f7b433cf",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "3ec332d5bd3c63ff35f32a97ae0163b90e4a7f826c6b5dbf318052f9df646b3d",
         "pack": "details/descriptions-3.json",
-        "pack_sha256": "69071e5b4170cbf51c1d486398f97bd450ac790eecf1d679e61feafdc052c9d4",
+        "pack_sha256": "d8c6a9fb682073251abb19b5fee5733b776bf072b21bec5d739741ecb1dd659c",
         "status": "available"
       }
     },
@@ -1109,7 +2180,7 @@
       "ats": "ashby",
       "posted_at": "2026-06-23T03:13:55.671+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Support",
@@ -1117,16 +2188,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "kalshi",
+          "job_id": "32bbed2f-888b-406f-873f-d299062fc854",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "144a2e167583343f1d62f7e487313ed0aea3788747fe29b4cc49144bf109cf7c",
         "pack": "details/descriptions-1.json",
-        "pack_sha256": "1f3abc91f1519dda009fec84122ca6a47ac8597fd49bd538324a080f0d2d13b1",
+        "pack_sha256": "25c3bf9665f826a14c95023d63ec312cf0e441fdff290c073d3cadfe1a1edefb",
         "status": "available"
       }
     },
@@ -1145,7 +2217,7 @@
       "ats": "ashby",
       "posted_at": "2025-07-14T21:45:39.710+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Technical",
@@ -1153,16 +2225,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "tilderesearch",
+          "job_id": "bc4e4071-cf64-4460-8265-b1e5a603d6b8",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "d4d5bcc59ca0d3a332271e24ca01cbfe804b45b824c874120bc96e805f8fd768",
         "pack": "details/descriptions-d.json",
-        "pack_sha256": "bdb8f1b74cea364a79bb5b9623cf0140bb6540d0401136d9ccc14fb7771c6fa0",
+        "pack_sha256": "ff5cb490346190370686fa1c71e42337bccd54097db2fd1e3ce0e645a6bf2e69",
         "status": "available"
       }
     },
@@ -1199,7 +2272,7 @@
       "description_ref": {
         "sha256": "b2d16ee7769256a293c982e7450d6452afd124b0c61f9e4d91878d9a0b94cf7b",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "343f7d07bf1059570d5b5e0985528a9444792e21c82cda9e758e97b68b39328b",
+        "pack_sha256": "e59fe657d00b546993cb578406dfcb5a782ea92d110436753d401245f46f939b",
         "status": "available"
       }
     },
@@ -1218,24 +2291,24 @@
       "ats": "ashby",
       "posted_at": "2026-08-28T20:16:50.464+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Persona AI",
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "json_ld",
-          "completeness": "available",
-          "identity": "matched_url_and_title",
-          "resolved_url": "https://jobs.ashbyhq.com/persona.ai/1e8d195c-e28e-423d-a06a-9eeb401ed4fc"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "persona.ai",
+          "job_id": "1e8d195c-e28e-423d-a06a-9eeb401ed4fc",
+          "eu": "false"
         }
       },
       "description_ref": {
-        "sha256": "fe448d678ae60924cb24bfeb2c5539336763c36da5cecf49ed0242fd0dda02a9",
-        "pack": "details/descriptions-f.json",
-        "pack_sha256": "ddbb04d8ce6e0292c6ffa65835cafa87dcd6eb5ffdd183b7dbf95a1548e2e882",
+        "sha256": "b106cba8831eb76a22ad727df84c8c82717bb0508a05dc1a72cb0be4f901d2d8",
+        "pack": "details/descriptions-b.json",
+        "pack_sha256": "e59fe657d00b546993cb578406dfcb5a782ea92d110436753d401245f46f939b",
         "status": "available"
       }
     },
@@ -1258,7 +2331,7 @@
       "ats": "ashby",
       "posted_at": "2026-05-01T20:20:40.899+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -1266,16 +2339,29 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": null,
+              "scrapeableCompensationSalarySummary": null,
+              "compensationTiers": [],
+              "summaryComponents": []
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "cohere",
+          "job_id": "8c035d3d-081d-4c8a-914a-72f4efaad254",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "f7282dafc7584992543a3f69123ad294a2063222b5424189ab875d2304997126",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "ddbb04d8ce6e0292c6ffa65835cafa87dcd6eb5ffdd183b7dbf95a1548e2e882",
+        "pack_sha256": "4a02dc930a2c4ff5da2d6137599e4f674842c7e8775fe7f5e159988c07c77876",
         "status": "available"
       }
     },
@@ -1292,17 +2378,35 @@
       "source": "ashby",
       "source_job_id": "a8ee9a66-e90b-42c2-a4a2-28d997c3e8c7",
       "ats": "ashby",
-      "posted_at": "2026-05-26T22:24:01.506+00:00",
+      "posted_at": "2026-09-14T16:24:20.021+00:00",
       "first_seen_at": "2026-08-31T00:00:06Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
-      "description_status": "unavailable"
+      "employment_type": "Intern",
+      "department": "Software Engineering",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "a8ee9a66-e90b-42c2-a4a2-28d997c3e8c7",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "40f7d04a4e5e06a09fd653e9f732f2d525fa17f54e4b38f5dc7835a08e607900",
+        "pack": "details/descriptions-4.json",
+        "pack_sha256": "72c70f750ff3eaf4149aad192433cefb9a6f92e1efd22969bd785b76979853b3",
+        "status": "available"
+      }
     },
     "6f680d4a26bc505f": {
       "id": "6f680d4a26bc505f",
       "company": "Base Power",
       "company_slug": "base-power",
-      "title": "Growth Intern",
+      "title": "Sales Intern",
       "location": "Austin, TX",
       "locations": [
         "Austin, TX"
@@ -1313,7 +2417,7 @@
       "ats": "ashby",
       "posted_at": "2026-06-29T23:37:41.679+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Growth",
@@ -1321,16 +2425,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "fe71e011-a23a-4651-8f8a-9c0fcb5f1f22",
+          "eu": "false"
         }
       },
       "description_ref": {
-        "sha256": "5a64f99e8aaf4f36fc8461e5b14428f704d22e9744b89136f711caaa6ed41397",
+        "sha256": "594ffb8adea9bdf22e2f1e8eb211efdf1a705373b26f536b25baff5febaeee44",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "3a0c200792b5419180fae58bb4f5a771ff97024791bdf94c5dbf69123f84d3a2",
+        "pack_sha256": "3705a149ca4dd20484bdcfcfc31d1ea7779e9241b61f00f170206f2e4670b62e",
         "status": "available"
       }
     },
@@ -1350,7 +2455,7 @@
       "ats": "ashby",
       "posted_at": "2025-10-13T10:49:04.503+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Product, Design & Engineering",
@@ -1358,16 +2463,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "k-id",
+          "job_id": "35d45263-db3b-4553-b017-b4b1bbd0570d",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "594564112a41da87aeb084e430984a3954c691be7ccb4e96674d5898c4bd0bb1",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "3a0c200792b5419180fae58bb4f5a771ff97024791bdf94c5dbf69123f84d3a2",
+        "pack_sha256": "3705a149ca4dd20484bdcfcfc31d1ea7779e9241b61f00f170206f2e4670b62e",
         "status": "available"
       }
     },
@@ -1393,6 +2499,153 @@
       "workplace_type": "onsite",
       "description_status": "unavailable"
     },
+    "75cbc1ad4e28c6cc": {
+      "id": "75cbc1ad4e28c6cc",
+      "company": "Saronic",
+      "company_slug": "saronic",
+      "title": "Enterprise Technology Intern (Summer 2027)",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/saronic/6118e5ce-36b0-4f9a-a0c4-34dceb46b9c1",
+      "source": "ashby",
+      "source_job_id": "6118e5ce-36b0-4f9a-a0c4-34dceb46b9c1",
+      "ats": "ashby",
+      "posted_at": "2026-09-09T19:47:25.191+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Internships & Co-Ops",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "saronic",
+          "job_id": "6118e5ce-36b0-4f9a-a0c4-34dceb46b9c1",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "25cb6b41c52936275a20ab7ecd87d18d55c2a30ba58bac533bf9f1423de5795d",
+        "pack": "details/descriptions-2.json",
+        "pack_sha256": "28b48631a003ddac2f5456cd0da78cdb620f47d0eb27d2b2f97f0a28d5273b37",
+        "status": "available"
+      }
+    },
+    "798d1c5b1fbb3520": {
+      "id": "798d1c5b1fbb3520",
+      "company": "Hadrian",
+      "company_slug": "hadrian",
+      "title": "Data Science/ Data Engineer Intern",
+      "location": "Los Angeles, CA",
+      "locations": [
+        "Los Angeles, CA"
+      ],
+      "url": "https://jobs.ashbyhq.com/hadrian-automation/f718bcfe-3f5b-4682-a294-697499caf813",
+      "source": "ashby",
+      "source_job_id": "f718bcfe-3f5b-4682-a294-697499caf813",
+      "ats": "ashby",
+      "posted_at": "2026-09-02T21:47:29.454+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "FullTime",
+      "department": "Engineering, Product, Design",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "hadrian-automation",
+          "job_id": "f718bcfe-3f5b-4682-a294-697499caf813",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "c355a97f429a74a61776820b4afa8fa2527dc979a2029b6be092f3ee8adada9d",
+        "pack": "details/descriptions-c.json",
+        "pack_sha256": "5c3d23d75ef6e5e9deb218a8d40d283c2980465acc53731f3aedd5a452c04a0d",
+        "status": "available"
+      }
+    },
+    "7a502c543526e3c5": {
+      "id": "7a502c543526e3c5",
+      "company": "Base Power",
+      "company_slug": "base-power",
+      "title": "Business Operations Intern, Commercial Ops & Analytics",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/base-power/0545cb76-f49c-4390-a1c5-2b7adb5e927a",
+      "source": "ashby",
+      "source_job_id": "0545cb76-f49c-4390-a1c5-2b7adb5e927a",
+      "ats": "ashby",
+      "posted_at": "2026-09-08T17:28:45.684+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Business Operations",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "0545cb76-f49c-4390-a1c5-2b7adb5e927a",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "217aba431e6d8b19e090fce2e0d04d31ab471e905541bc5ecfd2c6bf34cdcb28",
+        "pack": "details/descriptions-2.json",
+        "pack_sha256": "28b48631a003ddac2f5456cd0da78cdb620f47d0eb27d2b2f97f0a28d5273b37",
+        "status": "available"
+      }
+    },
+    "7d85285186ea31e3": {
+      "id": "7d85285186ea31e3",
+      "company": "Shield AI",
+      "company_slug": "shield-ai",
+      "title": "Summer 2027 - Software Engineer Intern",
+      "location": "San Diego, California",
+      "locations": [
+        "San Diego, California"
+      ],
+      "url": "https://jobs.ashbyhq.com/shield-ai/db04c516-d21a-449c-8bfd-1cf830eafb5a",
+      "source": "ashby",
+      "source_job_id": "db04c516-d21a-449c-8bfd-1cf830eafb5a",
+      "ats": "ashby",
+      "posted_at": "2026-09-10T00:12:53.719+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Campus Recruiting",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "shield-ai",
+          "job_id": "db04c516-d21a-449c-8bfd-1cf830eafb5a",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "2f000c9d59a7e442931b0397130bd30e163d2b302c66bc248bc6f13258942f5e",
+        "pack": "details/descriptions-2.json",
+        "pack_sha256": "28b48631a003ddac2f5456cd0da78cdb620f47d0eb27d2b2f97f0a28d5273b37",
+        "status": "available"
+      }
+    },
     "7e808c3825f545a2": {
       "id": "7e808c3825f545a2",
       "company": "Cohere",
@@ -1408,25 +2661,167 @@
       "ats": "ashby",
       "posted_at": "2026-09-02T23:40:53.319+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "compensation": "$95K - $150K",
       "employment_type": "FullTime",
       "department": "People Operations",
-      "workplace_type": "onsite",
+      "workplace_type": "remote",
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$95K – $150K • Offers Equity • Multiple Ranges",
+              "scrapeableCompensationSalarySummary": "$95K - $150K",
+              "compensationTiers": [
+                {
+                  "id": "99ba6465-ba85-4fcf-8e00-d5b30158667f",
+                  "tierSummary": "$120K – $150K • Offers Equity",
+                  "title": "California, New York & Washington States",
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "e7175f77-9a44-4af0-bba3-324effe51a1b",
+                      "summary": "$120K – $150K",
+                      "compensationType": "Salary",
+                      "interval": "1 YEAR",
+                      "currencyCode": "USD",
+                      "minValue": 120000,
+                      "maxValue": 150000
+                    },
+                    {
+                      "id": "1cf32700-ad4a-4455-9aed-e1d5a0040e71",
+                      "summary": "Offers Equity",
+                      "compensationType": "EquityPercentage",
+                      "interval": "NONE",
+                      "currencyCode": null,
+                      "minValue": null,
+                      "maxValue": null
+                    }
+                  ]
+                },
+                {
+                  "id": "fb1201e6-1131-468d-843b-17cdba8704e2",
+                  "tierSummary": "$95K – $120K • Offers Equity",
+                  "title": "All other US States",
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "9b6e6220-4fc0-4662-b33f-ad11e02df23d",
+                      "summary": "Offers Equity",
+                      "compensationType": "EquityPercentage",
+                      "interval": "NONE",
+                      "currencyCode": null,
+                      "minValue": null,
+                      "maxValue": null
+                    },
+                    {
+                      "id": "afc6162b-f4e4-4830-b586-ab3414a7cd3c",
+                      "summary": "$95K – $120K",
+                      "compensationType": "Salary",
+                      "interval": "1 YEAR",
+                      "currencyCode": "USD",
+                      "minValue": 95000,
+                      "maxValue": 120000
+                    }
+                  ]
+                },
+                {
+                  "id": "b2b51b43-e72e-46d0-b4aa-2618fd3a87d0",
+                  "tierSummary": "CA$140K – CA$175K • Offers Equity",
+                  "title": "Canada",
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "f45311a4-8608-4812-9689-c5f64068f7db",
+                      "summary": "CA$140K – CA$175K",
+                      "compensationType": "Salary",
+                      "interval": "1 YEAR",
+                      "currencyCode": "CAD",
+                      "minValue": 140000,
+                      "maxValue": 175000
+                    },
+                    {
+                      "id": "d8a9a0a9-f090-453a-af53-2dbebdc5a858",
+                      "summary": "Offers Equity",
+                      "compensationType": "EquityPercentage",
+                      "interval": "NONE",
+                      "currencyCode": null,
+                      "minValue": null,
+                      "maxValue": null
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "minValue": 95000,
+                  "maxValue": 150000,
+                  "currencyCode": "USD",
+                  "interval": "1 YEAR",
+                  "compensationType": "Salary"
+                },
+                {
+                  "compensationType": "EquityPercentage",
+                  "minValue": null,
+                  "maxValue": null,
+                  "interval": "1 YEAR"
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "cohere",
+          "job_id": "80d4af6c-202e-4132-83a4-fd698b3602d4",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "8e7dccc3e75c8fb1c89ee518991bc877fba94cac37e77a595727ed3160195962",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "7b470937bb0697dc8fad6331ccf8988dabfc5244ba3ab3333372eb826719cc66",
+        "pack_sha256": "60be8934c420655dac56f3e633d2fa67d97a2c3a79d42b6fc91d4f8141cad7d7",
+        "status": "available"
+      }
+    },
+    "7e8d21448b938417": {
+      "id": "7e8d21448b938417",
+      "company": "Shield AI",
+      "company_slug": "shield-ai",
+      "title": "Test Intern",
+      "location": "Dallas, TX, US",
+      "locations": [
+        "Dallas, TX, US"
+      ],
+      "url": "https://jobs.ashbyhq.com/shield-ai/e910c115-32e2-4070-8f74-8a159c4dbbac",
+      "source": "ashby",
+      "source_job_id": "e910c115-32e2-4070-8f74-8a159c4dbbac",
+      "ats": "ashby",
+      "posted_at": "2026-09-12T12:47:55.562+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "[ASHBY] - For Testing Use Only",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "shield-ai",
+          "job_id": "e910c115-32e2-4070-8f74-8a159c4dbbac",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "ea143ff8555b518adaa323b82ee5013219ff44dc2468628b15ff4f79058cb89d",
+        "pack": "details/descriptions-e.json",
+        "pack_sha256": "925d56d62c30a7e3e20025b0b40d34cb6d8c49814cb1b0c84387ffb27e73ac0d",
         "status": "available"
       }
     },
@@ -1445,7 +2840,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-02T00:32:06.045+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Engineering",
@@ -1453,16 +2848,54 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "dedalus-labs",
+          "job_id": "6037de96-d9c7-418f-ad23-56bb327225a6",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "145a83e23061e4b93985c54a95224b92a449328dce47c5db3cdb042455e7086d",
         "pack": "details/descriptions-1.json",
-        "pack_sha256": "1f3abc91f1519dda009fec84122ca6a47ac8597fd49bd538324a080f0d2d13b1",
+        "pack_sha256": "25c3bf9665f826a14c95023d63ec312cf0e441fdff290c073d3cadfe1a1edefb",
+        "status": "available"
+      }
+    },
+    "81078791506649d6": {
+      "id": "81078791506649d6",
+      "company": "Saronic",
+      "company_slug": "saronic",
+      "title": "Mechanical Engineer Intern (Summer 2027)",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/saronic/f52ae6eb-7eba-4c64-97c7-57e2a234e088",
+      "source": "ashby",
+      "source_job_id": "f52ae6eb-7eba-4c64-97c7-57e2a234e088",
+      "ats": "ashby",
+      "posted_at": "2026-09-09T19:47:04.501+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Internships & Co-Ops",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "saronic",
+          "job_id": "f52ae6eb-7eba-4c64-97c7-57e2a234e088",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "e39f5f23369d73075decdc2f239463a6390582edb4ca2fff317fb01a478e3aba",
+        "pack": "details/descriptions-e.json",
+        "pack_sha256": "925d56d62c30a7e3e20025b0b40d34cb6d8c49814cb1b0c84387ffb27e73ac0d",
         "status": "available"
       }
     },
@@ -1481,7 +2914,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-19T22:32:00.399+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Early Career",
@@ -1489,16 +2922,131 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "notion",
+          "job_id": "a67d6f2b-7c13-41d0-b36b-b2f662c9873e",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "f20ac1c852a040dc8e8bad1029b50536ba92b3e440bf230da65f383c499c4699",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "ddbb04d8ce6e0292c6ffa65835cafa87dcd6eb5ffdd183b7dbf95a1548e2e882",
+        "pack_sha256": "4a02dc930a2c4ff5da2d6137599e4f674842c7e8775fe7f5e159988c07c77876",
+        "status": "available"
+      }
+    },
+    "8466f9dc4421dc5e": {
+      "id": "8466f9dc4421dc5e",
+      "company": "Saronic",
+      "company_slug": "saronic",
+      "title": "Electrical Engineer Intern (Summer 2027)",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/saronic/c7779462-3c4c-44d9-8314-1be93a0e478a",
+      "source": "ashby",
+      "source_job_id": "c7779462-3c4c-44d9-8314-1be93a0e478a",
+      "ats": "ashby",
+      "posted_at": "2026-09-09T19:47:36.214+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Internships & Co-Ops",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "saronic",
+          "job_id": "c7779462-3c4c-44d9-8314-1be93a0e478a",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "c7b686786822dbb3069d323111cdc9edf0e581ee88d9393356451142a83833a3",
+        "pack": "details/descriptions-c.json",
+        "pack_sha256": "5c3d23d75ef6e5e9deb218a8d40d283c2980465acc53731f3aedd5a452c04a0d",
+        "status": "available"
+      }
+    },
+    "86ec118c7990151f": {
+      "id": "86ec118c7990151f",
+      "company": "Fireworks AI",
+      "company_slug": "fireworks",
+      "title": "Member of Technical Staff, Systems Infrastructure (2026 PhD New Grad)",
+      "location": "San Mateo",
+      "locations": [
+        "San Mateo",
+        "New York"
+      ],
+      "url": "https://jobs.ashbyhq.com/fireworks/ad58a098-ef75-4a4b-8475-55c2653213ef",
+      "source": "ashby",
+      "source_job_id": "ad58a098-ef75-4a4b-8475-55c2653213ef",
+      "ats": "ashby",
+      "posted_at": "2026-09-08T20:44:42.789+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "compensation": "$200K - $230K",
+      "employment_type": "FullTime",
+      "department": "Engineering",
+      "workplace_type": "remote",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$200K – $230K",
+              "scrapeableCompensationSalarySummary": "$200K - $230K",
+              "compensationTiers": [
+                {
+                  "id": "e46274e3-bf58-4763-9514-96947b299d8e",
+                  "tierSummary": "$200K – $230K",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "3c70d958-96d2-4333-b99f-9182b212d9ff",
+                      "summary": "$200K – $230K",
+                      "compensationType": "Salary",
+                      "interval": "1 YEAR",
+                      "currencyCode": "USD",
+                      "minValue": 200000,
+                      "maxValue": 230000
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 YEAR",
+                  "currencyCode": "USD",
+                  "minValue": 200000,
+                  "maxValue": 230000
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "fireworks",
+          "job_id": "ad58a098-ef75-4a4b-8475-55c2653213ef",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "a2e9f356263975a78599c3e898e121489e5eb3e720fb2eec1a05b1963c4611cf",
+        "pack": "details/descriptions-a.json",
+        "pack_sha256": "160588a09dba2f79eeb975e778caa11095a369ae4fa4ec9c08bbaf0b4be80d5a",
         "status": "available"
       }
     },
@@ -1517,7 +3065,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-16T00:04:22.320+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "University",
@@ -1525,16 +3073,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "netic",
+          "job_id": "bab5d1e5-e31b-42f0-9cef-334b1f17fed3",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "c5ee02f08e078aa26165782060c4f86bf50097f4e6f546c1cb103b2bca5eefd9",
         "pack": "details/descriptions-c.json",
-        "pack_sha256": "ac5df9e97d62379d54d893edc5c6188e0ecdd685b4e883794260da26e080e3c0",
+        "pack_sha256": "5c3d23d75ef6e5e9deb218a8d40d283c2980465acc53731f3aedd5a452c04a0d",
         "status": "available"
       }
     },
@@ -1553,7 +3102,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-05T00:25:45.828+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "R&D",
@@ -1561,16 +3110,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "skydio",
+          "job_id": "d75d4adf-760c-46b6-bb98-3497650a8924",
+          "eu": "false"
         }
       },
       "description_ref": {
-        "sha256": "a713192a684d8ee623541a128ede7791c2469e5fc93158507719665b38a37135",
-        "pack": "details/descriptions-a.json",
-        "pack_sha256": "84d5a548988a55308382a04853963485cc2f543ef5b09ed684576613c039ea21",
+        "sha256": "c206601a705c757926f09ddb92dd03a3509b63a8bc7f5f9ecc7d7ab980406777",
+        "pack": "details/descriptions-c.json",
+        "pack_sha256": "5c3d23d75ef6e5e9deb218a8d40d283c2980465acc53731f3aedd5a452c04a0d",
         "status": "available"
       }
     },
@@ -1589,7 +3139,7 @@
       "ats": "ashby",
       "posted_at": "2026-05-27T21:01:14.865+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Hardware Engineering",
@@ -1597,16 +3147,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "7ba325d9-4256-4567-83a4-8dd9c72a0d10",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "662a4a844c27e9c7d7fc89d7b97711705a04eda1f952dae33e9e5ff7dad4dce0",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "4ba855f997906341c9a413b8fa9718daac44736bff81d6ed54d5e3f76b897a2a",
+        "pack_sha256": "8af3b06e9701a166370edcb4aa95228de724c5ef3120939aa8b5e6a41ccdceb0",
         "status": "available"
       }
     },
@@ -1642,7 +3193,7 @@
       "description_ref": {
         "sha256": "0c05875f5e3b4681eed34acb069b57d44ea0f266682a3962afa1bfb151220216",
         "pack": "details/descriptions-0.json",
-        "pack_sha256": "db390bd6ee04c19e460fdf06c7ef87e5616ffaebc7a158af7c4df6b813904497",
+        "pack_sha256": "f0ac431a67b65863559041aaba38bcdcda3f59c86811ba7121b6e53578442e8e",
         "status": "available"
       }
     },
@@ -1661,7 +3212,7 @@
       "ats": "ashby",
       "posted_at": "2026-06-28T02:12:52.823+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "compensation": "$300K - $500K",
       "employment_type": "FullTime",
@@ -1673,24 +3224,71 @@
         "4b20187a157478c7"
       ],
       "source_metadata": {
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$300K – $500K",
+              "scrapeableCompensationSalarySummary": "$300K - $500K",
+              "compensationTiers": [
+                {
+                  "id": "99b074b1-59f9-4ecc-b6c7-363134d5bf1e",
+                  "tierSummary": "$300K – $500K",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "d9bde490-f939-47ea-9fea-464ef4cbda3e",
+                      "summary": "$300K – $500K",
+                      "compensationType": "Salary",
+                      "interval": "1 YEAR",
+                      "currencyCode": "USD",
+                      "minValue": 300000,
+                      "maxValue": 500000
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 YEAR",
+                  "currencyCode": "USD",
+                  "minValue": 300000,
+                  "maxValue": 500000
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "quadrillion-labs",
+          "job_id": "579cef88-1dbf-45b5-a938-7ddc23505765",
+          "eu": "false"
+        },
+        "sponsorship": "Other",
+        "terms": [
+          "Fall 2026"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
         "provenance": [
           {
             "source": "simplify",
             "source_job_id": "05ffbfcd-fa0b-4650-baa4-19048fcad9d7",
             "url": "https://jobs.ashbyhq.com/quadrillion-labs/579cef88-1dbf-45b5-a938-7ddc23505765/application?embed=true",
-            "discovered_at": "2026-09-05T00:50:25Z"
+            "discovered_at": "2026-09-15T16:26:04Z"
           }
-        ],
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
-        }
+        ]
       },
       "description_ref": {
         "sha256": "e700e6ad9e2667d92af07718227587885f07a33059bd5a441a689416a606d486",
         "pack": "details/descriptions-e.json",
-        "pack_sha256": "a555f8e8e4e183ad6056c369047ab860ad203cbdd25f84985160a6acb926662b",
+        "pack_sha256": "925d56d62c30a7e3e20025b0b40d34cb6d8c49814cb1b0c84387ffb27e73ac0d",
         "status": "available"
       }
     },
@@ -1709,7 +3307,7 @@
       "ats": "ashby",
       "posted_at": "2026-03-10T16:48:28.526+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Growth",
@@ -1717,16 +3315,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "74d12075-e78d-4b1f-a9a1-f51b55b8ecb2",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "6773ea619076d9c3b6d77f9b91aa23bdf522ccf28eac4dfa190a7d71690421e8",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "4ba855f997906341c9a413b8fa9718daac44736bff81d6ed54d5e3f76b897a2a",
+        "pack_sha256": "8af3b06e9701a166370edcb4aa95228de724c5ef3120939aa8b5e6a41ccdceb0",
         "status": "available"
       }
     },
@@ -1746,7 +3345,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-31T17:54:40.218+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "compensation": "$150K - $180K",
       "employment_type": "FullTime",
@@ -1755,16 +3354,108 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$150K – $180K • Offers Equity",
+              "scrapeableCompensationSalarySummary": "$150K - $180K",
+              "compensationTiers": [
+                {
+                  "id": "e18a9884-d4d6-4a5d-b263-f528157e2e73",
+                  "tierSummary": "$150K – $180K • Offers Equity",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "2cfae276-fc6f-437e-9207-6dcd3b7f504f",
+                      "summary": "$150K – $180K",
+                      "compensationType": "Salary",
+                      "interval": "1 YEAR",
+                      "currencyCode": "USD",
+                      "minValue": 150000,
+                      "maxValue": 180000
+                    },
+                    {
+                      "id": "de0190d0-f7a6-4127-a305-f0d01df05efe",
+                      "summary": "Offers Equity",
+                      "compensationType": "EquityPercentage",
+                      "interval": "NONE",
+                      "currencyCode": null,
+                      "minValue": null,
+                      "maxValue": null
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 YEAR",
+                  "currencyCode": "USD",
+                  "minValue": 150000,
+                  "maxValue": 180000
+                },
+                {
+                  "compensationType": "EquityPercentage",
+                  "interval": "NONE",
+                  "currencyCode": null,
+                  "minValue": null,
+                  "maxValue": null
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "sierra",
+          "job_id": "149f368c-52d5-408f-ba26-ad888f318a00",
+          "eu": "false"
         }
       },
       "description_ref": {
-        "sha256": "75848e62a6d29d8d379c44380c1bafdd131c104506fa34c220cb896e7f454358",
-        "pack": "details/descriptions-7.json",
-        "pack_sha256": "8d0721fb162252aa6d40de9127de78bbba0a9211d760cee115ef9de94fa3fc77",
+        "sha256": "ac38fa574deb28e162b514585bdba84a6ef5098c4bee6df6f355e2d443532501",
+        "pack": "details/descriptions-a.json",
+        "pack_sha256": "160588a09dba2f79eeb975e778caa11095a369ae4fa4ec9c08bbaf0b4be80d5a",
+        "status": "available"
+      }
+    },
+    "9554d016bf866322": {
+      "id": "9554d016bf866322",
+      "company": "Base Power",
+      "company_slug": "base-power",
+      "title": "Finance - Planning Intern",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/base-power/50755402-f400-4ea9-8ceb-120fb42f97e9",
+      "source": "ashby",
+      "source_job_id": "50755402-f400-4ea9-8ceb-120fb42f97e9",
+      "ats": "ashby",
+      "posted_at": "2026-09-14T23:26:48.029+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Business Operations",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "50755402-f400-4ea9-8ceb-120fb42f97e9",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "951ccc0b9518fc57b245c813addcb0a12a662f8d0c9a04012f6e81c888c3a26c",
+        "pack": "details/descriptions-9.json",
+        "pack_sha256": "830afdf187116b7c0497d02edb84cf5e1d1d40c1f22161dee2a9e0fd8f2b3056",
         "status": "available"
       }
     },
@@ -1783,23 +3474,24 @@
       "ats": "ashby",
       "posted_at": "2026-08-31T17:54:50.315+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "X-BAT Division",
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "shield-ai",
+          "job_id": "7c6f4d6d-fac0-4d71-9d4e-7581db11dc33",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "3d434469868b0d5856db585d8ebc47b1ae7d33d75b3890b94dbc6b226456a954",
         "pack": "details/descriptions-3.json",
-        "pack_sha256": "69071e5b4170cbf51c1d486398f97bd450ac790eecf1d679e61feafdc052c9d4",
+        "pack_sha256": "d8c6a9fb682073251abb19b5fee5733b776bf072b21bec5d739741ecb1dd659c",
         "status": "available"
       }
     },
@@ -1816,11 +3508,29 @@
       "source": "ashby",
       "source_job_id": "5353ea33-57d4-46fa-9a96-e392a3f841bc",
       "ats": "ashby",
-      "posted_at": "2026-05-26T22:25:02.136+00:00",
+      "posted_at": "2026-09-14T16:00:11.257+00:00",
       "first_seen_at": "2026-08-31T00:00:06Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
-      "description_status": "unavailable"
+      "employment_type": "Intern",
+      "department": "Software Engineering",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "5353ea33-57d4-46fa-9a96-e392a3f841bc",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "c015f672d6a21db5c7a28f48c90cca5345e3e298f6edafffb7f27f35ea2527be",
+        "pack": "details/descriptions-c.json",
+        "pack_sha256": "5c3d23d75ef6e5e9deb218a8d40d283c2980465acc53731f3aedd5a452c04a0d",
+        "status": "available"
+      }
     },
     "9602a2da82f1a306": {
       "id": "9602a2da82f1a306",
@@ -1837,7 +3547,7 @@
       "ats": "ashby",
       "posted_at": "2025-07-14T21:43:09.149+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Technical",
@@ -1845,16 +3555,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "tilderesearch",
+          "job_id": "b2e145db-0111-47c1-9d9f-e856a057d8ef",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "3c61107acbc27adb4c5b42b8fd6946edffe175de4443dca3d9f4e63ff8fbaa24",
         "pack": "details/descriptions-3.json",
-        "pack_sha256": "69071e5b4170cbf51c1d486398f97bd450ac790eecf1d679e61feafdc052c9d4",
+        "pack_sha256": "d8c6a9fb682073251abb19b5fee5733b776bf072b21bec5d739741ecb1dd659c",
         "status": "available"
       }
     },
@@ -1873,7 +3584,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-31T22:47:06.440+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "compensation": "$150K - $180K",
       "employment_type": "FullTime",
@@ -1882,16 +3593,71 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$150K – $180K • Offers Equity",
+              "scrapeableCompensationSalarySummary": "$150K - $180K",
+              "compensationTiers": [
+                {
+                  "id": "4b88f5e7-1a20-4725-81e6-35017f7dfcff",
+                  "tierSummary": "$150K – $180K • Offers Equity",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "7dd04979-7083-43e1-82a0-25926f2ad257",
+                      "summary": "$150K – $180K",
+                      "compensationType": "Salary",
+                      "interval": "1 YEAR",
+                      "currencyCode": "USD",
+                      "minValue": 150000,
+                      "maxValue": 180000
+                    },
+                    {
+                      "id": "a019aab2-329c-482a-97f5-86d2348489f6",
+                      "summary": "Offers Equity",
+                      "compensationType": "EquityPercentage",
+                      "interval": "NONE",
+                      "currencyCode": null,
+                      "minValue": null,
+                      "maxValue": null
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 YEAR",
+                  "currencyCode": "USD",
+                  "minValue": 150000,
+                  "maxValue": 180000
+                },
+                {
+                  "compensationType": "EquityPercentage",
+                  "interval": "NONE",
+                  "currencyCode": null,
+                  "minValue": null,
+                  "maxValue": null
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "sierra",
+          "job_id": "d9c445da-c7b4-43a3-8d71-d367681c3015",
+          "eu": "false"
         }
       },
       "description_ref": {
-        "sha256": "a1bd193321e4567e0168768e4fc6b9f2ff948f07f179cbd9e7470f3f5a2bb923",
-        "pack": "details/descriptions-a.json",
-        "pack_sha256": "84d5a548988a55308382a04853963485cc2f543ef5b09ed684576613c039ea21",
+        "sha256": "cb29e8ee1efb2d46492f4d0ce7aca21d8d0a8aad259a0cbbefb3dfbe5cb3c255",
+        "pack": "details/descriptions-c.json",
+        "pack_sha256": "5c3d23d75ef6e5e9deb218a8d40d283c2980465acc53731f3aedd5a452c04a0d",
         "status": "available"
       }
     },
@@ -1911,7 +3677,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-28T22:02:03.674+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "compensation": "$15K per month",
       "employment_type": "FullTime",
@@ -1920,16 +3686,55 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$15K per month",
+              "scrapeableCompensationSalarySummary": null,
+              "compensationTiers": [
+                {
+                  "id": "624de44b-f9f9-4a40-84ae-03d4dfdd23aa",
+                  "tierSummary": "$15K per month",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "13fb708a-50a1-45c6-9f10-990cbf72d6c3",
+                      "summary": "$15K per month",
+                      "compensationType": "Salary",
+                      "interval": "1 MONTH",
+                      "currencyCode": "USD",
+                      "minValue": 15000,
+                      "maxValue": 15000
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 MONTH",
+                  "currencyCode": "USD",
+                  "minValue": 15000,
+                  "maxValue": 15000
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "modal",
+          "job_id": "38888294-6bc7-4dab-b072-6d0f0c2ed79a",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "2f2c0421d907ead536468266b3303e60101fcf8e0ee86897bef80dc18d6e6f1e",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "92e14bc8d9a3f494cd8e3460addc520735f8272226e693a4ff189fd7be80755a",
+        "pack_sha256": "28b48631a003ddac2f5456cd0da78cdb620f47d0eb27d2b2f97f0a28d5273b37",
         "status": "available"
       }
     },
@@ -1948,7 +3753,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-03T21:07:05.402+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "compensation": "$176K - $230K",
       "employment_type": "FullTime",
@@ -1956,16 +3761,55 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$176K – $230K",
+              "scrapeableCompensationSalarySummary": "$176K - $230K",
+              "compensationTiers": [
+                {
+                  "id": "7d1563d3-901b-4958-b34f-e9b6ccfefc1f",
+                  "tierSummary": "$176K – $230K",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "06a60679-3ce6-4e02-839a-4b81e7b48616",
+                      "summary": "$176K – $230K",
+                      "compensationType": "Salary",
+                      "interval": "1 YEAR",
+                      "currencyCode": "USD",
+                      "minValue": 176000,
+                      "maxValue": 230000
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 YEAR",
+                  "currencyCode": "USD",
+                  "minValue": 176000,
+                  "maxValue": 230000
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "snowflake",
+          "job_id": "1bad12df-f443-426f-9d09-e96fc780d698",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "d31f89d24e79acb5a2fdb1cafd01bd679873c53eba0db29855b69091e5a5b14e",
         "pack": "details/descriptions-d.json",
-        "pack_sha256": "bdb8f1b74cea364a79bb5b9623cf0140bb6540d0401136d9ccc14fb7771c6fa0",
+        "pack_sha256": "ff5cb490346190370686fa1c71e42337bccd54097db2fd1e3ce0e645a6bf2e69",
         "status": "available"
       }
     },
@@ -1984,7 +3828,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-31T01:21:06.637+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Engineering",
@@ -1992,16 +3836,91 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "heliux",
+          "job_id": "ff2b6f4b-00d0-4afe-b4f5-2dbf443409ef",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "b03ae5078fb6275fc71773f3f718507b5fffc94e613589ef8b3fc0f494f2ddc2",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "343f7d07bf1059570d5b5e0985528a9444792e21c82cda9e758e97b68b39328b",
+        "pack_sha256": "e59fe657d00b546993cb578406dfcb5a782ea92d110436753d401245f46f939b",
+        "status": "available"
+      }
+    },
+    "ac49f7fbdd28ef68": {
+      "id": "ac49f7fbdd28ef68",
+      "company": "Base Power",
+      "company_slug": "base-power",
+      "title": "Content Intern",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/base-power/d4ce943e-42e9-4d12-a041-5c40e8bb9f17",
+      "source": "ashby",
+      "source_job_id": "d4ce943e-42e9-4d12-a041-5c40e8bb9f17",
+      "ats": "ashby",
+      "posted_at": "2026-09-15T15:09:22.846+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Growth",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "d4ce943e-42e9-4d12-a041-5c40e8bb9f17",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "55f5b4233aeb51783517dc870bdbb55856f20de5a7b1513806d27d34f9907669",
+        "pack": "details/descriptions-5.json",
+        "pack_sha256": "3705a149ca4dd20484bdcfcfc31d1ea7779e9241b61f00f170206f2e4670b62e",
+        "status": "available"
+      }
+    },
+    "ae9fd1ccd1d366c3": {
+      "id": "ae9fd1ccd1d366c3",
+      "company": "Base Power",
+      "company_slug": "base-power",
+      "title": "Design Intern",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/base-power/5edd4bd5-ed18-4bb6-bad4-ab67d95f00bd",
+      "source": "ashby",
+      "source_job_id": "5edd4bd5-ed18-4bb6-bad4-ab67d95f00bd",
+      "ats": "ashby",
+      "posted_at": "2026-09-15T14:17:05.293+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Growth",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "5edd4bd5-ed18-4bb6-bad4-ab67d95f00bd",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "b720007042b9b664d217e2e427b09ba48f42b9d865e803cb8d6719bac3431c41",
+        "pack": "details/descriptions-b.json",
+        "pack_sha256": "e59fe657d00b546993cb578406dfcb5a782ea92d110436753d401245f46f939b",
         "status": "available"
       }
     },
@@ -2018,25 +3937,26 @@
       "source": "ashby",
       "source_job_id": "043c739e-ff80-4faa-b2be-5d1e96768dfa",
       "ats": "ashby",
-      "posted_at": "2026-08-31T17:34:49.477+00:00",
+      "posted_at": "2026-09-14T14:13:41.480+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Aircraft Operations Division",
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "shield-ai",
+          "job_id": "043c739e-ff80-4faa-b2be-5d1e96768dfa",
+          "eu": "false"
         }
       },
       "description_ref": {
-        "sha256": "c6687a88155a590c3f13e8a30bd87a3e55767738181b5f48eaceffa8dc9714a8",
-        "pack": "details/descriptions-c.json",
-        "pack_sha256": "ac5df9e97d62379d54d893edc5c6188e0ecdd685b4e883794260da26e080e3c0",
+        "sha256": "12b927276844b63589150bbe05b651b029ce8571f128a8e4d828bc8bce3c5161",
+        "pack": "details/descriptions-1.json",
+        "pack_sha256": "25c3bf9665f826a14c95023d63ec312cf0e441fdff290c073d3cadfe1a1edefb",
         "status": "available"
       }
     },
@@ -2055,7 +3975,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-31T17:34:27.191+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Persona AI",
@@ -2063,17 +3983,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "json_ld",
-          "completeness": "available",
-          "identity": "matched_url_and_title",
-          "resolved_url": "https://jobs.ashbyhq.com/persona.ai/ed9a7425-9798-471e-b46a-fefd59570630"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "persona.ai",
+          "job_id": "ed9a7425-9798-471e-b46a-fefd59570630",
+          "eu": "false"
         }
       },
       "description_ref": {
-        "sha256": "852067ad44706c1711f2778b07f70effbc079009c878def235d919872fd3c7ea",
-        "pack": "details/descriptions-8.json",
-        "pack_sha256": "7b470937bb0697dc8fad6331ccf8988dabfc5244ba3ab3333372eb826719cc66",
+        "sha256": "0698f4b4fe7a535893d81cd043e4625eaae2b12439259954918bd167f562f6d2",
+        "pack": "details/descriptions-0.json",
+        "pack_sha256": "f0ac431a67b65863559041aaba38bcdcda3f59c86811ba7121b6e53578442e8e",
         "status": "available"
       }
     },
@@ -2092,7 +4012,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-15T01:36:45.329+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Engineering",
@@ -2103,24 +4023,67 @@
         "5f691af0027d0cb2"
       ],
       "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "dedalus-labs",
+          "job_id": "bcd6db2e-400b-4ffa-aef3-0948a7b558c2",
+          "eu": "false"
+        },
+        "sponsorship": "Other",
+        "terms": [
+          "Fall 2026"
+        ],
+        "category": "Software",
         "provenance": [
           {
             "source": "simplify",
             "source_job_id": "8c8c7d2c-0377-4609-87fb-df719e4b5165",
             "url": "https://jobs.ashbyhq.com/dedalus-labs/bcd6db2e-400b-4ffa-aef3-0948a7b558c2/application?embed=true",
-            "discovered_at": "2026-09-05T00:50:25Z"
+            "discovered_at": "2026-09-15T16:26:04Z"
           }
-        ],
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
-        }
+        ]
       },
       "description_ref": {
         "sha256": "149fb7ea927a13d9329b31b86e2d6d24fb325efac5c1bbe67863762a852af8e9",
         "pack": "details/descriptions-1.json",
-        "pack_sha256": "1f3abc91f1519dda009fec84122ca6a47ac8597fd49bd538324a080f0d2d13b1",
+        "pack_sha256": "25c3bf9665f826a14c95023d63ec312cf0e441fdff290c073d3cadfe1a1edefb",
+        "status": "available"
+      }
+    },
+    "b5909f2eb99ab52b": {
+      "id": "b5909f2eb99ab52b",
+      "company": "Base Power",
+      "company_slug": "base-power",
+      "title": "Business Operations, MBA Intern",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/base-power/35b85c17-d6bc-4645-83f0-782049febce7",
+      "source": "ashby",
+      "source_job_id": "35b85c17-d6bc-4645-83f0-782049febce7",
+      "ats": "ashby",
+      "posted_at": "2026-09-15T01:23:20.722+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Business Operations",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "35b85c17-d6bc-4645-83f0-782049febce7",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "8d8c5f3f984368c8e1c02915008fde812710a8a43af4e99a8f958a196d2d05db",
+        "pack": "details/descriptions-8.json",
+        "pack_sha256": "60be8934c420655dac56f3e633d2fa67d97a2c3a79d42b6fc91d4f8141cad7d7",
         "status": "available"
       }
     },
@@ -2139,7 +4102,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-24T03:24:43.068+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "compensation": "$4K – $6K per week",
       "employment_type": "FullTime",
@@ -2148,16 +4111,55 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$4K – $6K per week",
+              "scrapeableCompensationSalarySummary": null,
+              "compensationTiers": [
+                {
+                  "id": "d0bed16c-a414-4391-b58c-78daa64dacd0",
+                  "tierSummary": "$4K – $6K per week",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "87da5340-4f71-429c-8998-d16ea0104727",
+                      "summary": "$4K – $6K per week",
+                      "compensationType": "Salary",
+                      "interval": "1 WEEK",
+                      "currencyCode": "USD",
+                      "minValue": 4000,
+                      "maxValue": 6000
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 WEEK",
+                  "currencyCode": "USD",
+                  "minValue": 4000,
+                  "maxValue": 6000
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "quadrillion-labs",
+          "job_id": "a4acc44c-31ce-41a0-ab44-2500487b4d05",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "30f598e6ccea428b191d5e45e3b2b75094a1ed57dc2f4747c7cec2f252c28d2e",
         "pack": "details/descriptions-3.json",
-        "pack_sha256": "69071e5b4170cbf51c1d486398f97bd450ac790eecf1d679e61feafdc052c9d4",
+        "pack_sha256": "d8c6a9fb682073251abb19b5fee5733b776bf072b21bec5d739741ecb1dd659c",
         "status": "available"
       }
     },
@@ -2176,24 +4178,118 @@
       "ats": "ashby",
       "posted_at": "2026-05-18T22:06:49.747+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
-      "department": "Manufacturing Engineering",
+      "department": "Manufacturing",
       "workplace_type": "onsite",
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "a92c9d93-eac0-4da5-b3f2-edf1eeef146b",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "8c498082a21b6cd99a303e2e79b7f1c0dbc005ded838d7319b618c312954d10c",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "7b470937bb0697dc8fad6331ccf8988dabfc5244ba3ab3333372eb826719cc66",
+        "pack_sha256": "60be8934c420655dac56f3e633d2fa67d97a2c3a79d42b6fc91d4f8141cad7d7",
+        "status": "available"
+      }
+    },
+    "c39aa4abe7b294e0": {
+      "id": "c39aa4abe7b294e0",
+      "company": "Hadrian",
+      "company_slug": "hadrian",
+      "title": "Robotics Engineer Intern",
+      "location": "Los Angeles, CA",
+      "locations": [
+        "Los Angeles, CA"
+      ],
+      "url": "https://jobs.ashbyhq.com/hadrian-automation/02e33109-08c5-4db7-8881-67294c172584",
+      "source": "ashby",
+      "source_job_id": "02e33109-08c5-4db7-8881-67294c172584",
+      "ats": "ashby",
+      "posted_at": "2026-09-02T21:47:12.152+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "FullTime",
+      "department": "Engineering, Product, Design",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "hadrian-automation",
+          "job_id": "02e33109-08c5-4db7-8881-67294c172584",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "fe4dba02b87d258336ab044b14cec4a0884836d2961231e2788f59b920fc6162",
+        "pack": "details/descriptions-f.json",
+        "pack_sha256": "4a02dc930a2c4ff5da2d6137599e4f674842c7e8775fe7f5e159988c07c77876",
+        "status": "available"
+      }
+    },
+    "c558e16c0bda67b2": {
+      "id": "c558e16c0bda67b2",
+      "company": "Base Power",
+      "company_slug": "base-power",
+      "title": "Supply Chain Tooling Engineer Intern",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/base-power/7fce3b16-c132-453b-a836-a3bcbd21abd2",
+      "source": "ashby",
+      "source_job_id": "7fce3b16-c132-453b-a836-a3bcbd21abd2",
+      "ats": "ashby",
+      "posted_at": "2026-09-13T22:59:38.659+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Supply Chain",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "merged_from": [
+        "2d37fee372d3e4c9"
+      ],
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "7fce3b16-c132-453b-a836-a3bcbd21abd2",
+          "eu": "false"
+        },
+        "sponsorship": "Other",
+        "terms": [
+          "Winter 2026"
+        ],
+        "degrees": [
+          "Bachelor's"
+        ],
+        "category": "Software",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "d410a9b5-528c-4d2a-bcec-b5999e85d25f",
+            "url": "https://jobs.ashbyhq.com/base-power/7fce3b16-c132-453b-a836-a3bcbd21abd2/application?embed=true",
+            "discovered_at": "2026-09-15T16:26:04Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "9769758c1b0faeddcbf24753078f8bc480bf19ae3ff50721c4da0a6a8b1cb9a0",
+        "pack": "details/descriptions-9.json",
+        "pack_sha256": "830afdf187116b7c0497d02edb84cf5e1d1d40c1f22161dee2a9e0fd8f2b3056",
         "status": "available"
       }
     },
@@ -2212,23 +4308,24 @@
       "ats": "ashby",
       "posted_at": "2026-06-02T11:41:43.304+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Engineering",
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "snowflake",
+          "job_id": "41e65c6c-a01e-4f40-af14-ae75d3b95e27",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "d044b0e0c9ff814b1eb5f85185ec6f35b6fd2057f7bd0b1a1648f5e5e3625f9f",
         "pack": "details/descriptions-d.json",
-        "pack_sha256": "bdb8f1b74cea364a79bb5b9623cf0140bb6540d0401136d9ccc14fb7771c6fa0",
+        "pack_sha256": "ff5cb490346190370686fa1c71e42337bccd54097db2fd1e3ce0e645a6bf2e69",
         "status": "available"
       }
     },
@@ -2247,7 +4344,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-08T22:42:58.266+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Talent",
@@ -2255,16 +4352,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "netic",
+          "job_id": "bea76c74-368b-455c-85e2-5f9764a0202b",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "85dc73517b7ecb8c556fdd040e70cb8fda20ba3e58b41a91d06dd7563c6155a2",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "7b470937bb0697dc8fad6331ccf8988dabfc5244ba3ab3333372eb826719cc66",
+        "pack_sha256": "60be8934c420655dac56f3e633d2fa67d97a2c3a79d42b6fc91d4f8141cad7d7",
         "status": "available"
       }
     },
@@ -2283,7 +4381,7 @@
       "ats": "ashby",
       "posted_at": "2025-09-09T04:51:50.522+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "compensation": "$100K",
       "employment_type": "FullTime",
@@ -2292,16 +4390,130 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$100K",
+              "scrapeableCompensationSalarySummary": "$100K",
+              "compensationTiers": [
+                {
+                  "id": "dd4d92d9-a6d7-4be8-bb84-06d80e120bf1",
+                  "tierSummary": "$100K",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "4510738a-a3c2-47f6-85e8-96a9f2035332",
+                      "summary": "$100K",
+                      "compensationType": "Salary",
+                      "interval": "1 YEAR",
+                      "currencyCode": "USD",
+                      "minValue": 100000,
+                      "maxValue": 100000
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 YEAR",
+                  "currencyCode": "USD",
+                  "minValue": 100000,
+                  "maxValue": 100000
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "kastle",
+          "job_id": "2c764341-e028-4736-a1a7-0d5faf16e592",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "de32a8721f46ce1fe4d08a0d61a506aeb8d88b84640070564961dfb776ef03fa",
         "pack": "details/descriptions-d.json",
-        "pack_sha256": "bdb8f1b74cea364a79bb5b9623cf0140bb6540d0401136d9ccc14fb7771c6fa0",
+        "pack_sha256": "ff5cb490346190370686fa1c71e42337bccd54097db2fd1e3ce0e645a6bf2e69",
+        "status": "available"
+      }
+    },
+    "cd950b4043248ef0": {
+      "id": "cd950b4043248ef0",
+      "company": "Cursor",
+      "company_slug": "cursor",
+      "title": "Software Engineer, New Grad 2027",
+      "location": "San Francisco, CA",
+      "locations": [
+        "San Francisco, CA",
+        "New York"
+      ],
+      "url": "https://jobs.ashbyhq.com/cursor/d0e5b41d-84ab-4887-bd3a-55589b11dd7b",
+      "source": "ashby",
+      "source_job_id": "d0e5b41d-84ab-4887-bd3a-55589b11dd7b",
+      "ats": "ashby",
+      "posted_at": "2026-09-08T23:51:35.588+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "FullTime",
+      "department": "Engineering",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "cursor",
+          "job_id": "d0e5b41d-84ab-4887-bd3a-55589b11dd7b",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "f231afc19cb5a2f7ccf977f3e4bac960bcdb13e0d9b0eaa0de404da03c87cd1e",
+        "pack": "details/descriptions-f.json",
+        "pack_sha256": "4a02dc930a2c4ff5da2d6137599e4f674842c7e8775fe7f5e159988c07c77876",
+        "status": "available"
+      }
+    },
+    "d2fd603b2877fc4e": {
+      "id": "d2fd603b2877fc4e",
+      "company": "Base Power",
+      "company_slug": "base-power",
+      "title": "Deployments Engineering Intern",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/base-power/0f7fefdb-7218-40c6-893f-859b08fb3935",
+      "source": "ashby",
+      "source_job_id": "0f7fefdb-7218-40c6-893f-859b08fb3935",
+      "ats": "ashby",
+      "posted_at": "2026-09-15T14:21:54.588+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Deployments",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "0f7fefdb-7218-40c6-893f-859b08fb3935",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "915e3822b96f068b61e689cd686b926ace9aa226cb022f7f66f3f13e8ebb00e6",
+        "pack": "details/descriptions-9.json",
+        "pack_sha256": "830afdf187116b7c0497d02edb84cf5e1d1d40c1f22161dee2a9e0fd8f2b3056",
         "status": "available"
       }
     },
@@ -2323,7 +4535,7 @@
       "ats": "ashby",
       "posted_at": "2026-05-13T17:16:14.014+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -2331,16 +4543,29 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": null,
+              "scrapeableCompensationSalarySummary": null,
+              "compensationTiers": [],
+              "summaryComponents": []
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "cohere",
+          "job_id": "36d1f52f-8270-4652-adf5-5303a0ff341b",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "2590048f2cb54ce2d1d88f4369f48c0617570825dc6cef2d2a0bcb7798e1cfaf",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "92e14bc8d9a3f494cd8e3460addc520735f8272226e693a4ff189fd7be80755a",
+        "pack_sha256": "28b48631a003ddac2f5456cd0da78cdb620f47d0eb27d2b2f97f0a28d5273b37",
         "status": "available"
       }
     },
@@ -2348,7 +4573,7 @@
       "id": "d512cd784acde8d2",
       "company": "Sierra",
       "company_slug": "sierra",
-      "title": "Intern, Agent Development (Summer 2027)",
+      "title": "Software Engineer Intern, Agent (Summer 2027)",
       "location": "San Francisco, CA",
       "locations": [
         "San Francisco, CA",
@@ -2360,7 +4585,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-31T21:42:19.593+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Early Career",
@@ -2368,16 +4593,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "sierra",
+          "job_id": "34b31b67-268c-4270-b48f-72e59064c96e",
+          "eu": "false"
         }
       },
       "description_ref": {
-        "sha256": "0c05875f5e3b4681eed34acb069b57d44ea0f266682a3962afa1bfb151220216",
-        "pack": "details/descriptions-0.json",
-        "pack_sha256": "db390bd6ee04c19e460fdf06c7ef87e5616ffaebc7a158af7c4df6b813904497",
+        "sha256": "62dba46e9ac47ddc473dc098bf23822f596c5ca483f30bd9035755ca96b25a95",
+        "pack": "details/descriptions-6.json",
+        "pack_sha256": "8af3b06e9701a166370edcb4aa95228de724c5ef3120939aa8b5e6a41ccdceb0",
         "status": "available"
       }
     },
@@ -2396,7 +4622,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-11T13:55:22.856+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "compensation": "$160K - $200K",
       "employment_type": "FullTime",
@@ -2405,16 +4631,71 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$160K – $200K • Offers Equity",
+              "scrapeableCompensationSalarySummary": "$160K - $200K",
+              "compensationTiers": [
+                {
+                  "id": "d2e1820e-082a-4009-b523-ea67096f3364",
+                  "tierSummary": "$160K – $200K • Offers Equity",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "8a985fb5-2bff-47b7-9cc8-c6b5f2d37f51",
+                      "summary": "$160K – $200K",
+                      "compensationType": "Salary",
+                      "interval": "1 YEAR",
+                      "currencyCode": "USD",
+                      "minValue": 160000,
+                      "maxValue": 200000
+                    },
+                    {
+                      "id": "b79f634c-e321-45e3-9c48-d86711ad057f",
+                      "summary": "Offers Equity",
+                      "compensationType": "EquityPercentage",
+                      "interval": "NONE",
+                      "currencyCode": null,
+                      "minValue": null,
+                      "maxValue": null
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 YEAR",
+                  "currencyCode": "USD",
+                  "minValue": 160000,
+                  "maxValue": 200000
+                },
+                {
+                  "compensationType": "EquityPercentage",
+                  "interval": "NONE",
+                  "currencyCode": null,
+                  "minValue": null,
+                  "maxValue": null
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "sierra",
+          "job_id": "1131407f-e70a-4a23-9abc-3124c107d54a",
+          "eu": "false"
         }
       },
       "description_ref": {
-        "sha256": "d4cc804975f663f123465af4b47eb82922ba79ce4175a1d4253052a8009ea17e",
-        "pack": "details/descriptions-d.json",
-        "pack_sha256": "bdb8f1b74cea364a79bb5b9623cf0140bb6540d0401136d9ccc14fb7771c6fa0",
+        "sha256": "81a702e7798680f4aa98775d9d7cf235ee1c91b2d660237695e457d978a1c6c5",
+        "pack": "details/descriptions-8.json",
+        "pack_sha256": "60be8934c420655dac56f3e633d2fa67d97a2c3a79d42b6fc91d4f8141cad7d7",
         "status": "available"
       }
     },
@@ -2433,23 +4714,24 @@
       "ats": "ashby",
       "posted_at": "2026-09-01T02:09:49.870+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Campus Recruiting",
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "shield-ai",
+          "job_id": "e7d4bfb2-db9c-47ae-a5d0-8c9ce6a702d0",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "b5d913d479b863526f840b80d6bcb9bfd4118b076acbd518ee3e33a2dea4c9da",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "343f7d07bf1059570d5b5e0985528a9444792e21c82cda9e758e97b68b39328b",
+        "pack_sha256": "e59fe657d00b546993cb578406dfcb5a782ea92d110436753d401245f46f939b",
         "status": "available"
       }
     },
@@ -2468,7 +4750,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-14T19:12:39.557+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Early Career",
@@ -2476,16 +4758,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "notion",
+          "job_id": "e32799d2-8ef8-4803-8189-c72514afa816",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "35699e05a254c2796008664247246daa444ea0a85b4042914bb396249de9bf28",
         "pack": "details/descriptions-3.json",
-        "pack_sha256": "69071e5b4170cbf51c1d486398f97bd450ac790eecf1d679e61feafdc052c9d4",
+        "pack_sha256": "d8c6a9fb682073251abb19b5fee5733b776bf072b21bec5d739741ecb1dd659c",
         "status": "available"
       }
     },
@@ -2504,7 +4787,7 @@
       "ats": "ashby",
       "posted_at": "2025-07-14T19:00:37.725+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Technical",
@@ -2512,16 +4795,54 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "tilderesearch",
+          "job_id": "e850d5b0-a5d6-4b9c-9898-f7addb441508",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "08372f3faa5140e032205aee7772324828b916cb963f8649ddcc0198de8c4550",
         "pack": "details/descriptions-0.json",
-        "pack_sha256": "db390bd6ee04c19e460fdf06c7ef87e5616ffaebc7a158af7c4df6b813904497",
+        "pack_sha256": "f0ac431a67b65863559041aaba38bcdcda3f59c86811ba7121b6e53578442e8e",
+        "status": "available"
+      }
+    },
+    "e5636be0d2e5b967": {
+      "id": "e5636be0d2e5b967",
+      "company": "Saronic",
+      "company_slug": "saronic",
+      "title": "Forward Deployed Engineer Intern (Summer 2027)",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/saronic/cffe4bc2-5f34-45bf-904d-e9a6c8a8e5ce",
+      "source": "ashby",
+      "source_job_id": "cffe4bc2-5f34-45bf-904d-e9a6c8a8e5ce",
+      "ats": "ashby",
+      "posted_at": "2026-09-09T19:46:26.327+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Internships & Co-Ops",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "saronic",
+          "job_id": "cffe4bc2-5f34-45bf-904d-e9a6c8a8e5ce",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "9ce3ab60d9f2d1d298496455ac2149c02536ff4ebd9781bc3c087522cfc66e49",
+        "pack": "details/descriptions-9.json",
+        "pack_sha256": "830afdf187116b7c0497d02edb84cf5e1d1d40c1f22161dee2a9e0fd8f2b3056",
         "status": "available"
       }
     },
@@ -2540,7 +4861,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-16T02:49:06.481+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "University",
@@ -2548,16 +4869,92 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "netic",
+          "job_id": "b0ea7aab-8eea-4d31-96f9-278364180ae7",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "bca27cebf790f23eae078c91b0698a476f576bc2df07908f87000810ddb0a6aa",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "343f7d07bf1059570d5b5e0985528a9444792e21c82cda9e758e97b68b39328b",
+        "pack_sha256": "e59fe657d00b546993cb578406dfcb5a782ea92d110436753d401245f46f939b",
+        "status": "available"
+      }
+    },
+    "e756866a419de8ac": {
+      "id": "e756866a419de8ac",
+      "company": "Saronic",
+      "company_slug": "saronic",
+      "title": "EHS Intern (Summer 2027)",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX",
+        "Franklin, LA"
+      ],
+      "url": "https://jobs.ashbyhq.com/saronic/45058422-8f60-426d-af8a-a5567d68deb7",
+      "source": "ashby",
+      "source_job_id": "45058422-8f60-426d-af8a-a5567d68deb7",
+      "ats": "ashby",
+      "posted_at": "2026-09-09T19:47:14.673+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Internships & Co-Ops",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "saronic",
+          "job_id": "45058422-8f60-426d-af8a-a5567d68deb7",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "f072d17f311da0fb3320502f82008cfb76ca43c0cd65e63c7bb4e97076bcdd92",
+        "pack": "details/descriptions-f.json",
+        "pack_sha256": "4a02dc930a2c4ff5da2d6137599e4f674842c7e8775fe7f5e159988c07c77876",
+        "status": "available"
+      }
+    },
+    "e8174cc0ce8029af": {
+      "id": "e8174cc0ce8029af",
+      "company": "Saronic",
+      "company_slug": "saronic",
+      "title": "Naval Architect Intern (Summer 2027)",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/saronic/fc6124a1-85a2-4c3f-82f5-4534ae443411",
+      "source": "ashby",
+      "source_job_id": "fc6124a1-85a2-4c3f-82f5-4534ae443411",
+      "ats": "ashby",
+      "posted_at": "2026-09-09T19:45:56.345+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Internships & Co-Ops",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "saronic",
+          "job_id": "fc6124a1-85a2-4c3f-82f5-4534ae443411",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "2a1bb3a6024a0689ee4f6c0598c01acf6b93884491d86ab522f3c0c919cfec5a",
+        "pack": "details/descriptions-2.json",
+        "pack_sha256": "28b48631a003ddac2f5456cd0da78cdb620f47d0eb27d2b2f97f0a28d5273b37",
         "status": "available"
       }
     },
@@ -2576,7 +4973,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-16T02:39:55.735+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "University",
@@ -2584,16 +4981,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "netic",
+          "job_id": "d9bcb6a2-0e54-4cb3-baec-43f2d74db18f",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "f41b40fb504b4463d3df4e60c70d5129052856749e8e16febf7fede639332417",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "ddbb04d8ce6e0292c6ffa65835cafa87dcd6eb5ffdd183b7dbf95a1548e2e882",
+        "pack_sha256": "4a02dc930a2c4ff5da2d6137599e4f674842c7e8775fe7f5e159988c07c77876",
         "status": "available"
       }
     },
@@ -2612,7 +5010,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-01T23:05:41.315+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "R&D",
@@ -2620,16 +5018,94 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "skydio",
+          "job_id": "9ac944bc-89da-44bb-bf9c-3b9922e7cbee",
+          "eu": "false"
         }
       },
       "description_ref": {
-        "sha256": "a3e63f33e25331987d5bf4a138e51a316d91cc02f2536fc06f8818e046aaba5f",
-        "pack": "details/descriptions-a.json",
-        "pack_sha256": "84d5a548988a55308382a04853963485cc2f543ef5b09ed684576613c039ea21",
+        "sha256": "26c4aaf9742d0b59a688bce678fa78a8bc463d1496d0489f5729835cc4f9e900",
+        "pack": "details/descriptions-2.json",
+        "pack_sha256": "28b48631a003ddac2f5456cd0da78cdb620f47d0eb27d2b2f97f0a28d5273b37",
+        "status": "available"
+      }
+    },
+    "ec1fa3ea96ae4550": {
+      "id": "ec1fa3ea96ae4550",
+      "company": "Fireworks AI",
+      "company_slug": "fireworks",
+      "title": "Member of Technical Staff, New Grad (BS/MS)",
+      "location": "San Mateo",
+      "locations": [
+        "San Mateo",
+        "New York"
+      ],
+      "url": "https://jobs.ashbyhq.com/fireworks/0c78aede-7c21-4d1e-88f1-f309deb9819e",
+      "source": "ashby",
+      "source_job_id": "0c78aede-7c21-4d1e-88f1-f309deb9819e",
+      "ats": "ashby",
+      "posted_at": "2026-09-08T23:52:16.165+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "compensation": "$160K - $180K",
+      "employment_type": "FullTime",
+      "department": "Engineering",
+      "workplace_type": "remote",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$160K – $180K",
+              "scrapeableCompensationSalarySummary": "$160K - $180K",
+              "compensationTiers": [
+                {
+                  "id": "3a95539d-5cb8-4a00-9e8b-60ae982dfaa1",
+                  "tierSummary": "$160K – $180K",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "d270e240-203e-44a0-acdd-762676015cc5",
+                      "summary": "$160K – $180K",
+                      "compensationType": "Salary",
+                      "interval": "1 YEAR",
+                      "currencyCode": "USD",
+                      "minValue": 160000,
+                      "maxValue": 180000
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 YEAR",
+                  "currencyCode": "USD",
+                  "minValue": 160000,
+                  "maxValue": 180000
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "fireworks",
+          "job_id": "0c78aede-7c21-4d1e-88f1-f309deb9819e",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "80c7da35a40ee32596323ad6896106c4c3d6d78a87317f6fcc1e0fcde71e37ec",
+        "pack": "details/descriptions-8.json",
+        "pack_sha256": "60be8934c420655dac56f3e633d2fa67d97a2c3a79d42b6fc91d4f8141cad7d7",
         "status": "available"
       }
     },
@@ -2648,24 +5124,101 @@
       "ats": "ashby",
       "posted_at": "2026-05-18T21:31:14.996+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
-      "department": "Manufacturing Engineering",
+      "department": "Manufacturing",
       "workplace_type": "onsite",
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "6c56e236-888e-423d-9f68-764bd9a4742d",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "fd95dc5dd68e439045a30f0bb87e453a75ae5d87cafae463835f22a89b1fb993",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "ddbb04d8ce6e0292c6ffa65835cafa87dcd6eb5ffdd183b7dbf95a1548e2e882",
+        "pack_sha256": "4a02dc930a2c4ff5da2d6137599e4f674842c7e8775fe7f5e159988c07c77876",
+        "status": "available"
+      }
+    },
+    "eee50d21b8c69c34": {
+      "id": "eee50d21b8c69c34",
+      "company": "1X",
+      "company_slug": "1x",
+      "title": "Internship - Manufacturing Engineering",
+      "location": "San Carlos, CA",
+      "locations": [
+        "San Carlos, CA"
+      ],
+      "url": "https://jobs.ashbyhq.com/1x/d687b375-8136-4e6f-baa6-369b89366050",
+      "source": "ashby",
+      "source_job_id": "d687b375-8136-4e6f-baa6-369b89366050",
+      "ats": "ashby",
+      "posted_at": "2026-09-14T17:19:51.237+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "compensation": "$35 per hour",
+      "employment_type": "Intern",
+      "department": "Manufacturing Operations",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$35 per hour",
+              "scrapeableCompensationSalarySummary": null,
+              "compensationTiers": [
+                {
+                  "id": "0454190b-fc9f-47de-a0ae-7e9d5b4e8ad5",
+                  "tierSummary": "$35 per hour",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "3c938b38-55f8-4ab6-8239-3565947b81dc",
+                      "summary": "$35 per hour",
+                      "compensationType": "Salary",
+                      "interval": "1 HOUR",
+                      "currencyCode": "USD",
+                      "minValue": 35,
+                      "maxValue": 35
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 HOUR",
+                  "currencyCode": "USD",
+                  "minValue": 35,
+                  "maxValue": 35
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "1x",
+          "job_id": "d687b375-8136-4e6f-baa6-369b89366050",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "71c99353f69200365a23d0bc52190ce437a718a74f1055f728baaae14ca52e42",
+        "pack": "details/descriptions-7.json",
+        "pack_sha256": "d1c5b2a423e828b6d1d7aa89a3428e5f4c2a7c0885c612ad65e80cada351a3bc",
         "status": "available"
       }
     },
@@ -2684,7 +5237,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-30T20:18:01.735+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Persona AI",
@@ -2692,17 +5245,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "json_ld",
-          "completeness": "available",
-          "identity": "matched_url_and_title",
-          "resolved_url": "https://jobs.ashbyhq.com/persona.ai/a68c0823-0b61-4741-9fbc-a1f6d701e4ed"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "persona.ai",
+          "job_id": "a68c0823-0b61-4741-9fbc-a1f6d701e4ed",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "3ba7a74842726695603de5c8b6c2e903c159e4fab580c266a3db73f9604ace24",
         "pack": "details/descriptions-3.json",
-        "pack_sha256": "69071e5b4170cbf51c1d486398f97bd450ac790eecf1d679e61feafdc052c9d4",
+        "pack_sha256": "d8c6a9fb682073251abb19b5fee5733b776bf072b21bec5d739741ecb1dd659c",
         "status": "available"
       }
     },
@@ -2721,7 +5274,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-03T16:12:20.644+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "compensation": "$25 per hour",
       "employment_type": "Intern",
@@ -2730,16 +5283,92 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "source_compensation": {
+          "provider": "ashby",
+          "data": {
+            "compensation": {
+              "compensationTierSummary": "$25 per hour",
+              "scrapeableCompensationSalarySummary": null,
+              "compensationTiers": [
+                {
+                  "id": "1d6cd912-49b2-49b3-be9a-998446562ccc",
+                  "tierSummary": "$25 per hour",
+                  "title": null,
+                  "additionalInformation": null,
+                  "components": [
+                    {
+                      "id": "e7056519-627a-4db9-96e1-7ad1753f7559",
+                      "summary": "$25 per hour",
+                      "compensationType": "Salary",
+                      "interval": "1 HOUR",
+                      "currencyCode": "USD",
+                      "minValue": 25,
+                      "maxValue": 25
+                    }
+                  ]
+                }
+              ],
+              "summaryComponents": [
+                {
+                  "compensationType": "Salary",
+                  "interval": "1 HOUR",
+                  "currencyCode": "USD",
+                  "minValue": 25,
+                  "maxValue": 25
+                }
+              ]
+            },
+            "shouldDisplayCompensationOnJobPostings": true
+          }
+        },
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "1x",
+          "job_id": "e7b4aaf5-5c55-4e2f-abcd-5c250657bede",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "5826b06d7151482ca03e5e2e46fd8e160b93241d1eafacae19ce37f11cc2703f",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "3a0c200792b5419180fae58bb4f5a771ff97024791bdf94c5dbf69123f84d3a2",
+        "pack_sha256": "3705a149ca4dd20484bdcfcfc31d1ea7779e9241b61f00f170206f2e4670b62e",
+        "status": "available"
+      }
+    },
+    "fab850ea8682c65a": {
+      "id": "fab850ea8682c65a",
+      "company": "Base Power",
+      "company_slug": "base-power",
+      "title": "Member Experience Intern",
+      "location": "Austin, TX",
+      "locations": [
+        "Austin, TX"
+      ],
+      "url": "https://jobs.ashbyhq.com/base-power/bef96e47-d08d-4717-a2be-28975b367a89",
+      "source": "ashby",
+      "source_job_id": "bef96e47-d08d-4717-a2be-28975b367a89",
+      "ats": "ashby",
+      "posted_at": "2026-09-14T18:51:56.274+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
+      "closed_at": null,
+      "employment_type": "Intern",
+      "department": "Growth",
+      "workplace_type": "onsite",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "bef96e47-d08d-4717-a2be-28975b367a89",
+          "eu": "false"
+        }
+      },
+      "description_ref": {
+        "sha256": "bcf91867e0857a0c677d0076673f212b7feb85c2500e0de3e8c9d46fd631ccc7",
+        "pack": "details/descriptions-b.json",
+        "pack_sha256": "e59fe657d00b546993cb578406dfcb5a782ea92d110436753d401245f46f939b",
         "status": "available"
       }
     },
@@ -2758,7 +5387,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-25T21:41:54.472+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-05T03:51:52Z",
+      "last_seen_at": "2026-09-15T16:26:04Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Hardware Engineering",
@@ -2766,16 +5395,17 @@
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
-        "description_acquisition": {
-          "method": "ashby_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
+        "ats_identity": {
+          "provider": "ashby",
+          "board": "base-power",
+          "job_id": "c6228333-5f84-4363-9a3a-fd1dfb8ad1a2",
+          "eu": "false"
         }
       },
       "description_ref": {
         "sha256": "ed8375ddb29e2ac542a26fc11560385c785d0525b0083b95833e1bbc948d71da",
         "pack": "details/descriptions-e.json",
-        "pack_sha256": "a555f8e8e4e183ad6056c369047ab860ad203cbdd25f84985160a6acb926662b",
+        "pack_sha256": "925d56d62c30a7e3e20025b0b40d34cb6d8c49814cb1b0c84387ffb27e73ac0d",
         "status": "available"
       }
     }

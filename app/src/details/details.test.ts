@@ -126,7 +126,7 @@ describe('advertised compensation', () => {
     ['$30–$40 per hour.', 'available', '$30–40/hr'],
     ['Salary: $90,000/year.', 'available', '$90,000/year'],
     ['Salary: $30.', 'available', 'See pay details'],
-    ['Compensation\n\nNY: $40/hour.\n\nTX: $30/hour.', 'available', 'See pay details'],
+    ['Compensation\n\nNY: $40/hour.\n\nTX: $30/hour.', 'available', '$30–40/hr'],
     ['Build software.', 'available', 'Pay not listed'],
     ['', 'unavailable', 'Pay unavailable'],
   ] as const)('formats pay consistently: %s', (text, acquisition, expected) => {

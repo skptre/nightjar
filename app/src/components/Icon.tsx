@@ -26,5 +26,5 @@ export function Icon({ name, size = 18 }: { name: keyof typeof paths; size?: num
 export function Brand(): ReactNode {
   return <span className="brand"><svg width="27" height="27" viewBox="0 0 32 32" fill="none" aria-hidden="true">
     <path d="m4 7 12 5 12-5-7 13-5 6-5-6Z" stroke="currentColor" strokeWidth="1.4" />
-    <path d="m4 7 12 11L28 7M16 18v8" stroke="currentColor" strokeWidth="1.4" /></svg>nightjar<span className="brand-period">.</span></span>;
+    <path d="m4 7 12 11L28 7M16 18v8" stroke="currentColor" strokeWidth="1.4" /></svg>nightjar</span>;
 }

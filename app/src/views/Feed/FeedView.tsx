@@ -105,10 +105,10 @@ export function FeedView(): React.ReactNode {
   const { toast } = useToast();
   const { profile } = useProfile();
   const { clearNewPostingCount, status: syncStatus, lastSyncedAt } = useSync();
-  const [viewMode, setViewMode] = useState<'for-you' | 'all'>(() => profile ? 'for-you' : 'all');
-  const [selectedCategories, setSelectedCategories] = useState<Set<string>>(
-    () => new Set(profile?.target_categories ?? []),
-  );
+  // The feed starts fresh every session: no view mode or filter selection is
+  // carried over from a previous visit or seeded from the saved profile.
+  const [viewMode, setViewMode] = useState<'for-you' | 'all'>('all');
+  const [selectedCategories, setSelectedCategories] = useState<Set<string>>(() => new Set());
   const [selectedDomains, setSelectedDomains] = useState<Set<string>>(new Set());
   const [search, setSearch] = useState(() => new URLSearchParams(window.location.search).get('q') ?? '');
   const [detailId, setDetailId] = useState<string | null>(null);
@@ -309,7 +309,7 @@ export function FeedView(): React.ReactNode {
     <div className="jobs-page">
       <div className="page-heading">
         <p className="eyebrow">MAKE YOUR NEXT MOVE</p>
-        <h1>Find your next opportunity<span className="accent-dot">.</span></h1>
+        <h1>Find your next opportunity</h1>
         <p className="mt-1 text-sm text-gray-500">
           {viewMode === 'for-you' ? 'A little closer to the work you want to do.' : 'Internships and early careers. A clearer place to start.'}
         </p>

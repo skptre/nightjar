@@ -254,3 +254,16 @@
   .new-results { display: flex; align-items: center; justify-content: space-between; gap: 15px; width: 100%; border: 1px solid var(--border); border-radius: 5px; padding: 10px 15px; font-size: 12px; margin-bottom: 12px; background: var(--surface-2); }
   .new-results span { display: flex; align-items: center; gap: 8px; }
 }
+@layer components {
+  /* Structured job-description rendering (details/format.ts) */
+  .desc-h { font-size: 14px; font-weight: 600; color: var(--text); letter-spacing: -.1px; line-height: 1.35; margin: 18px 0 7px; }
+  .desc-h:first-child { margin-top: 2px; }
+  .desc-p { font-size: 13px; line-height: 1.55; color: var(--muted); margin: 0 0 9px; overflow-wrap: anywhere; }
+  .desc-ul { list-style: none; margin: 0 0 12px; padding: 0; }
+  .desc-ul li { position: relative; font-size: 13px; line-height: 1.5; color: var(--muted); padding-left: 16px; margin: 4px 0; overflow-wrap: anywhere; }
+  .desc-ul li::before { content: "–"; position: absolute; left: 2px; color: var(--action-solid); }
+  .dark .desc-ul li::before { color: var(--accent); }
+  .desc-note { font-size: 12px; line-height: 1.6; color: var(--faint); border-left: 2px solid var(--border); padding-left: 12px; margin: 14px 0; }
+  .detail-tags .pay-tag { color: var(--action-solid); border-color: #c0d47f; background: rgba(213, 234, 151, .18); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .dark .detail-tags .pay-tag { color: var(--accent); border-color: #4b5a2c; background: rgba(213, 234, 151, .08); }
+}

@@ -10,10 +10,16 @@ import { App } from '@/App';
 import './index.css';
 import { applyAppearance } from '@/hooks/useAppearance';
 applyAppearance();
-const lastDestination = localStorage.getItem('nightjar_last_destination');
-if (window.location.pathname === '/' && lastDestination && ['/jobs', '/applications'].includes(lastDestination)
-  && localStorage.getItem('nightjar_onboarding_dismissed') === 'true') {
-  window.history.replaceState(null, '', lastDestination);
+// FOR NOW: every launch starts fresh on the landing page with no remembered
+// personalization, filters, or last destination. The local tracker (applications,
+// watched companies, cached postings) is preserved — only profile/session UI resets.
+try {
+  localStorage.removeItem('nightjar_profile');
+  localStorage.removeItem('nightjar_onboarding_dismissed');
+  localStorage.removeItem('nightjar_last_destination');
+} catch { /* localStorage unavailable */ }
+if (window.location.pathname !== '/') {
+  window.history.replaceState(null, '', '/');
 }
 
 const root = document.getElementById('root');

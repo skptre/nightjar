@@ -28,7 +28,7 @@ import { clearAllLocalData } from '@/db/clear-local-data';
 export function SettingsView(): ReactNode {
   return (
     <div className="settings-page space-y-8 pb-12">
-      <div className="page-heading"><p className="eyebrow">MAKE YOURSELF AT HOME</p><h1>Settings<span className="accent-dot">.</span></h1><p>Your workspace, the way you like it.</p></div>
+      <div className="page-heading"><p className="eyebrow">MAKE YOURSELF AT HOME</p><h1>Settings</h1><p>Your workspace, the way you like it.</p></div>
       <GeneralSection />
       <AppearanceSection />
       <AlertsSection />

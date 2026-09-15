@@ -97,7 +97,7 @@ function WelcomeScreen({
 }): ReactNode {
   return <main className="welcome-page"><Brand />
     <div className="welcome-body"><section className="welcome-copy"><div className="eyebrow">A LITTLE LESS NOISE. A LOT MORE POSSIBILITY.</div>
-      <h1>Your next chapter.<br />A clearer start<span className="accent-dot">.</span></h1>
+      <h1>Your next chapter.<br />A clearer start</h1>
       <p>Find the work that interests you. Keep your applications together. Make your next move with a little more clarity.</p>
       <div className="welcome-actions"><button className="button-primary" onClick={onBrowse}>Browse jobs <Icon name="arrow" size={16} /></button><button className="button-secondary" onClick={onPersonalize}>Personalize results</button></div>
       <p className="!text-xs !mt-5">No account required. Start exploring in one click.</p>

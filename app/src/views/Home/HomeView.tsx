@@ -51,7 +51,7 @@ export function HomeView(): React.ReactNode {
     && !job.closed && job.seen > company.since).length })).filter(company => company.count > 0);
   const saved = jobs.filter(job => job.status === 'saved');
   return <div className="home-page">
-    <div className="page-heading"><p className="eyebrow">YOUR WORKSPACE</p><h1>A little clarity for what’s next<span className="accent-dot">.</span></h1>
+    <div className="page-heading"><p className="eyebrow">YOUR WORKSPACE</p><h1>A little clarity for what’s next</h1>
       <p>{new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</p></div>
     {error && <p role="alert" className="connection-notice">Couldn't load your workspace. Please reopen this page.</p>}
     <div className="home-layout"><div>

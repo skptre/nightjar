@@ -31,7 +31,7 @@ it('opens a readable description, applies externally without claiming submission
   expect(await screen.findByText('Build flight simulation tools.')).toBeTruthy();
   fireEvent.click(screen.getByRole('button', { name: 'Read full description' }));
   expect(screen.getByText(/Final source clause retained/)).toBeTruthy();
-  fireEvent.click(screen.getByRole('button', { name: /Apply on company site/ }));
+  fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
   expect(state.open).toHaveBeenCalledWith('https://example.com/job');
   expect(await db.queryOne('SELECT * FROM applications')).toBeUndefined();
   fireEvent.click(screen.getByRole('button', { name: 'Mark applied' }));
@@ -78,11 +78,12 @@ it('filters graduate jobs by graduation in For you while All jobs remains browsa
     JSON.stringify({ title: 'Software Engineer New Grad', company: 'Test Aerospace', locations: [] }), 'new_grad', '2026-09-01', '2026-09-01']);
   const view = render(<FeedView />);
   await screen.findByRole('button', { name: 'Avionics Software Intern' });
-  expect(screen.queryByRole('button', { name: 'Software Engineer New Grad' })).toBeNull();
-  fireEvent.click(screen.getByRole('button', { name: 'All jobs' }));
+  // The feed starts fresh on All jobs, so every role is visible.
   expect(await screen.findByRole('button', { name: 'Software Engineer New Grad' })).toBeTruthy();
+  // For you hides a new-grad role when graduation is far off.
   fireEvent.click(screen.getByRole('button', { name: 'For you' }));
   expect(screen.queryByRole('button', { name: 'Software Engineer New Grad' })).toBeNull();
+  // Editing graduation to this cycle brings it back within For you.
   state.profile = { ...state.profile, graduation: `${nextYear}-05` };
   view.rerender(<FeedView />);
   expect(await screen.findByRole('button', { name: 'Software Engineer New Grad' })).toBeTruthy();

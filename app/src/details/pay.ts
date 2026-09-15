@@ -127,15 +127,25 @@ export function extractCompensation(passages: Evidence[], acquisition: Acquisiti
 export function compensationLabel(compensation: JobDetails['compensation']): string {
   if (compensation.status === 'not_listed') return 'Pay not listed';
   if (compensation.status === 'unavailable') return 'Pay unavailable';
-  const candidates = compensation.ranges.filter(r => r.kind === 'base' || r.kind === 'unspecified');
-  const unique = [...new Map(candidates.map(r => [JSON.stringify([r.min, r.max, r.currency, r.period]), r])).values()];
-  if (unique.length !== 1) return 'See pay details';
-  const range = unique[0]!;
-  const symbol = ({ USD: '$', CAD: 'C$', GBP: '£', EUR: '€' } as Record<string, string>)[range.currency] ?? `${range.currency} `;
+  // Prefer the base rate. Benefits sections leak amounts (a $120/month gym
+  // stipend, a $20 phone reimbursement) that are not the salary, so when a base
+  // rate exists it alone forms the headline; otherwise fall back to any generic
+  // or stipend amount. Multiple tiers that share a currency and period (e.g.
+  // "$47/hr for Undergrad and $53/hr for Graduate") collapse into one range.
+  const base = compensation.ranges.filter(r => r.kind === 'base');
+  const pool = base.length
+    ? base
+    : compensation.ranges.filter(r => r.kind === 'base' || r.kind === 'unspecified' || r.kind === 'stipend');
+  if (!pool.length) return 'See pay details';
+  const currency = pool[0]!.currency, period = pool[0]!.period;
+  if (pool.some(r => r.currency !== currency || r.period !== period)) return 'See pay details';
+  const min = Math.min(...pool.map(r => r.min));
+  const max = Math.max(...pool.map(r => r.max));
+  const symbol = ({ USD: '$', CAD: 'C$', GBP: '£', EUR: '€' } as Record<string, string>)[currency] ?? `${currency} `;
   const number = (n: number): string => n.toLocaleString('en-US', {
     minimumFractionDigits: Number.isInteger(n) ? 0 : 2, maximumFractionDigits: 2,
   });
-  const values = range.min === range.max ? number(range.min) : `${number(range.min)}–${number(range.max)}`;
-  const unit = ({ hour: 'hr', day: 'day', week: 'week', month: 'month', year: 'year' } as const)[range.period];
+  const values = min === max ? number(min) : `${number(min)}–${number(max)}`;
+  const unit = ({ hour: 'hr', day: 'day', week: 'week', month: 'month', year: 'year' } as const)[period];
   return `${symbol}${values}/${unit}`;
 }

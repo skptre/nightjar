@@ -80,7 +80,7 @@ export function PipelineView(): React.ReactNode {
     else void commit(row, status);
   };
   return <div className="tracker-page">
-    <div className="tracker-top"><div className="page-heading"><p className="eyebrow">ONE PLACE FOR YOUR NEXT STEPS</p><h1>Your applications<span className="accent-dot">.</span></h1><p>From a possibility to an offer. Keep it all here.</p></div>
+    <div className="tracker-top"><div className="page-heading"><p className="eyebrow">ONE PLACE FOR YOUR NEXT STEPS</p><h1>Your applications</h1><p>From a possibility to an offer. Keep it all here.</p></div>
       <button className="button-secondary" onClick={() => setAdding(!adding)} aria-label={adding ? 'Close new application' : 'Add application'} aria-expanded={adding}><Icon name={adding ? 'close' : 'plus'} size={15} /><span className="hidden sm:inline">Add application</span></button></div>
     {error && <p role="alert" className="connection-notice">{error}</p>}
     {adding && <ManualApplication onDone={() => { setAdding(false); refresh(); }} />}

@@ -1,6 +1,6 @@
 {
   "shard_id": "ashby",
-  "updated_at": "2026-09-15T22:27:19Z",
+  "updated_at": "2026-09-16T00:42:11Z",
   "count": 118,
   "postings": {
     "005ae9660f943a0a": {
@@ -19,7 +19,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-14T19:05:18.297+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Early Career",
@@ -37,7 +37,7 @@
       "description_ref": {
         "sha256": "01e6519ddd22e02751706de12b02388cba582d2c8911c4b553b7407c5dc2c50e",
         "pack": "details/descriptions-0.json",
-        "pack_sha256": "39eafd9f5ad09304cbd4793ecec411c6b51166596ff5d22df6105523a04321b5",
+        "pack_sha256": "b71c168761cde26d42c83c54429cdf8cf9b32c0b77839ad09317ca12ff609738",
         "status": "available"
       }
     },
@@ -56,7 +56,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-07T01:31:31.243+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Intern",
@@ -64,6 +64,7 @@
       "description_status": "unavailable",
       "description_version": 5,
       "merged_from": [
+        "328089fdd1eda763",
         "328089fdd1eda763"
       ],
       "source_metadata": {
@@ -95,7 +96,7 @@
       "description_ref": {
         "sha256": "fd5985686fbe5a326a6652fda924cd2b3096eaaf44ad8a93d53f97180252b2ef",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "99d0c85993883f29a90e5e41269e3ce49a239a8028ced6051a3da8652413f13f",
+        "pack_sha256": "8227342699cad2184b16ae52f5dd5959dece062af929d81012da9677888d9a33",
         "status": "available"
       }
     },
@@ -114,7 +115,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-09T18:23:24.396+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$140K - $180K",
       "employment_type": "FullTime",
@@ -203,7 +204,7 @@
       "description_ref": {
         "sha256": "1a61cdd0af0d92b7dd24f6d2958f5993b1c4b41756a1c4fac995376f3e2b6b01",
         "pack": "details/descriptions-1.json",
-        "pack_sha256": "aa00391c683c349280eb48c25ad7023dc3c81cf5f0e2cffe7a92c5f1c1fd648e",
+        "pack_sha256": "14de5125c29c1fe8a5e2b76419682fc5c96314958b17d8c9de654f42d4e3dbcb",
         "status": "available"
       }
     },
@@ -222,7 +223,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-09T19:46:54.426+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships & Co-Ops",
@@ -240,7 +241,7 @@
       "description_ref": {
         "sha256": "c46a8216380706b95d676d03c623a54bab2f27a53c4bef99de47bc6bab660529",
         "pack": "details/descriptions-c.json",
-        "pack_sha256": "82b6e2c73f96d97cf133e48d582ae6e4b6194562d1bc7a37cd45868bc99ac9ad",
+        "pack_sha256": "57cc03e928bcc5c63293cfa6698e639ef84e305b27fbf7172e1f5b1660931d38",
         "status": "available"
       }
     },
@@ -259,7 +260,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-28T18:27:38.466+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Operations",
@@ -277,7 +278,7 @@
       "description_ref": {
         "sha256": "93dd51c437cb36975a814f655dc061f34ae50a5b71dff1607dc78dd610442cc8",
         "pack": "details/descriptions-9.json",
-        "pack_sha256": "6deeb512287f214055b70ef276aa51de280a209fbd0b3c673b04942a82eb76aa",
+        "pack_sha256": "e9bed7c85dcc2963d2c7a0ee57445d083e55141692ae85249cb5a22c4f1e8a21",
         "status": "available"
       }
     },
@@ -296,7 +297,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-03T23:28:02.086+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "R&D",
@@ -314,7 +315,7 @@
       "description_ref": {
         "sha256": "462de6a9bc667f8848878877bbaac159c150f48afc30145d9683184115d7f721",
         "pack": "details/descriptions-4.json",
-        "pack_sha256": "12f597866ff6f9eb1fa9bc9d371b6149e39727fd0dc61ce189b23ad7fc53cdd8",
+        "pack_sha256": "345e79d539d9dcd435a3ddac9ac6576f07b8c71c5648a91b8332a57ea4afeedc",
         "status": "available"
       }
     },
@@ -334,7 +335,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-14T19:07:13.459+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Early Career",
@@ -352,7 +353,7 @@
       "description_ref": {
         "sha256": "612f4a5ca07263b010efa5e74619a2154f3499b2a6181c4217cc692e69adb471",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "f0887c4bf056d69ad315c38139f3404f99dd84b808e13da4c9f6a3a825806eb8",
+        "pack_sha256": "33e577aeb266a1e918d2f6fc03416e57753f28611738999a44ea27cb986e7514",
         "status": "available"
       }
     },
@@ -371,7 +372,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-15T14:21:41.748+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Deployments",
@@ -389,7 +390,7 @@
       "description_ref": {
         "sha256": "504b559124a94021f0b9b5ccfc370147c0d963374e21b9b9c15bfabb51843378",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "308047dca90256557c572468c2fa4e238cf00d8911cea48f4c336128864949c3",
+        "pack_sha256": "056ed5e449431d201585550df34c966e15cda1b21148e3bcb5158b0de79dc956",
         "status": "available"
       }
     },
@@ -408,7 +409,7 @@
       "ats": "ashby",
       "posted_at": "2024-08-24T23:26:05.122+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "AI & Robotics Research",
@@ -426,7 +427,7 @@
       "description_ref": {
         "sha256": "fdace68f2395fbf88502610063d402c1062142309844a2953964e51b11c892a7",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "99d0c85993883f29a90e5e41269e3ce49a239a8028ced6051a3da8652413f13f",
+        "pack_sha256": "8227342699cad2184b16ae52f5dd5959dece062af929d81012da9677888d9a33",
         "status": "available"
       }
     },
@@ -445,7 +446,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-10T00:12:00.378+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Campus Recruiting",
@@ -462,7 +463,7 @@
       "description_ref": {
         "sha256": "9c5eb240028bc86a36b6345b55c501b7f91e005d0e2a818783214b4887ca2d40",
         "pack": "details/descriptions-9.json",
-        "pack_sha256": "6deeb512287f214055b70ef276aa51de280a209fbd0b3c673b04942a82eb76aa",
+        "pack_sha256": "e9bed7c85dcc2963d2c7a0ee57445d083e55141692ae85249cb5a22c4f1e8a21",
         "status": "available"
       }
     },
@@ -481,7 +482,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-14T23:46:55.705+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Business Operations",
@@ -499,7 +500,7 @@
       "description_ref": {
         "sha256": "ad4cab9a2c067ec78744f0b7bb608b5a37949a35a4ece3eb90b94781418ce197",
         "pack": "details/descriptions-a.json",
-        "pack_sha256": "ab48d87a91dc73845220eb7acca4f464140f9ecf3c264517583651a37ed0a6f0",
+        "pack_sha256": "2bbbb17be40eb9a0dcf976f497be471a468c67b3a1949c4ac52f64357b735fd8",
         "status": "available"
       }
     },
@@ -518,7 +519,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-03T20:09:43.070+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Persona AI",
@@ -535,7 +536,7 @@
       "description_ref": {
         "sha256": "402193adcbda2445ea1687592ce4da2e4d2c8de6c53cd007d730892811c97270",
         "pack": "details/descriptions-4.json",
-        "pack_sha256": "12f597866ff6f9eb1fa9bc9d371b6149e39727fd0dc61ce189b23ad7fc53cdd8",
+        "pack_sha256": "345e79d539d9dcd435a3ddac9ac6576f07b8c71c5648a91b8332a57ea4afeedc",
         "status": "available"
       }
     },
@@ -554,7 +555,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-15T23:32:19.419+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "University",
@@ -572,7 +573,7 @@
       "description_ref": {
         "sha256": "fb6fa7a32beaa3fbe1b00bd14dbe09b33399719cf709e5393d1f2b56495daddd",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "99d0c85993883f29a90e5e41269e3ce49a239a8028ced6051a3da8652413f13f",
+        "pack_sha256": "8227342699cad2184b16ae52f5dd5959dece062af929d81012da9677888d9a33",
         "status": "available"
       }
     },
@@ -591,7 +592,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-14T23:47:52.939+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Business Operations",
@@ -609,7 +610,7 @@
       "description_ref": {
         "sha256": "f57a51a02d2bc224f2f5fb8d046bd814be43d4b6f1f7f90db9aa362744c0d5c6",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "99d0c85993883f29a90e5e41269e3ce49a239a8028ced6051a3da8652413f13f",
+        "pack_sha256": "8227342699cad2184b16ae52f5dd5959dece062af929d81012da9677888d9a33",
         "status": "available"
       }
     },
@@ -628,7 +629,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-15T02:00:46.815+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Engineering",
@@ -646,7 +647,7 @@
       "description_ref": {
         "sha256": "5cc3b332615d67fad779255dff09d3abbd1b2bf476a80da95633f293e01c7140",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "308047dca90256557c572468c2fa4e238cf00d8911cea48f4c336128864949c3",
+        "pack_sha256": "056ed5e449431d201585550df34c966e15cda1b21148e3bcb5158b0de79dc956",
         "status": "available"
       }
     },
@@ -665,7 +666,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-31T01:21:03.429+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Engineering",
@@ -683,7 +684,7 @@
       "description_ref": {
         "sha256": "b03ae5078fb6275fc71773f3f718507b5fffc94e613589ef8b3fc0f494f2ddc2",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "051946ecf7b83e10bc6980520a92a25552936785abcedc0a49e60c8691512824",
+        "pack_sha256": "c32920321272094ac7da408383115e8d16c24ab59756ef29bd8056cda76a49f8",
         "status": "available"
       }
     },
@@ -702,7 +703,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-09T05:39:11.708+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "University",
@@ -732,7 +733,7 @@
       "description_ref": {
         "sha256": "473ddd8e25b438e4447f5037eedf918d4e28654b1379f6e358b6b7256e5f949e",
         "pack": "details/descriptions-4.json",
-        "pack_sha256": "12f597866ff6f9eb1fa9bc9d371b6149e39727fd0dc61ce189b23ad7fc53cdd8",
+        "pack_sha256": "345e79d539d9dcd435a3ddac9ac6576f07b8c71c5648a91b8332a57ea4afeedc",
         "status": "available"
       }
     },
@@ -751,7 +752,7 @@
       "ats": "ashby",
       "posted_at": "2026-05-21T21:09:03.523+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Hardware Engineering",
@@ -769,7 +770,7 @@
       "description_ref": {
         "sha256": "d89e0ac2168014946e3094e0aa999fc67f930b3f1d0ec103e9cb6697c836fc0f",
         "pack": "details/descriptions-d.json",
-        "pack_sha256": "228b202a377a729328e63609165fdaa95f38d4fb65eece59a2dd139bf28f8e6b",
+        "pack_sha256": "684b0456c20bfa5d70e7e9d705adbadb6dc3e0384857d2cbe5393d5232d1cd65",
         "status": "available"
       }
     },
@@ -788,7 +789,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-09T19:45:15.873+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships & Co-Ops",
@@ -806,7 +807,7 @@
       "description_ref": {
         "sha256": "3874e3421e75a9cd4d2f68ec4bc17d40c8542185d17efef4de4a6a1729c87f9a",
         "pack": "details/descriptions-3.json",
-        "pack_sha256": "71f340a4087457e9f5f88e72d4a40487bf55bcaafa8db171171818d47154e4dd",
+        "pack_sha256": "acd83d4952fdc089f9e3eb933c4a0857db4d7e40cf5215a43a7d8e912d04f9de",
         "status": "available"
       }
     },
@@ -825,7 +826,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-28T18:27:09.057+00:00",
       "first_seen_at": "2026-09-03T18:34:11Z",
-      "last_seen_at": "2026-09-15T19:47:06Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "R&D",
@@ -849,7 +850,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-09T12:19:47.141+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$60K - $70K",
       "employment_type": "FullTime",
@@ -922,7 +923,7 @@
       "description_ref": {
         "sha256": "c916986c75729246a7d3cee282b82f0b3472b4c9a45d4c0aff15612fccd37fb6",
         "pack": "details/descriptions-c.json",
-        "pack_sha256": "82b6e2c73f96d97cf133e48d582ae6e4b6194562d1bc7a37cd45868bc99ac9ad",
+        "pack_sha256": "57cc03e928bcc5c63293cfa6698e639ef84e305b27fbf7172e1f5b1660931d38",
         "status": "available"
       }
     },
@@ -941,7 +942,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-15T23:48:14.247+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "University",
@@ -959,7 +960,7 @@
       "description_ref": {
         "sha256": "49cb62f4c21cdb02d5ac7e6b02f81df4619ddc4c67834a2b8ca683c3fa201aeb",
         "pack": "details/descriptions-4.json",
-        "pack_sha256": "12f597866ff6f9eb1fa9bc9d371b6149e39727fd0dc61ce189b23ad7fc53cdd8",
+        "pack_sha256": "345e79d539d9dcd435a3ddac9ac6576f07b8c71c5648a91b8332a57ea4afeedc",
         "status": "available"
       }
     },
@@ -978,7 +979,7 @@
       "ats": "ashby",
       "posted_at": "2025-05-02T22:17:24.811+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$75K - $215K",
       "employment_type": "FullTime",
@@ -1050,7 +1051,7 @@
       "description_ref": {
         "sha256": "e2d9557ac23e82d27b6a21462c63f1f46367147ead9d2596ef1d7a655fb2ce89",
         "pack": "details/descriptions-e.json",
-        "pack_sha256": "95397059b2ff3a4ff71114e7708b6e0a31edde1641041f28784f457d5e41eb72",
+        "pack_sha256": "adaeb6f311b3a1fa70ae67605b078fa78be384e1c9ecd13162d056da76f69520",
         "status": "available"
       }
     },
@@ -1069,7 +1070,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-16T00:17:14.429+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "University",
@@ -1087,7 +1088,7 @@
       "description_ref": {
         "sha256": "8b825e1b196d62c1386b7e47257cd6b05fb5fbed66d373124eaeed6604669385",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "90d97a1bb0393d27793fed0f0c84a69e685ebd06f938b58cf15eaac90ddc4d58",
+        "pack_sha256": "d69811c9f8d5c44b651888ee9f93c0e0141007c810b0d24a7ae04a1247e0f1ab",
         "status": "available"
       }
     },
@@ -1106,7 +1107,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-15T07:50:26.812+00:00",
       "first_seen_at": "2026-08-31T00:00:06Z",
-      "last_seen_at": "2026-09-15T19:47:06Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "description_status": "unavailable"
     },
@@ -1125,7 +1126,7 @@
       "ats": "ashby",
       "posted_at": "2024-06-06T20:33:14.190+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Software Engineering",
@@ -1143,7 +1144,7 @@
       "description_ref": {
         "sha256": "f1dab6b1b2c0c444192e131a6401812c16c3a7e85d2c0ee4a14b472966c3d5c2",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "99d0c85993883f29a90e5e41269e3ce49a239a8028ced6051a3da8652413f13f",
+        "pack_sha256": "8227342699cad2184b16ae52f5dd5959dece062af929d81012da9677888d9a33",
         "status": "available"
       }
     },
@@ -1163,7 +1164,7 @@
       "ats": "ashby",
       "posted_at": "2025-10-02T14:29:11.101+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Product, Design & Engineering",
@@ -1181,7 +1182,7 @@
       "description_ref": {
         "sha256": "7feab51748aebf0168854a4a01e00072abb935768dbebe36dac83914e82833cd",
         "pack": "details/descriptions-7.json",
-        "pack_sha256": "4e734b107847b089fedb7f783da01a1bfec87115eafb0b9a401020d6ca359346",
+        "pack_sha256": "06acc5c141a1456505d6794fa9dcacd1df20c19b731ab0ebea4791149028b875",
         "status": "available"
       }
     },
@@ -1200,7 +1201,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-28T00:23:24.906+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "R&D",
@@ -1217,7 +1218,7 @@
       "description_ref": {
         "sha256": "3d584da2250bb4717d8125a4619ad1336749d715a4830aff832293ce92bf89a4",
         "pack": "details/descriptions-3.json",
-        "pack_sha256": "71f340a4087457e9f5f88e72d4a40487bf55bcaafa8db171171818d47154e4dd",
+        "pack_sha256": "acd83d4952fdc089f9e3eb933c4a0857db4d7e40cf5215a43a7d8e912d04f9de",
         "status": "available"
       }
     },
@@ -1236,7 +1237,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-14T17:28:27.165+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Software Engineering",
@@ -1254,7 +1255,7 @@
       "description_ref": {
         "sha256": "99088a0b994434bf31f0f9fd9d118ee0c8b95f95663f8bc55b7bac980659df0f",
         "pack": "details/descriptions-9.json",
-        "pack_sha256": "6deeb512287f214055b70ef276aa51de280a209fbd0b3c673b04942a82eb76aa",
+        "pack_sha256": "e9bed7c85dcc2963d2c7a0ee57445d083e55141692ae85249cb5a22c4f1e8a21",
         "status": "available"
       }
     },
@@ -1273,7 +1274,7 @@
       "ats": "ashby",
       "posted_at": "2026-01-09T01:27:35.614+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Mechanical Engineering",
@@ -1291,7 +1292,7 @@
       "description_ref": {
         "sha256": "a379210419447752e57adb039d739af80fe88cdbd223373bd2e46712e60cd9e0",
         "pack": "details/descriptions-a.json",
-        "pack_sha256": "ab48d87a91dc73845220eb7acca4f464140f9ecf3c264517583651a37ed0a6f0",
+        "pack_sha256": "2bbbb17be40eb9a0dcf976f497be471a468c67b3a1949c4ac52f64357b735fd8",
         "status": "available"
       }
     },
@@ -1310,7 +1311,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-20T19:28:47.381+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Growth",
@@ -1328,7 +1329,7 @@
       "description_ref": {
         "sha256": "6ff2caabee8097c8e99abeb9b39f8e704cb72ce70fd71bb95161e39fa961586d",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "f0887c4bf056d69ad315c38139f3404f99dd84b808e13da4c9f6a3a825806eb8",
+        "pack_sha256": "33e577aeb266a1e918d2f6fc03416e57753f28611738999a44ea27cb986e7514",
         "status": "available"
       }
     },
@@ -1347,7 +1348,7 @@
       "ats": "ashby",
       "posted_at": "2024-06-06T08:35:16.360+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Research",
@@ -1365,7 +1366,7 @@
       "description_ref": {
         "sha256": "a148d2eeef4c6d41757e594893b624d56135f1f3a1be59ad070444d8b8e1a7ca",
         "pack": "details/descriptions-a.json",
-        "pack_sha256": "ab48d87a91dc73845220eb7acca4f464140f9ecf3c264517583651a37ed0a6f0",
+        "pack_sha256": "2bbbb17be40eb9a0dcf976f497be471a468c67b3a1949c4ac52f64357b735fd8",
         "status": "available"
       }
     },
@@ -1384,7 +1385,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-10T20:51:22.443+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T19:47:06Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$25 – $35 per hour",
       "employment_type": "Intern",
@@ -1402,7 +1403,7 @@
       "description_ref": {
         "sha256": "642a5d3771920f21f2832b4b9e147e8e365f929fac5b5c3d4ea2c0e58e24ddd2",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "f0887c4bf056d69ad315c38139f3404f99dd84b808e13da4c9f6a3a825806eb8",
+        "pack_sha256": "33e577aeb266a1e918d2f6fc03416e57753f28611738999a44ea27cb986e7514",
         "status": "available"
       }
     },
@@ -1421,7 +1422,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-04T18:58:21.127+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "R&D",
@@ -1439,7 +1440,7 @@
       "description_ref": {
         "sha256": "5f33ca6502325fe3500fba4d8ba122b1f5dc16b64689173978a21b4ecbf3a1d9",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "308047dca90256557c572468c2fa4e238cf00d8911cea48f4c336128864949c3",
+        "pack_sha256": "056ed5e449431d201585550df34c966e15cda1b21148e3bcb5158b0de79dc956",
         "status": "available"
       }
     },
@@ -1458,7 +1459,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-09T19:46:42.155+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships & Co-Ops",
@@ -1476,7 +1477,7 @@
       "description_ref": {
         "sha256": "884824248ba2b5993a5c76e9c01020cc437462202fb641643cb4142756289821",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "90d97a1bb0393d27793fed0f0c84a69e685ebd06f938b58cf15eaac90ddc4d58",
+        "pack_sha256": "d69811c9f8d5c44b651888ee9f93c0e0141007c810b0d24a7ae04a1247e0f1ab",
         "status": "available"
       }
     },
@@ -1495,7 +1496,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-15T14:22:43.077+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Growth",
@@ -1513,7 +1514,7 @@
       "description_ref": {
         "sha256": "a5c71b14f83fbae744c0fb1ea27fbe21a62fe0f1ed7362244c1d76843c50f112",
         "pack": "details/descriptions-a.json",
-        "pack_sha256": "ab48d87a91dc73845220eb7acca4f464140f9ecf3c264517583651a37ed0a6f0",
+        "pack_sha256": "2bbbb17be40eb9a0dcf976f497be471a468c67b3a1949c4ac52f64357b735fd8",
         "status": "available"
       }
     },
@@ -1532,7 +1533,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-14T23:42:17.989+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Supply Chain",
@@ -1550,7 +1551,7 @@
       "description_ref": {
         "sha256": "7cf846dad9ef3647d06d922a44754cb3f1546e59fbb61455ad9ce17412b787e2",
         "pack": "details/descriptions-7.json",
-        "pack_sha256": "4e734b107847b089fedb7f783da01a1bfec87115eafb0b9a401020d6ca359346",
+        "pack_sha256": "06acc5c141a1456505d6794fa9dcacd1df20c19b731ab0ebea4791149028b875",
         "status": "available"
       }
     },
@@ -1569,7 +1570,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-23T19:33:16.660+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "University Departments",
@@ -1587,7 +1588,7 @@
       "description_ref": {
         "sha256": "177734f0b3211ef648c55c8434479b5800a1981c4d12b0cd31ee1ed920abbf85",
         "pack": "details/descriptions-1.json",
-        "pack_sha256": "aa00391c683c349280eb48c25ad7023dc3c81cf5f0e2cffe7a92c5f1c1fd648e",
+        "pack_sha256": "14de5125c29c1fe8a5e2b76419682fc5c96314958b17d8c9de654f42d4e3dbcb",
         "status": "available"
       }
     },
@@ -1606,7 +1607,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-31T14:00:47.682+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$11K per month",
       "employment_type": "Intern",
@@ -1663,7 +1664,7 @@
       "description_ref": {
         "sha256": "5dbfc11616b082b07b9a7fbb2406324e37adb34ecaa71b7fd424fb32a10c8260",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "308047dca90256557c572468c2fa4e238cf00d8911cea48f4c336128864949c3",
+        "pack_sha256": "056ed5e449431d201585550df34c966e15cda1b21148e3bcb5158b0de79dc956",
         "status": "available"
       }
     },
@@ -1682,7 +1683,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-31T18:17:29.917+00:00",
       "first_seen_at": "2026-09-04T18:28:33Z",
-      "last_seen_at": "2026-09-15T19:47:06Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "R&D",
@@ -1704,7 +1705,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-15T17:41:09.309+00:00",
       "first_seen_at": "2026-09-15T22:27:19Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Growth",
@@ -1722,7 +1723,7 @@
       "description_ref": {
         "sha256": "ff63c700a46c9783d1828113fb26a7ea08fd72e1e45b05f0285283dd538e4e54",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "99d0c85993883f29a90e5e41269e3ce49a239a8028ced6051a3da8652413f13f",
+        "pack_sha256": "8227342699cad2184b16ae52f5dd5959dece062af929d81012da9677888d9a33",
         "status": "available"
       }
     },
@@ -1741,7 +1742,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-11T21:05:23.041+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Infrastructure & Construction",
@@ -1759,7 +1760,7 @@
       "description_ref": {
         "sha256": "73e77823b4a11a17ae2e62f371bc463d13bd9cef84256ca9f557aebfeda68202",
         "pack": "details/descriptions-7.json",
-        "pack_sha256": "4e734b107847b089fedb7f783da01a1bfec87115eafb0b9a401020d6ca359346",
+        "pack_sha256": "06acc5c141a1456505d6794fa9dcacd1df20c19b731ab0ebea4791149028b875",
         "status": "available"
       }
     },
@@ -1778,7 +1779,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-14T19:01:05.547+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$30 – $35 per hour",
       "employment_type": "FullTime",
@@ -1835,7 +1836,7 @@
       "description_ref": {
         "sha256": "935bec6485617359c88a86881689284fbd4c7907dcda85127b485144642afb33",
         "pack": "details/descriptions-9.json",
-        "pack_sha256": "6deeb512287f214055b70ef276aa51de280a209fbd0b3c673b04942a82eb76aa",
+        "pack_sha256": "e9bed7c85dcc2963d2c7a0ee57445d083e55141692ae85249cb5a22c4f1e8a21",
         "status": "available"
       }
     },
@@ -1861,7 +1862,7 @@
       "ats": "ashby",
       "posted_at": "2026-05-01T20:26:46.572+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -1891,7 +1892,7 @@
       "description_ref": {
         "sha256": "88f03822e2378eb3f4d8805a1e820eea3430ee5c3788ac9903ad0757e71bb48f",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "90d97a1bb0393d27793fed0f0c84a69e685ebd06f938b58cf15eaac90ddc4d58",
+        "pack_sha256": "d69811c9f8d5c44b651888ee9f93c0e0141007c810b0d24a7ae04a1247e0f1ab",
         "status": "available"
       }
     },
@@ -1910,7 +1911,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-04T19:01:54.953+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "R&D",
@@ -1928,7 +1929,7 @@
       "description_ref": {
         "sha256": "5f095f0adbd8008a5cf270e5bc9be2659ac247507f68aceecfab31de81fde4f7",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "308047dca90256557c572468c2fa4e238cf00d8911cea48f4c336128864949c3",
+        "pack_sha256": "056ed5e449431d201585550df34c966e15cda1b21148e3bcb5158b0de79dc956",
         "status": "available"
       }
     },
@@ -1947,7 +1948,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-15T02:12:26.309+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Product",
@@ -1955,6 +1956,7 @@
       "description_status": "unavailable",
       "description_version": 5,
       "merged_from": [
+        "f15bf5357ce25919",
         "f15bf5357ce25919"
       ],
       "source_metadata": {
@@ -1981,7 +1983,7 @@
       "description_ref": {
         "sha256": "cc445d7f25d6f3c4d45a5987ef3f660c3a7c069be94786b86b7eee0f265b7602",
         "pack": "details/descriptions-c.json",
-        "pack_sha256": "82b6e2c73f96d97cf133e48d582ae6e4b6194562d1bc7a37cd45868bc99ac9ad",
+        "pack_sha256": "57cc03e928bcc5c63293cfa6698e639ef84e305b27fbf7172e1f5b1660931d38",
         "status": "available"
       }
     },
@@ -2001,7 +2003,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-08T20:36:20.819+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$200K - $300K",
       "employment_type": "FullTime",
@@ -2058,7 +2060,7 @@
       "description_ref": {
         "sha256": "a2fff2b69f06165e10c49a79eaf2e40cc4cd8b5399ad73b3603de81e24f18d4d",
         "pack": "details/descriptions-a.json",
-        "pack_sha256": "ab48d87a91dc73845220eb7acca4f464140f9ecf3c264517583651a37ed0a6f0",
+        "pack_sha256": "2bbbb17be40eb9a0dcf976f497be471a468c67b3a1949c4ac52f64357b735fd8",
         "status": "available"
       }
     },
@@ -2077,7 +2079,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-02T21:46:58.459+00:00",
       "first_seen_at": "2026-09-03T11:05:21Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Engineering, Product, Design",
@@ -2110,14 +2112,14 @@
             "source": "simplify",
             "source_job_id": "ad9376a4-7196-4ce6-a3b4-e88763b96811",
             "url": "https://jobs.ashbyhq.com/hadrian-automation/2b0423c6-947d-4226-8d23-90743bd5e63e/application?embed=true",
-            "discovered_at": "2026-09-15T22:27:19Z"
+            "discovered_at": "2026-09-16T00:42:11Z"
           }
         ]
       },
       "description_ref": {
         "sha256": "f0664ad5a4e6f1237a1b54bd99e49b1a6a330ec887188b6bcef95a98064aba48",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "99d0c85993883f29a90e5e41269e3ce49a239a8028ced6051a3da8652413f13f",
+        "pack_sha256": "8227342699cad2184b16ae52f5dd5959dece062af929d81012da9677888d9a33",
         "status": "available"
       }
     },
@@ -2136,7 +2138,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-05T22:01:53.470+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$11K per month",
       "employment_type": "Intern",
@@ -2193,7 +2195,7 @@
       "description_ref": {
         "sha256": "3ec332d5bd3c63ff35f32a97ae0163b90e4a7f826c6b5dbf318052f9df646b3d",
         "pack": "details/descriptions-3.json",
-        "pack_sha256": "71f340a4087457e9f5f88e72d4a40487bf55bcaafa8db171171818d47154e4dd",
+        "pack_sha256": "acd83d4952fdc089f9e3eb933c4a0857db4d7e40cf5215a43a7d8e912d04f9de",
         "status": "available"
       }
     },
@@ -2212,7 +2214,7 @@
       "ats": "ashby",
       "posted_at": "2026-06-23T03:13:55.671+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Support",
@@ -2230,7 +2232,7 @@
       "description_ref": {
         "sha256": "144a2e167583343f1d62f7e487313ed0aea3788747fe29b4cc49144bf109cf7c",
         "pack": "details/descriptions-1.json",
-        "pack_sha256": "aa00391c683c349280eb48c25ad7023dc3c81cf5f0e2cffe7a92c5f1c1fd648e",
+        "pack_sha256": "14de5125c29c1fe8a5e2b76419682fc5c96314958b17d8c9de654f42d4e3dbcb",
         "status": "available"
       }
     },
@@ -2249,7 +2251,7 @@
       "ats": "ashby",
       "posted_at": "2025-07-14T21:45:39.710+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Technical",
@@ -2267,7 +2269,7 @@
       "description_ref": {
         "sha256": "d4d5bcc59ca0d3a332271e24ca01cbfe804b45b824c874120bc96e805f8fd768",
         "pack": "details/descriptions-d.json",
-        "pack_sha256": "228b202a377a729328e63609165fdaa95f38d4fb65eece59a2dd139bf28f8e6b",
+        "pack_sha256": "684b0456c20bfa5d70e7e9d705adbadb6dc3e0384857d2cbe5393d5232d1cd65",
         "status": "available"
       }
     },
@@ -2286,7 +2288,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-19T19:03:43.346+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T19:47:06Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$25 – $28 per hour",
       "employment_type": "FullTime",
@@ -2304,7 +2306,7 @@
       "description_ref": {
         "sha256": "b2d16ee7769256a293c982e7450d6452afd124b0c61f9e4d91878d9a0b94cf7b",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "051946ecf7b83e10bc6980520a92a25552936785abcedc0a49e60c8691512824",
+        "pack_sha256": "c32920321272094ac7da408383115e8d16c24ab59756ef29bd8056cda76a49f8",
         "status": "available"
       }
     },
@@ -2323,7 +2325,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-28T20:16:50.464+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Persona AI",
@@ -2340,7 +2342,7 @@
       "description_ref": {
         "sha256": "b106cba8831eb76a22ad727df84c8c82717bb0508a05dc1a72cb0be4f901d2d8",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "051946ecf7b83e10bc6980520a92a25552936785abcedc0a49e60c8691512824",
+        "pack_sha256": "c32920321272094ac7da408383115e8d16c24ab59756ef29bd8056cda76a49f8",
         "status": "available"
       }
     },
@@ -2363,7 +2365,7 @@
       "ats": "ashby",
       "posted_at": "2026-05-01T20:20:40.899+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -2393,7 +2395,7 @@
       "description_ref": {
         "sha256": "f7282dafc7584992543a3f69123ad294a2063222b5424189ab875d2304997126",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "99d0c85993883f29a90e5e41269e3ce49a239a8028ced6051a3da8652413f13f",
+        "pack_sha256": "8227342699cad2184b16ae52f5dd5959dece062af929d81012da9677888d9a33",
         "status": "available"
       }
     },
@@ -2412,7 +2414,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-14T16:24:20.021+00:00",
       "first_seen_at": "2026-08-31T00:00:06Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Software Engineering",
@@ -2430,7 +2432,7 @@
       "description_ref": {
         "sha256": "40f7d04a4e5e06a09fd653e9f732f2d525fa17f54e4b38f5dc7835a08e607900",
         "pack": "details/descriptions-4.json",
-        "pack_sha256": "12f597866ff6f9eb1fa9bc9d371b6149e39727fd0dc61ce189b23ad7fc53cdd8",
+        "pack_sha256": "345e79d539d9dcd435a3ddac9ac6576f07b8c71c5648a91b8332a57ea4afeedc",
         "status": "available"
       }
     },
@@ -2449,7 +2451,7 @@
       "ats": "ashby",
       "posted_at": "2026-06-29T23:37:41.679+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Growth",
@@ -2467,7 +2469,7 @@
       "description_ref": {
         "sha256": "594ffb8adea9bdf22e2f1e8eb211efdf1a705373b26f536b25baff5febaeee44",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "308047dca90256557c572468c2fa4e238cf00d8911cea48f4c336128864949c3",
+        "pack_sha256": "056ed5e449431d201585550df34c966e15cda1b21148e3bcb5158b0de79dc956",
         "status": "available"
       }
     },
@@ -2487,7 +2489,7 @@
       "ats": "ashby",
       "posted_at": "2025-10-13T10:49:04.503+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Product, Design & Engineering",
@@ -2505,7 +2507,7 @@
       "description_ref": {
         "sha256": "594564112a41da87aeb084e430984a3954c691be7ccb4e96674d5898c4bd0bb1",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "308047dca90256557c572468c2fa4e238cf00d8911cea48f4c336128864949c3",
+        "pack_sha256": "056ed5e449431d201585550df34c966e15cda1b21148e3bcb5158b0de79dc956",
         "status": "available"
       }
     },
@@ -2524,7 +2526,7 @@
       "ats": "ashby",
       "posted_at": "2026-06-11T20:30:29.961+00:00",
       "first_seen_at": "2026-09-02T09:29:57Z",
-      "last_seen_at": "2026-09-15T19:47:06Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Talent",
@@ -2546,7 +2548,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-09T19:47:25.191+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships & Co-Ops",
@@ -2564,7 +2566,7 @@
       "description_ref": {
         "sha256": "25cb6b41c52936275a20ab7ecd87d18d55c2a30ba58bac533bf9f1423de5795d",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "eb201a43e358107718d003487b2816e0d55b87d31c498c354f879b59a7cde8c2",
+        "pack_sha256": "9667377b57722e08602396124236574f7a9ea8b72c03540ef6c0f6cb269ee7f2",
         "status": "available"
       }
     },
@@ -2583,7 +2585,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-02T21:47:29.454+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Engineering, Product, Design",
@@ -2601,7 +2603,7 @@
       "description_ref": {
         "sha256": "c355a97f429a74a61776820b4afa8fa2527dc979a2029b6be092f3ee8adada9d",
         "pack": "details/descriptions-c.json",
-        "pack_sha256": "82b6e2c73f96d97cf133e48d582ae6e4b6194562d1bc7a37cd45868bc99ac9ad",
+        "pack_sha256": "57cc03e928bcc5c63293cfa6698e639ef84e305b27fbf7172e1f5b1660931d38",
         "status": "available"
       }
     },
@@ -2620,7 +2622,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-08T17:28:45.684+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Business Operations",
@@ -2638,7 +2640,7 @@
       "description_ref": {
         "sha256": "217aba431e6d8b19e090fce2e0d04d31ab471e905541bc5ecfd2c6bf34cdcb28",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "eb201a43e358107718d003487b2816e0d55b87d31c498c354f879b59a7cde8c2",
+        "pack_sha256": "9667377b57722e08602396124236574f7a9ea8b72c03540ef6c0f6cb269ee7f2",
         "status": "available"
       }
     },
@@ -2657,7 +2659,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-10T00:12:53.719+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Campus Recruiting",
@@ -2674,7 +2676,7 @@
       "description_ref": {
         "sha256": "2f000c9d59a7e442931b0397130bd30e163d2b302c66bc248bc6f13258942f5e",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "eb201a43e358107718d003487b2816e0d55b87d31c498c354f879b59a7cde8c2",
+        "pack_sha256": "9667377b57722e08602396124236574f7a9ea8b72c03540ef6c0f6cb269ee7f2",
         "status": "available"
       }
     },
@@ -2693,7 +2695,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-02T23:40:53.319+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$95K - $150K",
       "employment_type": "FullTime",
@@ -2817,7 +2819,7 @@
       "description_ref": {
         "sha256": "8e7dccc3e75c8fb1c89ee518991bc877fba94cac37e77a595727ed3160195962",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "90d97a1bb0393d27793fed0f0c84a69e685ebd06f938b58cf15eaac90ddc4d58",
+        "pack_sha256": "d69811c9f8d5c44b651888ee9f93c0e0141007c810b0d24a7ae04a1247e0f1ab",
         "status": "available"
       }
     },
@@ -2836,7 +2838,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-12T12:47:55.562+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "[ASHBY] - For Testing Use Only",
@@ -2853,7 +2855,7 @@
       "description_ref": {
         "sha256": "ea143ff8555b518adaa323b82ee5013219ff44dc2468628b15ff4f79058cb89d",
         "pack": "details/descriptions-e.json",
-        "pack_sha256": "95397059b2ff3a4ff71114e7708b6e0a31edde1641041f28784f457d5e41eb72",
+        "pack_sha256": "adaeb6f311b3a1fa70ae67605b078fa78be384e1c9ecd13162d056da76f69520",
         "status": "available"
       }
     },
@@ -2872,7 +2874,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-02T00:32:06.045+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Engineering",
@@ -2890,7 +2892,7 @@
       "description_ref": {
         "sha256": "145a83e23061e4b93985c54a95224b92a449328dce47c5db3cdb042455e7086d",
         "pack": "details/descriptions-1.json",
-        "pack_sha256": "aa00391c683c349280eb48c25ad7023dc3c81cf5f0e2cffe7a92c5f1c1fd648e",
+        "pack_sha256": "14de5125c29c1fe8a5e2b76419682fc5c96314958b17d8c9de654f42d4e3dbcb",
         "status": "available"
       }
     },
@@ -2909,7 +2911,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-09T19:47:04.501+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships & Co-Ops",
@@ -2927,7 +2929,7 @@
       "description_ref": {
         "sha256": "e39f5f23369d73075decdc2f239463a6390582edb4ca2fff317fb01a478e3aba",
         "pack": "details/descriptions-e.json",
-        "pack_sha256": "95397059b2ff3a4ff71114e7708b6e0a31edde1641041f28784f457d5e41eb72",
+        "pack_sha256": "adaeb6f311b3a1fa70ae67605b078fa78be384e1c9ecd13162d056da76f69520",
         "status": "available"
       }
     },
@@ -2946,7 +2948,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-19T22:32:00.399+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Early Career",
@@ -2964,7 +2966,7 @@
       "description_ref": {
         "sha256": "f20ac1c852a040dc8e8bad1029b50536ba92b3e440bf230da65f383c499c4699",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "99d0c85993883f29a90e5e41269e3ce49a239a8028ced6051a3da8652413f13f",
+        "pack_sha256": "8227342699cad2184b16ae52f5dd5959dece062af929d81012da9677888d9a33",
         "status": "available"
       }
     },
@@ -2983,7 +2985,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-09T19:47:36.214+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships & Co-Ops",
@@ -3001,7 +3003,7 @@
       "description_ref": {
         "sha256": "c7b686786822dbb3069d323111cdc9edf0e581ee88d9393356451142a83833a3",
         "pack": "details/descriptions-c.json",
-        "pack_sha256": "82b6e2c73f96d97cf133e48d582ae6e4b6194562d1bc7a37cd45868bc99ac9ad",
+        "pack_sha256": "57cc03e928bcc5c63293cfa6698e639ef84e305b27fbf7172e1f5b1660931d38",
         "status": "available"
       }
     },
@@ -3021,7 +3023,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-08T20:44:42.789+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$200K - $230K",
       "employment_type": "FullTime",
@@ -3078,7 +3080,7 @@
       "description_ref": {
         "sha256": "a2e9f356263975a78599c3e898e121489e5eb3e720fb2eec1a05b1963c4611cf",
         "pack": "details/descriptions-a.json",
-        "pack_sha256": "ab48d87a91dc73845220eb7acca4f464140f9ecf3c264517583651a37ed0a6f0",
+        "pack_sha256": "2bbbb17be40eb9a0dcf976f497be471a468c67b3a1949c4ac52f64357b735fd8",
         "status": "available"
       }
     },
@@ -3097,7 +3099,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-16T00:04:22.320+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "University",
@@ -3115,7 +3117,7 @@
       "description_ref": {
         "sha256": "c5ee02f08e078aa26165782060c4f86bf50097f4e6f546c1cb103b2bca5eefd9",
         "pack": "details/descriptions-c.json",
-        "pack_sha256": "82b6e2c73f96d97cf133e48d582ae6e4b6194562d1bc7a37cd45868bc99ac9ad",
+        "pack_sha256": "57cc03e928bcc5c63293cfa6698e639ef84e305b27fbf7172e1f5b1660931d38",
         "status": "available"
       }
     },
@@ -3134,7 +3136,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-05T00:25:45.828+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "R&D",
@@ -3152,7 +3154,7 @@
       "description_ref": {
         "sha256": "c206601a705c757926f09ddb92dd03a3509b63a8bc7f5f9ecc7d7ab980406777",
         "pack": "details/descriptions-c.json",
-        "pack_sha256": "82b6e2c73f96d97cf133e48d582ae6e4b6194562d1bc7a37cd45868bc99ac9ad",
+        "pack_sha256": "57cc03e928bcc5c63293cfa6698e639ef84e305b27fbf7172e1f5b1660931d38",
         "status": "available"
       }
     },
@@ -3171,7 +3173,7 @@
       "ats": "ashby",
       "posted_at": "2026-05-27T21:01:14.865+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Hardware Engineering",
@@ -3189,7 +3191,7 @@
       "description_ref": {
         "sha256": "662a4a844c27e9c7d7fc89d7b97711705a04eda1f952dae33e9e5ff7dad4dce0",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "f0887c4bf056d69ad315c38139f3404f99dd84b808e13da4c9f6a3a825806eb8",
+        "pack_sha256": "33e577aeb266a1e918d2f6fc03416e57753f28611738999a44ea27cb986e7514",
         "status": "available"
       }
     },
@@ -3208,7 +3210,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-01T01:18:27.232+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T19:47:06Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Early Career",
@@ -3225,7 +3227,7 @@
       "description_ref": {
         "sha256": "0c05875f5e3b4681eed34acb069b57d44ea0f266682a3962afa1bfb151220216",
         "pack": "details/descriptions-0.json",
-        "pack_sha256": "39eafd9f5ad09304cbd4793ecec411c6b51166596ff5d22df6105523a04321b5",
+        "pack_sha256": "b71c168761cde26d42c83c54429cdf8cf9b32c0b77839ad09317ca12ff609738",
         "status": "available"
       }
     },
@@ -3244,7 +3246,7 @@
       "ats": "ashby",
       "posted_at": "2026-06-28T02:12:52.823+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$300K - $500K",
       "employment_type": "FullTime",
@@ -3253,6 +3255,7 @@
       "description_status": "unavailable",
       "description_version": 5,
       "merged_from": [
+        "4b20187a157478c7",
         "4b20187a157478c7"
       ],
       "source_metadata": {
@@ -3320,7 +3323,7 @@
       "description_ref": {
         "sha256": "e700e6ad9e2667d92af07718227587885f07a33059bd5a441a689416a606d486",
         "pack": "details/descriptions-e.json",
-        "pack_sha256": "95397059b2ff3a4ff71114e7708b6e0a31edde1641041f28784f457d5e41eb72",
+        "pack_sha256": "adaeb6f311b3a1fa70ae67605b078fa78be384e1c9ecd13162d056da76f69520",
         "status": "available"
       }
     },
@@ -3339,7 +3342,7 @@
       "ats": "ashby",
       "posted_at": "2026-03-10T16:48:28.526+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Growth",
@@ -3357,7 +3360,7 @@
       "description_ref": {
         "sha256": "6773ea619076d9c3b6d77f9b91aa23bdf522ccf28eac4dfa190a7d71690421e8",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "f0887c4bf056d69ad315c38139f3404f99dd84b808e13da4c9f6a3a825806eb8",
+        "pack_sha256": "33e577aeb266a1e918d2f6fc03416e57753f28611738999a44ea27cb986e7514",
         "status": "available"
       }
     },
@@ -3377,7 +3380,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-31T17:54:40.218+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$150K - $180K",
       "employment_type": "FullTime",
@@ -3450,7 +3453,7 @@
       "description_ref": {
         "sha256": "ac38fa574deb28e162b514585bdba84a6ef5098c4bee6df6f355e2d443532501",
         "pack": "details/descriptions-a.json",
-        "pack_sha256": "ab48d87a91dc73845220eb7acca4f464140f9ecf3c264517583651a37ed0a6f0",
+        "pack_sha256": "2bbbb17be40eb9a0dcf976f497be471a468c67b3a1949c4ac52f64357b735fd8",
         "status": "available"
       }
     },
@@ -3469,7 +3472,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-14T23:26:48.029+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Business Operations",
@@ -3487,7 +3490,7 @@
       "description_ref": {
         "sha256": "951ccc0b9518fc57b245c813addcb0a12a662f8d0c9a04012f6e81c888c3a26c",
         "pack": "details/descriptions-9.json",
-        "pack_sha256": "6deeb512287f214055b70ef276aa51de280a209fbd0b3c673b04942a82eb76aa",
+        "pack_sha256": "e9bed7c85dcc2963d2c7a0ee57445d083e55141692ae85249cb5a22c4f1e8a21",
         "status": "available"
       }
     },
@@ -3506,7 +3509,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-31T17:54:50.315+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "X-BAT Division",
@@ -3523,7 +3526,7 @@
       "description_ref": {
         "sha256": "3d434469868b0d5856db585d8ebc47b1ae7d33d75b3890b94dbc6b226456a954",
         "pack": "details/descriptions-3.json",
-        "pack_sha256": "71f340a4087457e9f5f88e72d4a40487bf55bcaafa8db171171818d47154e4dd",
+        "pack_sha256": "acd83d4952fdc089f9e3eb933c4a0857db4d7e40cf5215a43a7d8e912d04f9de",
         "status": "available"
       }
     },
@@ -3542,7 +3545,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-14T16:00:11.257+00:00",
       "first_seen_at": "2026-08-31T00:00:06Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Software Engineering",
@@ -3560,7 +3563,7 @@
       "description_ref": {
         "sha256": "c015f672d6a21db5c7a28f48c90cca5345e3e298f6edafffb7f27f35ea2527be",
         "pack": "details/descriptions-c.json",
-        "pack_sha256": "82b6e2c73f96d97cf133e48d582ae6e4b6194562d1bc7a37cd45868bc99ac9ad",
+        "pack_sha256": "57cc03e928bcc5c63293cfa6698e639ef84e305b27fbf7172e1f5b1660931d38",
         "status": "available"
       }
     },
@@ -3579,7 +3582,7 @@
       "ats": "ashby",
       "posted_at": "2025-07-14T21:43:09.149+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Technical",
@@ -3597,7 +3600,7 @@
       "description_ref": {
         "sha256": "3c61107acbc27adb4c5b42b8fd6946edffe175de4443dca3d9f4e63ff8fbaa24",
         "pack": "details/descriptions-3.json",
-        "pack_sha256": "71f340a4087457e9f5f88e72d4a40487bf55bcaafa8db171171818d47154e4dd",
+        "pack_sha256": "acd83d4952fdc089f9e3eb933c4a0857db4d7e40cf5215a43a7d8e912d04f9de",
         "status": "available"
       }
     },
@@ -3616,7 +3619,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-31T22:47:06.440+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$150K - $180K",
       "employment_type": "FullTime",
@@ -3689,7 +3692,7 @@
       "description_ref": {
         "sha256": "cb29e8ee1efb2d46492f4d0ce7aca21d8d0a8aad259a0cbbefb3dfbe5cb3c255",
         "pack": "details/descriptions-c.json",
-        "pack_sha256": "82b6e2c73f96d97cf133e48d582ae6e4b6194562d1bc7a37cd45868bc99ac9ad",
+        "pack_sha256": "57cc03e928bcc5c63293cfa6698e639ef84e305b27fbf7172e1f5b1660931d38",
         "status": "available"
       }
     },
@@ -3709,7 +3712,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-28T22:02:03.674+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$15K per month",
       "employment_type": "FullTime",
@@ -3766,7 +3769,7 @@
       "description_ref": {
         "sha256": "2f2c0421d907ead536468266b3303e60101fcf8e0ee86897bef80dc18d6e6f1e",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "eb201a43e358107718d003487b2816e0d55b87d31c498c354f879b59a7cde8c2",
+        "pack_sha256": "9667377b57722e08602396124236574f7a9ea8b72c03540ef6c0f6cb269ee7f2",
         "status": "available"
       }
     },
@@ -3785,7 +3788,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-03T21:07:05.402+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$176K - $230K",
       "employment_type": "FullTime",
@@ -3841,7 +3844,7 @@
       "description_ref": {
         "sha256": "d31f89d24e79acb5a2fdb1cafd01bd679873c53eba0db29855b69091e5a5b14e",
         "pack": "details/descriptions-d.json",
-        "pack_sha256": "228b202a377a729328e63609165fdaa95f38d4fb65eece59a2dd139bf28f8e6b",
+        "pack_sha256": "684b0456c20bfa5d70e7e9d705adbadb6dc3e0384857d2cbe5393d5232d1cd65",
         "status": "available"
       }
     },
@@ -3860,7 +3863,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-31T01:21:06.637+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Engineering",
@@ -3878,7 +3881,7 @@
       "description_ref": {
         "sha256": "b03ae5078fb6275fc71773f3f718507b5fffc94e613589ef8b3fc0f494f2ddc2",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "051946ecf7b83e10bc6980520a92a25552936785abcedc0a49e60c8691512824",
+        "pack_sha256": "c32920321272094ac7da408383115e8d16c24ab59756ef29bd8056cda76a49f8",
         "status": "available"
       }
     },
@@ -3897,7 +3900,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-15T15:09:22.846+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Growth",
@@ -3915,7 +3918,7 @@
       "description_ref": {
         "sha256": "55f5b4233aeb51783517dc870bdbb55856f20de5a7b1513806d27d34f9907669",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "308047dca90256557c572468c2fa4e238cf00d8911cea48f4c336128864949c3",
+        "pack_sha256": "056ed5e449431d201585550df34c966e15cda1b21148e3bcb5158b0de79dc956",
         "status": "available"
       }
     },
@@ -3934,7 +3937,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-15T14:17:05.293+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Growth",
@@ -3952,7 +3955,7 @@
       "description_ref": {
         "sha256": "b720007042b9b664d217e2e427b09ba48f42b9d865e803cb8d6719bac3431c41",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "051946ecf7b83e10bc6980520a92a25552936785abcedc0a49e60c8691512824",
+        "pack_sha256": "c32920321272094ac7da408383115e8d16c24ab59756ef29bd8056cda76a49f8",
         "status": "available"
       }
     },
@@ -3971,7 +3974,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-14T14:13:41.480+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Aircraft Operations Division",
@@ -3988,7 +3991,7 @@
       "description_ref": {
         "sha256": "12b927276844b63589150bbe05b651b029ce8571f128a8e4d828bc8bce3c5161",
         "pack": "details/descriptions-1.json",
-        "pack_sha256": "aa00391c683c349280eb48c25ad7023dc3c81cf5f0e2cffe7a92c5f1c1fd648e",
+        "pack_sha256": "14de5125c29c1fe8a5e2b76419682fc5c96314958b17d8c9de654f42d4e3dbcb",
         "status": "available"
       }
     },
@@ -4007,7 +4010,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-31T17:34:27.191+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Persona AI",
@@ -4025,7 +4028,7 @@
       "description_ref": {
         "sha256": "0698f4b4fe7a535893d81cd043e4625eaae2b12439259954918bd167f562f6d2",
         "pack": "details/descriptions-0.json",
-        "pack_sha256": "39eafd9f5ad09304cbd4793ecec411c6b51166596ff5d22df6105523a04321b5",
+        "pack_sha256": "b71c168761cde26d42c83c54429cdf8cf9b32c0b77839ad09317ca12ff609738",
         "status": "available"
       }
     },
@@ -4044,7 +4047,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-15T01:36:45.329+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Engineering",
@@ -4052,6 +4055,7 @@
       "description_status": "unavailable",
       "description_version": 5,
       "merged_from": [
+        "5f691af0027d0cb2",
         "5f691af0027d0cb2"
       ],
       "source_metadata": {
@@ -4078,7 +4082,7 @@
       "description_ref": {
         "sha256": "149fb7ea927a13d9329b31b86e2d6d24fb325efac5c1bbe67863762a852af8e9",
         "pack": "details/descriptions-1.json",
-        "pack_sha256": "aa00391c683c349280eb48c25ad7023dc3c81cf5f0e2cffe7a92c5f1c1fd648e",
+        "pack_sha256": "14de5125c29c1fe8a5e2b76419682fc5c96314958b17d8c9de654f42d4e3dbcb",
         "status": "available"
       }
     },
@@ -4097,7 +4101,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-15T01:23:20.722+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Business Operations",
@@ -4115,7 +4119,7 @@
       "description_ref": {
         "sha256": "8d8c5f3f984368c8e1c02915008fde812710a8a43af4e99a8f958a196d2d05db",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "90d97a1bb0393d27793fed0f0c84a69e685ebd06f938b58cf15eaac90ddc4d58",
+        "pack_sha256": "d69811c9f8d5c44b651888ee9f93c0e0141007c810b0d24a7ae04a1247e0f1ab",
         "status": "available"
       }
     },
@@ -4134,7 +4138,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-24T03:24:43.068+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$4K – $6K per week",
       "employment_type": "FullTime",
@@ -4191,7 +4195,7 @@
       "description_ref": {
         "sha256": "30f598e6ccea428b191d5e45e3b2b75094a1ed57dc2f4747c7cec2f252c28d2e",
         "pack": "details/descriptions-3.json",
-        "pack_sha256": "71f340a4087457e9f5f88e72d4a40487bf55bcaafa8db171171818d47154e4dd",
+        "pack_sha256": "acd83d4952fdc089f9e3eb933c4a0857db4d7e40cf5215a43a7d8e912d04f9de",
         "status": "available"
       }
     },
@@ -4210,7 +4214,7 @@
       "ats": "ashby",
       "posted_at": "2026-05-18T22:06:49.747+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Manufacturing",
@@ -4228,7 +4232,7 @@
       "description_ref": {
         "sha256": "8c498082a21b6cd99a303e2e79b7f1c0dbc005ded838d7319b618c312954d10c",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "90d97a1bb0393d27793fed0f0c84a69e685ebd06f938b58cf15eaac90ddc4d58",
+        "pack_sha256": "d69811c9f8d5c44b651888ee9f93c0e0141007c810b0d24a7ae04a1247e0f1ab",
         "status": "available"
       }
     },
@@ -4247,7 +4251,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-02T21:47:12.152+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Engineering, Product, Design",
@@ -4265,7 +4269,7 @@
       "description_ref": {
         "sha256": "fe4dba02b87d258336ab044b14cec4a0884836d2961231e2788f59b920fc6162",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "99d0c85993883f29a90e5e41269e3ce49a239a8028ced6051a3da8652413f13f",
+        "pack_sha256": "8227342699cad2184b16ae52f5dd5959dece062af929d81012da9677888d9a33",
         "status": "available"
       }
     },
@@ -4284,7 +4288,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-13T22:59:38.659+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Supply Chain",
@@ -4292,6 +4296,7 @@
       "description_status": "unavailable",
       "description_version": 5,
       "merged_from": [
+        "2d37fee372d3e4c9",
         "2d37fee372d3e4c9"
       ],
       "source_metadata": {
@@ -4321,7 +4326,7 @@
       "description_ref": {
         "sha256": "9769758c1b0faeddcbf24753078f8bc480bf19ae3ff50721c4da0a6a8b1cb9a0",
         "pack": "details/descriptions-9.json",
-        "pack_sha256": "6deeb512287f214055b70ef276aa51de280a209fbd0b3c673b04942a82eb76aa",
+        "pack_sha256": "e9bed7c85dcc2963d2c7a0ee57445d083e55141692ae85249cb5a22c4f1e8a21",
         "status": "available"
       }
     },
@@ -4340,7 +4345,7 @@
       "ats": "ashby",
       "posted_at": "2026-06-02T11:41:43.304+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Engineering",
@@ -4357,7 +4362,7 @@
       "description_ref": {
         "sha256": "d044b0e0c9ff814b1eb5f85185ec6f35b6fd2057f7bd0b1a1648f5e5e3625f9f",
         "pack": "details/descriptions-d.json",
-        "pack_sha256": "228b202a377a729328e63609165fdaa95f38d4fb65eece59a2dd139bf28f8e6b",
+        "pack_sha256": "684b0456c20bfa5d70e7e9d705adbadb6dc3e0384857d2cbe5393d5232d1cd65",
         "status": "available"
       }
     },
@@ -4376,7 +4381,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-08T22:42:58.266+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Talent",
@@ -4394,7 +4399,7 @@
       "description_ref": {
         "sha256": "85dc73517b7ecb8c556fdd040e70cb8fda20ba3e58b41a91d06dd7563c6155a2",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "90d97a1bb0393d27793fed0f0c84a69e685ebd06f938b58cf15eaac90ddc4d58",
+        "pack_sha256": "d69811c9f8d5c44b651888ee9f93c0e0141007c810b0d24a7ae04a1247e0f1ab",
         "status": "available"
       }
     },
@@ -4413,7 +4418,7 @@
       "ats": "ashby",
       "posted_at": "2025-09-09T04:51:50.522+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$100K",
       "employment_type": "FullTime",
@@ -4470,7 +4475,7 @@
       "description_ref": {
         "sha256": "de32a8721f46ce1fe4d08a0d61a506aeb8d88b84640070564961dfb776ef03fa",
         "pack": "details/descriptions-d.json",
-        "pack_sha256": "228b202a377a729328e63609165fdaa95f38d4fb65eece59a2dd139bf28f8e6b",
+        "pack_sha256": "684b0456c20bfa5d70e7e9d705adbadb6dc3e0384857d2cbe5393d5232d1cd65",
         "status": "available"
       }
     },
@@ -4490,7 +4495,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-08T23:51:35.588+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Engineering",
@@ -4508,7 +4513,7 @@
       "description_ref": {
         "sha256": "f231afc19cb5a2f7ccf977f3e4bac960bcdb13e0d9b0eaa0de404da03c87cd1e",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "99d0c85993883f29a90e5e41269e3ce49a239a8028ced6051a3da8652413f13f",
+        "pack_sha256": "8227342699cad2184b16ae52f5dd5959dece062af929d81012da9677888d9a33",
         "status": "available"
       }
     },
@@ -4527,7 +4532,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-15T14:21:54.588+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Deployments",
@@ -4545,7 +4550,7 @@
       "description_ref": {
         "sha256": "915e3822b96f068b61e689cd686b926ace9aa226cb022f7f66f3f13e8ebb00e6",
         "pack": "details/descriptions-9.json",
-        "pack_sha256": "6deeb512287f214055b70ef276aa51de280a209fbd0b3c673b04942a82eb76aa",
+        "pack_sha256": "e9bed7c85dcc2963d2c7a0ee57445d083e55141692ae85249cb5a22c4f1e8a21",
         "status": "available"
       }
     },
@@ -4567,7 +4572,7 @@
       "ats": "ashby",
       "posted_at": "2026-05-13T17:16:14.014+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -4597,7 +4602,7 @@
       "description_ref": {
         "sha256": "2590048f2cb54ce2d1d88f4369f48c0617570825dc6cef2d2a0bcb7798e1cfaf",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "eb201a43e358107718d003487b2816e0d55b87d31c498c354f879b59a7cde8c2",
+        "pack_sha256": "9667377b57722e08602396124236574f7a9ea8b72c03540ef6c0f6cb269ee7f2",
         "status": "available"
       }
     },
@@ -4617,7 +4622,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-31T21:42:19.593+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Early Career",
@@ -4635,7 +4640,7 @@
       "description_ref": {
         "sha256": "62dba46e9ac47ddc473dc098bf23822f596c5ca483f30bd9035755ca96b25a95",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "f0887c4bf056d69ad315c38139f3404f99dd84b808e13da4c9f6a3a825806eb8",
+        "pack_sha256": "33e577aeb266a1e918d2f6fc03416e57753f28611738999a44ea27cb986e7514",
         "status": "available"
       }
     },
@@ -4654,7 +4659,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-11T13:55:22.856+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$160K - $200K",
       "employment_type": "FullTime",
@@ -4727,7 +4732,7 @@
       "description_ref": {
         "sha256": "81a702e7798680f4aa98775d9d7cf235ee1c91b2d660237695e457d978a1c6c5",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "90d97a1bb0393d27793fed0f0c84a69e685ebd06f938b58cf15eaac90ddc4d58",
+        "pack_sha256": "d69811c9f8d5c44b651888ee9f93c0e0141007c810b0d24a7ae04a1247e0f1ab",
         "status": "available"
       }
     },
@@ -4746,7 +4751,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-01T02:09:49.870+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Campus Recruiting",
@@ -4763,7 +4768,7 @@
       "description_ref": {
         "sha256": "b5d913d479b863526f840b80d6bcb9bfd4118b076acbd518ee3e33a2dea4c9da",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "051946ecf7b83e10bc6980520a92a25552936785abcedc0a49e60c8691512824",
+        "pack_sha256": "c32920321272094ac7da408383115e8d16c24ab59756ef29bd8056cda76a49f8",
         "status": "available"
       }
     },
@@ -4782,7 +4787,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-14T19:12:39.557+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Early Career",
@@ -4800,7 +4805,7 @@
       "description_ref": {
         "sha256": "35699e05a254c2796008664247246daa444ea0a85b4042914bb396249de9bf28",
         "pack": "details/descriptions-3.json",
-        "pack_sha256": "71f340a4087457e9f5f88e72d4a40487bf55bcaafa8db171171818d47154e4dd",
+        "pack_sha256": "acd83d4952fdc089f9e3eb933c4a0857db4d7e40cf5215a43a7d8e912d04f9de",
         "status": "available"
       }
     },
@@ -4819,7 +4824,7 @@
       "ats": "ashby",
       "posted_at": "2025-07-14T19:00:37.725+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "Technical",
@@ -4837,7 +4842,7 @@
       "description_ref": {
         "sha256": "08372f3faa5140e032205aee7772324828b916cb963f8649ddcc0198de8c4550",
         "pack": "details/descriptions-0.json",
-        "pack_sha256": "39eafd9f5ad09304cbd4793ecec411c6b51166596ff5d22df6105523a04321b5",
+        "pack_sha256": "b71c168761cde26d42c83c54429cdf8cf9b32c0b77839ad09317ca12ff609738",
         "status": "available"
       }
     },
@@ -4856,7 +4861,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-09T19:46:26.327+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships & Co-Ops",
@@ -4874,7 +4879,7 @@
       "description_ref": {
         "sha256": "9ce3ab60d9f2d1d298496455ac2149c02536ff4ebd9781bc3c087522cfc66e49",
         "pack": "details/descriptions-9.json",
-        "pack_sha256": "6deeb512287f214055b70ef276aa51de280a209fbd0b3c673b04942a82eb76aa",
+        "pack_sha256": "e9bed7c85dcc2963d2c7a0ee57445d083e55141692ae85249cb5a22c4f1e8a21",
         "status": "available"
       }
     },
@@ -4893,7 +4898,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-16T02:49:06.481+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "University",
@@ -4911,7 +4916,7 @@
       "description_ref": {
         "sha256": "bca27cebf790f23eae078c91b0698a476f576bc2df07908f87000810ddb0a6aa",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "051946ecf7b83e10bc6980520a92a25552936785abcedc0a49e60c8691512824",
+        "pack_sha256": "c32920321272094ac7da408383115e8d16c24ab59756ef29bd8056cda76a49f8",
         "status": "available"
       }
     },
@@ -4931,7 +4936,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-09T19:47:14.673+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships & Co-Ops",
@@ -4949,7 +4954,7 @@
       "description_ref": {
         "sha256": "f072d17f311da0fb3320502f82008cfb76ca43c0cd65e63c7bb4e97076bcdd92",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "99d0c85993883f29a90e5e41269e3ce49a239a8028ced6051a3da8652413f13f",
+        "pack_sha256": "8227342699cad2184b16ae52f5dd5959dece062af929d81012da9677888d9a33",
         "status": "available"
       }
     },
@@ -4968,7 +4973,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-09T19:45:56.345+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships & Co-Ops",
@@ -4986,7 +4991,7 @@
       "description_ref": {
         "sha256": "2a1bb3a6024a0689ee4f6c0598c01acf6b93884491d86ab522f3c0c919cfec5a",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "eb201a43e358107718d003487b2816e0d55b87d31c498c354f879b59a7cde8c2",
+        "pack_sha256": "9667377b57722e08602396124236574f7a9ea8b72c03540ef6c0f6cb269ee7f2",
         "status": "available"
       }
     },
@@ -5005,7 +5010,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-16T02:39:55.735+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "FullTime",
       "department": "University",
@@ -5023,7 +5028,7 @@
       "description_ref": {
         "sha256": "f41b40fb504b4463d3df4e60c70d5129052856749e8e16febf7fede639332417",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "99d0c85993883f29a90e5e41269e3ce49a239a8028ced6051a3da8652413f13f",
+        "pack_sha256": "8227342699cad2184b16ae52f5dd5959dece062af929d81012da9677888d9a33",
         "status": "available"
       }
     },
@@ -5042,7 +5047,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-01T23:05:41.315+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "R&D",
@@ -5060,7 +5065,7 @@
       "description_ref": {
         "sha256": "26c4aaf9742d0b59a688bce678fa78a8bc463d1496d0489f5729835cc4f9e900",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "eb201a43e358107718d003487b2816e0d55b87d31c498c354f879b59a7cde8c2",
+        "pack_sha256": "9667377b57722e08602396124236574f7a9ea8b72c03540ef6c0f6cb269ee7f2",
         "status": "available"
       }
     },
@@ -5080,7 +5085,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-08T23:52:16.165+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$160K - $180K",
       "employment_type": "FullTime",
@@ -5137,7 +5142,7 @@
       "description_ref": {
         "sha256": "80c7da35a40ee32596323ad6896106c4c3d6d78a87317f6fcc1e0fcde71e37ec",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "90d97a1bb0393d27793fed0f0c84a69e685ebd06f938b58cf15eaac90ddc4d58",
+        "pack_sha256": "d69811c9f8d5c44b651888ee9f93c0e0141007c810b0d24a7ae04a1247e0f1ab",
         "status": "available"
       }
     },
@@ -5156,7 +5161,7 @@
       "ats": "ashby",
       "posted_at": "2026-05-18T21:31:14.996+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Manufacturing",
@@ -5174,7 +5179,7 @@
       "description_ref": {
         "sha256": "fd95dc5dd68e439045a30f0bb87e453a75ae5d87cafae463835f22a89b1fb993",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "99d0c85993883f29a90e5e41269e3ce49a239a8028ced6051a3da8652413f13f",
+        "pack_sha256": "8227342699cad2184b16ae52f5dd5959dece062af929d81012da9677888d9a33",
         "status": "available"
       }
     },
@@ -5193,7 +5198,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-14T17:19:51.237+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$35 per hour",
       "employment_type": "Intern",
@@ -5250,7 +5255,7 @@
       "description_ref": {
         "sha256": "71c99353f69200365a23d0bc52190ce437a718a74f1055f728baaae14ca52e42",
         "pack": "details/descriptions-7.json",
-        "pack_sha256": "4e734b107847b089fedb7f783da01a1bfec87115eafb0b9a401020d6ca359346",
+        "pack_sha256": "06acc5c141a1456505d6794fa9dcacd1df20c19b731ab0ebea4791149028b875",
         "status": "available"
       }
     },
@@ -5269,7 +5274,7 @@
       "ats": "ashby",
       "posted_at": "2026-07-30T20:18:01.735+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Persona AI",
@@ -5287,7 +5292,7 @@
       "description_ref": {
         "sha256": "3ba7a74842726695603de5c8b6c2e903c159e4fab580c266a3db73f9604ace24",
         "pack": "details/descriptions-3.json",
-        "pack_sha256": "71f340a4087457e9f5f88e72d4a40487bf55bcaafa8db171171818d47154e4dd",
+        "pack_sha256": "acd83d4952fdc089f9e3eb933c4a0857db4d7e40cf5215a43a7d8e912d04f9de",
         "status": "available"
       }
     },
@@ -5306,7 +5311,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-03T16:12:20.644+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "compensation": "$25 per hour",
       "employment_type": "Intern",
@@ -5363,7 +5368,7 @@
       "description_ref": {
         "sha256": "5826b06d7151482ca03e5e2e46fd8e160b93241d1eafacae19ce37f11cc2703f",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "308047dca90256557c572468c2fa4e238cf00d8911cea48f4c336128864949c3",
+        "pack_sha256": "056ed5e449431d201585550df34c966e15cda1b21148e3bcb5158b0de79dc956",
         "status": "available"
       }
     },
@@ -5382,7 +5387,7 @@
       "ats": "ashby",
       "posted_at": "2026-09-14T18:51:56.274+00:00",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Growth",
@@ -5400,7 +5405,7 @@
       "description_ref": {
         "sha256": "bcf91867e0857a0c677d0076673f212b7feb85c2500e0de3e8c9d46fd631ccc7",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "051946ecf7b83e10bc6980520a92a25552936785abcedc0a49e60c8691512824",
+        "pack_sha256": "c32920321272094ac7da408383115e8d16c24ab59756ef29bd8056cda76a49f8",
         "status": "available"
       }
     },
@@ -5419,7 +5424,7 @@
       "ats": "ashby",
       "posted_at": "2026-08-25T21:41:54.472+00:00",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-09-15T22:27:19Z",
+      "last_seen_at": "2026-09-16T00:42:11Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Hardware Engineering",
@@ -5437,7 +5442,7 @@
       "description_ref": {
         "sha256": "ed8375ddb29e2ac542a26fc11560385c785d0525b0083b95833e1bbc948d71da",
         "pack": "details/descriptions-e.json",
-        "pack_sha256": "95397059b2ff3a4ff71114e7708b6e0a31edde1641041f28784f457d5e41eb72",
+        "pack_sha256": "adaeb6f311b3a1fa70ae67605b078fa78be384e1c9ecd13162d056da76f69520",
         "status": "available"
       }
     }

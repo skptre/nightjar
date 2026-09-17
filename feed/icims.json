@@ -1,6 +1,6 @@
 {
   "shard_id": "icims",
-  "updated_at": "2026-09-17T14:47:00Z",
+  "updated_at": "2026-09-17T18:36:58Z",
   "count": 2,
   "postings": {
     "0d7863521e259085": {
@@ -18,7 +18,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-17T14:47:00Z",
+      "last_seen_at": "2026-09-17T18:36:58Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -33,7 +33,7 @@
       "description_ref": {
         "sha256": "068eeb03661bd4998fc8c101ec78b5c1ad49845b5986d57ba73921a8b5c844ca",
         "pack": "details/descriptions-0.json",
-        "pack_sha256": "7617e48e7cb76ca15625c9218a1ac063f4ab02dea072acd6ea9c252941c712c3",
+        "pack_sha256": "7686fe3589cb1c161c1c5d5d9d7f5c378b1e3ba5f152627b0ea9166ed60d60ab",
         "status": "available"
       }
     },
@@ -52,7 +52,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-09-17T14:47:00Z",
+      "last_seen_at": "2026-09-17T18:36:58Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -67,7 +67,7 @@
       "description_ref": {
         "sha256": "5a07ad4e40856cd7be87be124ed30e6e14c5434353d5d76b39804a345fcf548d",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "4ba101c35b37a110d8bf63384dda84bd7f9ee4f9ad8f402c5dbc58bea6752976",
+        "pack_sha256": "5dbcd06b9133a10fbf8ae9310550f918e60825c953fe3284758d5db182fef844",
         "status": "available"
       }
     }

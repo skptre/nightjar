@@ -1,7 +1,7 @@
 {
-  "last_run_at": "2026-09-26T19:25:31Z",
-  "run_count": 104,
-  "run_duration_seconds": 519.8,
+  "last_run_at": "2026-09-26T22:07:48Z",
+  "run_count": 105,
+  "run_duration_seconds": 435.8,
   "sources": {
     "ashby:1password": {
       "last_polled_at": "2026-09-26T16:38:01Z",
@@ -82,16 +82,16 @@
       "last_content_hash": "4d273c280bbb2233"
     },
     "ashby:applied-intuition": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 62.6,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 55.69,
+      "activity_poll_count": 85,
       "last_content_hash": "c5da918a6ddce3e1"
     },
     "ashby:ashby": {
@@ -264,16 +264,16 @@
       "last_content_hash": "f7ae2e0689a6979e"
     },
     "ashby:cursor": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 64.8,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 56.43,
+      "activity_poll_count": 85,
       "last_content_hash": "ee9a6161fd6e0dde"
     },
     "ashby:cybernetic-labs": {
@@ -368,29 +368,29 @@
       "last_content_hash": "7ead9c198438e0fa"
     },
     "ashby:etched": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 74.46,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 65.33,
+      "activity_poll_count": 85,
       "last_content_hash": "9d22cd1cb01200e7"
     },
     "ashby:firefly-aerospace": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 84.94,
-      "activity_poll_count": 73,
+      "estimated_poll_cost": 74.14,
+      "activity_poll_count": 74,
       "last_content_hash": "267571773b3eff95"
     },
     "ashby:fireworks": {
@@ -446,16 +446,16 @@
       "last_content_hash": "a2d85d56822cfaec"
     },
     "ashby:hadrian": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 73.94,
-      "activity_poll_count": 73,
+      "estimated_poll_cost": 65.65,
+      "activity_poll_count": 74,
       "last_content_hash": "372d4b58865171ee"
     },
     "ashby:harvey": {
@@ -563,16 +563,16 @@
       "last_content_hash": "e3b0c44298fc1c14"
     },
     "ashby:impulse-space": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 82.93,
-      "activity_poll_count": 73,
+      "estimated_poll_cost": 72.28,
+      "activity_poll_count": 74,
       "last_content_hash": "46b31e386af8d876"
     },
     "ashby:infisical": {
@@ -823,16 +823,16 @@
       "last_content_hash": "d22261aed2352082"
     },
     "ashby:openai": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 48.97,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 44.35,
+      "activity_poll_count": 85,
       "last_content_hash": "25dc92f1e4d4b7d8"
     },
     "ashby:opusclip": {
@@ -914,16 +914,16 @@
       "last_content_hash": "4eded3b89331fe09"
     },
     "ashby:physical-intelligence": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 85.54,
-      "activity_poll_count": 73,
+      "estimated_poll_cost": 75.28,
+      "activity_poll_count": 74,
       "last_content_hash": "99e15aa6875b901e"
     },
     "ashby:pinecone": {
@@ -1018,16 +1018,16 @@
       "last_content_hash": "71ee8024ec19132a"
     },
     "ashby:ramp": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 31.33,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 30.34,
+      "activity_poll_count": 85,
       "last_content_hash": "042d765ffd49f1f1"
     },
     "ashby:regent-craft": {
@@ -1122,16 +1122,16 @@
       "last_content_hash": "b72c749a225e6641"
     },
     "ashby:saronic": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 54.73,
-      "activity_poll_count": 73,
+      "estimated_poll_cost": 50.52,
+      "activity_poll_count": 74,
       "last_content_hash": "e3ecf800e4340483"
     },
     "ashby:semgrep": {
@@ -1499,16 +1499,16 @@
       "last_content_hash": "8e4ae6b68b3ba484"
     },
     "greenhouse:airbnb": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 55.09,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 44.23,
+      "activity_poll_count": 85,
       "last_content_hash": "eda3283cf1702a58"
     },
     "greenhouse:airtable": {
@@ -1564,29 +1564,29 @@
       "last_content_hash": "d25cb66b078e5fc0"
     },
     "greenhouse:anduril": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 11.99,
-      "activity_poll_count": 84,
-      "last_content_hash": "bc8654cb43bc0c5f"
+      "estimated_poll_cost": 11.0,
+      "activity_poll_count": 85,
+      "last_content_hash": "6d86124886d1e50d"
     },
     "greenhouse:anthropic": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 37.72,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 31.89,
+      "activity_poll_count": 85,
       "last_content_hash": "669301e977e7c9c6"
     },
     "greenhouse:antora-energy": {
@@ -1655,16 +1655,16 @@
       "last_content_hash": "e48a2945a8e509a6"
     },
     "greenhouse:archer-aviation": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 116.05,
-      "activity_poll_count": 73,
+      "estimated_poll_cost": 99.38,
+      "activity_poll_count": 74,
       "last_content_hash": "8b12b541768893eb"
     },
     "greenhouse:asana": {
@@ -1694,16 +1694,16 @@
       "last_content_hash": "f2f0665ea96db0e2"
     },
     "greenhouse:astranis": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 75.94,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 68.23,
+      "activity_poll_count": 85,
       "last_content_hash": "94348ca2c06c1b70"
     },
     "greenhouse:blackedge-capital": {
@@ -1850,16 +1850,16 @@
       "last_content_hash": "d4b94aa93d57b408"
     },
     "greenhouse:chicago-trading-company": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 140.5,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 120.1,
+      "activity_poll_count": 85,
       "last_content_hash": "df32107a40dcc707"
     },
     "greenhouse:chime": {
@@ -1967,16 +1967,16 @@
       "last_content_hash": "ea92bcc2fa328f6c"
     },
     "greenhouse:databricks": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 39.38,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 33.51,
+      "activity_poll_count": 85,
       "last_content_hash": "23bca61bbb3970be"
     },
     "greenhouse:datadog": {
@@ -2084,16 +2084,16 @@
       "last_content_hash": "0b434a69c5d4da46"
     },
     "greenhouse:drw": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 100.44,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 84.89,
+      "activity_poll_count": 85,
       "last_content_hash": "33822d2ca22ef8d0"
     },
     "greenhouse:duolingo": {
@@ -2188,29 +2188,29 @@
       "last_content_hash": "6d88c38ff6015b9f"
     },
     "greenhouse:figma": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 106.61,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 92.49,
+      "activity_poll_count": 85,
       "last_content_hash": "3b421aa012bafc30"
     },
     "greenhouse:figure": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 136.24,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 116.92,
+      "activity_poll_count": 85,
       "last_content_hash": "209fe6d23c6b9821"
     },
     "greenhouse:five-rings": {
@@ -2422,29 +2422,29 @@
       "last_content_hash": "c215885bf46475ea"
     },
     "greenhouse:jane-street": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 107.75,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 88.51,
+      "activity_poll_count": 85,
       "last_content_hash": "1c103438fdd90c6a"
     },
     "greenhouse:jump-trading": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 104.89,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 86.52,
+      "activity_poll_count": 85,
       "last_content_hash": "e24f94cdc747a7fe"
     },
     "greenhouse:kairos-power": {
@@ -2721,16 +2721,16 @@
       "last_content_hash": "406c01383e68e1dc"
     },
     "greenhouse:neuralink": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 109.69,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 95.97,
+      "activity_poll_count": 85,
       "last_content_hash": "50673971d76b9963"
     },
     "greenhouse:nextdoor": {
@@ -2877,16 +2877,16 @@
       "last_content_hash": "72b87b00e8a64526"
     },
     "greenhouse:point72": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 113.96,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 96.64,
+      "activity_poll_count": 85,
       "last_content_hash": "07363e27d3e07dd7"
     },
     "greenhouse:portal-space-systems": {
@@ -2981,16 +2981,16 @@
       "last_content_hash": "da56ea251b008f15"
     },
     "greenhouse:relativity-space": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 106.99,
-      "activity_poll_count": 73,
+      "estimated_poll_cost": 91.67,
+      "activity_poll_count": 74,
       "last_content_hash": "bbc5b0bd63e830e8"
     },
     "greenhouse:riot-games": {
@@ -3241,17 +3241,17 @@
       "last_content_hash": "4487aed28e2c957b"
     },
     "greenhouse:spacex": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 64.31,
-      "activity_poll_count": 84,
-      "last_content_hash": "97bd2c92f31e4aff"
+      "estimated_poll_cost": 55.18,
+      "activity_poll_count": 85,
+      "last_content_hash": "c2b7f661bb8963d8"
     },
     "greenhouse:squarepoint-capital": {
       "last_polled_at": "2026-09-26T16:38:01Z",
@@ -3293,42 +3293,42 @@
       "last_content_hash": "dbab3b86c757834f"
     },
     "greenhouse:stoke-space": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 136.95,
-      "activity_poll_count": 73,
+      "estimated_poll_cost": 118.35,
+      "activity_poll_count": 74,
       "last_content_hash": "03ecfbdbd0cd8985"
     },
     "greenhouse:stripe": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 26.2,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 24.86,
+      "activity_poll_count": 85,
       "last_content_hash": "14180577fd1077bd"
     },
     "greenhouse:tenstorrent": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 128.78,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 111.51,
+      "activity_poll_count": 85,
       "last_content_hash": "473181f4130721f0"
     },
     "greenhouse:the-nuclear-company": {
@@ -3696,16 +3696,16 @@
       "last_content_hash": "26c2c05231b56624"
     },
     "icims:joby-aviation": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 20.97,
-      "activity_poll_count": 73,
+      "estimated_poll_cost": 21.03,
+      "activity_poll_count": 74,
       "last_content_hash": "7c6e0b8ef3878d1b"
     },
     "lever:anybotics": {
@@ -3930,16 +3930,16 @@
       "last_content_hash": "fb33b127e53a9154"
     },
     "lever:palantir": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": true,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 40.41,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 35.23,
+      "activity_poll_count": 85,
       "last_content_hash": "53a034a740c46e3c"
     },
     "lever:spotify": {
@@ -3982,20 +3982,20 @@
       "last_content_hash": "38ae2a8dc0412caa"
     },
     "lever:zoox": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 39.44,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 34.27,
+      "activity_poll_count": 85,
       "last_content_hash": "d9a22d8bdd53ad5e"
     },
     "simplify:__meta__": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
@@ -4437,29 +4437,29 @@
       "last_content_hash": "b55a8e40a80d57d3"
     },
     "workday:blackstone": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 6.41,
-      "activity_poll_count": 82,
+      "estimated_poll_cost": 6.84,
+      "activity_poll_count": 83,
       "last_content_hash": "ff379fca667a8c23"
     },
     "workday:blue-origin": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 6.96,
-      "activity_poll_count": 72,
+      "estimated_poll_cost": 7.28,
+      "activity_poll_count": 73,
       "last_content_hash": "c796935f1bc19181"
     },
     "workday:boeing": {
@@ -4541,16 +4541,16 @@
       "last_content_hash": "b3da7ed677694efd"
     },
     "workday:capital-one": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 176.44,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 176.39,
+      "activity_poll_count": 85,
       "last_content_hash": "3e001bf1307d6d36"
     },
     "workday:chevron-corporation": {
@@ -4647,7 +4647,7 @@
     "workday:dell": {
       "last_polled_at": "2026-09-02T09:29:57Z",
       "healthy": false,
-      "error": "[workday:dell] fetch failed: HTTP 422: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"D214D5MUIS4ZLK\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
+      "error": "[workday:dell] fetch failed: HTTP 422: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"C41B0DMUIXXO3O\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
       "bootstrapped": false,
       "potentially_truncated": false,
       "last_change_at": null,
@@ -4775,16 +4775,16 @@
       "last_content_hash": "0475e90bcb83567a"
     },
     "workday:g-research": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 6.82,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 7.17,
+      "activity_poll_count": 85,
       "last_content_hash": "e126afe8f4931888"
     },
     "workday:gdit": {
@@ -5152,16 +5152,16 @@
       "last_content_hash": "0a024e7a551b5aa7"
     },
     "workday:nasa-jpl": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 12.73,
-      "activity_poll_count": 72,
+      "estimated_poll_cost": 13.02,
+      "activity_poll_count": 73,
       "last_content_hash": "72f003b07ed58a0e"
     },
     "workday:nidec": {
@@ -5193,7 +5193,7 @@
     "workday:nio": {
       "last_polled_at": "2026-09-05T00:50:25Z",
       "healthy": false,
-      "error": "[workday:nio] fetch failed: HTTP 422: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"609F1DMUIS4ZSR\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
+      "error": "[workday:nio] fetch failed: HTTP 422: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"7E8B6CMUIXXOI8\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
       "bootstrapped": true,
       "potentially_truncated": false,
       "last_change_at": "2026-09-05T00:50:25Z",
@@ -5204,17 +5204,17 @@
       "last_content_hash": null
     },
     "workday:northrop-grumman": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 384.0,
-      "activity_poll_count": 82,
-      "last_content_hash": "91058b803d79d322"
+      "estimated_poll_cost": 380.74,
+      "activity_poll_count": 83,
+      "last_content_hash": "cad3713cebf034b1"
     },
     "workday:novanta": {
       "last_polled_at": "2026-09-26T16:38:01Z",
@@ -5243,16 +5243,16 @@
       "last_content_hash": "5a9f975b0a49fe09"
     },
     "workday:nvidia": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 8.14,
-      "activity_poll_count": 83,
+      "estimated_poll_cost": 8.23,
+      "activity_poll_count": 84,
       "last_content_hash": "ecfa32bc2bc793dd"
     },
     "workday:nxp-semiconductors": {
@@ -5295,16 +5295,16 @@
       "last_content_hash": "659697347acddb80"
     },
     "workday:palo-alto-networks": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 149.06,
-      "activity_poll_count": 83,
+      "estimated_poll_cost": 149.09,
+      "activity_poll_count": 84,
       "last_content_hash": "394a5afa2e14b313"
     },
     "workday:pfizer": {
@@ -5399,16 +5399,16 @@
       "last_content_hash": "b8d766c5973d8232"
     },
     "workday:rtx": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 21.19,
-      "activity_poll_count": 83,
+      "estimated_poll_cost": 21.59,
+      "activity_poll_count": 84,
       "last_content_hash": "2983bb1788e21c42"
     },
     "workday:schweitzer-engineering-laboratories": {
@@ -5425,29 +5425,29 @@
       "last_content_hash": "f018f2b8ab596dd8"
     },
     "workday:sierra-nevada-corporation": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 44.02,
-      "activity_poll_count": 71,
+      "estimated_poll_cost": 44.31,
+      "activity_poll_count": 72,
       "last_content_hash": "1abec2683dc8b966"
     },
     "workday:sierra-space": {
-      "last_polled_at": "2026-09-26T19:25:31Z",
+      "last_polled_at": "2026-09-26T22:07:48Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-26T19:25:31Z",
+      "last_change_at": "2026-09-26T22:07:48Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 23.76,
-      "activity_poll_count": 71,
+      "estimated_poll_cost": 24.29,
+      "activity_poll_count": 72,
       "last_content_hash": "d329bb8f3fe9c281"
     },
     "workday:sony": {
@@ -5713,6 +5713,7 @@
     "040b3850a5972462",
     "04127f016047ce6f",
     "041f8ec10eecdd45",
+    "04249e05da7fe4f0",
     "04353641d5ea2402",
     "0436442fff2233cb",
     "0436a940b7db3fcd",
@@ -5721,6 +5722,7 @@
     "045b9cd6d378e53e",
     "046d5a1f83b05f24",
     "047d59c77a71151b",
+    "04b64ee77c6d93b3",
     "04b95d4764810e3a",
     "04ba0651fad45df7",
     "04bd414353bf2abc",
@@ -5890,12 +5892,14 @@
     "0a76a5e5cfcc776c",
     "0a777666232b26a5",
     "0a782db3ec8a3779",
+    "0a8230e47fdd6021",
     "0a90f70638a14169",
     "0a941df58524cedb",
     "0aa266f948078a0d",
     "0aa8cf53be3ec1ff",
     "0aac4311f08c8809",
     "0ab3175cfb8bd5f2",
+    "0aba33ebc75283bb",
     "0ad241c5d9a7b22b",
     "0ad5598b49c34019",
     "0ad63fa89b045f31",
@@ -5925,6 +5929,7 @@
     "0b978bb13981caf5",
     "0b9af3451fce93c3",
     "0bae026311b2a802",
+    "0bb851b33f1ab5d5",
     "0bbcd9d118106b7c",
     "0bc31b21d8af6b6f",
     "0bcf84eb3fca76c6",
@@ -6233,6 +6238,7 @@
     "1739f03b07f6c5da",
     "173aace8c0a6fcc4",
     "1741701a7facfd5f",
+    "17504e6b9ea8ae6e",
     "1764398f883fb8f4",
     "17689c95db453d8a",
     "1774d7b24f99d95b",
@@ -6266,6 +6272,7 @@
     "1883426969884b58",
     "188d409b70c7fc96",
     "1890f81a377d158a",
+    "1895c38733280d58",
     "189870f0ef3ebbed",
     "189984b343fac1a1",
     "18a01e423bca4c44",
@@ -6874,6 +6881,7 @@
     "306650a190d5d286",
     "306b65f2397ebc09",
     "307e1252d99ed2ae",
+    "308778e66ab4cf5c",
     "3089e57f165f273d",
     "3092e5be2dce4445",
     "30a949485713e6be",
@@ -6975,6 +6983,7 @@
     "346b8e9a5ab73b1c",
     "346ec8f37da88db6",
     "346f45b709d618fb",
+    "3470c3edf5323ec5",
     "34716f198036c21a",
     "34717af03abf6899",
     "34797f1fd60def0e",
@@ -7035,6 +7044,7 @@
     "367b840cdf191001",
     "368bdd3d27813c22",
     "369ae57dfc5ef70a",
+    "369b56e2c04a1770",
     "36a0176dd77ef1b6",
     "36a4e86856b82c75",
     "36c18c7ef4601556",
@@ -7246,7 +7256,6 @@
     "3e3e158bebe4c5a7",
     "3e4df7848740ba23",
     "3e500f77c8ecf76e",
-    "3e53d55f750e046d",
     "3e55bbcc77b47c1a",
     "3e5653b04e1d325f",
     "3e5ea0c19474ffaa",
@@ -7703,6 +7712,7 @@
     "4fc3762b8c967d3b",
     "4fcc37eac425285a",
     "4fd32202a89d12a4",
+    "4fe69a70975b016e",
     "4ff25949eb87e644",
     "4ff2ccf8550ecebe",
     "5007f3bf8f219d4c",
@@ -7761,6 +7771,7 @@
     "51c1a1786cf4c2c5",
     "51c88db5427f540e",
     "51ca130b9bfed62f",
+    "51ce222a958ce4f8",
     "51d86ed19c0b812e",
     "51dab14f76774a90",
     "51de75f38d481105",
@@ -8087,6 +8098,7 @@
     "5d9bd5b708698188",
     "5da2c3d2cde11a05",
     "5db0196fde693453",
+    "5db657ddbea781fa",
     "5dbfdfe0c58421db",
     "5dc1ebd676d9b3b0",
     "5dc23e1ce5d3c61e",
@@ -8147,6 +8159,7 @@
     "5fdbb417a8aea2bd",
     "5fe8fd343d125d54",
     "5fea9cce30a9846e",
+    "5ff9d13b6ec32f33",
     "5ffce0a49555effb",
     "600c00335cf8d2c9",
     "6036b69ff8bb0fbc",
@@ -8178,6 +8191,7 @@
     "6153722194d6de50",
     "61563f1ac748c12a",
     "615b52f9d7560180",
+    "617d3079960462f7",
     "617e0531f9ced14d",
     "61a75876653cba20",
     "61bc62b103a537bf",
@@ -8215,6 +8229,7 @@
     "62ecce57036f6cc5",
     "62f47f2befc86fe1",
     "62f8406c2c357012",
+    "62fde0cb0b80052e",
     "62fe1a8ae0ab402b",
     "63002aafabb2c181",
     "630c15d368ecbd16",
@@ -8504,6 +8519,7 @@
     "6d29a3c6f3b60faa",
     "6d2ad1708958d673",
     "6d2c2fb4061a1f9e",
+    "6d2ea8aa08bf0302",
     "6d2fbde77c7ed08a",
     "6d342f2e6ce83af5",
     "6d3f71ade9383b5d",
@@ -8765,6 +8781,7 @@
     "766d9dfdf31cfb25",
     "76793e009e23337e",
     "7684ac6e08014275",
+    "76912540668b2b2a",
     "76a17514d2953321",
     "76c4a2b28694c22a",
     "76c8ab01faa2eaa0",
@@ -9078,11 +9095,13 @@
     "810bfcd032d652e5",
     "810e8b0b96e37e5b",
     "810eaf3a26ac7b89",
+    "811b23c51610c5f3",
     "812f27aeeef6b9de",
     "812f6990deb34366",
     "8139774ef9969027",
     "813d5d119e683f56",
     "815ac8c6f1dfb3fc",
+    "815c5ad07dd8744b",
     "815ce7fc3352c70b",
     "8168c40e75d65ca5",
     "817f5d7f49afd5ac",
@@ -9116,6 +9135,7 @@
     "831fcd111cfee537",
     "832a986e88315321",
     "832e178510675144",
+    "8339f0551648e349",
     "834610c9349784e6",
     "8348641a9f07c9c6",
     "83527c6a141dd9ef",
@@ -9222,6 +9242,7 @@
     "876951685e5843d8",
     "877f968eae7af101",
     "87a72716a543ac70",
+    "87b0c00c6dc6e390",
     "87b6e5807f74f0c2",
     "87c083c421f5d74c",
     "87c39bc3ee1185d0",
@@ -9769,6 +9790,7 @@
     "9cd6d78034cb8da5",
     "9cdfd1f2ef2f1271",
     "9cf02760ae9c4f5b",
+    "9cf0ac04b6fc6d47",
     "9cf28f259ff3bb1b",
     "9cf91dc6bf7e5722",
     "9cfcd7c2e02bfe12",
@@ -9905,6 +9927,7 @@
     "a186d5a0a6cc4ec6",
     "a194ef936e123fe2",
     "a1a4d56c7ebdf5c0",
+    "a1b00fe1eede61c6",
     "a1b155e67db0cca4",
     "a1bbf4ada6dd6d2c",
     "a1c8ec25f4aed751",
@@ -9993,6 +10016,7 @@
     "a4813b6202e6adba",
     "a48271812a03825f",
     "a4836185d20f1e9d",
+    "a488ca706461a6f8",
     "a4a84b42c4a5a802",
     "a4b44ea7dd00fa96",
     "a4d0790025ece23f",
@@ -10252,6 +10276,7 @@
     "afb7a5db57e42efb",
     "afca196294629534",
     "afcdbc29ac956eba",
+    "afd671d8161631c6",
     "afe7c60b1665486e",
     "aff52bd4150baa90",
     "aff8a7c725239f42",
@@ -10271,6 +10296,7 @@
     "b0908f41e8aefbd8",
     "b0b257fa78d535b6",
     "b0bcff664e36fa5b",
+    "b0dc54c848a78bcd",
     "b0e934c73ff8775f",
     "b0f19b772adef07b",
     "b0f297a66bdde505",
@@ -10279,6 +10305,7 @@
     "b107e78664c23096",
     "b11a8436fee221c8",
     "b11b539bbe03a9f8",
+    "b121ab9c9ff1f9a8",
     "b124a8622f9fd35d",
     "b129e9620c38b23c",
     "b12ad84e1f3bc457",
@@ -10708,6 +10735,7 @@
     "c2666d08b83a9298",
     "c279a000b3d61129",
     "c28a7ca158ea4945",
+    "c28c83e7ac7f0e37",
     "c290c0e49ce18b74",
     "c29e95de63becf4b",
     "c2a25bf1f0d43b37",
@@ -10864,6 +10892,7 @@
     "c82dcfb99581bb01",
     "c83a456f5cafa01c",
     "c84b17707e5dbfa2",
+    "c852a0531b5fb369",
     "c85692b7ddef5f83",
     "c86934ba2c457a2c",
     "c869d4c0af952782",
@@ -10879,6 +10908,7 @@
     "c8d0a5319298ad2d",
     "c8e1112d1be9015d",
     "c8f2f07d10b682ee",
+    "c8f5b66a47c29b6e",
     "c8f5d9f32eab4b0a",
     "c8fad0a4420b76e2",
     "c90d8252e6a237fb",
@@ -11067,6 +11097,7 @@
     "d07e1e47db5e06e1",
     "d0973828c78b5e29",
     "d0974724964ce1b8",
+    "d09f0facafad9f14",
     "d0a83b5c3ba6f946",
     "d0ae36a5249ae345",
     "d0c2b494a555df30",
@@ -11132,6 +11163,7 @@
     "d25ea6ad4887008b",
     "d26ba816a728d354",
     "d270f9b48e341a19",
+    "d27a7896dd117434",
     "d27a8c63155e745b",
     "d2882bc46f6a58ef",
     "d28ffe066bb58c61",
@@ -11159,6 +11191,7 @@
     "d32fc8ee9fe8a3a5",
     "d3467aae447cab2c",
     "d349c947bef090fe",
+    "d356dc7112a712c8",
     "d35c0cdb7fbee4cc",
     "d35c3d26e1ef795d",
     "d382da128688bddc",
@@ -11600,6 +11633,7 @@
     "e463bfd2cb234cd5",
     "e4682250b7ab9192",
     "e46a44c39f448a60",
+    "e47d7522b0a6e2bc",
     "e483c6e18b0ce6ca",
     "e49b162a37c8870b",
     "e49da1746dd2ced4",
@@ -12082,6 +12116,7 @@
     "f63445b3dbc7c4ab",
     "f63703cdb36ec919",
     "f639c6a6f87f8797",
+    "f653a9a69e6b3d15",
     "f6608fae58a5ba51",
     "f6681f6d5e8d2716",
     "f66d5fce0c5008ec",
@@ -12105,6 +12140,7 @@
     "f71dc7fa3961ca68",
     "f724a38f7fc52910",
     "f7272c8d7b0a3d95",
+    "f73406f6043d45f1",
     "f746522e75576b32",
     "f74cf05991d99264",
     "f75278d3094f9f25",
@@ -12331,57 +12367,7 @@
     "ffff10677bed8202"
   ],
   "absent_ids": {
-    "04249e05da7fe4f0": "2026-09-26T19:25:31Z",
-    "04b64ee77c6d93b3": "2026-09-26T19:25:31Z",
-    "0a8230e47fdd6021": "2026-09-26T19:25:31Z",
-    "0aba33ebc75283bb": "2026-09-26T19:25:31Z",
-    "0bb851b33f1ab5d5": "2026-09-26T19:25:31Z",
-    "17504e6b9ea8ae6e": "2026-09-26T19:25:31Z",
-    "1895c38733280d58": "2026-09-26T19:25:31Z",
-    "1c6fba261ef792d3": "2026-09-26T19:25:31Z",
-    "308778e66ab4cf5c": "2026-09-26T19:25:31Z",
-    "3470c3edf5323ec5": "2026-09-26T19:25:31Z",
-    "369b56e2c04a1770": "2026-09-26T19:25:31Z",
-    "456686f7ce36f865": "2026-09-26T19:25:31Z",
-    "4fe69a70975b016e": "2026-09-26T19:25:31Z",
-    "51ce222a958ce4f8": "2026-09-26T19:25:31Z",
-    "5babab89e9014639": "2026-09-26T19:25:31Z",
-    "5db657ddbea781fa": "2026-09-26T19:25:31Z",
-    "5ff9d13b6ec32f33": "2026-09-26T19:25:31Z",
-    "617d3079960462f7": "2026-09-26T19:25:31Z",
-    "62fde0cb0b80052e": "2026-09-26T19:25:31Z",
-    "6c004ad8f6c0892e": "2026-09-26T19:25:31Z",
-    "6d2ea8aa08bf0302": "2026-09-26T19:25:31Z",
-    "76912540668b2b2a": "2026-09-26T19:25:31Z",
-    "7d5f006ea3fa1ce6": "2026-09-26T19:25:31Z",
-    "811b23c51610c5f3": "2026-09-26T19:25:31Z",
-    "815c5ad07dd8744b": "2026-09-26T19:25:31Z",
-    "8339f0551648e349": "2026-09-26T19:25:31Z",
-    "87b0c00c6dc6e390": "2026-09-26T19:25:31Z",
-    "87ef3da693830473": "2026-09-26T19:25:31Z",
-    "8fbdcc78bba2d7ce": "2026-09-26T19:25:31Z",
-    "9cf0ac04b6fc6d47": "2026-09-26T19:25:31Z",
-    "9df20171fd453075": "2026-09-26T19:25:31Z",
-    "a1b00fe1eede61c6": "2026-09-26T19:25:31Z",
-    "a1eeedfb4c23a3c5": "2026-09-26T19:25:31Z",
-    "a488ca706461a6f8": "2026-09-26T19:25:31Z",
-    "afd671d8161631c6": "2026-09-26T19:25:31Z",
-    "b0dc54c848a78bcd": "2026-09-26T19:25:31Z",
-    "b121ab9c9ff1f9a8": "2026-09-26T19:25:31Z",
-    "c1e0a3529f2e1f3a": "2026-09-26T19:25:31Z",
-    "c28c83e7ac7f0e37": "2026-09-26T19:25:31Z",
-    "c36ed0c072d0a2f2": "2026-09-26T19:25:31Z",
-    "c852a0531b5fb369": "2026-09-26T19:25:31Z",
-    "c8f5b66a47c29b6e": "2026-09-26T19:25:31Z",
-    "cd2f020e5468e9dc": "2026-09-26T19:25:31Z",
-    "d09f0facafad9f14": "2026-09-26T19:25:31Z",
-    "d27a7896dd117434": "2026-09-26T19:25:31Z",
-    "d356dc7112a712c8": "2026-09-26T19:25:31Z",
-    "dac2f5c89f2572f2": "2026-09-26T19:25:31Z",
-    "e47d7522b0a6e2bc": "2026-09-26T19:25:31Z",
-    "f653a9a69e6b3d15": "2026-09-26T19:25:31Z",
-    "f73406f6043d45f1": "2026-09-26T19:25:31Z",
-    "ff6644476d5b0cc6": "2026-09-26T19:25:31Z"
+    "3e53d55f750e046d": "2026-09-26T22:07:48Z"
   },
   "http_cache": {
     "https://amcor.wd5.myworkdayjobs.com/wday/cxs/amcor/amcor_external_career_site/job/CORP-Evansville-Head-Division-Office-IN/Business-Analytics---Technology-Intern_REQ_95379": {
@@ -12428,7 +12414,7 @@
       "etag": "W/\"job-board:f75800d0d1276bc1366c9054f692cd2ede11290ad57f22b97ade6ac5ab8f0959\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/Sierra": {
-      "etag": "W/\"job-board:5f4ee0eb4b42207220af66b79de3e2bf9dbf65293a4966f62aaf64c04a9bbb11\""
+      "etag": "W/\"job-board:2638e42111d65244a4e96292ee7e3413ceb074a2dd0bcc5ce86ed859189edce2\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/Talos-Trading": {
       "etag": "W/\"job-board:a1da1c533dbba171f7beeee6e76d029cc96f480d44472041d2c4b0c4c0be0413\""
@@ -12473,7 +12459,7 @@
       "etag": "W/\"job-board:e6ceb6e9dec5aed3b379db1fd0981e64bc37324e827888d49a79cddfd1e4e9d6\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/architect": {
-      "etag": "W/\"job-board:0323379a62176e25c93ce40f9de3a44b1686b2ff7fa9758fd238be31711e66eb\""
+      "etag": "W/\"job-board:5a0e4d14cbc46cd99f1597a3868d7cdaec850d4b32d4faa8c3607be74978b175\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/armadin": {
       "etag": "W/\"job-board:bc19f7c5896bd775b9be69faaf29c7ed528ce628a5b074ce43fcdb555250fdec\""
@@ -12578,7 +12564,7 @@
       "etag": "W/\"job-board:c0d782763789157e4b8c81044047e2522896964e6cf2276570d721d9eb3eae18\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/cyvl": {
-      "etag": "W/\"job-board:61b7af9ae12fcaaf7d8b9d21da10dc3c437f1908e6275cf743ad38281e59a302\""
+      "etag": "W/\"job-board:8301eace3a5bfb2fa88e37c8b24f47722ed7be774be1982c85b19fe5c1484dc3\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/d-matrix": {
       "etag": "W/\"job-board:afb1fc1e11a622ba99b6dfe690f594cad46d4c83df0c25a3e19573648e59ffb5\""
@@ -12899,7 +12885,7 @@
       "etag": "W/\"job-board:f2774c2b0e38516c14c65666c797a60873cd428ad65a35c2786229f603f2f739\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/pika": {
-      "etag": "W/\"job-board:d4f33052f38b70fd85f65ee03ff28c10449040abfcddadd08a5135d4cbf86afc\""
+      "etag": "W/\"job-board:89bb7db99819071b445a1012c5a021fabfafa7f2ff03644dbfe8b0db98e95397\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/pinecone": {
       "etag": "W/\"job-board:69fbf6f10d944ba0fa6817aab3ee0cb655611c6b43aeba6dd1033c73a4484eaa\""
@@ -13067,7 +13053,7 @@
       "etag": "W/\"job-board:6149018d3c98e371ace48719d59c32b4aa2b0d09739232f4a1a63d5759bfb1a4\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/the-exploration-company": {
-      "etag": "W/\"job-board:10a50d3362b26a757c90439ba33631febf5931d828e764d21d1d7286d0df5329\""
+      "etag": "W/\"job-board:36326f27ab25d41ecee8160017c5ddba340769a0919d8c492fa90075bb566757\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/tilderesearch": {
       "etag": "W/\"job-board:2a0c7b444f06ed9782a85a27c8401a89d5a86f2e8d23dc9dafdbc5d5171f4747\""
@@ -14435,7 +14421,7 @@
       "etag": "W/\"bd612b1af951b51de2cddcdf5cf0a729\""
     },
     "https://boards-api.greenhouse.io/v1/boards/airbnb/jobs": {
-      "etag": "W/\"0bcc4e6c45cdd0775abbf2bc3d15e0e3\""
+      "etag": "W/\"010a23623f8216bf24a5b7441ff6faf2\""
     },
     "https://boards-api.greenhouse.io/v1/boards/airtable/jobs": {
       "etag": "W/\"5064ca00751a763e1a5254a24829fd25\""
@@ -14489,7 +14475,7 @@
       "etag": "W/\"c6436b13c08a1e3e82bb0c3c8f8e78a1\""
     },
     "https://boards-api.greenhouse.io/v1/boards/andurilindustries/jobs": {
-      "etag": "W/\"cd3c6df6eb97cd93806eaa7bff8c9fdb\""
+      "etag": "W/\"26769f9f1b3d9cc8d7d3553679f3f8a3\""
     },
     "https://boards-api.greenhouse.io/v1/boards/andurilindustries/jobs/5148079007": {
       "etag": "W/\"34fbb29da33f41eabb2a1e02ce0c9a91\""
@@ -14546,7 +14532,7 @@
       "etag": "W/\"e07c5d256a04884540b91ef15a0048fe\""
     },
     "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs": {
-      "etag": "W/\"2ab997dc59ebf205c85c5da003ee4790\""
+      "etag": "W/\"6af179812f4b09d6090a3d4294e4991e\""
     },
     "https://boards-api.greenhouse.io/v1/boards/antora/jobs": {
       "etag": "W/\"ab460ab074deca61bbeb996df9a6c383\""
@@ -14591,7 +14577,7 @@
       "etag": "W/\"b3814385f0445f6fec4d49768b157c08\""
     },
     "https://boards-api.greenhouse.io/v1/boards/archer56/jobs": {
-      "etag": "W/\"df83e1837b99b7e23e74ac6e4b0deca4\""
+      "etag": "W/\"9e30b4ddeaca844f0c1944efe566a5e1\""
     },
     "https://boards-api.greenhouse.io/v1/boards/argmax/jobs/4067268009": {
       "etag": "W/\"d63a8d6d1290368ba3f7c9918d4c01be\""
@@ -14712,6 +14698,12 @@
     },
     "https://boards-api.greenhouse.io/v1/boards/astranis/jobs/4707012006": {
       "etag": "W/\"2b1ef54b8ca9f852549ea53ab0a2e516\""
+    },
+    "https://boards-api.greenhouse.io/v1/boards/astranis/jobs/4713183006": {
+      "etag": "W/\"7333fb3865dd48469a2ac8f884702f49\""
+    },
+    "https://boards-api.greenhouse.io/v1/boards/astranis/jobs/4713184006": {
+      "etag": "W/\"dd228063f06756266aabfb711e3b8400\""
     },
     "https://boards-api.greenhouse.io/v1/boards/astranis/jobs/4715207006": {
       "etag": "W/\"ada2b6317d7e495edfdce825bdd8eebd\""
@@ -14984,7 +14976,7 @@
       "etag": "W/\"5e01b43a37bd811ce55bbae2a945ca42\""
     },
     "https://boards-api.greenhouse.io/v1/boards/cssmerge/jobs/8695475002": {
-      "etag": "W/\"e1deb6269b1b8334be453c6d3ee09dbb\""
+      "etag": "W/\"2bc60d9914d9901eec14f5a0c4ff6aa2\""
     },
     "https://boards-api.greenhouse.io/v1/boards/ctccampusboard/jobs": {
       "etag": "W/\"b432cb3fc7cb0f0759330176d912bf5c\""
@@ -14996,7 +14988,7 @@
       "etag": "W/\"3db702b5dc54ad3de6fc0885a49841a5\""
     },
     "https://boards-api.greenhouse.io/v1/boards/databricks/jobs": {
-      "etag": "W/\"1c75f312e302fa36dc378a47dad902c8\""
+      "etag": "W/\"e98254d54eb8a5e327eef2aa0f53394c\""
     },
     "https://boards-api.greenhouse.io/v1/boards/databricks/jobs/7586263002": {
       "etag": "W/\"890e62d930a5f66cd6532ad42cb625f2\""
@@ -15074,7 +15066,7 @@
       "etag": "W/\"fc375847243e4b12407f991e46811022\""
     },
     "https://boards-api.greenhouse.io/v1/boards/drweng/jobs": {
-      "etag": "W/\"e71f089938997cdaf28606b2a75ae1ce\""
+      "etag": "W/\"f2d8d4b04cbc6224a16dd618a84aec78\""
     },
     "https://boards-api.greenhouse.io/v1/boards/drweng/jobs/7668776": {
       "etag": "W/\"93d0dc574848682c195bee3525e02166\""
@@ -15173,7 +15165,7 @@
       "etag": "W/\"52a42199e583ab8b634c28ddb41421e9\""
     },
     "https://boards-api.greenhouse.io/v1/boards/epicgames/jobs/6138134004": {
-      "etag": "W/\"f4b5245104691cc6ce967ccae8d157e6\""
+      "etag": "W/\"f16bada0f9e35a2ee17fd2ba003ec262\""
     },
     "https://boards-api.greenhouse.io/v1/boards/epicgames/jobs/6141180004": {
       "etag": "W/\"ebbd0c3629ba40415b9379b6c228f5ee\""
@@ -15276,6 +15268,9 @@
     },
     "https://boards-api.greenhouse.io/v1/boards/figma/jobs/6144755004": {
       "etag": "W/\"cffac29ad28deec64ec5ecbc1f1f9f2b\""
+    },
+    "https://boards-api.greenhouse.io/v1/boards/figma/jobs/6178851004": {
+      "etag": "W/\"bd2d1a87f8d265e1b78ef11dd4abeffc\""
     },
     "https://boards-api.greenhouse.io/v1/boards/figma/jobs/6178857004": {
       "etag": "W/\"752e992a71c33a72842c8c4c1909c6cb\""
@@ -15815,7 +15810,7 @@
       "etag": "W/\"90993c7379db043c3b3c5671b0b849ab\""
     },
     "https://boards-api.greenhouse.io/v1/boards/hudl/jobs/8155103": {
-      "etag": "W/\"c8c6edd9485269bbcdfc0f5d482800e8\""
+      "etag": "W/\"23c15682786d5a36566fb9751c39a8b0\""
     },
     "https://boards-api.greenhouse.io/v1/boards/hyannisportresearch/jobs": {
       "etag": "W/\"57ac5a65fa418120ff81930e87e0ef46\""
@@ -15827,7 +15822,7 @@
       "etag": "W/\"098fd53f3fbf03bd6462703a32e68d71\""
     },
     "https://boards-api.greenhouse.io/v1/boards/idmeuniversityrecruiting/jobs/7980429003": {
-      "etag": "W/\"da8729da36d9b5d5df9b8754ec7d80e5\""
+      "etag": "W/\"83709880a223df594921a2b01110086f\""
     },
     "https://boards-api.greenhouse.io/v1/boards/idmeuniversityrecruiting/jobs/7986694003": {
       "etag": "W/\"558c40ac64f394299d5f24fda4e2af5b\""
@@ -15926,7 +15921,7 @@
       "etag": "W/\"380fa45d45ef30a12670d4d927dd6ace\""
     },
     "https://boards-api.greenhouse.io/v1/boards/janestreet/jobs": {
-      "etag": "W/\"7369adedcbfd5d33775c47d00b82b3b5\""
+      "etag": "W/\"1d450739efefa51b740c993554a18f43\""
     },
     "https://boards-api.greenhouse.io/v1/boards/janestreet/jobs/8229056002": {
       "etag": "W/\"5b062f9ff517a18745c350cce7bc9a3f\""
@@ -15947,7 +15942,7 @@
       "etag": "W/\"fefa594700e8225231802b23292fd83e\""
     },
     "https://boards-api.greenhouse.io/v1/boards/jumptrading/jobs": {
-      "etag": "W/\"18c3db0b0a0fc532d3605be0e1e3cb54\""
+      "etag": "W/\"2ceedfe99ef7f4121a8dc29e958a58e5\""
     },
     "https://boards-api.greenhouse.io/v1/boards/jumptrading/jobs/8052338": {
       "etag": "W/\"7469566c8e97abb34cd8843e32fcb0c0\""
@@ -16391,7 +16386,7 @@
       "etag": "W/\"78a84351b80219fb99acc5c8bb99f7da\""
     },
     "https://boards-api.greenhouse.io/v1/boards/point72/jobs": {
-      "etag": "W/\"5afd9245af101403f950e2f66d74ec98\""
+      "etag": "W/\"44334336adeff24a38c80918c2e76261\""
     },
     "https://boards-api.greenhouse.io/v1/boards/point72/jobs/7297642002": {
       "etag": "W/\"675a66be389dedc6cb188447c6b16c07\""
@@ -16457,7 +16452,7 @@
       "etag": "W/\"f245d750ea2abc6ff3a8f4e57687e235\""
     },
     "https://boards-api.greenhouse.io/v1/boards/relativity/jobs": {
-      "etag": "W/\"87d8ca17eeecb114ad20b9ad43e7600b\""
+      "etag": "W/\"b7b8438b29117bd32e23b00e131efa09\""
     },
     "https://boards-api.greenhouse.io/v1/boards/relaypro/jobs/8176774": {
       "etag": "W/\"9748221944b89d8d4b49c6681d28440f\""
@@ -16469,10 +16464,10 @@
       "etag": "W/\"521d582673d96acdcf875a3e1dcf64de\""
     },
     "https://boards-api.greenhouse.io/v1/boards/rfsmart/jobs/5409030008": {
-      "etag": "W/\"f2fc457248288214a3cdb65c41771aef\""
+      "etag": "W/\"3fc289df119b998aaff8017b8295e042\""
     },
     "https://boards-api.greenhouse.io/v1/boards/rfsmart/jobs/5409034008": {
-      "etag": "W/\"86f81d3e3fa1d63c2ba55868508a903c\""
+      "etag": "W/\"5fc2ffc25ce279e3fed1d55086e220ac\""
     },
     "https://boards-api.greenhouse.io/v1/boards/riotgames/jobs": {
       "etag": "W/\"1473552ae262fde28894a013b49fe667\""
@@ -17021,7 +17016,7 @@
       "etag": "W/\"ae9f919ac8a7fca1125fa8b7b9dc67f1\""
     },
     "https://boards-api.greenhouse.io/v1/boards/spacex/jobs": {
-      "etag": "W/\"202bcedc57a9e1f53ecae9fda1a570f0\""
+      "etag": "W/\"4862f0af46a724f357da03501e53bdd2\""
     },
     "https://boards-api.greenhouse.io/v1/boards/spacex/jobs/8483305002": {
       "etag": "W/\"33e66efa76a5e2485c437354acfd93bd\""
@@ -17195,7 +17190,7 @@
       "etag": "W/\"7dd42b36d8fbfbc2658c29e4803c365b\""
     },
     "https://boards-api.greenhouse.io/v1/boards/stripe/jobs": {
-      "etag": "W/\"3e335f8b1019fb00b3307ce1560effd4\""
+      "etag": "W/\"a3b8135dd2ece0709bd5bb76d1bcec2b\""
     },
     "https://boards-api.greenhouse.io/v1/boards/stripe/jobs/7737124": {
       "etag": "W/\"379d71f5220274b23293c84726d35b04\""
@@ -18698,6 +18693,14 @@
       "failures": 0,
       "next_attempt_at": "2026-09-29T16:38:01Z"
     },
+    "04249e05da7fe4f0": {
+      "source_key": "194c96da2a6a0e1ccafe7803edee6418907f8762601e112c2af256ee15c12f0e",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
+    },
     "04353641d5ea2402": {
       "source_key": "264263efcffd3cbd7a3940768ca9cd8ad7f627d5252fd6c6de6db574d16ac5fe",
       "version": 5,
@@ -18771,6 +18774,14 @@
       "last_success_at": "2026-09-26T16:38:01Z",
       "failures": 0,
       "next_attempt_at": "2026-09-29T16:38:01Z"
+    },
+    "04b64ee77c6d93b3": {
+      "source_key": "a8087cc3dd41dd6031c8a7f620d42f46eeca52ad6377bbbe0f25e3191abafc87",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "04b95d4764810e3a": {
       "source_key": "a094e7a12981de66ff50c8e5d2f0082a8da427523457531b88d0a51bfebd320a",
@@ -19697,10 +19708,10 @@
       "source_key": "8bcb5e1e9a55c2ac44d5f120a494de6bd44bc23981b3a75f7cb1a12a079e2157",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "error": "robots_disallowed",
-      "failures": 2,
-      "next_attempt_at": "2026-09-20T23:20:53Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z"
     },
     "088ef49370bd9583": {
       "source_key": "70b9f9df0b83da79ef63e5d4b57bdf334236523b25186152ebb1febecf5974ee",
@@ -19951,38 +19962,39 @@
     "09a06e43b955ea7a": {
       "source_key": "382488072e7f2b0d875ef91eb0e13a991148556103839717ba22b20308147af9",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "09a5ee431585ed55": {
       "source_key": "10671b0d3de1ac2298e0b7bad7b34ecf1dc6a77709698234f6148d3e232bd6a2",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "09a6f1835b8d3f3b": {
       "source_key": "ff9d90d4c060c321835e79bc6dadd6f7ee4ccbd239965dbf043aeecb8d97cd6d",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "09b1395acfd02a69": {
       "source_key": "5bee1a1b5c0dfdfc6a3c450a88c1fb2f6b8b4c44db6efd1cca29f076a8dfa74b",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
-      "status": "available",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
+      "status": "failed",
       "last_success_at": "2026-09-20T19:20:53Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "failures": 1,
+      "next_attempt_at": "2026-09-27T00:07:48Z",
+      "error": "no_unique_matching_jobposting"
     },
     "09b57fb434005562": {
       "source_key": "8bc717bc93356030335051efe6f05d699ef746aeeab66916da5d846eed31c809",
@@ -19996,11 +20008,11 @@
     "09bdc3ac8e73efd2": {
       "source_key": "feccc36dcbae7a3cc24f928295183a07bbe40a2fb2887f09e516dd32211eb429",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "09beb0be42858874": {
       "source_key": "f9c076bbb04631f4349c44f0a0910251ec0b1dbaf8429aceeb88a165054584cc",
@@ -20040,20 +20052,20 @@
     "09da176892276fa2": {
       "source_key": "a41437e21a649d8709b7c9e6bdf3c65a7131daee50c571d00a81f975110c835d",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "09e31455b30eceb6": {
       "source_key": "0005c4b6b81a138d14222a739f9115404530617f273db167877bf66b49f0286b",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "09eb646346eac66e": {
       "source_key": "5b71c9bf124431eb72dfd6c8411bc5efc589f09db3870f4d60571ebc0d609923",
@@ -20076,21 +20088,21 @@
     "09f817ab27f5d4de": {
       "source_key": "799c120eef85abdacee408632150f0ba9ecc493ed62e5af76754c311f6c69c46",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "failed",
       "last_success_at": "2026-09-08T16:58:54.651032Z",
-      "failures": 2,
-      "next_attempt_at": "2026-09-21T01:45:05Z",
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z",
       "error": "SourceFetchError"
     },
     "0a10f29c65266a9e": {
       "source_key": "30dfddf492982f9d69b63aa5273e6f884e30344e40eff79bf75e4354fbfc8c25",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0a16ef6992850ae7": {
       "source_key": "6655763fc0eb92bc102f9fc0e48f694bb2759bd9601fa67c53c7903a67ff92c7",
@@ -20131,20 +20143,20 @@
     "0a3033b060f09bed": {
       "source_key": "103fc1a34a657101f751c7141d4b9a8b2212c1be81bc158d94a2900a2da243ee",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0a39e8d07afcbb90": {
       "source_key": "de3d509b15f673a78b123f8ea4791414c115f0309c3af10e6df1d6e3d0696c60",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0a3c6e8bcad66db8": {
       "source_key": "cc1731484765e3681d5190320291f1e14eeca50c466543d1720dd7a5cf812ae5",
@@ -20167,11 +20179,11 @@
     "0a40576b627c2242": {
       "source_key": "2c771f4dedb8029e1f07a4b0ea35ac7e08794becfe29c81d79af40d681122879",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "failed",
       "last_success_at": "2026-09-08T16:58:54.651032Z",
-      "failures": 2,
-      "next_attempt_at": "2026-09-21T01:45:05Z",
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z",
       "error": "no_unique_matching_jobposting"
     },
     "0a41c5799acb6a4e": {
@@ -20212,29 +20224,29 @@
     "0a521b699576e0e4": {
       "source_key": "76aed1fabfa6ac8ca4b3137468da6bb6aaf65293ad7ff170ddaca8ace8cf4a50",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0a573403e26439c6": {
       "source_key": "ce8efd138892bef72683b725f1d1275d01524f57ad3d540684974a4e3e317967",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0a5afb25403fddff": {
       "source_key": "7f828972d1486030d1d3649223743f487214d1f1933ad2bd033150377b979bc2",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0a5d411d6439b07e": {
       "source_key": "036664523e2f3434ff3b612777203bac6ec4b973b1df954fda8c75061fe04068",
@@ -20258,10 +20270,10 @@
       "source_key": "f3f5d9829769fbb9ebbff59fe83246f0b738ffdf6f1fee47221fa5090400e585",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "error": "SourceFetchError",
-      "failures": 2,
-      "next_attempt_at": "2026-09-20T23:20:53Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z"
     },
     "0a759213955a8904": {
       "source_key": "43fd94dd52acf333dad5ef6e0f4c109f4cc3ba019461e55bff9bbaab11f501e1",
@@ -20299,23 +20311,31 @@
       "failures": 0,
       "next_attempt_at": "2026-09-27T06:13:15Z"
     },
+    "0a8230e47fdd6021": {
+      "source_key": "27f326b54c3112a8f085f167a619ea1ddd0242939cbb78c23ff3bea504cbf189",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
+    },
     "0a90f70638a14169": {
       "source_key": "a3049a8a7734e65b2fd9ad07a2346a961f98da890091781b243727fd0eb5b79f",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0a941df58524cedb": {
       "source_key": "63ea7c0c005bd0c803faa5a3e94e5e290d2bdb48f854b0458f9f898a3ff414f4",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0aa266f948078a0d": {
       "source_key": "c39a7dc6cfcb5c9965019eef0d29e4a9f9733d2cc12670d6107dcba3359cdf59",
@@ -20329,20 +20349,20 @@
     "0aa8cf53be3ec1ff": {
       "source_key": "8bc8dacb280612ea79e013c012beb9a20675375a4bc406c98c6bba140882ceba",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0aac4311f08c8809": {
       "source_key": "39627485de9c2d50d981e4717cf816bae4db51a879aea21baa00e55ac84651b1",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0ab3175cfb8bd5f2": {
       "source_key": "843bb964cea0234f4abc0a77e4e2d16fd7365c4ab5ddf981953dba4a08022809",
@@ -20352,6 +20372,14 @@
       "last_success_at": "2026-09-26T07:32:41Z",
       "failures": 0,
       "next_attempt_at": "2026-09-29T07:32:41Z"
+    },
+    "0aba33ebc75283bb": {
+      "source_key": "4bd512029e3757d878a0aa485335e51949c693d5bccf1a7efeda3a5ab0d110b0",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0ad241c5d9a7b22b": {
       "source_key": "d48ec42d23102bcab49e198b499242b53eec960f3c0e1b08d8462ce767bcac40",
@@ -20374,11 +20402,11 @@
     "0ad63fa89b045f31": {
       "source_key": "0c3310fad0b21a1f8f0259925c5192e153133c0a2129c8f9883542d819c3be88",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0add1f0a050344fb": {
       "source_key": "bbaa18e73a9b8ab98a0698c36ec22dcf0c05d4cf673018083ba5d804c18d80aa",
@@ -20401,11 +20429,11 @@
     "0ae47d13bfd26bd2": {
       "source_key": "7d078256de9ff0f54fa109d946583a559461c56d3f95d9828c49d8777e9417fa",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0aeb89e89bd98f9a": {
       "source_key": "1e1c08fc56c22880ce91a129610035e7a97ef7de1e21d1b64fd1836e3cffbb16",
@@ -20419,38 +20447,38 @@
     "0aebf7c9dbbd6ac9": {
       "source_key": "e29ceaf6460d0e09b60a6aa87f4e218d932be6cb5d68458a58b94e293b14c7f5",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0aedeccb9ef73958": {
       "source_key": "bfaef957b95a031cc42edd258f9def9439b61eb232d3cf8be9c9e2d9ad0fee13",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0af058bdffe86745": {
       "source_key": "69d1810fbc2b882b579939bd48d40868ff63a8ec2de57bd628c563acaf8ce53c",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0afbfdd2b54b953d": {
       "source_key": "2e83e364fd8b476e8e9d219f5cba3d3fa16fbc4afd9c8a1c23bf28a25d4dd9d1",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0b08b2f3c7fb79c9": {
       "source_key": "281111571735f37ec91719119f127fd55de46eb72084c5d720de6fe0bd12db78",
@@ -20473,20 +20501,20 @@
     "0b1bcfa306cb757f": {
       "source_key": "15d27e6fa9f0a22a7c8fd76efc854bf75a68e6fcf7769864e0e32e0862747023",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0b2eef1e70030268": {
       "source_key": "442f4d55f7f4a927998e67f6a786c878f064819de4a4b8c42abcc8754f10230a",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0b3502697a7d77a0": {
       "source_key": "ccac848f2e235bfbed8b0dd9c11cb53f8184a95f957318b3c5180faca81dec55",
@@ -20500,11 +20528,11 @@
     "0b4196e4ee2434ad": {
       "source_key": "f1c38b6a50d804805b1b0658ce9bb6283d6285a0210e1a99e10eee5a3bf3be1b",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "failed",
       "last_success_at": "2026-09-08T16:58:54.651032Z",
-      "failures": 2,
-      "next_attempt_at": "2026-09-21T01:45:05Z",
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z",
       "error": "robots_disallowed"
     },
     "0b547ec939fb6a85": {
@@ -20537,11 +20565,11 @@
     "0b8088ef52490858": {
       "source_key": "bf0e6ab3b60a2799ecd0c0b54acc31d8d722de9c627b7d505c9065846c66a90d",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0b87a0efc0147cfd": {
       "source_key": "7a07939042874e5885d38dc78c63b3648ee52c58a57e6a670317fb45eb33518b",
@@ -20555,11 +20583,11 @@
     "0b8eee69ff8b5c90": {
       "source_key": "4856e0829abd4db4da799ad7d30176949e092a6fee2970b03ff6901501d6e893",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0b8f3ed76087b558": {
       "source_key": "cda7f8d340749a18a1b12542ed3d8b365c067999602dd2e1ad84cc64606395de",
@@ -20573,11 +20601,11 @@
     "0b902e587605c72f": {
       "source_key": "afcf9197c1f44a08e1e9156ae106e1d640e9e06244d0c1c13e093ac8f73da5b5",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0b9723965b6ac143": {
       "source_key": "361d9be768561e1ea0d2e8b5bab176877670e9c9b3e23a77f1b41df883db676e",
@@ -20591,11 +20619,11 @@
     "0b978bb13981caf5": {
       "source_key": "a724dd3a488c956bb613d89c427d01488025c9d764d95a34d5a83708b37523cf",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0b9af3451fce93c3": {
       "source_key": "2ab33905ff112cc39ea9863f5fabfebf82c0349252176544960b42b1859bee13",
@@ -20615,6 +20643,14 @@
       "failures": 0,
       "next_attempt_at": "2026-09-26T12:00:36Z"
     },
+    "0bb851b33f1ab5d5": {
+      "source_key": "4b02dec07fca17a49edfa2e6fb417178fd13e43ee5d119d9c682b1a3f925ebad",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
+    },
     "0bbcd9d118106b7c": {
       "source_key": "2aefce5551570fa94f033bcd442153cfe248953abc6db4b0ac46f6fb7b7fb207",
       "version": 5,
@@ -20627,11 +20663,11 @@
     "0bc31b21d8af6b6f": {
       "source_key": "08ee04087bb70808374074bbff2fa7dc4585eae7f98dff1658e12ef2581be452",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0bcf84eb3fca76c6": {
       "source_key": "31d2b78d0ccd71e9dab62a4362b3a75dbc16a6a58d145270edee6d61bf7770b4",
@@ -20663,11 +20699,11 @@
     "0bec7f730abce82e": {
       "source_key": "91a094053dae94e00ca564ccac3b16b0ceeacb9e537b4b37ce71bef0ff85e40b",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0bf6b5010f2e16e4": {
       "source_key": "8a7e3d1f32409777340a084bb81c051ff3ee3522093b7d09f002c10eee337b1b",
@@ -20690,11 +20726,11 @@
     "0c1d809900fe08fb": {
       "source_key": "bf06ae50449748fcc13935bedbf3f73a6a0b775ae8891822533b59bd2922b5dd",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0c2797845ea11880": {
       "source_key": "e35325efa1554b9839be2d1c80ca0a37e89fce0617f536dbe013ebd90f608356",
@@ -20735,31 +20771,31 @@
     "0c3674361ec98208": {
       "source_key": "8bce33a7297e4d3a8e27b4737a3763f338ba93f3b6da4491ae1f395d35db9fa8",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "failed",
       "last_success_at": "2026-09-15T17:49:47Z",
-      "failures": 1,
-      "next_attempt_at": "2026-09-20T23:45:05Z",
+      "failures": 2,
+      "next_attempt_at": "2026-09-27T02:07:48Z",
       "error": "no_unique_matching_jobposting"
     },
     "0c3997fc0ecc6d4f": {
       "source_key": "d91a500b24ce99f87e906394c1b9437f0e4e4504ef139262b406229c35b44cab",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "failed",
       "last_success_at": "2026-09-08T16:58:54.651032Z",
-      "failures": 2,
-      "next_attempt_at": "2026-09-21T01:45:05Z",
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z",
       "error": "no_unique_matching_jobposting"
     },
     "0c3ca5498a1456f3": {
       "source_key": "1f4735d2a9fd242c69c7333e8551a1629e884509592b0718ad838ba31a830960",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "failed",
       "last_success_at": "2026-09-08T16:58:54.651032Z",
-      "failures": 2,
-      "next_attempt_at": "2026-09-21T01:45:05Z",
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z",
       "error": "no_unique_matching_jobposting"
     },
     "0c42daed300009b8": {
@@ -20792,11 +20828,11 @@
     "0c543b6c6728ac23": {
       "source_key": "e0c5c22b4f6de506eb451da345e0263324ba7e9793ab2bc29103e62190e8cf92",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0c6008b41774f6fe": {
       "source_key": "f785d643206d98b92bf60e9f9610a6d4f915c873d19de00de3e9ef446435539e",
@@ -20863,20 +20899,20 @@
     "0c9ea707386a5976": {
       "source_key": "800049e7ed8c60f90bccc10b17a4b049b3b86e83b8893f97549fb5a743b48dd8",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0c9f652b44a42eec": {
       "source_key": "51587a459b402bad509934aaec23edc308564c9f2c3b966da5b6e577a33fe233",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0ca9236ee8c7228f": {
       "source_key": "0a7bb095bc7f2de2d2ca74f4cd5fa93e3486f0d586cf3902ad7edb117d6d40ab",
@@ -20899,11 +20935,11 @@
     "0cbe5e14e8335717": {
       "source_key": "f7116ae1de552fcd83a8a8b0657584a0cf371bf09dc0ee4f1b70217a745f6b14",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0cd18a4fcb221303": {
       "source_key": "e4118355dcbef71cff0b346a483f276d76eb1ed1f0e89a38c9da292a19b55174",
@@ -20917,20 +20953,20 @@
     "0ce5bde176601d6e": {
       "source_key": "79cdc8a75381594586024556c25f500052e53f0e8c33f7f934ca1412abfcc1d7",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0cf56746b9d11127": {
       "source_key": "c309b83df5f4e942fd4130896212cd2c55185747d1b9c3eacf20897aea741fcf",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0cf7df4ec8ef512d": {
       "source_key": "6045fd5486486dd60c17d0b5ce46120c3b23ee1a654c2f2d950bb4d29208311b",
@@ -20944,11 +20980,11 @@
     "0cfe583ad8e30d40": {
       "source_key": "a916a03681b799ff4ea0a6389a3e287fb3fedd502aae874e49b271df62cd5074",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0d117489d04d4981": {
       "source_key": "359aa7b1f036887601e95e5091c1931d8b4037d984715913952cc9ea228e2676",
@@ -21024,11 +21060,11 @@
     "0d5409e9acb5b2d0": {
       "source_key": "96b9d9edd7ee87ea15425699fa13be9aa2c9d3ee902569fc70c3cdf30ca3e8ec",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0d5f2e9e3b461b77": {
       "source_key": "557fc74fdce3d84cada3e9f9dc7c6880ce0dfef00f6ea50512bb9b2659a96dbe",
@@ -21043,47 +21079,47 @@
     "0d60ba65673c9bf1": {
       "source_key": "9fe595ef59712a964eb1320d3ee27d9d7d3a6b8b11c5a2f2adade6b68d974ac6",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0d711b3c17055360": {
       "source_key": "6530f4ba76d16fea393241c12f58a0734bdfcceabd770bd6f07ed45be780decc",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "error": "no_unique_matching_jobposting",
-      "failures": 2,
-      "next_attempt_at": "2026-09-20T23:20:53Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z"
     },
     "0d76708a3d41d443": {
       "source_key": "05d8121915aaf9bacfe84705978753d7591cb3864782e5605de7f26a04de7f33",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0d7863521e259085": {
       "source_key": "96a20bb2cfdc3348e2de31fb2899fdd0bc3e2013107fd28b72013675be246d51",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0d7fdb37297634bf": {
       "source_key": "ade2ddc67b36129612c79f22dde980f158965ffd104587f6b9b8054a93df4cc3",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0d917d71c463b429": {
       "source_key": "32f01a33c7d200d37265ddef454c9f5689ab0b1ebb98f51087b104f2949e042b",
@@ -21106,20 +21142,20 @@
     "0da007fc53e7ac1e": {
       "source_key": "27555413f442c97f33690cc98ba5c5bdb6eabd8d5d5a07b7a1bb07de8643e307",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0dab96869d039720": {
       "source_key": "785b145340c00c28e647897979b2fe6373af5ac7c6e00591978abc9460544930",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0db010457a0d79b1": {
       "source_key": "a33fbd06e5a1463ee71eba4ae5735ed1775b9c3e862fa9b3e23ddfd6bf195172",
@@ -21142,11 +21178,11 @@
     "0dc83305f6a80581": {
       "source_key": "b2277183a1ef639d961b4d922adfd4361d2d6dd4859e445c334bdc1cc1671be4",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0dcb7d44c8a48d59": {
       "source_key": "c3c4be4720b887674062b2c9f6ea5aef94794e1de1dd43e79daadb52bb29a01c",
@@ -21160,29 +21196,30 @@
     "0dd14333054f044a": {
       "source_key": "6371ea55a968daa67d8dac5a3061c534824488ee998534a6f6216624c0b57b59",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0dd8ad8a9f5b01de": {
       "source_key": "11b655ddaa5a5c7e90b47b7264291cb05bce94e7b63c9d436a66e1dcbd8b1698",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
-      "status": "available",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
+      "status": "failed",
       "last_success_at": "2026-09-20T21:45:05Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "failures": 1,
+      "next_attempt_at": "2026-09-27T00:07:48Z",
+      "error": "SourceFetchError"
     },
     "0de2f48495a0d36f": {
       "source_key": "6d6e5c6f9a92d897af6c8baf491680e793edccbf17775a75a6746f9867ed5260",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0de92461f948ae33": {
       "source_key": "3b06b2abc4314a70298724d7e57ef9b42408733174649aa9564d96bd7023e806",
@@ -21223,11 +21260,11 @@
     "0e04c3ef7538e545": {
       "source_key": "f163f8b4ed8aefbd455bb63a923014fe3dd6b5e1d01ad97fdf18260f52000bca",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0e09d6e4ce13aec2": {
       "source_key": "192ab726b67a37da1eb11402c4b7877862432040ccea64b375a50dede183a00b",
@@ -21269,11 +21306,11 @@
     "0e58a86d36e6a162": {
       "source_key": "710f5af46c67c9d8970279be86940345d532758ea774f0b89e0933402d2ce14d",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0e64692b5539dc8c": {
       "source_key": "c23049b81c70110a31081a7f46f622e57bff5cafb763cb69eabfa1a82bfa2c5f",
@@ -21305,11 +21342,11 @@
     "0e75db4d0bbaec70": {
       "source_key": "5156024af99d328e7e452cce22f6e2592fa58e56420e73ed3bcb826fd75a1736",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0e937a1587c56000": {
       "source_key": "d4c6753904b7529531ae2735e05a27a4838c486b873cfb63acaab98d501acc59",
@@ -21332,47 +21369,47 @@
     "0e9756170cb22bf5": {
       "source_key": "8ca129f09bb26917e0ecf3f9106bc0f01a996895998a309a4a33f50631480b82",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0eab0718acde2b5b": {
       "source_key": "2e1752f97d883cfd18c1e4d06f2d0b1ab303442c491083427c80f83914fb456e",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0ebe0f8629a6bead": {
       "source_key": "3cdb8aa4c563fb977652d8ee15046626910eb7751ff97bf7228112909cf80ecd",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0ec4dd224ef8f511": {
       "source_key": "a43fd2ab1c7313fdd435da3445dfc35a4bc0f9ec11ee55047e6743a86358c674",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0ecf8b9b61040d19": {
       "source_key": "a3570b2105deabf96ea74bb7884faff0bb64ad1a3a6aebab5a58319559500ea1",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0ed0759a7c209f61": {
       "source_key": "959d6bfa615bff77a0a17f14f0333877449803048522b545cb7ace1ca78bfc69",
@@ -21439,11 +21476,11 @@
     "0ef3fcb56bbc6dbb": {
       "source_key": "9b890651b50d1301e41a1273591cfb034d7e6f5974cbd3bbadbdbf0cff845449",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0ef544377187530d": {
       "source_key": "01bd711204ce9223eeb1f4b63c3f9d82e02248e9a5a8d996ded26dfff858a563",
@@ -21474,20 +21511,20 @@
     "0f1f26eecc40892d": {
       "source_key": "3c91d60b97c920ec8e50874dc8fa0156aa7fdde9fef89394d3428371452824b3",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0f253c573e089737": {
       "source_key": "79b49c5a4a69282fc4dae6bf237ed3b4198f60db11cfaa54157a083f952bc1b3",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "failed",
       "last_success_at": "2026-09-15T16:26:04Z",
-      "failures": 1,
-      "next_attempt_at": "2026-09-20T21:20:53Z",
+      "failures": 2,
+      "next_attempt_at": "2026-09-27T02:07:48Z",
       "error": "no_unique_matching_jobposting"
     },
     "0f300e14f333ab72": {
@@ -21501,11 +21538,11 @@
     "0f3be45a7a9e72d1": {
       "source_key": "1a9661f95b1d1c97047027e1411538046718095233fc94b019a62060e5a1f7bc",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0f3d1249dd1e6dec": {
       "source_key": "f6b0c928aa0481b8238cb2957946a3996d43b5a1b39202925f6a59760c8864c1",
@@ -21519,11 +21556,11 @@
     "0f50babf3372c0e8": {
       "source_key": "4e140b8b514caa3d270978de4da0bef1d1fe91849aa42a8ce9f84b54e7349963",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0f5ca3f3f91688a9": {
       "source_key": "b4f91ec4b7e7c5da43765f8acd3f32ccd44eaa090efd4843c76f9f290c92bf9a",
@@ -21546,20 +21583,20 @@
     "0f678a97f6c130da": {
       "source_key": "bcfb9b9decf8a517bf9ea01080b757658d259dc5f1aacfc7d3c7d7d23b2e06ac",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0f6b82b77c4d6126": {
       "source_key": "a4217e91851702b9189ae4da5e8f70462383bffbd13a94705d21c06905007fa2",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0f755bd55109b8ee": {
       "source_key": "bf770e56a0b609732baeac382f05207c933e203a98a20052dfbe2e9196b0f34e",
@@ -21600,29 +21637,29 @@
     "0f8ebb0930d5a8cd": {
       "source_key": "060d245f84f0a962bcf44f2e48ce8891598702d40ba076dd3b3acd34e4821710",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0fa8ed4d4a7b1d87": {
       "source_key": "d055e953b069adc10e475f875c800462db5d046937f22ebec8fd461c06e7f4cb",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0fa955baed098729": {
       "source_key": "96514635b89d128c9064fb394c80f05e8e28b7debc976be65c788a88138199bf",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0fada8f0cbee56a5": {
       "source_key": "a9f52b5ac7cc82f78ae3f01589d320234fbac103e70759e05566e9bc2b671ad1",
@@ -21654,11 +21691,11 @@
     "0fc6fe5ec0c2eba0": {
       "source_key": "d22aab8cdded88e134b378249f53e54ce0205a973ddb7239d83bfcddd10988d8",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0fd1892e54eeaf4a": {
       "source_key": "b66d66c8e6cec4ab7137281a9a95c1d2d0e4b1924687146c48806c5a1cb26229",
@@ -21672,11 +21709,11 @@
     "0fdcdb827f2d3bab": {
       "source_key": "bc06d5d14ad7c9b8d87a8137b472ae35aeaa6bc4ed8580dba185219cce5aeb04",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "0fe8287e5b0337c6": {
       "source_key": "c641a5e92fc927b92be86c6007737009fa84b731d5d9594caee3cd956320fd44",
@@ -21699,10 +21736,10 @@
       "source_key": "623530cbe1d640b5f483f83b563842c55ce6b4b0be4440dfefb925f223263143",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "error": "no_unique_matching_jobposting",
-      "failures": 2,
-      "next_attempt_at": "2026-09-20T23:20:53Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z"
     },
     "0ff2add072b11fd2": {
       "source_key": "e7222c069133cf1073bed81a9da4ede206028c85299f873fc4dbbb0d8b5a4100",
@@ -21716,20 +21753,20 @@
     "100d0e3a22dd5881": {
       "source_key": "f83ab8d93c8574e47bc38bb74ad7db6d9b028e3bf58004501555391daec01c4f",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1012fa1be567b733": {
       "source_key": "1610acb6f66091206ba82cfe2ed9dd36c74b74843e5e0e5aee5540c3a6587924",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "102ae8b81e23213e": {
       "source_key": "b220ef7d0506e304863fc332dbc6cac12e3b6873ea858f1ce6d2f4892ae929e2",
@@ -21743,11 +21780,11 @@
     "103167e2beb37de5": {
       "source_key": "458b18821a9d0a32de3b721922713cd223d4ecb7ab6214c43322967a02b5b8f0",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1037838df22b52f7": {
       "source_key": "0eeade0d4aa392ccb241931538ab582e65be1cba66283ae9940f6ed8bad762b6",
@@ -21770,20 +21807,20 @@
     "1050796f89c4f3b0": {
       "source_key": "7b80686cdcfff412e76fb57b5bfa1dae4bcf731cb5ec07b209a74f31365a722a",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "105623ece6e65f4c": {
       "source_key": "eba1c86454e9e030678e0fe4f9d4be009663038d70cc08858c4f00a5a13864c8",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "105edd75d5292714": {
       "source_key": "29d8c1811c5be909bd2aa4a403a48cdfdde262a0c9006a1215c02265b399b34b",
@@ -21797,11 +21834,11 @@
     "10612304bb4a8fc9": {
       "source_key": "b30d939b45a1e11c7798278b5faefbac4beb2cd553557cc64965896c9898beaa",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "106858d10eb5a3aa": {
       "source_key": "1384c8047f87af4bfcf89dfe61354651a7ee0a08300521e32d4fdb72cc413556",
@@ -21814,11 +21851,11 @@
     "106bf550656c27a5": {
       "source_key": "c76a6edc53d7f522dbcb34ac5dddc2a112a2fd42d64b73391fdd4c737ec97005",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "106d636b453fc7d1": {
       "source_key": "59d09c4ba97f0ccb1d934fb85f65799d256f88ebd915e0aadfe782ae2c6ccca8",
@@ -21841,20 +21878,20 @@
     "107afd6200fe35cf": {
       "source_key": "91d3c859e30234c5881ecbe9667193ec15c4c63f5e71b9d2833784b51df72cf3",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "107def1dc6579fab": {
       "source_key": "a57ba4a85cbe3093aa5658fb41aad0130e104bd49d7a924aec63c65f7ca9c65d",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "109d364b5e0ca71b": {
       "source_key": "0b04941007468e8bbe40c0b687516a5ac42c48c4600a3d436f7aacfad3741252",
@@ -21877,20 +21914,20 @@
     "109ee8a371d77cd9": {
       "source_key": "40d2cafdce498da91b4bdac12bca4f70bdd93a25c984ff083cf6369262bf0efe",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "10a88505c0e90c57": {
       "source_key": "9a561b3f9c68fcb02755c45449d24923ac558860a9a4fec3614f77846bb0e07a",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "10b5a00909091ead": {
       "source_key": "b96412caa1140a222d762ce205205f26ea5a6a5f1035dabc1487f1f58f332bba",
@@ -21904,21 +21941,21 @@
     "10b780046386b13c": {
       "source_key": "6d49d8437c65fa8ae4bba988f8d93abd6a528abadfafbded2947027e6c4ffb06",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "failed",
       "last_success_at": "2026-09-08T16:58:54.651032Z",
-      "failures": 2,
-      "next_attempt_at": "2026-09-21T01:45:05Z",
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z",
       "error": "no_unique_matching_jobposting"
     },
     "10be7c5f65c20de8": {
       "source_key": "8d908015e9696b20911b7e3bf231d4e568e4f089bf6a01fdd6b7158850ab62ee",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "10cbb3446bafeb3e": {
       "source_key": "8c31c000e76ee35172eee8a06c5c7f2079d0eaee7595582d4b9a0e759a7d32a7",
@@ -21969,11 +22006,11 @@
     "10dbf5c57f63b7a1": {
       "source_key": "7ae8621093267588d8cf6cfabcf45ed211e3a6e6b0d46de02be9b4c3e5dd8a47",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "10e9041d8580d65c": {
       "source_key": "e48ab1786d314da04c3cf1be3b0ecd95132ffe0c9088a19da7a91e28deaf6b20",
@@ -21996,11 +22033,11 @@
     "1107e16c061d3f94": {
       "source_key": "b8e0f9dfbb03dd1d775b0009f9f374bf5fb2e46114eb7f0e9cdb4e47e7ce1ead",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "110833afc284c1a0": {
       "source_key": "c567311d3a9e2aaf07c5930d683b765eb6c4e5f0ecc35e2abc5a956b05e2232c",
@@ -22023,11 +22060,11 @@
     "11091364d407d7a4": {
       "source_key": "17b3301788252dccf8860243e2e26685626fc4c9e858c5894c5513c7e1da3e00",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "111f7161657ef400": {
       "source_key": "c4131ca232fdb1b5fe60a96da8a49ac66f23a72e6b2cc0bd1c47ebbb010e5691",
@@ -22068,11 +22105,11 @@
     "113eb974bf2835e4": {
       "source_key": "7798c79807e61e9ac70593ef2f4db39016a684111547736228f469831456d4ce",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "11444a44916b18e3": {
       "source_key": "54d8e692211c6ae917d4ae749c053ac3096c32ee803afe7b1c06136dc4992531",
@@ -22105,10 +22142,10 @@
       "source_key": "b333d098bb9338b5c465cc0ec7e8f9bd8a62426ea584c15da1d4091b9b5415ce",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "error": "no_unique_matching_jobposting",
-      "failures": 2,
-      "next_attempt_at": "2026-09-20T23:20:53Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z"
     },
     "1179899997f34100": {
       "source_key": "80c80ad41741c819acfa978257458a4dd600d334299bc1421720cfbb6aa49cdf",
@@ -22132,28 +22169,28 @@
       "source_key": "39eeea8e8d7e22bab8891aef2b98b32530e35238ae3462946ef75d5ec4090922",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "error": "no_unique_matching_jobposting",
-      "failures": 2,
-      "next_attempt_at": "2026-09-20T23:20:53Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z"
     },
     "119129e7d413c445": {
       "source_key": "59ba3b7e2e4558ce5dedd757779dc37728d246d021c88bfb956cd1f2f02ae488",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "119b3621cc8e415d": {
       "source_key": "91642cc7442c1193eca0332918cc5d767b9d24fbb91327adb6a11e7a1dd17978",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "11bee90be2af9e92": {
       "source_key": "f6b931950ec776b0f453a417f60d6f3b86bc4c0033364e6d7a3e5669eb139645",
@@ -22167,11 +22204,11 @@
     "11c0d3f269c40d4c": {
       "source_key": "a254fc91d89d7e4fe5b0b259197187691d7902b779eb855fb94a2fbb1c6e0875",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "11c2a77f49d61533": {
       "source_key": "0d1560c38351b7523334d1814ce4d507b1a5b77076e38b82ac2d848c1f28d05c",
@@ -22221,20 +22258,20 @@
     "12364d4b91d7ba48": {
       "source_key": "d2b41fcb782365d783c25d5f797f239ee88ad30a2e4a9bad1fa2db37f28703d0",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "123ae57dcbaf1289": {
       "source_key": "6c78d75da16b7663afa998fe91fc38882250b57aafae8b8bf471adf5e08b3cc6",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "123b7353276c217f": {
       "source_key": "b51a0fc99c1b453a15afb1bcc107fd23f64a9d0995fd2deb09b9c1ad78e9f005",
@@ -22275,29 +22312,29 @@
     "12695e1561feedbe": {
       "source_key": "16f95757ece084f9210196820edffe51f7cd8df732c4daeeabdbe0c9186f872b",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "126fe96cdf0de74b": {
       "source_key": "fcf0779ea7851296bd18d17b8a84744a7d3711caedce3057b56f1a11201b9231",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "12718ad5f7c8702a": {
       "source_key": "36927010e1c44807ff67cf70f91310c739b56449b7774e61e42dabc835dcb7f3",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "128c83fb8b10ace7": {
       "source_key": "40de8883d5fd0dde6a398af5cc67a5ce63cb36edf5af7d4259c42801f708cb42",
@@ -22329,11 +22366,11 @@
     "129608425f6a04f6": {
       "source_key": "70b8b685f3bc96e339f9eb86552ff680bc95f2b4496ec5dd08fb8f8c6a8771b2",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "12975602c929b5f0": {
       "source_key": "803d8bc6f7e7bf071285c1edb0afcac3911557b2c91a19998e99666053524252",
@@ -22347,11 +22384,11 @@
     "129dd87e25f3e552": {
       "source_key": "e8ebb2b6a6b65cb140be6c69752a093a7a3aafcdfa4e984c9f2badcfbedce0c0",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "129eaa85f71bcea8": {
       "source_key": "48226dc008304dcb539e21826e29ebe1c80c1a79af37ec78230c1e91e4f32ef5",
@@ -22365,20 +22402,20 @@
     "12be1d82b5bc1158": {
       "source_key": "b00d6d55bea28ee77189d5c63754e1f160670f6c8b36cedc7c8fdb9318e2a509",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "12be99014d088070": {
       "source_key": "b3ed290cee35dec451de58801c6a409b3ffa1b627812455201d4b5284d27a2c1",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "12cf147406f9b14c": {
       "source_key": "abae9bc14900a66f1dff289a4e07befea31404ba8e5591f96243f5bb877cb2f2",
@@ -22410,11 +22447,11 @@
     "12de680d67f404f6": {
       "source_key": "882e85d7a873765cfecac65f02ccbdc5871a63dab251d65ccea40dbc96b8ea48",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "12e69a71c1a73c9f": {
       "source_key": "370536fbaaaca463b4de1413f867691a983afe21aded3521dc675058be3986b7",
@@ -22510,10 +22547,10 @@
       "source_key": "73c95d2afba02be7faec23f4008e3b6a9e68d4d0750dc07b5ea6ddb98921fcd1",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "error": "no_unique_matching_jobposting",
-      "failures": 2,
-      "next_attempt_at": "2026-09-20T23:20:53Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z"
     },
     "1362d06a674afea4": {
       "source_key": "eaf5d53bd1c4efb18f4403d12a07cd2f9663f69dac7f66993a760c3fc5d3c698",
@@ -22527,11 +22564,11 @@
     "1369ae45aabd809e": {
       "source_key": "88211fcd57a8a3cca6f17ea8bc4776dcab7da0c971be8da309ddc2711c224211",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "13735144e8051a80": {
       "source_key": "e9d033f9845451c3278d2f75376313e5e6d16abefcee2273c41db7e911d3d5ad",
@@ -22583,10 +22620,10 @@
       "source_key": "c8c75b83db0942a0c8973f8bcbdc91dd22db8b4705440072805816a93d318ec5",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "error": "robots_disallowed",
-      "failures": 2,
-      "next_attempt_at": "2026-09-20T23:20:53Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z"
     },
     "13ca5918e77c1ede": {
       "source_key": "00851839d1ca14ec8160b91be626f55b9387c193561f65e60f99c4beb0fe7b2e",
@@ -22609,11 +22646,11 @@
     "13e6e95a722d8427": {
       "source_key": "e34059e89b89c11e97cb043f03a85de613f1f12e8c090aaee7af51d92bb6cdbb",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "13fc117ecd074252": {
       "source_key": "f79f6e36a494e546ce80da3438115adce676034bd4680d04f68d516a64e9fc90",
@@ -22655,11 +22692,11 @@
     "141d5809a691efac": {
       "source_key": "d9b8671738e96145f394693bcba25113d96375448fab7baddf3f565aa1c8d2a7",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1420351dbe2873ff": {
       "source_key": "a228ced964768fb856c970671b7cf379237498d799483ca9c9f1545561548ae2",
@@ -22673,11 +22710,11 @@
     "142900eed3249c90": {
       "source_key": "db4bbfd86ca956eaa99e6e1e985e5cb71686850d678220542e56ade9a14b92aa",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "142e206e626c349c": {
       "source_key": "fec5a9d2c6b4a20559fabef6b3b52632de5032e1a65922a0a8b6a8bf2a9ce66d",
@@ -22717,11 +22754,11 @@
     "1459c2e841d5522a": {
       "source_key": "8b0896f1fb659c83748d336c91405966e3c53df62855c66c0ee26e1cfd3fa206",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "145a202025f3fb93": {
       "source_key": "9bb253b7cbd09d8579fbe27191a78855dfc545ae8c7212aecbd7501d3ab91f20",
@@ -22735,11 +22772,11 @@
     "145bcfc76ee2aaf3": {
       "source_key": "f6df2387f6fcf00e10b9fdc7e36dcbcebc6fd2a9ef17c64da89d4c0f131aeced",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "146b8a0979771107": {
       "source_key": "f8da025719678539576803f08c9ce828178863a4d6d5103c1b8b85ed2b77183a",
@@ -22763,20 +22800,20 @@
     "147c7561b2d15602": {
       "source_key": "1a7b055495b3f8ecc14135e9765325e006ba73b0f3c979095d52023dbec4a4ed",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "147cc581fff0f1b2": {
       "source_key": "dc14538a2c7f75818b4b6ed61b58d7b60c44089f514cbdd6444bdb8743a6d979",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "147cdcc7fdf8cb14": {
       "source_key": "50a8ef2d85ab8589fca1c6827612aa8f7e2295a5c7a0cf1b08742ef83c69ef5f",
@@ -22808,20 +22845,20 @@
     "14b416dccb040c85": {
       "source_key": "5b8c466fb8216f4ce4ba36aef934d51b5851cb64de0aa3598f29156f36303b0f",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "14c036913f57f30e": {
       "source_key": "c5f7c72834bbc3302ad560040b7aa21820b49c5487fe1a66af777dd2d29ddbd5",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "14cd6ce25ef00ff6": {
       "source_key": "33241478d0be71463620033c5cf1ba7e24a67286371d5787e63bcf371b2f22a0",
@@ -22853,20 +22890,20 @@
     "14db8dd939611ba5": {
       "source_key": "853450e5fcb5f33df8c258b4d780340901f6bb09efef52724dd74d813d21d2e3",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "14e344a24e049705": {
       "source_key": "27b3df6dbd529a648beec0d7e11606554fc2b866f9f2b12a26ac10a35a4e00a3",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "partial",
       "error": "completeness_unverified",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "14e7fa1752037b51": {
       "source_key": "31650fa248acdec6667c297cc6c54784c4c8841a200cddec78c6ea1d9731fffc",
@@ -22952,11 +22989,11 @@
     "153d42fd428aea0f": {
       "source_key": "7b3f34d2822867ef8dcffd478e6b6b521361e42afb6f005d6c3ca644422e7bc7",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "15515e52a3b3d07a": {
       "source_key": "128f8d21f4555c36d1ba2493a1dc1b9d32c326989cb2ba5d7e705006fbb92215",
@@ -23033,11 +23070,11 @@
     "15a7512618e09715": {
       "source_key": "a467462449767eb68d13f6b4cda27d06dac8bfab20bc0ca26947ed4f89a01d3a",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "15b1815449be358f": {
       "source_key": "fde5e951a9cb8c2bcf97a450c49d4a7d98ef4f69e737003542a2554769a137e1",
@@ -23113,11 +23150,11 @@
     "161015614b41f83c": {
       "source_key": "77141c7b89c438517dd8f31c6749d8ead4700c150e34937f646c873ee6ba4071",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "161877969279d9d8": {
       "source_key": "b930ec80b9be03786191036d41284df68de142c2888d2a246563c94f18151e01",
@@ -23149,11 +23186,11 @@
     "1633bb5c919cb382": {
       "source_key": "781108d8f79ae9feb44a0d2b52bf2eca5c6331fba2c23b54702aedc730db45b1",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "failed",
       "last_success_at": "2026-09-15T16:26:04Z",
-      "failures": 1,
-      "next_attempt_at": "2026-09-20T21:20:53Z",
+      "failures": 2,
+      "next_attempt_at": "2026-09-27T02:07:48Z",
       "error": "no_unique_matching_jobposting"
     },
     "163450cac8483e28": {
@@ -23214,19 +23251,19 @@
       "source_key": "82260646d8523c2fa890428669745e59f3cc5bccfa71846350730268551f26a1",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "error": "no_unique_matching_jobposting",
-      "failures": 2,
-      "next_attempt_at": "2026-09-20T23:20:53Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z"
     },
     "165df543df15ce03": {
       "source_key": "ad315c5ec5588f41fd0c1ba911d7375e50344f02a2f7fedecef508ec0a0ad2c5",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "165e2b6773ea6535": {
       "source_key": "f12d5cc9f5826ba8a6587909e5ac528d7984fca5bf44deeb58c50c946f3e46d2",
@@ -23240,11 +23277,11 @@
     "166539d29f21e62a": {
       "source_key": "032d18c497f2604e1635d3a592b962fc18e4a0d7b6f6c8d43a0e8d1bb24f1a4f",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "16c8bc934155279e": {
       "source_key": "1b1c3575331753c2339943f0f7d5521c8170d6553ab493438d5c47ca32d9e987",
@@ -23329,11 +23366,11 @@
     "170ec78a5cdcf0c9": {
       "source_key": "023cd31e834ec305ec20b34f30c7ecf06c10efcb62d06d57baa31e153179ccc7",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "failed",
       "last_success_at": "2026-09-15T16:26:04Z",
-      "failures": 1,
-      "next_attempt_at": "2026-09-20T21:20:53Z",
+      "failures": 2,
+      "next_attempt_at": "2026-09-27T02:07:48Z",
       "error": "no_unique_matching_jobposting"
     },
     "1711bc60be44cde0": {
@@ -23389,6 +23426,14 @@
       "failures": 0,
       "next_attempt_at": "2026-09-24T01:43:05Z"
     },
+    "17504e6b9ea8ae6e": {
+      "source_key": "9d23f1abec254f75b9de0100024ed7ed06844bc48eec593c36914fe82e6e90cc",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
+    },
     "1764398f883fb8f4": {
       "source_key": "9d90406a25325dcce2a16e584b619e6897378fe1f151b771453ac69d17f44324",
       "version": 5,
@@ -23419,11 +23464,11 @@
     "17897c25337ee606": {
       "source_key": "81ae69e82f98d3c5aa1be9d7c938b0a6ecfe2576486b2e604689a9e4ebcd6fae",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "failed",
       "last_success_at": "2026-09-15T16:26:04Z",
-      "failures": 1,
-      "next_attempt_at": "2026-09-20T21:20:53Z",
+      "failures": 2,
+      "next_attempt_at": "2026-09-27T02:07:48Z",
       "error": "no_unique_matching_jobposting"
     },
     "17bb98126b1e8ab1": {
@@ -23457,10 +23502,10 @@
       "source_key": "c2c66a82204cbd6aa8f79a2515ad6826a477329613f337e2071908a577254168",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "error": "SourceFetchError",
-      "failures": 2,
-      "next_attempt_at": "2026-09-20T23:20:53Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z"
     },
     "17d201d622c7f754": {
       "source_key": "03972845818ccc5aa1f625a3942e021d341933fa2d55da5bce8a9de0617c653a",
@@ -23610,11 +23655,11 @@
     "1863bdabd49cc683": {
       "source_key": "9ca04ba9a0debf22a84e0bb31bde932b968d19ef25526ad909aa30b0c2a945ed",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "18697d1e38756912": {
       "source_key": "f9f5a77895bfb34ea2cc26385104cf3c6192c1d10b6cf18f88fc14c7445b632e",
@@ -23688,6 +23733,14 @@
       "failures": 0,
       "next_attempt_at": "2026-09-24T01:43:05Z"
     },
+    "1895c38733280d58": {
+      "source_key": "e29ada8c8349b164fbfed68c17173a1a6546e8c2921674d96a09244bf69c795c",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
+    },
     "189870f0ef3ebbed": {
       "source_key": "b891e1618cae054462c5c4bc885a67db7762b7bedfeeebcc416b5e6e3b369a17",
       "version": 5,
@@ -23700,11 +23753,11 @@
     "189984b343fac1a1": {
       "source_key": "1835d0468630cc0e9d316e485e092e431d3b2d9562ec4f683faa656474504ceb",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "18a01e423bca4c44": {
       "source_key": "81bf4a79a239e102e2ea6c1412ca398553afa2019ff273ca5e362a9fe499a919",
@@ -23718,11 +23771,11 @@
     "18aed2bb07b179e6": {
       "source_key": "19170441493aebc5148c11e34cb5883fa48c490014578df18aa5bb8592b2f439",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "18b2c1694dd87c6a": {
       "source_key": "2b1f6e5096c3f685afde394584516ad42a6202bd2ceb2e83626a6dfe08389974",
@@ -23763,11 +23816,11 @@
     "18da0ed5cbc83924": {
       "source_key": "2ee48366355f6fcf0d5f81fe6044259e79fca5bb1695a373a7cd22fc2f956a43",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "failed",
       "last_success_at": "2026-09-15T16:26:04Z",
-      "failures": 1,
-      "next_attempt_at": "2026-09-20T21:20:53Z",
+      "failures": 2,
+      "next_attempt_at": "2026-09-27T02:07:48Z",
       "error": "no_unique_matching_jobposting"
     },
     "18faa83f7f5b16e6": {
@@ -23800,11 +23853,12 @@
     "19408aa6bc112699": {
       "source_key": "a1bafcff386dc2caaeb865d458d21f3c09d2b70e2a121f7ec1acd717cfc7b412",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
-      "status": "available",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
+      "status": "failed",
       "last_success_at": "2026-09-20T19:20:53Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "failures": 1,
+      "next_attempt_at": "2026-09-27T00:07:48Z",
+      "error": "no_unique_matching_jobposting"
     },
     "196021175688ced4": {
       "source_key": "27e7df2f0d7ec77283e2a1f5d264af8d1904ddccc27b0ec25efc81603332ff09",
@@ -23818,11 +23872,11 @@
     "196724272a4eb7ac": {
       "source_key": "181824da82bb0085afa8ff473360571d8018007747066f90f22226b979b01b8e",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "failed",
       "last_success_at": "2026-09-15T16:26:04Z",
-      "failures": 1,
-      "next_attempt_at": "2026-09-20T21:20:53Z",
+      "failures": 2,
+      "next_attempt_at": "2026-09-27T02:07:48Z",
       "error": "no_unique_matching_jobposting"
     },
     "197e70ae5c4b0f07": {
@@ -23846,11 +23900,11 @@
     "19c241a6c29d856a": {
       "source_key": "cc069212b203d01f7222184d803c766491864b664d31384e9cfd28d3f6f5b1ff",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "19d36c0d41dc7431": {
       "source_key": "add8a6093e2b2b3943ee39b09d7873d67c45d95d70485d59c80f5d4599746502",
@@ -23919,11 +23973,11 @@
     "19f4a43501537494": {
       "source_key": "b4cdce3eabaee613b69ab6842c3b29dc7d06bcfe5f46a57b8caea3ba8d156313",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "19f7de8b18b91693": {
       "source_key": "3851fe625ab50097c4a2258263895c9835b844c0655d89f7647638fcba649e01",
@@ -24057,11 +24111,12 @@
     "1a8c7dab87cc567f": {
       "source_key": "f048041d96d9b62453656872b16bf29c1832839c01258f8eb0f17243ea540e63",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
-      "status": "available",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
+      "status": "failed",
       "last_success_at": "2026-09-20T19:20:53Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "failures": 1,
+      "next_attempt_at": "2026-09-27T00:07:48Z",
+      "error": "no_unique_matching_jobposting"
     },
     "1a94899eb2960fb2": {
       "source_key": "3f5daf3fa14630e1d89b4fa9fcc3a791f14d2cef5cc1efa8c75970df3bbc78c1",
@@ -24111,11 +24166,11 @@
     "1adb396ff3ab220e": {
       "source_key": "9993a11151bdb4d4b2bd401ee0ffa78afcb2d0ea7c23f3eaada68e2639c77ca2",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1af6c12bc4a538c1": {
       "source_key": "1bc8ea2e9e6bcd081b93860818f6131089735e86700f41db71e3cce3ec827fb1",
@@ -24163,11 +24218,11 @@
     "1b397e1d03ce24d9": {
       "source_key": "2905cb1e65597344050b537699637253164c6e859c4b86159d963975fa11b18d",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "failed",
       "last_success_at": "2026-09-15T16:26:04Z",
-      "failures": 1,
-      "next_attempt_at": "2026-09-20T21:20:53Z",
+      "failures": 2,
+      "next_attempt_at": "2026-09-27T02:07:48Z",
       "error": "robots_disallowed"
     },
     "1b43ffe89962c219": {
@@ -24227,11 +24282,11 @@
     "1b8329e4f0981f9c": {
       "source_key": "fe9d4f14fc62afc1a0afdf04449605b578494e3f64142cf28aac7bc2489c942d",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1b83d15cd1d6c9e3": {
       "source_key": "ab441f7277832fc76666db1d9c8afb7ca71d904218cacd94f433df3e93b1543f",
@@ -24245,11 +24300,11 @@
     "1b8de293ff27c113": {
       "source_key": "7d3633f2546474f81bb2f0baa7f870b015bfd0baad2e51b4b2ab936eec3e8fcf",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1b92aa23d9aaa4c5": {
       "source_key": "e3185bd3646eb10490abc8d92e3b03fe93eb604636c1ad6a4df1d641e28078fa",
@@ -24263,20 +24318,20 @@
     "1b9947a1e742f514": {
       "source_key": "8a883bc7285715264d79e06d9f16d1002bcf5c4639b7fb593573e49633e9d784",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1ba6b86f99bc70da": {
       "source_key": "7875ec40602f34158a21107aea9b5112af5f21fbbdc1665f16035390588101d6",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1bafdee6341dcf95": {
       "source_key": "6109b1bd3778b1663696734f164726a3eb1c96c721a0336bf1a4d9cc1b834660",
@@ -24344,10 +24399,10 @@
       "source_key": "057d757322b1dd5805171d491903b41beeb53e1b1b4a6fba3ed50c804d262b96",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "error": "oracle_description_identity_mismatch",
-      "failures": 2,
-      "next_attempt_at": "2026-09-20T23:20:53Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z"
     },
     "1c17894ba17bc123": {
       "source_key": "19c3bb6d9526763b02df27dce88e4674b5177cc52ea8d1c5f1bd2a4de29e8a74",
@@ -24415,11 +24470,11 @@
     "1c7d921ab39ca9af": {
       "source_key": "40c5eca297f846fc0daa042f63219e8720ae5d25d7c6cdb7b694b431718446b5",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "failed",
       "last_success_at": "2026-09-15T16:26:04Z",
-      "failures": 1,
-      "next_attempt_at": "2026-09-20T21:20:53Z",
+      "failures": 2,
+      "next_attempt_at": "2026-09-27T02:07:48Z",
       "error": "no_unique_matching_jobposting"
     },
     "1c7de7ce7d5f7654": {
@@ -24443,11 +24498,11 @@
     "1c92851c6fb25859": {
       "source_key": "2357a015fa6af28c841c4eb6af46fa7684a32b9b27008729f46cb3801c5eb5c6",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1c9678bd75c84abc": {
       "source_key": "0ce00dad75cafc44f83da850045e1682a27e139f0f2fc4393d456679c5150cbb",
@@ -24488,11 +24543,11 @@
     "1ca91cf7f90febaf": {
       "source_key": "75c40fdacf82e5aa23ffc7713a2a64fb0fc5f9dd95e5002acb718809be24edd2",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1cab849552bbee5e": {
       "source_key": "633e30d33cb7d8c80ff00fb35d8833462ca47d6797dbfce7c748937935157850",
@@ -24543,10 +24598,10 @@
       "source_key": "5889d9e8ffd8769e379e8fbc949f8b96cffc3d9d94ed12bc189b8cc8dfa6915d",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "error": "no_unique_matching_jobposting",
-      "failures": 2,
-      "next_attempt_at": "2026-09-20T23:20:53Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z"
     },
     "1ce6f96e8ea949a2": {
       "source_key": "3d48919b21c1032a864ed58ff1f9bcb3379a3ae5eb45804adb6e690580c60ce3",
@@ -24577,20 +24632,20 @@
     "1d03017577bd1c63": {
       "source_key": "4fcf518a5abe32a4f9997cd398aa5ac3f5f51e223c6465ad2f14d673b07fdb0c",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1d04655ae144f099": {
       "source_key": "fa5f804188556c28a8a3089f1d91466283aa5dba595337f0f0c79a382b7cbcb4",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1d1349d5a8183207": {
       "source_key": "63531e07ab87f62dae7676dbc92e6c862e50d010ed4b08cee663d6267255ceb3",
@@ -24730,11 +24785,11 @@
     "1da8044c1375e7f4": {
       "source_key": "ccd59cf4618fe2376e5df28a996575d2556e53d6b4de8375210e4e1fdaf95e27",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1daaeffe825fb837": {
       "source_key": "3db5998df0518e3667c9846f44262094d5142e57dea80a15ff798ce2197c09de",
@@ -24766,11 +24821,12 @@
     "1dc3d481b80ad5dd": {
       "source_key": "febfa6f7dc71b57b1d63911811818e0ae20ae1770c4d1fbd5f0a69ce36ccf2f8",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
-      "status": "available",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
+      "status": "failed",
       "last_success_at": "2026-09-20T21:45:05Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "failures": 1,
+      "next_attempt_at": "2026-09-27T00:07:48Z",
+      "error": "no_unique_matching_jobposting"
     },
     "1dcd1c8f01baca31": {
       "source_key": "6ef80efc85dc627894ce1e872cfe71124d090776abdf6850f65db708521a43fb",
@@ -24802,11 +24858,11 @@
     "1e094a21bf069c5f": {
       "source_key": "4dc17edf4499333597d55aa148064cc1967899c27e52d5bb91d6c35acf84c60b",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1e09575c87756ad3": {
       "source_key": "54ab7f0d5e7bb13e63061b368bf84159b72dafc29523d42924c0daf59b418fad",
@@ -24910,11 +24966,11 @@
     "1e726605c16ae199": {
       "source_key": "6fd90cdbdcc424cdf9c01909854a26698003ee3634d44b4be14c2ac884832463",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1e7bcfaa485689cd": {
       "source_key": "c52e163323083c70b5af2d11b988bc0e684b71cf5781b5a573a3e1e72a554ac0",
@@ -24973,11 +25029,11 @@
     "1ea5fcb50ecc5d98": {
       "source_key": "56ffc8b502b885d03a702b26fd42037c5f520c60c3c5a0d74bd276343c61ed95",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1ec3caee402b68e6": {
       "source_key": "066bab22dfbe64b671189530171cba00170ef378a8e4d06970d1c2fc4c00bae1",
@@ -24991,11 +25047,11 @@
     "1ec51fd04d5caddb": {
       "source_key": "45491aba383a0b7f6caefedcef3ddebcab6aa82a8a037b51d4daf5691213ff07",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1ec5cfae3068cc4c": {
       "source_key": "c746cf7a6f491e544e3bbaea529c809a6c9829daca834d7baed09b7d795ed5fc",
@@ -25189,10 +25245,10 @@
       "source_key": "671327ffe8b3038dd1dfbef98e81a4eefe95993c8e1590bbb90318b1c5297e47",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "error": "no_unique_matching_jobposting",
-      "failures": 2,
-      "next_attempt_at": "2026-09-21T01:45:05Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z"
     },
     "1fabe9c47b5bb9f8": {
       "source_key": "32c849628fdeac2f11a41adace47e419a25cfe1f951b36ccd52030df1e136a32",
@@ -25215,11 +25271,11 @@
     "1fba57511a18ca46": {
       "source_key": "142983ae719679bae87d68e9ffb3dddb9bda89948e16806770ce8e6694a0b3c1",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "1fbd38e7a236f87e": {
       "source_key": "804856845771c0c208be04ded3c137305d3b26167fce22f99c9eeed930602690",
@@ -25287,29 +25343,29 @@
     "201ee15a57ab764e": {
       "source_key": "1b6614cd861fc501333cfb4c89c8e0a650bf56a6a22b94d293a442fa93be16fb",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "202a4daae6d37095": {
       "source_key": "1414be078d54e12b295acb2a9e5f21e3f51ee8aaae123a2213aef7b070c4c606",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "202a7ba5cdf98c1e": {
       "source_key": "e6ee4ed093133fa93b7ca14de7c5a1c3434ff74320fea8c262c602d7f7370981",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "20350e38f417be55": {
       "source_key": "774bc62b6318efa27ff8e42d004994b94272b6e3c10fb21f155e6e0e7f8e8c16",
@@ -25323,11 +25379,11 @@
     "20394c32c66ded45": {
       "source_key": "1c41b165964290e6525947ad0768a5a57c6f22809a192ded725451c304b31af9",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "2063f893150e72a3": {
       "source_key": "62dc6a9fea89728c79dfead4e2ab58cb39f74e1f5174fb992e7053713450e237",
@@ -25341,11 +25397,11 @@
     "20702f16d368f2c9": {
       "source_key": "db8cc71fc302f765f5d786f25121b463c3cebb443378e3a227381d61a081b37f",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "20757b07dfb03ace": {
       "source_key": "593d53e285280b987b8a23d633e18b8764c7635cd36f42233dcafef466563cb5",
@@ -25396,10 +25452,10 @@
       "source_key": "a94a20ab9b9c6fe3e76bc62736e1dedb09b7b10f2a038796f1d603facd268711",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "error": "SourceFetchError",
-      "failures": 2,
-      "next_attempt_at": "2026-09-21T01:45:05Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z"
     },
     "20975d0415a1e02a": {
       "source_key": "dc5df47306203a02e4f0b449cdad93ec8b566cb7b657f8c35438b2abbeded851",
@@ -25422,20 +25478,20 @@
     "20a3823478f8b42d": {
       "source_key": "bbfe05fc667582c3953d0c86769dfb59a0b48713ca125b30dc14ad4459f668e1",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "20b43a0c4ef490d3": {
       "source_key": "2b401bb07047afac297289fb3eba55d0b85c64062fef90705967b401db67eeba",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "20c30cb002c16038": {
       "source_key": "1a01a8e5865844558c75889ec0aa27feb117728ba4ece07b79bac6913dac0c3b",
@@ -25495,11 +25551,11 @@
     "20cc80868c27a10c": {
       "source_key": "beae51d246d0728cd827975e7cc448fd172439cbc6ceb3549e3c61e752c7b538",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "20dbb6bbacd97d53": {
       "source_key": "eb291bb0633e6c5003539e2d9a7bde9e81c211e3c7fa3c4847f2d7969f85f743",
@@ -25523,11 +25579,11 @@
     "20ef52b50ff3a6ab": {
       "source_key": "31be4dbdfa3b1edfdc147ee682bfbb5e29902ccb65a3ad7c834ec0fb9f9312c7",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "20ef55d5dd884fac": {
       "source_key": "6cb0fc3a6ffc0b35d7d60a5e9b74f949ef2dbc1ba7d6d1841dae8538de170cfd",
@@ -25568,20 +25624,20 @@
     "20fc3adc61162b57": {
       "source_key": "e3d7d52e48ad063357241a6bb375817d3d1973caff02c71777ef0d1aea65a907",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "20ff91c2bc84875f": {
       "source_key": "77e39d2c5fc5cf880d08bd703afdeced9e9c931347a3602eaba67597cc241227",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "2105afe631777281": {
       "source_key": "55b897d6a8e17d7009757d9dde055baa15a8afb926aae48aa573456695078580",
@@ -25730,11 +25786,11 @@
     "21e1cb6210eec2d1": {
       "source_key": "89f424e06fc658c41c6ef651591e8598b8dbfa0d3587b4a8cfd139316b0732ae",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "21ee469cff84a104": {
       "source_key": "5f7d8780a4868fb323af7fd7ef883e635ac089f3b4e979a9961b626eb7f06380",
@@ -25884,20 +25940,21 @@
     "228bb52344d19a01": {
       "source_key": "705cc68ae54378df88bb48e73dc2b4f7763b9007a12385e92dd2e901d504a2cc",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
-      "status": "available",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
+      "status": "failed",
       "last_success_at": "2026-09-20T21:45:05Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "failures": 1,
+      "next_attempt_at": "2026-09-27T00:07:48Z",
+      "error": "no_unique_matching_jobposting"
     },
     "228ed7db06e914c6": {
       "source_key": "c82dc105ce52d706bbab4bc16cb4c3dc5aafb7f93b52ea372df9e82d275f3bbb",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "2299a2aa3c45373c": {
       "source_key": "8d651c3800b6a9e262cb9e431faf807ab237326cad546ce7225a05828005a7fc",
@@ -25920,11 +25977,11 @@
     "22abe87572176bce": {
       "source_key": "966a7e31baa99fb954e93321ccda37d10836dcfcf5b7b7763c3f68789b8b412f",
       "version": 5,
-      "last_attempt_at": "2026-09-20T21:45:05Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T21:45:05Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T21:45:05Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "22c3d19bd3f7b05d": {
       "source_key": "ba2a1d48b24e6f5f4d642593e216760a24b853ec306aef2be48450b0ab467938",
@@ -29180,6 +29237,15 @@
       "failures": 0,
       "next_attempt_at": "2026-09-24T19:31:03Z"
     },
+    "308778e66ab4cf5c": {
+      "source_key": "5ab5ea4977a0bba87fc76b998c0a35952d22d83bcd86a9704e3a2d98d0012458",
+      "version": 5,
+      "status": "failed",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
+      "error": "robots_disallowed",
+      "failures": 1,
+      "next_attempt_at": "2026-09-27T00:07:48Z"
+    },
     "3089e57f165f273d": {
       "source_key": "4b2bd337f111db631a765169e50e353ebffa3ac150c76d8dd4b13ccf8b6672ec",
       "version": 5,
@@ -30089,6 +30155,14 @@
       "failures": 0,
       "next_attempt_at": "2026-09-26T12:00:36Z"
     },
+    "3470c3edf5323ec5": {
+      "source_key": "744ec1b3b56a7d41e9fc49b804ce6faeccd0914fc1aa5008687a0c5f5cf5fe8e",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
+    },
     "34716f198036c21a": {
       "source_key": "6c3ee87fe019caf6b8b3be28c9b9b199e38343f0c8665041b79631bf28af537b",
       "version": 5,
@@ -30630,6 +30704,14 @@
       "last_success_at": "2026-09-21T22:47:02Z",
       "failures": 0,
       "next_attempt_at": "2026-09-24T22:47:02Z"
+    },
+    "369b56e2c04a1770": {
+      "source_key": "edc2387d4368971bc5cbc1e3cda274d01b644e36b24e1ed1f1324510030cac1c",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "36a0176dd77ef1b6": {
       "source_key": "278ed651f7e045c93f7d5490dfac2754f7914c07bbdf6763a1d452e8261046d3",
@@ -31916,10 +31998,11 @@
     "3bf26b01cc94618f": {
       "source_key": "ca220c823d1f2f8e9ad26d34d743d1956e6d47747048ab4e2ed859b50b60fde2",
       "version": 5,
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "last_success_at": "2026-09-23T19:51:21Z",
-      "next_attempt_at": "2026-09-26T19:51:21Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "3bf2cf5d21690d7f": {
       "source_key": "e7434cd8c44e0a0ca28194a424310fe829737e2c890676362ffebee555f950f6",
@@ -32535,14 +32618,6 @@
       "last_success_at": "2026-09-20T23:34:29Z",
       "failures": 0,
       "next_attempt_at": "2026-09-23T23:34:29Z"
-    },
-    "3e53d55f750e046d": {
-      "source_key": "01cadeed219e821db2b31f191095aae49ff646b75049236eaf26c59b185b748b",
-      "version": 5,
-      "status": "available",
-      "failures": 0,
-      "last_success_at": "2026-09-26T19:25:31Z",
-      "next_attempt_at": "2026-09-29T19:25:31Z"
     },
     "3e55bbcc77b47c1a": {
       "source_key": "78c76a49ebbea8b47a06278bb8966f208bfec7687f0ab1e0ede4cf59378bd9ce",
@@ -36036,10 +36111,11 @@
     "4d2d0a3f6e9fa642": {
       "source_key": "4d725c0a6a048d62424117da7f893c4ad35826ee684782ad886f6a20816ba151",
       "version": 5,
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "last_success_at": "2026-09-23T19:51:21Z",
-      "next_attempt_at": "2026-09-26T19:51:21Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "4d30b5ac19228516": {
       "source_key": "e653dbd6aab8ac1f1c2827cc4d8ca3bfc7d5b74961e5c1d7faf067ec57c9ecab",
@@ -36655,6 +36731,14 @@
       "failures": 0,
       "next_attempt_at": "2026-09-26T12:00:36Z"
     },
+    "4fe69a70975b016e": {
+      "source_key": "f4db76ddeeba7ed285909506c1d66c944fe6d7f545f5ebf273e42718358a9bd9",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
+    },
     "4ff25949eb87e644": {
       "source_key": "65a4ca547027e5fa143852c8686fbd009e3edc19e18d750d604f4b9661ac18c8",
       "version": 5,
@@ -37179,6 +37263,14 @@
       "last_success_at": "2026-09-25T17:28:06Z",
       "failures": 0,
       "next_attempt_at": "2026-09-28T17:28:06Z"
+    },
+    "51ce222a958ce4f8": {
+      "source_key": "354088533983c609e86e82c23ad1379d0c977f8f259751ddc30f9d38cea8f200",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "51d86ed19c0b812e": {
       "source_key": "237155939d7b3e4cc4794b56e731f97163b4272d27eaf67df1dfce576e875e42",
@@ -40112,6 +40204,15 @@
       "failures": 0,
       "next_attempt_at": "2026-09-24T07:14:02Z"
     },
+    "5db657ddbea781fa": {
+      "source_key": "c828a02f9135b41db010969d482de786a8801c380069e488c18f596ab8f9d901",
+      "version": 5,
+      "status": "failed",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-27T00:07:48Z"
+    },
     "5dbfdfe0c58421db": {
       "source_key": "6681d654a87c24f2c914975f4786d8eba841ef70a87005710ac501c66367c63b",
       "version": 5,
@@ -40653,6 +40754,14 @@
       "failures": 3,
       "next_attempt_at": "2026-09-24T03:51:21Z"
     },
+    "5ff9d13b6ec32f33": {
+      "source_key": "7ec2ba95d5f47947157a40848fb9f61d1869693dc348c5a7ec8437ca0811425d",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
+    },
     "5ffce0a49555effb": {
       "source_key": "042ed55a4e05863d065a59165fdff5c76f8fade1fdd7e3204905f09896a9d624",
       "version": 5,
@@ -40933,6 +41042,14 @@
       "last_success_at": "2026-09-22T22:49:17Z",
       "failures": 0,
       "next_attempt_at": "2026-09-25T22:49:17Z"
+    },
+    "617d3079960462f7": {
+      "source_key": "99605c5617b732cbdc3bd1e88b90fe802261d9e1bd3c8dde6224e276e20c10fe",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "617e0531f9ced14d": {
       "source_key": "af1531360ec5b2938593cb866752cd62c0b16109ae4fc0361f0205868e9f88aa",
@@ -41270,6 +41387,15 @@
       "last_success_at": "2026-09-22T22:49:17Z",
       "failures": 0,
       "next_attempt_at": "2026-09-25T22:49:17Z"
+    },
+    "62fde0cb0b80052e": {
+      "source_key": "5d4f55c43319b4d2c0d82f392d1b880c8da6b14fb1738748ffa015cc84323468",
+      "version": 5,
+      "status": "failed",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
+      "error": "robots_disallowed",
+      "failures": 1,
+      "next_attempt_at": "2026-09-27T00:07:48Z"
     },
     "62fe1a8ae0ab402b": {
       "source_key": "322126dfe1f24722177d0f935805893f341f04aa258466d91c759e0232aa69e7",
@@ -43483,11 +43609,11 @@
     "6bf8838ea37bdf95": {
       "source_key": "adbf5e2249fca4d9bfa81dfb2627143bdb8ed0e8a1f8d0c083538fe1d07c1304",
       "version": 5,
-      "last_attempt_at": "2026-09-20T19:20:53Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
-      "last_success_at": "2026-09-20T19:20:53Z",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-23T19:20:53Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "6bf8ae6f535a09ec": {
       "source_key": "046369dc184d09b1c35f6ddd8e90969225b57f847b4a162af4d5bc148324c400",
@@ -43884,6 +44010,15 @@
       "last_success_at": "2026-09-23T12:00:36Z",
       "failures": 0,
       "next_attempt_at": "2026-09-26T12:00:36Z"
+    },
+    "6d2ea8aa08bf0302": {
+      "source_key": "00d49fa22193de5b8529b21145204a296c592aeb9626cf11c5e12bca7f415347",
+      "version": 5,
+      "status": "failed",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
+      "error": "robots_disallowed",
+      "failures": 1,
+      "next_attempt_at": "2026-09-27T00:07:48Z"
     },
     "6d2fbde77c7ed08a": {
       "source_key": "7b9e260fc27814ba71d78766c1eb8c90fddb28fe3d8c09ea46a07feb3ab5391b",
@@ -46238,6 +46373,15 @@
       "last_success_at": "2026-09-23T16:45:31Z",
       "failures": 0,
       "next_attempt_at": "2026-09-26T16:45:31Z"
+    },
+    "76912540668b2b2a": {
+      "source_key": "d89afab9a989b055fa667ba2fcf886da3a3102cbf164b9f67f1bf7a7d18be117",
+      "version": 5,
+      "status": "failed",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
+      "error": "robots_disallowed",
+      "failures": 1,
+      "next_attempt_at": "2026-09-27T00:07:48Z"
     },
     "76a17514d2953321": {
       "source_key": "230a8d812e7208f6d412ec29036bcf892b4ec1da22de79b7e6a787175a87eb99",
@@ -49065,6 +49209,14 @@
       "failures": 0,
       "next_attempt_at": "2026-09-26T22:50:02Z"
     },
+    "811b23c51610c5f3": {
+      "source_key": "dcf5259d76a5f29c92167163aa90e1896a8791f4c52797ec24b649effe124f32",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
+    },
     "812f27aeeef6b9de": {
       "source_key": "db3d0c65857bc2f11fb74a47deef0179507dc86e073ccbb8f723673a1ebdea5e",
       "version": 5,
@@ -49109,6 +49261,14 @@
       "last_success_at": "2026-09-23T22:50:02Z",
       "failures": 0,
       "next_attempt_at": "2026-09-26T22:50:02Z"
+    },
+    "815c5ad07dd8744b": {
+      "source_key": "bb6338d9aeaa0ea4895b6c83999f31942bd1f9787e9024d88e098865e5238713",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "815ce7fc3352c70b": {
       "source_key": "25f350dcb252a6636553336aa83466ae5bf8b77aac4adf577c8452d2c235c856",
@@ -49405,6 +49565,14 @@
       "last_success_at": "2026-09-23T22:50:02Z",
       "failures": 0,
       "next_attempt_at": "2026-09-26T22:50:02Z"
+    },
+    "8339f0551648e349": {
+      "source_key": "510099200af9d60a68dfdcd3c6239784e502b84ff16c770e4fb8de1e8aaf91b3",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "834610c9349784e6": {
       "source_key": "2d43c6339937005e366605532422560c10770af3df1ebf9e2570f86e6836c5a6",
@@ -50363,6 +50531,15 @@
       "last_success_at": "2026-09-24T20:18:29Z",
       "failures": 0,
       "next_attempt_at": "2026-09-27T20:18:29Z"
+    },
+    "87b0c00c6dc6e390": {
+      "source_key": "c85f05574f0f674219a9c08c0ce5e48de1e272bce20262cfbe7d6dc2f2cd25a9",
+      "version": 5,
+      "status": "failed",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
+      "error": "robots_disallowed",
+      "failures": 1,
+      "next_attempt_at": "2026-09-27T00:07:48Z"
     },
     "87b6e5807f74f0c2": {
       "source_key": "29cbdf1627a3a65e39c7ba1f8334440dec29a31546536c3c1d4c1708ed97407a",
@@ -55310,6 +55487,14 @@
       "failures": 0,
       "next_attempt_at": "2026-09-27T06:13:15Z"
     },
+    "9cf0ac04b6fc6d47": {
+      "source_key": "730e72f31e642e4aebe2e54df9c3fa12c0d8aa89b1d726dad694a8f40ee51fd8",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
+    },
     "9cf28f259ff3bb1b": {
       "source_key": "df5962e873dfc3d4366852f49705ff64653ada6d55377418956a70894d69566f",
       "version": 5,
@@ -56540,6 +56725,14 @@
       "failures": 3,
       "next_attempt_at": "2026-09-25T14:42:01Z"
     },
+    "a1b00fe1eede61c6": {
+      "source_key": "6bc69de18adfcfa7543223f08a1ad1126b1abd1c97aeb93e9ab42a7ba0984783",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
+    },
     "a1b155e67db0cca4": {
       "source_key": "22f40b14917f3f16cf06774613dce04eb58f96d0659a04e057eca1c31414687b",
       "version": 5,
@@ -57329,6 +57522,14 @@
       "last_success_at": "2026-09-25T06:42:01Z",
       "failures": 0,
       "next_attempt_at": "2026-09-28T06:42:01Z"
+    },
+    "a488ca706461a6f8": {
+      "source_key": "4370866d14cf3e92415821a03525a766bafa9a038ea24d27c1afa13bb8dc8450",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "a4a84b42c4a5a802": {
       "source_key": "36c53225c65dc6ccaf65cb98d742308ec80db51d7b3ad3dfad263660d0001c14",
@@ -59660,6 +59861,14 @@
       "failures": 0,
       "next_attempt_at": "2026-09-28T06:42:01Z"
     },
+    "afd671d8161631c6": {
+      "source_key": "291e485643e8f08fc41ce1038ab0ba02895951e570152758148bdf375a6c8131",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
+    },
     "afe7c60b1665486e": {
       "source_key": "1db54d992a3648242441d8cac8950131d0a5ead7a0a6ed33761d72566f23e868",
       "version": 5,
@@ -59830,6 +60039,14 @@
       "failures": 0,
       "next_attempt_at": "2026-09-25T06:18:16Z"
     },
+    "b0dc54c848a78bcd": {
+      "source_key": "dda91d095838c9a04f4b06ba0351d955d87e46e6b17068e4532e8a2fb5b16fe6",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
+    },
     "b0e934c73ff8775f": {
       "source_key": "2ac84d0fcf22e5e18c9a525cb7736fa6aa16fe94219ce24d908ce38f4c2a906d",
       "version": 5,
@@ -59901,6 +60118,14 @@
       "last_success_at": "2026-09-24T23:19:32Z",
       "failures": 0,
       "next_attempt_at": "2026-09-27T23:19:32Z"
+    },
+    "b121ab9c9ff1f9a8": {
+      "source_key": "74a23aae49c32ccdae96c219b30a3d05e0dec6be9496bd94e1343f436938fcc7",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "b124a8622f9fd35d": {
       "source_key": "d272072a9cd8d9207dc86225e592a913d3131e33b9b6a55711af60c6febb037a",
@@ -63771,6 +63996,14 @@
       "failures": 0,
       "next_attempt_at": "2026-09-28T17:28:06Z"
     },
+    "c28c83e7ac7f0e37": {
+      "source_key": "6ac500ea6b3cb96d9c58238627c764891cc8f6cb3600238046103984c726dd23",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
+    },
     "c290c0e49ce18b74": {
       "source_key": "263401422b32ce7dda6c4c59ca51d4c61bbd12a507fb8f8d5a2cfbf12fa827da",
       "version": 5,
@@ -65175,6 +65408,15 @@
       "failures": 0,
       "next_attempt_at": "2026-09-28T17:28:06Z"
     },
+    "c852a0531b5fb369": {
+      "source_key": "0d9386683c0516066162ab991c90b9984b5c4675b0f91fd15bed832bdc6af901",
+      "version": 5,
+      "status": "failed",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-27T00:07:48Z"
+    },
     "c85692b7ddef5f83": {
       "source_key": "526465f59180d9a66b8a5e4d5deb21219dc3c6205fce5cbc6b92af59c7eae538",
       "version": 5,
@@ -65308,6 +65550,14 @@
       "last_success_at": "2026-09-25T01:46:11Z",
       "failures": 0,
       "next_attempt_at": "2026-09-28T01:46:11Z"
+    },
+    "c8f5b66a47c29b6e": {
+      "source_key": "ae35393c75ec5432bd787a45a9ceb1a8e133aa33b4633d67cb5a20f986832aaa",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "c8f5d9f32eab4b0a": {
       "source_key": "c8c453c4c55eb17c310ed6b08e0f400ad12932c055cf7dd41c47e399a20cf402",
@@ -66009,10 +66259,11 @@
     "cc80a088a37df39d": {
       "source_key": "c40887549d9e6bbeb1fe6f5df92a77086f772c4ef5527655605dfd5cea0d3e07",
       "version": 5,
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "last_success_at": "2026-09-23T19:51:21Z",
-      "next_attempt_at": "2026-09-26T19:51:21Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "ccb77acafa7bec6f": {
       "source_key": "85151af3204149904abf5db556d151259258b6e048d167240793f2ae0c89569a",
@@ -67007,6 +67258,14 @@
       "failures": 3,
       "next_attempt_at": "2026-09-26T01:28:06Z"
     },
+    "d09f0facafad9f14": {
+      "source_key": "55218142427fa90d8727c0ffc502d2bff961fb7bbed6d9632c6316eb8b533f80",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
+    },
     "d0a83b5c3ba6f946": {
       "source_key": "a34746fe725a6a38ef91fea018b36dc087f9302ddc9e41233feb313646b9ae5b",
       "version": 5,
@@ -67597,6 +67856,14 @@
       "failures": 0,
       "next_attempt_at": "2026-09-25T19:54:11Z"
     },
+    "d27a7896dd117434": {
+      "source_key": "e15b9894560d5e10f1cd37ad1cd43434554d20b1d727d6b02dcdd6482362fffc",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
+    },
     "d27a8c63155e745b": {
       "source_key": "81295cc46598f58ba8eaa7d60b9b60201b9b8f8fa36f1f6e7c04e8c633584ef8",
       "version": 5,
@@ -67838,6 +68105,15 @@
       "last_success_at": "2026-09-21T14:13:56Z",
       "failures": 0,
       "next_attempt_at": "2026-09-24T14:13:56Z"
+    },
+    "d356dc7112a712c8": {
+      "source_key": "983c9f97a7dbc12cefa3d74de5c7fc6baec1feccd0d1f2802e437309001230ca",
+      "version": 5,
+      "status": "failed",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-27T00:07:48Z"
     },
     "d35c0cdb7fbee4cc": {
       "source_key": "3e9658a67875efa42c89d31ed87ba2f732074bd178946d4b69f97b5f0e065478",
@@ -71828,6 +72104,15 @@
       "failures": 3,
       "next_attempt_at": "2026-09-27T03:25:31Z"
     },
+    "e47d7522b0a6e2bc": {
+      "source_key": "07a101b8411ad016c729b94a8223efc9f09ded958f6bcb68131ff4e77f70f747",
+      "version": 5,
+      "status": "failed",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-27T00:07:48Z"
+    },
     "e483c6e18b0ce6ca": {
       "source_key": "0e7aeed7a48db6f4fa51a5101de5838fd09015d5b425954dc0b5db9d9f0b94f5",
       "version": 5,
@@ -74918,10 +75203,11 @@
     "f065892d1a634a7e": {
       "source_key": "64acc12274691f6812492c549435f9984f4de35053d749c4e22b511acbe1f686",
       "version": 5,
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "last_success_at": "2026-09-23T19:51:21Z",
-      "next_attempt_at": "2026-09-26T19:51:21Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "f07ba1267c31226b": {
       "source_key": "467e7a46597dba8dbcc4ff8a1dcb8b25d26bb60588a974480a285daff4177b78",
@@ -76011,10 +76297,11 @@
     "f5a0eb6d3e689550": {
       "source_key": "ab6acaf2f0bf5b5b5fa10021438f94274db255e523b196d560541d2e14b61bf1",
       "version": 5,
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "status": "available",
+      "last_success_at": "2026-09-26T22:07:48Z",
       "failures": 0,
-      "last_success_at": "2026-09-23T19:51:21Z",
-      "next_attempt_at": "2026-09-26T19:51:21Z"
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "f5a1914fc7ceaf52": {
       "source_key": "59c2d6fbd6f6b34becf48d278ac715213b89143942ab85533edcb4650ef85cc8",
@@ -76178,6 +76465,14 @@
       "last_success_at": "2026-09-25T01:46:11Z",
       "failures": 0,
       "next_attempt_at": "2026-09-28T01:46:11Z"
+    },
+    "f653a9a69e6b3d15": {
+      "source_key": "01cadeed219e821db2b31f191095aae49ff646b75049236eaf26c59b185b748b",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "f6608fae58a5ba51": {
       "source_key": "6ee96758cd095df3b51bb0cecf26b9920260d197a17e544c3e814ba89484a95b",
@@ -76385,6 +76680,14 @@
       "last_success_at": "2026-09-25T01:46:11Z",
       "failures": 0,
       "next_attempt_at": "2026-09-28T01:46:11Z"
+    },
+    "f73406f6043d45f1": {
+      "source_key": "f2c76cd748f3a1264a33ab21638d6faa61290b8dbda392841761936a9531c707",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-26T22:07:48Z",
+      "next_attempt_at": "2026-09-29T22:07:48Z"
     },
     "f746522e75576b32": {
       "source_key": "867f545bcaebdba4322194931436fa97657ef846eb9d3944ca1bfcf27868a9b7",
@@ -78203,10 +78506,10 @@
       "source_key": "4b9c28a1cd74b679dc1608f17f5be3a27bca61c3e056411d4c2571ab2653c7f9",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-20T17:00:33Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "error": "SourceFetchError",
-      "failures": 2,
-      "next_attempt_at": "2026-09-20T21:00:33Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z"
     },
     "feeca3d5914fb0ff": {
       "source_key": "324efe84867176641d94ce881f7aaba5dcf0233cc125bc0b2c6f23ec79cd8d93",
@@ -78321,10 +78624,10 @@
       "source_key": "65ce5999c246fc200d8f86b3fa4462691f871fc92a61aea20ef668b75826c86c",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-20T17:00:33Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "error": "no_unique_matching_jobposting",
-      "failures": 2,
-      "next_attempt_at": "2026-09-20T21:00:33Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z"
     },
     "ff8980ffe900de7f": {
       "source_key": "aa8cd23a991f23badb57d34643b9773871124b85138769d30046f0393cc0f0b4",
@@ -78339,10 +78642,10 @@
       "source_key": "3dc744cf6e5cb899e6d3dd052584f4545270c2b2bf2bcce2eca271f7a301e8f6",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-20T17:00:33Z",
+      "last_attempt_at": "2026-09-26T22:07:48Z",
       "error": "oracle_description_identity_mismatch",
-      "failures": 2,
-      "next_attempt_at": "2026-09-20T21:00:33Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-27T06:07:48Z"
     },
     "ffabcfc442dde60f": {
       "source_key": "ea05a5bc729e57ac28aa3806fc675c984565f346917d838ce436d543d947f6a2",

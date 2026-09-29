@@ -1,7 +1,7 @@
 {
-  "last_run_at": "2026-09-28T21:14:54Z",
-  "run_count": 115,
-  "run_duration_seconds": 475.3,
+  "last_run_at": "2026-09-29T01:01:43Z",
+  "run_count": 116,
+  "run_duration_seconds": 466.7,
   "sources": {
     "ashby:1password": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -82,17 +82,17 @@
       "last_content_hash": "da030dba8866dc68"
     },
     "ashby:applied-intuition": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 37.67,
-      "activity_poll_count": 95,
-      "last_content_hash": "5b651b00080e39aa"
+      "estimated_poll_cost": 32.11,
+      "activity_poll_count": 96,
+      "last_content_hash": "5f746428f2de788a"
     },
     "ashby:ashby": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -264,16 +264,16 @@
       "last_content_hash": "ad393ae04c2995ef"
     },
     "ashby:cursor": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 56.37,
-      "activity_poll_count": 95,
+      "estimated_poll_cost": 49.16,
+      "activity_poll_count": 96,
       "last_content_hash": "f833748584ddf4f8"
     },
     "ashby:cybernetic-labs": {
@@ -368,29 +368,29 @@
       "last_content_hash": "7ead9c198438e0fa"
     },
     "ashby:etched": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 110.39,
-      "activity_poll_count": 95,
+      "estimated_poll_cost": 92.63,
+      "activity_poll_count": 96,
       "last_content_hash": "9d22cd1cb01200e7"
     },
     "ashby:firefly-aerospace": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 113.77,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 95.75,
+      "activity_poll_count": 85,
       "last_content_hash": "267571773b3eff95"
     },
     "ashby:fireworks": {
@@ -446,17 +446,17 @@
       "last_content_hash": "a2d85d56822cfaec"
     },
     "ashby:hadrian": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 61.89,
-      "activity_poll_count": 84,
-      "last_content_hash": "96607fa6a664257c"
+      "estimated_poll_cost": 52.68,
+      "activity_poll_count": 85,
+      "last_content_hash": "55fa14a0ba2543dd"
     },
     "ashby:harvey": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -563,16 +563,16 @@
       "last_content_hash": "e3b0c44298fc1c14"
     },
     "ashby:impulse-space": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 112.07,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 94.17,
+      "activity_poll_count": 85,
       "last_content_hash": "46b31e386af8d876"
     },
     "ashby:infisical": {
@@ -823,17 +823,17 @@
       "last_content_hash": "7dc8181b1fe50c9e"
     },
     "ashby:openai": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 41.49,
-      "activity_poll_count": 95,
-      "last_content_hash": "5a87fa873bcfa7be"
+      "estimated_poll_cost": 33.87,
+      "activity_poll_count": 96,
+      "last_content_hash": "6e3967e44e7ca741"
     },
     "ashby:opusclip": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -914,16 +914,16 @@
       "last_content_hash": "4eded3b89331fe09"
     },
     "ashby:physical-intelligence": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 116.36,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 98.04,
+      "activity_poll_count": 85,
       "last_content_hash": "99e15aa6875b901e"
     },
     "ashby:pinecone": {
@@ -1018,17 +1018,17 @@
       "last_content_hash": "71ee8024ec19132a"
     },
     "ashby:ramp": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 76.0,
-      "activity_poll_count": 95,
-      "last_content_hash": "f8ac53b734d67f7b"
+      "estimated_poll_cost": 61.59,
+      "activity_poll_count": 96,
+      "last_content_hash": "fd16f79bca630a85"
     },
     "ashby:regent-craft": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -1122,17 +1122,17 @@
       "last_content_hash": "b72c749a225e6641"
     },
     "ashby:saronic": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 61.56,
-      "activity_poll_count": 84,
-      "last_content_hash": "e8d75a6ffba5f160"
+      "estimated_poll_cost": 52.68,
+      "activity_poll_count": 85,
+      "last_content_hash": "c955540ccc36d05f"
     },
     "ashby:semgrep": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -1499,17 +1499,17 @@
       "last_content_hash": "c1d58e0c256144bb"
     },
     "greenhouse:airbnb": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 9.47,
-      "activity_poll_count": 95,
-      "last_content_hash": "3f4755db1dd7bc94"
+      "estimated_poll_cost": 7.73,
+      "activity_poll_count": 96,
+      "last_content_hash": "d51759bb29a9a127"
     },
     "greenhouse:airtable": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -1564,30 +1564,30 @@
       "last_content_hash": "d25cb66b078e5fc0"
     },
     "greenhouse:anduril": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 15.43,
-      "activity_poll_count": 95,
-      "last_content_hash": "6776708324e4b4a1"
+      "estimated_poll_cost": 14.18,
+      "activity_poll_count": 96,
+      "last_content_hash": "8b954841bdc585d0"
     },
     "greenhouse:anthropic": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 19.89,
-      "activity_poll_count": 95,
-      "last_content_hash": "49ea177c9fda7ebe"
+      "estimated_poll_cost": 18.13,
+      "activity_poll_count": 96,
+      "last_content_hash": "c945bf02503b7577"
     },
     "greenhouse:antora-energy": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -1655,17 +1655,17 @@
       "last_content_hash": "e48a2945a8e509a6"
     },
     "greenhouse:archer-aviation": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 87.48,
-      "activity_poll_count": 84,
-      "last_content_hash": "3b1545bc92cd9dfa"
+      "estimated_poll_cost": 89.61,
+      "activity_poll_count": 85,
+      "last_content_hash": "0919954177bc6713"
     },
     "greenhouse:asana": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -1694,16 +1694,16 @@
       "last_content_hash": "2431687d0d0a1c08"
     },
     "greenhouse:astranis": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 105.75,
-      "activity_poll_count": 95,
+      "estimated_poll_cost": 105.98,
+      "activity_poll_count": 96,
       "last_content_hash": "46b38e1cde2c010e"
     },
     "greenhouse:blackedge-capital": {
@@ -1850,16 +1850,16 @@
       "last_content_hash": "c5f5988ab0d28214"
     },
     "greenhouse:chicago-trading-company": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 188.94,
-      "activity_poll_count": 95,
+      "estimated_poll_cost": 172.55,
+      "activity_poll_count": 96,
       "last_content_hash": "df32107a40dcc707"
     },
     "greenhouse:chime": {
@@ -1967,17 +1967,17 @@
       "last_content_hash": "910141d05e631172"
     },
     "greenhouse:databricks": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 21.61,
-      "activity_poll_count": 95,
-      "last_content_hash": "dca7f456f43f48d6"
+      "estimated_poll_cost": 19.85,
+      "activity_poll_count": 96,
+      "last_content_hash": "027240002df117e3"
     },
     "greenhouse:datadog": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -2084,16 +2084,16 @@
       "last_content_hash": "2eea2e8dc3af78e4"
     },
     "greenhouse:drw": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 78.15,
-      "activity_poll_count": 95,
+      "estimated_poll_cost": 84.19,
+      "activity_poll_count": 96,
       "last_content_hash": "ce3f186ba8889b87"
     },
     "greenhouse:duolingo": {
@@ -2188,29 +2188,29 @@
       "last_content_hash": "ba927185d70fdea3"
     },
     "greenhouse:figma": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 62.61,
-      "activity_poll_count": 95,
+      "estimated_poll_cost": 70.5,
+      "activity_poll_count": 96,
       "last_content_hash": "77f72b520a82f0e4"
     },
     "greenhouse:figure": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 140.57,
-      "activity_poll_count": 95,
+      "estimated_poll_cost": 134.39,
+      "activity_poll_count": 96,
       "last_content_hash": "2fa73ec5412f5cd3"
     },
     "greenhouse:five-rings": {
@@ -2422,29 +2422,29 @@
       "last_content_hash": "c215885bf46475ea"
     },
     "greenhouse:jane-street": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 29.06,
-      "activity_poll_count": 95,
+      "estimated_poll_cost": 43.89,
+      "activity_poll_count": 96,
       "last_content_hash": "401c70fcc11d0540"
     },
     "greenhouse:jump-trading": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 29.94,
-      "activity_poll_count": 95,
+      "estimated_poll_cost": 44.8,
+      "activity_poll_count": 96,
       "last_content_hash": "40bde49b46a1e17e"
     },
     "greenhouse:kairos-power": {
@@ -2721,16 +2721,16 @@
       "last_content_hash": "28ac2259bedc36a6"
     },
     "greenhouse:neuralink": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 188.7,
-      "activity_poll_count": 95,
+      "estimated_poll_cost": 173.11,
+      "activity_poll_count": 96,
       "last_content_hash": "50673971d76b9963"
     },
     "greenhouse:nextdoor": {
@@ -2877,16 +2877,16 @@
       "last_content_hash": "9f5d311f7b23cd76"
     },
     "greenhouse:point72": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 42.76,
-      "activity_poll_count": 95,
+      "estimated_poll_cost": 52.88,
+      "activity_poll_count": 96,
       "last_content_hash": "6c3253d32d3f6bd8"
     },
     "greenhouse:portal-space-systems": {
@@ -2981,17 +2981,17 @@
       "last_content_hash": "39128d3ef994b83d"
     },
     "greenhouse:relativity-space": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 46.32,
-      "activity_poll_count": 84,
-      "last_content_hash": "98a41e35d812dcab"
+      "estimated_poll_cost": 56.3,
+      "activity_poll_count": 85,
+      "last_content_hash": "abeed8a7dfffd961"
     },
     "greenhouse:riot-games": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -3241,17 +3241,17 @@
       "last_content_hash": "92c72dca2d2e1e0b"
     },
     "greenhouse:spacex": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 29.7,
-      "activity_poll_count": 95,
-      "last_content_hash": "61b4b30921aeccd1"
+      "estimated_poll_cost": 40.8,
+      "activity_poll_count": 96,
+      "last_content_hash": "4215973c814a5ffc"
     },
     "greenhouse:squarepoint-capital": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -3293,42 +3293,42 @@
       "last_content_hash": "d85730f21d84740d"
     },
     "greenhouse:stoke-space": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 193.93,
-      "activity_poll_count": 84,
+      "estimated_poll_cost": 177.87,
+      "activity_poll_count": 85,
       "last_content_hash": "03ecfbdbd0cd8985"
     },
     "greenhouse:stripe": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 30.05,
-      "activity_poll_count": 95,
-      "last_content_hash": "ca7a1c2458e51313"
+      "estimated_poll_cost": 41.36,
+      "activity_poll_count": 96,
+      "last_content_hash": "d7ddc95f945b7e06"
     },
     "greenhouse:tenstorrent": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 191.91,
-      "activity_poll_count": 95,
+      "estimated_poll_cost": 176.02,
+      "activity_poll_count": 96,
       "last_content_hash": "473181f4130721f0"
     },
     "greenhouse:the-nuclear-company": {
@@ -3696,17 +3696,17 @@
       "last_content_hash": "414ac18e16b8715e"
     },
     "icims:joby-aviation": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 21.21,
-      "activity_poll_count": 84,
-      "last_content_hash": "885c6b48ead72237"
+      "estimated_poll_cost": 21.03,
+      "activity_poll_count": 85,
+      "last_content_hash": "0a9e63ddfc8d129b"
     },
     "lever:anybotics": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -3930,16 +3930,16 @@
       "last_content_hash": "fb33b127e53a9154"
     },
     "lever:palantir": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": true,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 50.87,
-      "activity_poll_count": 95,
+      "estimated_poll_cost": 44.64,
+      "activity_poll_count": 96,
       "last_content_hash": "53a034a740c46e3c"
     },
     "lever:spotify": {
@@ -3982,36 +3982,23 @@
       "last_content_hash": "38a6ff1450f4d4ff"
     },
     "lever:zoox": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 49.69,
-      "activity_poll_count": 95,
-      "last_content_hash": "3ac87ec9d29afff7"
+      "estimated_poll_cost": 43.47,
+      "activity_poll_count": 96,
+      "last_content_hash": "ce8c4da4fee62022"
     },
     "simplify:__meta__": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
-      "potentially_truncated": false,
-      "last_change_at": null,
-      "change_frequency": 0.0,
-      "consecutive_unchanged": 0,
-      "estimated_poll_cost": 0.0,
-      "activity_poll_count": 0,
-      "last_content_hash": null
-    },
-    "simplify:flow-traders": {
-      "last_polled_at": null,
-      "healthy": true,
-      "error": null,
-      "bootstrapped": true,
       "potentially_truncated": false,
       "last_change_at": null,
       "change_frequency": 0.0,
@@ -4450,30 +4437,30 @@
       "last_content_hash": "345d0f151e04e32e"
     },
     "workday:blackstone": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 6.81,
-      "activity_poll_count": 93,
+      "estimated_poll_cost": 6.25,
+      "activity_poll_count": 94,
       "last_content_hash": "6310cbf03e618218"
     },
     "workday:blue-origin": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 6.87,
-      "activity_poll_count": 83,
-      "last_content_hash": "e1161984e5fa6fe2"
+      "estimated_poll_cost": 6.29,
+      "activity_poll_count": 84,
+      "last_content_hash": "db0a76d4e3a6dd8c"
     },
     "workday:boeing": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -4554,17 +4541,17 @@
       "last_content_hash": "de3ed8b7886e4f54"
     },
     "workday:capital-one": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 179.53,
-      "activity_poll_count": 95,
-      "last_content_hash": "e1d9c1071a7a4b67"
+      "estimated_poll_cost": 177.92,
+      "activity_poll_count": 96,
+      "last_content_hash": "a46b07981cb98cfe"
     },
     "workday:chevron-corporation": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -4660,7 +4647,7 @@
     "workday:dell": {
       "last_polled_at": "2026-09-02T09:29:57Z",
       "healthy": false,
-      "error": "[workday:dell] fetch failed: HTTP 422: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"CBA91CMULQXCLL\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
+      "error": "[workday:dell] fetch failed: HTTP 422: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"648F53MULZ10UG\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
       "bootstrapped": false,
       "potentially_truncated": false,
       "last_change_at": null,
@@ -4788,16 +4775,16 @@
       "last_content_hash": "7f65e92f9ed4f44c"
     },
     "workday:g-research": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 7.07,
-      "activity_poll_count": 95,
+      "estimated_poll_cost": 6.45,
+      "activity_poll_count": 96,
       "last_content_hash": "e126afe8f4931888"
     },
     "workday:gdit": {
@@ -5165,17 +5152,17 @@
       "last_content_hash": "16ecd26c1d9b43d9"
     },
     "workday:nasa-jpl": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 12.79,
-      "activity_poll_count": 83,
-      "last_content_hash": "72f003b07ed58a0e"
+      "estimated_poll_cost": 13.14,
+      "activity_poll_count": 84,
+      "last_content_hash": "32346597c6daa0d9"
     },
     "workday:nidec": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -5206,7 +5193,7 @@
     "workday:nio": {
       "last_polled_at": "2026-09-05T00:50:25Z",
       "healthy": false,
-      "error": "[workday:nio] fetch failed: HTTP 422: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"FA16C8MULQXDED\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
+      "error": "[workday:nio] fetch failed: HTTP 422: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"4DD13DMULZ1193\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
       "bootstrapped": true,
       "potentially_truncated": false,
       "last_change_at": "2026-09-05T00:50:25Z",
@@ -5217,17 +5204,17 @@
       "last_content_hash": null
     },
     "workday:northrop-grumman": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 391.12,
-      "activity_poll_count": 93,
-      "last_content_hash": "f1468c265288cd4a"
+      "estimated_poll_cost": 392.47,
+      "activity_poll_count": 94,
+      "last_content_hash": "69530ab45b0251f1"
     },
     "workday:novanta": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -5256,17 +5243,17 @@
       "last_content_hash": "176b39f58da7b47e"
     },
     "workday:nvidia": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 7.25,
-      "activity_poll_count": 94,
-      "last_content_hash": "a8e864357f424ba9"
+      "estimated_poll_cost": 7.64,
+      "activity_poll_count": 95,
+      "last_content_hash": "b33bdae6ff41b732"
     },
     "workday:nxp-semiconductors": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -5308,17 +5295,17 @@
       "last_content_hash": "0fffe9ff90b5fe78"
     },
     "workday:palo-alto-networks": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 149.96,
-      "activity_poll_count": 94,
-      "last_content_hash": "36282024dc8ca49c"
+      "estimated_poll_cost": 148.47,
+      "activity_poll_count": 95,
+      "last_content_hash": "ce03df3d9831e317"
     },
     "workday:pfizer": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -5412,17 +5399,17 @@
       "last_content_hash": "c7b17fe5209ddf1d"
     },
     "workday:rtx": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 22.2,
-      "activity_poll_count": 94,
-      "last_content_hash": "3148ca754f4afd93"
+      "estimated_poll_cost": 22.11,
+      "activity_poll_count": 95,
+      "last_content_hash": "68d38209a594aeb3"
     },
     "workday:schweitzer-engineering-laboratories": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -5438,30 +5425,30 @@
       "last_content_hash": "72d972c687c79cfb"
     },
     "workday:sierra-nevada-corporation": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": true,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 46.17,
-      "activity_poll_count": 82,
-      "last_content_hash": "cd21ecfde2f034be"
+      "estimated_poll_cost": 45.33,
+      "activity_poll_count": 83,
+      "last_content_hash": "7a803e7a83dfb9b7"
     },
     "workday:sierra-space": {
-      "last_polled_at": "2026-09-28T21:14:54Z",
+      "last_polled_at": "2026-09-29T01:01:43Z",
       "healthy": true,
       "error": null,
       "bootstrapped": false,
       "potentially_truncated": false,
-      "last_change_at": "2026-09-28T21:14:54Z",
+      "last_change_at": "2026-09-29T01:01:43Z",
       "change_frequency": 1.0,
       "consecutive_unchanged": 0,
-      "estimated_poll_cost": 23.84,
-      "activity_poll_count": 82,
-      "last_content_hash": "7dab2c5baf1c82f2"
+      "estimated_poll_cost": 23.71,
+      "activity_poll_count": 83,
+      "last_content_hash": "3ac9a8cd700854cc"
     },
     "workday:sony": {
       "last_polled_at": "2026-09-28T21:14:54Z",
@@ -5723,6 +5710,7 @@
     "03f8eaa369666f31",
     "0401ea03461cb22b",
     "040b3850a5972462",
+    "04127f016047ce6f",
     "041f8ec10eecdd45",
     "04353641d5ea2402",
     "0436442fff2233cb",
@@ -6627,6 +6615,7 @@
     "27551a88c26623ff",
     "276578226b0a4097",
     "2782698b14d62b79",
+    "278b84ad652fe3d8",
     "2794ba0129e4c044",
     "279c5785cfc42b93",
     "27a2b0d82f6cca55",
@@ -7115,7 +7104,6 @@
     "3a326f4f5a638063",
     "3a422049caffe3e5",
     "3a455b346d695d8b",
-    "3a477fc7833fe0f3",
     "3a4d08bd26050963",
     "3a51317011c1da73",
     "3a57e6d6e703d175",
@@ -7280,6 +7268,7 @@
     "3fce2cc07d316b0d",
     "3fd03cf79e03510e",
     "3fd88a768ba694d4",
+    "3fda6fcd1b5f33ac",
     "4008fb4dfd24dc1b",
     "40199b2e5784cfa6",
     "401f283f85ee0406",
@@ -7397,6 +7386,7 @@
     "44e39ad49356bee5",
     "44eac85a114adf21",
     "44f53c32cc32765f",
+    "44f5a670e2722717",
     "450a488eec403350",
     "453691092de41ec1",
     "4541d745e251c0ef",
@@ -7748,6 +7738,7 @@
     "52118ed2ceb8f8ee",
     "52190be6e5c06f8a",
     "5225d87e0958d7ce",
+    "522cbed363f2ed35",
     "525243cc7ce93a19",
     "525865c083a0a082",
     "525ef33c63c7d413",
@@ -7929,6 +7920,7 @@
     "59489a9c9b717006",
     "594c455ea1dd535b",
     "5951a4b635c019b0",
+    "595431324dbf1d82",
     "5981545692bae970",
     "598a0d0a3f70ae1e",
     "59969e412f4bee6f",
@@ -8274,6 +8266,7 @@
     "66ac8836c8c60bb8",
     "66b81075777e97bd",
     "66c0c13997465dc6",
+    "66c475f8452989b2",
     "66cab87167a79c6f",
     "66e6f9dbd9c1f185",
     "66f0ff76472076a4",
@@ -8787,6 +8780,7 @@
     "791029900eda2fe1",
     "7913b8c3bb72cb60",
     "794147e91817e037",
+    "794312a782ba239b",
     "7948543231b78b8e",
     "7951cefa790202e0",
     "79564285643e47a4",
@@ -9534,6 +9528,7 @@
     "95c7dc5936020640",
     "95ceaffee5111726",
     "95d4c4bdfe549bf5",
+    "95e2fc905d64c6a3",
     "95e8f09cd3e101a3",
     "95f994c3cf7fed7c",
     "96016fef2af200b2",
@@ -9694,6 +9689,7 @@
     "9c0b1c2ab4b0fb2f",
     "9c2a67b9dc5307d4",
     "9c3f3c3bb3a1279e",
+    "9c47be39d6bd46ed",
     "9c4a4eee8f7bd9c3",
     "9c4eded968884088",
     "9c5764bd06bb0193",
@@ -10380,6 +10376,7 @@
     "b8627352d0d981c0",
     "b86897d624b2c505",
     "b86bbd3ed07e4315",
+    "b86d7bcf42123712",
     "b8725aae4ef792d5",
     "b898d29526b024a9",
     "b8995f8f60c49f09",
@@ -11143,6 +11140,7 @@
     "d6a1edea8b522df5",
     "d6a9ddf2ac75da7a",
     "d6acad1854ea4c81",
+    "d6b46d28530bfad0",
     "d6b6ef2cbc530f06",
     "d6d4cc93e234c626",
     "d6d9450f91d2a68e",
@@ -11612,6 +11610,7 @@
     "e868ced997089f98",
     "e86d359dc84adbc8",
     "e87316ef8ad27f48",
+    "e8912ef2b933d234",
     "e89940b0b5a9da73",
     "e89d04375c59c497",
     "e8a20b46c08450ce",
@@ -11853,6 +11852,7 @@
     "f0f9e1dddf8cb856",
     "f0fbaf4cdc918404",
     "f106938e9228f99d",
+    "f10cad15d520d917",
     "f11ba103a4dc28ac",
     "f12bee1f7a4144aa",
     "f139f9e60552f6f5",
@@ -11942,6 +11942,7 @@
     "f4a688e7411d8023",
     "f4aaf3488592f555",
     "f4bf2049670b148a",
+    "f4cab81bc6dc4caa",
     "f4d1ea91799fdd00",
     "f5051d2c1c3b09b0",
     "f50bc80657fddc55",
@@ -12214,21 +12215,7 @@
     "ffff10677bed8202"
   ],
   "absent_ids": {
-    "04127f016047ce6f": "2026-09-28T21:14:54Z",
-    "278b84ad652fe3d8": "2026-09-28T21:14:54Z",
-    "44f5a670e2722717": "2026-09-28T21:14:54Z",
-    "522cbed363f2ed35": "2026-09-28T21:14:54Z",
-    "595431324dbf1d82": "2026-09-28T21:14:54Z",
-    "66c475f8452989b2": "2026-09-28T21:14:54Z",
-    "794312a782ba239b": "2026-09-28T21:14:54Z",
-    "7d5f006ea3fa1ce6": "2026-09-28T21:14:54Z",
-    "95e2fc905d64c6a3": "2026-09-28T21:14:54Z",
-    "9c47be39d6bd46ed": "2026-09-28T21:14:54Z",
-    "b86d7bcf42123712": "2026-09-28T21:14:54Z",
-    "d6b46d28530bfad0": "2026-09-28T21:14:54Z",
-    "e8912ef2b933d234": "2026-09-28T21:14:54Z",
-    "f10cad15d520d917": "2026-09-28T21:14:54Z",
-    "f4cab81bc6dc4caa": "2026-09-28T21:14:54Z"
+    "3a477fc7833fe0f3": "2026-09-29T01:01:43Z"
   },
   "http_cache": {
     "https://amcor.wd5.myworkdayjobs.com/wday/cxs/amcor/amcor_external_career_site/job/CORP-Evansville-Head-Division-Office-IN/Business-Analytics---Technology-Intern_REQ_95379": {
@@ -12269,7 +12256,7 @@
       "etag": "W/\"job-board:c83a6261f6a0b282093b078727f62e49ed867746b6ba9b5a7178b3dafcb540b7\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/NorthwoodSpace": {
-      "etag": "W/\"job-board:6523643c81ea6ac12d55960bd1c275dadafbda54e2f692ea44240c957329a88d\""
+      "etag": "W/\"job-board:366c4fac17d6fafa5a52821a7ddadcb77dce9bfc5273e2433028f0980ebaf192\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/Serval": {
       "etag": "W/\"job-board:f75800d0d1276bc1366c9054f692cd2ede11290ad57f22b97ade6ac5ab8f0959\""
@@ -12317,7 +12304,7 @@
       "etag": "W/\"job-board:2c7cb9f9100beb399950cc03fc77038ad7df5b2414d50066bf47af3e0a45095e\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/applied": {
-      "etag": "W/\"job-board:53b2b16517182477d1e3eb984095f737ac0e44dc0a578c5a208e99271486fd98\""
+      "etag": "W/\"job-board:f051a6d43595d7baf7ff4c6749e0fb2f044952523b2ea9f395934b7d3e879867\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/architect": {
       "etag": "W/\"job-board:5a0e4d14cbc46cd99f1597a3868d7cdaec850d4b32d4faa8c3607be74978b175\""
@@ -12383,7 +12370,7 @@
       "etag": "W/\"job-board:11aedc468e0de99985ece02cf208272b63589987350329b784a51db7fa17cba5\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/circleback": {
-      "etag": "W/\"job-board:90cf083605d86f751319272f28f34b4be4c71b8212e3fcf6e5d9ced36520a207\""
+      "etag": "W/\"job-board:765bfaa625467d44b49d03bb0a1ec916613b565fabd66e744074269f87a6afc4\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/coder": {
       "etag": "W/\"job-board:c38d9901ea8d383fa0f8cf476a06543b16b8305d8df760a9c341dff0cd0ba0a6\""
@@ -12431,7 +12418,7 @@
       "etag": "W/\"job-board:9a3537a92641e91e205d11efe8960e3ca767c98b159a6088b12c07d5b1b3608f\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/decagon": {
-      "etag": "W/\"job-board:6b86e7246a43b29bcc6a48ad5099b818662b33fea112e74566db58497cec427e\""
+      "etag": "W/\"job-board:33712ed728577283ef021f14a5f3a944af3ee9b7425e260f46143cb734b9b34f\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/dedalus-labs": {
       "etag": "W/\"job-board:d9b6b25f284973eec018e663ef044297d0651e6dc75d289d97c2050b07db5439\""
@@ -12533,7 +12520,7 @@
       "etag": "W/\"job-board:fe3f5872c8b0771ed71e83f6e32a2b4c9a178ebf105ef21f10735e2c0f0c6832\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/hadrian-automation": {
-      "etag": "W/\"job-board:fa6fe1f42e358db7cacda0a2b04554089b7ac21bc246b0e766c48557528b5212\""
+      "etag": "W/\"job-board:a0ec58e8bbdf66c8eebf6acf468006a822123d8a0b9b2f6f4a562901cc9b9ace\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/harvey": {
       "etag": "W/\"job-board:5a7c568c537359be85f119d3ab72b7f21dc559338b6a020cc8196251ac5a14eb\""
@@ -12542,7 +12529,7 @@
       "etag": "W/\"job-board:4ef01170a4d2b46d6cf89d918a3c052af0350753fdd6becf2eebe0fda91cfeae\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/helion": {
-      "etag": "W/\"job-board:173b7d412acd08cc89f30f4ed2ff8a97c8768045728c3d06ab04cbfe42f15e72\""
+      "etag": "W/\"job-board:23a7c870d105236542c1904f98bb69d8dc27ff164b2494232db8472f0fe855e6\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/heliux": {
       "etag": "W/\"job-board:c2d5e50d18cbe5f75ecec2ae57d51ee7a4d9952f9d2a1d873dd0175bcd897247\""
@@ -12596,7 +12583,7 @@
       "etag": "W/\"job-board:05a8d64b77232e71c4ffb2dbfe65f85c14ec2838745d4ea73e7365435de4b469\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/kirin": {
-      "etag": "W/\"job-board:dcfa1e301be6dd8bc9bce1e7b23e419e702f985e280f4ea6393f4827040626b1\""
+      "etag": "W/\"job-board:fb9f4ba7b9978700f08203d8b709e2cde2cba08e662425a9177e0d7a28e530af\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/lambda": {
       "etag": "W/\"job-board:a08c6393cc81977663fb31f9c70e41b2214ad08f7a9dc41d3b0a315b9f365037\""
@@ -12695,7 +12682,7 @@
       "etag": "W/\"job-board:e5e2e9cf5cafcdb46ea35dc6659a62835c4ca626f29dd495ccb85b0436078546\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/openai": {
-      "etag": "W/\"job-board:048b09472f3c903d12d48c1609bf23c900f53f629c226e44b3aef22f35b3ae51\""
+      "etag": "W/\"job-board:042fdba6e4d800b93d421d2861244ff4054e671f1b9017d3ef7236429bc868ef\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/opengov": {
       "etag": "W/\"job-board:4ad77fb9b918b3067e4dae07f4993405619dee38a16b93268273768e5937ca3c\""
@@ -12797,7 +12784,7 @@
       "etag": "W/\"job-board:20e064625cfc01a652aadf5ec0385e8b604bb2c8cca99faee16f570d5f36b3d5\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/ramp": {
-      "etag": "W/\"job-board:6f19fe8b8e6f2e9ac505a1206f79b0fd6a7885900b7fd07923d0b180609a1a96\""
+      "etag": "W/\"job-board:ddbdd5cab9646072563500e09c1e61732dac19ef8efd41393861e65c4b9e4f65\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/rapdev": {
       "etag": "W/\"job-board:11c60cc88ed143313d7a2ca9a8ff58da0a87672401b2ddec18b6f045172fbdd8\""
@@ -12851,7 +12838,7 @@
       "etag": "W/\"job-board:22981fed8fcff395134e3bf491a1c2f8f28c448e406a5f67b2ed6a26bc60cf00\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/saronic": {
-      "etag": "W/\"job-board:bd99c360a60c4fb93b17b6dcf5c6b15e9159777fe1eb062e6b75fa443c4f353c\""
+      "etag": "W/\"job-board:f4fd7b1f669f430a20e87faf27af4e5fcdb256dd6286134a9d5d74c9b3991b4a\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/semgrep": {
       "etag": "W/\"job-board:bab576b0128421939128dff7fcfa4e7513cd861e4f44a508f528d6f8612ee367\""
@@ -12866,7 +12853,7 @@
       "etag": "W/\"job-board:2210a3890d79167208d84667a604f0962d84f425704187c445926b34e4835648\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/skydio": {
-      "etag": "W/\"job-board:ddab855b2f24ffa86c54ab0d8e1b0a7d55664f14baf37dd1a526532b02604b74\""
+      "etag": "W/\"job-board:02bbe1fea97ce44e6594efd7088ad77807a3da48cddc7675b6251857a08d9f2c\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/snowflake": {
       "etag": "W/\"job-board:931fb749c8048ec1883cb0e149b887e1c25ef2f5982f5652bef3ed0afc147ade\""
@@ -12902,7 +12889,7 @@
       "etag": "W/\"job-board:24d1aed492f7a5aee705392300674a681e923b8b0b46f35cd09c6412680fac8b\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/telus-digital": {
-      "etag": "W/\"job-board:3ee550dc51e768a4b25f9795bfcb1de0a6ef573a07a6c0f1f29a3309d269e3b6\""
+      "etag": "W/\"job-board:7e841fa63ea55c636e7ec51395b5c55bbb364f93fd75f917898942dd5036770a\""
     },
     "https://api.ashbyhq.com/posting-api/job-board/temporal": {
       "etag": "W/\"job-board:ad073108d3e2dbb9915af0ecc63553073f9f3fed6547926620b7115bac438ead\""
@@ -13217,13 +13204,13 @@
       "etag": "W/\"74ce7-DxnpaeFGhOEJ8Vym+Qs+fWFJeac\""
     },
     "https://api.lever.co/v0/postings/kitware/7b6ff8f9-34c6-4338-845d-4e1bbc142906": {
-      "etag": "W/\"2f9f-oeVoE5ILJiS/ftz+1lNt7MPa0NM\""
+      "etag": "W/\"2fb1-pp4920kCuLsM9X8tquRJZ8OnCTA\""
     },
     "https://api.lever.co/v0/postings/kitware/e76197d1-4dc3-4f7c-a30a-597713283bb3": {
       "etag": "W/\"34d2-XmUFRXUKfj9398w4FTcPWIOnpm8\""
     },
     "https://api.lever.co/v0/postings/kitware/ff25a349-a362-45d2-b1e4-2487c1df4f75": {
-      "etag": "W/\"3853-0y8X2fm6nONfAC3TZmHcUPTVnck\""
+      "etag": "W/\"383d-H0529Gf+NO6aBnfASy8fjkoYg7E\""
     },
     "https://api.lever.co/v0/postings/lever": {
       "etag": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
@@ -13616,7 +13603,7 @@
       "etag": "W/\"2a62-Ke4U7Hv2InYkRjZBOcDG1m5ypX8\""
     },
     "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings/744000144370279": {
-      "etag": "W/\"1df1-JVAfmG5XpM24Bvz2ufOEy3NfUQU\""
+      "etag": "W/\"1dd8-9HVHgg7seWrNyc1PzE6NRlJ/16A\""
     },
     "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings/744000144612115": {
       "etag": "W/\"21fb-F5Q5GRle16p2kwA4W3SFJ9UchWA\""
@@ -13880,7 +13867,7 @@
       "etag": "W/\"2c02-n/4nfUnuI8ZaCKyj9htEcU7f/zU\""
     },
     "https://api.smartrecruiters.com/v1/companies/LLNL/postings/3743990013795232": {
-      "etag": "W/\"2ebe-TZcPVKk/glHJRCWkkPvO1lhX7bc\""
+      "etag": "W/\"2ea5-wxngj2oqTMktRIPliYJwdG0EyZw\""
     },
     "https://api.smartrecruiters.com/v1/companies/LLNL/postings/3743990014730886": {
       "etag": "W/\"2ee1-ZB7S6jFok9ATXyDjiOuXgMhe1vQ\""
@@ -13892,7 +13879,7 @@
       "etag": "W/\"3137-pJtMl/cyhjqSnnTZptL4XvwhVfc\""
     },
     "https://api.smartrecruiters.com/v1/companies/LLNL/postings/3743990014731696": {
-      "etag": "W/\"30a4-Q+0Ay9klFcX9Gndz8sFrUwPGtUk\""
+      "etag": "W/\"308b-Yji3+hSgAghucEfoQytISJNf/Tw\""
     },
     "https://api.smartrecruiters.com/v1/companies/LLNL/postings/3743990014981596": {
       "etag": "W/\"313f-jWj04NG9PzOHDx60TkMlizLEsjM\""
@@ -14324,7 +14311,7 @@
       "etag": "W/\"18fa533f560f6decb1d47190a772b1a3\""
     },
     "https://boards-api.greenhouse.io/v1/boards/airbnb/jobs": {
-      "etag": "W/\"9633573daf2f722ca92d09e47eea24f9\""
+      "etag": "W/\"20111498d09a9375f87774c2d041737d\""
     },
     "https://boards-api.greenhouse.io/v1/boards/airtable/jobs": {
       "etag": "W/\"5064ca00751a763e1a5254a24829fd25\""
@@ -14378,7 +14365,7 @@
       "etag": "W/\"c6436b13c08a1e3e82bb0c3c8f8e78a1\""
     },
     "https://boards-api.greenhouse.io/v1/boards/andurilindustries/jobs": {
-      "etag": "W/\"b7bf654c3190cf1cded7637b02c2b70e\""
+      "etag": "W/\"de31236c850781dbfe597824d84eb8e3\""
     },
     "https://boards-api.greenhouse.io/v1/boards/andurilindustries/jobs/5148079007": {
       "etag": "W/\"34fbb29da33f41eabb2a1e02ce0c9a91\""
@@ -14435,7 +14422,7 @@
       "etag": "W/\"e07c5d256a04884540b91ef15a0048fe\""
     },
     "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs": {
-      "etag": "W/\"0cf30137614ac4cb2b7577744c94ef61\""
+      "etag": "W/\"e607d2c469ca2b35f4f5f5a5f05f94ef\""
     },
     "https://boards-api.greenhouse.io/v1/boards/antora/jobs": {
       "etag": "W/\"ab460ab074deca61bbeb996df9a6c383\""
@@ -14480,7 +14467,7 @@
       "etag": "W/\"b3814385f0445f6fec4d49768b157c08\""
     },
     "https://boards-api.greenhouse.io/v1/boards/archer56/jobs": {
-      "etag": "W/\"48feb519d0d2e878e68197d34ca3cc79\""
+      "etag": "W/\"22447915895c78b3df09e7378f85f2ff\""
     },
     "https://boards-api.greenhouse.io/v1/boards/argmax/jobs/4067268009": {
       "etag": "W/\"d63a8d6d1290368ba3f7c9918d4c01be\""
@@ -14792,7 +14779,7 @@
       "etag": "W/\"2ca2e0007333acd7a8029fa6ad3cf8ae\""
     },
     "https://boards-api.greenhouse.io/v1/boards/clarityinnovates/jobs/5155449007": {
-      "etag": "W/\"3a895e38846245fb6a9c52e30bd18733\""
+      "etag": "W/\"2c04639c1ee421199b750e5d1508660f\""
     },
     "https://boards-api.greenhouse.io/v1/boards/clevelandguardiansbops/jobs/8827470002": {
       "etag": "W/\"c6e942c44a816be5f290ec5948949256\""
@@ -14939,7 +14926,7 @@
       "etag": "W/\"3db702b5dc54ad3de6fc0885a49841a5\""
     },
     "https://boards-api.greenhouse.io/v1/boards/databricks/jobs": {
-      "etag": "W/\"604b3c08134a4085b2ff0fe38af203d8\""
+      "etag": "W/\"909330d53ca5b1b34ddc79cd476d6260\""
     },
     "https://boards-api.greenhouse.io/v1/boards/databricks/jobs/7586263002": {
       "etag": "W/\"890e62d930a5f66cd6532ad42cb625f2\""
@@ -15009,6 +14996,12 @@
     },
     "https://boards-api.greenhouse.io/v1/boards/doordashusa/jobs/8176863": {
       "etag": "W/\"f2083a6792751c590034677d0defe9dc\""
+    },
+    "https://boards-api.greenhouse.io/v1/boards/doordashusa/jobs/8204111": {
+      "etag": "W/\"5d115bfed6eff4a0d320372a1b03e047\""
+    },
+    "https://boards-api.greenhouse.io/v1/boards/doordashusa/jobs/8233953": {
+      "etag": "W/\"0fa121ce3bc34c640459266c8817ceb5\""
     },
     "https://boards-api.greenhouse.io/v1/boards/dropbox/jobs": {
       "etag": "W/\"04796fce47417cd014cb6d796ee06941\""
@@ -15613,6 +15606,9 @@
     "https://boards-api.greenhouse.io/v1/boards/formlabs/jobs/8199269": {
       "etag": "W/\"dc29a75e1188c1ba0b37d265cabadcac\""
     },
+    "https://boards-api.greenhouse.io/v1/boards/formlabs/jobs/8234008": {
+      "etag": "W/\"aad6c8cfa00336d55785cbff5ac3e62a\""
+    },
     "https://boards-api.greenhouse.io/v1/boards/freeformfuturecorp/jobs/7872198003": {
       "etag": "W/\"3fbeb2cca52f8d2a60020f89d19ae203\""
     },
@@ -16087,6 +16083,18 @@
     "https://boards-api.greenhouse.io/v1/boards/machindustries/jobs/4413291009": {
       "etag": "W/\"6b3ffc7b9bc733807c74105923ece03d\""
     },
+    "https://boards-api.greenhouse.io/v1/boards/machindustries/jobs/4420611009": {
+      "etag": "W/\"7c416a88d2166d4300fe42866f06b0db\""
+    },
+    "https://boards-api.greenhouse.io/v1/boards/machindustries/jobs/4420623009": {
+      "etag": "W/\"3a4128883b4fbcb85e0c99906b8c516c\""
+    },
+    "https://boards-api.greenhouse.io/v1/boards/machindustries/jobs/4420626009": {
+      "etag": "W/\"89e857a19c9756f6e43111c2569bbbc4\""
+    },
+    "https://boards-api.greenhouse.io/v1/boards/machindustries/jobs/4420631009": {
+      "etag": "W/\"3795b294e3c8436417649a2d73403209\""
+    },
     "https://boards-api.greenhouse.io/v1/boards/mangroup/jobs": {
       "etag": "W/\"2c7cb1511828364529463a9dea709eb9\""
     },
@@ -16355,7 +16363,7 @@
       "etag": "W/\"b849b9f23043eb0ebd738b75192fcc6a\""
     },
     "https://boards-api.greenhouse.io/v1/boards/point72/jobs": {
-      "etag": "W/\"f28271611329844aa74906c4d155ffcb\""
+      "etag": "W/\"fb60cae70d82072fc03bcc0982bb5663\""
     },
     "https://boards-api.greenhouse.io/v1/boards/point72/jobs/7297642002": {
       "etag": "W/\"675a66be389dedc6cb188447c6b16c07\""
@@ -16421,13 +16429,13 @@
       "etag": "W/\"f245d750ea2abc6ff3a8f4e57687e235\""
     },
     "https://boards-api.greenhouse.io/v1/boards/relativity/jobs": {
-      "etag": "W/\"dab01d9a664888dc1a7eda3106497ff5\""
+      "etag": "W/\"14d57f3def7fa3e16c978a0a8fa2d4d8\""
     },
     "https://boards-api.greenhouse.io/v1/boards/relaypro/jobs/8176774": {
       "etag": "W/\"34d1af5580c46374f8efc79bc8323e7c\""
     },
     "https://boards-api.greenhouse.io/v1/boards/relaypro/jobs/8180836": {
-      "etag": "W/\"50f51cc3eaa75bbc18a0df0aa9fc4431\""
+      "etag": "W/\"ef23041c36937e117ad33b07fb4c53a3\""
     },
     "https://boards-api.greenhouse.io/v1/boards/rfsmart/jobs/5407206008": {
       "etag": "W/\"521d582673d96acdcf875a3e1dcf64de\""
@@ -16520,7 +16528,7 @@
       "etag": "W/\"1f9a8a6459df73325220a22b5c66350b\""
     },
     "https://boards-api.greenhouse.io/v1/boards/roblox/jobs/8143981": {
-      "etag": "W/\"d3c60334c5a71da71a582c1500ec60e9\""
+      "etag": "W/\"6223dae3ee40c3bb20c288418125d1b5\""
     },
     "https://boards-api.greenhouse.io/v1/boards/roblox/jobs/8143984": {
       "etag": "W/\"ab60ed499d31d39371796f1d6b2e87c7\""
@@ -16775,7 +16783,7 @@
       "etag": "W/\"c6bc661db5842542e7f997df5f3d50da\""
     },
     "https://boards-api.greenhouse.io/v1/boards/samsara/jobs/8082091": {
-      "etag": "W/\"17cfc3475d0cd2bb745febe9e65bedfe\""
+      "etag": "W/\"ee273f0a529ef98479064b3ba2832230\""
     },
     "https://boards-api.greenhouse.io/v1/boards/samsara/jobs/8094371": {
       "etag": "W/\"0d2c971ec91d7be8e5f5fb8185cbb333\""
@@ -16994,7 +17002,7 @@
       "etag": "W/\"ae9f919ac8a7fca1125fa8b7b9dc67f1\""
     },
     "https://boards-api.greenhouse.io/v1/boards/spacex/jobs": {
-      "etag": "W/\"d859bb8ce23279dab64d84023e5fb343\""
+      "etag": "W/\"6ff125fd9a8d83dac2a566c2ed328d18\""
     },
     "https://boards-api.greenhouse.io/v1/boards/spacex/jobs/8483305002": {
       "etag": "W/\"33e66efa76a5e2485c437354acfd93bd\""
@@ -17168,7 +17176,7 @@
       "etag": "W/\"7dd42b36d8fbfbc2658c29e4803c365b\""
     },
     "https://boards-api.greenhouse.io/v1/boards/stripe/jobs": {
-      "etag": "W/\"9853df523c7bebf95d154b088a0601c6\""
+      "etag": "W/\"d92c70e05a06afc792595427da355c7a\""
     },
     "https://boards-api.greenhouse.io/v1/boards/stripe/jobs/7737124": {
       "etag": "W/\"379d71f5220274b23293c84726d35b04\""
@@ -18656,6 +18664,14 @@
       "last_success_at": "2026-09-26T16:38:01Z",
       "failures": 0,
       "next_attempt_at": "2026-09-29T16:38:01Z"
+    },
+    "04127f016047ce6f": {
+      "source_key": "912605b95fad3e8651f87892383431affd5b8516a26c2d01dc68b19a23d701a0",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-29T01:01:43Z",
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "041f8ec10eecdd45": {
       "source_key": "323912842090ce3cc7ce808bd33fdfea244470796635261edc6fc0c7f95a2b68",
@@ -22608,10 +22624,11 @@
     "1440b8d1e2090848": {
       "source_key": "e4e99d5d07ddc4f2e2ce55e133d4225ed5201c394476604d04890432440ccc6e",
       "version": 5,
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "last_success_at": "2026-09-25T23:35:46Z",
-      "next_attempt_at": "2026-09-28T23:35:46Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "1448b3529b1feed9": {
       "source_key": "7bedc4a2aada4d09308ef9190532ac2e0bb1d922c2a57a31626562a3c705adc4",
@@ -23159,11 +23176,12 @@
     "16d3456d231bb79d": {
       "source_key": "5d72986a4256ac2d003679780b371649bef10c8afaa09f3a90876582d4301d2a",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
-      "status": "available",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "failed",
       "last_success_at": "2026-09-22T19:54:11Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "failures": 1,
+      "next_attempt_at": "2026-09-29T03:01:43Z",
+      "error": "no_unique_matching_jobposting"
     },
     "16ec3119e5eb0071": {
       "source_key": "4c835858a539d820522a7e0c3f3a81b1f4ab1d4f0ce40d83058bef09f4a4395d",
@@ -23550,11 +23568,11 @@
     "1883426969884b58": {
       "source_key": "f5958e1b7d45afdb113a6bd53f42644a273d4376489f358f00d1bec6dbfb45f3",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "188d409b70c7fc96": {
       "source_key": "5d0a984e6b56142bdfc17a18ba229e723072b13b6747cfb71cd9bab9861321f3",
@@ -25497,11 +25515,12 @@
     "2153abb8a36e9515": {
       "source_key": "70d9e0945cc8954cb117502b4201a5671c2217dc9fa0fa575459bd140f54738b",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
-      "status": "available",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "failed",
       "last_success_at": "2026-09-22T19:54:11Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "failures": 1,
+      "next_attempt_at": "2026-09-29T03:01:43Z",
+      "error": "no_unique_matching_jobposting"
     },
     "21753cc59642e80d": {
       "source_key": "6fce9aa8f18e295b250808fcbf920f7e26e32dfda73519004c4762b7f5e2aaf9",
@@ -26865,6 +26884,15 @@
       "failures": 0,
       "next_attempt_at": "2026-09-26T06:29:02Z"
     },
+    "278b84ad652fe3d8": {
+      "source_key": "ca49f6f7d2502e789afcf37f050dd10245d6ad2fe552589dfa055fba5b584d31",
+      "version": 5,
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "available",
+      "last_success_at": "2026-09-29T01:01:43Z",
+      "failures": 0,
+      "next_attempt_at": "2026-10-02T01:01:43Z"
+    },
     "2794ba0129e4c044": {
       "source_key": "e76776506739cd15373814601c5608b303cac7f1b7d79ac80490fbfad2fe3686",
       "version": 5,
@@ -27068,11 +27096,11 @@
     "2856c8fbf55c8dc8": {
       "source_key": "5145e45aaeaa8b4edc3cad30ff4c8149c25a3b58e01bf019c797759e8ae105f9",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "285730e0378a4952": {
       "source_key": "ff128957ff3951f48a9f1c596d623fc324112fe47f099cab571aa65cdd3fc165",
@@ -31294,15 +31322,6 @@
       "failures": 0,
       "next_attempt_at": "2026-09-26T12:00:36Z"
     },
-    "3a477fc7833fe0f3": {
-      "source_key": "5cf1781d9c67574518db7168de237972e33768f04abb11a465ff093fabbf6489",
-      "version": 5,
-      "status": "failed",
-      "last_attempt_at": "2026-09-28T21:14:54Z",
-      "error": "no_unique_matching_jobposting",
-      "failures": 1,
-      "next_attempt_at": "2026-09-28T23:14:54Z"
-    },
     "3a4d08bd26050963": {
       "source_key": "8a26116a8c82e71bbf7ca73ba6b773959233116a62e0818f03b25243eef805dc",
       "version": 5,
@@ -32202,10 +32221,11 @@
     "3d9d716eb61fd67a": {
       "source_key": "029b029ad999ed89647ed1388f23e44ba6996bfd6c88cef2202c641196817925",
       "version": 5,
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "last_success_at": "2026-09-25T23:35:46Z",
-      "next_attempt_at": "2026-09-28T23:35:46Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "3dae693abfa06b6c": {
       "source_key": "0fc583a22abed19c4c565998330219cd8fe5bfa6a44baa1139ac602f8db9f9cd",
@@ -32789,6 +32809,15 @@
       "last_success_at": "2026-09-28T15:08:50Z",
       "failures": 0,
       "next_attempt_at": "2026-10-01T15:08:50Z"
+    },
+    "3fda6fcd1b5f33ac": {
+      "source_key": "19e5fa1273fb2eeaff7af279e2e9b6b5dfe10918454ce9b114ff66cf6519a74a",
+      "version": 5,
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "available",
+      "last_success_at": "2026-09-29T01:01:43Z",
+      "failures": 0,
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4008fb4dfd24dc1b": {
       "source_key": "097efbd3f3c174b276a94ad765531d66b0c5e56a05ba071c76e4a5ddda1860c6",
@@ -33848,6 +33877,14 @@
       "last_success_at": "2026-09-26T07:32:41Z",
       "failures": 0,
       "next_attempt_at": "2026-09-29T07:32:41Z"
+    },
+    "44f5a670e2722717": {
+      "source_key": "07e19be843bc477408fbdf0fa95bad74b3c3bc0cb28f9bb85b2e8aaf363401c5",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-29T01:01:43Z",
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "450a488eec403350": {
       "source_key": "d5b7f04e4a39a14388ecb569c5f1b760d6b13aa0073439ff0a464b3cdf9ee3d0",
@@ -34933,11 +34970,11 @@
     "49bb23e6a2ca9c8c": {
       "source_key": "25db474a874707784c6e951104ddda08cb9fdd56cca6a6b04c06f8c0c642f7d4",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "49c7b95925efdefe": {
       "source_key": "162f3f6157db738150dab4d97ba42676b9ffef37fd101349ef7b195917f7f02a",
@@ -34978,11 +35015,11 @@
     "49e228b1aafcd644": {
       "source_key": "b5bc564b787f58b4ecc54a76038fc7b9bb8a30b3ce55cffc6b39e24f9c625941",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "49e8371e4215edae": {
       "source_key": "e61eb3646cdcf1f434ad684389148c8aa3fd2db717e618cbb8c8da2321ad0707",
@@ -35014,20 +35051,20 @@
     "49ebdd9b1a32f8c9": {
       "source_key": "424f289d5e23e4f3df5a72fdab78dce3e229f0db7aa17e2c124fabbea7eb46d0",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "49fafde21e34ec30": {
       "source_key": "c0fb068ce81748da8bdf484b2d53cac4cde7ef61705b9a571e22522b63c65ea2",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "49fd4e3286178bc8": {
       "source_key": "f6383dc336ba5c942657470bf8572c8ddb08d72c6ec838907c7376294ea523e7",
@@ -35104,11 +35141,11 @@
     "4a62de7cce094910": {
       "source_key": "af63d0c2d6ba2637707666ebed20d505ae6662d3b7b0071f80c967cea9c48903",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4a675f79982b6db7": {
       "source_key": "dc1d1d8fc76ac3a6dd1ba35b14ea056c2ba146a81234ec27c58e90b4d6b1675e",
@@ -35194,29 +35231,29 @@
     "4abcc00228485593": {
       "source_key": "ba1a548e8cf833b729b310f68324fab317e33e059406166a38712af8774dc1eb",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4abcce0afcd95791": {
       "source_key": "66b771068a12d7e913e728feedb1785b74be5a8ab90bdd51c0008e3f4ea8f62e",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4ac740f9082159d1": {
       "source_key": "fafea88d83be02150ebb44d0db82a716303820dc989ba905e061ede4280ef5fa",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4acc055308068e7b": {
       "source_key": "a1b2343d6f6fe550aaf7ee79d8f1c0ea1da930d5f9b2a8e1b8c3fbfdde3f52e2",
@@ -35239,11 +35276,11 @@
     "4ae46e10c58f1bd7": {
       "source_key": "b46706c168e5f17b85d6c5b9607e71602f6e8b492e0620cab16f242b9e88edb3",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4aeae88ad91f6d79": {
       "source_key": "3825d7e8d082fa229f73f2af4b101f4a9bc196820da3888af794e515e4a194d5",
@@ -35257,11 +35294,11 @@
     "4aedab217b066435": {
       "source_key": "7f808840b6e012601f329b9de6528773216cd430440f7e267743fe1243b00841",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "failed",
       "last_success_at": "2026-09-08T16:58:54.651032Z",
-      "failures": 2,
-      "next_attempt_at": "2026-09-22T20:40:23Z",
+      "failures": 3,
+      "next_attempt_at": "2026-09-29T09:01:43Z",
       "error": "no_unique_matching_jobposting"
     },
     "4af61092a1d33634": {
@@ -35276,11 +35313,11 @@
     "4afb7721ec331156": {
       "source_key": "63a370b73c11f4fb3e0983fd8dfc48686a89978382d4ec84320f6572afd6d8d0",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "failed",
       "last_success_at": "2026-09-08T16:58:54.651032Z",
-      "failures": 2,
-      "next_attempt_at": "2026-09-22T20:40:23Z",
+      "failures": 3,
+      "next_attempt_at": "2026-09-29T09:01:43Z",
       "error": "no_unique_matching_jobposting"
     },
     "4afdb1fd590919d1": {
@@ -35295,11 +35332,11 @@
     "4b0bd271296fe1c6": {
       "source_key": "634e59be51e31d20b760b579f86b8c4e7762b1b15cc538c18f688868dee2fe30",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4b0c64a4deb43e48": {
       "source_key": "6174e9ba216cbd6334afd7893d57030b49374bcab5e7cc22ecf10ae1656d4736",
@@ -35331,11 +35368,11 @@
     "4b4aaf78670c5edf": {
       "source_key": "cd27dc1b051a2e586b18e11386451f52cefb109b8f6b83bc6f89691bc35b6d21",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4b5270a0663e4718": {
       "source_key": "d33faf639af1970af4571618b77cb4c1cb386858cf888be2b21f98f70ac10eba",
@@ -35448,11 +35485,11 @@
     "4bed29b409517763": {
       "source_key": "cd04e440ffd6c095e086145f83194c7f53ad6de97a78c1f1541d306c21a07328",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4c097cceee496974": {
       "source_key": "fcc57bdfaaf2c1c3f702e62fcca0323f4cfa646ec81987b6920ea35266c88804",
@@ -35475,11 +35512,11 @@
     "4c2150b24b91adce": {
       "source_key": "de85a6941d6a3d400f69a2d4b69657b43877d3b4c96e47a22dbee066cfd7f362",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4c22903a87a78dcd": {
       "source_key": "879626aed6fb425cefd3ebbe37815beb183d271ffab7ecfc7fdcab0591efb626",
@@ -35565,20 +35602,20 @@
     "4c7d5e88e7239a5b": {
       "source_key": "21c9c9b3467fcba383efc453cadb1cfa7b1158a4b1e69b105837a4fe8e72e4f2",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4c81692cb6685eec": {
       "source_key": "7b5587f0339348e91fe7a1857bfc9367707d338587079d936f4fafc7c98ba8e5",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4c87d71b8acd1a46": {
       "source_key": "d7360cb72e9788bdc5b47048c44b3e1009f178f11f12a10bee08004e77c4537a",
@@ -35592,20 +35629,20 @@
     "4c892aa613aebb40": {
       "source_key": "f427ef0db6f6071afb9cd7e00d855619c790a24a3958e3b4de9cf40a83eb4708",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4c9bfbd2cc17a3b4": {
       "source_key": "1e3743d38a6cb41a16a12ae499ee0c42130f8ba341e1a15a23de8f652f87b9c5",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4c9daf794efc4be4": {
       "source_key": "7eac6b56afe214c05a0f7da309d812f023e0149ab410da5bf138776144ac2966",
@@ -35619,11 +35656,11 @@
     "4ca6d68d0b000eb0": {
       "source_key": "3ff0483548dd577003e66227cb4470d539cc574d65cbdf6d1b36e146889bb473",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4cabe065ccc5491d": {
       "source_key": "d52fe262a0174a244bcf3706f342834a93bec51cc264e26761b64174a8270dde",
@@ -35637,11 +35674,11 @@
     "4cb80dbb6f4c38bd": {
       "source_key": "5938d27eabfe7c5010b247bd1af89be2f620412057db12e677d851fff9928bdc",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4cbbdf4382ffffbe": {
       "source_key": "187fd90b5bf8d1a0ccb45d50c5cbec5359705a93e0e5b6c39514c5d182281dfe",
@@ -35683,11 +35720,11 @@
     "4cdd59aa6be68bb0": {
       "source_key": "21cef51b150948e0ae211af96b87df10d75fd4dc4a39a1a69c7752bffc6d2410",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4ce0340f603cef25": {
       "source_key": "411722ad09362c6db1751e867f3fe607d971615067a6976294db0f6732d78275",
@@ -35710,11 +35747,11 @@
     "4ce3e588f5d4e2d1": {
       "source_key": "50789e6a4bfd8fdf17737f37c9e7a6640893fd41d3743dcc791df0f24bb80c97",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4cf85556b6dfb11e": {
       "source_key": "44cbe3ba626198d87a4b5f293d17bf0128398d9a169a68c791a58875637706f6",
@@ -35728,11 +35765,11 @@
     "4cf932db6c8f8521": {
       "source_key": "495ba0c60f19a7f0063a2458da866f303884ded91510925f9aaed672ff39b2ae",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4cfc4b74a768f3d6": {
       "source_key": "b2033e67c4eb4ad1079d8ae9d7c13d97380c5d0b863a76c6f7c1a9fdf567680f",
@@ -35764,11 +35801,11 @@
     "4d1e6a25dace4190": {
       "source_key": "3712a648c6af9911de1c93233f678ea77da5f7cba7519be102fdd1c7ca0aa894",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4d2d0a3f6e9fa642": {
       "source_key": "4d725c0a6a048d62424117da7f893c4ad35826ee684782ad886f6a20816ba151",
@@ -35818,38 +35855,38 @@
     "4d4666a45637f3af": {
       "source_key": "9617545311ddf6e47a0fd5c66b084f275b23ff8ac129319b57175ef324569a7d",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4d4d1f8d746e06da": {
       "source_key": "f1ad50c7f76f6a2f43f4eac31a019bf9b6742c8e77c5a05168904704040dc7c2",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4d53d29a6a44c7a2": {
       "source_key": "a481ad6be2fde88ae0d0bbbcb24b61467fe8f42b888fe261a788da5fee9f4baf",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4d55ee1acb2281a2": {
       "source_key": "e200ba04a2ace4668127a514dd60b9e60ecce98771439e1db8a52bde5d70fcdd",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4d57970a140c6995": {
       "source_key": "a75c0dad29321fdd7d7c6896376e4491102446bc532e43baa6366726fd575f5e",
@@ -35863,11 +35900,11 @@
     "4d59926a37407a4a": {
       "source_key": "7a69a93c1d2720a79d9551ca7f1f8f037cc7c3623a286538661da0d174a021a3",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4d68af0f88a2ef91": {
       "source_key": "cf812ab1cd639fe9c68f5379061d4292432e06b1179a29450ea4ecdc78333d13",
@@ -35890,20 +35927,20 @@
     "4d71a937222ab7dc": {
       "source_key": "3a860aa4e2765019eb6701ac251ac1f04b13831c9701226cf54d5abdea7b8aa2",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4d7edd83dc5cad20": {
       "source_key": "0ad7b88e798106b8a8850aeb5b7e2e11a02dfb55acfba3b8031c025b2454917f",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4d906dd9c564d21a": {
       "source_key": "0999d82519bea3612ed0bc805826e8245e69d88a06f62a9789f77139ce6fcf76",
@@ -35935,20 +35972,20 @@
     "4db3d557515ed348": {
       "source_key": "cf3d39924d108205b1ab22cb196470df81606a4955d3523ee4053e636268160e",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4dc095d24a418e7a": {
       "source_key": "329b0589193ea22d0abcac02a9bd54360fc76cfaf59b5a72dc61eefb52573f23",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4dc321bf43457475": {
       "source_key": "0db07ec13c3816452b148e6d4f5ee048184a7be40f4fbd8ecace1255e96ad0ce",
@@ -36017,11 +36054,11 @@
     "4e2d1105af15d1db": {
       "source_key": "9080b834c4b602d521a866f67369bb35c8608f2f920123398541c5f59e068418",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4e37241d7328fdf9": {
       "source_key": "7485f622a06603cf5467f4d9295fd7da6218b620d6e24d332afcd1041a086ccf",
@@ -36090,11 +36127,11 @@
     "4e5b26ec5785b61d": {
       "source_key": "b4da3f9fe36d7d0123d5b9081375c309a89b82bb05b41b3e622a50284a7348fc",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4e77e7bb40cd7083": {
       "source_key": "a8870b9b4e210a3f5d5bf01e04f497234f058405cf471d3fa1286f12b9b4f1ed",
@@ -36109,11 +36146,11 @@
     "4e7a9c7c5d797304": {
       "source_key": "5d5b931e1ef3818b84a5c2c46b682d7a4b9ecc5485859f351c03fc006272f3b4",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4e7d6bc1b5be993c": {
       "source_key": "0cf47b23b18d223a226650c2e19d4bc765bbf5b0902162b6d846d3d8d0f012cd",
@@ -36145,20 +36182,20 @@
     "4e945fbc9bdfe57f": {
       "source_key": "8ec13e14f20088b0b2a9358475bd411c9acf2969d9a647503ae3adce5ca9e974",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4e9a20fe6a594f18": {
       "source_key": "89f877a697218ce17106cf1a56a166b88d2b4068fcbbd24cc83921d956dc07dc",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4e9ba5ecc8eb9035": {
       "source_key": "44aa89fde7e1abf48187e33096bda4af6d90a05ec6048f110895ef97557685f2",
@@ -36199,11 +36236,11 @@
     "4ec5d5564e0058fc": {
       "source_key": "340c63e9bfa3d466e141319cfa3c37640f73d189b4d72cd03ad1d6e5169335be",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4edf9bfa25e66811": {
       "source_key": "6c3c98b6e3e19f394639fadcac657b8fdf67e9b88f14d9f3664ea3c37e4d75ff",
@@ -36226,11 +36263,11 @@
     "4ef3e710aff7de7d": {
       "source_key": "3e752f9ea35f2163200de13f8274a40df4ffa25f1dd9e26f95ae634468fb36d0",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4eff45a518cca099": {
       "source_key": "d490f43bdd7c9c5e5dcd41b1a7b5e396e6a47b652968cb730a28f52fd328d673",
@@ -36253,11 +36290,11 @@
     "4f2ad797e8e12aba": {
       "source_key": "276a96cdc7489a4222be1d5ec2a37e12dff125569420a4a57391ccf1324e6f28",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4f30f1e09de49d7b": {
       "source_key": "1b7cccba91431434430389b6d146b1ce92e4ea9507938a6ff220145d3d481bf5",
@@ -36325,11 +36362,11 @@
     "4f91a43f86f88ba2": {
       "source_key": "29b40e087aa9c8a3581ca4f35d28da079a60f3260a2d41014727f9020f87eadf",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "failed",
       "last_success_at": "2026-09-08T16:58:54.651032Z",
-      "failures": 2,
-      "next_attempt_at": "2026-09-22T20:40:23Z",
+      "failures": 3,
+      "next_attempt_at": "2026-09-29T09:01:43Z",
       "error": "no_unique_matching_jobposting"
     },
     "4f95c43b6ad5019b": {
@@ -36353,11 +36390,11 @@
     "4fa26fa7727a3319": {
       "source_key": "7573f71b0fe713222c5a54e03453613f6e667de2f8d5c077d914da2fe785c7b4",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4fb0b7461d5c4c14": {
       "source_key": "39071959f72a6bac9f08aa90728e75b4e5f5577f34493ac8f62341c3a4ee05c0",
@@ -36380,11 +36417,11 @@
     "4fc3762b8c967d3b": {
       "source_key": "556a1b3b69ea10853848ead233cc92a542813ad17c5c2a558d6300b062e41de2",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "4fcc37eac425285a": {
       "source_key": "8f7e0e31b31d63577d6db9a90490137316ac0a7f2659cd1dc394541496959357",
@@ -36434,11 +36471,11 @@
     "500cf45211f6df09": {
       "source_key": "09c180e93a80cdcfd8de089b084e96eabf4c34c23ff656c14fdd98191aea5a2a",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "500d9dd15908cf89": {
       "source_key": "98bc33dbfe086bba2f007cb666572c11634550ee219df87aaebafae163f1830a",
@@ -36470,11 +36507,11 @@
     "5028c112b817d71f": {
       "source_key": "a82675c7eb75af673234c3ac8d420a8404eb6c94f7c91f2eed6531995584b345",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "failed",
       "last_success_at": "2026-09-08T16:58:54.651032Z",
-      "failures": 2,
-      "next_attempt_at": "2026-09-22T20:40:23Z",
+      "failures": 3,
+      "next_attempt_at": "2026-09-29T09:01:43Z",
       "error": "no_unique_matching_jobposting"
     },
     "5032ad02a73b90fe": {
@@ -36534,20 +36571,20 @@
     "505168a368b15ba1": {
       "source_key": "e2319adcc7e2b1b8715626426c11a5fa2f5d41af6f71fc4dc7de74e258a58dbf",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "5055268fa82226c9": {
       "source_key": "80b6ec39f4b82c96c0de556514d92ff2c64f8aae92ec7d5a60432943b7a7c3a4",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "505b15cf99438ae0": {
       "source_key": "6d15ce916ab033c1ec323cc63d6c200ab53ffb7d106157ee40dd211e223bf1a9",
@@ -36561,11 +36598,11 @@
     "506ea3df0bd5b136": {
       "source_key": "c84c2422940b3e33f74adbce8781ca14b0c54d3ccb31fbe0d5fb702e76def579",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "5070656d19f2b52a": {
       "source_key": "4d1a5e3317786ea7a73574f81de00ecb8d9fe9fbbf9c8d1f7982ce01befb577f",
@@ -36588,11 +36625,11 @@
     "507dd0b7e17488ba": {
       "source_key": "99c23f4540a835f6d0260c7c60d50123df7df04b0421de9ca8c3728e67e866fc",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "5085d3b0f644ca29": {
       "source_key": "e5d90fb7cbd16cf254e83bfa8dcd7a3bfdb95ece1d57847e8e4d74e4f0d8130b",
@@ -36606,11 +36643,11 @@
     "50861a7d2040e37e": {
       "source_key": "ae84b5be984f51e320ab7a9cbfc1798951a849cbbcf4f7584e5b4e7d614acd31",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "failed",
       "last_success_at": "2026-09-17T04:55:52Z",
-      "failures": 1,
-      "next_attempt_at": "2026-09-22T18:40:23Z",
+      "failures": 2,
+      "next_attempt_at": "2026-09-29T05:01:43Z",
       "error": "SourceFetchError"
     },
     "508672e47148131e": {
@@ -36634,11 +36671,11 @@
     "50955cf91df305db": {
       "source_key": "eaa0d53a321b5a6ed41bdf5471e438841b71100e068eaeecdcb461d5a2cef791",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "50a06891c89d5596": {
       "source_key": "6aab4a2255ff5d1180171d607800acc496bac0a8d2c062dcfc000a620d142893",
@@ -36652,20 +36689,20 @@
     "50b678bc9fe8d831": {
       "source_key": "c0710196267a32ba5d2082d244d9a98f85c9f3197badd30f038fff5715c8c2d5",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "50b6ea3f77854228": {
       "source_key": "f3d01a9a21b3f847ebbaf53ca83ea2e0eabf4e20ea80e87788f35aba13d41039",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "50c3e3e2fa50f458": {
       "source_key": "6ace6fdb2a2626a037a6463e2db449683dad522cca4f3d4c2311e30a2753de51",
@@ -36715,11 +36752,11 @@
     "50e69346583d5220": {
       "source_key": "c0a90e26dc7a3fbf8e9d5683cf5199b3f3d0945477a2b7bc2d7c07173b78b570",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "50f6e60a523c25f7": {
       "source_key": "618a321850dbf644c9406b0ad6bc745a3c6eb29e2d76c0a97add3f8c49e5607c",
@@ -36751,12 +36788,11 @@
     "51095a8324ae0001": {
       "source_key": "a2d51ac2b3a0675f3c7802c8177f3fbaea61dbd902023230962a68f9105ffc7f",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
-      "status": "failed",
-      "last_success_at": "2026-09-08T16:58:54.651032Z",
-      "failures": 2,
-      "next_attempt_at": "2026-09-22T20:40:23Z",
-      "error": "no_unique_matching_jobposting"
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "available",
+      "last_success_at": "2026-09-29T01:01:43Z",
+      "failures": 0,
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "510f364b8189550c": {
       "source_key": "84ac97c2ee61d333f4e0b9b848e240c19af07e4a6faaed572f2c4235c405b2ca",
@@ -36797,11 +36833,11 @@
     "511e553f4f44ce35": {
       "source_key": "edc68562e8a3fd2824dd47e3eb8b18a7142e8be4914da3b741fb0f08e63df86b",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "5121d7f851c07068": {
       "source_key": "fd058b6bf86246cf366cd868ac92e97426aab7800605650d847e35ce94d39435",
@@ -36851,11 +36887,11 @@
     "516745481bbc11d2": {
       "source_key": "77fbfead6ffaf10b236bf6e6a9e6142fdde7a1ba18c06ff307b72edb948fe349",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "51780f32dd0f3c35": {
       "source_key": "a64287edb160f2bb61aba2f65e3a44463cf0a7ed5eb17e9ef04f9f843a691bc2",
@@ -36942,11 +36978,11 @@
     "51dab14f76774a90": {
       "source_key": "e4939f471df299875d8a8c43b09584b3af6feb322cead37c0fbc2f4a3b7ba0aa",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "51de75f38d481105": {
       "source_key": "e8a30332973f710bf587119f244ef001b06963267aa770f644d9849f4defee8f",
@@ -37029,6 +37065,15 @@
       "failures": 3,
       "next_attempt_at": "2026-09-27T13:50:34Z"
     },
+    "522cbed363f2ed35": {
+      "source_key": "13b2253fdab6a0c154098ca3cbbb8067afb46c2c36dfb44ac9b108a8ba71bc03",
+      "version": 5,
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "available",
+      "last_success_at": "2026-09-29T01:01:43Z",
+      "failures": 0,
+      "next_attempt_at": "2026-10-02T01:01:43Z"
+    },
     "525243cc7ce93a19": {
       "source_key": "1894c0cd8516991493c9198193e651791e275b0ce555752a038cc2c7d82a5aa5",
       "version": 5,
@@ -37050,11 +37095,11 @@
     "525ef33c63c7d413": {
       "source_key": "c4c7a604e57df6f263f1016cd6614c9be271a77a002abca574ba0ce7814b4cd2",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "5264b349421acdf9": {
       "source_key": "a6735a29ae652ed9dc8a492f33da1c4010ba190f6472f0994c2edc3bca8f6861",
@@ -37160,11 +37205,11 @@
     "52a6ae2a93c31a77": {
       "source_key": "80e6d7ae6e6636e8702f81cdbd7d34f114c1f6cff3e91a9aefbfb3577982b20d",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "52a6b9ad86de1d5c": {
       "source_key": "463815cad986cd2ee84b132068a532a98db38f5d1f73683087e9a5c9dd91d692",
@@ -37234,20 +37279,20 @@
     "52f7074d7b2e7a22": {
       "source_key": "ddb902306af981f72851884b50c3c841bc8bf7e17ea5dc7f0cd416e4049c176c",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "5306d585b8a725a3": {
       "source_key": "2c1ccd3ed8833f429ff66903ed6c53f112bb8316dc614f7ee11a1fe0aff6e061",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "531325fc1405a012": {
       "source_key": "cb73810d2fc3e2a21e94259339d24b63cc4f51303183efe358e9aeb0682a38f5",
@@ -37297,11 +37342,11 @@
     "532ffeb6669c7f4c": {
       "source_key": "90faf0fb4e350a1128939bbc4d30c09e676cb95d6c98fce8812f0b229f70703f",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "53310979594581b6": {
       "source_key": "279c9894d86d309aad634ac4370dcaa3f263fba3061fa864c4e5de91b022920f",
@@ -37325,11 +37370,11 @@
     "53516b63b8ee5bc1": {
       "source_key": "5283cc57fa17b92b7af5b6be2b86d8fb57b98c6a535e5ade8e8c894517067a86",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "5357f05b899126f4": {
       "source_key": "4810405a2fe0881742a1dfeb7be2011d9441c64261aedd563e02f723e0334381",
@@ -37370,20 +37415,20 @@
     "5373a8116461f8ea": {
       "source_key": "30c38adc0fde2d51399aba963c13e001a96bf9325018cb0ee999203e6f399551",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "53747678b913ee7e": {
       "source_key": "ae8a7f44d886e8d81ffd92700d24e304c5e416d4231fa9b36c9a3f9f6193dd42",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "538612e77400ae8f": {
       "source_key": "452870f1f204f97db2faac93d12515f87d64d2cfa6c392237312f357df472a95",
@@ -37407,11 +37452,11 @@
     "53a26f433c4962b2": {
       "source_key": "f358bc1b38568368a08fbc78735b618bd91434d890be803620cd3cacd6ba0950",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "53a61178eea142da": {
       "source_key": "17927d5fbec115406b08fb17025edfc867b25fbd2c71006e506a27a6182ed3bf",
@@ -37443,11 +37488,11 @@
     "53fc0c7aead7d352": {
       "source_key": "7b4e3044951e98285b88ecb1977bf946234a4d0b003e053cbfc6655687c40521",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "54044f4d63ff8d14": {
       "source_key": "9a77e387c2043823b7a346919cd926369939c4c364542f4795ee592f0c21b684",
@@ -37533,38 +37578,39 @@
     "5460785dedd86684": {
       "source_key": "e6346605a7e88327fcb07227a0e360c217beac6d76c490f77e5b39ca90c89bea",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
-      "status": "available",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "failed",
       "last_success_at": "2026-09-22T19:54:11Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "failures": 1,
+      "next_attempt_at": "2026-09-29T03:01:43Z",
+      "error": "no_unique_matching_jobposting"
     },
     "54638ffdd9ccafb8": {
       "source_key": "ba050e7d331472e97bb26733bc2f39fb1e50490b077aca7889c8fb4a55c8566f",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "546d18c06da2d980": {
       "source_key": "362d0f87e39eaffba3342807dc26dd0cf3077eb39ff8b72e510afbfd8e6bda0e",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "547635c4baf97b7a": {
       "source_key": "5fcd9b39595cf1451d2b131904ef5130d73b9f90e399b0491a78fd1dca465ae9",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "54945779de509c07": {
       "source_key": "05ab370831dbbfc793bfde22982e4d314ad2e5de607f1ec4e1547a859f63c51a",
@@ -37578,11 +37624,11 @@
     "5494e50bc2117496": {
       "source_key": "9cf14fb4e8c813f81014d16fc412d71cfcc87bda308c72d6ba780b7dc0779376",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "54979e8f9a90fdc0": {
       "source_key": "1da5914995271a3b7ce1b7929560eb261725ffc22a1d57381bcea6de52d390e5",
@@ -37605,20 +37651,20 @@
     "54cec55646f70fc2": {
       "source_key": "bc4967f0035a9be51531b53953ca4e9b416ba224802d0bffbd3dc20d82919549",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "54cf48596387a5fa": {
       "source_key": "5ae8dcc67e10d9be86579feb9952d7c8145fd6c51af1d718379d6178ef79bb4b",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "54d1ebff33ca3cbb": {
       "source_key": "f6903f52fc2690547e07d3cf0c56a7fbebc8919416c31b674c9f3ea4e070d549",
@@ -37641,11 +37687,11 @@
     "54e26e6cbaed8782": {
       "source_key": "6e7ec3eca04d6ddef07b2035405f91f0cc33f26579fc4bb14588805721cbde7a",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "551b85244fd19575": {
       "source_key": "5163cd5daeb65c7e34fd213e2143c43b378b4c8b9f6c8e5b1be581a96061b182",
@@ -37696,11 +37742,11 @@
     "552754b056546c37": {
       "source_key": "442dfe88577c2170b3a2b20f1439f7f129048e505d618a4221bc40f5ffdeb5d1",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "5529d2d88a3ae5d1": {
       "source_key": "2b8a1a03ccde94c69678df2aa8b2427c2415578010968be1aa75bc55b96defe0",
@@ -37732,11 +37778,11 @@
     "554543bce6b31a0e": {
       "source_key": "ebac08893afa77c5b7b5e61dbe8b98c28d3a075f2ca297ad5e4a165c0e05f9ec",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "554867b606107abb": {
       "source_key": "1f5713dd17bdca494394ba3ee1a6f795503c7b7e12cf94fadfbf8f64401c74d6",
@@ -37759,11 +37805,11 @@
     "5554578cf6309331": {
       "source_key": "d31e756dc2101774f52ad647c589f2d62248414d1c2608887edee5bc32f709b6",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "5555184b31198d55": {
       "source_key": "1fb5f54304317ab4f19cc062faa97cc9940ccbea45d9e976b413895fbcc2e8fa",
@@ -37777,11 +37823,11 @@
     "55570985996c2108": {
       "source_key": "2af6e8da1c0638c72c093c1dc28ae56b67d762a27e633cff0494299e2f1b9527",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "5557d8338a52d722": {
       "source_key": "61f3ac6b464edd7e1cc25dda794d0830b1ffec5e24afed99d52824303015d172",
@@ -37813,29 +37859,29 @@
     "55617f070eea049e": {
       "source_key": "c35789843044dde61fa9f73dd3cba8bb65b82062ba53b858f2689834683fa363",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "5561dacf7ffa036a": {
       "source_key": "0b6d06e270c0dde8b3fe387421be2728f309feaf783fb8b47acf31dd1cc7eb23",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "557df1675692b27a": {
       "source_key": "ca711d2bee38b6c6a84b1cb12e29fbaa88d7ff5bd2fb45465b764fe28f848887",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "557f2330fe1cf9b2": {
       "source_key": "e5b01b68a7c5a08cb589d00a68947abd37b77681f497a760c4c43742fad13f8e",
@@ -37858,20 +37904,20 @@
     "5599c5764855b612": {
       "source_key": "81d8bb65a8781dbe613b091bfdbe54b6c90b72063e0cb381d3641e1be5eb9fad",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "55bfe7e205a6a320": {
       "source_key": "14c85bee06ff59aeb387dfa295193979922c708f9576efb2ebdec61078769477",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "55c87fd09af90f41": {
       "source_key": "237ad61a2bff6fa016d39d2dbf2f172a65832c15dfaace301e7d16532bd5b4d8",
@@ -37904,20 +37950,20 @@
     "561004ba55ca8eac": {
       "source_key": "dc0a501300aaff4aa2ca1d272e6b766228bc9261af180583bd208a9caa25ebfb",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "562da24f87fba6ea": {
       "source_key": "8af25138a7474d7b34c3d536a6846a9a4769999ce84fa10a0ec80294f8b7ccaa",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "5634d44cefb481e8": {
       "source_key": "e2f8107ce5b168f323b226d66d2a46f29adbe78498c4163393c99a90536c0c69",
@@ -37932,11 +37978,12 @@
     "563508901fa74be3": {
       "source_key": "62e4c08f8773f006d75d7523e4339ec727306ec6fb9762372a0052edc864fc46",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
-      "status": "available",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "failed",
       "last_success_at": "2026-09-22T19:54:11Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "failures": 1,
+      "next_attempt_at": "2026-09-29T03:01:43Z",
+      "error": "no_unique_matching_jobposting"
     },
     "564db00c075de302": {
       "source_key": "dcf6ec2f17aecf8a8dfb81c70738afbc4661da36aaa05f228750c5ea5959a45f",
@@ -37977,11 +38024,11 @@
     "566816f3eee0bb50": {
       "source_key": "b6eb5002142136c136e6cfba47a6f981abaa16e6162df5d09412f1dc1a391a8d",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "567dd108f33f913c": {
       "source_key": "8cba9d6141c2dfe1451c5f49ea5799d84fbbf292c0bccdf728a79d96cfd22223",
@@ -37995,29 +38042,29 @@
     "5683b19c8d51c4d6": {
       "source_key": "e1dff1c3e9d6e3fe0f83867d6cdc2986142c2ecb3868ed1ff41b9dd532861984",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "5684bafcf75e2f27": {
       "source_key": "fef49e2a46448b73468f2c1b73523ae6bff2d9d3ed9bdc4883c1f31a6e8c5839",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "569435cbb133fa04": {
       "source_key": "91deb035d149998f318258aff3a753700a87fb58122abc007aff022ab361ed28",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "56a6af1322315f0a": {
       "source_key": "3f1f35d507ba502d7c163ac537e96e3944567c87e86ce72b61e1939fd9ecc6bb",
@@ -38068,11 +38115,11 @@
     "56d8b3bc62e7d320": {
       "source_key": "05f01ccc860fdf99e001302d870ecc392342a4098d865c140bcb17f9e403a644",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "56f63ced56fed73b": {
       "source_key": "5c85ac94f06fffbc8ccc4879fd6344d4974d5c6b65ccbe46a79dedf5c3b41a2c",
@@ -38104,29 +38151,29 @@
     "570055f3d65b857c": {
       "source_key": "dcc6e0a2d2f7d422f741f2cf7f652d00c4010632370599db9805a09b49e408e4",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "5719adb43a789b38": {
       "source_key": "44812bc8c5244f240270ca6679485189588ce63565d1729559e0b3d4c7ec1ed2",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "571ffde184f70d17": {
       "source_key": "5163a1876cb07ec37fb18303041fba0f2c6e2f584fc6ea6808f398c65fd00a92",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "57206b479e6d4354": {
       "source_key": "3b64cae7ca2a14544adacb316da6ca4f6132aa9ce61dabdf8f48b45be1af09d9",
@@ -38158,11 +38205,11 @@
     "573a6f17ec94b401": {
       "source_key": "533a4471b9421e070d894650c823a8e04c443ed748021cb1d3d6ae817f4d3fd8",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "failed",
       "last_success_at": "2026-09-08T16:58:54.651032Z",
-      "failures": 2,
-      "next_attempt_at": "2026-09-22T23:54:11Z",
+      "failures": 3,
+      "next_attempt_at": "2026-09-29T09:01:43Z",
       "error": "no_unique_matching_jobposting"
     },
     "57420f07267a510a": {
@@ -38231,11 +38278,11 @@
     "5776256ed1aba478": {
       "source_key": "8f8343a50c48da19111a3b0f97a62031bcee84c147086933adf114d580ff6d36",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "5779826704ecc215": {
       "source_key": "e8bf8de4cf9848068fb65bb74f7c2a07fbdf48b357f4b9da0450db7b9d28f1f5",
@@ -38249,11 +38296,11 @@
     "577e4524dece7ef5": {
       "source_key": "7c9edb6b65c7381cc0330e7b86a3325cca7ae2e8e562f5ba1e99aa594d39aaf4",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "5788ca5619960bcb": {
       "source_key": "bb44fe56891ac2950c52ab792f17c99ff7f979e5398872cdae5e6842a54ad0d1",
@@ -38295,11 +38342,11 @@
     "57a2d5fdddd40da8": {
       "source_key": "2e179c4a493366f2c8d3802627b065441548398e7aa7e655f8443e8e05a2f995",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "57b5f8317e3e92e1": {
       "source_key": "c01f2220437fceb9bde7d9f0d89d12106ed093f29b929e1526d257c1b1bd1fe9",
@@ -38458,11 +38505,11 @@
     "589aa5b79f4836ab": {
       "source_key": "d41bc3a6aea5fff66d7543503ee1d9fedcb579c4d8e9355cd4f0bd2ba231d914",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "58a23d0f35a9249a": {
       "source_key": "3767c89db53d081449ffe1d95327ad777a4d480a1524f3518860efc6b7acd196",
@@ -38504,11 +38551,11 @@
     "58afa8e940cdf688": {
       "source_key": "f7ebf5bad03cbf3ac4183edc925eeed2726628b3c172f9d3b4392ab6cbbb6204",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "58c05ccd9ce31eff": {
       "source_key": "fc1e0538c9e82a68e1a16101442aacb5953e4e790fb003a09d7ba66566d3a87b",
@@ -38549,29 +38596,30 @@
     "58d03e75e3cb9ec2": {
       "source_key": "3bbe1e84a110f9d48a0986f15e3b41ab280b1e54b15d7ebf694876d214070cb7",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
-      "status": "available",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "failed",
       "last_success_at": "2026-09-22T19:54:11Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "failures": 1,
+      "next_attempt_at": "2026-09-29T03:01:43Z",
+      "error": "no_unique_matching_jobposting"
     },
     "58d38e0fc9b3b192": {
       "source_key": "4f088ca61a60c1ebbd67698bb491a8f32170a8ef3f9620a79bb8c7b82ecba254",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "58d4982dde8ed3d8": {
       "source_key": "330e2f9b89cbe2165ca9f9462550f4399b3a5de0400a4bd54c69edbfb372e970",
       "version": 5,
-      "last_attempt_at": "2026-09-22T19:54:11Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T19:54:11Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T19:54:11Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "58d63b2187839304": {
       "source_key": "b13787d513a3e50314fc49d3b6d9d2e1b1b4c91917c2a68dc810456fa71b4b80",
@@ -38672,6 +38720,14 @@
       "last_success_at": "2026-09-27T15:49:18Z",
       "failures": 0,
       "next_attempt_at": "2026-09-30T15:49:18Z"
+    },
+    "595431324dbf1d82": {
+      "source_key": "f8b70497fb0d727f57c762fd5cdcc66e5b97b470a11e4300788a2ec7d9ca621d",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-29T01:01:43Z",
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "5981545692bae970": {
       "source_key": "08ba35b02af66f1bbba931c1440219ff8fe8ad62f0d716b450f02ac7b87ef25e",
@@ -40709,11 +40765,11 @@
     "625cf2d23af52129": {
       "source_key": "9a84a09b9fbb31a82899b59fb22c26e5a440ef1f687cbb5c66fef4a3fd2ed897",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "6266ba386ce36f7d": {
       "source_key": "3a3b4f22d7bca316c71a1aba0ea6b4529cf2f2ed9c3f7d520ff5b5c755e3cdc1",
@@ -41806,6 +41862,15 @@
       "failures": 0,
       "next_attempt_at": "2026-09-30T15:49:18Z"
     },
+    "66c475f8452989b2": {
+      "source_key": "8cc2e7cd53e66236a4cb58072224bed531577f16e6373b79a9be216cb9124b44",
+      "version": 5,
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "available",
+      "last_success_at": "2026-09-29T01:01:43Z",
+      "failures": 0,
+      "next_attempt_at": "2026-10-02T01:01:43Z"
+    },
     "66cab87167a79c6f": {
       "source_key": "729a97f6226867d5d147380b52f0e87d9b86479e00e8c7bc1a89f416eb3ac144",
       "version": 5,
@@ -42326,11 +42391,11 @@
     "6919974f0a90b611": {
       "source_key": "9b55b485d8846da699e5dccb5e96705de3481d8430f91756a3272049f1a0eae4",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "691ed07ba7d3be28": {
       "source_key": "e558b87b08002f7d8d736613f01cffda282d15049e3a415b79341c7cf73f27f6",
@@ -42851,11 +42916,11 @@
     "6b100232e49405b9": {
       "source_key": "c5b7fefe044c882144889abcaa3c655174094e214f434d3ba05ae571dc8c24de",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "6b101c5698e3e2f4": {
       "source_key": "f1f1ffb08465aac6a4077ebe4fcd8da1aa9c3e091c7bb54c1b698d1859fa9e04",
@@ -43314,11 +43379,11 @@
     "6cbaea8185ac9af0": {
       "source_key": "58463bcc7d570b399bf9b0e30a13032e4a5b75192ff2f1131f48c612c17d6cec",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "6cbb4f1986d70ebd": {
       "source_key": "002e9592ca5947270a1d853de5d68ecc367293d19d85ddbba567a9ab65dec36e",
@@ -43505,10 +43570,11 @@
     "6d342f2e6ce83af5": {
       "source_key": "763986bdb46262954a75333157953fac2e6e8cafc52791eda352a4b1a6865df3",
       "version": 5,
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "last_success_at": "2026-09-25T23:35:46Z",
-      "next_attempt_at": "2026-09-28T23:35:46Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "6d3f71ade9383b5d": {
       "source_key": "1bd6c69d1c926d334d3a9879e083e12633b2daa7d499398fce7e2cb8245ae95b",
@@ -43865,11 +43931,11 @@
     "6eff931e9f75df3d": {
       "source_key": "a5b89644b37663e48ae12e09c5cda1da2247171d19be1875fcb0c73626c95387",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "6effd2e2e2628bc9": {
       "source_key": "17c51ffc628e08dbecd22d66619a2003fd19cea19da53d234290c608be951beb",
@@ -44442,11 +44508,11 @@
     "7158e9156236d6a2": {
       "source_key": "4099152d2af6cf54c7ac7c5c64357ec2d1dd5db136eaa525cbacc97754d8dc37",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "715f2e03b3734984": {
       "source_key": "85bad5555189731920bc206b8c1c46ed727fa809bd65b0de25b269e7623e1d2e",
@@ -44532,11 +44598,11 @@
     "71a5a544e4a53c37": {
       "source_key": "b38088a94315be58becb525ec11fd2873f52a90ee6aac2294a31e5c67790999f",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "71a83419dd2eb8a9": {
       "source_key": "5e4ed90c87cd23494e7712cd180145beae74a0efc5e27c8e31f4cd918c74b2d5",
@@ -44588,11 +44654,12 @@
     "71e2612b3f7c6abe": {
       "source_key": "0f7144b534c840970f78ba2f455c91eeffcc17a8f8c40b9dd25081f217b2ac73",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
-      "status": "available",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "failed",
       "last_success_at": "2026-09-22T16:40:23Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "failures": 1,
+      "next_attempt_at": "2026-09-29T03:01:43Z",
+      "error": "no_unique_matching_jobposting"
     },
     "71e831f3b5c620f3": {
       "source_key": "6ea5437ec252b330ce1f271a52b905c8cc961f23b5e4af79bdb720a0a7417afd",
@@ -45225,11 +45292,11 @@
     "741d73835beb0f0d": {
       "source_key": "7905557c9e7af9c7d7251c2889b1bca350afbfc545a8c26d409b65dd03b51e7f",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "742969da8661d948": {
       "source_key": "cc12bbe5f94aff616711391efaabc7457e21e48f0afa7440bd3372d81a5f70b1",
@@ -45488,11 +45555,11 @@
     "7559b0b65153eebf": {
       "source_key": "9897128752b7347e2275bbc7bb9a2cd8488077c6c66cd667efcf26178324ce86",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "755c9571871c39a2": {
       "source_key": "43619c29f5cff76d4d2da031750bbe53cd835867990299c6ecd631f858878ce5",
@@ -45868,11 +45935,11 @@
     "76e467809a1ccc87": {
       "source_key": "9667a1f623f74c42a6762881d35aa058b5db69096f43a7a5dcd67149f719360c",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "76f8722f079713a0": {
       "source_key": "dcc257e1bd218823caa065f1edd09bee6b57dfa5a999dca10c0d8e8a708c9843",
@@ -45949,11 +46016,11 @@
     "771eead99a512435": {
       "source_key": "758fcfa118a133784b84d338e5e1da72cd04060a09ca966ca3f954bdc2537c1f",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "772085809b615648": {
       "source_key": "59142cc996963543c4d645434f0bf95e9744a4676cb15878cb1a33a698e68117",
@@ -46084,11 +46151,11 @@
     "779b9dd63a048c5b": {
       "source_key": "06891d0675a5413a6669a42b3e9aef477f31f3fa81f91d600d506d5020854d44",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "77ad82017423a41c": {
       "source_key": "b3b85fa31d4fa85a48dca664df3b47c334f9b5ce6c44f3d24693ba56ec13188d",
@@ -46120,11 +46187,11 @@
     "77c16565ddb87db7": {
       "source_key": "5126ad137984116717e0ae9234aba0c8c8a5fa2db87c5190e3967e057ca6e21d",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "77c2d4d8824ff999": {
       "source_key": "b33eded04e8db04274aa93104351cb09ba3234f179798aa007999f14d47de70f",
@@ -46451,6 +46518,15 @@
       "error": "completeness_unverified",
       "failures": 0,
       "next_attempt_at": "2026-09-26T22:50:02Z"
+    },
+    "794312a782ba239b": {
+      "source_key": "c9110740c1d7c5be6e55e8a79630714323344eb93fc841634c78efc6048015f6",
+      "version": 5,
+      "status": "failed",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "error": "SourceFetchError",
+      "failures": 1,
+      "next_attempt_at": "2026-09-29T03:01:43Z"
     },
     "7948543231b78b8e": {
       "source_key": "3a84315b21adb93d817440ddac3338f9ec08fe281984c5260ffbff61258579c6",
@@ -46892,11 +46968,11 @@
     "7afd22869a2b2395": {
       "source_key": "fbc3f63500b8c0f4656fb07862e6f7525aaef0622161e1c475868cd79f0373d7",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "7b02c14e8283ccc2": {
       "source_key": "56cae355dffc03bd51d4c8f553edb7df3c7609c7e1dbf936327259059f295853",
@@ -47027,11 +47103,12 @@
     "7b94dcf9b9aaaac4": {
       "source_key": "6b0eb1b0d90a82f34d8603f9a27c9b03aa9be85453d1f1af1faf40f648b7a6c2",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
-      "status": "available",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "failed",
       "last_success_at": "2026-09-22T16:40:23Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "failures": 1,
+      "next_attempt_at": "2026-09-29T03:01:43Z",
+      "error": "no_unique_matching_jobposting"
     },
     "7b973af1e9cea813": {
       "source_key": "336dcccb892e4967e5f394e8cfe6a4ba53ee1c5047ef0baf8472b6caf592db0c",
@@ -49031,11 +49108,11 @@
     "83c9e67ba223dbae": {
       "source_key": "96ad35af84c488737d11fa8b5b49eadf258859ca83d7edb5f7d2bed7c8962ad9",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "83dd7cd162a9f6ca": {
       "source_key": "adea7db156effb5f36c3c89776d740c2c0b63e99b2867d0896e7b911e9826307",
@@ -50704,11 +50781,11 @@
     "8b176d929808a0c1": {
       "source_key": "35d88f432667be5cb00ebfd477f2a3914a4e9815da78eeae42609d652897d705",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "8b25c87fdfec7b79": {
       "source_key": "92323ca4598aa3b81c2d54ecaef7bad1c641bfd7d9a532c3ce5ba3e7f3c73ecb",
@@ -50821,11 +50898,11 @@
     "8ba277bf862dca1b": {
       "source_key": "4908a434f8bfb9a5b6c6944322d7caf75cf0c7343b0f75d28b7a2bde853ade72",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "8ba50983291584df": {
       "source_key": "6fb6aa8141d39442499b577cbfd55cfa9c3e102ab92c5ea5eb257952afb84222",
@@ -50947,11 +51024,11 @@
     "8c11822bf638bda4": {
       "source_key": "8924480d2978be127a388266c3339b152dfcfa1b12c960c04a697e1c62d8e195",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "failed",
       "last_success_at": "2026-09-17T00:13:26Z",
-      "failures": 1,
-      "next_attempt_at": "2026-09-22T18:40:23Z",
+      "failures": 2,
+      "next_attempt_at": "2026-09-29T05:01:43Z",
       "error": "no_unique_matching_jobposting"
     },
     "8c14f78194db7ca1": {
@@ -51066,11 +51143,11 @@
     "8c8000c4a9615424": {
       "source_key": "94257a33491f070071637a4e021d9635d0b149b1d249f2bb0a26160bb39823d7",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "8c8581a2f8cbb596": {
       "source_key": "f3aecc728d52a1b80b885e111c326d73952fa2ce278b3328deafd73007121973",
@@ -51676,11 +51753,11 @@
     "8e7de47627768385": {
       "source_key": "11486f5483da80602b49c56b0bfe16b47aed795abd02da13af6ae6fe8a3fcab2",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "8e82c2e7b3c3a211": {
       "source_key": "601ad9fce21495d71595c529b55060aa119fccc3b6edc916bf2201627bebf9cf",
@@ -51694,11 +51771,11 @@
     "8e86b867b92ca642": {
       "source_key": "95973deb998bd870e6471c815a670336ee02c242cefa46f026c6458b18a481a6",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "8e9756aff430291f": {
       "source_key": "c3c6986aaeed9cb66bd823c6907fdb0397e638a1e5c3e245b7479bfe658092e2",
@@ -52499,11 +52576,11 @@
     "9238826229b365f8": {
       "source_key": "5118445fe780a7882fe4544f0af098fe31eee5e60529381dfaaf07e8907e23d7",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "partial",
       "error": "completeness_unverified",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "9264797b223d1791": {
       "source_key": "3fa129ea0eca2ae53e424b82d9b9c197acb4efbd04476415619679d7fcc0f2b1",
@@ -52599,11 +52676,11 @@
     "92c23f7edf2c932a": {
       "source_key": "f4a673615127db08a440a32a60c19d3a774ac1e5de76ac1fa3a9e6ee859ed90b",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "92c7b1f3cecfdcb1": {
       "source_key": "14b8943fdaf1080699cc2c1e38db8b513cb3669421ec5500717f0992dfd2710d",
@@ -53220,6 +53297,14 @@
       "last_success_at": "2026-09-28T01:13:25Z",
       "failures": 0,
       "next_attempt_at": "2026-10-01T01:13:25Z"
+    },
+    "95e2fc905d64c6a3": {
+      "source_key": "4f49425f9be54bce28e57390b88f9a84e365eaed4828097e889000d538671479",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-29T01:01:43Z",
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "95e8f09cd3e101a3": {
       "source_key": "0b63334e3582ded4c375cdb87249acbd2c64ae4ff99da9539e91ff77ba196f32",
@@ -53868,12 +53953,11 @@
     "985f06b6a683bdae": {
       "source_key": "6613b9b9567af8b115db43a341fe4c161a228bc5c7ccd867fb0c28f3f3c76012",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
-      "status": "failed",
-      "last_success_at": "2026-09-17T00:13:26Z",
-      "failures": 1,
-      "next_attempt_at": "2026-09-22T18:40:23Z",
-      "error": "SourceFetchError"
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "available",
+      "last_success_at": "2026-09-29T01:01:43Z",
+      "failures": 0,
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "985f5c753d585c43": {
       "source_key": "ca670ae661dabddc58b584d2013bab17c6a9b963362f6f860161d66e670e7076",
@@ -54014,11 +54098,11 @@
     "99046c12e3e6169f": {
       "source_key": "b61a312900b0afca66c7ec5d884548710c50565515193c61c6741a472aafb079",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "failed",
       "last_success_at": "2026-09-17T00:13:26Z",
-      "failures": 1,
-      "next_attempt_at": "2026-09-22T18:40:23Z",
+      "failures": 2,
+      "next_attempt_at": "2026-09-29T05:01:43Z",
       "error": "SourceFetchError"
     },
     "9904dfaef8912ea5": {
@@ -54206,11 +54290,11 @@
     "9a1037a69621a4c1": {
       "source_key": "0ac745fb706fb66ad7c45be615941609b8222de11f110851cfe4912cc9c8debc",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "9a1351ecd565fc98": {
       "source_key": "6dffd8340ab6954398f82155e34817cd9a325a5c4df3c367acc0b2a2178ee8d8",
@@ -54440,20 +54524,20 @@
     "9b05795eae75a71a": {
       "source_key": "bdc54c0f3c6ddf1f7f8e68710a32564d6ad3c0e861814d091b1eb9261f43bc5d",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "9b0c6fea9ccf6838": {
       "source_key": "7c43b9250a1194871cfda1b6c59c7b97bb36f920de94536c826814060685f02e",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "9b29f6c400bccaa0": {
       "source_key": "56f85e42c14808a667ba1106dd2e263549f2d95e253c1dded8ef2d169dd6c9d2",
@@ -54671,6 +54755,15 @@
       "last_success_at": "2026-09-28T01:13:25Z",
       "failures": 0,
       "next_attempt_at": "2026-10-01T01:13:25Z"
+    },
+    "9c47be39d6bd46ed": {
+      "source_key": "472188fd4306fae986eb5a4d1a3de3d9317ab16d874bfc1ea7cab7b064212d22",
+      "version": 5,
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "available",
+      "last_success_at": "2026-09-29T01:01:43Z",
+      "failures": 0,
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "9c4a4eee8f7bd9c3": {
       "source_key": "43f533885edafa5f9ce6a6b221053b6bae0361cf0b3dc453519fdfaf4bde3765",
@@ -55463,10 +55556,10 @@
       "source_key": "a2f25e0ab36da5ec427737075028ed5a0b10b2765d8fc20294f78d9ac0b7da83",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "error": "no_unique_matching_jobposting",
-      "failures": 1,
-      "next_attempt_at": "2026-09-22T18:40:23Z"
+      "failures": 2,
+      "next_attempt_at": "2026-09-29T05:01:43Z"
     },
     "9f4aa6b985a3fbf0": {
       "source_key": "4ed7473c288608c4137e9d8d5edaaed67e7246dd06aa57c7d6533d7dac1b9cec",
@@ -55545,10 +55638,10 @@
       "source_key": "f90969acb4aa9486cc0feecb5ec0fce1eb7f2d1fc3afad943a0c1d7e68d39930",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "error": "no_unique_matching_jobposting",
-      "failures": 2,
-      "next_attempt_at": "2026-09-22T20:40:23Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-29T09:01:43Z"
     },
     "9fa687c3e509d35c": {
       "source_key": "a4c885042ea7b7475491ca76c849762947fd963b5b66bb73960bbd48db3d43bf",
@@ -55771,11 +55864,11 @@
     "a08740a9ce665624": {
       "source_key": "c318a24461fdaf81c438dca0bba68d94d0bb0a9f06a0a034e1fb677f06797643",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "a0a02e7e46db3524": {
       "source_key": "b149d498846a081595658ecb019fbf529feee4ab1a4f6ee9a5e4b1be99babb43",
@@ -55970,11 +56063,11 @@
     "a1619862ab242167": {
       "source_key": "d82ca341fb8fa94e152bd4a47e8de8168b0533f730db68432143fd7dd623f6ec",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "failed",
       "last_success_at": "2026-09-17T00:13:26Z",
-      "failures": 1,
-      "next_attempt_at": "2026-09-22T18:40:23Z",
+      "failures": 2,
+      "next_attempt_at": "2026-09-29T05:01:43Z",
       "error": "no_unique_matching_jobposting"
     },
     "a177dc96f7c1215b": {
@@ -56243,11 +56336,11 @@
     "a234891d4867a220": {
       "source_key": "3df1aedc62d1033cb6d4b915b614b1cc744ea0b182132b5357cfb929ce81cebe",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "a236df702e25e51f": {
       "source_key": "ae93eb3819957cafd2bd2e21a460798858e909caf197231f82474e900ac3eae3",
@@ -57028,11 +57121,11 @@
     "a59c18f02534e865": {
       "source_key": "0031c6e1c1d77fab53fb53f2e208fb0d4bdd770c4927e879bcf9ed19f9529eaa",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "a59d9f5ae9752220": {
       "source_key": "4e9a53141527c7f4c373118f26f17ae9d320edfdf6f80d652cc594b9facb5d3d",
@@ -57146,10 +57239,10 @@
       "source_key": "9f571b2cdf77bbb2077ffcf0bbba5ce845d2a2c2c9250b6e726ac98ec034748c",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "error": "no_unique_matching_jobposting",
-      "failures": 2,
-      "next_attempt_at": "2026-09-22T20:40:23Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-29T09:01:43Z"
     },
     "a5f69d285feb701a": {
       "source_key": "cf3407e978578aa834c772aec3717de7a7dba89b86eeeeb1b8e9464b21d7f2e2",
@@ -57392,10 +57485,11 @@
     "a7954726ab5a8585": {
       "source_key": "41212a84cf5c9ddd762d494acdc632be80c7ed70199879760af852a7d8fe8aa5",
       "version": 5,
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "last_success_at": "2026-09-25T23:35:46Z",
-      "next_attempt_at": "2026-09-28T23:35:46Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "a79a81618d59cde7": {
       "source_key": "14df74f4139c50dcaaaa99d862f55820a64a41873a9bf793bf74ffc994169a8c",
@@ -58114,10 +58208,11 @@
     "ab5044b143706a67": {
       "source_key": "5901f5700adefce4123b20c7387ecd2fed09fb78eee6b32cbba91ec4b7eee46c",
       "version": 5,
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "last_success_at": "2026-09-25T23:35:46Z",
-      "next_attempt_at": "2026-09-28T23:35:46Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "ab546902d161371b": {
       "source_key": "fcc2c78353c178df183e5351b1e04c395edb52825f8bc25a7919d276613944c4",
@@ -58673,11 +58768,11 @@
     "ae3db44df11ae3b2": {
       "source_key": "bf64c9b76efb5bd083ccf54bddfcbc9d892dc05618ad28b8016ef83ef19ec799",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "ae404466bd13818e": {
       "source_key": "80cf1afcb71d343dd2d5fb053f26b0fbdf4d4a38ca5a5e8d3841a2fb649c5793",
@@ -58935,11 +59030,11 @@
     "af3be1a7776b22d9": {
       "source_key": "a4b153a14d2c59d2eeeae5d751937d422adec9047049021b8e4a96751e63f6fb",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "af485891fe90af34": {
       "source_key": "27af8b04732ee5da3e78aa07b7cf737565248b2b0a3275e8826443ef14d70bfb",
@@ -59225,11 +59320,11 @@
     "b087409b30dfd2e4": {
       "source_key": "fe7e97d68f3148ad15d718d231c53f47fc49c8992690fb80e35187b3f44ccb18",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "b0b257fa78d535b6": {
       "source_key": "8729f5a487f7c782f9f0c719d83751935c27659a5b41d550762e515de5986cc0",
@@ -59776,11 +59871,11 @@
     "b329999d20b0e062": {
       "source_key": "8fb687391aa6ae3cc2d63e297a76e849fb75475a29b143ff3224be70c180afbb",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "b32f44827eb90f94": {
       "source_key": "59d950137c23d0f54de3262750b7d728958733add92eb45b9643c329cb428a62",
@@ -60727,11 +60822,11 @@
     "b77a2772af2dc4b1": {
       "source_key": "cc1aa772ffd152ce6e49f0ea6ee9df9f938137fcf1c4c3afa34bfa218f246f75",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "b7a0e55e0b3b29d9": {
       "source_key": "12261aa70008db842b9191b10b5d55e17eb44549f9a8162331f4cfd7a4f30912",
@@ -60878,6 +60973,14 @@
       "failures": 0,
       "next_attempt_at": "2026-09-27T23:19:32Z"
     },
+    "b86d7bcf42123712": {
+      "source_key": "f652504f3fdda7f7c1a0bf9ce1f6c5b1448ae303085cbb234c352c41d7587db6",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-29T01:01:43Z",
+      "next_attempt_at": "2026-10-02T01:01:43Z"
+    },
     "b8725aae4ef792d5": {
       "source_key": "e317432634b45f3fda24e594b0bef13037b0167c93962ed0ee1a011718b91c32",
       "version": 5,
@@ -60927,10 +61030,10 @@
       "source_key": "17501c9dbdd863ffae04c691007a4e40af231249d469e7ebdb6e3613d0f8a8d7",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "error": "SourceFetchError",
-      "failures": 2,
-      "next_attempt_at": "2026-09-22T20:40:23Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-29T09:01:43Z"
     },
     "b8b19722b311dc18": {
       "source_key": "df5e04114d06cf7e715d31fda3c045629f392b1a6aa8a88ebcae56afbd93aa68",
@@ -61100,10 +61203,10 @@
       "source_key": "46ab5fd87ba359402898855faa70e8564381d198ac20c44f4c040eb4d51cf983",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "error": "no_unique_matching_jobposting",
-      "failures": 2,
-      "next_attempt_at": "2026-09-22T20:40:23Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-29T09:01:43Z"
     },
     "b9c4280350e4f87d": {
       "source_key": "b6b3ba6f99a777b877395b369944f4c973587d2eb71835d6ffed176d541b23c1",
@@ -61762,11 +61865,11 @@
     "bc71cce2edac6f34": {
       "source_key": "c143f5a7c02a944fb67937745e8c294245f62c37951a2d873e67e07de4f85e5b",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "bc744625f441fb04": {
       "source_key": "7dafa7b74cc6a4d2bab720edd6d95f6e35b90ff40a032d1af4b92dd20b0e0771",
@@ -61780,11 +61883,11 @@
     "bc78aec27f341055": {
       "source_key": "18da5568ecc43c156bfcd63e4074d21b18777c0d231d258e76345bf03f28b744",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "bc840c7c548b4d14": {
       "source_key": "2c93364888a58cc7835d077817ea266cd7a79ade02609fdc4e56fe2a48dbf848",
@@ -61880,11 +61983,11 @@
     "bce62bee2495ca32": {
       "source_key": "073f65857631c992136865eb49a66bf252d53e1278ae76894a4f00567a4bb210",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "bcf4adf8cedd6e46": {
       "source_key": "d2f029a244b57588c08a83a62e635559ecec5858696a564adbe3001af874d9fe",
@@ -61898,11 +62001,11 @@
     "bcf69509d41b5421": {
       "source_key": "7cb881d0a8d72a8249dd84aaf48b2747305a0d60e68ee2d548bd6e2594cbc83b",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "bcfee7961c8187d9": {
       "source_key": "2c98bbb3bd390f322d89b411aceae76eacb63c715ae2708d9a3b6db88e61e631",
@@ -62097,11 +62200,11 @@
     "bdc5bb1e7a5c67c3": {
       "source_key": "78e490c038a235b18f7b8a125e32d51cbc5a950216d06c36b4874f96e8b74814",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "bdc63a3e84d15c8e": {
       "source_key": "58c24f1088571c1197e39897b078867513da35f102cbcd689a3eddc02cd4a8cc",
@@ -63043,10 +63146,10 @@
       "source_key": "427175dcc0b55649123f24645dee827b9fdf2a94cd6adcb5f2b778ab577bc220",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "error": "SourceFetchError",
-      "failures": 2,
-      "next_attempt_at": "2026-09-22T20:40:23Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-29T09:01:43Z"
     },
     "c21fad17281a9843": {
       "source_key": "85d1314f0845ceaa00ba1024e5a253a4c0d2dd98404f87c059b5a969b3ed64db",
@@ -63214,10 +63317,10 @@
       "source_key": "16f23d048a3a21dd7974a4cecbd678292190ff669607c41fae8f0db20a354d9e",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "error": "SourceFetchError",
-      "failures": 2,
-      "next_attempt_at": "2026-09-22T20:40:23Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-29T09:01:43Z"
     },
     "c2dd8b9e4ed681ac": {
       "source_key": "978cdab49aabb9a5d4ddc9254a4973c5bb67e6e6b4443f1caa545ba025cc2577",
@@ -63764,11 +63867,11 @@
     "c54bd48788deec5b": {
       "source_key": "18b1e220f51b25e18861a73b6a88e601213eb581bf408d44c6998c7015442491",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "c54cf178ec194411": {
       "source_key": "cb90843341c988e636e807f0727c2c6f4d355de675d54fc37e7a6e744496d1a3",
@@ -64173,11 +64276,11 @@
     "c6be73d96b275f9c": {
       "source_key": "2e69de0ac8fba412953f1ff1607fd8cbf5decd5cf51dd4f353470d495d564476",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "c6dbb929a8ec71e3": {
       "source_key": "e1ca4a8ce36e0442a379b5739cfdb8a295449a524d01c40ebdf80c00a243e33a",
@@ -64209,10 +64312,11 @@
     "c703d4149abb487a": {
       "source_key": "2038c6a51c56f0a0a942f43589f64a81f9e7a58f2e48164b067dbb077a327113",
       "version": 5,
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "last_success_at": "2026-09-25T23:35:46Z",
-      "next_attempt_at": "2026-09-28T23:35:46Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "c703d46dea420cb1": {
       "source_key": "c7faea57458e34dde6d93dadda8634fb81e964db8fe578c5c555ee96bd41012e",
@@ -64985,11 +65089,12 @@
     "cabd7ded3f965007": {
       "source_key": "62d9d7ad8f4d5409e5014b3aedb536975b773b70a4c2584f98fb4dffc91f4f41",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
-      "status": "available",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "failed",
       "last_success_at": "2026-09-22T16:40:23Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "failures": 1,
+      "next_attempt_at": "2026-09-29T03:01:43Z",
+      "error": "no_unique_matching_jobposting"
     },
     "cae0aad1cfafd7cf": {
       "source_key": "281ec1e568ef2cbe97e8f9b16e8a13ae8aa4a33953c993a9032b79075b05c7fe",
@@ -65819,11 +65924,11 @@
     "cf031681d6e93ba2": {
       "source_key": "93809c6c47cc9dc8763488618520769a0dd9fb4ad733c0008434ce80208cee22",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "cf08208729071697": {
       "source_key": "1395bb1a4d43af6acbc21f361682f7d6eea2f8ad521cf8a903cd45e105e04a79",
@@ -65846,11 +65951,11 @@
     "cf12ef0da1e1843e": {
       "source_key": "608c1420533ff4337b37a84fffd1eb4a0dac6646e1e5da3ea2d7610c5145c475",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "cf1652b6316f25cc": {
       "source_key": "d409dc15b93c3bfcc3fe384c762e7264a1370e072d51259feaf2490016f8fcc2",
@@ -66339,10 +66444,10 @@
       "source_key": "bf44544caa6238e5b51be89f97fb2eb793a2d9691b34e307e952931eea12790e",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "error": "no_unique_matching_jobposting",
-      "failures": 2,
-      "next_attempt_at": "2026-09-22T20:40:23Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-29T09:01:43Z"
     },
     "d0ce1a9aac55974b": {
       "source_key": "52a154872aba85d864f26489a81bfe22bb45e4430c94f22672eff8f745eb5282",
@@ -66357,11 +66462,11 @@
     "d0d6477189bf3994": {
       "source_key": "007e07f7570dc22f2fd7408bdcb95ac3a7836c9d20ca03ea62c3095aed435daa",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "d0d8b1e9713cf6a3": {
       "source_key": "338da158d2ad9b8e53dfdd682221683a616dcc964c05a4f573ca36ae3391b6f2",
@@ -66485,10 +66590,10 @@
       "source_key": "a228cbd2059784a1f5be3a6b489112cd70e7aae8939de89781d4a1744b23175d",
       "version": 5,
       "status": "failed",
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "error": "oracle_description_identity_mismatch",
-      "failures": 2,
-      "next_attempt_at": "2026-09-22T20:40:23Z"
+      "failures": 3,
+      "next_attempt_at": "2026-09-29T09:01:43Z"
     },
     "d142118b1541d829": {
       "source_key": "9fdaee0634a55bd3408728e42dcd92e25776745616c6ddad4e8ca8230470e3f6",
@@ -66512,11 +66617,11 @@
     "d14384746814e745": {
       "source_key": "813b0d7f12c0038d58bd1b556f08175a00a1d670a00bae7cf3fdda05e0d2dc24",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "d1449ce439ec77c4": {
       "source_key": "e4f5cb0258c04971a8b3dab9684dec19f49829816f57a7a26a4ee582927a8409",
@@ -66603,11 +66708,11 @@
     "d185043963a7576c": {
       "source_key": "138dbd7738f471633d4a3fb0cdd5b648d404edd23581dcbf6a66fde92a850fa2",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "d18aff4ad68c5f32": {
       "source_key": "034a6363418f90369ec5d3dc6bbc55f202c584f6b745673cc090a17e7202ceae",
@@ -66639,11 +66744,11 @@
     "d1a441b1aa291548": {
       "source_key": "63a0c9b33e35935caef1763dfa27828b2418b4f0072386348f2dfe11463a6208",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "d1a62b21e070e72a": {
       "source_key": "f6e8fdbb7ff321fa4504d7a94b4ec74dfc1f8a9320195dde5bd6755f30dc2cc9",
@@ -66657,11 +66762,11 @@
     "d1aeaff521090c43": {
       "source_key": "96b3dcc71cb5d35989cf109a24893fd45a7d8bf3f7473562f87ad0474709ad15",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "d1b19edf5dfe3df6": {
       "source_key": "31a013cb846926b9f80b4466188558c930b10ef55354bfafc0f26ffa0d3f32c4",
@@ -66738,20 +66843,20 @@
     "d1eb2e8f3768d444": {
       "source_key": "5c925aa6cc967b168c3c4840456fc57b643ffb49a9a9314733b3dd7467bdb936",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "d1efdfef217f4d10": {
       "source_key": "8b2b22b7717ee4790d14e571cf2197c1c84c2d67d9488696df9aead34ac23edf",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "d1f0bf26dbadd4ff": {
       "source_key": "209ce3108d609795274fff43027593f5ddc256af71bd64f3e991550dec489e3e",
@@ -66765,11 +66870,11 @@
     "d1f3223d96137dae": {
       "source_key": "09134792b8f9a1c0e938a8cd39e2f0b53e7d4b0cb5f3462ceda09dd862dec736",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "d1faa2c39cfe7d6b": {
       "source_key": "04d708c1c6f4b2650070d637915ff657b59e40b7b8b66965496987a7789ee673",
@@ -66802,11 +66907,11 @@
     "d20eee298cdae2f2": {
       "source_key": "025d83341947d8615a5faf665f8791e0dac6a3211a4681db1b30f48bd6c21eff",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "d20f0240f6e8c3f5": {
       "source_key": "2e80aec486c745b3932cefd22fc4c4da5bd65c6eb9536ec90b3fb9ac7c1994da",
@@ -66820,11 +66925,12 @@
     "d21f86bea3178394": {
       "source_key": "de2bcac7648d01e0d0676d9c7d02e2cdcff5bf3b4b413b5a3090b6f06161a107",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
-      "status": "available",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "failed",
       "last_success_at": "2026-09-22T16:40:23Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "failures": 1,
+      "next_attempt_at": "2026-09-29T03:01:43Z",
+      "error": "robots_disallowed"
     },
     "d230c859086c7636": {
       "source_key": "d2a9dffdb57d25a74995421a00ece14d5da9e30a1c8ddc760de88f1619f42ff3",
@@ -67323,10 +67429,11 @@
     "d49f508be2b71e9a": {
       "source_key": "4b49e32d98f695557db1933484831c5a0c1b722b3025a3623df225d419e1c15b",
       "version": 5,
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "last_success_at": "2026-09-25T23:35:46Z",
-      "next_attempt_at": "2026-09-28T23:35:46Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "d4a17f1b662f7a8f": {
       "source_key": "72dc9d9958dab23964da17028ec987821a9d826b27249eb5f9b0b7ea8269d1e1",
@@ -67790,6 +67897,15 @@
       "last_success_at": "2026-09-22T19:54:11Z",
       "failures": 0,
       "next_attempt_at": "2026-09-25T19:54:11Z"
+    },
+    "d6b46d28530bfad0": {
+      "source_key": "6071d88920a1672a8497a754e5ba35b8c24ed53966a2198d6b925b4b6f203e51",
+      "version": 5,
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "available",
+      "last_success_at": "2026-09-29T01:01:43Z",
+      "failures": 0,
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "d6b6ef2cbc530f06": {
       "source_key": "67ee58c7e5084452b4ab0f1f57e48462f13462e10dd4179a02c40245cbd0c3ee",
@@ -69173,10 +69289,11 @@
     "dcae11da537bc80a": {
       "source_key": "108619feb112c79dc530a2daf1e18dcbd07d85ce58d7c25f53c2469a9c2d2d1a",
       "version": 5,
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "last_success_at": "2026-09-25T23:35:46Z",
-      "next_attempt_at": "2026-09-28T23:35:46Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "dcb1388d11ae5f1c": {
       "source_key": "474a3b91ba81b978daabe4d6a9ce617415cecc423758d8370b8b3ffb8bec5ec6",
@@ -69704,11 +69821,11 @@
     "deea6af20dacdaac": {
       "source_key": "2be4392e975e2354e68a42634973fa8b0d030247474ac6423ec980c2de02810a",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "def2160f0e786dcb": {
       "source_key": "935740faee24abca9e0fc737677b8e05c3ecc69c085ed0fc90c9a5325133f111",
@@ -69731,11 +69848,12 @@
     "df0e421d8b84b2ee": {
       "source_key": "9148a7ba2bc04e48477636b1aa0a2d0c0e97dd1f2f8682fec7f4ea6410bcbbae",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
-      "status": "available",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "failed",
       "last_success_at": "2026-09-22T16:40:23Z",
-      "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "failures": 1,
+      "next_attempt_at": "2026-09-29T03:01:43Z",
+      "error": "robots_disallowed"
     },
     "df0ffbd554cb56b9": {
       "source_key": "fd7e07cff6588a6804edde55148a258f129948013d59b92d3b87f1b562c9fe4d",
@@ -72038,6 +72156,15 @@
       "failures": 0,
       "next_attempt_at": "2026-09-25T22:49:17Z"
     },
+    "e8912ef2b933d234": {
+      "source_key": "5b47796da0ee6170ec1adf8ca1cfc3e5fcf7644b14380f73933c9b96a0c31a63",
+      "version": 5,
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "status": "available",
+      "last_success_at": "2026-09-29T01:01:43Z",
+      "failures": 0,
+      "next_attempt_at": "2026-10-02T01:01:43Z"
+    },
     "e89940b0b5a9da73": {
       "source_key": "bf004d85a7841aba545db6e1bca8bcc27429524d0e6d82d175d05c94bbbe10f2",
       "version": 5,
@@ -72721,11 +72848,11 @@
     "ead3954f48068ba8": {
       "source_key": "aba988f33a8306beb22bc01e198987d798f078bd7dfb32a7645c78918bcd6f8b",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "ead95ca659a19c3c": {
       "source_key": "b61b810f6c4f9ee5acdce0ba97f0db0ae595aa9aa747b2f24260b0c17a8d4547",
@@ -74228,6 +74355,15 @@
       "next_attempt_at": "2026-09-26T06:02:27Z",
       "error": "no_unique_matching_jobposting"
     },
+    "f10cad15d520d917": {
+      "source_key": "05d9aea0854060ea98f78d98467f3f914708885cb6f8d54002e827467afb2a6d",
+      "version": 5,
+      "status": "failed",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
+      "error": "no_unique_matching_jobposting",
+      "failures": 1,
+      "next_attempt_at": "2026-09-29T03:01:43Z"
+    },
     "f11ba103a4dc28ac": {
       "source_key": "455867727b2a5dc38c5bc23e2ea045f8bf59aeb0c05d9071067f947006774198",
       "version": 5,
@@ -74846,11 +74982,11 @@
     "f3f35e86e8827621": {
       "source_key": "75a8e45e6a333a4b273216ab6e07f9948576108f52b90cd481c66a63189c5954",
       "version": 5,
-      "last_attempt_at": "2026-09-22T16:40:23Z",
+      "last_attempt_at": "2026-09-29T01:01:43Z",
       "status": "available",
-      "last_success_at": "2026-09-22T16:40:23Z",
+      "last_success_at": "2026-09-29T01:01:43Z",
       "failures": 0,
-      "next_attempt_at": "2026-09-25T16:40:23Z"
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "f3f408eb1c849512": {
       "source_key": "e715c9518e7ae164c7e513cf395c2d00c46a522547c9810ca3f736c8e582d477",
@@ -75033,6 +75169,14 @@
       "failures": 1,
       "next_attempt_at": "2026-09-26T09:32:41Z",
       "error": "no_unique_matching_jobposting"
+    },
+    "f4cab81bc6dc4caa": {
+      "source_key": "d2deecf926fb137aaf95a5be3bf123644b8d13d25a07f46c02ae54bec91e6298",
+      "version": 5,
+      "status": "available",
+      "failures": 0,
+      "last_success_at": "2026-09-29T01:01:43Z",
+      "next_attempt_at": "2026-10-02T01:01:43Z"
     },
     "f4d1ea91799fdd00": {
       "source_key": "0103fa139731fcc4749260195f23c2fecdea50b9de7673a416ef5f6d5a854161",

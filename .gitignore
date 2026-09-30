@@ -8,6 +8,9 @@
 # --- session handoff ---
 .session-handoff.md
 
+# --- private design notes (kept local, not published) ---
+/spec.md
+
 # Local credentials and release signing material (public updater key lives in config)
 *.key
 *.pem

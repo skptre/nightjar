@@ -79,30 +79,9 @@ workspace to your screen.
 
 ## How it works
 
-```mermaid
-flowchart LR
-  subgraph GH["GitHub (public)"]
-    direction TB
-    REG["companies.yaml<br/>company registry"]
-    DISC["Discovery<br/>Common Crawl · redirects · directories"]
-    POLL["Poller (Python)<br/>fetch → normalize → scope filter<br/>→ dedupe → diff"]
-    FEED[("data/<br/>sharded feed + description packs<br/>SHA-256 manifest")]
-    DISC -.->|candidates for review| REG
-    REG --> POLL --> FEED
-  end
-
-  subgraph ME["Your machine"]
-    direction TB
-    SYNC["Feed sync<br/>verify checksums"]
-    ENG["Classify · eligibility · score<br/>(runs on-device against your profile)"]
-    DB[("SQLite<br/>tracker, notes, preferences")]
-    UI["Tauri + React UI"]
-    SYNC --> ENG --> UI
-    DB <--> UI
-  end
-
-  FEED -->|HTTPS, static files| SYNC
-```
+<p align="center">
+  <img src="docs/architecture.svg" alt="Architecture: discovery, registry and a Python poller on GitHub publish a sharded, checksummed feed; the desktop app syncs it over HTTPS, classifies and ranks it locally, and stores the tracker in SQLite" width="100%" />
+</p>
 
 **The poller knows nothing about any user.** It fetches public postings, applies a
 fixed product scope (student and early-career roles in the US), normalizes them to

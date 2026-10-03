@@ -1,8 +1,5 @@
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/logo-dark.svg" />
-    <img src="docs/logo-light.svg" alt="Nightjar logo" width="88" height="88" />
-  </picture>
+  <img src="docs/logo-light.svg" alt="Nightjar logo" width="88" height="88" />
 
   <h1>Nightjar</h1>
 
@@ -28,10 +25,7 @@
 
 <br />
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/posting-dark.png" />
-  <img src="docs/screenshots/posting-light.png" alt="Nightjar jobs view: a full posting open as a sheet in front of the internship list, with location, pay, an apply button and the cleaned-up description" />
-</picture>
+<img src="docs/screenshots/posting-light.png" alt="Nightjar jobs view: a full posting open as a sheet in front of the internship list, with location, pay, an apply button and the cleaned-up description" />
 
 <br />
 
@@ -68,8 +62,8 @@ keeps your applications on your machine.
 
 <table>
   <tr>
-    <td width="50%"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/tracker-dark.png" /><img src="docs/screenshots/tracker-light.png" alt="Application tracker with upcoming deadlines, color-coded stages, next steps and due dates" /></picture></td>
-    <td width="50%"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/filters-dark.png" /><img src="docs/screenshots/filters-light.png" alt="Filters sheet with role and field chips, SWE selected, in front of the job list" /></picture></td>
+    <td width="50%"><img src="docs/screenshots/tracker-light.png" alt="Application tracker with upcoming deadlines, color-coded stages, next steps and due dates" /></td>
+    <td width="50%"><img src="docs/screenshots/filters-light.png" alt="Filters sheet with role and field chips, SWE selected, in front of the job list" /></td>
   </tr>
   <tr>
     <td align="center"><sub><b>Tracker:</b> every application, its stage and the next thing to do</sub></td>
@@ -83,10 +77,7 @@ workspace to your screen.
 ## How it works
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/architecture.svg" />
-    <img src="docs/architecture-light.svg" alt="Architecture: discovery, registry and a Python poller on GitHub publish a sharded, checksummed feed; the desktop app syncs it over HTTPS, classifies and ranks it locally, and stores the tracker in SQLite" width="100%" />
-  </picture>
+  <img src="docs/architecture-light.svg" alt="Architecture: discovery, registry and a Python poller on GitHub publish a sharded, checksummed feed; the desktop app syncs it over HTTPS, classifies and ranks it locally, and stores the tracker in SQLite" width="100%" />
 </p>
 
 **The poller knows nothing about any user.** It fetches public postings, applies a

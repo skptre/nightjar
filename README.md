@@ -26,8 +26,8 @@
 <br />
 
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/jobs-light.png" />
-  <img src="docs/screenshots/jobs-dark.png" alt="Nightjar jobs view: a searchable list of internship roles with the selected role's full description open beside it" />
+  <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/posting-light.png" />
+  <img src="docs/screenshots/posting-dark.png" alt="Nightjar jobs view: a full posting open as a sheet in front of the internship list, with location, pay, an apply button and the cleaned-up description" />
 </picture>
 
 <br />
@@ -65,8 +65,8 @@ keeps your applications on your machine.
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/screenshots/tracker.png" alt="Application tracker with stages, applied dates, next steps and due dates" /></td>
-    <td width="50%"><img src="docs/screenshots/filters.png" alt="Role and field filters, with SWE and Hardware roles in Aerospace and Robotics selected" /></td>
+    <td width="50%"><img src="docs/screenshots/tracker-stages.png" alt="Application tracker with upcoming deadlines, color-coded stages, next steps and due dates" /></td>
+    <td width="50%"><img src="docs/screenshots/filters-sheet.png" alt="Filters sheet with role and field chips, SWE selected, in front of the job list" /></td>
   </tr>
   <tr>
     <td align="center"><sub><b>Tracker:</b> every application, its stage and the next thing to do</sub></td>

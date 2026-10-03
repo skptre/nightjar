@@ -1,5 +1,8 @@
 <div align="center">
-  <img src="app/src-tauri/icons/128x128@2x.png" alt="Nightjar icon" width="88" height="88" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/logo-dark.svg" />
+    <img src="docs/logo-light.svg" alt="Nightjar logo" width="88" height="88" />
+  </picture>
 
   <h1>Nightjar</h1>
 
@@ -7,11 +10,11 @@
   <p>A self-updating job feed built from company career systems, plus a private,<br />local-first tracker for everything you apply to.</p>
 
   <p>
-    <img src="https://img.shields.io/badge/status-early_beta-d8ed95?style=flat-square&labelColor=181818" alt="Status: early beta" />
-    <img src="https://img.shields.io/badge/desktop-Windows-d8ed95?style=flat-square&labelColor=181818" alt="Desktop: Windows" />
-    <img src="https://img.shields.io/badge/Tauri_2-React_19-d8ed95?style=flat-square&labelColor=181818" alt="Tauri 2 and React 19" />
-    <img src="https://img.shields.io/badge/poller-Python_3.12-d8ed95?style=flat-square&labelColor=181818" alt="Poller: Python 3.12" />
-    <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-d8ed95?style=flat-square&labelColor=181818" alt="License: MIT" /></a>
+    <img src="https://img.shields.io/badge/status-early_beta-f4f4f2?style=flat-square&labelColor=0b0b0b" alt="Status: early beta" />
+    <img src="https://img.shields.io/badge/desktop-Windows-f4f4f2?style=flat-square&labelColor=0b0b0b" alt="Desktop: Windows" />
+    <img src="https://img.shields.io/badge/Tauri_2-React_19-f4f4f2?style=flat-square&labelColor=0b0b0b" alt="Tauri 2 and React 19" />
+    <img src="https://img.shields.io/badge/poller-Python_3.12-f4f4f2?style=flat-square&labelColor=0b0b0b" alt="Poller: Python 3.12" />
+    <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-f4f4f2?style=flat-square&labelColor=0b0b0b" alt="License: MIT" /></a>
   </p>
 
   <p>
@@ -26,8 +29,8 @@
 <br />
 
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/posting-light.png" />
-  <img src="docs/screenshots/posting-dark.png" alt="Nightjar jobs view: a full posting open as a sheet in front of the internship list, with location, pay, an apply button and the cleaned-up description" />
+  <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/posting-dark.png" />
+  <img src="docs/screenshots/posting-light.png" alt="Nightjar jobs view: a full posting open as a sheet in front of the internship list, with location, pay, an apply button and the cleaned-up description" />
 </picture>
 
 <br />
@@ -65,8 +68,8 @@ keeps your applications on your machine.
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/screenshots/tracker-stages.png" alt="Application tracker with upcoming deadlines, color-coded stages, next steps and due dates" /></td>
-    <td width="50%"><img src="docs/screenshots/filters-sheet.png" alt="Filters sheet with role and field chips, SWE selected, in front of the job list" /></td>
+    <td width="50%"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/tracker-dark.png" /><img src="docs/screenshots/tracker-light.png" alt="Application tracker with upcoming deadlines, color-coded stages, next steps and due dates" /></picture></td>
+    <td width="50%"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/filters-dark.png" /><img src="docs/screenshots/filters-light.png" alt="Filters sheet with role and field chips, SWE selected, in front of the job list" /></picture></td>
   </tr>
   <tr>
     <td align="center"><sub><b>Tracker:</b> every application, its stage and the next thing to do</sub></td>
@@ -80,7 +83,10 @@ workspace to your screen.
 ## How it works
 
 <p align="center">
-  <img src="docs/architecture.svg" alt="Architecture: discovery, registry and a Python poller on GitHub publish a sharded, checksummed feed; the desktop app syncs it over HTTPS, classifies and ranks it locally, and stores the tracker in SQLite" width="100%" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/architecture.svg" />
+    <img src="docs/architecture-light.svg" alt="Architecture: discovery, registry and a Python poller on GitHub publish a sharded, checksummed feed; the desktop app syncs it over HTTPS, classifies and ranks it locally, and stores the tracker in SQLite" width="100%" />
+  </picture>
 </p>
 
 **The poller knows nothing about any user.** It fetches public postings, applies a

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" role="img" aria-labelledby="t d">
+  <title id="t">Nightjar architecture</title>
+  <desc id="d">A Python poller on GitHub Actions turns employer job boards into a sharded, checksummed feed. The desktop app downloads it over HTTPS, then classifies, filters and ranks it locally, keeping the tracker in on-device SQLite.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#0b0b0b"/>
+    </marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#a3a3a3"/>
+    </marker>
+    <style>
+      text { font-family: Geist, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+      .panel { fill: #ffffff; stroke: #e2e2de; }
+      .box { fill: #f7f7f5; stroke: #dcdcd8; }
+      .hi { fill: #ffffff; stroke: #0b0b0b; stroke-opacity: .6; }
+      .eyebrow { font-size: 11px; letter-spacing: 1.6px; fill: #8a8a8a; font-weight: 600; }
+      .h { font-size: 14px; fill: #0b0b0b; font-weight: 600; letter-spacing: -0.2px; }
+      .s { font-size: 11.5px; fill: #6b6b6b; }
+      .m { font-family: ui-monospace, "Cascadia Code", Consolas, Menlo, monospace; font-size: 11.5px; fill: #1a1a1a; }
+      .note { font-size: 11.5px; fill: #8a8a8a; }
+      .flow { stroke: #0b0b0b; stroke-width: 1.5; fill: none; }
+      .ctl { stroke: #a3a3a3; stroke-width: 1.4; fill: none; }
+      .lift { fill: none; stroke: #ffffff; stroke-opacity: 0; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="440" rx="20" fill="#f4f4f2"/>
+
+  <!-- GitHub side -->
+  <rect class="panel" x="24" y="24" width="568" height="392" rx="18"/>
+  <path class="lift" d="M42 24.5H574"/>
+  <text class="eyebrow" x="44" y="54">GITHUB · PUBLIC REPO</text>
+
+  <rect class="box" x="44" y="76" width="160" height="84" rx="12"/>
+  <text class="h" x="60" y="106">Discovery</text>
+  <text class="s" x="60" y="127">Common Crawl,</text>
+  <text class="s" x="60" y="144">redirects, directories</text>
+
+  <rect class="box" x="228" y="76" width="150" height="84" rx="12"/>
+  <text class="h" x="244" y="106">Registry</text>
+  <text class="m" x="244" y="127">companies.yaml</text>
+  <text class="s" x="244" y="144">human-reviewed</text>
+
+  <rect class="box" x="402" y="76" width="170" height="84" rx="12"/>
+  <text class="h" x="418" y="106">Poller · Python</text>
+  <text class="s" x="418" y="127">fetch → normalize</text>
+  <text class="s" x="418" y="144">filter → dedupe → diff</text>
+
+  <path class="ctl" d="M204 118H224" stroke-dasharray="4 3" marker-end="url(#g)"/>
+  <path class="ctl" d="M378 118H398" marker-end="url(#g)"/>
+  <path class="flow" d="M487 160V200" marker-end="url(#a)"/>
+
+  <rect x="44" y="204" width="160" height="130" rx="12" fill="none" stroke="#cfcfcb" stroke-dasharray="4 4"/>
+  <text class="note" x="60" y="234">The poller knows</text>
+  <text class="note" x="60" y="252">nothing about users.</text>
+  <text class="note" x="60" y="282">Public postings in,</text>
+  <text class="note" x="60" y="300">normalized JSON out.</text>
+
+  <rect class="hi" x="228" y="204" width="344" height="130" rx="12"/>
+  <text class="m" x="244" y="234" style="font-size:14px;font-weight:600">data/</text>
+  <text class="h" x="292" y="234" style="font-weight:500;fill:#6b6b6b;font-size:13px">published feed</text>
+  <circle cx="249" cy="264" r="2.5" fill="#0b0b0b"/><text class="s" x="262" y="268">per-source shards, only changed ones re-downloaded</text>
+  <circle cx="249" cy="287" r="2.5" fill="#0b0b0b"/><text class="s" x="262" y="291">content-addressed description packs</text>
+  <circle cx="249" cy="310" r="2.5" fill="#0b0b0b"/><text class="s" x="262" y="314">SHA-256 manifest for every file</text>
+
+  <text class="note" x="44" y="372">GitHub Actions: 15-min cron with adaptive per-source</text>
+  <text class="note" x="44" y="392">polling tiers · 5-min hot-watch · monthly discovery</text>
+
+  <!-- Local side -->
+  <rect class="panel" x="616" y="24" width="360" height="392" rx="18"/>
+  <path class="lift" d="M634 24.5H958"/>
+  <text class="eyebrow" x="636" y="54">YOUR MACHINE · DESKTOP APP</text>
+
+  <rect class="box" x="636" y="76" width="320" height="64" rx="12"/>
+  <text class="h" x="652" y="102">Feed sync</text>
+  <text class="s" x="652" y="123">fetches changed shards · verifies SHA-256</text>
+
+  <rect class="box" x="636" y="164" width="320" height="84" rx="12"/>
+  <text class="h" x="652" y="192">Local engine</text>
+  <text class="s" x="652" y="213">classify roles and fields · eligibility flags</text>
+  <text class="s" x="652" y="230">rank against your profile and outcomes</text>
+
+  <rect class="hi" x="636" y="272" width="140" height="64" rx="12"/>
+  <text class="h" x="652" y="298">Tauri + React</text>
+  <text class="s" x="652" y="319">jobs · tracker</text>
+
+  <rect class="box" x="816" y="272" width="140" height="64" rx="12"/>
+  <text class="h" x="832" y="298">SQLite</text>
+  <text class="s" x="832" y="319">tracker, notes</text>
+
+  <path class="flow" d="M796 140V160" marker-end="url(#a)"/>
+  <path class="flow" d="M706 248V268" marker-end="url(#a)"/>
+  <path class="ctl" d="M782 304H810" marker-start="url(#g)" marker-end="url(#g)"/>
+
+  <text class="note" x="636" y="372">Profile, tracker and notes stay on the</text>
+  <text class="note" x="636" y="392">device. No account, no cloud sync.</text>
+
+  <!-- Feed to app -->
+  <path class="flow" d="M572 269H604V108H632" marker-end="url(#a)"/>
+  <g transform="translate(604 190) rotate(-90)">
+    <rect x="-64" y="-11" width="128" height="22" rx="11" fill="#f4f4f2" stroke="#0b0b0b" stroke-opacity=".55"/>
+    <text x="0" y="4" text-anchor="middle" style="font-size:11px;fill:#0b0b0b">HTTPS · static JSON</text>
+  </g>
+</svg>

@@ -1,6 +1,6 @@
 {
   "shard_id": "icims",
-  "updated_at": "2026-10-03T06:58:26Z",
+  "updated_at": "2026-10-03T12:21:46Z",
   "count": 2,
   "postings": {
     "0d7863521e259085": {
@@ -18,7 +18,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-10-03T06:58:26Z",
+      "last_seen_at": "2026-10-03T12:21:46Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -67,7 +67,7 @@
       "description_ref": {
         "sha256": "5a07ad4e40856cd7be87be124ed30e6e14c5434353d5d76b39804a345fcf548d",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "a0454a11ec4d3e60210240664c69d58cf6baee79d89170d1200d29d6d1f52e4d",
+        "pack_sha256": "4e6c3167149d71c99a2a5afca11c7e4570fceae41bbfe4e283f3af63fe6f633d",
         "status": "stale"
       }
     }

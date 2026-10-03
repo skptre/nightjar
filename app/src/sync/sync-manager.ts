@@ -23,6 +23,11 @@ export interface SyncState {
 
 export type SyncListener = (state: SyncState) => void;
 
+// Refocusing the window triggers a sync; without a floor, tabbing back and forth
+// re-runs the whole pipeline every time. Skip a focus-triggered sync if one ran
+// within this window (interval, online and manual syncs are unaffected).
+const FOREGROUND_SYNC_MIN_MS = 60_000;
+
 export class SyncManager {
   private db: Database;
   private profile: Profile | null = null;
@@ -39,6 +44,7 @@ export class SyncManager {
   private visibilityHandler: (() => void) | null = null;
   private onlineHandler: (() => void) | null = null;
   private syncIntervalMs: number = DEFAULT_SYNC_INTERVAL_MS;
+  private lastSyncStartedAt = 0;
 
   constructor(db: Database) {
     this.db = db;
@@ -72,9 +78,10 @@ export class SyncManager {
     void this.doSync();
 
     this.visibilityHandler = (): void => {
-      if (document.visibilityState === 'visible') {
-        void this.doSync();
-      }
+      if (document.visibilityState !== 'visible') return;
+      // Don't re-run the pipeline on every refocus if one just ran.
+      if (Date.now() - this.lastSyncStartedAt < FOREGROUND_SYNC_MIN_MS) return;
+      void this.doSync();
     };
     document.addEventListener('visibilitychange', this.visibilityHandler);
 
@@ -112,6 +119,7 @@ export class SyncManager {
   private async syncNow(): Promise<SyncResult | null> {
     if (this.syncing) return null;
     this.syncing = true;
+    this.lastSyncStartedAt = Date.now();
 
     try {
       // Notify feed views before a local migration too, including offline launches.
@@ -137,7 +145,9 @@ export class SyncManager {
       }
 
       const result = await syncFeed(this.db);
-      if (!result.error) await refreshJobDetails(this.db, this.profile);
+      // The pre-sync refreshJobDetails above already processed pending rows;
+      // only re-run it when the sync actually brought new/changed postings.
+      if (!result.error && !result.skipped) await refreshJobDetails(this.db, this.profile);
 
       if (result.error) {
         this.updateState({ status: 'error', lastError: result.error });

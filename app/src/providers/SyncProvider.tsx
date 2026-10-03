@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState, useCallback, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useMemo, useRef, useState, useCallback, type ReactNode } from 'react';
 import { useDatabase } from '@/providers/DatabaseProvider';
 import { useProfile } from '@/providers/ProfileProvider';
 import { SyncManager, type SyncStatus } from '@/sync/sync-manager';
@@ -34,16 +34,24 @@ export function SyncProvider({ children }: { children: ReactNode }): ReactNode {
   const [lastSyncedAt, setLastSyncedAt] = useState<string | null>(null);
   const [lastError, setLastError] = useState<string | null>(null);
   const [newPostingCount, setNewPostingCount] = useState(0);
+  // Monotonic id for the active classification run. A profile change bumps it so
+  // a still-running recompute for the previous profile stops rather than writing
+  // stale scores over the newer ones.
+  const classificationRun = useRef(0);
 
   useEffect(() => {
     manager.setProfile(profile);
     manager.setSyncInterval(profile?.sync_interval_ms ?? DEFAULT_SYNC_INTERVAL_MS);
 
+    const runId = classificationRun.current + 1;
+    classificationRun.current = runId;
+    const cancelled = (): boolean => classificationRun.current !== runId;
+
     // Defer one tick so React StrictMode can cancel its development-only first
     // effect pass instead of running two expensive full-feed recomputations.
     const classificationTimer = setTimeout(() => {
       const refresh = profile
-        ? recomputeAll(db, profile)
+        ? recomputeAll(db, profile, undefined, cancelled)
         : db.run(
           'UPDATE postings_cache SET eligibility = NULL, score = NULL, score_breakdown = NULL',
         );
@@ -52,7 +60,11 @@ export function SyncProvider({ children }: { children: ReactNode }): ReactNode {
       });
     }, 0);
 
-    return () => clearTimeout(classificationTimer);
+    return () => {
+      // Invalidate this run so an in-flight recompute for the old profile stops.
+      classificationRun.current = runId + 1;
+      clearTimeout(classificationTimer);
+    };
   }, [db, manager, profile]);
 
   useEffect(() => {

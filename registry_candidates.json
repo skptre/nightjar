@@ -152,14 +152,6 @@
     "posting_count": 1
   },
   {
-    "slug": "alexion",
-    "name": "Alexion",
-    "inferred_ats": "workday",
-    "inferred_board_token": "astrazeneca.wd3.myworkdayjobs.com/alexion",
-    "apply_url": "https://astrazeneca.wd3.myworkdayjobs.com/alexion/job/Canada---Mississauga/Co-Op--Development-Operations-AI---Automation-Enablement-Intern_R-260415",
-    "posting_count": 1
-  },
-  {
     "slug": "allegion",
     "name": "Allegion",
     "inferred_ats": "workday",
@@ -549,7 +541,7 @@
     "inferred_ats": "greenhouse",
     "inferred_board_token": "cssmerge",
     "apply_url": "https://job-boards.greenhouse.io/cssmerge/jobs/8693034002",
-    "posting_count": 3
+    "posting_count": 5
   },
   {
     "slug": "attentive",
@@ -982,6 +974,14 @@
     "inferred_board_token": null,
     "apply_url": "https://c3.ai/job-description/8739037002?gh_jid=8739037002",
     "posting_count": 3
+  },
+  {
+    "slug": "cadence-solutions",
+    "name": "Cadence Solutions",
+    "inferred_ats": "greenhouse",
+    "inferred_board_token": "solutions",
+    "apply_url": "https://job-boards.greenhouse.io/solutions/jobs/4711210006",
+    "posting_count": 2
   },
   {
     "slug": "cae",
@@ -2408,14 +2408,6 @@
     "posting_count": 3
   },
   {
-    "slug": "fresenius-medical-care",
-    "name": "Fresenius Medical Care",
-    "inferred_ats": "workday",
-    "inferred_board_token": "freseniusmedicalcare.wd3.myworkdayjobs.com/fme",
-    "apply_url": "https://freseniusmedicalcare.wd3.myworkdayjobs.com/fme/job/Lawrence-MA-USA/Software-Engineering-Co-op_R0271309",
-    "posting_count": 1
-  },
-  {
     "slug": "fussball-club-cincinnati-llc-fc-cincinnati",
     "name": "Fussball Club Cincinnati LLC (“FC Cincinnati”)",
     "inferred_ats": "greenhouse",
@@ -2480,6 +2472,14 @@
     "posting_count": 2
   },
   {
+    "slug": "genentech",
+    "name": "Genentech",
+    "inferred_ats": "workday",
+    "inferred_board_token": "roche.wd3.myworkdayjobs.com/ROG-A2O-GENE",
+    "apply_url": "https://roche.wd3.myworkdayjobs.com/ROG-A2O-GENE/job/South-San-Francisco/XMLNAME-2027-Spring-Intern---GenAI-Applications_202610-125229",
+    "posting_count": 1
+  },
+  {
     "slug": "general-dynamics",
     "name": "General Dynamics",
     "inferred_ats": "icims",
@@ -2534,14 +2534,6 @@
     "inferred_board_token": "genevatrading",
     "apply_url": "https://job-boards.greenhouse.io/genevatrading/jobs/5232641007",
     "posting_count": 3
-  },
-  {
-    "slug": "genmd",
-    "name": "GenMD",
-    "inferred_ats": "ashby",
-    "inferred_board_token": "genmd",
-    "apply_url": "https://jobs.ashbyhq.com/genmd/807adafc-7842-4e05-90f3-9bc45dd39a13/application?embed=true",
-    "posting_count": 1
   },
   {
     "slug": "genscript",
@@ -2621,7 +2613,7 @@
     "inferred_ats": "workday",
     "inferred_board_token": "globalfoundries.wd1.myworkdayjobs.com/External",
     "apply_url": "https://globalfoundries.wd1.myworkdayjobs.com/External/job/USA---Vermont---Essex-Junction/SiGe-HBT-Device-Modelling-Intern--Summer-2027-_JR-2604271",
-    "posting_count": 2
+    "posting_count": 1
   },
   {
     "slug": "gomaterials",
@@ -2840,14 +2832,6 @@
     "posting_count": 2
   },
   {
-    "slug": "healthesystems",
-    "name": "Healthesystems",
-    "inferred_ats": "greenhouse",
-    "inferred_board_token": null,
-    "apply_url": "https://www.healthesystems.com/unassigned/careers-list?gh_jid=7928315003",
-    "posting_count": 1
-  },
-  {
     "slug": "heidelberg-materials",
     "name": "Heidelberg Materials",
     "inferred_ats": "workday",
@@ -2870,6 +2854,14 @@
     "inferred_board_token": "hp.wd5.myworkdayjobs.com/externalcareersite",
     "apply_url": "https://hp.wd5.myworkdayjobs.com/externalcareersite/job/Spring-Texas-United-States-of-America/Quality-Engineering-Intern_UNI4756-1",
     "posting_count": 11
+  },
+  {
+    "slug": "hewlett-packard-enterprise",
+    "name": "Hewlett Packard Enterprise",
+    "inferred_ats": "workday",
+    "inferred_board_token": "hpe.wd5.myworkdayjobs.com/jobsathpe",
+    "apply_url": "https://hpe.wd5.myworkdayjobs.com/jobsathpe/job/Bristol-Avon-United-Kingdom/Software-Engineering-Internship--Placement-Year-_1215804",
+    "posting_count": 18
   },
   {
     "slug": "hewlett-packard-hp",
@@ -3062,6 +3054,14 @@
     "inferred_board_token": "uscareers-idemia",
     "apply_url": "https://uscareers-idemia.icims.com/jobs/8650/job?mobile=true&needsRedirect=false",
     "posting_count": 1
+  },
+  {
+    "slug": "iex",
+    "name": "IEX",
+    "inferred_ats": "greenhouse",
+    "inferred_board_token": "iex-interns",
+    "apply_url": "https://job-boards.greenhouse.io/iex-interns/jobs/8173636",
+    "posting_count": 4
   },
   {
     "slug": "igs-energy",
@@ -3336,6 +3336,14 @@
     "posting_count": 1
   },
   {
+    "slug": "judi-health",
+    "name": "Judi Health",
+    "inferred_ats": "greenhouse",
+    "inferred_board_token": "judihealth",
+    "apply_url": "https://job-boards.greenhouse.io/judihealth/jobs/5429077008",
+    "posting_count": 3
+  },
+  {
     "slug": "k1",
     "name": "K1",
     "inferred_ats": "jazzhr",
@@ -3413,7 +3421,15 @@
     "inferred_ats": "lever",
     "inferred_board_token": "kitware",
     "apply_url": "https://jobs.lever.co/kitware/ff25a349-a362-45d2-b1e4-2487c1df4f75/apply",
-    "posting_count": 3
+    "posting_count": 2
+  },
+  {
+    "slug": "kkr",
+    "name": "KKR",
+    "inferred_ats": "greenhouse",
+    "inferred_board_token": null,
+    "apply_url": "https://www.kkr.com/careers/student-careers/student-career-opportunities/post?gh_jid=6200868004",
+    "posting_count": 1
   },
   {
     "slug": "kla-corporation",
@@ -3528,6 +3544,14 @@
     "posting_count": 2
   },
   {
+    "slug": "liberty-mutual",
+    "name": "Liberty Mutual",
+    "inferred_ats": "icims",
+    "inferred_board_token": "campus-libertymutual",
+    "apply_url": "https://campus-libertymutual.icims.com/jobs/261811/job?mobile=true&needsRedirect=false",
+    "posting_count": 3
+  },
+  {
     "slug": "life-fitness",
     "name": "Life Fitness",
     "inferred_ats": "workday",
@@ -3541,14 +3565,6 @@
     "inferred_ats": "rippling",
     "inferred_board_token": "lightguide",
     "apply_url": "https://ats.rippling.com/lightguide/jobs/1675cecb-fa30-4ea6-9946-7f8a4ac83408",
-    "posting_count": 1
-  },
-  {
-    "slug": "live-oak-bank",
-    "name": "Live Oak Bank",
-    "inferred_ats": "workday",
-    "inferred_board_token": "liveoakbancshares.wd1.myworkdayjobs.com/Live_Oak",
-    "apply_url": "https://liveoakbancshares.wd1.myworkdayjobs.com/en-US/Live_Oak/job/Wilmington-NC/Summer-2027-Intern--Architecture-Engineering_R-002630",
     "posting_count": 1
   },
   {
@@ -3632,6 +3648,14 @@
     "posting_count": 9
   },
   {
+    "slug": "magnite",
+    "name": "Magnite",
+    "inferred_ats": "workday",
+    "inferred_board_token": "osv-rubicon.wd5.myworkdayjobs.com/MagniteCareers",
+    "apply_url": "https://osv-rubicon.wd5.myworkdayjobs.com/en-US/MagniteCareers/job/United-Kingdom---Belfast/Software-Engineer---Student-Placement--Queens-University-Only-_R-01418",
+    "posting_count": 2
+  },
+  {
     "slug": "major-league-baseball",
     "name": "Major League Baseball",
     "inferred_ats": "greenhouse",
@@ -3677,7 +3701,7 @@
     "inferred_ats": "workday",
     "inferred_board_token": "mastercard.wd1.myworkdayjobs.com/Campus",
     "apply_url": "https://mastercard.wd1.myworkdayjobs.com/Campus/job/OFallon-Missouri/Research---Development-Co-Op--WashU---Spring-2027---St-Louis--MO--US_R-291654",
-    "posting_count": 4
+    "posting_count": 2
   },
   {
     "slug": "mastercontrol",
@@ -3816,6 +3840,14 @@
     "posting_count": 1
   },
   {
+    "slug": "mistywest",
+    "name": "MistyWest",
+    "inferred_ats": "workable",
+    "inferred_board_token": "mistywest",
+    "apply_url": "https://apply.workable.com/mistywest/j/5D68DE0118/apply",
+    "posting_count": 1
+  },
+  {
     "slug": "mizuho-securities-usa",
     "name": "Mizuho Securities USA",
     "inferred_ats": "workday",
@@ -3918,14 +3950,6 @@
     "inferred_board_token": "nasdaq.wd1.myworkdayjobs.com/Global_External_Site",
     "apply_url": "https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site/job/GA---Glenridge-Point/Product-Owner-Intern---2027-Summer-Internship_R0026976",
     "posting_count": 2
-  },
-  {
-    "slug": "natera",
-    "name": "Natera",
-    "inferred_ats": "greenhouse",
-    "inferred_board_token": "natera",
-    "apply_url": "https://job-boards.greenhouse.io/natera/jobs/6188497004",
-    "posting_count": 1
   },
   {
     "slug": "national-information-solutions-cooperative",
@@ -5208,6 +5232,14 @@
     "posting_count": 1
   },
   {
+    "slug": "signifyd",
+    "name": "Signifyd",
+    "inferred_ats": "greenhouse",
+    "inferred_board_token": "signifyd95",
+    "apply_url": "https://job-boards.greenhouse.io/signifyd95/jobs/8240551",
+    "posting_count": 1
+  },
+  {
     "slug": "simis",
     "name": "SimIS",
     "inferred_ats": "jazzhr",
@@ -5406,6 +5438,14 @@
     "inferred_board_token": "careers-springswindowfashions",
     "apply_url": "https://careers-springswindowfashions.icims.com/jobs/12892/job?mobile=true&needsRedirect=false",
     "posting_count": 8
+  },
+  {
+    "slug": "stackadapt",
+    "name": "StackAdapt",
+    "inferred_ats": "greenhouse",
+    "inferred_board_token": "stackadapt-confidential",
+    "apply_url": "https://job-boards.greenhouse.io/stackadapt-confidential/jobs/4386552009",
+    "posting_count": 3
   },
   {
     "slug": "stand-together",
@@ -5805,7 +5845,7 @@
     "inferred_ats": "workday",
     "inferred_board_token": "tel.wd3.myworkdayjobs.com/tel-careers",
     "apply_url": "https://tel.wd3.myworkdayjobs.com/tel-careers/job/Austin-RiverSouth/Business-Intelligence-Analyst-Summer-2027-Intern_R26-01504",
-    "posting_count": 7
+    "posting_count": 6
   },
   {
     "slug": "toppan-packaging-americas",
@@ -6232,12 +6272,20 @@
     "posting_count": 3
   },
   {
+    "slug": "west-monroe",
+    "name": "West Monroe",
+    "inferred_ats": "greenhouse",
+    "inferred_board_token": null,
+    "apply_url": "https://westmonroe.com/careers/job-details-students?gh_jid=6167569004",
+    "posting_count": 10
+  },
+  {
     "slug": "western-southern-financial-group",
     "name": "Western & Southern Financial Group",
     "inferred_ats": "icims",
     "inferred_board_token": "careers-westernsouthern",
     "apply_url": "https://careers-westernsouthern.icims.com/jobs/25211/job?mobile=true&needsRedirect=false",
-    "posting_count": 7
+    "posting_count": 6
   },
   {
     "slug": "wex",

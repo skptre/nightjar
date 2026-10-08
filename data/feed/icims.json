@@ -1,7 +1,7 @@
 {
   "shard_id": "icims",
-  "updated_at": "2026-10-08T17:25:10Z",
-  "count": 2,
+  "updated_at": "2026-10-08T22:19:28Z",
+  "count": 1,
   "postings": {
     "0d7863521e259085": {
       "id": "0d7863521e259085",
@@ -18,7 +18,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-10-08T17:25:10Z",
+      "last_seen_at": "2026-10-08T22:19:28Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -33,41 +33,7 @@
       "description_ref": {
         "sha256": "068eeb03661bd4998fc8c101ec78b5c1ad49845b5986d57ba73921a8b5c844ca",
         "pack": "details/descriptions-0.json",
-        "pack_sha256": "820b096c2d6b8c50e8baad959d8bfb9b4a9b9dccf44942b7d461d82383d0872d",
-        "status": "stale"
-      }
-    },
-    "1459c2e841d5522a": {
-      "id": "1459c2e841d5522a",
-      "company": "Joby Aviation",
-      "company_slug": "joby-aviation",
-      "title": "Quality Engineering Intern",
-      "location": "Marina, CA",
-      "locations": [
-        "Marina, CA"
-      ],
-      "url": "https://careers-jobyaviation.icims.com/jobs/5221/quality-engineering-intern/job",
-      "source": "icims",
-      "source_job_id": "5221",
-      "ats": "icims",
-      "posted_at": null,
-      "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-10-01T09:18:41Z",
-      "closed_at": "2026-10-01T21:24:06Z",
-      "description_status": "unavailable",
-      "description_version": 5,
-      "source_metadata": {
-        "description_acquisition": {
-          "method": "json_ld",
-          "completeness": "available",
-          "identity": "matched_url_and_title",
-          "resolved_url": "https://careers-jobyaviation.icims.com/jobs/5221/quality-engineering-intern/job?in_iframe=1"
-        }
-      },
-      "description_ref": {
-        "sha256": "5a07ad4e40856cd7be87be124ed30e6e14c5434353d5d76b39804a345fcf548d",
-        "pack": "details/descriptions-5.json",
-        "pack_sha256": "ca41d9c65022f246f813e6b46cbf12ae2a224c4d9996b1e9acc04b03f2f2edca",
+        "pack_sha256": "f81dfb87620d26f62e4bb384283bba8f0a5946796108bd37be9fa82f3d6c2542",
         "status": "stale"
       }
     }

@@ -1,8 +1,10 @@
-# Description and classification validation — September 7, 2026
+# Historical description and classification validation — September 7, 2026
 
-Latest checkpoint for [expansion](expansion.md): implementation and offline checks
-are in place. Full live backfill and independently reviewed accuracy are **not
-complete**. The proposed 95% completeness target has not been demonstrated.
+This records acquisition v4 / classifier v5 / details v3 at the September 7
+checkpoint. The [September 8–9 release checkpoint](description-release-v5.md)
+supersedes its live-backfill and network status. Use the current app source
+for the redesigned app. Test totals and incomplete work below are historical;
+independent accuracy/completeness targets require fresh evidence.
 
 ## Implemented
 

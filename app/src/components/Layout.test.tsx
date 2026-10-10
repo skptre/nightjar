@@ -44,7 +44,7 @@ describe('Layout sync status', () => {
     renderLayout();
 
     expect(screen.queryByText(/Updated just now/)).toBeNull();
-    expect(screen.getByRole('status').textContent).toContain("Couldn't check for new jobs.");
+    expect(screen.getByRole('status').textContent).toContain('Couldn’t check for new jobs.');
     expect(screen.queryByText(/sync error/i)).toBeNull();
     expect(screen.queryByText(/cached/i)).toBeNull();
   });
@@ -54,7 +54,7 @@ describe('Layout sync status', () => {
 
     renderLayout();
 
-    expect(screen.getByRole('alert').textContent).toBe("You're offline. Your saved information is still available.");
+    expect(screen.getByRole('alert').textContent).toBe('You’re offline. Everything you saved is still here.');
     expect(screen.queryByText(/cached/i)).toBeNull();
   });
   it('keeps successful background work invisible and exposes three destinations', () => {

@@ -1,8 +1,10 @@
-# Description engine recovery audit — September 7, 2026
+# Historical description engine recovery audit — September 7, 2026
 
-> Historical recovery audit. The latest acquisition v4 / classifier v5 / details v3
-> implementation, test results and remaining live gates are recorded in
-> [description engine validation](description-engine-validation.md).
+This recovery audit is retained as dated evidence, not current implementation or
+network status. It was followed by [September 7 validation](description-engine-validation.md)
+and the [September 8–9 release checkpoint](description-release-v5.md).
+Use the current app source for the current app; old remaining-work statements
+below refer only to the recovery snapshot.
 
 The committed extractor (`be45984`) survived the restart. Four uncommitted files
 contained additional ATS work. That work is now integrated with regression coverage;

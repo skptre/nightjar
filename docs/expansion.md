@@ -1,40 +1,22 @@
-# Nightjar expansion: job descriptions, requirements, and coverage
+# Nightjar expansion: requirements and coverage roadmap
 
-> **September 9 update:** Description delivery now uses at most 16 named bundles;
-> old generated versions are cleaned automatically. All 3,202 texts survived the
-> local migration and app import. Registry has 430 companies and seven source types.
-> Joby was verified live; NASA authentication awaits a runtime with the configured
-> secrets. See [release details](description-release-v5.md#september-9-follow-up-bounded-storage-and-source-readiness).
+> Status reviewed October 9, 2026. This is a requirements roadmap, not a list of
+> completed UI features. Use the current app source for the implemented
+> screens. Historical acquisition results are in the
+> [September release checkpoint](description-release-v5.md); older network-blocked
+> results do not describe the current tree or current network availability.
 
-> **Latest description checkpoint - September 8, 2026:** Live backfill is now working.
-> Acquisition v5 tightens identity and adds observed iCIMS, Oracle, Rippling,
-> TikTok/ByteDance and Workable recovery paths. See
-> [the release checkpoint](description-release-v5.md) for measurements, adapter
-> integration review, validated artifacts and the steps before enabling polling.
-> Local `data/` now includes 3,202 descriptions / 4,305 active jobs (74.38%):
-> 2,875 complete, 321 partial, six stale. App import verified every string.
-> 1,205 Python tests and 1,119 app tests passed, plus the full-feed import check.
-> Publishing/scheduled polling remain off. The older network-blocked checkpoint
-> below is historical; the automated coverage engine remains separate.
+Collection, local evidence extraction and description rendering are implemented.
+The current UI uses inline highlights and a full-description sheet, with separate
+Roles/Fields filters. Some proposals below remain gaps: a dedicated Show excluded
+control, Outside grad window ordering/tag, and evidence-aware Pay unavailable / Pay
+not listed copy are not present in the current UI. All jobs provides broader
+browsing; saved applications remain distinct from the public catalog.
 
-
-> **UI update — September 8, 2026:** The user prioritized the MVP interface while Claude
-> handles employer additions. Home, Jobs/details, the table tracker, appearance and
-> opt-in watched-company alerts now have a working interface. See
-> [the UI checkpoint](ui-mvp-checkpoint.md). This does not complete live description
-> backfill or the automated coverage engine; those gates remain separate.
-
-> **Latest checkpoint — September 7, 2026:** Acquisition v4, classifier v5 and
-> details v3 are implemented with immutable description packs and regression coverage.
-> See [implementation and validation](description-engine-validation.md) for completed
-> behavior, measured evidence and remaining release steps. Live full-feed validation
-> is blocked by this workspace's outbound network policy; the published feed still
-> has zero descriptions. The 95% target is not yet proven. Earlier checkpoints below
-> are historical; this checkpoint takes precedence. Coverage and UI work are pending.
-
-Approved direction: September 6, 2026. This is the active implementation plan.
-`spec.md` remains the product specification. This document records the complete
-agreed behavior and the order of work, including work that is not implemented yet.
+The original direction dates to September 6, 2026. Requirements below preserve
+that intent where not superseded by the current UI; they must not be reported as
+implemented without checking the source and testing the behavior. No fresh
+coverage benchmark or runtime testing was performed for this documentation update.
 
 ## Priority and scope
 

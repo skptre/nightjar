@@ -26,7 +26,9 @@ export interface FeedState {
   selectedDomains: Set<string>;
   search: string;
   companyFilter: string | null;
+  // The sheet's posting (null when closed) and the row expanded inline in the list.
   detailId: string | null;
+  openId: string | null;
   selectedIndex: number;
   scrollTop: number;
   // Load bookkeeping: the last signature we loaded for (feed version + relevant
@@ -47,6 +49,7 @@ function initialState(): FeedState {
     search: '',
     companyFilter: null,
     detailId: null,
+    openId: null,
     selectedIndex: 0,
     scrollTop: 0,
     loadedSignature: null,

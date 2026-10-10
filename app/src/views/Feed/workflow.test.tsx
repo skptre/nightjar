@@ -33,7 +33,7 @@ it('opens a readable description, applies externally without claiming submission
   expect(await screen.findByText('Build flight simulation tools.')).toBeTruthy();
   fireEvent.click(screen.getByRole('button', { name: 'Read full description' }));
   expect(screen.getByText(/Final source clause retained/)).toBeTruthy();
-  fireEvent.click(screen.getByRole('button', { name: 'Apply' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Apply on Test Aerospace' }));
   expect(state.open).toHaveBeenCalledWith('https://example.com/job');
   expect(await db.queryOne('SELECT * FROM applications')).toBeUndefined();
   fireEvent.click(screen.getByRole('button', { name: 'Mark applied' }));
@@ -42,16 +42,20 @@ it('opens a readable description, applies externally without claiming submission
 it('edits tracker next steps and retains interview milestones after an application is archived', async () => {
   await db.run("INSERT INTO applications (posting_id,status,created_at,updated_at) VALUES ('job','saved','2026-09-01','2026-09-01')");
   render(<MemoryRouter><PipelineView /></MemoryRouter>);
+  fireEvent.click(await screen.findByRole('button', { name: /Avionics Software Intern/ }));
   const next = await screen.findByLabelText('Next step for Test Aerospace');
   fireEvent.change(next, { target: { value: 'Prepare portfolio' } }); fireEvent.blur(next);
   await waitFor(async () => expect((await db.queryOne<{ next_action: string }>('SELECT next_action FROM applications'))?.next_action).toBe('Prepare portfolio'));
-  fireEvent.change(screen.getByLabelText('Stage for Test Aerospace'), { target: { value: 'phone' } });
-  fireEvent.click(await screen.findByRole('button', { name: 'Skip details' }));
-  await waitFor(() => expect(screen.getByLabelText('Stage for Test Aerospace')).toHaveProperty('value','phone'));
-  fireEvent.change(screen.getByLabelText('Stage for Test Aerospace'), { target: { value: 'rejected' } });
-  fireEvent.click(await screen.findByRole('button', { name: 'Skip details' }));
-  await waitFor(() => expect(screen.getByLabelText('Stage for Test Aerospace')).toHaveProperty('value','rejected'));
-  expect(screen.getByLabelText('Application milestones').textContent).toContain('1Interviews');
+  const move = async (from: string, to: string): Promise<void> => {
+    fireEvent.click(await screen.findByRole('button', { name: `Stage for Test Aerospace: ${from}` }));
+    fireEvent.click(await screen.findByRole('menuitemradio', { name: to }));
+    await screen.findByRole('button', { name: `Stage for Test Aerospace: ${to}` });
+  };
+  await move('Saved', 'Phone interview');
+  await waitFor(async () => expect((await db.queryOne<{ status: string }>('SELECT status FROM applications'))?.status).toBe('phone'));
+  await move('Phone interview', 'Rejected');
+  await waitFor(async () => expect((await db.queryOne<{ status: string }>('SELECT status FROM applications'))?.status).toBe('rejected'));
+  await waitFor(() => expect(screen.getByLabelText('Application milestones').textContent).toContain('1 interview'));
   expect((await db.queryOne<{ next_action: string }>('SELECT next_action FROM applications'))?.next_action).toBe('Prepare portfolio');
 });
 it('does not let a public feed close manually added tracker records', async () => {

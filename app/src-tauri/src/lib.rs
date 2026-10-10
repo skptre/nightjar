@@ -25,7 +25,7 @@ const MAX_SQL_BYTES: usize = 8 * 1024;
 const MAX_BATCH_SQL_BYTES: usize = 16 * 1024 * 1024;
 const MAX_VALUES_PER_STATEMENT: usize = 256;
 const MAX_VALUE_BYTES: usize = 2 * 1024 * 1024;
-const MAX_BATCH_VALUE_BYTES: usize = 64 * 1024 * 1024;
+const MAX_BATCH_VALUE_BYTES: usize = 128 * 1024 * 1024;
 const MAX_QUERY_VALUE_BYTES: usize = 8 * 1024 * 1024;
 
 fn validated_value_size(value: &JsonValue) -> Result<usize, String> {

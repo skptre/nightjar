@@ -157,3 +157,59 @@ export async function loadSuggestionDecisions(
   );
   return Object.fromEntries(rows.map((row) => [row.suggestion_id, row.status]));
 }
+
+/** Everything a stage move can change, so the move can be taken back exactly. */
+export interface StatusSnapshot {
+  postingId: string;
+  status: string;
+  applied_at: string | null;
+  outcome: string | null;
+  outcome_at: string | null;
+  outcome_notes: string | null;
+  interview_rounds: number;
+  updated_at: string;
+  lastEventId: number;
+}
+
+export async function snapshotApplicationStatus(db: Database, postingId: string): Promise<StatusSnapshot> {
+  const row = await db.queryOne<Omit<StatusSnapshot, 'postingId' | 'lastEventId'>>(
+    `SELECT status, applied_at, outcome, outcome_at, outcome_notes, interview_rounds, updated_at
+     FROM applications WHERE posting_id = ?`, [postingId]);
+  if (!row) throw new Error(`Application not found: ${postingId}`);
+  const event = await db.queryOne<{ id: number | null }>(
+    'SELECT MAX(id) AS id FROM application_outcome_events WHERE posting_id = ?', [postingId]);
+  return { ...row, postingId, lastEventId: event?.id ?? 0 };
+}
+
+/** Undo a stage move: restore the row and drop history written since the snapshot. */
+export async function restoreApplicationStatus(db: Database, snapshot: StatusSnapshot): Promise<void> {
+  await db.transaction(async (transaction) => {
+    await transaction.run(
+      `UPDATE applications SET status = ?, applied_at = ?, outcome = ?, outcome_at = ?, outcome_notes = ?,
+       interview_rounds = ?, updated_at = ? WHERE posting_id = ?`,
+      [snapshot.status, snapshot.applied_at, snapshot.outcome, snapshot.outcome_at, snapshot.outcome_notes,
+        snapshot.interview_rounds, new Date().toISOString(), snapshot.postingId],
+    );
+    await transaction.run('DELETE FROM application_outcome_events WHERE posting_id = ? AND id > ?',
+      [snapshot.postingId, snapshot.lastEventId]);
+  });
+}
+
+/** Attach notes and interview rounds to the most recent outcome, after the move was made. */
+export async function annotateLatestOutcome(db: Database, postingId: string, details: OutcomeDetails): Promise<void> {
+  const application = await requireApplication(db, postingId);
+  const normalized = normalizeDetails(details);
+  const event = await db.queryOne<{ id: number }>(
+    'SELECT id FROM application_outcome_events WHERE posting_id = ? ORDER BY id DESC LIMIT 1', [postingId]);
+  const now = new Date().toISOString();
+  const rounds = Math.max(application.interview_rounds, normalized.interviewRounds ?? application.interview_rounds);
+  await db.transaction(async (transaction) => {
+    await transaction.run(
+      'UPDATE applications SET outcome_notes = ?, interview_rounds = ?, updated_at = ? WHERE posting_id = ?',
+      [normalized.notes, rounds, now, postingId]);
+    if (event) {
+      await transaction.run('UPDATE application_outcome_events SET notes = ?, interview_rounds = ? WHERE id = ?',
+        [normalized.notes, normalized.interviewRounds ?? 0, event.id]);
+    }
+  });
+}

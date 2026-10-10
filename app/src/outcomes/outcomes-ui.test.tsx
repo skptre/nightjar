@@ -38,78 +38,37 @@ function analysisFixture(): OutcomeAnalysis {
 }
 
 describe('OutcomeDialog', () => {
-  it('collects optional interview rounds and notes', () => {
+  it('collects interview rounds and notes for an outcome that already moved', () => {
     const onSubmit = vi.fn();
-    render(
-      <OutcomeDialog
-        company="Example Co"
-        title="Software Engineering Intern"
-        status="phone"
-        onSubmit={onSubmit}
-        onCancel={vi.fn()}
-      />,
-    );
-
-    fireEvent.change(screen.getByLabelText('Interview rounds completed (optional)'), {
-      target: { value: '2' },
-    });
-    fireEvent.change(screen.getByLabelText('What happened? (optional)'), {
-      target: { value: 'Great conversation.' },
-    });
-    fireEvent.click(screen.getByRole('button', { name: 'Save outcome' }));
-
-    expect(onSubmit).toHaveBeenCalledWith({
-      interviewRounds: 2,
-      notes: 'Great conversation.',
-    });
+    render(<OutcomeDialog company="Example Co" title="Software Engineering Intern" status="phone" onSubmit={onSubmit} onCancel={vi.fn()} />);
+    expect(screen.getByRole('dialog', { name: 'How did the interview go?' })).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: 'More rounds' }));
+    fireEvent.change(screen.getByLabelText('What happened?'), { target: { value: 'Great conversation.' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Save notes' }));
+    expect(onSubmit).toHaveBeenCalledWith({ interviewRounds: 2, notes: 'Great conversation.' });
   });
 
-  it('lets the user skip every optional detail without cancelling the move', () => {
-    const onSubmit = vi.fn();
-    render(
-      <OutcomeDialog
-        company="Example Co"
-        title="Design Intern"
-        status="rejected"
-        onSubmit={onSubmit}
-        onCancel={vi.fn()}
-      />,
-    );
-    fireEvent.click(screen.getByRole('button', { name: 'Skip details' }));
-    expect(onSubmit).toHaveBeenCalledWith({});
+  it('lets the user skip notes without undoing the move', () => {
+    const onSubmit = vi.fn(); const onCancel = vi.fn();
+    render(<OutcomeDialog company="Example Co" title="Design Intern" status="rejected" onSubmit={onSubmit} onCancel={onCancel} />);
+    expect(screen.getByRole('dialog', { name: 'Closing out Example Co' })).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: 'Skip' }));
+    expect(onCancel).toHaveBeenCalledOnce();
+    expect(onSubmit).not.toHaveBeenCalled();
   });
 
-  it('is keyboard dismissible and exposes an accessible dialog name', () => {
+  it('is keyboard dismissible and names the offer', () => {
     const onCancel = vi.fn();
-    render(
-      <OutcomeDialog
-        company="Example Co"
-        title="Finance Intern"
-        status="offer"
-        onSubmit={vi.fn()}
-        onCancel={onCancel}
-      />,
-    );
-    expect(screen.getByRole('dialog', { name: 'Record offer outcome' })).toBeTruthy();
+    render(<OutcomeDialog company="Example Co" title="Finance Intern" status="offer" onSubmit={vi.fn()} onCancel={onCancel} />);
+    expect(screen.getByRole('dialog', { name: 'An offer from Example Co' })).toBeTruthy();
     fireEvent.keyDown(document, { key: 'Escape' });
     expect(onCancel).toHaveBeenCalledOnce();
   });
 
-  it('disables repeat actions while an outcome is being saved', () => {
-    render(
-      <OutcomeDialog
-        company="Example Co"
-        title="Finance Intern"
-        status="offer"
-        busy
-        onSubmit={vi.fn()}
-        onCancel={vi.fn()}
-      />,
-    );
-
-    expect(screen.getByRole('button', { name: 'Saving outcome' })).toHaveProperty('disabled', true);
-    expect(screen.getByRole('button', { name: 'Skip details' })).toHaveProperty('disabled', true);
-    expect(screen.getByRole('button', { name: 'Cancel move' })).toHaveProperty('disabled', true);
+  it('disables repeat actions while notes are being saved', () => {
+    render(<OutcomeDialog company="Example Co" title="Finance Intern" status="offer" busy onSubmit={vi.fn()} onCancel={vi.fn()} />);
+    expect(screen.getByRole('button', { name: 'Saving…' })).toHaveProperty('disabled', true);
+    expect(screen.getByRole('button', { name: 'Skip' })).toHaveProperty('disabled', true);
   });
 });
 

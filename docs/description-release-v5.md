@@ -1,4 +1,10 @@
-﻿# Description release checkpoint — September 8, 2026
+# Description release checkpoint — September 8, 2026
+
+> Historical acquisition/release evidence from September 8–9, 2026. Measurements,
+> assigned work, network availability and launch gates below describe that session.
+> They are not current instructions or fresh validation. See
+> the current app source and [release procedure](beta-release.md).
+
 
 This supersedes the September 7 network-blocked checkpoint. Live requests work in
 this session. The goal is correct source text delivered to the app, with complete,

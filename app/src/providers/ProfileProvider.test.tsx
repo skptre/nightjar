@@ -20,17 +20,14 @@ describe('ProfileProvider onboarding', () => {
   it('lets a new user browse without completing a profile', () => {
     render(<ProfileProvider><TestApp /></ProfileProvider>);
 
-    expect(screen.getByRole('button', { name: 'Browse jobs' })).toBeTruthy();
-    fireEvent.click(screen.getByRole('button', { name: 'Browse jobs' }));
-
     expect(screen.getByText('guest browsing')).toBeTruthy();
-    expect(localStorage.getItem('nightjar_onboarding_dismissed')).toBe('true');
+    expect(screen.queryByRole('button', { name: 'Browse jobs' })).toBeNull();
   });
 
   it('does not ask for a redundant class year', () => {
     render(<ProfileProvider><TestApp /></ProfileProvider>);
 
-    fireEvent.click(screen.getByRole('button', { name: 'Personalize results' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Set preferences' }));
 
     expect(screen.getByText('Expected graduation')).toBeTruthy();
     expect(screen.queryByText('Class year')).toBeNull();
@@ -45,7 +42,7 @@ describe('ProfileProvider onboarding', () => {
     expect(screen.getByText('Expected graduation')).toBeTruthy();
   });
 
-  it('deletes a saved profile and returns to the welcome screen', () => {
+  it('deletes a saved profile and returns to guest browsing', () => {
     localStorage.setItem('nightjar_onboarding_dismissed', 'true');
     localStorage.setItem('nightjar_profile', JSON.stringify({
       graduation: '2029-05',
@@ -59,7 +56,7 @@ describe('ProfileProvider onboarding', () => {
 
     expect(localStorage.getItem('nightjar_profile')).toBeNull();
     expect(localStorage.getItem('nightjar_onboarding_dismissed')).toBeNull();
-    expect(screen.getByRole('button', { name: 'Browse jobs' })).toBeTruthy();
+    expect(screen.getByText('guest browsing')).toBeTruthy();
   });
 
   it('preserves saved preferences without a reset marker', () => {

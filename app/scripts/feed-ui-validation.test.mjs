@@ -1,11 +1,12 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import React from 'react';
-import { cleanup, render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { act, cleanup, render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { expect, it, vi } from 'vitest';
 import { NightjarDB } from '@/db/database';
 import { syncFeed } from '@/sync/feed-sync';
 import { FeedView } from '@/views/Feed/FeedView';
+import { setFeed } from '@/views/Feed/feed-store';
 import { formatDescription, pruneHeadings } from '@/details/format';
 const state = vi.hoisted(() => ({ db: null, clear: () => {}, toast: () => {} }));
 vi.mock('@/providers/DatabaseProvider', () => ({ useDatabase: () => ({ db: state.db }) }));
@@ -30,14 +31,18 @@ it.skipIf(!process.env.NIGHTJAR_RELEASE_DIR)('renders all active jobs and opens 
   try {
     expect((await syncFeed(db, '/candidate')).error).toBeUndefined();
     render(React.createElement(FeedView));
-    await screen.findByText(`${active.length.toLocaleString()} opportunities`, {}, { timeout: 30000 });
-    fireEvent.change(screen.getByLabelText('Search jobs'), { target: { value: target.title } });
+    await screen.findByText(new RegExp(`${active.length.toLocaleString()} roles`), {}, { timeout: 30000 });
+    await act(async () => { setFeed({ search: target.title }); });
     const buttons = await screen.findAllByRole('button', { name: target.title });
     fireEvent.click(buttons[0]);
     const full = screen.queryByRole('button', { name: 'Read full description' });
     if (full) fireEvent.click(full);
     const expectedBlocks = pruneHeadings(formatDescription(target.description_text));
     const expectedText = expectedBlocks.flatMap(block => block.kind === 'list' ? block.items : [block.text]).join('');
-    await waitFor(() => expect(document.querySelector('.desc')?.textContent).toBe(expectedText));
+    await waitFor(() => {
+      const rendered = [...document.querySelectorAll('.post-desc .desc-h, .post-desc .desc-p, .post-desc .desc-ul li')]
+        .map(element => element.textContent).join('');
+      expect(rendered).toBe(expectedText);
+    });
   } finally { cleanup(); vi.unstubAllGlobals(); await db.close(); }
 }, 60000);

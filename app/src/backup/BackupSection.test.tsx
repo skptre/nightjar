@@ -29,6 +29,6 @@ it('does not report success when the native save dialog is cancelled', async () 
 });
 it('rejects oversized imports before reading the file', async () => {
   const read=vi.fn(); render(<BackupSection />);
-  fireEvent.change(screen.getByLabelText('Workspace backup file'),{target:{files:[{size:61*1024*1024,text:read}]}});
-  await screen.findByText('Backup exceeds the 60 MB limit.'); expect(read).not.toHaveBeenCalled();
+  fireEvent.change(screen.getByLabelText('Workspace backup file'),{target:{files:[{size:257*1024*1024,text:read}]}});
+  await screen.findByText('Backup exceeds the 256 MB limit.'); expect(read).not.toHaveBeenCalled();
 });

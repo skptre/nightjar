@@ -1,4 +1,5 @@
 import type { Database } from '@/db/database';
+import { isTauri } from '@/lib/platform';
 import type { Profile } from '@/profile/types';
 import type { FeedPosting } from '@/sync/feed-sync';
 import type { AcquisitionStatus, JobDetails, RequirementAssessment } from './types';
@@ -41,7 +42,13 @@ export async function refreshJobDetails(db: Database, profile: Profile | null): 
     statements.push({ sql: `UPDATE postings_cache SET eligibility = NULL, score = NULL,
       classification_version = NULL WHERE id = ?`, params: [row.id] });
   }
-  await db.batch(statements);
+  if (isTauri()) {
+    for (let index = 0; index < statements.length; index += 250) {
+      await db.batch(statements.slice(index, index + 250));
+    }
+  } else {
+    await db.batch(statements);
+  }
   return statements.length / 2;
 }
 

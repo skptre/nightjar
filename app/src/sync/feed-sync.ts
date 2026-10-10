@@ -277,7 +277,10 @@ export async function fetchShard(
 
   const rawText = await response.text();
 
-  const hash = await computeSha256(rawText);
+  // Git on Windows can check published JSON out with CRLF while its manifest
+  // records the LF bytes in the repository. Accept only that canonical form;
+  // all other content changes still fail the SHA-256 check.
+  const hash = await computeSha256(rawText.replace(/\r\n/g, '\n'));
   if (hash !== expectedInfo.sha256) {
     throw new ShardValidationError(
       `Shard ${shardId} SHA-256 mismatch: expected ${expectedInfo.sha256}, got ${hash}`,

@@ -1,5 +1,10 @@
 # Friends beta: release and recovery
 
+Current documentation review: October 9, 2026. See the current app source
+for the uncommitted redesign. Implementation descriptions are source-reviewed;
+the test results and installer below are September 15 historical evidence, not
+validation of the current UI. No new test pass or installed upgrade is claimed.
+
 ## What is implemented
 
 - Persistent local profile, watches, tracker and notes; no accounts or hosted private data.
@@ -8,11 +13,13 @@
 - Automatic local recovery copies and pre-update/pre-restore copies. Database migrations
   save a separate SQLite snapshot first. Clear-data removes automatic copies too.
 - Signed GitHub Releases updates with progress, retry, release notes and explicit restart.
-- Centered desktop layout, viewport-sized Jobs panes, Compact for Jobs and Tracker,
-  cleaned welcome screen, native watched notifications, and visible save failures.
+- Shared top navigation, monochrome themes, expandable Jobs rows and layered posting/
+  filter sheets, table Tracker with Up next cards, Settings rail and desktop startup
+  animation. Compact affects Jobs and Tracker. Native watched alerts and save-error
+  notices remain part of the implementation.
 - Feed freshness, manual refresh, local diagnostics and user-initiated bug reporting.
 
-## Validation and limits
+## Historical validation and limits — September 15, 2026
 
 The offline Python suite passed 1,207 tests, Ruff passed, and strict mypy passed.
 The frontend suite passed 1,163 tests (three opt-in tests skipped in the offline run);
@@ -32,7 +39,7 @@ Chrome launch were blocked by the session's approval controls. Do not represent 
 layout, Windows notification delivery, file dialogs, clean installation or actual
 in-app A-to-B upgrade as manually verified until the checklist below is completed.
 
-## Local Windows artifact
+## Historical Windows artifact — September 15, 2026
 
 The production NSIS build completed successfully for version 0.1.0:
 `.tmp/beta-target/release/bundle/nsis/Nightjar_0.1.0_x64-setup.exe`.
@@ -45,33 +52,47 @@ Installer SHA-256:
 
 ## Before friends install
 
-1. Confirm permission to make `skptre/nightjar` public. It was verified private during
-   implementation. No visibility change is implied by preparing these files.
-2. Commit and push the remaining reviewed app changes. On September 15 the user
-   explicitly authorized resuming polling: poll.yml was updated directly on main
-   (commit 2f833c9) with a 15-minute schedule, 45-minute timeout and secret-name
-   fallback. Its private-repository guard was removed for this authorization.
-   Manual catch-up run: https://github.com/skptre/nightjar/actions/runs/34994945184.
-   Running while private uses private-repository Actions minutes.
-3. `USAJOBS_EMAIL` is now configured alongside the existing `USAJOBS_KEY` secret.
-   The published poll workflow supports that key name and `USAJOBS_API_KEY`. Secret presence is verified; API authentication still needs a live run.
-4. Run one manual poll. Confirm the run succeeds, inspect source health, and verify
-   anonymous access to `data/meta.json`, feed shards and description bundles through
-   the production raw.githubusercontent.com URL. A private repo returns no anonymous
-   feed; the app's bundled snapshot does not substitute for live polling.
-5. Build a draft Windows release using `.github/workflows/release.yml`. All three
-   versions (package.json, Cargo.toml, tauri.conf.json) and tag `v<version>` must match.
-6. Complete the installed-app checks below. Publish the draft only after they pass.
-   The updater endpoint uses GitHub's latest **published, non-prerelease** release;
-   drafts and GitHub prereleases are not served there. The release title can say beta.
+This is a future release checklist, not authorization to commit, publish, change
+visibility or dispatch workflows during documentation work.
 
-The release signing key was created outside the repository and uploaded as
+1. Verify the current repository/hosting visibility and anonymous production-feed
+   access. September private-repository notes are historical; do not assume the
+   remote state is unchanged or change visibility without authorization.
+2. Finish current-code validation and review the local changes before preparing a
+   release. The checked-in poll.yml schedules every 15 minutes, supports either
+   USAJOBS key secret name plus USAJOBS_EMAIL, and publishes data to gh-pages.
+   Check actual workflow health and secret configuration without exposing values.
+3. Inspect a successful poll and verify anonymous access to meta.json, source shards
+   and description bundles at the app's configured production URL. A bundled
+   snapshot does not substitute for live updates.
+4. Build a draft Windows release through `.github/workflows/release.yml` when
+   authorized. package.json, Cargo.toml, tauri.conf.json and tag versions must match.
+5. Complete the installed-app checks below before publishing. The updater consumes
+   the latest published non-prerelease manifest, not draft or prerelease assets.
+
+At the September 15 checkpoint, the release signing key was created outside the repository and uploaded as
 `TAURI_SIGNING_PRIVATE_KEY`. Its local location is recorded in the gitignored
 `.tmp/signing-key-location.txt`. Secure a durable offline/password-manager backup of
 that key before cleaning temporary files. The app contains only its public key.
 Never replace this key casually: existing clients trust the embedded public key.
 Updater signatures are separate from Windows Authenticode signing; this work does
 not provide a purchased Windows signing certificate or guarantee no SmartScreen prompt.
+
+## Current redesign acceptance checklist (not yet executed)
+
+- Verify Home watches, attention cards and links against real local records.
+- Exercise shared search on Home, Jobs, Tracker and Settings; direct links and legacy redirects.
+- Check inline job expansion, description loading/failure states, full-sheet previous/next,
+  sheet close/focus restoration and filters with Role/Field intersections and empty results.
+- Verify bookmarks, undo, Apply versus Mark applied, new-arrival Show and list virtualization
+  through density changes, scrolling, expanded rows and background refreshes.
+- Exercise Tracker All/Saved/Active/Offer/Closed tabs, stage menus, outcome dialogs,
+  manual entries, notes/dates/next steps, Up next cards, sorting and undo persistence.
+- Test Settings rail/deep links, optional profile, themes, density, exports and notices.
+- Check reduced motion, keyboard-only use, focus, contrast and narrow layouts. Test
+  startup completion/skip and rapid navigation or repeated actions during animation.
+- Run automated frontend, Python, native and opt-in real-feed checks on the current
+  tree. Record results and coverage gaps instead of reusing historical test totals.
 
 ## Installed-app acceptance checklist
 
@@ -83,7 +104,7 @@ Use a clean Windows user account or VM, with a synthetic profile and notes.
   Close normally, reopen, reboot, and confirm all data and settings remain.
 - Open twice: the existing window should focus, without a second database writer.
 - Test dark/light/system themes, Jobs and Tracker density, compact scrolling and
-  keyboard selection, and layout at 1024Ãƒâ€”768, 1280Ãƒâ€”800 and a maximized large display.
+  keyboard selection, and layout at 1024 x 768, 1280 x 800 and a maximized large display.
 - Save a workspace backup through the native file dialog. Change a note; restore the
   file and confirm the note/history/preferences. Cancel a restore; confirm no changes.
   Try invalid JSON and an oversized file; confirm rejection before changes.
@@ -91,7 +112,7 @@ Use a clean Windows user account or VM, with a synthetic profile and notes.
 - Enable/disable launch-on-login. Minimize and test opted-in watched notifications.
   Closing quits; there are no notifications after the process exits.
 - Install version A, preserve the test workspace, publish signed version B, then use
-  Check for updates Ã¢â€ â€™ Update and restart. Confirm version B and all saved data.
+  Check for updates, then Update and restart. Confirm version B and all saved data.
   Test an unavailable endpoint and a tampered package in an isolated test channel;
   neither may result in an unverified installation.
 - Export diagnostics and inspect their fields before submitting a test issue. They

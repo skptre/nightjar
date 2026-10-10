@@ -145,6 +145,9 @@ export class SyncManager {
       }
 
       const result = await syncFeed(this.db);
+      if (!result.error && !result.skipped) {
+        this.updateState({ lastSyncedAt: new Date().toISOString() });
+      }
       // The pre-sync refreshJobDetails above already processed pending rows;
       // only re-run it when the sync actually brought new/changed postings.
       if (!result.error && !result.skipped) await refreshJobDetails(this.db, this.profile);

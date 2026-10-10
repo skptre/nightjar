@@ -1,7 +1,7 @@
 export function restoreDestination(): void {
-  // Preserve deep links; only choose a destination for an ordinary launch.
-  if (window.location.pathname !== '/' || window.location.search) return;
-  const remembered = localStorage.getItem('nightjar_last_destination');
-  if (localStorage.getItem('nightjar_onboarding_dismissed') === 'true' && remembered
-    && ['/jobs', '/applications'].includes(remembered)) window.history.replaceState(null, '', remembered);
+  // Every ordinary launch opens on Home, after the launch animation. Deep links
+  // (a path or a query, e.g. from a notification) are left alone.
+  if (window.location.search || window.location.pathname === '/') return;
+  if (['/jobs', '/applications', '/settings'].includes(window.location.pathname)) return;
+  window.history.replaceState(null, '', '/');
 }

@@ -2,7 +2,7 @@ import type { Database, SqlValue } from '@/db/types';
 import { validateAndRepairProfile } from '@/profile/profile-store';
 import { isApplicationStatus } from '@/outcomes/types';
 
-export const MAX_BACKUP_BYTES = 60 * 1024 * 1024;
+export const MAX_BACKUP_BYTES = 256 * 1024 * 1024;
 export const SETTINGS_KEYS = ['nightjar_profile', 'nightjar_theme', 'nightjar_density',
   'nightjar_watched_companies', 'nightjar_watch_alerts', 'nightjar_watch_alert_seen',
   'nightjar_alert_setup_dismissed', 'nightjar_onboarding_dismissed', 'nightjar_last_destination'] as const;
@@ -53,7 +53,7 @@ function validateSettings(value: unknown): asserts value is Record<string, strin
 }
 
 export function parseWorkspaceBackup(text: string): WorkspaceBackup {
-  if (new TextEncoder().encode(text).byteLength > MAX_BACKUP_BYTES) throw new Error('Backup exceeds the 60 MB limit.');
+  if (new TextEncoder().encode(text).byteLength > MAX_BACKUP_BYTES) throw new Error('Backup exceeds the 256 MB limit.');
   const b: unknown = JSON.parse(text);
   if (!record(b) || b.format !== 'nightjar-workspace' || b.version !== 1 || typeof b.created_at !== 'string'
     || !Number.isFinite(Date.parse(b.created_at)) || !record(b.tables)) invalid();

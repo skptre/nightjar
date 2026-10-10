@@ -7,6 +7,7 @@ import { DatabaseProvider } from '@/providers/DatabaseProvider';
 import { ProfileProvider } from '@/providers/ProfileProvider';
 import { SyncProvider } from '@/providers/SyncProvider';
 import { App } from '@/App';
+import '@fontsource-variable/geist';
 import './index.css';
 import { applyAppearance } from '@/hooks/useAppearance';
 import { restoreDestination } from '@/lib/startup';

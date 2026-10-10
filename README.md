@@ -45,7 +45,7 @@ keeps your applications on your machine.
         <li>One feed of internships, co-ops and new-grad programs, pulled straight from employer job boards</li>
         <li>Full role descriptions inside the app, with a direct link to the original application</li>
         <li>Role and field filters across SWE, hardware, MechE, ECE, aerospace, quant, finance and more</li>
-        <li>Eligibility flags (sponsorship, citizenship, degree) shown next to the sentence they came from</li>
+        <li>Original requirements and relevant authorization passages, with incomplete descriptions clearly marked</li>
       </ul>
     </td>
     <td width="50%" valign="top">
@@ -53,7 +53,7 @@ keeps your applications on your machine.
       <ul>
         <li>Save a role in one click and move it through stages, from applied to offer</li>
         <li>Next steps, due dates and notes on every application</li>
-        <li>Optional interview and outcome logging that feeds back into ranking</li>
+        <li>Optional interview and outcome logging stored in your local application history</li>
         <li>Workspace export and restore, plus manual entries for roles found elsewhere</li>
       </ul>
     </td>
@@ -70,9 +70,6 @@ keeps your applications on your machine.
     <td align="center"><sub><b>Filters:</b> combine roles with fields, for example SWE + Aerospace</sub></td>
   </tr>
 </table>
-
-Light and dark themes, compact lists and a resizable split view let you fit the
-workspace to your screen.
 
 ## How it works
 
@@ -128,7 +125,7 @@ A few of the problems that shaped the design:
   the main poller's concurrency group and rate limits.
 - **Local-first app.** The workspace is SQLite, through the Tauri SQL plugin on
   desktop and `sql.js` in the browser build. Reclassifying the whole feed runs in
-  chunks that can be cancelled, which keeps the UI responsive. Desktop updates are
+  chunks that can be cancelled, which keeps the app responsive. Desktop updates are
   signature-verified, and the app saves a recovery copy before installing.
 
 ### Stack

@@ -12,7 +12,7 @@ fn recovery_name(reason: &str) -> Result<&'static str, String> {
 #[tauri::command]
 pub async fn save_recovery_copy(app: tauri::AppHandle, content: String, reason: String) -> Result<String, String> {
     let name = recovery_name(&reason)?;
-    if content.len() > 60 * 1024 * 1024 { return Err("Recovery copy is too large".into()); }
+    if content.len() > 256 * 1024 * 1024 { return Err("Recovery copy is too large".into()); }
     let value: serde_json::Value = serde_json::from_str(&content).map_err(|_| "Invalid recovery copy")?;
     if value["format"] != "nightjar-workspace" || value["version"] != 1 { return Err("Invalid recovery copy".into()); }
     let directory = app.path().app_local_data_dir().map_err(|_| "Recovery folder unavailable")?.join("backups");
@@ -37,7 +37,7 @@ pub async fn save_recovery_copy(app: tauri::AppHandle, content: String, reason: 
 pub async fn load_recovery_copy(app: tauri::AppHandle, reason: String) -> Result<String, String> {
     let name = recovery_name(&reason)?;
     let path = app.path().app_local_data_dir().map_err(|_| "Recovery folder unavailable")?.join("backups").join(name);
-    if std::fs::metadata(&path).map_err(|_| "No recovery copy is available yet")?.len() > 60 * 1024 * 1024 { return Err("Recovery copy is too large".into()); }
+    if std::fs::metadata(&path).map_err(|_| "No recovery copy is available yet")?.len() > 256 * 1024 * 1024 { return Err("Recovery copy is too large".into()); }
     std::fs::read_to_string(path).map_err(|_| "Could not read recovery copy".into())
 }
 

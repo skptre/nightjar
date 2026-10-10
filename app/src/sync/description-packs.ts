@@ -34,7 +34,9 @@ export class DescriptionPackCache {
       const lane = this.nextLane++ % this.lanes.length;
       pending = this.lanes[lane]!.then(async () => {
         const text = await this.fetchText(ref.pack);
-        if (await digest(text) !== ref.pack_sha256) throw new Error('Description pack hash mismatch');
+        // Windows Git checkouts may use CRLF for the JSON file while the
+        // published digest was computed from its canonical LF contents.
+        if (await digest(text.replace(/\r\n/g, '\n')) !== ref.pack_sha256) throw new Error('Description pack hash mismatch');
         const data: unknown = JSON.parse(text);
         if (!data || typeof data !== 'object' || !('version' in data) || data.version !== 1
           || !('documents' in data) || !data.documents || typeof data.documents !== 'object'

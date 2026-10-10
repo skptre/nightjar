@@ -1,48 +1,48 @@
 import type { Config } from 'tailwindcss';
 
+// Legacy Tailwind colors resolve to the monochrome theme tokens in index.css,
+// so screens still styled with utilities follow the light/dark theme.
+const fg = (alpha: number): string => `rgba(var(--fg-rgb), ${String(alpha)})`;
+
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: { sans: ['"Geist Variable"', 'Geist', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
       colors: {
         gray: Object.fromEntries([50,100,200,300,400,500,600,700,800,900,950].map(n => [n, `rgb(var(--gray-${n}) / <alpha-value>)`])),
         white: 'rgb(var(--white) / <alpha-value>)',
-        violet: { 50: 'var(--surface-2)', 100: 'var(--border)', 500: 'var(--muted)', 700: 'var(--action-solid)', 800: 'var(--action-hover)', 900: 'var(--text)' },
+        violet: { 50: fg(0.05), 100: fg(0.14), 500: fg(0.55), 700: 'var(--fg)', 800: 'var(--solid-hover)', 900: 'var(--fg)' },
         nj: {
-          bg: '#171717',
-          surface: '#1c1c1b',
-          'surface-2': '#242423',
-          border: '#30302e',
-          'border-bright': '#454540',
-          muted: '#989891',
-          text: '#edede7',
-          'text-dim': '#aeaea5',
-
-          accent: '#65783c',
-          'accent-bright': '#d5ea97',
-          'accent-dim': '#52632f',
-
-          eligible: '#accb93',
-          'eligible-bg': 'rgba(0, 230, 118, 0.12)',
-          unclear: '#d4b57e',
-          'unclear-bg': 'rgba(255, 171, 0, 0.12)',
-          ineligible: '#db9992',
-          'ineligible-bg': 'rgba(255, 82, 82, 0.12)',
-
-          'score-high': '#accb93',
-          'score-mid': '#d4b57e',
-          'score-low': '#db9992',
-
-          'tier-1': '#d4b57e',
-          'tier-2': '#aab9c3',
-          'tier-3': '#a9aaa2',
-
-          'cat-swe': '#b6bdb0',
-          'cat-quant': '#b6bdb0',
-          'cat-ml': '#b6bdb0',
-          'cat-hw': '#b6bdb0',
-          'cat-other': '#a9aaa2',
+          bg: 'var(--bg)',
+          surface: 'var(--bg)',
+          'surface-2': fg(0.05),
+          border: fg(0.14),
+          'border-bright': fg(0.26),
+          muted: fg(0.5),
+          text: 'var(--fg)',
+          'text-dim': fg(0.7),
+          accent: 'var(--fg)',
+          'accent-bright': 'var(--fg)',
+          'accent-dim': 'var(--solid-hover)',
+          eligible: '#2eb86c',
+          'eligible-bg': 'rgba(46, 184, 108, 0.14)',
+          unclear: '#dea034',
+          'unclear-bg': 'rgba(222, 160, 52, 0.14)',
+          ineligible: '#e5484d',
+          'ineligible-bg': 'rgba(229, 72, 77, 0.14)',
+          'score-high': '#2eb86c',
+          'score-mid': '#dea034',
+          'score-low': '#e5484d',
+          'tier-1': fg(0.9),
+          'tier-2': fg(0.7),
+          'tier-3': fg(0.5),
+          'cat-swe': fg(0.7),
+          'cat-quant': fg(0.7),
+          'cat-ml': fg(0.7),
+          'cat-hw': fg(0.7),
+          'cat-other': fg(0.5),
         },
       },
       boxShadow: {

@@ -4,7 +4,7 @@ import dataclasses
 import hashlib
 import json
 import re
-from datetime import UTC, datetime
+from datetime import datetime, timedelta
 from typing import TYPE_CHECKING, Any
 from unittest.mock import patch
 
@@ -319,7 +319,9 @@ class TestFlappingFullCycle:
         assert feed[posting_x.id].closed_at is not None
 
         # --- Run 4: 8 days later, posting X expired ---
-        mock_dt_8d = datetime(2026, 10, 1, 0, 0, 0, tzinfo=UTC)
+        closed_at = feed[posting_x.id].closed_at
+        assert closed_at is not None
+        mock_dt_8d = datetime.fromisoformat(closed_at.replace('Z', '+00:00')) + timedelta(days=8)
 
         adapter = _FakeAdapter([posting_a])
         with (

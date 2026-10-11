@@ -176,6 +176,17 @@ describe('scorePosting — pure scoring function', () => {
     });
   });
 
+  it('ranks known location and degree matches higher without hiding other jobs', () => {
+    const profile = makeProfile({ locations: ['New York, NY'], degree_type: 'bachelors' });
+    const input = makeScoringInput({ first_seen_at: now.toISOString() });
+    const neutral = scorePosting(input, profile, now);
+    const matched = scorePosting({ ...input, locations: ['New York, NY', 'Boston, MA'], degree_labels: ["Bachelor's"] }, profile, now);
+    expect(matched.breakdown.location).toBe(8);
+    expect(matched.breakdown.degree).toBe(6);
+    expect(matched.score).toBeGreaterThan(neutral.score);
+    expect(scorePosting({ ...input, locations: ['Chicago, IL'], degree_labels: ['PhD'] }, profile, now).score).toBe(neutral.score);
+  });
+
   describe('eligibility signal (0-20 points, with override)', () => {
     it('eligible = 20 points', () => {
       const result = scorePosting(
@@ -427,6 +438,17 @@ describe('recompute — DB integration', () => {
   }
 
   describe('recomputePosting', () => {
+    it('uses listed places and degree metadata when saving a personalized score', async () => {
+      const posting = makePosting({ id: 'matched', source_metadata: { degrees: ["Bachelor's"] } });
+      await insertPosting(posting);
+      const profile = makeProfile({ locations: ['New York, NY'], degree_type: 'bachelors' });
+      const result = await recomputePosting(db, 'matched', profile, new Date(posting.first_seen_at));
+      expect(result?.score.breakdown.location).toBe(8);
+      expect(result?.score.breakdown.degree).toBe(6);
+      const row = await db.queryOne<{ score_breakdown: string }>('SELECT score_breakdown FROM postings_cache WHERE id = ?', ['matched']);
+      expect(JSON.parse(row!.score_breakdown)).toMatchObject({ location: 8, degree: 6 });
+    });
+
     it('classifies and scores a single posting', async () => {
       const posting = makePosting({ id: 'abc123' });
       await insertPosting(posting);

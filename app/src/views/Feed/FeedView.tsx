@@ -12,6 +12,8 @@ import { useSync } from '@/providers/SyncProvider';
 import { useKeyboard } from '@/hooks/useKeyboard';
 import { useDensity } from '@/hooks/useAppearance';
 import { openExternal } from '@/lib/platform';
+import { postingLocations } from '@/lib/location';
+import { Link } from 'react-router-dom';
 import { focusHeaderSearch } from '@/lib/search';
 import { useToast } from '@/components/Toast';
 import { Panel } from '@/motion/Panel';
@@ -118,14 +120,19 @@ export function getFeedEmptyState(
   return { title: 'No jobs match these filters.', detail: null };
 }
 
-type FilterState = Pick<FeedState, 'viewMode' | 'selectedCategories' | 'selectedDomains' | 'companyFilter'> & { search: string };
+type FilterState = Pick<FeedState, 'viewMode' | 'selectedCategories' | 'selectedDomains' | 'companyFilter' | 'locationFilter'> & { search: string };
 
 function filterPostings(rows: PostingRowData[], f: FilterState, profile: Profile | null): PostingRowData[] {
   const query = f.search.trim().toLowerCase();
+  const wantedLocation = f.locationFilter.trim().toLocaleLowerCase();
+  const roles = f.viewMode === 'for-you' && f.selectedCategories.size === 0 && profile?.target_categories.length
+    ? new Set(profile.target_categories) : f.selectedCategories;
   const result: PostingRowData[] = [];
   for (const posting of rows) {
     if (f.viewMode === 'for-you' && !matchesGraduationStage(posting, profile?.graduation)) continue;
     if (f.companyFilter && posting.company_slug !== f.companyFilter) continue;
+    if (wantedLocation && !postingLocations(posting.locations, posting.location)
+      .some(location => location.toLocaleLowerCase().includes(wantedLocation))) continue;
     if (f.viewMode === 'for-you' && profile && posting.eligibility) {
       try {
         const eligibility = JSON.parse(posting.eligibility) as { verdict?: string };
@@ -134,7 +141,7 @@ function filterPostings(rows: PostingRowData[], f: FilterState, profile: Profile
         // Invalid cached eligibility stays visible for manual review.
       }
     }
-    if (!matchesRoleSelection(posting.category_tags, posting.domain_tags ?? [], f.selectedCategories, f.selectedDomains)) continue;
+    if (!matchesRoleSelection(posting.category_tags, posting.domain_tags ?? [], roles, f.selectedDomains)) continue;
     if (query && !posting.title.toLowerCase().includes(query) && !posting.company.toLowerCase().includes(query)) continue;
     result.push(posting);
   }
@@ -156,12 +163,12 @@ export function FeedView(): React.ReactNode {
   const density = useDensity();
   const { db } = useDatabase();
   const { toast } = useToast();
-  const { profile } = useProfile();
+  const { profile, beginProfileSetup } = useProfile();
   const { clearNewPostingCount, status: syncStatus, lastSyncedAt } = useSync();
   const feed = useSyncExternalStore(feedSubscribe, feedSnapshot);
   const {
     rawRows, pendingRows, loaded, viewMode, selectedCategories, selectedDomains,
-    search, companyFilter, detailId, openId, selectedIndex,
+    search, locationFilter, companyFilter, detailId, openId, selectedIndex,
   } = feed;
 
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -247,8 +254,8 @@ export function FeedView(): React.ReactNode {
   }, [db, profile, loadSignature, toast]);
 
   const postings = useMemo(
-    () => filterPostings(rawRows, { viewMode, selectedCategories, selectedDomains, companyFilter, search: deferredSearch }, profile),
-    [rawRows, deferredSearch, selectedCategories, selectedDomains, viewMode, profile, companyFilter],
+    () => filterPostings(rawRows, { viewMode, selectedCategories, selectedDomains, companyFilter, locationFilter, search: deferredSearch }, profile),
+    [rawRows, deferredSearch, selectedCategories, selectedDomains, viewMode, profile, companyFilter, locationFilter],
   );
   const postingIds = useMemo(() => postings.map((posting) => posting.id), [postings]);
   const emptyState = getFeedEmptyState(rawRows.length, syncStatus);
@@ -359,7 +366,7 @@ export function FeedView(): React.ReactNode {
     if (next.has(value)) next.delete(value); else next.add(value);
     refilter({ [key]: next });
   };
-  const clearFilters = (): void => refilter({ selectedCategories: new Set(), selectedDomains: new Set(), search: '', companyFilter: null });
+  const clearFilters = (): void => refilter({ viewMode: 'all', selectedCategories: new Set(), selectedDomains: new Set(), locationFilter: '', search: '', companyFilter: null });
 
   // ── Actions ────────────────────────────────────────────────────────────────
   const handleUndo = useCallback((postingId: string): void => {
@@ -552,7 +559,7 @@ export function FeedView(): React.ReactNode {
     ...DOMAIN_OPTIONS.filter((o) => selectedDomains.has(o.value)).map((o) => o.label),
   ];
   const companyName = companyFilter ? rawRows.find((r) => r.company_slug === companyFilter)?.company ?? companyFilter : null;
-  const nFilters = selectedCategories.size + selectedDomains.size + (companyFilter ? 1 : 0);
+  const nFilters = selectedCategories.size + selectedDomains.size + (companyFilter ? 1 : 0) + (locationFilter.trim() ? 1 : 0) + (viewMode === 'for-you' ? 1 : 0);
   const hasAnything = nFilters > 0 || Boolean(search);
   const countLabel = `${shownCount.toLocaleString('en-US')} ${shownCount === 1 ? 'role' : 'roles'}`
     + (companyName ? ` at ${companyName}` : '') + (summary.length ? ` · ${summary.join(', ')}` : '');
@@ -567,7 +574,7 @@ export function FeedView(): React.ReactNode {
   // "A little too narrow": find the one filter whose removal brings roles back.
   const narrow = useMemo(() => {
     if (postings.length || !rawRows.length) return null;
-    const base: FilterState = { viewMode, selectedCategories, selectedDomains, companyFilter, search };
+    const base: FilterState = { viewMode, selectedCategories, selectedDomains, companyFilter, locationFilter, search };
     const options: { label: string; patch: Partial<FeedState>; count: number }[] = [];
     const tryPatch = (label: string, patch: Partial<FeedState> & Partial<FilterState>): void => {
       options.push({ label, patch, count: filterPostings(rawRows, { ...base, ...patch } as FilterState, profile).length });
@@ -581,10 +588,12 @@ export function FeedView(): React.ReactNode {
       tryPatch(DOMAIN_OPTIONS.find((o) => o.value === value)?.label ?? value, { selectedDomains: next });
     }
     if (companyFilter) tryPatch(companyName ?? 'the company', { companyFilter: null });
+    if (locationFilter.trim()) tryPatch(`Location: ${locationFilter.trim()}`, { locationFilter: '' });
     if (search) tryPatch(`“${search}”`, { search: '' });
+    if (viewMode === 'for-you') tryPatch('For you', { viewMode: 'all' });
     const best = options.filter((o) => o.count > 0).sort((a, b) => b.count - a.count)[0] ?? null;
     return { chips: options.map((o) => o.label), best };
-  }, [postings.length, rawRows, selectedCategories, selectedDomains, companyFilter, search, viewMode, profile, companyName]);
+  }, [postings.length, rawRows, selectedCategories, selectedDomains, companyFilter, locationFilter, search, viewMode, profile, companyName]);
 
   const loading = !loaded || (syncStatus === 'syncing' && rawRows.length === 0);
   let fresh = 0;
@@ -594,17 +603,24 @@ export function FeedView(): React.ReactNode {
       <Panel className={`jobs-panel depth ${layerOpen ? 'behind' : ''}`} aria-label="Jobs" {...(layerOpen ? { inert: true } : {})}>
         <div className="list-head">
           <div className="title">
-            <h1 className="h1">Internships</h1>
+            <h1 className="h1">Jobs</h1>
             <span className="count" aria-live="polite">{loading ? '' : countLabel}</span>
           </div>
           <div className="tools">
-            {hasAnything && <button type="button" className="txt" onClick={clearFilters}>Clear</button>}
+            {hasAnything && <button type="button" className="txt" onClick={clearFilters}>Show all jobs</button>}
             <button type="button" className="icb pillbtn" onClick={() => { glide.hide(); setFiltersOpen(true); }} aria-haspopup="dialog" aria-label="Filters"
               style={{ paddingRight: nFilters ? 8 : 18, gap: 10 }}>
               <span>Filters</span>{nFilters > 0 && <span className="badge" key={nFilters}>{nFilters}</span>}
             </button>
           </div>
         </div>
+        {profile && <div className="jobs-mode-bar" aria-label="Job view">
+          <div className="seg">
+            <button type="button" aria-pressed={viewMode === 'for-you'} onClick={() => refilter({ viewMode: 'for-you' })}>For you</button>
+            <button type="button" aria-pressed={viewMode === 'all'} onClick={() => refilter({ viewMode: 'all' })}>All jobs</button>
+          </div>
+          <span className="dim">{viewMode === 'for-you' ? 'Matched to your profile' : 'Every open job'}</span>
+        </div>}
         <div className="colhead-wrap">
           <div className="colhead cols jobs-cols">
             <span>Role</span><span className="c-loc">Location</span><span className="c-pay">Pay</span><span style={{ textAlign: 'right' }}>Posted</span>
@@ -693,12 +709,14 @@ export function FeedView(): React.ReactNode {
           <button type="button" className="icb round" onClick={() => setFiltersOpen(false)} aria-label="Close filters"><Glyph name="close" size={13} /></button>
         </div>
         <div className="filters-body scroll">
-          {profile && <section>
-            <h3>Show</h3>
-            <div className="seg lg" style={{ alignSelf: 'flex-start' }} aria-label="Job view">
-              <button type="button" aria-pressed={viewMode === 'for-you'} onClick={() => refilter({ viewMode: 'for-you', selectedCategories: new Set(profile.target_categories), selectedDomains: new Set() })}>For you</button>
-              <button type="button" aria-pressed={viewMode === 'all'} onClick={() => refilter({ viewMode: 'all', selectedCategories: new Set(), selectedDomains: new Set() })}>All jobs</button>
-            </div>
+          {profile ? <section>
+            <h3>Your profile</h3>
+            <p className="dim filter-help">For you uses your graduation and work authorization to assess fit, and your roles, locations and degree to focus and rank jobs. Switch views above the results.</p>
+            <Link className="link filter-profile-link" to="/settings#profile" onClick={() => setFiltersOpen(false)}>Edit your preferences <Glyph name="go" size={13} /></Link>
+          </section> : <section>
+            <h3>For you</h3>
+            <p className="dim filter-help">Add your graduation and work authorization to see matching roles. You can still browse every job without a profile.</p>
+            <button type="button" className="ghost sm" style={{ alignSelf: 'flex-start' }} onClick={() => { setFiltersOpen(false); beginProfileSetup(); }}>Personalize your jobs</button>
           </section>}
           <section style={{ gap: 18 }}>
             <h3>Roles</h3>
@@ -716,10 +734,19 @@ export function FeedView(): React.ReactNode {
             <div className="chips">{DOMAIN_OPTIONS.map((option) => <button key={option.value} type="button" className="chip"
               aria-pressed={selectedDomains.has(option.value)} onClick={() => toggleIn('selectedDomains', option.value)}>{option.label}</button>)}</div>
           </section>
+          <section style={{ gap: 10 }}>
+            <h3>Location</h3>
+            <p className="dim filter-help">Show roles whose listed city, state or remote location contains this text.</p>
+            <div className="filter-location-row">
+              <input className="filter-location" type="search" aria-label="Filter by location" placeholder="City, state or Remote"
+                value={locationFilter} onChange={event => { setFeed({ locationFilter: event.target.value }); resetListPosition(); }} />
+              {locationFilter && <button type="button" className="ghost sm" onClick={() => { setFeed({ locationFilter: '' }); resetListPosition(); }}>Clear</button>}
+            </div>
+          </section>
         </div>
         <div className="filters-foot">
-          <button type="button" className="txt" style={{ fontSize: 15, color: 'rgba(var(--fg-rgb),.6)' }} disabled={selectedCategories.size + selectedDomains.size === 0}
-            onClick={() => refilter({ selectedCategories: new Set(), selectedDomains: new Set() })}>Reset</button>
+          <button type="button" className="txt" style={{ fontSize: 15, color: 'rgba(var(--fg-rgb),.6)' }} disabled={!hasAnything}
+            onClick={clearFilters}>Reset all</button>
           <button type="button" className="solid lg" onClick={() => setFiltersOpen(false)}>Show {postings.length.toLocaleString('en-US')} {postings.length === 1 ? 'role' : 'roles'}</button>
         </div>
       </div>

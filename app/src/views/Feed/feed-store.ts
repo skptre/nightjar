@@ -11,7 +11,18 @@
 // tests, where a single JS context renders the feed many times.
 
 import type { Profile } from '@/profile/types';
+import { loadProfile } from '@/profile/profile-store';
 import type { PostingRowData } from './PostingRow';
+
+const VIEW_MODE_KEY = 'nightjar_jobs_view_mode';
+function savedViewMode(): 'for-you' | 'all' {
+  try {
+    const saved = localStorage.getItem(VIEW_MODE_KEY);
+    if (saved === 'for-you' || saved === 'all') return saved;
+    return loadProfile() ? 'for-you' : 'all';
+  }
+  catch { return 'all'; }
+}
 
 export interface FeedState {
   // Loaded, parsed rows (parsed once at load, not per keystroke).
@@ -25,6 +36,7 @@ export interface FeedState {
   selectedCategories: Set<string>;
   selectedDomains: Set<string>;
   search: string;
+  locationFilter: string;
   companyFilter: string | null;
   // The sheet's posting (null when closed) and the row expanded inline in the list.
   detailId: string | null;
@@ -43,10 +55,11 @@ function initialState(): FeedState {
     rawRows: [],
     pendingRows: null,
     loaded: false,
-    viewMode: 'all',
+    viewMode: savedViewMode(),
     selectedCategories: new Set(),
     selectedDomains: new Set(),
     search: '',
+    locationFilter: '',
     companyFilter: null,
     detailId: null,
     openId: null,
@@ -77,6 +90,9 @@ export function feedSnapshot(): FeedState {
 
 /** Patch state and notify subscribers (triggers a re-render of the feed). */
 export function setFeed(patch: Partial<FeedState>): void {
+  if (patch.viewMode) {
+    try { localStorage.setItem(VIEW_MODE_KEY, patch.viewMode); } catch { /* storage can be unavailable */ }
+  }
   state = { ...state, ...patch };
   emit();
 }
@@ -102,6 +118,7 @@ export function currentLoadEpoch(): number {
 
 /** Clear the cache. The app relies on location.reload() for this; tests call it. */
 export function resetFeedStore(): void {
+  try { localStorage.removeItem(VIEW_MODE_KEY); } catch { /* tests or storage denial */ }
   state = initialState();
   epoch += 1;
   emit();
@@ -116,11 +133,13 @@ export function profileSignature(profile: Profile | null): string {
   if (!profile) return 'guest';
   return JSON.stringify([
     profile.graduation,
+    profile.degree_type ?? null,
     profile.grad_window,
     profile.work_auth,
     profile.requires_sponsorship,
     profile.authorization_path ?? null,
     profile.target_categories,
+    profile.locations,
     profile.excluded_companies,
     profile.tiers,
     profile.scoring_adjustments ?? null,

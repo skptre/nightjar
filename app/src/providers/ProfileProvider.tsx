@@ -2,6 +2,7 @@ import { createContext, useContext, useState, useCallback, type ReactNode } from
 import type { Profile } from '@/profile/types';
 import { clearProfile, loadProfile, saveProfile } from '@/profile/profile-store';
 import { ProfileSetup } from '@/profile/ProfileSetup';
+import { setFeed } from '@/views/Feed/feed-store';
 
 interface ProfileContextValue {
   profile: Profile | null;
@@ -40,6 +41,7 @@ export function ProfileProvider({ children }: { children: ReactNode }): ReactNod
       saveProfile(newProfile);
       localStorage.setItem(ONBOARDING_DISMISSED_KEY, 'true');
       setProfile(newProfile);
+      setFeed({ viewMode: 'for-you' });
       setShowSetup(false);
     },
     [],
@@ -53,6 +55,7 @@ export function ProfileProvider({ children }: { children: ReactNode }): ReactNod
     clearProfile();
     localStorage.removeItem(ONBOARDING_DISMISSED_KEY);
     setProfile(null);
+    setFeed({ viewMode: 'all', selectedCategories: new Set(), selectedDomains: new Set() });
     setShowSetup(false);
   }, []);
 

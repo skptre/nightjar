@@ -4,7 +4,15 @@ import type { JobDetails, PayRange } from './types';
 // A pay label is worth showing only when it resolves to a concrete amount with a
 // known period ("$41/hr", "$95,000–110,000/year"). Anything ambiguous shows nothing.
 export function concretePay(label: string): string | null {
-  return /\d/.test(label) && label.includes('/') ? label : null;
+  const match = label.match(/^(?:C\$|US\$|[$£€]|[A-Z]{3} )\s*([\d,]+(?:\.\d+)?)(K)?(?:[–-]([\d,]+(?:\.\d+)?)(K)?)?\/(hr|day|week|month|year|yr|wk|mo)$/i);
+  if (!match) return null;
+  const unit = match[5]!.toLowerCase();
+  const minimum: Record<string, number> = { hr: 5, day: 20, week: 100, wk: 100, month: 400, mo: 400, year: 1000, yr: 1000 };
+  const first = Number(match[1]!.replaceAll(',', '')) * (match[2] ? 1000 : 1);
+  const last = match[3] ? Number(match[3].replaceAll(',', '')) * (match[4] ? 1000 : 1) : first;
+  // Some source pages label small reimbursements as compensation or omit the
+  // thousands marker on annual salary. An implausible amount is not a pay rate.
+  return first >= minimum[unit]! && last >= first ? label : null;
 }
 
 const SHORT_UNIT: Record<string, string> = { hr: 'hr', year: 'yr', month: 'mo', week: 'wk', day: 'day' };

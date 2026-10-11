@@ -66,7 +66,7 @@ export function ProfileSetup({ onComplete, onBack, initialProfile }: ProfileSetu
   });
   const [step2, setStep2] = useState<Step2State>({
     targetCategories: initialProfile?.target_categories ?? [],
-    locations: initialProfile?.locations ?? ['US'],
+    locations: initialProfile?.locations ?? [],
     locationInput: '',
   });
 
@@ -93,7 +93,7 @@ export function ProfileSetup({ onComplete, onBack, initialProfile }: ProfileSetu
 
   const handleAddLocation = (): void => {
     const trimmed = step2.locationInput.trim();
-    if (trimmed && !step2.locations.includes(trimmed)) {
+    if (trimmed && !step2.locations.some(location => location.toLocaleLowerCase() === trimmed.toLocaleLowerCase())) {
       setStep2((prev) => ({
         ...prev,
         locations: [...prev.locations, trimmed],
@@ -117,18 +117,15 @@ export function ProfileSetup({ onComplete, onBack, initialProfile }: ProfileSetu
   };
 
   const isStep1Valid =
-    step1.degreeType !== '' &&
     step1.graduationYear !== '' &&
     step1.workAuth !== '' &&
     step1.requiresSponsorship !== null;
-
-  const isStep2Valid = step2.targetCategories.length > 0;
 
   const handleFinish = (): void => {
     const graduation = `${step1.graduationYear}-${step1.graduationMonth}`;
     const profile: Profile = {
       ...initialProfile,
-      degree_type: step1.degreeType as DegreeType,
+      degree_type: step1.degreeType || undefined,
       graduation,
       grad_window: computeGradWindow(graduation),
       // Retained in the persisted schema for backwards compatibility. Graduation
@@ -153,7 +150,7 @@ export function ProfileSetup({ onComplete, onBack, initialProfile }: ProfileSetu
             Welcome to Nightjar
           </h1>
           <p className="mt-2 text-gray-600 dark:text-nj-muted">
-            Set up your profile to personalize your feed
+            Add details that help Nightjar find a better fit. You can change them later.
           </p>
           <div className="flex justify-center gap-2 mt-4">
             <StepDot active={step === 1} />
@@ -167,13 +164,15 @@ export function ProfileSetup({ onComplete, onBack, initialProfile }: ProfileSetu
               <h2 className="text-lg font-semibold text-gray-900 dark:text-nj-text">
                 About you
               </h2>
+              <p className="text-sm text-gray-600 dark:text-nj-muted">Graduation and work authorization are needed for For you. Degree is optional.</p>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-nj-text-dim mb-1">
+              <div role="group" aria-labelledby="profile-graduation-label">
+                <span id="profile-graduation-label" className="block text-sm font-medium text-gray-700 dark:text-nj-text-dim mb-1">
                   Expected graduation
-                </label>
+                </span>
                 <div className="flex gap-3">
                   <select
+                    aria-label="Graduation month"
                     value={step1.graduationMonth}
                     onChange={(e) =>
                       setStep1((prev) => ({ ...prev, graduationMonth: e.target.value }))
@@ -187,6 +186,7 @@ export function ProfileSetup({ onComplete, onBack, initialProfile }: ProfileSetu
                     ))}
                   </select>
                   <select
+                    aria-label="Graduation year"
                     value={step1.graduationYear}
                     onChange={(e) =>
                       setStep1((prev) => ({ ...prev, graduationYear: e.target.value }))
@@ -204,10 +204,11 @@ export function ProfileSetup({ onComplete, onBack, initialProfile }: ProfileSetu
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-nj-text-dim mb-1">
+                <label htmlFor="profile-degree" className="block text-sm font-medium text-gray-700 dark:text-nj-text-dim mb-1">
                   Degree type
                 </label>
                 <select
+                  id="profile-degree"
                   value={step1.degreeType}
                   onChange={(event) => setStep1((previous) => ({
                     ...previous,
@@ -215,7 +216,7 @@ export function ProfileSetup({ onComplete, onBack, initialProfile }: ProfileSetu
                   }))}
                   className="w-full rounded-md border border-gray-300 dark:border-nj-border bg-white dark:bg-nj-surface-2 px-3 py-2 text-sm text-gray-900 dark:text-nj-text"
                 >
-                  <option value="">Select degree type</option>
+                  <option value="">Select degree type (optional)</option>
                   {DEGREE_TYPE_OPTIONS.map((option) => (
                     <option key={option.value} value={option.value}>{option.label}</option>
                   ))}
@@ -223,10 +224,11 @@ export function ProfileSetup({ onComplete, onBack, initialProfile }: ProfileSetu
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-nj-text-dim mb-1">
+                <label htmlFor="profile-work-auth" className="block text-sm font-medium text-gray-700 dark:text-nj-text-dim mb-1">
                   Work authorization
                 </label>
                 <select
+                  id="profile-work-auth"
                   value={step1.workAuth}
                   onChange={(e) => handleWorkAuthChange(e.target.value)}
                   className="w-full rounded-md border border-gray-300 dark:border-nj-border bg-white dark:bg-nj-surface-2 px-3 py-2 text-sm text-gray-900 dark:text-nj-text"
@@ -241,13 +243,14 @@ export function ProfileSetup({ onComplete, onBack, initialProfile }: ProfileSetu
               </div>
 
               {step1.showSponsorshipQuestion && (
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-nj-text-dim mb-1">
+                <div role="group" aria-labelledby="profile-sponsorship-label">
+                  <span id="profile-sponsorship-label" className="block text-sm font-medium text-gray-700 dark:text-nj-text-dim mb-1">
                     Do you require visa sponsorship?
-                  </label>
+                  </span>
                   <div className="flex gap-3">
                     <button
                       type="button"
+                      aria-pressed={step1.requiresSponsorship === true}
                       onClick={() =>
                         setStep1((prev) => ({ ...prev, requiresSponsorship: true }))
                       }
@@ -261,6 +264,7 @@ export function ProfileSetup({ onComplete, onBack, initialProfile }: ProfileSetu
                     </button>
                     <button
                       type="button"
+                      aria-pressed={step1.requiresSponsorship === false}
                       onClick={() =>
                         setStep1((prev) => ({ ...prev, requiresSponsorship: false }))
                       }
@@ -290,7 +294,7 @@ export function ProfileSetup({ onComplete, onBack, initialProfile }: ProfileSetu
                   onClick={() => setStep(2)}
                   className="px-4 py-2 rounded-md text-sm font-medium bg-nj-accent text-white hover:bg-nj-accent-dim disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
-                  Next
+                  Continue to interests
                 </button>
               </div>
             </div>
@@ -299,11 +303,12 @@ export function ProfileSetup({ onComplete, onBack, initialProfile }: ProfileSetu
               <h2 className="text-lg font-semibold text-gray-900 dark:text-nj-text">
                 What you're looking for
               </h2>
+              <p className="text-sm text-gray-600 dark:text-nj-muted">Roles and locations are optional. Roles focus For you; matching locations rank higher. You can start without either.</p>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-nj-text-dim mb-2">
-                  Target categories
-                </label>
+              <div role="group" aria-labelledby="profile-roles-label">
+                <span id="profile-roles-label" className="block text-sm font-medium text-gray-700 dark:text-nj-text-dim mb-2">
+                  Roles you care about (optional)
+                </span>
                 <div className="space-y-3">
                   {CATEGORY_GROUPS.map((group) => (
                     <fieldset key={group.label}>
@@ -333,8 +338,8 @@ export function ProfileSetup({ onComplete, onBack, initialProfile }: ProfileSetu
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-nj-text-dim mb-1">
-                  Target locations
+                <label htmlFor="profile-location" className="block text-sm font-medium text-gray-700 dark:text-nj-text-dim mb-1">
+                  Locations (optional)
                 </label>
                 <div className="flex flex-wrap gap-2 mb-2">
                   {step2.locations.map((loc) => (
@@ -356,13 +361,14 @@ export function ProfileSetup({ onComplete, onBack, initialProfile }: ProfileSetu
                 </div>
                 <div className="flex gap-2">
                   <input
+                    id="profile-location"
                     type="text"
                     value={step2.locationInput}
                     onChange={(e) =>
                       setStep2((prev) => ({ ...prev, locationInput: e.target.value }))
                     }
                     onKeyDown={handleLocationKeyDown}
-                    placeholder="Add a location (e.g. NYC, California)"
+                    placeholder="City, state or Remote"
                     className="flex-1 rounded-md border border-gray-300 dark:border-nj-border bg-white dark:bg-nj-surface-2 px-3 py-2 text-sm text-gray-900 dark:text-nj-text placeholder-gray-400"
                   />
                   <button
@@ -385,11 +391,10 @@ export function ProfileSetup({ onComplete, onBack, initialProfile }: ProfileSetu
                 </button>
                 <button
                   type="button"
-                  disabled={!isStep2Valid}
                   onClick={handleFinish}
                   className="px-4 py-2 rounded-md text-sm font-medium bg-nj-accent text-white hover:bg-nj-accent-dim disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
-                  Get started
+                  Start browsing jobs
                 </button>
               </div>
             </div>

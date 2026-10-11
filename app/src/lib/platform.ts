@@ -26,7 +26,19 @@ export async function openExternal(url: string): Promise<boolean> {
     }
   }
 
-  return window.open(parsed.toString(), '_blank', 'noopener,noreferrer') !== null;
+  // `noopener` deliberately makes window.open return null even when the tab
+  // opened. Open a blank tab synchronously so failure is detectable, sever its
+  // opener before navigating, then send it to the validated URL.
+  const tab = window.open('about:blank', '_blank');
+  if (!tab) return false;
+  try {
+    tab.opener = null;
+    tab.location.replace(parsed.toString());
+    return true;
+  } catch {
+    tab.close();
+    return false;
+  }
 }
 
 export async function updateTrayInfo(lastSync: string, newCount: number): Promise<void> {

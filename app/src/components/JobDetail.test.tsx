@@ -19,3 +19,16 @@ it('shows the employer-page fallback immediately when incoming text is unavailab
   expect(screen.getByText('The full story is on the company site.')).toBeTruthy();
   expect(screen.queryByLabelText('Loading description')).toBeNull();
 });
+it('labels unknown pay honestly and lists every formatted location', () => {
+  render(<JobDetail posting={{ ...posting, locations: ['San Francisco, CA', 'New York, NY'],
+    description_text: null, description_status: 'unavailable' }} onAction={() => {}} />);
+  expect(screen.getByText('Check posting')).toBeTruthy();
+  expect(screen.getByText(/Pay isn’t confirmed here/)).toBeTruthy();
+  expect(screen.getByText('San Francisco, CA; New York, NY')).toBeTruthy();
+});
+it('shows a verified amount without an unknown-pay prompt', () => {
+  render(<JobDetail posting={{ ...posting, pay_label: '$52/hr', description_text: null,
+    description_status: 'unavailable' }} onAction={() => {}} />);
+  expect(screen.getByText('$52/hr')).toBeTruthy();
+  expect(screen.queryByText('Check posting')).toBeNull();
+});

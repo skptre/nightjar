@@ -69,7 +69,7 @@ function useNotices(pathname: string): Notice[] {
   const { saveError, backupError } = useWorkspaceNotices();
   const list: Notice[] = [];
   if (!online) list.push({ id: 'offline', dot: 'rgba(var(--fg-rgb),.4)', role: 'alert', text: 'You’re offline. Everything you saved is still here.' });
-  else if (status === 'error') list.push({ id: 'sync', dot: 'var(--st-assess)', role: 'status', text: 'Couldn’t check for new jobs. Your saved information is fine.',
+  else if (status === 'error') list.push({ id: 'sync', dot: 'var(--st-assess)', role: 'status', text: 'Couldn’t check for new jobs. Listings may be out of date.',
     action: { label: 'Try again', run: () => void refreshJobs?.() } });
   if (online && status !== 'error' && (pathname === '/' || pathname === '/jobs')) {
     const freshness = getFeedFreshness();
@@ -87,7 +87,7 @@ function useNotices(pathname: string): Notice[] {
     action: { label: 'Review', to: '/settings#updates' } });
   if (saveError) list.push({ id: 'save', dot: 'var(--danger)', role: 'alert', pulse: true, text: 'A change couldn’t be saved. Save a backup before you restart.',
     action: { label: 'Open backups', to: '/settings#workspace' } });
-  if (backupError) list.push({ id: 'backup', dot: 'var(--danger)', role: 'alert', text: 'The automatic recovery copy couldn’t be saved. Your workspace is fine.',
+  if (backupError) list.push({ id: 'backup', dot: 'var(--danger)', role: 'alert', text: 'The automatic recovery copy couldn’t be saved. Check backups before relying on this device.',
     action: { label: 'Check backups', to: '/settings#workspace' } });
   return list;
 }

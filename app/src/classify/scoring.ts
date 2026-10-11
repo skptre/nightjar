@@ -6,6 +6,8 @@ export interface ScoreBreakdown {
   freshness: number;
   category: number;
   eligibility: number;
+  location?: number;
+  degree?: number;
 }
 
 export interface ScoreResult {
@@ -19,6 +21,23 @@ export interface ScoringInput {
   eligibility_verdict: EligibilityVerdict;
   category: CategoryValue;
   category_tags: readonly CategoryValue[];
+  locations?: readonly string[];
+  degree_labels?: readonly string[] | undefined;
+}
+
+function locationMatch(preference: string, location: string): boolean {
+  const wanted = preference.trim().toLocaleLowerCase();
+  const listed = location.trim().toLocaleLowerCase();
+  if (!wanted || wanted === 'us' || wanted === 'usa' || wanted === 'united states') return false;
+  if (wanted.length === 2) return new RegExp(`(?:^|[,\\s])${wanted}(?:$|[,\\s])`, 'i').test(listed);
+  return listed.includes(wanted);
+}
+
+function degreeMatch(preference: Profile['degree_type'], label: string): boolean {
+  if (!preference) return false;
+  if (preference === 'bachelors') return /bachelor|undergraduate/i.test(label);
+  if (preference === 'masters') return /master/i.test(label);
+  return /phd|ph\.d|doctor/i.test(label);
 }
 
 const FRESHNESS_DECAY_RATE = 0.05;
@@ -76,13 +95,16 @@ export function scorePosting(
     profile.target_categories,
   );
   const eligibility = computeEligibilityScore(input.eligibility_verdict);
+  const location = profile.locations.some(wanted => input.locations?.some(listed => locationMatch(wanted, listed))) ? 8 : 0;
+  const degree = input.degree_labels?.some(label => degreeMatch(profile.degree_type, label)) ? 6 : 0;
 
-  const breakdown: ScoreBreakdown = { tier, freshness, category, eligibility };
+  const breakdown: ScoreBreakdown = { tier, freshness, category, eligibility,
+    ...(location ? { location } : {}), ...(degree ? { degree } : {}) };
 
   if (input.eligibility_verdict === 'ineligible') {
     return { score: Math.min(5, tier + freshness + category), breakdown };
   }
 
-  const total = tier + freshness + category + eligibility;
+  const total = tier + freshness + category + eligibility + location + degree;
   return { score: Math.min(100, Math.round(total * 100) / 100), breakdown };
 }

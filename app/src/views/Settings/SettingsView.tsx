@@ -21,7 +21,6 @@ import { exportApplicationsCSV } from '@/export/export-csv';
 import { exportApplicationsJSON } from '@/export/export-json';
 import { exportPostingsJSON } from '@/export/export-postings';
 import { saveFile } from '@/export/file-save';
-import { recomputeAll } from '@/classify/recompute';
 import type { GmailAuthState } from '@/integrations/types';
 import { getAuthState, startOAuthFlow, disconnectGmail } from '@/integrations/gmail-auth';
 import { clearAllGmailData } from '@/integrations/gmail-service';
@@ -134,7 +133,6 @@ function useSavedPulse(): [ReactNode, () => void] {
 
 function ProfileSection(): ReactNode {
   const { profile, updateProfile, beginProfileSetup, deleteProfile } = useProfile();
-  const { db } = useDatabase();
   const [pulse, savedPulse] = useSavedPulse();
   const [gradOpen, setGradOpen] = useState(false);
   const [resetting, setResetting] = useState(false);
@@ -143,21 +141,20 @@ function ProfileSection(): ReactNode {
       <h2 className="h2">Your preferences</h2>
       <p className="dsc" style={{ marginBottom: 18 }}>Tell Nightjar a little about you and For you ranks roles to fit.</p>
       <div className="srow">
-        <div><div className="lbl">Personalize your jobs</div><div className="dsc">Graduation, work authorization, fields and locations. All optional, all on this device.</div></div>
+        <div><div className="lbl">Personalize your jobs</div><div className="dsc">Graduation and work authorization start For you. Degree, roles and locations refine it. Your answers stay on this device.</div></div>
         <button type="button" className="solid sm" onClick={beginProfileSetup}>Personalize</button>
       </div>
     </section>;
   }
-  const save = (patch: Partial<Profile>, recompute = false): void => {
+  const save = (patch: Partial<Profile>): void => {
     updateProfile(patch);
-    if (recompute) void recomputeAll(db, { ...profile, ...patch });
     savedPulse();
   };
   const [yearStr, monthStr] = (profile.graduation || `${String(new Date().getFullYear() + 1)}-05`).split('-');
   const year = Number(yearStr), month = Number(monthStr) - 1;
   const setGrad = (y: number, m: number): void => {
     const graduation = `${String(y)}-${String(m + 1).padStart(2, '0')}`;
-    save({ graduation, grad_window: computeGradWindow(graduation) }, true);
+    save({ graduation, grad_window: computeGradWindow(graduation) });
   };
   const auth = WORK_AUTH_OPTIONS.find(o => o.value === profile.work_auth);
   const sponsorKnown = auth ? auth.requiresSponsorship : null;
@@ -188,9 +185,9 @@ function ProfileSection(): ReactNode {
       </div>
     </div></div>
     <div className="srow">
-      <div><div className="lbl">Degree</div><div className="dsc">The degree you’re working toward.</div></div>
-      <div className="seg">{DEGREE_TYPE_OPTIONS.map(o => <button key={o.value} type="button" aria-pressed={profile.degree_type === o.value}
-        onClick={() => save({ degree_type: o.value as DegreeType }, true)}>{o.label}</button>)}</div>
+      <div><div className="lbl">Degree (optional)</div><div className="dsc">Matching roles rank higher when a posting states a degree. Leave it unset if you’re unsure.</div></div>
+      <div className="seg"><button type="button" aria-pressed={!profile.degree_type} onClick={() => save({ degree_type: undefined })}>Not set</button>{DEGREE_TYPE_OPTIONS.map(o => <button key={o.value} type="button" aria-pressed={profile.degree_type === o.value}
+        onClick={() => save({ degree_type: o.value as DegreeType })}>{o.label}</button>)}</div>
     </div>
     <div className="srow stack">
       <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 16 }}>
@@ -198,32 +195,34 @@ function ProfileSection(): ReactNode {
         <span className="dim" style={{ fontSize: 14 }}>{profile.requires_sponsorship ? 'Needs sponsorship' : 'No sponsorship needed'}</span>
       </div>
       <div className="chips" style={{ marginTop: 14 }}>{WORK_AUTH_OPTIONS.map(o => <button key={o.value} type="button" className="chip sm" aria-pressed={profile.work_auth === o.value}
-        onClick={() => { const s = inferRequiresSponsorship(o.value); save({ work_auth: o.value, requires_sponsorship: s ?? profile.requires_sponsorship }, true); }}>{o.label}</button>)}</div>
+        onClick={() => { const s = inferRequiresSponsorship(o.value); save({ work_auth: o.value, requires_sponsorship: s ?? profile.requires_sponsorship }); }}>{o.label}</button>)}</div>
       <div className="exp" style={{ gridTemplateRows: sponsorKnown === null ? '1fr' : '0fr' }}><div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, paddingTop: 16 }} {...(sponsorKnown !== null ? { inert: true } : {})}>
           <span className="dsc" style={{ margin: 0 }}>Will you need visa sponsorship?</span>
           <div className="seg">{([[true, 'Yes'], [false, 'No']] as const).map(([v, label]) => <button key={label} type="button" aria-pressed={profile.requires_sponsorship === v}
-            onClick={() => save({ requires_sponsorship: v }, true)}>{label}</button>)}</div>
+            onClick={() => save({ requires_sponsorship: v })}>{label}</button>)}</div>
         </div>
       </div></div>
     </div>
     <div className="srow stack">
       <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 16 }}>
-        <div className="lbl">Fields you’re interested in</div>
+        <div className="lbl">Roles you’re interested in (optional)</div>
         <span className="dim tnum" style={{ fontSize: 14 }}>{profile.target_categories.length} selected</span>
       </div>
+      <div className="dsc">Choose roles to focus For you. Leave them empty to see all eligible roles.</div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 14 }}>{CATEGORY_GROUPS.map(group => <div key={group.label} style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
         <span className="chip-group-label">{group.label}</span>
         <div className="chips">{group.options.map(o => {
           const on = profile.target_categories.includes(o.value);
           return <button key={o.value} type="button" className="chip sm" aria-pressed={on} onClick={() => save({ target_categories: on
-            ? profile.target_categories.filter(c => c !== o.value) : [...profile.target_categories, o.value] }, true)}>{o.shortLabel}</button>;
+            ? profile.target_categories.filter(c => c !== o.value) : [...profile.target_categories, o.value] })}>{o.shortLabel}</button>;
         })}</div>
       </div>)}</div>
+      {profile.target_categories.length > 0 && <button type="button" className="ghost sm" style={{ alignSelf: 'flex-start', marginTop: 12 }} onClick={() => save({ target_categories: [] })}>Clear role preferences</button>}
     </div>
     <div className="srow stack">
       <div className="lbl">Locations</div>
-      <div className="dsc">A city, a state or Remote. Press Enter to add.</div>
+      <div className="dsc">A city, state or Remote. Matching locations rank higher in For you; other locations remain visible. Press Enter to add.</div>
       <div className="chips" style={{ marginTop: 14, alignItems: 'center' }}>
         {locations.map(loc => <span key={loc} className="loc-chip fadein">{loc}
           <button type="button" className="locx" aria-label={`Remove ${loc}`} onClick={() => save({ locations: locations.filter(l => l !== loc) })}><Glyph name="close" size={9} width={2} /></button>
@@ -231,10 +230,11 @@ function ProfileSection(): ReactNode {
         <input className="loc-input" aria-label="Add a location" placeholder="Add a location" onKeyDown={e => {
           if (e.key !== 'Enter') return;
           const v = e.currentTarget.value.trim();
-          if (v && !locations.includes(v)) save({ locations: [...locations, v] });
+          if (v && !locations.some(loc => loc.toLocaleLowerCase() === v.toLocaleLowerCase())) save({ locations: [...locations, v] });
           e.currentTarget.value = '';
         }} />
       </div>
+      {locations.length > 0 && <button type="button" className="ghost sm" style={{ alignSelf: 'flex-start', marginTop: 12 }} onClick={() => save({ locations: [] })}>Clear locations</button>}
     </div>
     <div className="srow">
       <div><div className="lbl">Start over</div><div className="dsc">Clear these preferences. Your tracker and notes stay.</div></div>

@@ -63,7 +63,22 @@ describe('role filters with migrated cached postings', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Hardware' }));
     expect(screen.getAllByRole('listitem')).toHaveLength(1);
     expect(screen.getByRole('button', { name: 'FPGA Engineer - High Frequency Trading Intern' })).toBeTruthy();
-    fireEvent.click(screen.getByRole('button', { name: 'Reset' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Reset all' }));
+    await waitFor(() => expect(screen.getAllByRole('listitem')).toHaveLength(6));
+  });
+
+  it('filters by a full city or state and can return to the full feed', async () => {
+    await db.run('UPDATE postings_cache SET data=? WHERE id=?', [JSON.stringify({
+      title: 'Avionics Software Engineer Intern', company: 'Example', company_slug: 'example',
+      locations: ['Boston, MA'], url: 'https://example.com/jobs', source: 'test',
+    }), '0']);
+    render(<FeedView />);
+    await screen.findByRole('button', { name: 'Avionics Software Engineer Intern' });
+    fireEvent.click(screen.getByRole('button', { name: 'Filters' }));
+    fireEvent.change(screen.getByRole('searchbox', { name: 'Filter by location' }), { target: { value: 'MA' } });
+    await waitFor(() => expect(screen.getAllByRole('listitem')).toHaveLength(1));
+    expect(screen.getByRole('button', { name: 'Avionics Software Engineer Intern' })).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: 'Reset all' }));
     await waitFor(() => expect(screen.getAllByRole('listitem')).toHaveLength(6));
   });
 });

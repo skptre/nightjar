@@ -3,6 +3,7 @@ import { memo, useState } from 'react';
 import { Glyph } from '@/components/Icon';
 import { type CategoryValue } from '@/classify/types';
 import { previewLines, useJobDetails } from '@/details/useJobDetails';
+import { locationSummary, postingLocations } from '@/lib/location';
 
 export interface PostingRowData {
   id: string;
@@ -71,10 +72,7 @@ export function ageLong(iso: string): string {
 }
 
 export function cityLabel(posting: PostingRowData): string {
-  const all = posting.locations.length ? posting.locations : posting.location ? [posting.location] : [];
-  if (!all.length) return 'Not listed';
-  const first = all[0]!.split(',')[0]!.trim() || all[0]!;
-  return all.length > 1 ? `${first} +${String(all.length - 1)}` : first;
+  return locationSummary(posting.locations, posting.location);
 }
 
 export interface BookmarkPop { id: string; on: boolean; n: number }
@@ -115,6 +113,7 @@ export const PostingRow = memo(function PostingRow({ posting, open, anim, pop, d
   const loaded = useJobDetails(armed ? posting : null, dataToken);
   const lines = previewLines(loaded.highlights, loaded.blocks);
   const title = posting.title || 'Untitled role';
+  const allLocations = postingLocations(posting.locations, posting.location);
   const settled = loaded.details !== null || loaded.failed;
   return <div role="listitem" className={`jrow ${open ? 'open' : ''}`} data-id={posting.id} data-glide data-noglide={open ? '' : undefined}
     style={anim ? { animation: anim } : undefined}>
@@ -125,8 +124,10 @@ export const PostingRow = memo(function PostingRow({ posting, open, anim, pop, d
             <span className="mark" aria-hidden="true">{initial(posting.company)}</span>
             <span><span className="jrow-title">{title}</span><span className="jrow-co">{posting.company}</span></span>
           </span>
-          <span className="jrow-cell c-loc">{cityLabel(posting)}</span>
-          <span className={`jrow-cell c-pay ${posting.pay_label ? 'pay' : 'none'}`}>{posting.pay_label ?? '—'}</span>
+          <span className="jrow-cell c-loc" title={allLocations.join('; ') || 'Location not listed'}>{cityLabel(posting)}</span>
+          <span className={`jrow-cell c-pay ${posting.pay_label ? 'pay' : 'none'}`}>
+            {posting.pay_label ?? <span className="pay-check">Check posting</span>}
+          </span>
           <span className="jrow-cell age">{ageShort(posting.first_seen_at)}</span>
         </button>
         <Bookmark posting={posting} pop={pop} onToggle={() => onSave(posting.id)} />

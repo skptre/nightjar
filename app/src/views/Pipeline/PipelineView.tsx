@@ -199,7 +199,7 @@ export function PipelineView(): React.ReactNode {
     <Panel ref={panelRef} className={`tracker-panel depth ${layerOpen ? 'behind-soft' : ''}`} aria-label="Tracker" {...(layerOpen ? { inert: true } : {})}>
       {menu && <button type="button" aria-label="Close menu" tabIndex={-1} onClick={() => setMenu(null)}
         style={{ all: 'unset', position: 'absolute', inset: 0, zIndex: 10, cursor: 'default' }} />}
-      <div className="list-head" style={{ paddingBottom: 0 }}>
+      <div className="list-head tracker-head" style={{ paddingBottom: 0 }}>
         <div className="title">
           <h1 className="h1">Applications</h1>
           <span className="count">{loading ? '' : `${String(filtered.length)} ${filtered.length === 1 ? 'application' : 'applications'}`}</span>

@@ -6,7 +6,7 @@ import { NightjarDB } from '@/db/database';
 import { FeedView } from './FeedView';
 import { PipelineView } from '@/views/Pipeline/PipelineView';
 import { upsertPostings } from '@/sync/feed-sync';
-import { resetFeedStore } from './feed-store';
+import { feedSnapshot, resetFeedStore } from './feed-store';
 const state = vi.hoisted(() => ({ db: null as unknown, profile: null as Profile | null, lastSyncedAt: null as string | null, open: vi.fn(async () => true), toast: vi.fn(), clear: vi.fn() }));
 vi.mock('@/providers/DatabaseProvider', () => ({ useDatabase: () => ({ db: state.db }) }));
 vi.mock('@/providers/ProfileProvider', () => ({ useProfile: () => ({ profile: state.profile }) }));
@@ -64,13 +64,13 @@ it('does not let a public feed close manually added tracker records', async () =
   expect((await db.queryOne<{ closed_at: string | null }>("SELECT closed_at FROM postings_cache WHERE id='local-example'"))?.closed_at).toBeNull();
 });
 it('refreshes an open description while keeping newly arrived rows behind Show', async () => {
-  const view = render(<FeedView />);
+  const view = render(<MemoryRouter><FeedView /></MemoryRouter>);
   fireEvent.click(await screen.findByRole('button', { name: 'Avionics Software Intern' }));
   await screen.findByText('Build flight simulation tools.');
   await db.run('UPDATE postings_cache SET description=? WHERE id=?', ['Responsibilities\nUpdated flight testing duties.', 'job']);
   await db.run('INSERT INTO postings_cache (id,data,first_seen_at,synced_at) VALUES (?,?,?,?)', ['new-job',
     JSON.stringify({ title: 'Propulsion Intern', company: 'Test Aerospace', source: 'test', locations: [] }), '2026-09-08', '2026-09-08']);
-  state.lastSyncedAt = '2026-09-08'; view.rerender(<FeedView />);
+  state.lastSyncedAt = '2026-09-08'; view.rerender(<MemoryRouter><FeedView /></MemoryRouter>);
   expect(await screen.findByText('Updated flight testing duties.')).toBeTruthy();
   expect(screen.queryByRole('button', { name: 'Propulsion Intern' })).toBeNull();
   fireEvent.click(screen.getByRole('button', { name: /1 new role available/ }));
@@ -82,7 +82,7 @@ it('filters graduate jobs by graduation in For you while All jobs remains browsa
   state.profile = { graduation: `${nextYear + 2}-05`, target_categories: [] } as unknown as Profile;
   await db.run('INSERT INTO postings_cache (id,data,term,first_seen_at,synced_at) VALUES (?,?,?,?,?)', ['graduate',
     JSON.stringify({ title: 'Software Engineer New Grad', company: 'Test Aerospace', locations: [] }), 'new_grad', '2026-09-01', '2026-09-01']);
-  const view = render(<FeedView />);
+  const view = render(<MemoryRouter><FeedView /></MemoryRouter>);
   await screen.findByRole('button', { name: 'Avionics Software Intern' });
   // The feed starts fresh on All jobs, so every role is visible.
   expect(await screen.findByRole('button', { name: 'Software Engineer New Grad' })).toBeTruthy();
@@ -91,6 +91,22 @@ it('filters graduate jobs by graduation in For you while All jobs remains browsa
   expect(screen.queryByRole('button', { name: 'Software Engineer New Grad' })).toBeNull();
   // Editing graduation to this cycle brings it back within For you.
   state.profile = { ...state.profile, graduation: `${nextYear}-05` };
-  view.rerender(<FeedView />);
+  view.rerender(<MemoryRouter><FeedView /></MemoryRouter>);
   expect(await screen.findByRole('button', { name: 'Software Engineer New Grad' })).toBeTruthy();
+});
+
+it('keeps an explicit industry filter when switching job views', async () => {
+  state.profile = { graduation: '2029-05', target_categories: [], locations: [], degree_type: undefined } as unknown as Profile;
+  await db.run('UPDATE postings_cache SET category_tags=?, role_classification=? WHERE id=?', ['["swe"]', '{"domain_tags":["aerospace"]}', 'job']);
+  render(<MemoryRouter><FeedView /></MemoryRouter>);
+  await screen.findByRole('button', { name: 'Avionics Software Intern' });
+  fireEvent.click(screen.getByRole('button', { name: 'Filters' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Aerospace' }));
+  expect(feedSnapshot().selectedDomains.has('aerospace')).toBe(true);
+  fireEvent.click(screen.getByRole('button', { name: 'Close filters' }));
+  fireEvent.click(screen.getByRole('button', { name: 'For you' }));
+  expect(feedSnapshot().selectedDomains.has('aerospace')).toBe(true);
+  expect(localStorage.getItem('nightjar_jobs_view_mode')).toBe('for-you');
+  fireEvent.click(screen.getByRole('button', { name: 'All jobs' }));
+  expect(feedSnapshot().selectedDomains.has('aerospace')).toBe(true);
 });

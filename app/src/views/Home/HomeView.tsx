@@ -14,7 +14,7 @@ interface HomeJob { id: string; company: string; slug: string; title: string; se
 
 export function HomeView(): React.ReactNode {
   const { db } = useDatabase();
-  const { lastSyncedAt } = useSync();
+  const { lastSyncedAt, status: syncStatus } = useSync();
   const navigate = useNavigate();
   const watched = useWatchlist();
   const [jobs, setJobs] = useState<HomeJob[]>([]);
@@ -81,7 +81,7 @@ export function HomeView(): React.ReactNode {
         <div className="home-scroll scroll">
           <div className="home-top">
             <h1 className="h1">{today}</h1>
-            <span>{updatedLabel(lastSyncedAt)}</span>
+            <span>{updatedLabel(lastSyncedAt, syncStatus)}</span>
           </div>
           {error && <p role="alert" className="kicker">Couldn’t load your workspace. Reopen this page to try again.</p>}
 
@@ -178,8 +178,8 @@ function initial(name: string): string {
   return (name.trim().charAt(0) || '·').toUpperCase();
 }
 
-function updatedLabel(iso: string | null): string {
-  if (!iso) return 'Checking for jobs…';
+function updatedLabel(iso: string | null, status: string): string {
+  if (!iso) return status === 'error' ? 'Couldn’t check for jobs' : status === 'syncing' ? 'Checking for jobs…' : 'No job check yet';
   const minutes = Math.round((Date.now() - new Date(iso).getTime()) / 60000);
   if (!Number.isFinite(minutes)) return '';
   if (minutes < 1) return 'Jobs updated just now';

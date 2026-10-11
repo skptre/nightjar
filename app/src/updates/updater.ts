@@ -26,7 +26,7 @@ export async function checkForUpdates(): Promise<void> {
     set({ phase: available ? 'available' : 'current', version: available?.version ?? null,
       notes: available?.body ?? '', message: available ? 'A new version is ready.' : 'You have the latest version.' });
   } catch {
-    set({ phase: 'error', version: null, notes: '', message: 'Could not check for updates. Check your connection and try again.' });
+    set({ phase: 'error', version: null, notes: '', message: 'Could not check for updates. The update feed may be unavailable; try again later.' });
   }
 }
 export async function installUpdate(backup: () => Promise<unknown>): Promise<void> {

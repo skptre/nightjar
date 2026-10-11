@@ -9,6 +9,7 @@ import { payLong } from '@/details/pay-label';
 import { useJobDetails } from '@/details/useJobDetails';
 import { ageLong, Bookmark, initial, isTracked, type BookmarkPop, type PostingAction, type PostingRowData } from '@/views/Feed/PostingRow';
 import { stageOf } from '@/views/Pipeline/stages';
+import { postingLocations } from '@/lib/location';
 
 export function DescriptionBlocks({ blocks }: { blocks: DescBlock[] }): React.ReactNode {
   return <>{blocks.map((block, index) => {
@@ -36,8 +37,8 @@ export function JobDetail({ posting, onAction, dataToken, pop = null, onSave }: 
   const hasWords = Boolean(details?.document && details.document.trim());
   // When the captured text is flagged incomplete or stale, say so above it.
   const uncertain = details ? ['partial', 'stale', 'unsupported', 'unavailable'].includes(details.acquisition) : false;
-  const locations = posting.locations.length ? posting.locations.join(', ') : posting.location || 'Not listed';
-  const pay = (details ? payLong(details.compensation) : null) ?? posting.pay_label ?? 'Not listed';
+  const locations = postingLocations(posting.locations, posting.location);
+  const pay = (details ? payLong(details.compensation) : null) ?? posting.pay_label;
   const apply = (): void => {
     void openExternal(posting.url).then(ok => { if (!ok) toast('If the employer page did not open, allow pop-ups and try again.', 'error'); });
   };
@@ -54,10 +55,11 @@ export function JobDetail({ posting, onAction, dataToken, pop = null, onSave }: 
     </div>
     <h2 ref={titleRef} tabIndex={-1} className="post-title">{posting.title}</h2>
     <div className="facts">
-      <div><span>Location</span><span>{locations}</span></div>
-      <div><span>Pay</span><span>{pay}</span></div>
+      <div><span>{locations.length === 1 ? 'Location' : 'Locations'}</span><span>{locations.join('; ') || 'Not listed'}</span></div>
+      <div><span>Pay</span><span>{pay ?? <span className="pay-check">Check posting</span>}</span></div>
       <div><span>Posted</span><span>{ageLong(posting.first_seen_at)}</span></div>
     </div>
+    {!pay && <p className="pay-note">Pay isn’t confirmed here. Check the employer’s posting for details.</p>}
     <div className="post-actions">
       <button type="button" className="solid" onClick={apply}>Apply on {posting.company} <Glyph name="ext" size={13} className="ext" /></button>
       <Bookmark posting={posting} pop={pop} size={20} onToggle={onSave ?? (() => onAction(posting.id, 'save'))} />

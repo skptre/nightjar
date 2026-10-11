@@ -52,7 +52,7 @@ export const SYNC_INTERVAL_OPTIONS = [
 export const DEFAULT_SYNC_INTERVAL_MS = 300_000;
 
 export interface Profile {
-  degree_type?: DegreeType;
+  degree_type?: DegreeType | undefined;
   graduation: string;
   grad_window: [string, string];
   current_class_year: string;

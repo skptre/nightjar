@@ -1,7 +1,7 @@
 {
   "shard_id": "icims",
-  "updated_at": "2026-10-17T00:13:18Z",
-  "count": 1,
+  "updated_at": "2026-10-17T04:30:29Z",
+  "count": 2,
   "postings": {
     "0d7863521e259085": {
       "id": "0d7863521e259085",
@@ -19,7 +19,7 @@
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
       "last_seen_at": "2026-10-16T21:58:00Z",
-      "closed_at": null,
+      "closed_at": "2026-10-17T04:30:29Z",
       "description_status": "unavailable",
       "description_version": 5,
       "source_metadata": {
@@ -33,8 +33,42 @@
       "description_ref": {
         "sha256": "068eeb03661bd4998fc8c101ec78b5c1ad49845b5986d57ba73921a8b5c844ca",
         "pack": "details/descriptions-0.json",
-        "pack_sha256": "f9734ba2feaed75fb64523ffaa2181c907935066c7aafff1003911669116c743",
+        "pack_sha256": "019158b50ab8cf8131c4634fcf5de74fd1340da9d7536ff1524e9facfdd6966a",
         "status": "stale"
+      }
+    },
+    "21a65535d7f89eae": {
+      "id": "21a65535d7f89eae",
+      "company": "Joby Aviation",
+      "company_slug": "joby-aviation",
+      "title": "Flight Test Intern (Dec 2026-Feb 2027)",
+      "location": "Marina, CA",
+      "locations": [
+        "Marina, CA"
+      ],
+      "url": "https://careers-jobyaviation.icims.com/jobs/5483/flight-test-intern-%28dec-2026-feb-2027%29/job",
+      "source": "icims",
+      "source_job_id": "5483",
+      "ats": "icims",
+      "posted_at": null,
+      "first_seen_at": "2026-10-17T04:30:29Z",
+      "last_seen_at": "2026-10-17T04:30:29Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://careers-jobyaviation.icims.com/jobs/5483/flight-test-intern-%28dec-2026-feb-2027%29/job?in_iframe=1"
+        }
+      },
+      "description_ref": {
+        "sha256": "e6781c82261dc36b7d1eb7af57bd45901262160c18b7b16f85d0d6f95155be77",
+        "pack": "details/descriptions-e.json",
+        "pack_sha256": "f3025fbc319dff2cda9ac4d685938a7edb31930d43bb5d28448f9426f3150576",
+        "status": "available"
       }
     }
   }

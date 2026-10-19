@@ -1,7 +1,7 @@
 {
   "shard_id": "icims",
-  "updated_at": "2026-10-19T14:28:22Z",
-  "count": 2,
+  "updated_at": "2026-10-19T20:06:44Z",
+  "count": 3,
   "postings": {
     "0d7863521e259085": {
       "id": "0d7863521e259085",
@@ -33,7 +33,7 @@
       "description_ref": {
         "sha256": "068eeb03661bd4998fc8c101ec78b5c1ad49845b5986d57ba73921a8b5c844ca",
         "pack": "details/descriptions-0.json",
-        "pack_sha256": "301d1c29a3cc84b4d7305ec949d24d0d0a92aa0427ce892bf6fc683fdbfc1029",
+        "pack_sha256": "395750b59ef36b87be4805ca369f101ce2b8c3baf2ab00907cad075bb89d2866",
         "status": "stale"
       }
     },
@@ -52,7 +52,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-17T04:30:29Z",
-      "last_seen_at": "2026-10-19T14:28:22Z",
+      "last_seen_at": "2026-10-19T20:06:44Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -67,7 +67,41 @@
       "description_ref": {
         "sha256": "e6781c82261dc36b7d1eb7af57bd45901262160c18b7b16f85d0d6f95155be77",
         "pack": "details/descriptions-e.json",
-        "pack_sha256": "11327e22c8f1a2bf70bb0b701bceb5b1b665b8123715f01bb2f234df8086c796",
+        "pack_sha256": "81c44a10017cbd22030def84f46905a022bc3f38817da7a3e183b9e3d2645df1",
+        "status": "available"
+      }
+    },
+    "b1bce09c24b5801f": {
+      "id": "b1bce09c24b5801f",
+      "company": "Joby Aviation",
+      "company_slug": "joby-aviation",
+      "title": "Electrical Engineer - Intern (Summer 2027)",
+      "location": "San Carlos, CA",
+      "locations": [
+        "San Carlos, CA"
+      ],
+      "url": "https://careers-jobyaviation.icims.com/jobs/5486/electrical-engineer---intern-%28summer-2027%29/job",
+      "source": "icims",
+      "source_job_id": "5486",
+      "ats": "icims",
+      "posted_at": null,
+      "first_seen_at": "2026-10-19T20:06:44Z",
+      "last_seen_at": "2026-10-19T20:06:44Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://careers-jobyaviation.icims.com/jobs/5486/electrical-engineer---intern-%28summer-2027%29/job?in_iframe=1"
+        }
+      },
+      "description_ref": {
+        "sha256": "8216a514d7d77ce106058ec7842f36e3c756c61592b16040db7fe39e5fffc5b1",
+        "pack": "details/descriptions-8.json",
+        "pack_sha256": "df9d0eb2a74bb44ab2e6b51aaa236ce46963a7180d6dba0210f73fe183b27a87",
         "status": "available"
       }
     }

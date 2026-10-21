@@ -1,7 +1,7 @@
 {
   "shard_id": "icims",
-  "updated_at": "2026-10-21T00:02:50Z",
-  "count": 3,
+  "updated_at": "2026-10-21T04:32:28Z",
+  "count": 4,
   "postings": {
     "0d7863521e259085": {
       "id": "0d7863521e259085",
@@ -33,7 +33,7 @@
       "description_ref": {
         "sha256": "068eeb03661bd4998fc8c101ec78b5c1ad49845b5986d57ba73921a8b5c844ca",
         "pack": "details/descriptions-0.json",
-        "pack_sha256": "2ecf6545fe20fa03403f2b2b8f8405a4faf499a3f89143702870b78ad917c0cf",
+        "pack_sha256": "1c88ac97fc36705efccbee58274abed7fab51731384806fb2e885df5743af593",
         "status": "stale"
       }
     },
@@ -52,7 +52,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-17T04:30:29Z",
-      "last_seen_at": "2026-10-21T00:02:50Z",
+      "last_seen_at": "2026-10-21T04:32:28Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -67,8 +67,42 @@
       "description_ref": {
         "sha256": "e6781c82261dc36b7d1eb7af57bd45901262160c18b7b16f85d0d6f95155be77",
         "pack": "details/descriptions-e.json",
-        "pack_sha256": "ccfcb5b68fd7721de41afba22ac2908deb6582c398185119be0b1be0f5fa0531",
+        "pack_sha256": "602212257019cd97d160ca2f63c84c8e673f1656b668a444e47d818951598d7d",
         "status": "stale"
+      }
+    },
+    "47876fab4b961844": {
+      "id": "47876fab4b961844",
+      "company": "Joby Aviation",
+      "company_slug": "joby-aviation",
+      "title": "Mechanical Engineer Intern, Autonomy (Summer 2027)",
+      "location": "San Carlos, CA",
+      "locations": [
+        "San Carlos, CA"
+      ],
+      "url": "https://careers-jobyaviation.icims.com/jobs/5494/mechanical-engineer-intern%2c-autonomy-%28summer-2027%29/job",
+      "source": "icims",
+      "source_job_id": "5494",
+      "ats": "icims",
+      "posted_at": null,
+      "first_seen_at": "2026-10-21T04:32:28Z",
+      "last_seen_at": "2026-10-21T04:32:28Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://careers-jobyaviation.icims.com/jobs/5494/mechanical-engineer-intern%2c-autonomy-%28summer-2027%29/job?in_iframe=1"
+        }
+      },
+      "description_ref": {
+        "sha256": "fe120f9a97fd679b0c1983d7e2696e05b984d780c539c27c6ca9e6ab99f1d331",
+        "pack": "details/descriptions-f.json",
+        "pack_sha256": "266aa8fc2d8639ba41936aede033d94390e2c76af32f4ccdde59db50cd30b4c7",
+        "status": "available"
       }
     },
     "b1bce09c24b5801f": {
@@ -86,7 +120,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-19T20:06:44Z",
-      "last_seen_at": "2026-10-21T00:02:50Z",
+      "last_seen_at": "2026-10-21T04:32:28Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -101,7 +135,7 @@
       "description_ref": {
         "sha256": "8216a514d7d77ce106058ec7842f36e3c756c61592b16040db7fe39e5fffc5b1",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "9df3ea4b1a73bc9d4663166bd00ecfc6c7046945ad266d6463776fcbccc4172a",
+        "pack_sha256": "f1f121d8fadcd3fd5d56d333af1016007c415215da10c7acde1982dc202172bc",
         "status": "available"
       }
     }

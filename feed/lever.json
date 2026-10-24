@@ -1,6 +1,6 @@
 {
   "shard_id": "lever",
-  "updated_at": "2026-10-24T17:28:27Z",
+  "updated_at": "2026-10-24T19:41:43Z",
   "count": 114,
   "postings": {
     "0231ec7573a2aff4": {
@@ -18,7 +18,7 @@
       "ats": "lever",
       "posted_at": "2026-09-23T23:40:33Z",
       "first_seen_at": "2026-09-24T06:13:15Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "department": "Internships",
@@ -61,7 +61,7 @@
             "source": "simplify",
             "source_job_id": "fd62318c-78e9-47ad-a66a-f7a1501c5a7f",
             "url": "https://jobs.lever.co/field-ai/cce71d31-40a0-407f-b3b9-a586976b89b8/apply",
-            "discovered_at": "2026-10-24T17:28:27Z"
+            "discovered_at": "2026-10-24T19:41:43Z"
           }
         ]
       },
@@ -87,7 +87,7 @@
       "ats": "lever",
       "posted_at": "2026-09-01T15:30:22Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -135,7 +135,7 @@
       "ats": "lever",
       "posted_at": "2025-06-26T01:01:09Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -171,7 +171,7 @@
       "ats": "lever",
       "posted_at": "2025-08-19T09:48:43Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -188,7 +188,7 @@
       "description_ref": {
         "sha256": "2a5ea772095cc2d52689127a71d7ebd7f76ab9657540a705cd4ca21085d68d79",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "available"
       }
     },
@@ -207,7 +207,7 @@
       "ats": "lever",
       "posted_at": "2025-06-19T01:36:20Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -243,7 +243,7 @@
       "ats": "lever",
       "posted_at": "2026-09-03T02:07:59Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -272,7 +272,7 @@
       "description_ref": {
         "sha256": "985c94947d5c13c3f27f25a323ed15b935ce02faf2f437d996bc14d8dbf728c6",
         "pack": "details/descriptions-9.json",
-        "pack_sha256": "e881421e06b112cb34bb2f4b39a9296a538b8ea9caf02a9cde92675647be4dc7",
+        "pack_sha256": "cc7bcdcab08c8082e45b8d2eeceb9b91735129c0669656f625fbfc51a97706cd",
         "status": "available"
       }
     },
@@ -291,7 +291,7 @@
       "ats": "lever",
       "posted_at": "2026-06-25T19:00:58Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -303,17 +303,12 @@
           "board": "palantir",
           "job_id": "95e0d2b0-437a-4096-a5c6-0f247f426c90",
           "eu": "false"
-        },
-        "description_acquisition": {
-          "method": "lever_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
         "sha256": "5e151eb688d33f90362cfa6c98d5998076aa7d8f31cc34c5a15d13a30fd37635",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "9de54d3064e9b1df392e6bc04c99f424e2e53457c0469f5afe3b69ac364fd143",
+        "pack_sha256": "b267cab623e6e383da9c6d417702ebf2853b9f8859be67d5edb6bd94e7693ff2",
         "status": "available"
       }
     },
@@ -332,7 +327,7 @@
       "ats": "lever",
       "posted_at": "2025-06-19T01:34:22Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -344,11 +339,6 @@
           "board": "palantir",
           "job_id": "0a838e66-1ab0-4fc4-b4d3-4671c0352278",
           "eu": "false"
-        },
-        "description_acquisition": {
-          "method": "lever_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
@@ -373,7 +363,7 @@
       "ats": "lever",
       "posted_at": "2026-10-22T21:34:28Z",
       "first_seen_at": "2026-10-22T22:38:35Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "onsite",
@@ -409,7 +399,7 @@
       "ats": "lever",
       "posted_at": "2026-09-27T14:50:32Z",
       "first_seen_at": "2026-09-27T19:39:14Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "department": "Internships",
@@ -457,7 +447,7 @@
       "ats": "lever",
       "posted_at": "2022-06-30T22:50:16Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "onsite",
@@ -469,13 +459,18 @@
           "board": "palantir",
           "job_id": "d1ac83d0-e923-42a5-8e6d-58dd0cab25ca",
           "eu": "false"
+        },
+        "description_acquisition": {
+          "method": "lever_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
         "sha256": "297e81b7a1775b74fdce1a69b8aff9a8335be7d8b29513f7e94d1e8268d010d0",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
-        "status": "stale"
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
+        "status": "available"
       }
     },
     "1e275924535eb6e6": {
@@ -493,7 +488,7 @@
       "ats": "lever",
       "posted_at": "2017-08-10T19:39:38Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -505,13 +500,18 @@
           "board": "palantir",
           "job_id": "4c0fb3a1-8256-4d14-9a27-23727235752e",
           "eu": "false"
+        },
+        "description_acquisition": {
+          "method": "lever_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
         "sha256": "f3c7fe1c168ee590883e08dedac8e375c80a836fb48eaabc164fe1c02c2f3e00",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "b5b31a37725941425b1deb012a5ce2aa40238fac9cc126c59f95191f8f7774cf",
-        "status": "stale"
+        "pack_sha256": "fa8b7db6c4875144d45df423504877530b16bf7e000bc46bebba1406c9c68f1e",
+        "status": "available"
       }
     },
     "1f38cb520adfef70": {
@@ -530,7 +530,7 @@
       "ats": "lever",
       "posted_at": "2026-10-14T19:04:59Z",
       "first_seen_at": "2026-10-15T01:53:33Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "onsite",
@@ -570,7 +570,7 @@
             "source": "simplify",
             "source_job_id": "f720e544-0a87-4ef0-abb7-449a568af42d",
             "url": "https://jobs.lever.co/atomcomputing/f17f16bc-d448-4a24-8449-281d660fdbfc/apply",
-            "discovered_at": "2026-10-24T17:28:27Z"
+            "discovered_at": "2026-10-24T19:41:43Z"
           }
         ]
       },
@@ -596,7 +596,7 @@
       "ats": "lever",
       "posted_at": "2026-03-20T19:05:22Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -608,13 +608,18 @@
           "board": "palantir",
           "job_id": "5c7bb70c-83ea-43e7-8055-0c8f319f4333",
           "eu": "false"
+        },
+        "description_acquisition": {
+          "method": "lever_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
         "sha256": "2af35b6a3d1b8240d8e2886c36ad319c14bd3c6ed20ee32607646215a7091633",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
-        "status": "stale"
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
+        "status": "available"
       }
     },
     "208f45214ded8496": {
@@ -632,7 +637,7 @@
       "ats": "lever",
       "posted_at": "2026-07-30T18:55:07Z",
       "first_seen_at": "2026-09-01T16:59:37Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "description_status": "unavailable"
     },
@@ -651,7 +656,7 @@
       "ats": "lever",
       "posted_at": "2025-06-26T19:53:39Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -663,13 +668,18 @@
           "board": "palantir",
           "job_id": "e1a6c138-98bf-45e2-97f7-2c70371cc38a",
           "eu": "false"
+        },
+        "description_acquisition": {
+          "method": "lever_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
         "sha256": "ba9bd874a781b5520c9a9ece3c2d997bed973001062d6a358e27e8e1257380b9",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "17d97e950ea7dc25e9b168e5a48ba3f953bcdecc17ff683889e76fc295206b70",
-        "status": "stale"
+        "pack_sha256": "e5f2b2847cd5f58a7c8b1d1e91bb5b5e5d4e1d8a525ea25cbdd9ceb43442e0bf",
+        "status": "available"
       }
     },
     "2288e1233504858f": {
@@ -687,7 +697,7 @@
       "ats": "lever",
       "posted_at": "2025-06-13T23:45:06Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -699,13 +709,18 @@
           "board": "palantir",
           "job_id": "2e6b0ac8-83e9-4be5-a3aa-cf319f751728",
           "eu": "false"
+        },
+        "description_acquisition": {
+          "method": "lever_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
         "sha256": "94bb70796b07def49a8673f4726ff7bc658232f114db1bdd415b98b99dc4cbd0",
         "pack": "details/descriptions-9.json",
-        "pack_sha256": "e881421e06b112cb34bb2f4b39a9296a538b8ea9caf02a9cde92675647be4dc7",
-        "status": "stale"
+        "pack_sha256": "cc7bcdcab08c8082e45b8d2eeceb9b91735129c0669656f625fbfc51a97706cd",
+        "status": "available"
       }
     },
     "24193392d385157c": {
@@ -723,7 +738,7 @@
       "ats": "lever",
       "posted_at": "2026-07-31T21:35:37Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -735,13 +750,18 @@
           "board": "palantir",
           "job_id": "9db71277-3a9a-481b-a2a3-25c3125b0e8a",
           "eu": "false"
+        },
+        "description_acquisition": {
+          "method": "lever_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
         "sha256": "bcb1a0481a6d0acd200216f26c6677085b866c547439fcd43d0566528d7e9a20",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "17d97e950ea7dc25e9b168e5a48ba3f953bcdecc17ff683889e76fc295206b70",
-        "status": "stale"
+        "pack_sha256": "e5f2b2847cd5f58a7c8b1d1e91bb5b5e5d4e1d8a525ea25cbdd9ceb43442e0bf",
+        "status": "available"
       }
     },
     "251efbd24562fa58": {
@@ -759,7 +779,7 @@
       "ats": "lever",
       "posted_at": "2026-08-31T16:27:36Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -776,7 +796,7 @@
       "description_ref": {
         "sha256": "25d3c11451dbd71aa12b2d0f37ca9460456851c9550559a88d8b003648928e05",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "stale"
       }
     },
@@ -795,7 +815,7 @@
       "ats": "lever",
       "posted_at": "2026-08-04T17:21:37Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Trading",
@@ -843,7 +863,7 @@
       "ats": "lever",
       "posted_at": "2025-08-19T09:45:38Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -879,7 +899,7 @@
       "ats": "lever",
       "posted_at": "2021-07-01T20:24:57Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -915,7 +935,7 @@
       "ats": "lever",
       "posted_at": "2025-10-29T18:27:22Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -932,7 +952,7 @@
       "description_ref": {
         "sha256": "25d3c11451dbd71aa12b2d0f37ca9460456851c9550559a88d8b003648928e05",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "stale"
       }
     },
@@ -953,7 +973,7 @@
       "ats": "lever",
       "posted_at": "2025-12-18T21:59:13Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships / Co-ops",
@@ -971,7 +991,7 @@
       "description_ref": {
         "sha256": "4193c15b80ce2b8951b74b2679d9afbe364aa7f59c0582dbca9bb5a5584eb9ba",
         "pack": "details/descriptions-4.json",
-        "pack_sha256": "bcc544863ec8db14a6dc53525593101cd00d3f487ca656b936d73f877c328487",
+        "pack_sha256": "8f44ac8b0bc40b3a3f5fc659d4609508c984777f859137cce5a41b1af58b93f3",
         "status": "stale"
       }
     },
@@ -991,7 +1011,7 @@
       "ats": "lever",
       "posted_at": "2026-09-08T16:13:08Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -1020,7 +1040,7 @@
       "description_ref": {
         "sha256": "2ded7be017741e6726c03a3611b0ca0028cbb56eeb6c6e2848faf8805eec3722",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "stale"
       }
     },
@@ -1039,7 +1059,7 @@
       "ats": "lever",
       "posted_at": "2026-10-13T23:45:55Z",
       "first_seen_at": "2026-10-14T01:26:32Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "department": "Internships",
@@ -1057,7 +1077,7 @@
       "description_ref": {
         "sha256": "521bbc75c35824bfe7d96869e152c43431837ba3f91516f40c4556e9eea29fab",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "9de54d3064e9b1df392e6bc04c99f424e2e53457c0469f5afe3b69ac364fd143",
+        "pack_sha256": "b267cab623e6e383da9c6d417702ebf2853b9f8859be67d5edb6bd94e7693ff2",
         "status": "available"
       }
     },
@@ -1076,7 +1096,7 @@
       "ats": "lever",
       "posted_at": "2026-06-12T18:24:33Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern | Summer",
       "workplace_type": "onsite",
@@ -1104,7 +1124,7 @@
       "description_ref": {
         "sha256": "97ca724ba1028919d228650ef589322fdd7b7d66cfa42fb0449ef3e926affa97",
         "pack": "details/descriptions-9.json",
-        "pack_sha256": "e881421e06b112cb34bb2f4b39a9296a538b8ea9caf02a9cde92675647be4dc7",
+        "pack_sha256": "cc7bcdcab08c8082e45b8d2eeceb9b91735129c0669656f625fbfc51a97706cd",
         "status": "stale"
       }
     },
@@ -1123,7 +1143,7 @@
       "ats": "lever",
       "posted_at": "2026-09-23T01:00:25Z",
       "first_seen_at": "2026-09-23T06:29:02Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -1152,7 +1172,7 @@
       "description_ref": {
         "sha256": "4712f919d74a2b2d668405c9482aacc094c03e85897199100aee122fe3cc51e4",
         "pack": "details/descriptions-4.json",
-        "pack_sha256": "bcc544863ec8db14a6dc53525593101cd00d3f487ca656b936d73f877c328487",
+        "pack_sha256": "8f44ac8b0bc40b3a3f5fc659d4609508c984777f859137cce5a41b1af58b93f3",
         "status": "stale"
       }
     },
@@ -1200,7 +1220,7 @@
       "description_ref": {
         "sha256": "286892008d4097f0e31fbe8534a27c8a685ce2573821d140610a77f7af99427b",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "stale"
       }
     },
@@ -1219,7 +1239,7 @@
       "ats": "lever",
       "posted_at": "2026-07-30T20:07:44Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "workplace_type": "remote",
       "description_status": "unavailable",
@@ -1265,7 +1285,7 @@
       "ats": "lever",
       "posted_at": "2026-10-22T18:25:05Z",
       "first_seen_at": "2026-10-22T19:25:18Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "workplace_type": "onsite",
@@ -1301,7 +1321,7 @@
       "ats": "lever",
       "posted_at": "2026-07-23T23:21:38Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -1349,7 +1369,7 @@
       "ats": "lever",
       "posted_at": "2025-10-29T20:26:17Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -1366,7 +1386,7 @@
       "description_ref": {
         "sha256": "25d3c11451dbd71aa12b2d0f37ca9460456851c9550559a88d8b003648928e05",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "stale"
       }
     },
@@ -1386,7 +1406,7 @@
       "ats": "lever",
       "posted_at": "2026-09-03T16:35:01Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -1415,7 +1435,7 @@
       "description_ref": {
         "sha256": "1f455fdfd8b27a1df75e5ecfe128ded59d5895b6b721ea794bd2b6e7c58eb5d6",
         "pack": "details/descriptions-1.json",
-        "pack_sha256": "e7f0c8eecf8c1cb59f5b86e816475278b645130f625818a10d8b08c0ee2e9a4e",
+        "pack_sha256": "6973c6ac343f76bbeab33f0c0523e2d96bf5ac3afdbd95785049367fb5487375",
         "status": "stale"
       }
     },
@@ -1436,7 +1456,7 @@
       "ats": "lever",
       "posted_at": "2026-09-10T00:02:10Z",
       "first_seen_at": "2026-10-16T18:56:18Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships / Co-ops",
@@ -1454,7 +1474,7 @@
       "description_ref": {
         "sha256": "92e320231ce8491a175d31754de32c1fca7c6ef875d2c39f451db3923ac274da",
         "pack": "details/descriptions-9.json",
-        "pack_sha256": "e881421e06b112cb34bb2f4b39a9296a538b8ea9caf02a9cde92675647be4dc7",
+        "pack_sha256": "cc7bcdcab08c8082e45b8d2eeceb9b91735129c0669656f625fbfc51a97706cd",
         "status": "stale"
       }
     },
@@ -1473,7 +1493,7 @@
       "ats": "lever",
       "posted_at": "2026-09-29T02:51:15Z",
       "first_seen_at": "2026-09-29T06:48:01Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -1502,7 +1522,7 @@
       "description_ref": {
         "sha256": "f448b98360f6f7043e697e9aacac92fc25bccceb815aece8c13b11b2c401f0f1",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "b5b31a37725941425b1deb012a5ce2aa40238fac9cc126c59f95191f8f7774cf",
+        "pack_sha256": "fa8b7db6c4875144d45df423504877530b16bf7e000bc46bebba1406c9c68f1e",
         "status": "stale"
       }
     },
@@ -1521,7 +1541,7 @@
       "ats": "lever",
       "posted_at": "2024-11-21T19:29:33Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -1538,7 +1558,7 @@
       "description_ref": {
         "sha256": "6f616a97915ab6751c40af95e10af9d05f3a8d9056dcf59a6c5bfe7e8b19f04e",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "0d7c50e5cf7ff3573ad692deabeb0dc2be1e22ac122c4554a7b7544c93d86f38",
+        "pack_sha256": "a2b7212229dc919ae4274eb0bd8df8a2fcb42a4c7c648749df011955d33e7a07",
         "status": "stale"
       }
     },
@@ -1557,7 +1577,7 @@
       "ats": "lever",
       "posted_at": "2025-12-11T22:31:15Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -1593,7 +1613,7 @@
       "ats": "lever",
       "posted_at": "2026-03-20T19:07:35Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -1610,7 +1630,7 @@
       "description_ref": {
         "sha256": "2af35b6a3d1b8240d8e2886c36ad319c14bd3c6ed20ee32607646215a7091633",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "stale"
       }
     },
@@ -1629,7 +1649,7 @@
       "ats": "lever",
       "posted_at": "2019-10-10T01:00:30Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -1646,7 +1666,7 @@
       "description_ref": {
         "sha256": "2aa4d0551f1eb10ad670089985438542c7b8021000c984cb1d5ea74bd3286f7b",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "stale"
       }
     },
@@ -1665,7 +1685,7 @@
       "ats": "lever",
       "posted_at": "2026-09-02T01:22:55Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -1713,7 +1733,7 @@
       "ats": "lever",
       "posted_at": "2026-08-31T20:56:58Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -1742,7 +1762,7 @@
       "description_ref": {
         "sha256": "2a1f8dad55ea5a63d504f6b3fa5818545e9b50d78aaae890f202bda82d634327",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "stale"
       }
     },
@@ -1762,7 +1782,7 @@
       "ats": "lever",
       "posted_at": "2026-09-01T15:46:08Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -1791,7 +1811,7 @@
       "description_ref": {
         "sha256": "658bc480f026190df1bde29624ecc4e9c5fc51eed2dfd1ef2905fbb7abe3c162",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "0d7c50e5cf7ff3573ad692deabeb0dc2be1e22ac122c4554a7b7544c93d86f38",
+        "pack_sha256": "a2b7212229dc919ae4274eb0bd8df8a2fcb42a4c7c648749df011955d33e7a07",
         "status": "stale"
       }
     },
@@ -1810,7 +1830,7 @@
       "ats": "lever",
       "posted_at": "2026-08-04T16:31:44Z",
       "first_seen_at": "2026-08-31T00:00:06Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "description_status": "unavailable"
     },
@@ -1829,7 +1849,7 @@
       "ats": "lever",
       "posted_at": "2026-10-13T23:54:36Z",
       "first_seen_at": "2026-10-14T01:26:32Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "department": "Internships",
@@ -1866,7 +1886,7 @@
       "ats": "lever",
       "posted_at": "2026-08-03T20:42:14Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "workplace_type": "remote",
       "description_status": "unavailable",
@@ -1902,7 +1922,7 @@
       "ats": "lever",
       "posted_at": "2025-12-18T22:08:55Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships / Co-ops",
@@ -1920,7 +1940,7 @@
       "description_ref": {
         "sha256": "531f46d4c97c25ef114668f1c7332840e73ca39717f139da02b7aa43a5139b49",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "9de54d3064e9b1df392e6bc04c99f424e2e53457c0469f5afe3b69ac364fd143",
+        "pack_sha256": "b267cab623e6e383da9c6d417702ebf2853b9f8859be67d5edb6bd94e7693ff2",
         "status": "stale"
       }
     },
@@ -1939,7 +1959,7 @@
       "ats": "lever",
       "posted_at": "2016-02-24T23:37:05Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -1975,7 +1995,7 @@
       "ats": "lever",
       "posted_at": "2026-09-09T14:07:12Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -2023,7 +2043,7 @@
       "ats": "lever",
       "posted_at": "2024-08-15T22:43:39Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -2040,7 +2060,7 @@
       "description_ref": {
         "sha256": "6f616a97915ab6751c40af95e10af9d05f3a8d9056dcf59a6c5bfe7e8b19f04e",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "0d7c50e5cf7ff3573ad692deabeb0dc2be1e22ac122c4554a7b7544c93d86f38",
+        "pack_sha256": "a2b7212229dc919ae4274eb0bd8df8a2fcb42a4c7c648749df011955d33e7a07",
         "status": "stale"
       }
     },
@@ -2059,7 +2079,7 @@
       "ats": "lever",
       "posted_at": "2026-08-26T22:09:24Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "workplace_type": "remote",
       "description_status": "unavailable",
@@ -2086,7 +2106,7 @@
       "description_ref": {
         "sha256": "f92f71dd0ec76e412e9e8d29bf0ce1e9b6c5bf2a007fa6c76b028604b8efabc2",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "b5b31a37725941425b1deb012a5ce2aa40238fac9cc126c59f95191f8f7774cf",
+        "pack_sha256": "fa8b7db6c4875144d45df423504877530b16bf7e000bc46bebba1406c9c68f1e",
         "status": "stale"
       }
     },
@@ -2105,7 +2125,7 @@
       "ats": "lever",
       "posted_at": "2026-09-03T19:19:21Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -2134,7 +2154,7 @@
       "description_ref": {
         "sha256": "531ffed10a326651db0065679a32355172512df4f874ebcc72b836d435f8f63e",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "9de54d3064e9b1df392e6bc04c99f424e2e53457c0469f5afe3b69ac364fd143",
+        "pack_sha256": "b267cab623e6e383da9c6d417702ebf2853b9f8859be67d5edb6bd94e7693ff2",
         "status": "stale"
       }
     },
@@ -2153,7 +2173,7 @@
       "ats": "lever",
       "posted_at": "2021-07-01T22:00:40Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -2189,7 +2209,7 @@
       "ats": "lever",
       "posted_at": "2024-08-05T23:27:08Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -2225,7 +2245,7 @@
       "ats": "lever",
       "posted_at": "2026-09-01T18:28:54Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -2273,7 +2293,7 @@
       "ats": "lever",
       "posted_at": "2026-09-02T00:50:49Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -2321,7 +2341,7 @@
       "ats": "lever",
       "posted_at": "2026-09-22T15:09:49Z",
       "first_seen_at": "2026-09-22T16:40:23Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -2350,7 +2370,7 @@
       "description_ref": {
         "sha256": "2746a32d7703a2a39116dba8bd13383501f69180bb1e0e0738340fe05560d58a",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "stale"
       }
     },
@@ -2369,7 +2389,7 @@
       "ats": "lever",
       "posted_at": "2026-08-31T15:21:07Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -2398,7 +2418,7 @@
       "description_ref": {
         "sha256": "56604f6781d9d8fdbcb2b41bc0e6755279be85310b707c62040927ce7f897c6f",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "9de54d3064e9b1df392e6bc04c99f424e2e53457c0469f5afe3b69ac364fd143",
+        "pack_sha256": "b267cab623e6e383da9c6d417702ebf2853b9f8859be67d5edb6bd94e7693ff2",
         "status": "stale"
       }
     },
@@ -2417,7 +2437,7 @@
       "ats": "lever",
       "posted_at": "2026-04-23T21:17:05Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -2434,7 +2454,7 @@
       "description_ref": {
         "sha256": "2af35b6a3d1b8240d8e2886c36ad319c14bd3c6ed20ee32607646215a7091633",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "stale"
       }
     },
@@ -2453,7 +2473,7 @@
       "ats": "lever",
       "posted_at": "2026-08-04T17:27:58Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Trading",
@@ -2482,7 +2502,7 @@
       "description_ref": {
         "sha256": "e52d58120bbcbda6390c46c559d866b9ba4b58a9116b33277fcfc3843ba0a986",
         "pack": "details/descriptions-e.json",
-        "pack_sha256": "56303db3f54eac1f54324b74055e6d2943d7103b9388e6803a6389936698522d",
+        "pack_sha256": "00bd5f430e0260d59accc7c9fae4584b4828eeabfd070352ab0517ea6859f800",
         "status": "stale"
       }
     },
@@ -2501,7 +2521,7 @@
       "ats": "lever",
       "posted_at": "2026-09-01T18:40:48Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -2530,7 +2550,7 @@
       "description_ref": {
         "sha256": "108b2c17ee55e0854e4a23d59a026494f0c50c40b96b31a52b7b90353dab1128",
         "pack": "details/descriptions-1.json",
-        "pack_sha256": "e7f0c8eecf8c1cb59f5b86e816475278b645130f625818a10d8b08c0ee2e9a4e",
+        "pack_sha256": "6973c6ac343f76bbeab33f0c0523e2d96bf5ac3afdbd95785049367fb5487375",
         "status": "stale"
       }
     },
@@ -2549,7 +2569,7 @@
       "ats": "lever",
       "posted_at": "2021-07-01T21:52:15Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -2585,7 +2605,7 @@
       "ats": "lever",
       "posted_at": "2026-10-22T21:42:07Z",
       "first_seen_at": "2026-10-22T22:38:35Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "onsite",
@@ -2602,7 +2622,7 @@
       "description_ref": {
         "sha256": "e51e1a35bf2bd3961bc29efe1d25d971bc9b8e33800be4ab985d2d058028babc",
         "pack": "details/descriptions-e.json",
-        "pack_sha256": "56303db3f54eac1f54324b74055e6d2943d7103b9388e6803a6389936698522d",
+        "pack_sha256": "00bd5f430e0260d59accc7c9fae4584b4828eeabfd070352ab0517ea6859f800",
         "status": "available"
       }
     },
@@ -2621,7 +2641,7 @@
       "ats": "lever",
       "posted_at": "2026-02-19T23:48:35Z",
       "first_seen_at": "2026-08-31T00:00:06Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "workplace_type": "onsite",
@@ -2649,7 +2669,7 @@
       "description_ref": {
         "sha256": "2e03f67affcf7ee7a7998eb8432fcd94c3ada3b579fa7be81ec9adf638292c08",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "available"
       }
     },
@@ -2668,7 +2688,7 @@
       "ats": "lever",
       "posted_at": "2016-10-06T22:34:11Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -2740,7 +2760,7 @@
       "ats": "lever",
       "posted_at": "2026-07-10T22:43:13Z",
       "first_seen_at": "2026-09-25T06:42:01Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -2757,7 +2777,7 @@
       "description_ref": {
         "sha256": "674ca583515fe86b6c5c8abe6b8f280eb2b27ee221be2ed0b631166872672133",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "0d7c50e5cf7ff3573ad692deabeb0dc2be1e22ac122c4554a7b7544c93d86f38",
+        "pack_sha256": "a2b7212229dc919ae4274eb0bd8df8a2fcb42a4c7c648749df011955d33e7a07",
         "status": "available"
       }
     },
@@ -2776,7 +2796,7 @@
       "ats": "lever",
       "posted_at": "2026-06-24T19:13:14Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -2793,7 +2813,7 @@
       "description_ref": {
         "sha256": "2af35b6a3d1b8240d8e2886c36ad319c14bd3c6ed20ee32607646215a7091633",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "stale"
       }
     },
@@ -2848,7 +2868,7 @@
       "ats": "lever",
       "posted_at": "2022-08-03T19:25:24Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "hybrid",
@@ -2884,7 +2904,7 @@
       "ats": "lever",
       "posted_at": "2026-10-22T21:37:49Z",
       "first_seen_at": "2026-10-22T22:38:35Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "onsite",
@@ -2910,14 +2930,14 @@
             "source": "simplify",
             "source_job_id": "033a2dce-7821-4e99-b6e1-138c6671f830",
             "url": "https://jobs.lever.co/palantir/b3d81928-6c26-432f-8a0a-36602c2eefcb/apply",
-            "discovered_at": "2026-10-24T17:28:27Z"
+            "discovered_at": "2026-10-24T19:41:43Z"
           }
         ]
       },
       "description_ref": {
         "sha256": "287f0b8460b4d61cee477dd14adedc7c687e4ded31f221f038f6d52ef259906a",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "available"
       }
     },
@@ -2936,7 +2956,7 @@
       "ats": "lever",
       "posted_at": "2021-07-01T22:12:43Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -2972,7 +2992,7 @@
       "ats": "lever",
       "posted_at": "2025-06-26T19:54:49Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -2989,7 +3009,7 @@
       "description_ref": {
         "sha256": "ba9bd874a781b5520c9a9ece3c2d997bed973001062d6a358e27e8e1257380b9",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "17d97e950ea7dc25e9b168e5a48ba3f953bcdecc17ff683889e76fc295206b70",
+        "pack_sha256": "e5f2b2847cd5f58a7c8b1d1e91bb5b5e5d4e1d8a525ea25cbdd9ceb43442e0bf",
         "status": "stale"
       }
     },
@@ -3008,7 +3028,7 @@
       "ats": "lever",
       "posted_at": "2026-06-15T16:08:02Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "onsite",
@@ -3044,7 +3064,7 @@
       "ats": "lever",
       "posted_at": "2025-08-12T18:31:27Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -3061,7 +3081,7 @@
       "description_ref": {
         "sha256": "bcb1a0481a6d0acd200216f26c6677085b866c547439fcd43d0566528d7e9a20",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "17d97e950ea7dc25e9b168e5a48ba3f953bcdecc17ff683889e76fc295206b70",
+        "pack_sha256": "e5f2b2847cd5f58a7c8b1d1e91bb5b5e5d4e1d8a525ea25cbdd9ceb43442e0bf",
         "status": "stale"
       }
     },
@@ -3080,7 +3100,7 @@
       "ats": "lever",
       "posted_at": "2026-03-10T12:26:55Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "hybrid",
@@ -3097,7 +3117,7 @@
       "description_ref": {
         "sha256": "673b7e1c8fad76e9475b223416f5d235ecec32774ad3a31626a5a6abd9e100ed",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "0d7c50e5cf7ff3573ad692deabeb0dc2be1e22ac122c4554a7b7544c93d86f38",
+        "pack_sha256": "a2b7212229dc919ae4274eb0bd8df8a2fcb42a4c7c648749df011955d33e7a07",
         "status": "stale"
       }
     },
@@ -3116,7 +3136,7 @@
       "ats": "lever",
       "posted_at": "2026-10-22T21:44:35Z",
       "first_seen_at": "2026-10-22T22:38:35Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "onsite",
@@ -3152,7 +3172,7 @@
       "ats": "lever",
       "posted_at": "2026-09-02T14:59:45Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -3200,7 +3220,7 @@
       "ats": "lever",
       "posted_at": "2025-06-26T20:05:13Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -3217,7 +3237,7 @@
       "description_ref": {
         "sha256": "be5591a7e91a99f8b2e91bd0ffa4cfd91301eee60344ee439496df4f1b128a3f",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "17d97e950ea7dc25e9b168e5a48ba3f953bcdecc17ff683889e76fc295206b70",
+        "pack_sha256": "e5f2b2847cd5f58a7c8b1d1e91bb5b5e5d4e1d8a525ea25cbdd9ceb43442e0bf",
         "status": "stale"
       }
     },
@@ -3236,7 +3256,7 @@
       "ats": "lever",
       "posted_at": "2026-07-30T19:01:30Z",
       "first_seen_at": "2026-09-02T17:50:26Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "workplace_type": "remote",
       "description_status": "unavailable"
@@ -3256,7 +3276,7 @@
       "ats": "lever",
       "posted_at": "2026-10-06T00:33:04Z",
       "first_seen_at": "2026-10-06T01:41:59Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "department": "Internships",
@@ -3285,7 +3305,7 @@
       "description_ref": {
         "sha256": "5eb78f607dc02512d452d9368bc2abde8a48b836229987d5383d3ae7c4ef5381",
         "pack": "details/descriptions-5.json",
-        "pack_sha256": "9de54d3064e9b1df392e6bc04c99f424e2e53457c0469f5afe3b69ac364fd143",
+        "pack_sha256": "b267cab623e6e383da9c6d417702ebf2853b9f8859be67d5edb6bd94e7693ff2",
         "status": "available"
       }
     },
@@ -3304,7 +3324,7 @@
       "ats": "lever",
       "posted_at": "2025-10-29T20:27:12Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -3321,7 +3341,7 @@
       "description_ref": {
         "sha256": "25d3c11451dbd71aa12b2d0f37ca9460456851c9550559a88d8b003648928e05",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "stale"
       }
     },
@@ -3340,7 +3360,7 @@
       "ats": "lever",
       "posted_at": "2025-06-26T20:04:34Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -3357,7 +3377,7 @@
       "description_ref": {
         "sha256": "be5591a7e91a99f8b2e91bd0ffa4cfd91301eee60344ee439496df4f1b128a3f",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "17d97e950ea7dc25e9b168e5a48ba3f953bcdecc17ff683889e76fc295206b70",
+        "pack_sha256": "e5f2b2847cd5f58a7c8b1d1e91bb5b5e5d4e1d8a525ea25cbdd9ceb43442e0bf",
         "status": "stale"
       }
     },
@@ -3376,7 +3396,7 @@
       "ats": "lever",
       "posted_at": "2025-07-24T22:40:17Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "workplace_type": "onsite",
       "description_status": "unavailable",
@@ -3403,7 +3423,7 @@
       "description_ref": {
         "sha256": "97ca724ba1028919d228650ef589322fdd7b7d66cfa42fb0449ef3e926affa97",
         "pack": "details/descriptions-9.json",
-        "pack_sha256": "e881421e06b112cb34bb2f4b39a9296a538b8ea9caf02a9cde92675647be4dc7",
+        "pack_sha256": "cc7bcdcab08c8082e45b8d2eeceb9b91735129c0669656f625fbfc51a97706cd",
         "status": "stale"
       }
     },
@@ -3422,7 +3442,7 @@
       "ats": "lever",
       "posted_at": "2024-01-02T22:21:00Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -3439,7 +3459,7 @@
       "description_ref": {
         "sha256": "6f616a97915ab6751c40af95e10af9d05f3a8d9056dcf59a6c5bfe7e8b19f04e",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "0d7c50e5cf7ff3573ad692deabeb0dc2be1e22ac122c4554a7b7544c93d86f38",
+        "pack_sha256": "a2b7212229dc919ae4274eb0bd8df8a2fcb42a4c7c648749df011955d33e7a07",
         "status": "stale"
       }
     },
@@ -3458,7 +3478,7 @@
       "ats": "lever",
       "posted_at": "2026-06-15T16:42:57Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "onsite",
@@ -3475,7 +3495,7 @@
       "description_ref": {
         "sha256": "6a7ce493af10894c60f2fdc6460b46b906006cc8c682327d1c4ae1701d8cb632",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "0d7c50e5cf7ff3573ad692deabeb0dc2be1e22ac122c4554a7b7544c93d86f38",
+        "pack_sha256": "a2b7212229dc919ae4274eb0bd8df8a2fcb42a4c7c648749df011955d33e7a07",
         "status": "stale"
       }
     },
@@ -3494,7 +3514,7 @@
       "ats": "lever",
       "posted_at": "2024-08-05T23:26:16Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -3530,7 +3550,7 @@
       "ats": "lever",
       "posted_at": "2025-06-19T01:37:46Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -3614,7 +3634,7 @@
       "ats": "lever",
       "posted_at": "2026-10-19T23:45:22Z",
       "first_seen_at": "2026-10-20T02:08:10Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -3631,7 +3651,7 @@
       "description_ref": {
         "sha256": "41433df71e5ee4c814f79cabebe8a8cffff05d1584ffd4758a8f2b99f914a693",
         "pack": "details/descriptions-4.json",
-        "pack_sha256": "bcc544863ec8db14a6dc53525593101cd00d3f487ca656b936d73f877c328487",
+        "pack_sha256": "8f44ac8b0bc40b3a3f5fc659d4609508c984777f859137cce5a41b1af58b93f3",
         "status": "available"
       }
     },
@@ -3650,7 +3670,7 @@
       "ats": "lever",
       "posted_at": "2026-10-16T17:12:14Z",
       "first_seen_at": "2026-10-16T21:58:00Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Part time",
       "workplace_type": "remote",
@@ -3697,7 +3717,7 @@
       "ats": "lever",
       "posted_at": "2026-09-27T14:49:13Z",
       "first_seen_at": "2026-09-27T19:39:14Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "department": "Internships",
@@ -3721,11 +3741,6 @@
           "board": "field-ai",
           "job_id": "40a22216-c73b-4ec1-bfc1-dc0e1938eaba",
           "eu": "false"
-        },
-        "description_acquisition": {
-          "method": "lever_api",
-          "completeness": "available",
-          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
@@ -3751,7 +3766,7 @@
       "ats": "lever",
       "posted_at": "2026-09-01T16:33:58Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -3799,7 +3814,7 @@
       "ats": "lever",
       "posted_at": "2026-09-30T20:04:52Z",
       "first_seen_at": "2026-09-30T23:35:05Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -3828,7 +3843,7 @@
       "description_ref": {
         "sha256": "64c539ce32d55666b237d394f1b2921c518e9939b2b31c72d584430400021801",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "0d7c50e5cf7ff3573ad692deabeb0dc2be1e22ac122c4554a7b7544c93d86f38",
+        "pack_sha256": "a2b7212229dc919ae4274eb0bd8df8a2fcb42a4c7c648749df011955d33e7a07",
         "status": "stale"
       }
     },
@@ -3847,7 +3862,7 @@
       "ats": "lever",
       "posted_at": "2026-03-20T19:02:47Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -3864,7 +3879,7 @@
       "description_ref": {
         "sha256": "2af35b6a3d1b8240d8e2886c36ad319c14bd3c6ed20ee32607646215a7091633",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "stale"
       }
     },
@@ -3883,7 +3898,7 @@
       "ats": "lever",
       "posted_at": "2024-08-19T09:22:15Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -3900,7 +3915,7 @@
       "description_ref": {
         "sha256": "bcb1a0481a6d0acd200216f26c6677085b866c547439fcd43d0566528d7e9a20",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "17d97e950ea7dc25e9b168e5a48ba3f953bcdecc17ff683889e76fc295206b70",
+        "pack_sha256": "e5f2b2847cd5f58a7c8b1d1e91bb5b5e5d4e1d8a525ea25cbdd9ceb43442e0bf",
         "status": "stale"
       }
     },
@@ -3919,7 +3934,7 @@
       "ats": "lever",
       "posted_at": "2020-10-27T18:32:40Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -3955,7 +3970,7 @@
       "ats": "lever",
       "posted_at": "2026-07-10T22:42:13Z",
       "first_seen_at": "2026-09-25T06:42:01Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -3972,7 +3987,7 @@
       "description_ref": {
         "sha256": "674ca583515fe86b6c5c8abe6b8f280eb2b27ee221be2ed0b631166872672133",
         "pack": "details/descriptions-6.json",
-        "pack_sha256": "0d7c50e5cf7ff3573ad692deabeb0dc2be1e22ac122c4554a7b7544c93d86f38",
+        "pack_sha256": "a2b7212229dc919ae4274eb0bd8df8a2fcb42a4c7c648749df011955d33e7a07",
         "status": "available"
       }
     },
@@ -3991,7 +4006,7 @@
       "ats": "lever",
       "posted_at": "2026-03-10T23:12:32Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "workplace_type": "onsite",
       "description_status": "unavailable",
@@ -4007,7 +4022,7 @@
       "description_ref": {
         "sha256": "1cd1ec1c56d3a707913d2f27bef972c17dac1e4c059727c966e4be48de67e18a",
         "pack": "details/descriptions-1.json",
-        "pack_sha256": "e7f0c8eecf8c1cb59f5b86e816475278b645130f625818a10d8b08c0ee2e9a4e",
+        "pack_sha256": "6973c6ac343f76bbeab33f0c0523e2d96bf5ac3afdbd95785049367fb5487375",
         "status": "stale"
       }
     },
@@ -4026,7 +4041,7 @@
       "ats": "lever",
       "posted_at": "2026-02-19T23:42:37Z",
       "first_seen_at": "2026-08-31T00:00:06Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "workplace_type": "onsite",
@@ -4073,7 +4088,7 @@
       "ats": "lever",
       "posted_at": "2026-10-19T23:47:38Z",
       "first_seen_at": "2026-10-20T02:08:10Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -4090,7 +4105,7 @@
       "description_ref": {
         "sha256": "29e2350f1cad649e01182c9bb1324cc93bafdc916cd46725cdb3f2b442fa7b70",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "available"
       }
     },
@@ -4109,7 +4124,7 @@
       "ats": "lever",
       "posted_at": "2025-12-11T22:26:14Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -4126,7 +4141,7 @@
       "description_ref": {
         "sha256": "e209bf37cbfecc70c423db3bfbb7e576caaaf2a99cd3c8c808b94dd2c3e45983",
         "pack": "details/descriptions-e.json",
-        "pack_sha256": "56303db3f54eac1f54324b74055e6d2943d7103b9388e6803a6389936698522d",
+        "pack_sha256": "00bd5f430e0260d59accc7c9fae4584b4828eeabfd070352ab0517ea6859f800",
         "status": "stale"
       }
     },
@@ -4145,7 +4160,7 @@
       "ats": "lever",
       "posted_at": "2022-06-30T21:20:50Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -4181,7 +4196,7 @@
       "ats": "lever",
       "posted_at": "2026-09-08T14:55:19Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -4210,7 +4225,7 @@
       "description_ref": {
         "sha256": "998565340fc4f8c1f4d9c9916b247d683493798b6b87256d0cc524dbaf344076",
         "pack": "details/descriptions-9.json",
-        "pack_sha256": "e881421e06b112cb34bb2f4b39a9296a538b8ea9caf02a9cde92675647be4dc7",
+        "pack_sha256": "cc7bcdcab08c8082e45b8d2eeceb9b91735129c0669656f625fbfc51a97706cd",
         "status": "stale"
       }
     },
@@ -4229,7 +4244,7 @@
       "ats": "lever",
       "posted_at": "2022-06-30T21:19:00Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -4265,7 +4280,7 @@
       "ats": "lever",
       "posted_at": "2022-06-30T22:59:08Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "onsite",
@@ -4301,7 +4316,7 @@
       "ats": "lever",
       "posted_at": "2025-06-26T15:01:02Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -4318,7 +4333,7 @@
       "description_ref": {
         "sha256": "2a5ea772095cc2d52689127a71d7ebd7f76ab9657540a705cd4ca21085d68d79",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "e67269207153a2fb6f49db795e98f3f68292a811ac1eae74fd69a262d1247643",
+        "pack_sha256": "c0a45b8ab57a4ae4b7b80ff57f63435529939e6fcbf4a774f2ba32a1efb15669",
         "status": "stale"
       }
     },
@@ -4337,7 +4352,7 @@
       "ats": "lever",
       "posted_at": "2026-06-30T20:01:06Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -4371,7 +4386,7 @@
             "source": "simplify",
             "source_job_id": "ffc1f08c-7dd5-4fce-986e-2e3b824aabb4",
             "url": "https://jobs.lever.co/palantir/d5486403-c050-4920-b2e0-91b69b61ebb2/apply",
-            "discovered_at": "2026-10-24T17:28:27Z"
+            "discovered_at": "2026-10-24T19:41:43Z"
           }
         ]
       },
@@ -4397,7 +4412,7 @@
       "ats": "lever",
       "posted_at": "2026-06-29T14:44:20Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -4414,7 +4429,7 @@
       "description_ref": {
         "sha256": "94bb70796b07def49a8673f4726ff7bc658232f114db1bdd415b98b99dc4cbd0",
         "pack": "details/descriptions-9.json",
-        "pack_sha256": "e881421e06b112cb34bb2f4b39a9296a538b8ea9caf02a9cde92675647be4dc7",
+        "pack_sha256": "cc7bcdcab08c8082e45b8d2eeceb9b91735129c0669656f625fbfc51a97706cd",
         "status": "stale"
       }
     },
@@ -4433,7 +4448,7 @@
       "ats": "lever",
       "posted_at": "2024-08-29T04:34:48Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -4450,7 +4465,7 @@
       "description_ref": {
         "sha256": "9cefcedfbc00e86352273f031d9365b48444671d42723a700859a1dd3de23611",
         "pack": "details/descriptions-9.json",
-        "pack_sha256": "e881421e06b112cb34bb2f4b39a9296a538b8ea9caf02a9cde92675647be4dc7",
+        "pack_sha256": "cc7bcdcab08c8082e45b8d2eeceb9b91735129c0669656f625fbfc51a97706cd",
         "status": "stale"
       }
     },
@@ -4469,7 +4484,7 @@
       "ats": "lever",
       "posted_at": "2025-08-19T09:37:18Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "workplace_type": "hybrid",
@@ -4486,7 +4501,7 @@
       "description_ref": {
         "sha256": "ba9bd874a781b5520c9a9ece3c2d997bed973001062d6a358e27e8e1257380b9",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "17d97e950ea7dc25e9b168e5a48ba3f953bcdecc17ff683889e76fc295206b70",
+        "pack_sha256": "e5f2b2847cd5f58a7c8b1d1e91bb5b5e5d4e1d8a525ea25cbdd9ceb43442e0bf",
         "status": "stale"
       }
     },
@@ -4505,7 +4520,7 @@
       "ats": "lever",
       "posted_at": "2025-08-19T09:41:27Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",
@@ -4522,7 +4537,7 @@
       "description_ref": {
         "sha256": "be5591a7e91a99f8b2e91bd0ffa4cfd91301eee60344ee439496df4f1b128a3f",
         "pack": "details/descriptions-b.json",
-        "pack_sha256": "17d97e950ea7dc25e9b168e5a48ba3f953bcdecc17ff683889e76fc295206b70",
+        "pack_sha256": "e5f2b2847cd5f58a7c8b1d1e91bb5b5e5d4e1d8a525ea25cbdd9ceb43442e0bf",
         "status": "stale"
       }
     },
@@ -4541,7 +4556,7 @@
       "ats": "lever",
       "posted_at": "2026-09-02T01:04:36Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Internships",
@@ -4570,7 +4585,7 @@
       "description_ref": {
         "sha256": "4284490c9adcf064614e7c55b50d68f91c65bd675ef6ec0a1b776e3f7d47aed6",
         "pack": "details/descriptions-4.json",
-        "pack_sha256": "bcc544863ec8db14a6dc53525593101cd00d3f487ca656b936d73f877c328487",
+        "pack_sha256": "8f44ac8b0bc40b3a3f5fc659d4609508c984777f859137cce5a41b1af58b93f3",
         "status": "stale"
       }
     },
@@ -4589,7 +4604,7 @@
       "ats": "lever",
       "posted_at": "2024-08-05T23:26:42Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-10-24T17:28:27Z",
+      "last_seen_at": "2026-10-24T19:41:43Z",
       "closed_at": null,
       "employment_type": "Internship",
       "workplace_type": "onsite",

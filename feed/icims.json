@@ -1,6 +1,6 @@
 {
   "shard_id": "icims",
-  "updated_at": "2026-10-23T22:39:04Z",
+  "updated_at": "2026-10-24T01:08:46Z",
   "count": 4,
   "postings": {
     "0d7863521e259085": {
@@ -33,7 +33,7 @@
       "description_ref": {
         "sha256": "068eeb03661bd4998fc8c101ec78b5c1ad49845b5986d57ba73921a8b5c844ca",
         "pack": "details/descriptions-0.json",
-        "pack_sha256": "672d046cc9f8c75b9d9f788448120325be9631808fe5f0b369131e3690874372",
+        "pack_sha256": "a8a3efb644037ed26229140552b46bc396536e30b657843cb5b244b1a95bbcc9",
         "status": "stale"
       }
     },
@@ -52,7 +52,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-17T04:30:29Z",
-      "last_seen_at": "2026-10-23T22:39:04Z",
+      "last_seen_at": "2026-10-24T01:08:46Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -67,7 +67,7 @@
       "description_ref": {
         "sha256": "e6781c82261dc36b7d1eb7af57bd45901262160c18b7b16f85d0d6f95155be77",
         "pack": "details/descriptions-e.json",
-        "pack_sha256": "8b08555eb28a027bbcb3be0178c07bf77632f14737188f400707714c02af2a59",
+        "pack_sha256": "e356ce2eeda71667acde4a679cb608bd3b2cda072345215cc212ca8136d5f538",
         "status": "stale"
       }
     },
@@ -86,7 +86,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-21T04:32:28Z",
-      "last_seen_at": "2026-10-23T22:39:04Z",
+      "last_seen_at": "2026-10-24T01:08:46Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -101,7 +101,7 @@
       "description_ref": {
         "sha256": "fe120f9a97fd679b0c1983d7e2696e05b984d780c539c27c6ca9e6ab99f1d331",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "9583aa3ac4f1a70bc9e6485dcf0e56e9830f40cba21df3775fc361bc073a0775",
+        "pack_sha256": "874b56c5d0770a45686220c13ce1300d187a46678ad6fc21a1a6154b4637268a",
         "status": "available"
       }
     },
@@ -120,7 +120,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-19T20:06:44Z",
-      "last_seen_at": "2026-10-23T22:39:04Z",
+      "last_seen_at": "2026-10-24T01:08:46Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -135,7 +135,7 @@
       "description_ref": {
         "sha256": "8216a514d7d77ce106058ec7842f36e3c756c61592b16040db7fe39e5fffc5b1",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "a94d00d69046d0638fca96dff450a3edb957784188b08b701a8359bc828f3c3c",
+        "pack_sha256": "0f7833fbca2639f55d621707843708cd509d24184f659dec670e87d90b88f209",
         "status": "stale"
       }
     }

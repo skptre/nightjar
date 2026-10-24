@@ -1,42 +1,8 @@
 {
   "shard_id": "icims",
-  "updated_at": "2026-10-24T01:08:46Z",
-  "count": 4,
+  "updated_at": "2026-10-24T05:56:14Z",
+  "count": 3,
   "postings": {
-    "0d7863521e259085": {
-      "id": "0d7863521e259085",
-      "company": "Joby Aviation",
-      "company_slug": "joby-aviation",
-      "title": "Technical Program Management Intern",
-      "location": "San Carlos, CA",
-      "locations": [
-        "San Carlos, CA"
-      ],
-      "url": "https://careers-jobyaviation.icims.com/jobs/5345/technical-program-management-intern/job",
-      "source": "icims",
-      "source_job_id": "5345",
-      "ats": "icims",
-      "posted_at": null,
-      "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-10-16T21:58:00Z",
-      "closed_at": "2026-10-17T04:30:29Z",
-      "description_status": "unavailable",
-      "description_version": 5,
-      "source_metadata": {
-        "description_acquisition": {
-          "method": "json_ld",
-          "completeness": "available",
-          "identity": "matched_url_and_title",
-          "resolved_url": "https://careers-jobyaviation.icims.com/jobs/5345/technical-program-management-intern/job?in_iframe=1"
-        }
-      },
-      "description_ref": {
-        "sha256": "068eeb03661bd4998fc8c101ec78b5c1ad49845b5986d57ba73921a8b5c844ca",
-        "pack": "details/descriptions-0.json",
-        "pack_sha256": "a8a3efb644037ed26229140552b46bc396536e30b657843cb5b244b1a95bbcc9",
-        "status": "stale"
-      }
-    },
     "21a65535d7f89eae": {
       "id": "21a65535d7f89eae",
       "company": "Joby Aviation",
@@ -52,7 +18,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-17T04:30:29Z",
-      "last_seen_at": "2026-10-24T01:08:46Z",
+      "last_seen_at": "2026-10-24T05:56:14Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -67,8 +33,8 @@
       "description_ref": {
         "sha256": "e6781c82261dc36b7d1eb7af57bd45901262160c18b7b16f85d0d6f95155be77",
         "pack": "details/descriptions-e.json",
-        "pack_sha256": "e356ce2eeda71667acde4a679cb608bd3b2cda072345215cc212ca8136d5f538",
-        "status": "stale"
+        "pack_sha256": "54285613ed9af4851a14649ddb22dabd5f2733b17bef652ef7f9187b2cc53f94",
+        "status": "available"
       }
     },
     "47876fab4b961844": {
@@ -86,7 +52,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-21T04:32:28Z",
-      "last_seen_at": "2026-10-24T01:08:46Z",
+      "last_seen_at": "2026-10-24T05:56:14Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -101,8 +67,8 @@
       "description_ref": {
         "sha256": "fe120f9a97fd679b0c1983d7e2696e05b984d780c539c27c6ca9e6ab99f1d331",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "874b56c5d0770a45686220c13ce1300d187a46678ad6fc21a1a6154b4637268a",
-        "status": "available"
+        "pack_sha256": "f7d57c34bb4da25c2be1d43c0d9667f661006299efcd649f4a7ec532edfe23e6",
+        "status": "stale"
       }
     },
     "b1bce09c24b5801f": {
@@ -120,7 +86,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-19T20:06:44Z",
-      "last_seen_at": "2026-10-24T01:08:46Z",
+      "last_seen_at": "2026-10-24T05:56:14Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -135,7 +101,7 @@
       "description_ref": {
         "sha256": "8216a514d7d77ce106058ec7842f36e3c756c61592b16040db7fe39e5fffc5b1",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "0f7833fbca2639f55d621707843708cd509d24184f659dec670e87d90b88f209",
+        "pack_sha256": "63bbc9d977631aa722c7d271a588828b45d62109a6926f8b7a056bda9d03bb68",
         "status": "stale"
       }
     }

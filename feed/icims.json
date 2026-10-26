@@ -1,6 +1,6 @@
 {
   "shard_id": "icims",
-  "updated_at": "2026-10-26T17:33:30Z",
+  "updated_at": "2026-10-26T21:53:46Z",
   "count": 3,
   "postings": {
     "21a65535d7f89eae": {
@@ -18,7 +18,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-17T04:30:29Z",
-      "last_seen_at": "2026-10-26T17:33:30Z",
+      "last_seen_at": "2026-10-26T21:53:46Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -33,7 +33,7 @@
       "description_ref": {
         "sha256": "e6781c82261dc36b7d1eb7af57bd45901262160c18b7b16f85d0d6f95155be77",
         "pack": "details/descriptions-e.json",
-        "pack_sha256": "b3b16a83a5dca9ca4d8095e4a5b9693b4946ef1b70ee652ad260dac90ef4fc5a",
+        "pack_sha256": "c3c19493aba1ebcf7405700088221bf01da4ee5c33d437ae2cd3717691ab28ec",
         "status": "available"
       }
     },
@@ -52,7 +52,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-21T04:32:28Z",
-      "last_seen_at": "2026-10-26T17:33:30Z",
+      "last_seen_at": "2026-10-26T21:53:46Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -67,7 +67,7 @@
       "description_ref": {
         "sha256": "fe120f9a97fd679b0c1983d7e2696e05b984d780c539c27c6ca9e6ab99f1d331",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "3c8ad3fd0f5a125b30a31e03fd6f2cd32a2174abfec533611d671a7ac58339ae",
+        "pack_sha256": "20add76898fbe2a27fa1e3b4898c699d3b85a51c5823e257b1a1dfa83c7ecf83",
         "status": "stale"
       }
     },
@@ -86,7 +86,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-19T20:06:44Z",
-      "last_seen_at": "2026-10-26T17:33:30Z",
+      "last_seen_at": "2026-10-26T21:53:46Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -101,7 +101,7 @@
       "description_ref": {
         "sha256": "8216a514d7d77ce106058ec7842f36e3c756c61592b16040db7fe39e5fffc5b1",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "c37e3909cb74d38a596a1300c9b7432cdafed8aaca835df34eaa7f55add86a61",
+        "pack_sha256": "e9d0a228f5b128ad1c46e3c74ab9dc965bc6c4e2398ae4d5aa2310f7ac4a3ed6",
         "status": "stale"
       }
     }

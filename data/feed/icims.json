@@ -1,7 +1,7 @@
 {
   "shard_id": "icims",
-  "updated_at": "2026-10-28T14:22:23Z",
-  "count": 3,
+  "updated_at": "2026-10-28T19:47:07Z",
+  "count": 4,
   "postings": {
     "21a65535d7f89eae": {
       "id": "21a65535d7f89eae",
@@ -18,7 +18,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-17T04:30:29Z",
-      "last_seen_at": "2026-10-28T14:22:23Z",
+      "last_seen_at": "2026-10-28T19:47:07Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -33,7 +33,7 @@
       "description_ref": {
         "sha256": "e6781c82261dc36b7d1eb7af57bd45901262160c18b7b16f85d0d6f95155be77",
         "pack": "details/descriptions-e.json",
-        "pack_sha256": "071adc72f7397e41c288aafd1f2be6a0f799bd299c0fcfd5808134af8bb3d712",
+        "pack_sha256": "bcb7439db5ce3a616e841997d8c96235be905f7e164f02150cb9224405d14094",
         "status": "stale"
       }
     },
@@ -52,7 +52,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-21T04:32:28Z",
-      "last_seen_at": "2026-10-28T14:22:23Z",
+      "last_seen_at": "2026-10-28T19:47:07Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -67,8 +67,42 @@
       "description_ref": {
         "sha256": "fe120f9a97fd679b0c1983d7e2696e05b984d780c539c27c6ca9e6ab99f1d331",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "6ba45bc83b741ae3002f9b1625bf0b8ffd77847ce1b9eeec3f11729d2f88012f",
+        "pack_sha256": "5f5f751cb5d8cc87cb6bf4c6c524c3bf011a126d41bde9fe8811624675295cd2",
         "status": "stale"
+      }
+    },
+    "91b508bec557374a": {
+      "id": "91b508bec557374a",
+      "company": "Joby Aviation",
+      "company_slug": "joby-aviation",
+      "title": "Powertrain Mechanical Engineer, Battery (Intern Summer 2027)",
+      "location": "San Carlos, CA",
+      "locations": [
+        "San Carlos, CA"
+      ],
+      "url": "https://careers-jobyaviation.icims.com/jobs/5493/powertrain-mechanical-engineer%2c-battery-%28intern-summer-2027%29/job",
+      "source": "icims",
+      "source_job_id": "5493",
+      "ats": "icims",
+      "posted_at": null,
+      "first_seen_at": "2026-10-28T19:47:07Z",
+      "last_seen_at": "2026-10-28T19:47:07Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://careers-jobyaviation.icims.com/jobs/5493/powertrain-mechanical-engineer%2c-battery-%28intern-summer-2027%29/job?in_iframe=1"
+        }
+      },
+      "description_ref": {
+        "sha256": "255a3395286269ebd7d2f3dde716ed7c10fbfa1c2a9eca0b669315d43f5219d3",
+        "pack": "details/descriptions-2.json",
+        "pack_sha256": "db5e9f35ba8dfaebfcd7a7ab4e56580dc10957c06ddd5a1b7840d44d76c32cc8",
+        "status": "available"
       }
     },
     "b1bce09c24b5801f": {
@@ -86,7 +120,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-19T20:06:44Z",
-      "last_seen_at": "2026-10-28T14:22:23Z",
+      "last_seen_at": "2026-10-28T19:47:07Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -101,7 +135,7 @@
       "description_ref": {
         "sha256": "8216a514d7d77ce106058ec7842f36e3c756c61592b16040db7fe39e5fffc5b1",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "1daa7685572eed7fd2287edec8f17ab1905f2f823d4f8aad76a5e7bf5d8f6ba4",
+        "pack_sha256": "8b0e9ae013df357476d62382c9f09b3bc029268ee5739d81188f04c62debb007",
         "status": "available"
       }
     }

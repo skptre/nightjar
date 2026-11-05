@@ -336,14 +336,6 @@
     "posting_count": 1
   },
   {
-    "slug": "ami",
-    "name": "AMI",
-    "inferred_ats": "ashby",
-    "inferred_board_token": "ami",
-    "apply_url": "https://jobs.ashbyhq.com/ami/0d7332d8-b8e7-40d3-89b6-dfc02b40bfa2/application?embed=true",
-    "posting_count": 1
-  },
-  {
     "slug": "amperesand",
     "name": "Amperesand",
     "inferred_ats": "greenhouse",
@@ -800,6 +792,14 @@
     "posting_count": 9
   },
   {
+    "slug": "baringa",
+    "name": "Baringa",
+    "inferred_ats": "greenhouse",
+    "inferred_board_token": null,
+    "apply_url": "https://job-boards.eu.greenhouse.io/baringa/jobs/5028472101",
+    "posting_count": 1
+  },
+  {
     "slug": "barnes-thornburg",
     "name": "Barnes & Thornburg",
     "inferred_ats": "ashby",
@@ -821,14 +821,6 @@
     "inferred_ats": "workday",
     "inferred_board_token": "basspro.wd1.myworkdayjobs.com/careers",
     "apply_url": "https://basspro.wd1.myworkdayjobs.com/careers/job/Springfield-MO-Bass-Pro-Shops-Base-Camp/IT-Developer-Intern-Summer-2027_R267441-1",
-    "posting_count": 1
-  },
-  {
-    "slug": "bdo-canada",
-    "name": "BDO Canada",
-    "inferred_ats": "workday",
-    "inferred_board_token": "bdo.wd3.myworkdayjobs.com/BDO",
-    "apply_url": "https://bdo.wd3.myworkdayjobs.com/BDO/job/Toronto---Bay-St/Co-op-or-Intern--Data---Analytics--January-2027-_JR7061",
     "posting_count": 1
   },
   {
@@ -861,6 +853,14 @@
     "inferred_ats": "greenhouse",
     "inferred_board_token": "bgeinc",
     "apply_url": "https://job-boards.greenhouse.io/bgeinc/jobs/5435139008",
+    "posting_count": 2
+  },
+  {
+    "slug": "bibliocommons",
+    "name": "BiblioCommons",
+    "inferred_ats": "workday",
+    "inferred_board_token": "volarisgroup.wd3.myworkdayjobs.com/BiblioCommons",
+    "apply_url": "https://volarisgroup.wd3.myworkdayjobs.com/BiblioCommons/job/Canada---Ontario/PEY---Junior-Fullstack-Engineer_R72454",
     "posting_count": 2
   },
   {
@@ -949,7 +949,7 @@
     "inferred_ats": "workday",
     "inferred_board_token": "bah.wd1.myworkdayjobs.com/bah_jobs",
     "apply_url": "https://bah.wd1.myworkdayjobs.com/bah_jobs/job/San-Diego-CA/University---2027-Summer-Games-Data-Scientist-Intern---San-Diego--CA_R0248045",
-    "posting_count": 44
+    "posting_count": 43
   },
   {
     "slug": "bosch-home-comfort",
@@ -1396,8 +1396,8 @@
     "name": "Cincinnati Children’s Hospital and Medical Center",
     "inferred_ats": "workday",
     "inferred_board_token": "cincinnatichildrens.wd5.myworkdayjobs.com/careersatcincinnatichildrens",
-    "apply_url": "https://cincinnatichildrens.wd5.myworkdayjobs.com/careersatcincinnatichildrens/job/Remote/Student-II---Software-Engineering-Developer--A-_JR226736",
-    "posting_count": 4
+    "apply_url": "https://cincinnatichildrens.wd5.myworkdayjobs.com/careersatcincinnatichildrens/job/Remote/Student-II---Data-Management-Engineer_JR226749",
+    "posting_count": 2
   },
   {
     "slug": "circleback",
@@ -1701,7 +1701,7 @@
     "inferred_ats": "workday",
     "inferred_board_token": "costar.wd1.myworkdayjobs.com/Costar_Campus",
     "apply_url": "https://costar.wd1.myworkdayjobs.com/Costar_Campus/job/Sunnyvale-US/Associate-Product-Manager---Sunnyvale--CA_R39946",
-    "posting_count": 2
+    "posting_count": 1
   },
   {
     "slug": "cotiviti",
@@ -2220,8 +2220,8 @@
     "name": "Entrust",
     "inferred_ats": "workday",
     "inferred_board_token": "entrust.wd1.myworkdayjobs.com/entrustcareers",
-    "apply_url": "https://entrust.wd1.myworkdayjobs.com/entrustcareers/job/Canada---Ottawa/Intern--Software-Development---Hybrid-in-Ottawa_R004360",
-    "posting_count": 4
+    "apply_url": "https://entrust.wd1.myworkdayjobs.com/entrustcareers/job/Canada---Ottawa/XMLNAME--Intern---Software-Development----8-months---Hybrid-Ottawa_R004359",
+    "posting_count": 3
   },
   {
     "slug": "eqt-corporation",
@@ -2317,7 +2317,7 @@
     "inferred_ats": "workday",
     "inferred_board_token": "expedia.wd108.myworkdayjobs.com/private",
     "apply_url": "https://expedia.wd108.myworkdayjobs.com/private/job/Washington---Seattle-Campus/Software-Development-Engineering-Intern---2027---Austin--San-Jose--Seattle_R-110311",
-    "posting_count": 8
+    "posting_count": 9
   },
   {
     "slug": "f-g",
@@ -2981,7 +2981,7 @@
     "inferred_ats": "greenhouse",
     "inferred_board_token": "hearst",
     "apply_url": "https://job-boards.greenhouse.io/hearst/jobs/4473043009",
-    "posting_count": 1
+    "posting_count": 2
   },
   {
     "slug": "heidelberg-materials",
@@ -3077,7 +3077,7 @@
     "inferred_ats": "workday",
     "inferred_board_token": "highmarkhealth.wd1.myworkdayjobs.com/highmark",
     "apply_url": "https://highmarkhealth.wd1.myworkdayjobs.com/highmark/job/Pittsburgh-PA-15222-FAP-5th-Avenue-Place/Summer-2027-Market-Analytics-Graduate-Intern_J285906",
-    "posting_count": 17
+    "posting_count": 15
   },
   {
     "slug": "hilb-group",
@@ -3261,7 +3261,7 @@
     "inferred_ats": "greenhouse",
     "inferred_board_token": null,
     "apply_url": "https://job-boards.eu.greenhouse.io/imc/jobs/4907400101",
-    "posting_count": 8
+    "posting_count": 9
   },
   {
     "slug": "immuta",
@@ -3549,7 +3549,7 @@
     "inferred_ats": "workday",
     "inferred_board_token": "jmfamily.wd1.myworkdayjobs.com/jmfamily_external",
     "apply_url": "https://jmfamily.wd1.myworkdayjobs.com/jmfamily_external/job/Florida---Deerfield-Beach/Automation---Analytics-Intern_JR105132",
-    "posting_count": 11
+    "posting_count": 14
   },
   {
     "slug": "john-d-and-catherine-t-macarthur-foundation",
@@ -3848,6 +3848,14 @@
     "posting_count": 1
   },
   {
+    "slug": "little-caesars-enterprises",
+    "name": "Little Caesars Enterprises",
+    "inferred_ats": "workday",
+    "inferred_board_token": "ilitch.wd5.myworkdayjobs.com/lc",
+    "apply_url": "https://ilitch.wd5.myworkdayjobs.com/lc/job/Detroit-MI/Intern--Data-IT_R9676",
+    "posting_count": 3
+  },
+  {
     "slug": "live-nation-entertainment",
     "name": "Live Nation Entertainment",
     "inferred_ats": "workday",
@@ -3862,6 +3870,14 @@
     "inferred_board_token": "lbg.wd3.myworkdayjobs.com/LBG_Careers",
     "apply_url": "https://lbg.wd3.myworkdayjobs.com/LBG_Careers/job/Birmingham/Applied-Data-and-AI-Apprentice---Birmingham_165591",
     "posting_count": 4
+  },
+  {
+    "slug": "loblaw-companies",
+    "name": "Loblaw Companies",
+    "inferred_ats": "workday",
+    "inferred_board_token": "myview.wd3.myworkdayjobs.com/paradox_careers",
+    "apply_url": "https://myview.wd3.myworkdayjobs.com/paradox_careers/job/1-Presidents-Choice-Circle-Brampton-ON/Loblaw-Brands--Technology-Transformation---Co-op-Student_R2000695051",
+    "posting_count": 1
   },
   {
     "slug": "logiqal",
@@ -3965,7 +3981,7 @@
     "inferred_ats": "workday",
     "inferred_board_token": "magna.wd3.myworkdayjobs.com/magna",
     "apply_url": "https://magna.wd3.myworkdayjobs.com/en-US/magna/job/Troy-Michigan-US/Robotics-AI-Software--R-D-Summer-2026_R00232838",
-    "posting_count": 6
+    "posting_count": 5
   },
   {
     "slug": "major-league-baseball",
@@ -3997,6 +4013,22 @@
     "inferred_ats": "workday",
     "inferred_board_token": "azmag.wd108.myworkdayjobs.com/magcareers",
     "apply_url": "https://azmag.wd108.myworkdayjobs.com/magcareers/job/Phoenix-AZ/Socioeconomic-Data-Intern_JR24",
+    "posting_count": 1
+  },
+  {
+    "slug": "markel-group",
+    "name": "Markel Group",
+    "inferred_ats": "workday",
+    "inferred_board_token": "markelcorp.wd5.myworkdayjobs.com/GlobalCareers",
+    "apply_url": "https://markelcorp.wd5.myworkdayjobs.com/GlobalCareers/job/Woodland-Hills-CA/Markel-AI-Automation-Intern_R0024277",
+    "posting_count": 1
+  },
+  {
+    "slug": "marriott-vacations-worldwide",
+    "name": "Marriott Vacations Worldwide",
+    "inferred_ats": "workday",
+    "inferred_board_token": "mymvw.wd5.myworkdayjobs.com/mvw",
+    "apply_url": "https://mymvw.wd5.myworkdayjobs.com/mvw/job/MVW-Headquarters/Corporate-Intern-Information-Technology_JR95562",
     "posting_count": 1
   },
   {
@@ -4101,7 +4133,7 @@
     "inferred_ats": "ashby",
     "inferred_board_token": "metalenz",
     "apply_url": "https://jobs.ashbyhq.com/metalenz/979c12dd-e71a-41b5-9c5f-a0d7204a22f6/application?embed=true",
-    "posting_count": 2
+    "posting_count": 3
   },
   {
     "slug": "metamorphic",
@@ -4296,6 +4328,14 @@
     "posting_count": 1
   },
   {
+    "slug": "nasa-jet-propulsion-laboratory",
+    "name": "NASA Jet Propulsion Laboratory",
+    "inferred_ats": "workday",
+    "inferred_board_token": "citjpl.wd5.myworkdayjobs.com/Jobs",
+    "apply_url": "https://citjpl.wd5.myworkdayjobs.com/Jobs/job/JPL-Campus/Academic-Part-Time-Intern_R6220",
+    "posting_count": 1
+  },
+  {
     "slug": "national-indemnity-company",
     "name": "National Indemnity Company",
     "inferred_ats": "workday",
@@ -4357,14 +4397,6 @@
     "inferred_ats": "workday",
     "inferred_board_token": "ncratleos.wd1.myworkdayjobs.com/ext_intern",
     "apply_url": "https://ncratleos.wd1.myworkdayjobs.com/ext_intern/job/ATLANTA-GA-USA/Data-Science-Intern_R1154686",
-    "posting_count": 1
-  },
-  {
-    "slug": "ncr-voyix",
-    "name": "NCR Voyix",
-    "inferred_ats": "workday",
-    "inferred_board_token": "ncr.wd1.myworkdayjobs.com/ext_us",
-    "apply_url": "https://ncr.wd1.myworkdayjobs.com/ext_us/job/FLORIDA-VIRTUAL-USA/Software-Engineer-Fellow_R0158700",
     "posting_count": 1
   },
   {
@@ -4590,6 +4622,14 @@
     "inferred_board_token": "nox-metals",
     "apply_url": "https://jobs.ashbyhq.com/nox-metals/c5ae2170-dc13-4b1b-b6f6-a46fed6a7a68/application?embed=true",
     "posting_count": 1
+  },
+  {
+    "slug": "nrdc",
+    "name": "NRDC",
+    "inferred_ats": "icims",
+    "inferred_board_token": "careers-nrdc",
+    "apply_url": "https://careers-nrdc.icims.com/jobs/6046/job?mobile=true&needsRedirect=false",
+    "posting_count": 2
   },
   {
     "slug": "nubank",
@@ -4877,7 +4917,7 @@
     "inferred_ats": "workday",
     "inferred_board_token": "parsons.wd5.myworkdayjobs.com/search",
     "apply_url": "https://parsons.wd5.myworkdayjobs.com/en-US/search/job/US---VA-Centreville/Software-Engineer-Co-Op---TS-SCI_R187147",
-    "posting_count": 3
+    "posting_count": 4
   },
   {
     "slug": "patreon",
@@ -4933,7 +4973,7 @@
     "inferred_ats": "icims",
     "inferred_board_token": "careers-peraton",
     "apply_url": "https://careers-peraton.icims.com/jobs/169665/job?mobile=true&needsRedirect=false",
-    "posting_count": 17
+    "posting_count": 15
   },
   {
     "slug": "pernod-ricard-cr-ateurs-de-convivialit",
@@ -5397,7 +5437,7 @@
     "inferred_ats": "smartrecruiters",
     "inferred_board_token": "RenesasElectronics",
     "apply_url": "https://jobs.smartrecruiters.com/RenesasElectronics/744000157802490",
-    "posting_count": 4
+    "posting_count": 3
   },
   {
     "slug": "republic-airways",
@@ -5533,7 +5573,7 @@
     "inferred_ats": "smartrecruiters",
     "inferred_board_token": "BoschGroup",
     "apply_url": "https://jobs.smartrecruiters.com/BoschGroup/744000146524429",
-    "posting_count": 7
+    "posting_count": 6
   },
   {
     "slug": "roboforce",
@@ -5600,6 +5640,14 @@
     "posting_count": 2
   },
   {
+    "slug": "rr-donnelley",
+    "name": "RR Donnelley",
+    "inferred_ats": "smartrecruiters",
+    "inferred_board_token": "RRDonnelley",
+    "apply_url": "https://jobs.smartrecruiters.com/RRDonnelley/744000159883639",
+    "posting_count": 2
+  },
+  {
     "slug": "rsm",
     "name": "RSM",
     "inferred_ats": "workday",
@@ -5638,6 +5686,14 @@
     "inferred_board_token": "ryan.wd1.myworkdayjobs.com/Students-Graduates",
     "apply_url": "https://ryan.wd1.myworkdayjobs.com/Students-Graduates/job/Plano/Summer-2027-Intern--Application-Development_R0020820",
     "posting_count": 8
+  },
+  {
+    "slug": "s-p-global",
+    "name": "S&P Global",
+    "inferred_ats": "workday",
+    "inferred_board_token": "spgi.wd5.myworkdayjobs.com/SPGI_Careers",
+    "apply_url": "https://spgi.wd5.myworkdayjobs.com/en-US/SPGI_Careers/job/New-York-NY/Summer-Intern--Product-Management_332679-1",
+    "posting_count": 1
   },
   {
     "slug": "sage",
@@ -5765,7 +5821,7 @@
     "inferred_ats": "workday",
     "inferred_board_token": "semtech.wd1.myworkdayjobs.com/SemtechCareers",
     "apply_url": "https://semtech.wd1.myworkdayjobs.com/SemtechCareers/job/CAN---Burlington-ON/Digital-IC-Design-Engineering-Intern_REQ3621",
-    "posting_count": 16
+    "posting_count": 15
   },
   {
     "slug": "sensata",
@@ -5852,8 +5908,8 @@
     "name": "Signify",
     "inferred_ats": "workday",
     "inferred_board_token": "lighting.wd3.myworkdayjobs.com/jobs-and-careers",
-    "apply_url": "https://lighting.wd3.myworkdayjobs.com/jobs-and-careers/job/Peachtree-City/Electrical-Engineer-Intern--Cooper-Lighting-Solutions---Spring-2027_366726",
-    "posting_count": 3
+    "apply_url": "https://lighting.wd3.myworkdayjobs.com/jobs-and-careers/job/Peachtree-City/Product-Management-Intern--Cooper-Lighting-Solutions---Spring-2027_366870",
+    "posting_count": 2
   },
   {
     "slug": "signifyd",
@@ -5972,8 +6028,8 @@
     "name": "Sonos",
     "inferred_ats": "workday",
     "inferred_board_token": "sonos.wd1.myworkdayjobs.com/Sonos",
-    "apply_url": "https://sonos.wd1.myworkdayjobs.com/Sonos/job/Seattle-WA/Software-Product-Management-Intern--Seattle-_R2866-1",
-    "posting_count": 5
+    "apply_url": "https://sonos.wd1.myworkdayjobs.com/Sonos/job/Boston-MA/Software-Engineering-Intern--Boston-_R2882-1",
+    "posting_count": 4
   },
   {
     "slug": "sophinea",
@@ -6189,7 +6245,7 @@
     "inferred_ats": "icims",
     "inferred_board_token": "careers-sig",
     "apply_url": "https://careers-sig.icims.com/jobs/10785/job?mobile=true&needsRedirect=false",
-    "posting_count": 17
+    "posting_count": 15
   },
   {
     "slug": "swbc",
@@ -6336,14 +6392,6 @@
     "posting_count": 3
   },
   {
-    "slug": "tenet3",
-    "name": "Tenet3",
-    "inferred_ats": "greenhouse",
-    "inferred_board_token": "tenet3",
-    "apply_url": "https://job-boards.greenhouse.io/tenet3/jobs/8878874002",
-    "posting_count": 1
-  },
-  {
     "slug": "texas-rangers",
     "name": "Texas Rangers",
     "inferred_ats": "workday",
@@ -6421,7 +6469,7 @@
     "inferred_ats": "workday",
     "inferred_board_token": "rb.wd5.myworkdayjobs.com/FRS",
     "apply_url": "https://rb.wd5.myworkdayjobs.com/en-US/FRS/job/Chicago-IL/Summer-2027-Intern-Computer-Science-and-Software-Engineering_R-0000033637",
-    "posting_count": 7
+    "posting_count": 8
   },
   {
     "slug": "the-focusrite-group",
@@ -6573,7 +6621,7 @@
     "inferred_ats": "lever",
     "inferred_board_token": "tri",
     "apply_url": "https://jobs.lever.co/tri/63d61db3-ac43-4c0d-8b9b-5006e3b92149/apply",
-    "posting_count": 19
+    "posting_count": 18
   },
   {
     "slug": "tpg",
@@ -6684,7 +6732,7 @@
     "name": "Uline",
     "inferred_ats": "workday",
     "inferred_board_token": "uline.wd1.myworkdayjobs.com/Uline_Careers",
-    "apply_url": "https://uline.wd1.myworkdayjobs.com/en-US/Uline_Careers/job/Pleasant-Prairie-WI/Marketing-Internship---Summer-2027_R265940",
+    "apply_url": "https://uline.wd1.myworkdayjobs.com/en-US/Uline_Careers/job/Pleasant-Prairie-WI/Operations-Analyst-Internship---Summer-2027_R268435",
     "posting_count": 5
   },
   {
@@ -7196,8 +7244,8 @@
     "name": "Winsupply",
     "inferred_ats": "smartrecruiters",
     "inferred_board_token": "Winsupply1",
-    "apply_url": "https://jobs.smartrecruiters.com/Winsupply1/3743990015014717",
-    "posting_count": 2
+    "apply_url": "https://jobs.smartrecruiters.com/Winsupply1/3743990015046116",
+    "posting_count": 1
   },
   {
     "slug": "wolf-company",
@@ -7292,8 +7340,8 @@
     "name": "Zebra Technologies",
     "inferred_ats": "workday",
     "inferred_board_token": "zebra.wd501.myworkdayjobs.com/Zebra_careers",
-    "apply_url": "https://zebra.wd501.myworkdayjobs.com/Zebra_careers/job/Holtsville-New-York/XMLNAME-2027-Summer-Internship--US----Mechanical-Engineer_JR103627",
-    "posting_count": 11
+    "apply_url": "https://zebra.wd501.myworkdayjobs.com/Zebra_careers/job/Lincolnshire-Illinois/XMLNAME-2027-Summer-Internship--US----Product-Management_JR103652",
+    "posting_count": 10
   },
   {
     "slug": "zekelman-industries",

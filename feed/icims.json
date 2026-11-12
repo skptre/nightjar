@@ -1,6 +1,6 @@
 {
   "shard_id": "icims",
-  "updated_at": "2026-11-12T16:18:49Z",
+  "updated_at": "2026-11-12T22:24:30Z",
   "count": 4,
   "postings": {
     "21a65535d7f89eae": {
@@ -18,7 +18,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-17T04:30:29Z",
-      "last_seen_at": "2026-11-12T16:18:49Z",
+      "last_seen_at": "2026-11-12T22:24:30Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -33,7 +33,7 @@
       "description_ref": {
         "sha256": "e6781c82261dc36b7d1eb7af57bd45901262160c18b7b16f85d0d6f95155be77",
         "pack": "details/descriptions-e.json",
-        "pack_sha256": "08c7b59233365f6e1e45217045a21aa0b7b494bd841957596e46c1278a4a338f",
+        "pack_sha256": "ad2deb2a6bdf6e331d828ce87f59666ce6b4a6611032be4bb9f51fadc633143a",
         "status": "stale"
       }
     },
@@ -52,7 +52,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-21T04:32:28Z",
-      "last_seen_at": "2026-11-12T16:18:49Z",
+      "last_seen_at": "2026-11-12T22:24:30Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -67,7 +67,7 @@
       "description_ref": {
         "sha256": "fe120f9a97fd679b0c1983d7e2696e05b984d780c539c27c6ca9e6ab99f1d331",
         "pack": "details/descriptions-f.json",
-        "pack_sha256": "5261e1e6e7df789edaf33d1fbce3e88096cad4afc339be34d60a1c3fcf22a2fb",
+        "pack_sha256": "c44192221180a2b9a70eefe526e905c1e6fa6b30dcfdea4f9d01760370931296",
         "status": "available"
       }
     },
@@ -86,7 +86,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-28T19:47:07Z",
-      "last_seen_at": "2026-11-12T16:18:49Z",
+      "last_seen_at": "2026-11-12T22:24:30Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -101,7 +101,7 @@
       "description_ref": {
         "sha256": "255a3395286269ebd7d2f3dde716ed7c10fbfa1c2a9eca0b669315d43f5219d3",
         "pack": "details/descriptions-2.json",
-        "pack_sha256": "3ec926ad9e27bfe17cde46b0565e79f79ec804878ea75903a5886c208d3aae91",
+        "pack_sha256": "d45aa36ed93613105c5b082795aac16b76e4be69af54fadab61b78d1f942e2d4",
         "status": "available"
       }
     },
@@ -120,7 +120,7 @@
       "ats": "icims",
       "posted_at": null,
       "first_seen_at": "2026-10-19T20:06:44Z",
-      "last_seen_at": "2026-11-12T16:18:49Z",
+      "last_seen_at": "2026-11-12T22:24:30Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -135,7 +135,7 @@
       "description_ref": {
         "sha256": "8216a514d7d77ce106058ec7842f36e3c756c61592b16040db7fe39e5fffc5b1",
         "pack": "details/descriptions-8.json",
-        "pack_sha256": "7105f374ef998af249dbe281e0aaf4c8f4f3c3ac559da9688f84bae6c11434a9",
+        "pack_sha256": "b31c3e9ba740bad9ec13b676f241c36871c6674e066cca79b7d88dcdbb3f9621",
         "status": "stale"
       }
     }

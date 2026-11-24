@@ -1,49 +1,67 @@
 {
   "version": 1,
-  "updated_at": "2026-11-23T22:51:38Z",
-  "total_count": 11069,
+  "updated_at": "2026-11-24T06:51:27Z",
+  "total_count": 11353,
   "shards": [
     {
       "id": "ashby",
-      "count": 195,
-      "sha256": "e7e5b6bbca662dd477e62f0ad6e533c47a0e54deefcce531fd6477d8bc0cd03e",
-      "updated_at": "2026-11-23T22:51:38Z"
+      "count": 196,
+      "sha256": "769f4bb88f626e359c7cf4fe0e7d6dee6c825da2a7f179b519ba891754e4c7e8",
+      "updated_at": "2026-11-24T06:51:27Z"
+    },
+    {
+      "id": "eightfold",
+      "count": 56,
+      "sha256": "cc3b2644d8f63b7f78c9fdd094938c4427e8b328a3b52cd2b1154fef8afff39e",
+      "updated_at": "2026-11-24T06:51:27Z"
     },
     {
       "id": "greenhouse",
-      "count": 878,
-      "sha256": "6c437b13dd0d80ccd25608692cef0ad31052477242278d19321429fad4083da0",
-      "updated_at": "2026-11-23T22:51:38Z"
+      "count": 891,
+      "sha256": "9ff90e175a78dddbec8115aa9c3fd93019c5fbca4d9999a324d914023e07f726",
+      "updated_at": "2026-11-24T06:51:27Z"
     },
     {
       "id": "icims",
       "count": 4,
-      "sha256": "77e1ec8c79e22cdfdd847094dd31098fe5ac1b57f3eb693c9c33caeaeb0fcf2c",
-      "updated_at": "2026-11-23T22:51:38Z"
+      "sha256": "c37d80a0247c67c8c0ca985e06aadc7938cbd0f1fa302c6124312488f5a02bd3",
+      "updated_at": "2026-11-24T06:51:27Z"
     },
     {
       "id": "lever",
-      "count": 135,
-      "sha256": "6e5d6288eab2e0f53e3632e89e38e4c0a72788c6638c4aadfa4550b57f459839",
-      "updated_at": "2026-11-23T22:51:38Z"
+      "count": 147,
+      "sha256": "267abae6108accc9e372d86f55a1b3640357d93ae87181f0df669cea13f2cb60",
+      "updated_at": "2026-11-24T06:51:27Z"
+    },
+    {
+      "id": "oracle_careers",
+      "count": 4,
+      "sha256": "1b1241cbbda228dd22ddcec148f0f5268519bf341826cc568e8a817566879dc0",
+      "updated_at": "2026-11-24T06:51:27Z"
+    },
+    {
+      "id": "public_careers",
+      "count": 134,
+      "sha256": "93e136b3ed5b1d726286ba27e77c76dea917efab10e55696d2079e44907885b0",
+      "updated_at": "2026-11-24T06:51:27Z"
     },
     {
       "id": "simplify",
-      "count": 9167,
-      "sha256": "3a996c08d9d518ba1cb05df682b41edaeb641fbd81be4cd6f7b0b4ec7ab83565",
-      "updated_at": "2026-11-23T22:51:38Z"
+      "count": 9159,
+      "sha256": "8ae40f1bca4603f2cc99daa83a79f5c6f10d5bc8b6c7f5bda8d8ccc01175a159",
+      "updated_at": "2026-11-24T06:51:27Z"
     },
     {
       "id": "smartrecruiters",
-      "count": 189,
-      "sha256": "dea5ce8a880e65d29df09aa042c5ddf184747e2118edc8c3080ff865f5121199",
-      "updated_at": "2026-11-23T22:51:38Z"
+      "count": 223,
+      "sha256": "7b642d9a9956da81e47b73ed97bc5041f1eb8ebd6f608d1656181733f6898ec4",
+      "updated_at": "2026-11-24T06:51:27Z"
     },
     {
       "id": "workday",
-      "count": 501,
-      "sha256": "ad6911a397c583fc4cf7a7dab4405af5ea96b241b638ca17d90fb40a0bd47f6e",
-      "updated_at": "2026-11-23T22:51:38Z"
+      "count": 539,
+      "sha256": "36339288a6275b919d86e1f57484acd77aa66c799ae0df3719165fd2b560b9d3",
+      "updated_at": "2026-11-24T06:51:27Z"
     }
   ],
   "companies": {
@@ -107,6 +125,10 @@
       "name": "Allen Control Systems",
       "typical_open": null
     },
+    "amazon": {
+      "name": "Amazon",
+      "typical_open": null
+    },
     "amcor": {
       "name": "Amcor",
       "typical_open": null
@@ -145,6 +167,10 @@
     },
     "appian": {
       "name": "Appian",
+      "typical_open": null
+    },
+    "apple": {
+      "name": "Apple",
       "typical_open": null
     },
     "applied-intuition": {
@@ -699,6 +725,10 @@
       "name": "GitLab",
       "typical_open": null
     },
+    "google": {
+      "name": "Google",
+      "typical_open": null
+    },
     "granola": {
       "name": "Granola",
       "typical_open": null
@@ -1031,6 +1061,10 @@
       "name": "Micron Technology",
       "typical_open": null
     },
+    "microsoft": {
+      "name": "Microsoft",
+      "typical_open": null
+    },
     "midjourney": {
       "name": "Midjourney",
       "typical_open": null
@@ -1081,6 +1115,10 @@
     },
     "neros": {
       "name": "Neros",
+      "typical_open": null
+    },
+    "netflix": {
+      "name": "Netflix",
       "typical_open": null
     },
     "neuralink": {

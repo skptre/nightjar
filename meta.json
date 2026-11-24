@@ -1,43 +1,68 @@
 {
-  "updated_at": "2026-11-23T22:51:38Z",
-  "sha256": "957654b0d275b5e75d4b2380361b60e64fe3b9a7f9e2146c1a8434a382ab8b53",
-  "count": 11069,
+  "updated_at": "2026-11-24T06:51:27Z",
+  "sha256": "9e00f3d5e2ab8c80ce8eea03aafe06a6cd14db1571f9da09cc325e319c822aea",
+  "count": 11353,
   "sharded": true,
   "shards": {
     "ashby": {
-      "sha256": "e7e5b6bbca662dd477e62f0ad6e533c47a0e54deefcce531fd6477d8bc0cd03e",
-      "count": 195,
-      "updated_at": "2026-11-23T22:51:38Z"
+      "sha256": "769f4bb88f626e359c7cf4fe0e7d6dee6c825da2a7f179b519ba891754e4c7e8",
+      "count": 196,
+      "updated_at": "2026-11-24T06:51:27Z",
+      "path": "snapshots/769f4bb88f626e359c7cf4fe0e7d6dee6c825da2a7f179b519ba891754e4c7e8.json"
+    },
+    "eightfold": {
+      "sha256": "cc3b2644d8f63b7f78c9fdd094938c4427e8b328a3b52cd2b1154fef8afff39e",
+      "count": 56,
+      "updated_at": "2026-11-24T06:51:27Z",
+      "path": "snapshots/cc3b2644d8f63b7f78c9fdd094938c4427e8b328a3b52cd2b1154fef8afff39e.json"
     },
     "greenhouse": {
-      "sha256": "6c437b13dd0d80ccd25608692cef0ad31052477242278d19321429fad4083da0",
-      "count": 878,
-      "updated_at": "2026-11-23T22:51:38Z"
+      "sha256": "9ff90e175a78dddbec8115aa9c3fd93019c5fbca4d9999a324d914023e07f726",
+      "count": 891,
+      "updated_at": "2026-11-24T06:51:27Z",
+      "path": "snapshots/9ff90e175a78dddbec8115aa9c3fd93019c5fbca4d9999a324d914023e07f726.json"
     },
     "icims": {
-      "sha256": "77e1ec8c79e22cdfdd847094dd31098fe5ac1b57f3eb693c9c33caeaeb0fcf2c",
+      "sha256": "c37d80a0247c67c8c0ca985e06aadc7938cbd0f1fa302c6124312488f5a02bd3",
       "count": 4,
-      "updated_at": "2026-11-23T22:51:38Z"
+      "updated_at": "2026-11-24T06:51:27Z",
+      "path": "snapshots/c37d80a0247c67c8c0ca985e06aadc7938cbd0f1fa302c6124312488f5a02bd3.json"
     },
     "lever": {
-      "sha256": "6e5d6288eab2e0f53e3632e89e38e4c0a72788c6638c4aadfa4550b57f459839",
-      "count": 135,
-      "updated_at": "2026-11-23T22:51:38Z"
+      "sha256": "267abae6108accc9e372d86f55a1b3640357d93ae87181f0df669cea13f2cb60",
+      "count": 147,
+      "updated_at": "2026-11-24T06:51:27Z",
+      "path": "snapshots/267abae6108accc9e372d86f55a1b3640357d93ae87181f0df669cea13f2cb60.json"
+    },
+    "oracle_careers": {
+      "sha256": "1b1241cbbda228dd22ddcec148f0f5268519bf341826cc568e8a817566879dc0",
+      "count": 4,
+      "updated_at": "2026-11-24T06:51:27Z",
+      "path": "snapshots/1b1241cbbda228dd22ddcec148f0f5268519bf341826cc568e8a817566879dc0.json"
+    },
+    "public_careers": {
+      "sha256": "93e136b3ed5b1d726286ba27e77c76dea917efab10e55696d2079e44907885b0",
+      "count": 134,
+      "updated_at": "2026-11-24T06:51:27Z",
+      "path": "snapshots/93e136b3ed5b1d726286ba27e77c76dea917efab10e55696d2079e44907885b0.json"
     },
     "simplify": {
-      "sha256": "3a996c08d9d518ba1cb05df682b41edaeb641fbd81be4cd6f7b0b4ec7ab83565",
-      "count": 9167,
-      "updated_at": "2026-11-23T22:51:38Z"
+      "sha256": "8ae40f1bca4603f2cc99daa83a79f5c6f10d5bc8b6c7f5bda8d8ccc01175a159",
+      "count": 9159,
+      "updated_at": "2026-11-24T06:51:27Z",
+      "path": "snapshots/8ae40f1bca4603f2cc99daa83a79f5c6f10d5bc8b6c7f5bda8d8ccc01175a159.json"
     },
     "smartrecruiters": {
-      "sha256": "dea5ce8a880e65d29df09aa042c5ddf184747e2118edc8c3080ff865f5121199",
-      "count": 189,
-      "updated_at": "2026-11-23T22:51:38Z"
+      "sha256": "7b642d9a9956da81e47b73ed97bc5041f1eb8ebd6f608d1656181733f6898ec4",
+      "count": 223,
+      "updated_at": "2026-11-24T06:51:27Z",
+      "path": "snapshots/7b642d9a9956da81e47b73ed97bc5041f1eb8ebd6f608d1656181733f6898ec4.json"
     },
     "workday": {
-      "sha256": "ad6911a397c583fc4cf7a7dab4405af5ea96b241b638ca17d90fb40a0bd47f6e",
-      "count": 501,
-      "updated_at": "2026-11-23T22:51:38Z"
+      "sha256": "36339288a6275b919d86e1f57484acd77aa66c799ae0df3719165fd2b560b9d3",
+      "count": 539,
+      "updated_at": "2026-11-24T06:51:27Z",
+      "path": "snapshots/36339288a6275b919d86e1f57484acd77aa66c799ae0df3719165fd2b560b9d3.json"
     }
   }
 }

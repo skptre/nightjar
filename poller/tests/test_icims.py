@@ -76,8 +76,10 @@ class TestICIMSFetch:
         # MockTransport repeats the last response; identical ids -> no new -> stop.
         transport = MockTransport([html_response(_html("search_page1.html"))])
         client = await make_mock_client(transport)
-        raw = await ICIMSAdapter().fetch(client, _company(), _company().sources[0])
+        adapter = ICIMSAdapter()
+        raw = await adapter.fetch(client, _company(), _company().sources[0])
         assert len(raw) == 2
+        assert adapter.potentially_truncated
         assert len(transport.requests) == 3  # page 0 (new) + page 1 (repeat -> stop)
         await client.close()
 

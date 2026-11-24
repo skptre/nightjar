@@ -4,6 +4,13 @@ on:
   schedule:
     - cron: "3,18,33,48 * * * *"
   workflow_dispatch:
+    inputs:
+      approve_drop:
+        description: 'Reviewed provider:company count drop (optional, one source)'
+        required: false
+        type: string
+  repository_dispatch:
+    types: [poll-feed]
 
 concurrency:
   group: poller
@@ -32,10 +39,38 @@ jobs:
         run: uv sync
 
       - name: Run poller
+        id: poller
+        continue-on-error: true
         env:
           USAJOBS_API_KEY: ${{ secrets.USAJOBS_API_KEY || secrets.USAJOBS_KEY }}
           USAJOBS_EMAIL: ${{ secrets.USAJOBS_EMAIL }}
-        run: uv run python -m poller --once
+          APPROVE_DROP: ${{ inputs.approve_drop }}
+        shell: bash
+        run: |
+          args=(--once --fail-on-degraded)
+          if [ -n "$APPROVE_DROP" ]; then args+=(--approve-drop "$APPROVE_DROP"); fi
+          uv run python -m poller "${args[@]}"
+
+      - name: Record source health
+        if: always()
+        shell: bash
+        run: |
+          echo '### Collection health' >> "$GITHUB_STEP_SUMMARY"
+          echo '```json' >> "$GITHUB_STEP_SUMMARY"
+          uv run python -m poller.tools.health >> "$GITHUB_STEP_SUMMARY" || true
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Preserve discovery candidates
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: registry-candidates
+          path: data/registry_candidates.json
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Validate publication
+        run: uv run python -m poller.tools.validate_publication
 
       - name: Check for changes
         id: changes
@@ -64,3 +99,7 @@ jobs:
           publish_branch: gh-pages
           user_name: 'nightjar-bot'
           user_email: 'nightjar-bot@users.noreply.github.com'
+
+      - name: Fail visibly after preserving usable discoveries
+        if: always() && steps.poller.outcome == 'failure'
+        run: exit 1

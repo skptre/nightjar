@@ -58,6 +58,7 @@ class AshbyAdapter(SourceAdapter):
         company: Company,
         source: SourceConfig,
     ) -> list[RawPosting]:
+        self.potentially_truncated = False
         url = ASHBY_API.format(slug=source.board_token)
         data: Any = await client.get_json(
             url,
@@ -73,7 +74,7 @@ class AshbyAdapter(SourceAdapter):
                 f"expected object with 'jobs' key, got {type(data).__name__}",
             )
 
-        jobs = data["jobs"]
+        jobs = self.listing_items(data, "jobs", "ashby", company.slug)
         if not isinstance(jobs, list):
             raise SourceParseError(
                 "ashby",
@@ -86,6 +87,7 @@ class AshbyAdapter(SourceAdapter):
             try:
                 raw_postings.append(self._parse_job(job, company))
             except (KeyError, TypeError) as exc:
+                self.potentially_truncated = True
                 logger.warning(
                     "[ashby:%s] skipping malformed job: %s", company.slug, exc
                 )

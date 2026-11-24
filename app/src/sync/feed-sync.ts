@@ -1,4 +1,5 @@
-import type { Database } from '@/db/database';
+import { yieldToUI } from '@/lib/background';
+import type { Database, SqlValue } from '@/db/database';
 import { isTauri } from '@/lib/platform';
 import { DescriptionPackCache, hydrateDescriptions, type DescriptionReference } from './description-packs';
 
@@ -19,6 +20,7 @@ export interface FeedPosting {
   closed_at: string | null;
   description_text?: string;
   description_ref?: DescriptionReference;
+  description_pending?: boolean;
   description_status?: string;
   description_version?: number;
   department?: string | null;
@@ -52,6 +54,7 @@ export interface ShardInfo {
   sha256: string;
   count: number;
   updated_at: string;
+  path?: string;
 }
 
 export interface MetaData {
@@ -76,7 +79,9 @@ const LAST_SYNCED_KEY = 'nightjar_last_synced_at';
 const LAST_MODIFIED_KEY = 'nightjar_feed_last_modified';
 const SHARD_HASHES_KEY = 'nightjar_shard_hashes';
 const CACHE_INTEGRITY_KEY = 'nightjar_cache_integrity';
-const CACHE_INTEGRITY_VERSION = 'tauri-atomic-batch-v1';
+const CACHE_INTEGRITY_VERSION = 'tauri-chunked-feed-v1';
+const CACHED_OPEN_COUNT_KEY = 'nightjar_cached_open_count';
+const NATIVE_FEED_BATCH_SIZE = 200;
 const PRODUCTION_FEED_BASE_URL = 'https://raw.githubusercontent.com/skptre/nightjar/main/data';
 const FETCH_TIMEOUT_MS = 15_000;
 export function getFeedFreshness(): {updatedAt: string | null; source: string | null} {
@@ -152,7 +157,7 @@ export async function fetchMeta(baseUrl?: string): Promise<MetaData> {
   return data;
 }
 
-export async function fetchFeed(baseUrl?: string, forceRefresh = false): Promise<FeedData | null> {
+export async function fetchFeed(baseUrl?: string, forceRefresh = false, expectedMeta?: MetaData): Promise<FeedData | null> {
   const base = baseUrl ?? getFeedBaseUrl();
   const url = `${base}/feed.json`;
   try {
@@ -171,15 +176,21 @@ export async function fetchFeed(baseUrl?: string, forceRefresh = false): Promise
       throw new Error(`Feed fetch failed (HTTP ${String(response.status)})`);
     }
 
-    const responseLastModified = response.headers.get('Last-Modified');
-    if (responseLastModified) {
-      setStoredLastModified(responseLastModified);
+    const text = await response.text();
+    if (expectedMeta && await computeSha256(text.replace(/\r\n/g, '\n')) !== expectedMeta.sha256) {
+      throw new Error('Feed checksum mismatch; retry the update');
     }
-
-    const data: unknown = await response.json();
+    const data: unknown = JSON.parse(text);
     if (!isFeedData(data)) {
       throw new Error('Feed response is not valid feed data');
     }
+    if (expectedMeta && (data.count !== expectedMeta.count
+        || Object.keys(data.postings).length !== data.count
+        || Object.entries(data.postings).some(([id, row]) => row.id !== id))) {
+      throw new Error('Feed count or posting identity mismatch');
+    }
+    const responseLastModified = response.headers.get('Last-Modified');
+    if (responseLastModified) setStoredLastModified(responseLastModified);
     return data;
   } catch (err) {
     if (err instanceof TypeError && err.message.includes('fetch')) {
@@ -269,7 +280,10 @@ export async function fetchShard(
   documentCache?: DescriptionPackCache,
 ): Promise<ShardData> {
   const base = baseUrl ?? getFeedBaseUrl();
-  const url = `${base}/feed/${shardId}.json`;
+  if (expectedInfo.path && expectedInfo.path !== `snapshots/${expectedInfo.sha256}.json`) {
+    throw new ShardValidationError('Invalid immutable shard reference');
+  }
+  const url = `${base}/feed/${expectedInfo.path ?? `${shardId}.json`}`;
   const response = await fetchWithRetry(url);
   if (!response.ok) {
     throw new Error(`Shard fetch failed: ${shardId} (HTTP ${String(response.status)})`);
@@ -311,7 +325,7 @@ export async function fetchShard(
   }
 
   const cache = documentCache ?? createDocumentCache(base);
-  return { ...data, postings: await hydrateDescriptions(data.postings, cache) };
+  return { ...data, postings: await hydrateDescriptions(data.postings, cache, true) };
 }
 
 function createDocumentCache(base: string): DescriptionPackCache {
@@ -428,24 +442,62 @@ function setCacheIntegrityVersion(): void {
 }
 
 export async function syncFeed(db: Database, baseUrl?: string): Promise<SyncResult> {
-  if (!baseUrl && !import.meta.env.DEV && typeof navigator !== 'undefined' && !navigator.onLine) {
+  if (!baseUrl && typeof navigator !== 'undefined' && !navigator.onLine) {
     const count = await db.queryOne<{ count: number }>('SELECT COUNT(*) AS count FROM postings_cache');
-    if ((count?.count ?? 0) === 0) return syncFeedFromSource(db, '/data');
-    return { newPostingIds: [], updatedCount: 0, closedCount: 0,
-      totalCount: count!.count, skipped: false, error: 'Offline' };
+    const result = await useNewerBundledFeed(db, count?.count ?? 0, { newPostingIds: [], updatedCount: 0,
+      closedCount: 0, totalCount: count?.count ?? 0, skipped: false, error: 'Offline' });
+    return finalizeLocalCache(db, result);
   }
   const result = await syncFeedFromSource(db, baseUrl);
-  // Packaged MVPs include the public snapshot used to build them. If the remote
-  // feed is unreachable on a fresh launch, show that snapshot instead of nothing.
-  // Never replace an existing cache with an older bundled snapshot.
+  // The packaged feed can repair an empty or older cache when the remote feed is
+  // unavailable. A newer local cache must never be replaced by the bundle.
   if (result.error && !baseUrl && !import.meta.env.DEV) {
     const count = await db.queryOne<{ count: number }>('SELECT COUNT(*) AS count FROM postings_cache');
-    if ((count?.count ?? 0) === 0) {
-      const bundled = await syncFeedFromSource(db, '/data');
-      if (!bundled.error) return bundled;
-    }
+    return finalizeLocalCache(db, await useNewerBundledFeed(db, count?.count ?? 0, result));
   }
+  return finalizeLocalCache(db, result);
+}
+
+async function finalizeLocalCache(db: Database, result: SyncResult): Promise<SyncResult> {
+  // Keep the posting behind a saved application, but discard all other closed
+  // postings and their derived details. This also cleans up older installations.
+  const obsolete = await db.queryOne<{ count: number }>(`SELECT COUNT(*) AS count FROM postings_cache
+    WHERE closed_at IS NOT NULL AND id NOT IN (SELECT posting_id FROM applications)`);
+  if ((obsolete?.count ?? 0) > 0) {
+    const unusedClosed = `posting_id IN (
+      SELECT id FROM postings_cache WHERE closed_at IS NOT NULL
+        AND id NOT IN (SELECT posting_id FROM applications))`;
+    await db.batch([
+      { sql: `DELETE FROM job_details_cache WHERE ${unusedClosed}` },
+      { sql: `DELETE FROM postings_cache WHERE closed_at IS NOT NULL
+        AND id NOT IN (SELECT posting_id FROM applications)` },
+    ]);
+  }
+  if (result.error) return result;
+  const open = await db.queryOne<{ count: number }>(
+    'SELECT COUNT(*) AS count FROM postings_cache WHERE closed_at IS NULL');
+  try { localStorage.setItem(CACHED_OPEN_COUNT_KEY, String(open?.count ?? 0)); }
+  catch { /* A future sync can safely recheck the local cache. */ }
   return result;
+}
+
+async function useNewerBundledFeed(db: Database, cachedCount: number, failure: SyncResult): Promise<SyncResult> {
+  let bundledMeta: MetaData;
+  try { bundledMeta = await fetchMeta('/data'); } catch { return failure; }
+
+  if (cachedCount > 0) {
+    const publishedAt = getFeedFreshness().updatedAt;
+    const latestRow = publishedAt ? null : await db.queryOne<{ synced_at: string | null }>(
+      'SELECT MAX(synced_at) AS synced_at FROM postings_cache');
+    const cachedAt = Date.parse(publishedAt ?? latestRow?.synced_at ?? '');
+    const bundledAt = Date.parse(bundledMeta.updated_at);
+    const bundleIsNewer = Number.isFinite(cachedAt) && Number.isFinite(bundledAt)
+      ? bundledAt > cachedAt : bundledMeta.count > cachedCount;
+    if (!bundleIsNewer) return failure;
+  }
+
+  const bundled = await syncFeedFromSource(db, '/data');
+  return bundled.error ? failure : bundled;
 }
 
 async function syncFeedFromSource(
@@ -462,10 +514,15 @@ async function syncFeedFromSource(
 
   const storedHash = getStoredMetaHash();
   const localCount = await db.queryOne<{ count: number }>(
-    'SELECT COUNT(*) AS count FROM postings_cache',
+    'SELECT COUNT(*) AS count FROM postings_cache WHERE closed_at IS NULL',
   );
+  const recordedOpenCountText = localStorage.getItem(CACHED_OPEN_COUNT_KEY);
+  const recordedOpenCount = Number(recordedOpenCountText);
+  const hasRecordedOpenCount = recordedOpenCountText !== null
+    && Number.isSafeInteger(recordedOpenCount) && recordedOpenCount >= 0;
   const needsIntegrityRepair = isTauri() && getCacheIntegrityVersion() !== CACHE_INTEGRITY_VERSION;
-  const forceFullSync = needsIntegrityRepair || (localCount?.count ?? 0) < meta.count;
+  const forceFullSync = needsIntegrityRepair || !hasRecordedOpenCount
+    || (localCount?.count ?? 0) < recordedOpenCount;
   if (storedHash === meta.sha256 && !forceFullSync) {
     setLastSyncedAt(new Date().toISOString());
     recordFeedFreshness(meta, baseUrl);
@@ -481,7 +538,7 @@ async function syncFeedFromSource(
 
   let feed: FeedData | null;
   try {
-    feed = await fetchFeed(baseUrl, forceFullSync);
+    feed = await fetchFeed(baseUrl, true, meta);
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : 'Feed fetch failed';
     return { newPostingIds: [], updatedCount: 0, closedCount: 0, totalCount: 0, skipped: false, error: message };
@@ -527,9 +584,16 @@ async function syncFeedSharded(
   }
 
   const documentCache = createDocumentCache(baseUrl ?? getFeedBaseUrl());
-  const localDocuments = await db.query<{ description: string | null }>(
-    'SELECT description FROM postings_cache WHERE description IS NOT NULL');
-  await Promise.all(localDocuments.map(row => documentCache.remember(row.description ?? '')));
+  // Bound bridge payloads and hashing concurrency while refreshing changed shards.
+  let afterId = '';
+  for (;;) {
+    const documents = await db.query<{id: string; description: string}>(
+      `SELECT id,description FROM postings_cache WHERE id > ? AND description IS NOT NULL ORDER BY id LIMIT 25`, [afterId]);
+    if (!documents.length) break;
+    await Promise.all(documents.map(row => documentCache.remember(row.description, row.id)));
+    afterId = documents[documents.length - 1]!.id;
+    await yieldToUI();
+  }
   const shardResults = await Promise.allSettled(
     changedShardIds.map((id) => fetchShard(id, shards[id]!, baseUrl, documentCache)),
   );
@@ -549,7 +613,9 @@ async function syncFeedSharded(
     for (const [pid, posting] of Object.entries(result.value.postings)) {
       mergedPostings[pid] = posting;
     }
-    newShardHashes[shardId] = shards[shardId]!.sha256;
+    if (!Object.values(result.value.postings).some(posting => posting.description_pending)) {
+      newShardHashes[shardId] = shards[shardId]!.sha256;
+    }
   }
 
   if (failedShards.length > 0) {
@@ -581,11 +647,39 @@ async function syncFeedSharded(
 
   const result = await upsertShardedPostings(db, feed, changedShardIds, removedShardIds);
 
-  setStoredMetaHash(meta.sha256);
+  if (!Object.values(mergedPostings).some(posting => posting.description_pending)) {
+    setStoredMetaHash(meta.sha256);
+  }
   setStoredShardHashes(newShardHashes);
   setLastSyncedAt(new Date().toISOString());
 
   return result;
+}
+
+type FeedWrite = (sql: string, params?: SqlValue[]) => Promise<void>;
+
+async function applyFeedWrites(db: Database, apply: (write: FeedWrite) => Promise<void>): Promise<void> {
+  if (!isTauri()) {
+    await db.transaction(async transaction => apply((sql, params) => transaction.run(sql, params)));
+    return;
+  }
+
+  // Feed imports are idempotent. Commit small native batches so a large public
+  // snapshot never has to cross the WebView IPC bridge in one message. The feed
+  // manifest is recorded only after every batch succeeds, so an interrupted
+  // import is retried in full on the next sync.
+  let statements: Parameters<Database['batch']>[0] = [];
+  const flush = async (): Promise<void> => {
+    if (statements.length === 0) return;
+    const pending = statements;
+    statements = [];
+    await db.batch(pending);
+  };
+  await apply(async (sql, params) => {
+    statements.push(params ? { sql, params } : { sql });
+    if (statements.length >= NATIVE_FEED_BATCH_SIZE) await flush();
+  });
+  await flush();
 }
 
 async function upsertShardedPostings(
@@ -595,7 +689,7 @@ async function upsertShardedPostings(
   removedShardIds: string[],
 ): Promise<SyncResult> {
   const existingRows = await db.query<{ id: string; data: string }>(
-    'SELECT id, data FROM postings_cache',
+    "SELECT id, CASE WHEN json_valid(data) THEN json_object('source',json_extract(data,'$.source')) ELSE '{}' END AS data FROM postings_cache",
   );
 
   const existingById = new Map<string, string>();
@@ -604,25 +698,29 @@ async function upsertShardedPostings(
   }
 
   const now = new Date().toISOString();
+  const trackedIds = new Set((await db.query<{ posting_id: string }>('SELECT posting_id FROM applications'))
+    .map(row => row.posting_id));
   const newPostingIds: string[] = [];
   let updatedCount = 0;
   let closedCount = 0;
 
   const changedSources = new Set(changedShardIds);
 
-  await db.transaction(async (transaction) => {
+  await applyFeedWrites(db, async write => {
     for (const [id, posting] of Object.entries(feed.postings)) {
-      const postingJson = JSON.stringify(posting);
+      const {description_text: _description, ...metadata} = posting;
+      const postingJson = JSON.stringify(metadata);
 
       if (!existingById.has(id)) {
-        await transaction.run(
+        if (posting.closed_at && !trackedIds.has(id)) continue;
+        await write(
           `INSERT INTO postings_cache (id, data, description, first_seen_at, closed_at, synced_at)
            VALUES (?, ?, ?, ?, ?, ?)`,
           [id, postingJson, posting.description_text ?? null, posting.first_seen_at, posting.closed_at ?? null, now],
         );
-        newPostingIds.push(id);
+        if (!posting.closed_at) newPostingIds.push(id);
       } else {
-        await transaction.run(
+        await write(
           `UPDATE postings_cache
            SET data = ?,
                description = COALESCE(?, description),
@@ -664,7 +762,7 @@ async function upsertShardedPostings(
       try {
         const parsed = JSON.parse(existingData) as FeedPosting;
         if (changedSources.has(parsed.source) || removedShardIds.includes(parsed.source)) {
-          await transaction.run(
+          await write(
             'UPDATE postings_cache SET closed_at = COALESCE(closed_at, ?) WHERE id = ?',
             [now, existingId],
           );
@@ -676,7 +774,7 @@ async function upsertShardedPostings(
 
     if (feed.companies) {
       for (const [slug, companyMeta] of Object.entries(feed.companies)) {
-        await transaction.run(
+        await write(
           `INSERT OR REPLACE INTO companies_meta (slug, name, typical_open) VALUES (?, ?, ?)`,
           [slug, companyMeta.name, companyMeta.typical_open ?? null],
         );
@@ -696,6 +794,8 @@ async function upsertShardedPostings(
 export async function upsertPostings(db: Database, feed: FeedData): Promise<SyncResult> {
   const existingRows = await db.query<{ id: string }>('SELECT id FROM postings_cache');
   const existingIds = new Set(existingRows.map((r) => r.id));
+  const trackedIds = new Set((await db.query<{ posting_id: string }>('SELECT posting_id FROM applications'))
+    .map(row => row.posting_id));
 
   const now = new Date().toISOString();
   const newPostingIds: string[] = [];
@@ -704,20 +804,22 @@ export async function upsertPostings(db: Database, feed: FeedData): Promise<Sync
 
   const feedPostingIds = new Set<string>();
 
-  await db.transaction(async (transaction) => {
+  await applyFeedWrites(db, async write => {
     for (const [id, posting] of Object.entries(feed.postings)) {
       feedPostingIds.add(id);
-      const postingJson = JSON.stringify(posting);
+      const {description_text: _description, ...metadata} = posting;
+      const postingJson = JSON.stringify(metadata);
 
       if (!existingIds.has(id)) {
-        await transaction.run(
+        if (posting.closed_at && !trackedIds.has(id)) continue;
+        await write(
           `INSERT INTO postings_cache (id, data, description, first_seen_at, closed_at, synced_at)
            VALUES (?, ?, ?, ?, ?, ?)`,
           [id, postingJson, posting.description_text ?? null, posting.first_seen_at, posting.closed_at ?? null, now],
         );
-        newPostingIds.push(id);
+        if (!posting.closed_at) newPostingIds.push(id);
       } else {
-        await transaction.run(
+        await write(
           `UPDATE postings_cache
            SET data = ?,
                description = COALESCE(?, description),
@@ -758,7 +860,7 @@ export async function upsertPostings(db: Database, feed: FeedData): Promise<Sync
       // Locally entered tracker records are not governed by the public feed.
       if (existingId.startsWith('local-')) continue;
       if (!feedPostingIds.has(existingId)) {
-        await transaction.run(
+        await write(
           'UPDATE postings_cache SET closed_at = COALESCE(closed_at, ?) WHERE id = ?',
           [now, existingId],
         );
@@ -767,7 +869,7 @@ export async function upsertPostings(db: Database, feed: FeedData): Promise<Sync
 
     if (feed.companies) {
       for (const [slug, meta] of Object.entries(feed.companies)) {
-        await transaction.run(
+        await write(
           `INSERT OR REPLACE INTO companies_meta (slug, name, typical_open) VALUES (?, ?, ?)`,
           [slug, meta.name, meta.typical_open ?? null],
         );

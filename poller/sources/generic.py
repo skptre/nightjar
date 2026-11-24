@@ -874,6 +874,8 @@ class GenericAdapter(SourceAdapter):
                 if self._same_host(entry.url) and _looks_like_job_url(entry.url)
             )
         unique = {entry.url: entry for entry in jobs}
+        if queue:
+            self.potentially_truncated = True
         return (
             list(unique.values()),
             structured_success,
@@ -888,6 +890,7 @@ class GenericAdapter(SourceAdapter):
         source: SourceConfig,
     ) -> list[RawPosting]:
         self.extraction_status = "unsupported"
+        self.potentially_truncated = False
         self.quarantined_results = []
         self._request_count = 0
         try:
@@ -931,6 +934,7 @@ class GenericAdapter(SourceAdapter):
         feed_postings = list(robots_feed_postings)
         for feed_url in dict.fromkeys(feed_urls):
             if self._request_count >= MAX_COMPANY_REQUESTS or not self._same_host(feed_url):
+                self.potentially_truncated = True
                 continue
             text = await self._optional_text(client, feed_url, company)
             if text is None:
@@ -946,12 +950,16 @@ class GenericAdapter(SourceAdapter):
             saw_valid_feed = True
             feed_postings.extend(parsed_feed)
         if feed_postings:
+            # RSS/Atom feeds often contain only recent jobs. They are useful for
+            # discovery, but cannot establish that an older posting has closed.
+            self.potentially_truncated = True
             self.extraction_status = "supported"
             return _dedupe_raw(feed_postings + base_postings)
 
         page_postings = list(base_postings)
         for entry in job_pages:
             if self._request_count >= MAX_COMPANY_REQUESTS:
+                self.potentially_truncated = True
                 break
             page_html = await self._optional_text(client, entry.url, company)
             if page_html is None:
@@ -971,6 +979,8 @@ class GenericAdapter(SourceAdapter):
                 )
 
         if page_postings:
+            if self.quarantined_results or not job_pages:
+                self.potentially_truncated = True
             self.extraction_status = "supported"
             return _dedupe_raw(page_postings)
 
@@ -982,6 +992,8 @@ class GenericAdapter(SourceAdapter):
                 "unsupported: only low-confidence HTML heuristic results; quarantined",
             )
         if saw_valid_feed or sitemap_empty_is_authoritative:
+            if saw_valid_feed and not sitemap_empty_is_authoritative:
+                self.potentially_truncated = True
             self.extraction_status = "supported"
             return []
         raise SourceFetchError(

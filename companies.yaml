@@ -542,8 +542,9 @@
   name: Dell Technologies
   tags: [hardware, enterprise, round-rock-tx]
   sources:
-    - type: workday
-      board_token: dell.wd1.myworkdayjobs.com/External
+    - type: oracle_careers
+      board_token: enterpriseplatform.dell.com/CX_1001/careers
+      replaces: ["workday:dell"]
 
 - slug: hp
   name: HP Inc
@@ -1085,8 +1086,9 @@
   name: Shield AI
   tags: [defense, ai, san-diego]
   sources:
-    - type: ashby
-      board_token: shield-ai
+    - type: lever
+      board_token: shieldai
+      replaces: ["ashby:shield-ai"]
   seasonal_pattern: year_round
 
 - slug: skydio
@@ -1333,8 +1335,9 @@
   name: NIO
   tags: [ev, automotive, san-jose]
   sources:
-    - type: workday
-      board_token: nio.wd3.myworkdayjobs.com/NIO_Careers
+    - type: lever
+      board_token: nio-usa
+      replaces: ["workday:nio"]
 
 - slug: northrop-grumman
   name: Northrop Grumman
@@ -1495,8 +1498,9 @@
   name: CALSTART
   tags: [clean-energy, transportation, us]
   sources:
-    - type: lever
-      board_token: calstart
+    - type: recruitpro
+      board_token: calstart.recruitpro.com/659
+      replaces: ["lever:calstart"]
 
 - slug: diversified-automation
   name: Diversified Automation
@@ -2382,8 +2386,9 @@
   name: Postman
   tags: [developer-tools, api, sf]
   sources:
-    - type: greenhouse
-      board_token: postman
+    - type: workday
+      board_token: postman.wd108.myworkdayjobs.com/careers
+      replaces: ["greenhouse:postman"]
 
 - slug: asana
   name: Asana
@@ -2508,8 +2513,9 @@
   name: Marqeta
   tags: [fintech, card-issuing, oakland]
   sources:
-    - type: greenhouse
-      board_token: marqeta
+    - type: ashby
+      board_token: marqeta-inc
+      replaces: ["greenhouse:marqeta"]
 
 - slug: bungie
   name: Bungie
@@ -2827,8 +2833,9 @@
   name: Wayve
   tags: [av, ai, london]
   sources:
-    - type: greenhouse
+    - type: ashby
       board_token: wayve
+      replaces: ["greenhouse:wayve"]
 
 - slug: diligent-robotics
   name: Diligent Robotics
@@ -3129,3 +3136,43 @@
       board_token: NN
   high_priority: true
   seasonal_pattern: year_round
+
+- slug: netflix
+  name: Netflix
+  tags: [tech, us]
+  high_priority: true
+  sources:
+    - type: eightfold
+      board_token: explore.jobs.netflix.net/netflix.com
+
+- slug: microsoft
+  name: Microsoft
+  tags: [tech, us]
+  high_priority: true
+  sources:
+    - type: eightfold
+      board_token: apply.careers.microsoft.com/microsoft.com
+
+- slug: google
+  name: Google
+  tags: [tech, us]
+  high_priority: true
+  sources:
+    - type: public_careers
+      board_token: "https://www.google.com/about/careers/applications/jobs/results/?target_level=INTERN_AND_APPRENTICE&target_level=EARLY"
+
+- slug: apple
+  name: Apple
+  tags: [tech, us]
+  high_priority: true
+  sources:
+    - type: public_careers
+      board_token: "https://jobs.apple.com/en-us/search?team=internships-STDNT-INTRN"
+
+- slug: amazon
+  name: Amazon
+  tags: [tech, us]
+  high_priority: true
+  sources:
+    - type: public_careers
+      board_token: "https://www.amazon.jobs/en/search.json?base_query=Intern"

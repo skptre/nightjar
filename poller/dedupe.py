@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import dataclasses
+import re
 from collections import defaultdict
 from datetime import datetime
 from typing import TYPE_CHECKING, Any
@@ -12,6 +13,10 @@ if TYPE_CHECKING:
     from poller.models import Posting
 
 SOURCE_PRIORITY: dict[str, int] = {
+    "eightfold": 3,
+    "public_careers": 3,
+    "oracle_careers": 3,
+    "recruitpro": 3,
     "greenhouse": 0,
     "lever": 1,
     "ashby": 2,
@@ -37,8 +42,17 @@ TITLE_THRESHOLD = 95.0
 DATE_WINDOW_DAYS = 30
 
 _UNIVERSAL_STRIP_PARAMS = {
-    "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
-    "fbclid", "gclid", "mc_cid", "mc_eid", "ref", "source",
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_term",
+    "utm_content",
+    "fbclid",
+    "gclid",
+    "mc_cid",
+    "mc_eid",
+    "ref",
+    "source",
 }
 
 _PROVIDER_STRIP_PARAMS: dict[str, set[str]] = {
@@ -72,7 +86,11 @@ def canonicalize_url(
     provider_key = provider.lower() if provider else ""
     if provider_key in _PROVIDER_STRIP_PARAMS:
         params_to_strip |= _PROVIDER_STRIP_PARAMS[provider_key]
-    if has_source_job_id and provider_key in _PROVIDER_CONDITIONAL_STRIP:
+    if (
+        has_source_job_id
+        and provider_key in _PROVIDER_CONDITIONAL_STRIP
+        and re.search(r"/jobs/\d+(?:/|$)", path)
+    ):
         params_to_strip |= _PROVIDER_CONDITIONAL_STRIP[provider_key]
 
     query_dict = parse_qs(parsed.query, keep_blank_values=True)
@@ -150,7 +168,9 @@ def _get_existing_provenance(posting: Posting) -> list[dict[str, Any]]:
 
 def _merge(canonical: Posting, discarded: Posting) -> Posting:
     earliest = min(canonical.first_seen_at, discarded.first_seen_at)
-    merged_ids = list(canonical.merged_from) + [discarded.id]
+    merged_ids = sorted(
+        (set(canonical.merged_from) | set(discarded.merged_from) | {discarded.id}) - {canonical.id}
+    )
 
     existing_prov = _get_existing_provenance(canonical)
     discard_prov = _get_existing_provenance(discarded)
@@ -181,10 +201,16 @@ def _merge(canonical: Posting, discarded: Posting) -> Posting:
         merged_from=merged_ids,
         source_metadata=merged_metadata,
         description_text=canonical.description_text or discarded.description_text,
-        description_status=(canonical.description_status if canonical.description_text
-                            else discarded.description_status),
-        description_version=(canonical.description_version if canonical.description_text
-                             else discarded.description_version),
+        description_status=(
+            canonical.description_status
+            if canonical.description_text
+            else discarded.description_status
+        ),
+        description_version=(
+            canonical.description_version
+            if canonical.description_text
+            else discarded.description_version
+        ),
         department=canonical.department or discarded.department,
         compensation=canonical.compensation or discarded.compensation,
     )

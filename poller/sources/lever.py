@@ -8,6 +8,7 @@ from poller.descriptions import lever_description
 from poller.exceptions import SourceParseError
 from poller.models import Company, Posting, RawPosting, SourceConfig, compute_posting_id
 from poller.normalize import clean_title, normalize_location, normalize_locations
+from poller.pagination import PaginationGuard
 from poller.sources.base import SourceAdapter
 
 logger = logging.getLogger(__name__)
@@ -43,6 +44,7 @@ class LeverAdapter(SourceAdapter):
 
         all_postings: list[RawPosting] = []
         skip = 0
+        guard = PaginationGuard("lever", company.slug)
 
         while True:
             params = {"mode": "json", "limit": str(PAGE_SIZE), "skip": str(skip)}
@@ -60,23 +62,24 @@ class LeverAdapter(SourceAdapter):
                     f"expected JSON array, got {type(data).__name__}",
                 )
 
+            page_ids: list[str] = []
             for job in data:
                 try:
-                    all_postings.append(self._parse_job(job, company))
+                    raw = self._parse_job(job, company)
+                    all_postings.append(raw)
+                    page_ids.append(raw.source_job_id)
                 except (KeyError, TypeError) as exc:
+                    self.potentially_truncated = True
                     logger.warning(
                         "[lever:%s] skipping malformed job: %s", company.slug, exc
                     )
 
-            if len(data) < PAGE_SIZE:
+            if guard.observe(page_ids, terminal=len(data) < PAGE_SIZE):
                 break
 
             skip += PAGE_SIZE
 
-        if len(all_postings) >= TRUNCATION_THRESHOLD:
-            self.potentially_truncated = True
-
-        return all_postings
+        return list({posting.source_job_id: posting for posting in all_postings}.values())
 
     def _parse_job(self, job: dict[str, Any], company: Company) -> RawPosting:
         categories = job.get("categories", {}) or {}

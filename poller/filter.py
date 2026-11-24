@@ -23,14 +23,16 @@ _STUDENT_ROLE_PATTERNS: list[re.Pattern[str]] = [
         r"\bco[\s-]?op\b",
         r"\bcooperative\s+education\b",
         r"\bstudent\s+trainee\b",
-
+        r"\bstudent\s+worker\b",
+        r"\b(?:undergraduate|graduate|student)\s+research\s+assistant\b",
+        r"\b(?:undergraduate|graduate)\s+student\b",
+        r"\bapprentice\b",
         # Seasonal program terms
         r"\bsummer\s+analyst\b",
         r"\bwinter\s+analyst\b",
         r"\bsummer\s+associate\b",
         r"\bspring\s+week\b",
         r"\binsight\s+program(?:me)?\b",
-
         # Academic/research terms
         r"\bresearch\s+experience\b",
         r"\b(?:REU)\b",
@@ -38,19 +40,16 @@ _STUDENT_ROLE_PATTERNS: list[re.Pattern[str]] = [
         r"\bresearch\s+intern\b",
         r"\bundergraduate\s+researcher\b",
         r"\blab\s+(?:assistant|intern)\b",
-
         # UK/international terms
         r"\bindustrial\s+placement\b",
         r"\byear\s+in\s+industry\b",
         r"\bsandwich\s+year\b",
         r"\bwork\s+placement\b",
-
         # Early career terms
         r"\bapprenticeship\b",
         r"\bexternship\b",
         r"\bgraduate\s+internship\b",
         r"\bpracticum\b",
-
         # Explicit new-graduate programs. Generic "entry level" and
         # "early career" are deliberately excluded because they routinely
         # include experienced full-time roles.
@@ -65,15 +64,27 @@ _STUDENT_ROLE_PATTERNS: list[re.Pattern[str]] = [
 
 
 def is_student_role(title: str) -> bool:
+    if re.search(r"\binternship\s+(?:program\s+)?(?:manager|coordinator|director)\b", title, re.I):
+        return False
     return any(p.search(title) for p in _STUDENT_ROLE_PATTERNS)
 
 
+def _is_student_posting(posting: Posting) -> bool:
+    if is_student_role(posting.title):
+        return True
+    employment_type = posting.employment_type
+    return isinstance(employment_type, str) and bool(
+        re.fullmatch(r"intern(?:ship)?|co[ -]?op|apprenticeship", employment_type, re.I)
+    )
+
+
 def filter_student_roles(postings: list[Posting]) -> list[Posting]:
-    kept = [p for p in postings if is_student_role(p.title)]
+    kept = [p for p in postings if _is_student_posting(p)]
     dropped = len(postings) - len(kept)
     logger.info(
         "filter: %d student/new-grad roles kept, %d non-student dropped",
-        len(kept), dropped,
+        len(kept),
+        dropped,
     )
     return kept
 
@@ -88,14 +99,14 @@ def filter_feed_mapping(postings: dict[str, Posting]) -> dict[str, Posting]:
     kept = {
         posting_id: posting
         for posting_id, posting in postings.items()
-        if is_student_role(posting.title)
-        and is_us_location(posting.location, posting.locations)
+        if _is_student_posting(posting) and is_us_location(posting.location, posting.locations)
     }
     dropped = len(postings) - len(kept)
     if dropped:
         logger.info(
             "scope migration: %d historical postings kept, %d out-of-scope pruned",
-            len(kept), dropped,
+            len(kept),
+            dropped,
         )
     return kept
 
@@ -103,25 +114,111 @@ def filter_feed_mapping(postings: dict[str, Posting]) -> dict[str, Posting]:
 # ── US location filter ──────────────────────────────────────────────
 
 _US_STATES = {
-    "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA",
-    "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD",
-    "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ",
-    "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC",
-    "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY",
+    "AL",
+    "AK",
+    "AZ",
+    "AR",
+    "CA",
+    "CO",
+    "CT",
+    "DE",
+    "FL",
+    "GA",
+    "HI",
+    "ID",
+    "IL",
+    "IN",
+    "IA",
+    "KS",
+    "KY",
+    "LA",
+    "ME",
+    "MD",
+    "MA",
+    "MI",
+    "MN",
+    "MS",
+    "MO",
+    "MT",
+    "NE",
+    "NV",
+    "NH",
+    "NJ",
+    "NM",
+    "NY",
+    "NC",
+    "ND",
+    "OH",
+    "OK",
+    "OR",
+    "PA",
+    "RI",
+    "SC",
+    "SD",
+    "TN",
+    "TX",
+    "UT",
+    "VT",
+    "VA",
+    "WA",
+    "WV",
+    "WI",
+    "WY",
     "DC",
 }
 
 _US_STATE_NAMES = {
-    "alabama", "alaska", "arizona", "arkansas", "california", "colorado",
-    "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho",
-    "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana",
-    "maine", "maryland", "massachusetts", "michigan", "minnesota",
-    "mississippi", "missouri", "montana", "nebraska", "nevada",
-    "new hampshire", "new jersey", "new mexico", "new york",
-    "north carolina", "north dakota", "ohio", "oklahoma", "oregon",
-    "pennsylvania", "rhode island", "south carolina", "south dakota",
-    "tennessee", "texas", "utah", "vermont", "virginia", "washington",
-    "west virginia", "wisconsin", "wyoming", "district of columbia",
+    "alabama",
+    "alaska",
+    "arizona",
+    "arkansas",
+    "california",
+    "colorado",
+    "connecticut",
+    "delaware",
+    "florida",
+    "georgia",
+    "hawaii",
+    "idaho",
+    "illinois",
+    "indiana",
+    "iowa",
+    "kansas",
+    "kentucky",
+    "louisiana",
+    "maine",
+    "maryland",
+    "massachusetts",
+    "michigan",
+    "minnesota",
+    "mississippi",
+    "missouri",
+    "montana",
+    "nebraska",
+    "nevada",
+    "new hampshire",
+    "new jersey",
+    "new mexico",
+    "new york",
+    "north carolina",
+    "north dakota",
+    "ohio",
+    "oklahoma",
+    "oregon",
+    "pennsylvania",
+    "rhode island",
+    "south carolina",
+    "south dakota",
+    "tennessee",
+    "texas",
+    "utah",
+    "vermont",
+    "virginia",
+    "washington",
+    "west virginia",
+    "wisconsin",
+    "wyoming",
+    "district of columbia",
 }
 
 _US_COUNTRY_PATTERNS = re.compile(
@@ -130,9 +227,7 @@ _US_COUNTRY_PATTERNS = re.compile(
     re.IGNORECASE,
 )
 
-_STATE_ABBREV_RE = re.compile(
-    r"(?:,\s*|\s+)(" + "|".join(sorted(_US_STATES)) + r")\b"
-)
+_STATE_ABBREV_RE = re.compile(r"(?:,\s*|\s+)(" + "|".join(sorted(_US_STATES)) + r")\b")
 
 _STATE_NAME_RE = re.compile(
     r"\b(?:" + "|".join(re.escape(name) for name in sorted(_US_STATE_NAMES)) + r")\b",
@@ -171,9 +266,7 @@ _NON_US_COUNTRIES = re.compile(
     re.IGNORECASE,
 )
 
-_NON_US_ABBREVS = re.compile(
-    r"\b(?:UK|MX|AU|NZ|FR|CN|JP|SG|IE|NL|SE|NO|DK|FI|PL|BR|KR)\b"
-)
+_NON_US_ABBREVS = re.compile(r"\b(?:UK|MX|AU|NZ|FR|CN|JP|SG|IE|NL|SE|NO|DK|FI|PL|BR|KR)\b")
 
 
 def is_explicitly_non_us(location: str, locations: list[str]) -> bool:
@@ -203,6 +296,7 @@ def filter_us_locations(postings: list[Posting]) -> list[Posting]:
     dropped = len(postings) - len(kept)
     logger.info(
         "filter: %d explicitly US roles kept, %d non-US/ambiguous dropped",
-        len(kept), dropped,
+        len(kept),
+        dropped,
     )
     return kept

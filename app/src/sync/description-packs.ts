@@ -11,14 +11,18 @@ async function digest(text: string): Promise<string> {
 
 export class DescriptionPackCache {
   private documents = new Map<string, string>();
+  private previous = new Map<string, string>();
   private packs = new Map<string, Promise<Record<string, unknown>>>();
   private lanes: Promise<void>[] = Array.from({ length: 4 }, () => Promise.resolve());
   private nextLane = 0;
   constructor(private fetchText: (relative: string) => Promise<string>) {}
 
-  async remember(text: string): Promise<void> {
+  async remember(text: string, postingId?: string): Promise<void> {
     if (text) this.documents.set(await digest(text), text);
+    if (text && postingId) this.previous.set(postingId, text);
   }
+
+  previousText(postingId: string): string | undefined { return this.previous.get(postingId); }
 
   async get(ref: DescriptionReference): Promise<string> {
     if (!ref || !/^[a-f0-9]{64}$/.test(ref.sha256) || !/^[a-f0-9]{64}$/.test(ref.pack_sha256)
@@ -57,11 +61,19 @@ export class DescriptionPackCache {
 }
 
 export async function hydrateDescriptions<T extends DocumentRow>(
-  postings: Record<string, T>, cache: DescriptionPackCache,
+  postings: Record<string, T>, cache: DescriptionPackCache, allowUnavailable = false,
 ): Promise<Record<string, T & { description_text?: string }>> {
   const entries = await Promise.all(Object.entries(postings).map(async ([id, posting]) => {
     if (!posting.description_ref) return [id, posting] as const;
-    const text = await cache.get(posting.description_ref);
+    let text: string;
+    try { text = await cache.get(posting.description_ref); }
+    catch (error: unknown) {
+      if (!allowUnavailable) throw error;
+      const previous = cache.previousText(id);
+      return [id, { ...posting, description_pending: true,
+        ...(previous ? { description_text: previous } : {}),
+        description_status: previous ? 'stale' : 'unavailable' }] as const;
+    }
     return [id, { ...posting, description_text: text,
       ...('status' in posting.description_ref
         ? { description_status: posting.description_ref.status ?? 'unknown' } : {}),

@@ -14,11 +14,13 @@ from __future__ import annotations
 
 import logging
 import os
+import re
 from typing import TYPE_CHECKING, Any
 
 from poller.exceptions import SourceFetchError, SourceParseError
 from poller.models import Company, Posting, RawPosting, SourceConfig, compute_posting_id
 from poller.normalize import clean_title, html_to_plaintext, normalize_location, normalize_locations
+from poller.pagination import PaginationGuard
 from poller.sources.base import SourceAdapter
 
 logger = logging.getLogger(__name__)
@@ -101,6 +103,17 @@ class USAJobsAdapter(SourceAdapter):
         email = os.environ.get(EMAIL_ENV)
         if not email:
             raise SourceFetchError("usajobs", company.slug, f"{EMAIL_ENV} not set")
+        if (
+            api_key != api_key.strip()
+            or any(ord(c) < 33 or ord(c) > 126 for c in api_key)
+            or re.search(r"(?i)(USAJOBS_|API_KEY\s*=)", api_key)
+            or not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+", email)
+        ):
+            raise SourceFetchError(
+                "usajobs",
+                company.slug,
+                "Invalid credential configuration; use only the key value and registered email",
+            )
         headers = {
             "Host": USAJOBS_HOST,
             "User-Agent": email,
@@ -110,6 +123,7 @@ class USAJobsAdapter(SourceAdapter):
         all_postings: list[RawPosting] = []
         page = 1
         seen: set[str] = set()
+        guard = PaginationGuard("usajobs", company.slug)
         while True:
             params = {
                 "Organization": source.board_token,
@@ -143,6 +157,7 @@ class USAJobsAdapter(SourceAdapter):
                     f"expected 'SearchResultItems' array, got {type(items).__name__}",
                 )
 
+            page_ids: list[str] = []
             for item in items:
                 try:
                     posting = self._parse_job(item, company)
@@ -151,6 +166,7 @@ class USAJobsAdapter(SourceAdapter):
                             "usajobs", company.slug, "duplicate job in pagination"
                         )
                     seen.add(posting.source_job_id)
+                    page_ids.append(posting.source_job_id)
                     all_postings.append(posting)
                 except (KeyError, TypeError, AttributeError) as exc:
                     raise SourceParseError("usajobs", company.slug, "malformed job item") from exc
@@ -162,7 +178,7 @@ class USAJobsAdapter(SourceAdapter):
             if count_all < 0 or (not items and len(all_postings) < count_all):
                 raise SourceParseError("usajobs", company.slug, "incomplete pagination")
 
-            if not items or len(all_postings) >= count_all:
+            if guard.observe(page_ids, count_all, terminal=not items):
                 break
             page += 1
 

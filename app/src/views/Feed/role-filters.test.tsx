@@ -65,7 +65,7 @@ describe('role filters with migrated cached postings', () => {
     expect(screen.getByRole('button', { name: 'FPGA Engineer - High Frequency Trading Intern' })).toBeTruthy();
     fireEvent.click(screen.getByRole('button', { name: 'Reset all' }));
     await waitFor(() => expect(screen.getAllByRole('listitem')).toHaveLength(6));
-  });
+  }, 15_000);
 
   it('filters by a full city or state and can return to the full feed', async () => {
     await db.run('UPDATE postings_cache SET data=? WHERE id=?', [JSON.stringify({

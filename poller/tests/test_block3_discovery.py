@@ -826,10 +826,10 @@ class TestDiscoveryIntegration:
         assert catalog[0].discovery_sources == ["directory", "redirect"]
         assert catalog[0].verification_status == "pending"
 
-    def test_discovery_workflow_is_monthly_manual_bounded_and_serialized(self) -> None:
+    def test_discovery_workflow_is_weekly_manual_bounded_and_serialized(self) -> None:
         workflow = Path(".github/workflows/discover.yml").read_text(encoding="utf-8")
 
-        assert 'cron: "17 6 1 * *"' in workflow
+        assert 'cron: "17 6 * * 2"' in workflow
         assert "workflow_dispatch:" in workflow
         assert "timeout-minutes: 90" in workflow
         assert "cancel-in-progress: false" in workflow

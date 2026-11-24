@@ -54,6 +54,7 @@ class GreenhouseAdapter(SourceAdapter):
         company: Company,
         source: SourceConfig,
     ) -> list[RawPosting]:
+        self.potentially_truncated = False
         url = GREENHOUSE_API.format(token=source.board_token)
         data: Any = await client.get_json(
             url,
@@ -69,7 +70,7 @@ class GreenhouseAdapter(SourceAdapter):
                 f"expected object with 'jobs' key, got {type(data).__name__}",
             )
 
-        jobs = data["jobs"]
+        jobs = self.listing_items(data, "jobs", "greenhouse", company.slug)
         if not isinstance(jobs, list):
             raise SourceParseError(
                 "greenhouse",
@@ -82,6 +83,7 @@ class GreenhouseAdapter(SourceAdapter):
             try:
                 raw_postings.append(self._parse_job(job, company, source))
             except (KeyError, TypeError) as exc:
+                self.potentially_truncated = True
                 logger.warning(
                     "[greenhouse:%s] skipping malformed job: %s", company.slug, exc
                 )

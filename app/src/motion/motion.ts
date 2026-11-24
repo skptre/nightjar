@@ -1,7 +1,7 @@
 // Shared motion helpers. Everything here writes styles straight to the DOM, so
 // pointer-driven effects never cost a React render per frame.
 
-import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 
 export function prefersReducedMotion(): boolean {
   return Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches);
@@ -90,7 +90,7 @@ export function useGlide(): {
     glideTo(target?.closest?.<HTMLElement>('[data-glide]') ?? null);
   }, [glideTo]);
   const hide = useCallback((): void => glideTo(null), [glideTo]);
-  return { glideRef, onMouseMove, onMouseLeave: hide, hide };
+  return useMemo(() => ({ glideRef, onMouseMove, onMouseLeave: hide, hide }), [onMouseMove, hide]);
 }
 
 /** Cards lean toward the pointer and catch a soft light where it sits. */

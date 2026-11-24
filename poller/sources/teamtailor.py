@@ -25,6 +25,7 @@ class TeamtailorAdapter(SourceAdapter):
         company: Company,
         source: SourceConfig,
     ) -> list[RawPosting]:
+        self.potentially_truncated = False
         token = source.board_token
         url = TEAMTAILOR_API.format(tenant=token)
 
@@ -41,7 +42,7 @@ class TeamtailorAdapter(SourceAdapter):
                 f"expected object, got {type(data).__name__}",
             )
 
-        jobs = data.get("data", [])
+        jobs = self.listing_items(data, "data", "teamtailor", company.slug)
         if not isinstance(jobs, list):
             raise SourceParseError(
                 "teamtailor",
@@ -57,6 +58,7 @@ class TeamtailorAdapter(SourceAdapter):
             try:
                 postings.append(self._parse_posting(item, company, token, lookup))
             except (KeyError, TypeError) as exc:
+                self.potentially_truncated = True
                 logger.warning(
                     "[teamtailor:%s] skipping malformed posting: %s",
                     company.slug, exc,

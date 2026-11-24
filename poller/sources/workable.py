@@ -25,6 +25,7 @@ class WorkableAdapter(SourceAdapter):
         company: Company,
         source: SourceConfig,
     ) -> list[RawPosting]:
+        self.potentially_truncated = False
         token = source.board_token
         url = WORKABLE_API.format(tenant=token)
 
@@ -41,7 +42,7 @@ class WorkableAdapter(SourceAdapter):
                 f"expected object, got {type(data).__name__}",
             )
 
-        jobs = data.get("jobs", [])
+        jobs = self.listing_items(data, "jobs", "workable", company.slug)
         if not isinstance(jobs, list):
             raise SourceParseError(
                 "workable",
@@ -54,6 +55,7 @@ class WorkableAdapter(SourceAdapter):
             try:
                 postings.append(self._parse_posting(item, company, token))
             except (KeyError, TypeError) as exc:
+                self.potentially_truncated = True
                 logger.warning(
                     "[workable:%s] skipping malformed posting: %s",
                     company.slug, exc,

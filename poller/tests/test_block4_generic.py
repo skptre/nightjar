@@ -287,6 +287,7 @@ class TestGenericFetch:
 
         assert len(postings) == 5
         assert {posting.raw_data["extraction_method"] for posting in postings} == {"rss"}
+        assert adapter.potentially_truncated  # RSS may be a rolling recent-jobs window.
 
     @pytest.mark.asyncio
     async def test_rss_feed_declared_in_robots_is_parsed(self) -> None:

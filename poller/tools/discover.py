@@ -20,6 +20,8 @@ from poller.discovery.catalog import (
 from poller.discovery.common_crawl import (
     DEFAULT_CANDIDATE_BUDGET,
     DiscoveryBatch,
+    DiscoveryMetrics,
+    canonicalize_board_url,
     discover_common_crawl,
     format_utc,
 )
@@ -31,7 +33,9 @@ from poller.discovery.identity import (
 )
 from poller.discovery.redirect_detect import discover_redirects
 from poller.discovery.verify import verify_candidate
+from poller.exceptions import SourceFetchError, SourceParseError
 from poller.http import RateLimitedClient
+from poller.redaction import safe_error
 from poller.registry import load_registry
 
 if TYPE_CHECKING:
@@ -133,18 +137,28 @@ async def _run_with_client(
 ) -> DiscoverySummary:
     companies = load_registry(registry_path)
     known_source_keys = {
-        (source.type, source.board_token)
-        for company in companies
-        for source in company.sources
+        (source.type, source.board_token) for company in companies for source in company.sources
     }
 
-    batch: DiscoveryBatch = await discover_common_crawl(
-        client,
-        known_source_keys=known_source_keys,
-        max_candidates=max_candidates,
-        now=now,
-    )
+    channel_error = None
+    try:
+        batch = await discover_common_crawl(
+            client, known_source_keys=known_source_keys, max_candidates=max_candidates, now=now
+        )
+    except (SourceFetchError, SourceParseError, ValueError) as exc:
+        # One upstream index outage must not disable all discovery channels.
+        channel_error = safe_error(exc)
+        logger.warning("Common Crawl discovery unavailable: %s", channel_error)
+        batch = DiscoveryBatch([], DiscoveryMetrics(index_id="unavailable"))
     incoming = list(batch.candidates)
+
+    feed_path = data_dir / "feed.json"
+    if feed_path.exists():
+        feed = json.loads(feed_path.read_text(encoding="utf-8"))
+        for posting in feed.get("postings", {}).values():
+            candidate = canonicalize_board_url(posting.get("url", ""), "feed", now)
+            if candidate and candidate.key not in known_source_keys:
+                incoming.append(candidate)
 
     directory_records = _load_directory_records(directory_records_path)
     if directory_records:
@@ -153,20 +167,17 @@ async def _run_with_client(
         incoming.extend(
             replace(
                 candidate,
-                discovery_sources=sorted(
-                    set([*candidate.discovery_sources, "directory"])
-                ),
+                discovery_sources=sorted(set([*candidate.discovery_sources, "directory"])),
             )
             for candidate in redirected
             if candidate.key not in known_source_keys
         )
 
     deduped = {candidate.key: candidate for candidate in incoming}
-    new_candidates = sorted(deduped.values(), key=lambda candidate: candidate.key)
+    new_candidates = sorted(deduped.values(), key=lambda candidate: candidate.key)[:max_candidates]
     if verify:
         verified_candidates = [
-            await verify_candidate(client, candidate, now=now)
-            for candidate in new_candidates
+            await verify_candidate(client, candidate, now=now) for candidate in new_candidates
         ]
     else:
         verified_candidates = new_candidates
@@ -182,9 +193,7 @@ async def _run_with_client(
     for candidate in merged:
         resolution = resolve_identity(candidate, identities)
         if resolution.status == "matched":
-            resolved_catalog.append(
-                replace(candidate, identity_slug=resolution.identity_slug)
-            )
+            resolved_catalog.append(replace(candidate, identity_slug=resolution.identity_slug))
         else:
             resolved_catalog.append(candidate)
             pending_review.append(
@@ -203,6 +212,8 @@ async def _run_with_client(
             status_counts.get(candidate.verification_status, 0) + 1
         )
     metrics: dict[str, Any] = batch.metrics.to_dict()
+    if channel_error:
+        metrics["common_crawl_error"] = channel_error
     metrics.update(
         {
             "catalog_count": len(resolved_catalog),
@@ -222,8 +233,7 @@ async def _run_with_client(
             else 0.0,
             "verification_success_rate_pct": round(
                 sum(
-                    candidate.verification_status == "verified"
-                    for candidate in verified_candidates
+                    candidate.verification_status == "verified" for candidate in verified_candidates
                 )
                 / len(verified_candidates)
                 * 100,
@@ -255,16 +265,11 @@ async def _run_with_client(
     return DiscoverySummary(
         discovered=len(new_candidates),
         verified=sum(
-            candidate.verification_status == "verified"
-            for candidate in verified_candidates
+            candidate.verification_status == "verified" for candidate in verified_candidates
         ),
-        dead=sum(
-            candidate.verification_status == "dead"
-            for candidate in verified_candidates
-        ),
+        dead=sum(candidate.verification_status == "dead" for candidate in verified_candidates),
         review_required=sum(
-            candidate.verification_status == "review_required"
-            for candidate in verified_candidates
+            candidate.verification_status == "review_required" for candidate in verified_candidates
         ),
         registry_candidates_added=added,
     )

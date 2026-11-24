@@ -1,0 +1,46 @@
+name: Check collection freshness
+
+on:
+  schedule:
+    - cron: '11,41 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: collection-watchdog
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Dispatch a missed collection without overlapping active polls
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import datetime, json, os, subprocess
+          from pathlib import Path
+          state = json.loads(Path('data/state.json').read_text())
+          stamp = state.get('last_run_at')
+          now = datetime.datetime.now(datetime.timezone.utc)
+          last = datetime.datetime.fromisoformat(stamp.replace('Z', '+00:00')) if stamp else None
+          if last and (now - last).total_seconds() < 45 * 60:
+              print('Collection is fresh.')
+              raise SystemExit(0)
+          repo = os.environ['GITHUB_REPOSITORY']
+          raw = subprocess.check_output(['gh', 'api', f'repos/{repo}/actions/workflows/poll.yml/runs?per_page=10'])
+          runs = json.loads(raw)['workflow_runs']
+          if any(run['status'] in {'queued', 'in_progress', 'waiting', 'requested', 'pending'} for run in runs):
+              print('A collector is already pending or running.')
+              raise SystemExit(0)
+          subprocess.run(['gh', 'workflow', 'run', 'poll.yml', '--repo', repo], check=True)
+          print('::warning::Collection exceeded its freshness target; recovery poll dispatched.')
+          raise SystemExit(1)
+          PY

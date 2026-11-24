@@ -57,10 +57,38 @@ describe('verified public documents for all jobs', () => {
       current = await fixture('Changed requirements, including the ending.');
       corrupt = true;
       await install();
-      expect((await syncFeed(db, '/test')).error).toMatch(/hash mismatch/i);
+      expect((await syncFeed(db, '/test')).error).toBeUndefined();
       expect(getStoredMetaHash()).toBe(beforeHash);
       expect((await db.queryOne<{description:string}>(
         'SELECT description FROM postings_cache WHERE id = ?', ['job1']))?.description).toBe(f.text);
+    } finally { await db.close(); }
+  });
+  it('imports a new listing even when its optional description cannot be downloaded', async () => {
+    localStorage.clear();
+    const db = await NightjarDB.createInMemory();
+    try {
+      const f = await fixture();
+      const updated = '2026-10-24T00:00:00Z';
+      const posting = { id: 'new-role', company: 'Example', company_slug: 'example',
+        title: 'Engineering Intern', location: 'New York, NY', locations: ['New York, NY'],
+        url: 'https://example.com/job/new', source: 'greenhouse', source_job_id: 'new',
+        ats: 'greenhouse', posted_at: null, first_seen_at: updated, last_seen_at: updated,
+        closed_at: null, description_ref: f.ref };
+      const shard = JSON.stringify({ shard_id: 'greenhouse', updated_at: updated,
+        count: 1, postings: { 'new-role': posting } });
+      const sha = await hash(shard);
+      vi.stubGlobal('fetch', vi.fn(async (url: string) => {
+        if (url.endsWith('/meta.json')) return new Response(JSON.stringify({
+          updated_at: updated, sha256: sha, count: 1, sharded: true,
+          shards: { greenhouse: { sha256: sha, count: 1, updated_at: updated } },
+        }));
+        if (url.endsWith('/feed/greenhouse.json')) return new Response(shard);
+        return new Response('', { status: 404 });
+      }));
+      expect((await syncFeed(db, '/test')).error).toBeUndefined();
+      expect(await db.queryOne('SELECT id FROM postings_cache WHERE id = ?', ['new-role']))
+        .toEqual({ id: 'new-role' });
+      expect(getStoredMetaHash()).toBeNull(); // Retry the unavailable document on the next sync.
     } finally { await db.close(); }
   });
   it('shares a pack request and preserves exact complete text', async () => {

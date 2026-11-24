@@ -15,6 +15,7 @@ import { maintenanceActive, trackWorkspaceTask } from '@/lib/maintenance';
 export type SyncStatus = 'idle' | 'syncing' | 'error';
 
 export interface SyncState {
+  dataRevision: number;
   status: SyncStatus;
   lastSyncedAt: string | null;
   newPostingCount: number;
@@ -36,6 +37,7 @@ export class SyncManager {
   private intervalId: ReturnType<typeof setInterval> | null = null;
   private listener: SyncListener | null = null;
   private state: SyncState = {
+    dataRevision: 0,
     status: 'idle',
     lastSyncedAt: getLastSyncedAt(),
     newPostingCount: 0,
@@ -124,43 +126,27 @@ export class SyncManager {
     try {
       // Notify feed views before a local migration too, including offline launches.
       this.updateState({ status: 'syncing', lastError: null });
-      await refreshJobDetails(this.db, this.profile);
-      // Category migration is local and must not depend on network availability.
-      if (this.profile) {
-        await recomputePendingCategoryTaxonomy(this.db, this.profile);
+      const result = await syncFeed(this.db);
+      if (!result.error && !result.skipped) {
+        this.updateState({ lastSyncedAt: new Date().toISOString(), dataRevision: this.state.dataRevision + 1 });
       }
+      // Local enrichment cannot delay importing new jobs on startup.
+      const detailsChanged = await refreshJobDetails(this.db, this.profile);
+      // Category migration is local and must also work on offline launches.
+      const classified = this.profile ? await recomputePendingCategoryTaxonomy(this.db, this.profile) : 0;
+      if (detailsChanged || classified) this.updateState({dataRevision: this.state.dataRevision + 1});
 
-      if (typeof navigator !== 'undefined' && !navigator.onLine) {
-        const cached = await this.db.queryOne<{ count: number }>('SELECT COUNT(*) AS count FROM postings_cache');
-        if ((cached?.count ?? 0) > 0) {
-          this.updateState({ status: 'idle', lastError: 'Offline' });
-          return null;
-        }
-        // An empty cache still needs the local/bundled feed on first launch.
+      if (result.error) {
+        this.updateState({ status: result.error === 'Offline' ? 'idle' : 'error', lastError: result.error });
+        return result.error === 'Offline' ? null : result;
       }
 
       const ghosted = await runAutoGhost(this.db);
       if (ghosted > 0) {
         console.log(`[nightjar] auto-ghosted ${String(ghosted)} stale application(s)`);
       }
-
-      const result = await syncFeed(this.db);
-      if (!result.error && !result.skipped) {
-        this.updateState({ lastSyncedAt: new Date().toISOString() });
-      }
-      // The pre-sync refreshJobDetails above already processed pending rows;
-      // only re-run it when the sync actually brought new/changed postings.
-      if (!result.error && !result.skipped) await refreshJobDetails(this.db, this.profile);
-
-      if (result.error) {
-        this.updateState({ status: 'error', lastError: result.error });
-        return result;
-      }
-
-      if (!result.skipped && this.profile) {
-        await recomputePendingCategoryTaxonomy(this.db, this.profile);
-      }
-      if (!this.profile) await recomputeGuestCategories(this.db);
+      const guestChanged = !this.profile ? await recomputeGuestCategories(this.db) : 0;
+      if (ghosted || guestChanged) this.updateState({dataRevision: this.state.dataRevision + 1});
 
       if (!result.skipped && result.newPostingIds.length > 0) {
         await notifyWatchedJobs(this.db, result.newPostingIds);

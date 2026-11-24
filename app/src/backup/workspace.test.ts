@@ -62,3 +62,14 @@ it('rolls back a failed database restore without changing the existing tracker o
   await expect(restoreWorkspace(db,backup)).rejects.toThrow('disk failure');
   expect((await db.queryOne<{notes:string}>('SELECT notes FROM applications'))?.notes).toBe('current');
 });
+
+it('automatic recovery keeps tracked postings and notes without copying the public feed', async () => {
+  await db.run("INSERT INTO postings_cache(id,data,description,synced_at) VALUES ('public','{}','Untracked public text','today')");
+  const recovery = parseWorkspaceBackup(await createWorkspaceBackup(db, true));
+  expect(recovery.tables.postings_cache.map(row => row.id)).toEqual(['job']);
+  expect(recovery.tables.applications[0]?.notes).toBe('private note');
+  expect(parseWorkspaceBackup(await createWorkspaceBackup(db)).tables.postings_cache).toHaveLength(2);
+  await db.run("UPDATE applications SET notes='changed'");
+  await restoreWorkspace(db, recovery);
+  expect((await db.queryOne<{notes:string}>('SELECT notes FROM applications'))?.notes).toBe('private note');
+});

@@ -31,7 +31,6 @@ _SLUG_UNSAFE = re.compile(r"[^a-z0-9]+")
 _MULTI_HYPHEN = re.compile(r"-{2,}")
 
 
-
 def slugify_company(name: str) -> str:
     slug = _SLUG_UNSAFE.sub("-", name.lower().strip())
     slug = _MULTI_HYPHEN.sub("-", slug)
@@ -49,7 +48,8 @@ def infer_ats_from_url(url: str) -> tuple[str, str | None]:
         site = urlparse(detail).path.split("/")[4]
         return provider, f"{parsed.hostname}/{site}"
     if provider == "greenhouse" and parsed.hostname not in {
-        "boards.greenhouse.io", "job-boards.greenhouse.io",
+        "boards.greenhouse.io",
+        "job-boards.greenhouse.io",
     }:
         return provider, None
     if provider in {"icims", "jazzhr"}:
@@ -57,15 +57,14 @@ def infer_ats_from_url(url: str) -> tuple[str, str | None]:
     return provider, parsed.path.strip("/").split("/")[0]
 
 
-
 class SimplifyAdapter(SourceAdapter):
-
     async def fetch(
         self,
         client: RateLimitedClient,
         company: Company,
         source: SourceConfig,
     ) -> list[RawPosting]:
+        self.potentially_truncated = False
         data = await client.get_json(
             SIMPLIFY_URL,
             source="simplify",
@@ -87,13 +86,16 @@ class SimplifyAdapter(SourceAdapter):
             try:
                 raw_postings.append(self._parse_listing(listing))
             except (KeyError, TypeError, ValueError) as exc:
+                self.potentially_truncated = True
                 logger.warning(
-                    "[simplify] skipping malformed listing: %s", exc,
+                    "[simplify] skipping malformed listing: %s",
+                    exc,
                 )
 
         logger.info(
             "[simplify] %d active+visible from %d total",
-            len(raw_postings), len(data),
+            len(raw_postings),
+            len(data),
         )
         return raw_postings
 
@@ -107,7 +109,8 @@ class SimplifyAdapter(SourceAdapter):
         posted_at: str | None = None
         if date_posted and isinstance(date_posted, (int, float)):
             posted_at = datetime.fromtimestamp(
-                date_posted, tz=UTC,
+                date_posted,
+                tz=UTC,
             ).strftime("%Y-%m-%dT%H:%M:%SZ")
 
         return RawPosting(
@@ -138,7 +141,9 @@ class SimplifyAdapter(SourceAdapter):
     ) -> Posting:
         ats, _ = infer_ats_from_url(raw.url)
         posting_id = compute_posting_id(
-            raw.source, raw.company_slug, raw.source_job_id,
+            raw.source,
+            raw.company_slug,
+            raw.source_job_id,
         )
 
         metadata: dict[str, Any] = {}
@@ -174,12 +179,14 @@ def generate_registry_candidates(
     postings: list[Posting],
     known_slugs: set[str],
     output_path: Path,
+    *,
+    known_source_keys: set[tuple[str, str]] | None = None,
 ) -> None:
     by_company: dict[str, list[Posting]] = defaultdict(list)
     for p in postings:
         if p.source != "simplify":
             continue
-        if p.company_slug in known_slugs:
+        if p.company_slug in known_slugs and known_source_keys is None:
             continue
         by_company[p.company_slug].append(p)
 
@@ -191,7 +198,7 @@ def generate_registry_candidates(
 
         for p in company_postings:
             ats, token = infer_ats_from_url(p.url)
-            if ats != "other":
+            if ats != "other" and (ats, token or "") not in (known_source_keys or set()):
                 ats_val = ats
                 token_val = token
                 url_val = p.url
@@ -200,15 +207,35 @@ def generate_registry_candidates(
         if ats_val is None:
             continue
 
-        candidates.append({
-            "slug": slug,
-            "name": company_postings[0].company,
-            "inferred_ats": ats_val,
-            "inferred_board_token": token_val,
-            "apply_url": url_val,
-            "posting_count": len(company_postings),
-        })
+        candidates.append(
+            {
+                "slug": slug,
+                "name": company_postings[0].company,
+                "inferred_ats": ats_val,
+                "inferred_board_token": token_val,
+                "apply_url": url_val,
+                "posting_count": len(company_postings),
+            }
+        )
 
+    # Preserve prior discovery channels; the regular poll must not erase review work.
+    if output_path.exists():
+        try:
+            existing = json.loads(output_path.read_text(encoding="utf-8"))
+            if isinstance(existing, list):
+                merged = {
+                    (c.get("inferred_ats"), c.get("inferred_board_token")): c
+                    for c in existing
+                    if isinstance(c, dict)
+                }
+                for candidate in candidates:
+                    key = (candidate["inferred_ats"], candidate["inferred_board_token"])
+                    merged[key] = {**merged.get(key, {}), **candidate}
+                candidates = sorted(merged.values(), key=lambda c: str(c.get("slug", "")))
+        except (ValueError, OSError):
+            logger.warning(
+                "[simplify] previous candidate file unreadable; keeping current discoveries"
+            )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
         json.dumps(candidates, indent=2, ensure_ascii=False) + "\n",
@@ -216,5 +243,6 @@ def generate_registry_candidates(
     )
     logger.info(
         "[simplify] wrote %d registry candidates to %s",
-        len(candidates), output_path,
+        len(candidates),
+        output_path,
     )

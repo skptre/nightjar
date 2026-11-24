@@ -52,7 +52,9 @@ def attach_source_context(posting: Posting, raw: RawPosting, source: SourceConfi
         }
     # These adapters read complete description fields, not listing-page teasers.
     verified = bool(posting.description_text) and source.type in {
-        "greenhouse", "lever", "ashby",
+        "greenhouse",
+        "lever",
+        "ashby",
     }
     return replace(
         posting,
@@ -68,8 +70,12 @@ def resolve_detail_posting(
 ) -> Posting | None:
     try:
         parsed = urlparse(posting.url)
-        if (parsed.scheme not in {"http", "https"} or parsed.username or parsed.password
-                or parsed.port not in {None, 80, 443}):
+        if (
+            parsed.scheme not in {"http", "https"}
+            or parsed.username
+            or parsed.password
+            or parsed.port not in {None, 80, 443}
+        ):
             return None
     except ValueError:
         return None
@@ -78,8 +84,10 @@ def resolve_detail_posting(
     posting = replace(posting, ats=ats)
     ids = parse_qs(parsed.query).get("gh_jid", [])
     custom_greenhouse = ats == "greenhouse" and parsed.hostname not in {
-        "boards.greenhouse.io", "job-boards.greenhouse.io",
-        "job-boards.eu.greenhouse.io", "boards.eu.greenhouse.io",
+        "boards.greenhouse.io",
+        "job-boards.greenhouse.io",
+        "job-boards.eu.greenhouse.io",
+        "boards.eu.greenhouse.io",
     }
     if detected == ats and not custom_greenhouse:
         return posting
@@ -90,8 +98,12 @@ def resolve_detail_posting(
     board, job_id = identity.get("board"), identity.get("job_id")
     if not identity and custom_greenhouse and len(ids) == 1 and ids[0].isdigit():
         board, job_id = (greenhouse_boards or {}).get(posting.company_slug), ids[0]
-    if not (isinstance(board, str) and isinstance(job_id, str)
-            and _SEGMENT.fullmatch(board) and _SEGMENT.fullmatch(job_id)):
+    if not (
+        isinstance(board, str)
+        and isinstance(job_id, str)
+        and _SEGMENT.fullmatch(board)
+        and _SEGMENT.fullmatch(job_id)
+    ):
         return None
     lever_prefix = "eu." if identity.get("eu") == "true" else ""
     paths = {
@@ -121,6 +133,7 @@ async def collect_descriptions(
     now: str,
     limit: int = DEFAULT_ENRICHMENT_LIMIT,
     greenhouse_boards: dict[str, str] | None = None,
+    fresh_description_ids: set[str] | None = None,
 ) -> tuple[list[Posting], int]:
     current_time = datetime.fromisoformat(now.replace("Z", "+00:00"))
 
@@ -155,7 +168,7 @@ async def collect_descriptions(
         if (
             posting.description_status == "available"
             and posting.description_version == DESCRIPTION_VERSION
-            and not same
+            and (not same or posting.id in (fresh_description_ids or set()))
             and not carried
         ):
             state[posting.id] = {
@@ -174,7 +187,9 @@ async def collect_descriptions(
                 posting, description_status="stale" if posting.description_text else "unsupported"
             )
             state[posting.id] = {
-                "source_key": key, "version": DESCRIPTION_VERSION, "status": "unsupported",
+                "source_key": key,
+                "version": DESCRIPTION_VERSION,
+                "status": "unsupported",
                 "error": "unresolved_source_or_unsupported_client",
             }
             continue
@@ -182,7 +197,9 @@ async def collect_descriptions(
             enriched[index] = replace(posting, description_status="stale")
         if not same:
             state[posting.id] = {
-                "source_key": key, "version": DESCRIPTION_VERSION, "status": "pending",
+                "source_key": key,
+                "version": DESCRIPTION_VERSION,
+                "status": "pending",
             }
         candidates.append((index, target, key))
     # Oldest attempts first, including never-attempted jobs: advancing queue, no rotating
@@ -192,7 +209,7 @@ async def collect_descriptions(
     )
     budget = max(0, limit)
     refreshes = [item for item in candidates if state.get(item[1].id, {}).get("last_success_at")]
-    reserved = refreshes[:max(1, budget // 4)] if budget else []
+    reserved = refreshes[: max(1, budget // 4)] if budget else []
     reserved_ids = {item[1].id for item in reserved}
     selected = (reserved + [item for item in candidates if item[1].id not in reserved_ids])[:budget]
     semaphore = asyncio.Semaphore(MAX_CONCURRENT)
@@ -212,7 +229,8 @@ async def collect_descriptions(
                         text = await fetch_description(client, target, cache, lock, facts=facts)
                         if text:
                             facts["description_acquisition"] = {
-                                "method": f"{target.ats}_api", "completeness": "available",
+                                "method": f"{target.ats}_api",
+                                "completeness": "available",
                                 "identity": "provider_job_endpoint",
                             }
                     except Exception:
@@ -221,7 +239,8 @@ async def collect_descriptions(
                 if not text and supports_first_party(enriched[index], client):
                     facts.clear()
                     text, compensation = await fetch_first_party(
-                        enriched[index], client, robots_cache, facts=facts)
+                        enriched[index], client, robots_cache, facts=facts
+                    )
                     if compensation:
                         facts["advertised_compensation"] = compensation
             except Exception as exc:
@@ -238,20 +257,30 @@ async def collect_descriptions(
             state[target.id] = {
                 **entry,
                 "status": status,
-                **({"last_success_at": now} if status == "available" else {
-                    "error": "completeness_unverified",
-                    **({"last_success_at": previous_attempt["last_success_at"]}
-                       if previous_attempt.get("last_success_at") else {}),
-                }),
+                **(
+                    {"last_success_at": now}
+                    if status == "available"
+                    else {
+                        "error": "completeness_unverified",
+                        **(
+                            {"last_success_at": previous_attempt["last_success_at"]}
+                            if previous_attempt.get("last_success_at")
+                            else {}
+                        ),
+                    }
+                ),
                 "failures": 0,
                 "next_attempt_at": later(REFRESH_HOURS),
             }
             metadata = {**(posting.source_metadata or {}), **facts}
             # A partial refresh must not erase an earlier complete document.
             old_acquisition = (posting.source_metadata or {}).get("description_acquisition", {})
-            old_complete = bool(posting.description_text and posting.description_version
-                                and posting.description_status in {"available", "stale"}
-                                and old_acquisition.get("completeness") != "partial")
+            old_complete = bool(
+                posting.description_text
+                and posting.description_version
+                and posting.description_status in {"available", "stale"}
+                and old_acquisition.get("completeness") != "partial"
+            )
             if status == "partial" and old_complete:
                 enriched[index] = replace(posting, description_status="stale")
                 return False

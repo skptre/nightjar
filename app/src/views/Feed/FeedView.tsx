@@ -55,12 +55,19 @@ interface PostingQueryRow {
 // The list needs only whether a description exists (a boolean); the full text is
 // fetched on demand by the row preview and the sheet. Pay comes from the details
 // cache as two small JSON fragments rather than the whole cached document.
-export const CURRENT_JOBS_QUERY = `SELECT p.id, p.data, p.first_seen_at, p.closed_at, p.category, p.category_tags, p.role_classification,
+export const CURRENT_JOBS_QUERY = `SELECT p.id, CASE WHEN json_valid(p.data) THEN json_object(
+              'company',json_extract(p.data,'$.company'), 'company_slug',json_extract(p.data,'$.company_slug'),
+              'title',json_extract(p.data,'$.title'), 'location',json_extract(p.data,'$.location'),
+              'locations',json_extract(p.data,'$.locations'), 'url',json_extract(p.data,'$.url'),
+              'source',json_extract(p.data,'$.source'), 'compensation',json_extract(p.data,'$.compensation'),
+              'description_status',json_extract(p.data,'$.description_status')) ELSE p.data END AS data,
+              p.first_seen_at, p.closed_at, p.category, p.category_tags,
+              CASE WHEN json_valid(p.role_classification) THEN json_object('domain_tags',json_extract(p.role_classification,'$.domain_tags')) END AS role_classification,
               p.term, p.eligibility, p.score, p.score_breakdown,
               (CASE WHEN p.description IS NOT NULL AND p.description != '' THEN 1 ELSE 0 END) AS has_description,
               a.status AS application_status,
-              json_extract(d.details_json, '$.compensation.status') AS pay_status,
-              json_extract(d.details_json, '$.compensation.ranges') AS pay_ranges
+              CASE WHEN json_valid(d.details_json) THEN json_extract(d.details_json, '$.compensation.status') END AS pay_status,
+              CASE WHEN json_valid(d.details_json) THEN json_extract(d.details_json, '$.compensation.ranges') END AS pay_ranges
        FROM postings_cache p
        LEFT JOIN applications a ON p.id = a.posting_id
        LEFT JOIN job_details_cache d ON d.posting_id = p.id
@@ -164,7 +171,8 @@ export function FeedView(): React.ReactNode {
   const { db } = useDatabase();
   const { toast } = useToast();
   const { profile, beginProfileSetup } = useProfile();
-  const { clearNewPostingCount, status: syncStatus, lastSyncedAt } = useSync();
+  const { clearNewPostingCount, status: syncStatus, lastSyncedAt, dataRevision } = useSync();
+  const dataToken = dataRevision ?? lastSyncedAt;
   const feed = useSyncExternalStore(feedSubscribe, feedSnapshot);
   const {
     rawRows, pendingRows, loaded, viewMode, selectedCategories, selectedDomains,
@@ -217,7 +225,7 @@ export function FeedView(): React.ReactNode {
 
   // Reload only when the data could have changed: a sync finished, ranking
   // preferences changed, or a local mutation happened.
-  const loadSignature = `${lastSyncedAt ?? ''}::${profileSignature(profile)}::${String(feed.reloadKey)}`;
+  const loadSignature = `${dataToken ?? ''}::${profileSignature(profile)}::${String(feed.reloadKey)}`;
   useEffect(() => {
     const snapshot = feedSnapshot();
     if (snapshot.loaded && snapshot.loadedSignature === loadSignature) return;
@@ -320,11 +328,15 @@ export function FeedView(): React.ReactNode {
   // Measure the real row height and how much the open row adds.
   useLayoutEffect(() => {
     const closed = innerRef.current?.querySelector<HTMLElement>('.jrow:not(.open)');
-    if (closed && closed.offsetHeight > 0) {
-      const next = closed.offsetHeight + 4;
-      if (Math.abs(next - stride) > 0.5) setStride(next);
-    }
-  });
+    if (!closed) return;
+    const measure = (): void => {
+      if (closed.offsetHeight > 0) setStride(closed.offsetHeight + 4);
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(closed);
+    return () => observer.disconnect();
+  }, [hasList, density, start, end, openId]);
   useEffect(() => {
     const row = openId ? innerRef.current?.querySelector<HTMLElement>(rowSelector(openId)) : null;
     if (!row) { setExtra(0); return; }
@@ -402,6 +414,8 @@ export function FeedView(): React.ReactNode {
       toast(`Skipped “${posting.title}”`, 'info', { actions: [{ label: 'Undo', onClick: () => handleUndo(id) }] });
     });
   }, [db, rawRows, toast, bumpReload, handleUndo]);
+
+  const applyPosting = useCallback((id: string): void => handleAction(id, 'open'), [handleAction]);
 
   /** The bookmark saves a role, or un-saves one that is only saved. */
   const toggleSave = useCallback((id: string): void => {
@@ -667,7 +681,7 @@ export function FeedView(): React.ReactNode {
                     else if (!entrance.prev.has(posting.id)) anim = `${entrance.name} 560ms var(--out) ${String(60 + fresh++ * 40)}ms backwards`;
                   }
                   return <PostingRow key={posting.id} posting={posting} open={posting.id === openId} anim={anim} pop={pop}
-                    dataToken={lastSyncedAt} onToggle={toggleRow} onSave={toggleSave} onApply={(id) => handleAction(id, 'open')} onReadFull={openSheet} />;
+                    dataToken={dataToken} onToggle={toggleRow} onSave={toggleSave} onApply={applyPosting} onReadFull={openSheet} />;
                 })}
                 <div style={{ height: Math.max(0, total - offsetOf(end)) }} aria-hidden="true" />
               </div>
@@ -696,7 +710,7 @@ export function FeedView(): React.ReactNode {
         <div className="sheet-scroll-wrap">
           <div ref={sheetScrollRef} className="sheet-scroll scroll fade-sheet" onScroll={sheetThumb.onScroll}>
             {shownSheet && <div key={shownSheet.id} className="sheet-body" style={{ animation: `${sheetAnim} 520ms var(--out) both` }}>
-              <JobDetail posting={shownSheet} dataToken={lastSyncedAt} onAction={handleAction} pop={pop} onSave={() => toggleSave(shownSheet.id)} />
+              <JobDetail posting={shownSheet} dataToken={dataToken} onAction={handleAction} pop={pop} onSave={() => toggleSave(shownSheet.id)} />
             </div>}
           </div>
           <div className="thumb-track" aria-hidden="true"><div ref={sheetThumb.thumbRef} className="thumb" /></div>

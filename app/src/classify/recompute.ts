@@ -1,3 +1,4 @@
+import { createUIYield } from '@/lib/background';
 import { CLASSIFICATION_VERSION } from './role-taxonomy';
 import { refreshJobDetails } from '@/details/cache';
 import type { Database } from '@/db/database';
@@ -7,6 +8,7 @@ import type { ClassificationResult, EligibilityVerdict } from './types';
 import { normalizeCategoryValue, parseCategoryTags } from './types';
 import { classifyPosting } from './classifier';
 import { scorePosting, type ScoreResult } from './scoring';
+import { isTauri } from '@/lib/platform';
 
 export interface RecomputeResult {
   classification: ClassificationResult;
@@ -29,7 +31,7 @@ export type Cancelled = () => boolean;
 // Rows processed per batch before yielding the main thread. Large enough to keep
 // database round-trips cheap, small enough that classification never blocks the
 // UI for long.
-const RECOMPUTE_CHUNK = 250;
+const RECOMPUTE_CHUNK = 25;
 
 function yieldToMain(): Promise<void> {
   return new Promise((resolve) => { setTimeout(resolve, 0); });
@@ -120,16 +122,6 @@ export async function recomputeNewPostings(
     const results = new Map<string, RecomputeResult>();
     if (postingIds.length === 0 || cancelled?.()) return results;
 
-    const requestedIds = new Set(postingIds);
-    const rows = await db.query<{
-      id: string;
-      data: string;
-      description: string | null;
-      first_seen_at: string | null;
-    }>(
-      'SELECT id, data, description, first_seen_at FROM postings_cache',
-    );
-
     // Classification (regex + description extraction) is the CPU cost here. It is
     // processed in bounded chunks that write and then yield to the UI, so a full
     // reclassification of the feed never blocks the main thread in one stretch.
@@ -140,51 +132,55 @@ export async function recomputeNewPostings(
       statements = [];
     };
 
-    for (const row of rows) {
-      if (!requestedIds.has(row.id)) continue;
-      const posting = parsePosting(row.data);
-      if (!posting) continue;
+    const checkpoint = createUIYield();
+    const uniqueIds = [...new Set(postingIds)];
+    for (let offset = 0; offset < uniqueIds.length; offset += RECOMPUTE_CHUNK) {
+      if (cancelled?.()) return results;
+      const ids = uniqueIds.slice(offset, offset + RECOMPUTE_CHUNK);
+      const rows = await db.query<{ id: string; data: string; description: string | null; first_seen_at: string | null }>(
+        `SELECT id, data, description, first_seen_at FROM postings_cache WHERE id IN (${ids.map(() => '?').join(',')})`, ids);
+      for (const row of rows) {
+        const posting = parsePosting(row.data);
+        if (!posting) continue;
 
-      const classification = classifyPosting(posting, row.description, profile);
-      const firstSeenAt = row.first_seen_at ?? posting.first_seen_at;
-      const score = scorePosting(
-        {
-          company_slug: posting.company_slug,
-          first_seen_at: firstSeenAt,
-          eligibility_verdict: classification.eligibility.verdict,
-          category: classification.category.category,
-          category_tags: classification.category.category_tags,
-          locations: posting.locations,
-          degree_labels: posting.source_metadata?.degrees,
-        },
-        profile,
-        now,
-      );
-      const result: RecomputeResult = { classification, score };
-      results.set(row.id, result);
-      statements.push({
-        sql: `UPDATE postings_cache
-              SET category = ?, category_tags = ?, role_classification = ?, classification_version = ?, term = ?, eligibility = ?, score = ?, score_breakdown = ?
-              WHERE id = ?`,
-        params: [
-          classification.category.category,
-          JSON.stringify(classification.category.category_tags),
-          JSON.stringify(classification.category),
-          classification.category.version,
-          classification.term.term,
-          JSON.stringify(classification.eligibility),
-          score.score,
-          JSON.stringify(score.breakdown),
-          row.id,
-        ],
-      });
-
-      if (statements.length >= RECOMPUTE_CHUNK) {
-        await flush();
-        if (cancelled?.()) return results;
-        await yieldToMain();
-        if (cancelled?.()) return results;
+        const classification = classifyPosting(posting, row.description, profile);
+        const firstSeenAt = row.first_seen_at ?? posting.first_seen_at;
+        const score = scorePosting(
+          {
+            company_slug: posting.company_slug,
+            first_seen_at: firstSeenAt,
+            eligibility_verdict: classification.eligibility.verdict,
+            category: classification.category.category,
+            category_tags: classification.category.category_tags,
+            locations: posting.locations,
+            degree_labels: posting.source_metadata?.degrees,
+          },
+          profile,
+          now,
+        );
+        const result: RecomputeResult = { classification, score };
+        results.set(row.id, result);
+        statements.push({
+          sql: `UPDATE postings_cache
+                SET category = ?, category_tags = ?, role_classification = ?, classification_version = ?, term = ?, eligibility = ?, score = ?, score_breakdown = ?
+                WHERE id = ?`,
+          params: [
+            classification.category.category,
+            JSON.stringify(classification.category.category_tags),
+            JSON.stringify(classification.category),
+            classification.category.version,
+            classification.term.term,
+            JSON.stringify(classification.eligibility),
+            score.score,
+            JSON.stringify(score.breakdown),
+            row.id,
+          ],
+        });
+        await checkpoint();
       }
+      if (isTauri()) await flush();
+      await yieldToMain();
+      if (cancelled?.()) return results;
     }
 
     await flush();

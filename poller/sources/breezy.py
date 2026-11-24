@@ -25,6 +25,7 @@ class BreezyAdapter(SourceAdapter):
         company: Company,
         source: SourceConfig,
     ) -> list[RawPosting]:
+        self.potentially_truncated = False
         token = source.board_token
         url = BREEZY_API.format(tenant=token)
 
@@ -47,6 +48,7 @@ class BreezyAdapter(SourceAdapter):
             try:
                 postings.append(self._parse_posting(item, company, token))
             except (KeyError, TypeError) as exc:
+                self.potentially_truncated = True
                 logger.warning(
                     "[breezy:%s] skipping malformed posting: %s",
                     company.slug, exc,

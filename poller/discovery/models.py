@@ -4,6 +4,7 @@ from dataclasses import dataclass, field
 from typing import Any
 
 VALID_DISCOVERY_SOURCES = {
+    "feed",
     "common_crawl",
     "redirect",
     "directory",

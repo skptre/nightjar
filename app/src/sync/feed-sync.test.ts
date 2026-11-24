@@ -59,7 +59,12 @@ function makeMeta(sha256: string, count: number): MetaData {
 }
 
 function mockFetchResponses(responses: Record<string, { ok: boolean; body?: unknown; rawText?: string; status?: number }>): void {
-  vi.stubGlobal('fetch', vi.fn((url: string) => {
+  const monolithic = responses['feed.json'];
+  const metadata = responses['meta.json']?.body as MetaData | undefined;
+  vi.stubGlobal('fetch', vi.fn(async (url: string) => {
+    if (monolithic?.ok && metadata && !metadata.sharded) {
+      metadata.sha256 = await computeSha256(monolithic.rawText ?? JSON.stringify(monolithic.body));
+    }
     for (const [pattern, response] of Object.entries(responses)) {
       if (url.includes(pattern)) {
         if (!response.ok) {
@@ -184,6 +189,7 @@ describe('feed-sync', () => {
           status: 200,
           headers: new Headers({ 'Last-Modified': 'Thu, 27 Aug 2026 10:00:00 GMT' }),
           json: () => Promise.resolve(feed),
+          text: () => Promise.resolve(JSON.stringify(feed)),
         });
       }));
 
@@ -203,6 +209,7 @@ describe('feed-sync', () => {
           status: 200,
           headers: new Headers({}),
           json: () => Promise.resolve(feed),
+          text: () => Promise.resolve(JSON.stringify(feed)),
         });
       }));
 
@@ -234,6 +241,7 @@ describe('feed-sync', () => {
           status: 200,
           headers: new Headers({ 'Last-Modified': 'Fri, 28 Aug 2026 12:00:00 GMT' }),
           json: () => Promise.resolve(feed),
+          text: () => Promise.resolve(JSON.stringify(feed)),
         });
       }));
 
@@ -498,11 +506,12 @@ describe('feed-sync', () => {
       expect(result.newPostingIds).toHaveLength(2);
       expect(result.totalCount).toBe(2);
 
-      expect(getStoredMetaHash()).toBe('newhash123');
+      expect(getStoredMetaHash()).toBe(meta.sha256);
     });
 
     it('skips feed fetch when hash matches', async () => {
       setStoredMetaHash('samehash');
+      localStorage.setItem('nightjar_cached_open_count', '5');
       const meta = makeMeta('samehash', 5);
 
       for (let i = 0; i < 5; i++) {
@@ -527,7 +536,39 @@ describe('feed-sync', () => {
       expect(calls.some((u) => u.includes('feed.json'))).toBe(false);
     });
 
+    it('keeps only open or tracked postings after a sync and does not refetch an unchanged feed', async () => {
+      const meta = makeMeta('retention-hash', 3);
+      const feed = makeFeed({
+        open: makePosting({ id: 'open' }),
+        closed: makePosting({ id: 'closed', closed_at: '2026-08-11T00:00:00Z' }),
+        tracked: makePosting({ id: 'tracked', closed_at: '2026-08-11T00:00:00Z' }),
+      });
+      await db.run(`INSERT INTO postings_cache (id,data,closed_at,synced_at) VALUES
+        ('old-closed','{}','2026-08-10T00:00:00Z','2026-08-12T00:00:00Z')`);
+      await db.run(`INSERT INTO job_details_cache (posting_id,context_key,details_json,assessment_json)
+        VALUES ('old-closed','test','{}','{}')`);
+      await db.run(`INSERT INTO applications (posting_id,created_at,updated_at)
+        VALUES ('tracked','2026-08-12T00:00:00Z','2026-08-12T00:00:00Z')`);
+      mockFetchResponses({
+        'meta.json': { ok: true, body: meta },
+        'feed.json': { ok: true, body: feed },
+      });
+
+      const first = await syncFeed(db, '/test');
+      expect(first.newPostingIds).toEqual(['open']);
+      expect((await db.query<{ id: string }>('SELECT id FROM postings_cache ORDER BY id'))
+        .map(row => row.id)).toEqual(['open', 'tracked']);
+      expect(await db.queryOne('SELECT posting_id FROM job_details_cache')).toBeUndefined();
+      expect(await db.queryOne('SELECT posting_id FROM applications')).toEqual({ posting_id: 'tracked' });
+
+      const second = await syncFeed(db, '/test');
+      expect(second.skipped).toBe(true);
+      expect(vi.mocked(fetch).mock.calls.filter(call => (call[0] as string).includes('feed.json'))).toHaveLength(1);
+    });
+
     it('returns error on meta fetch failure', async () => {
+      await db.run(`INSERT INTO postings_cache (id,data,closed_at,synced_at)
+        VALUES ('stale','{}','2026-08-01T00:00:00Z','2026-08-12T00:00:00Z')`);
       mockFetchResponses({
         'meta.json': { ok: false, body: null },
       });
@@ -535,6 +576,7 @@ describe('feed-sync', () => {
       const result = await syncFeed(db, '/test');
       expect(result.skipped).toBe(false);
       expect(result.error).toBeDefined();
+      expect(await db.queryOne('SELECT id FROM postings_cache')).toBeUndefined();
     });
 
     it('returns error on feed fetch failure', async () => {
@@ -690,6 +732,26 @@ describe('feed-sync', () => {
       expect(fetchCalls.some((url) => url.includes('lever.json'))).toBe(true);
     });
 
+    it('does not redownload unchanged shards after discarding closed untracked postings', async () => {
+      const open = makePosting({ id: 'open', source: 'greenhouse' });
+      const closed = makePosting({ id: 'closed', source: 'greenhouse', closed_at: '2026-08-11T00:00:00Z' });
+      const shard = await makeShardWithHash('greenhouse', { open, closed });
+      const meta = makeShardedMeta('retained-open-hash', 2, {
+        greenhouse: { sha256: shard.sha256, count: 2, updated_at: '2026-08-12T00:00:00Z' },
+      });
+      mockFetchResponses({
+        'meta.json': { ok: true, body: meta },
+        'greenhouse.json': { ok: true, rawText: shard.text },
+        'index.json': { ok: false, body: null },
+      });
+
+      expect((await syncFeed(db, '/test')).newPostingIds).toEqual(['open']);
+      expect((await db.query<{ id: string }>('SELECT id FROM postings_cache')).map(row => row.id)).toEqual(['open']);
+      expect((await syncFeed(db, '/test')).skipped).toBe(true);
+      expect(vi.mocked(fetch).mock.calls.filter(call => (call[0] as string).includes('greenhouse.json')))
+        .toHaveLength(1);
+    });
+
     it('rejects shard with mismatched shard_id — zero writes', async () => {
       const wrongIdPostings = { p1: makePosting({ id: 'p1', source: 'greenhouse' }) };
       const wrongIdText = makeShardText('lever', wrongIdPostings);
@@ -821,7 +883,7 @@ describe('feed-sync', () => {
 
       const flatResult = await syncFeed(db, '/test');
       expect(flatResult.newPostingIds).toEqual(['p1']);
-      expect(getStoredMetaHash()).toBe('flathash');
+      expect(getStoredMetaHash()).toBe(flatMeta.sha256);
 
       vi.restoreAllMocks();
 
@@ -1099,4 +1161,36 @@ describe('notifications', () => {
       expect(notifications[0]!.title).toBe('R2');
     });
   });
+});
+
+
+it('rejects a monolithic publication race without writing or advancing the saved hash', async () => {
+  localStorage.clear();
+  const db = await NightjarDB.createInMemory();
+  const feed = makeFeed({ p1: makePosting({ id: 'p1' }) });
+  const text = JSON.stringify(feed);
+  vi.stubGlobal('fetch', vi.fn(async (url: string) => url.endsWith('meta.json')
+    ? new Response(JSON.stringify(makeMeta('a'.repeat(64), 1))) : new Response(text)));
+  try {
+    const result = await syncFeed(db, '/race');
+    expect(result.error).toContain('checksum mismatch');
+    expect(await db.query('SELECT id FROM postings_cache')).toEqual([]);
+    expect(getStoredMetaHash()).toBeNull();
+  } finally { await db.close(); vi.unstubAllGlobals(); localStorage.clear(); }
+});
+
+
+it('fetches the immutable snapshot named by the verified manifest', async () => {
+  const { fetchShard } = await import('./feed-sync');
+  const text = JSON.stringify({ shard_id: 'greenhouse', updated_at: '2026-10-24', count: 1,
+    postings: { p1: makePosting({ id: 'p1' }) } });
+  const sha256 = await computeSha256(text);
+  const request = vi.fn(async (_url: string, _init?: RequestInit) => new Response(text));
+  vi.stubGlobal('fetch', request);
+  try {
+    const result = await fetchShard('greenhouse', { sha256, path: `snapshots/${sha256}.json`,
+      count: 1, updated_at: '2026-10-24' }, '/immutable');
+    expect(result.postings['p1']?.id).toBe('p1');
+    expect(request.mock.calls[0]?.[0]).toBe(`/immutable/feed/snapshots/${sha256}.json`);
+  } finally { vi.unstubAllGlobals(); }
 });

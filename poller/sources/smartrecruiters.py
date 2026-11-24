@@ -7,6 +7,7 @@ from poller.descriptions import smartrecruiters_description
 from poller.exceptions import SourceParseError
 from poller.models import Posting, RawPosting, compute_posting_id
 from poller.normalize import clean_title, normalize_location, normalize_locations
+from poller.pagination import PaginationGuard
 from poller.sources.base import SourceAdapter
 
 logger = logging.getLogger(__name__)
@@ -33,6 +34,8 @@ class SmartRecruitersAdapter(SourceAdapter):
 
         all_postings: list[RawPosting] = []
         offset = 0
+        guard = PaginationGuard("smartrecruiters", company.slug, page_size=PAGE_LIMIT)
+        self.potentially_truncated = False
 
         while True:
             data = await client.get_json(
@@ -49,7 +52,7 @@ class SmartRecruitersAdapter(SourceAdapter):
                     f"expected object, got {type(data).__name__}",
                 )
 
-            content = data.get("content", [])
+            content = data.get("content")
             if not isinstance(content, list):
                 raise SourceParseError(
                     "smartrecruiters",
@@ -57,26 +60,34 @@ class SmartRecruitersAdapter(SourceAdapter):
                     f"expected 'content' array, got {type(content).__name__}",
                 )
 
-            total_found = data.get("totalFound", 0)
+            total_found = data.get("totalFound")
 
+            page_ids: list[str] = []
             for item in content:
                 try:
-                    all_postings.append(self._parse_posting(item, company, token))
-                except (KeyError, TypeError) as exc:
+                    raw = self._parse_posting(item, company, token)
+                    all_postings.append(raw)
+                    page_ids.append(raw.source_job_id)
+                except (KeyError, TypeError, AttributeError, ValueError) as exc:
+                    self.potentially_truncated = True
                     logger.warning(
                         "[smartrecruiters:%s] skipping malformed posting: %s",
                         company.slug, exc,
                     )
 
-            offset += PAGE_LIMIT
-            if offset >= total_found or not content:
+            if len(page_ids) != len(content):
+                raise SourceParseError(
+                    "smartrecruiters", company.slug, "malformed pagination record",
+                )
+            if guard.observe(page_ids, total_found, terminal=not content):
                 break
+            offset += len(content)
 
         logger.info(
             "[smartrecruiters:%s] %d postings from %d total",
-            company.slug, len(all_postings), total_found,
+            company.slug, len(all_postings), guard.expected,
         )
-        return all_postings
+        return list({posting.source_job_id: posting for posting in all_postings}.values())
 
     def _parse_posting(
         self,

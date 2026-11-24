@@ -24,7 +24,7 @@ it.skipIf(!process.env.NIGHTJAR_RELEASE_DIR)('renders all active jobs and opens 
   HTMLElement.prototype.scrollTo = vi.fn();
   vi.stubGlobal('fetch', vi.fn(async input => {
     const path = new URL(String(input), 'https://local.example').pathname.replace(/^\/candidate\//, '');
-    if (!/^(?:meta\.json|feed\.json|feed\/(?:[a-z_-]+\.json|details\/descriptions-[a-f0-9]\.json))$/.test(path)) return new Response('', { status: 404 });
+    if (!/^(?:meta\.json|feed\.json|feed\/(?:[a-z_-]+\.json|snapshots\/[a-f0-9]{64}\.json|details\/(?:descriptions-[a-f0-9]|[a-f0-9]{2}-[a-f0-9]{64})\.json))$/.test(path)) return new Response('', { status: 404 });
     return new Response(readFileSync(resolve(root, path), 'utf8'));
   }));
   const db = await NightjarDB.createInMemory(); state.db = db;

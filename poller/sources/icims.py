@@ -153,6 +153,7 @@ class ICIMSAdapter(SourceAdapter):
         company: Company,
         source: SourceConfig,
     ) -> list[RawPosting]:
+        self.potentially_truncated = False
         url = ICIMS_SEARCH.format(token=source.board_token)
         try:
             robots = await client.get_text(
@@ -196,8 +197,10 @@ class ICIMSAdapter(SourceAdapter):
                 seen.add(card.job_id)
                 new_this_page += 1
                 all_postings.append(self._parse_card(card, company))
-            # Out-of-range pages echo the last page; stop if nothing new.
+            # An echoed page may be an out-of-range response or broken paging.
+            # Stop the loop, but don't use that ambiguity to close unseen jobs.
             if new_this_page == 0:
+                self.potentially_truncated = True
                 break
 
         else:

@@ -6,12 +6,40 @@ from typing import Any
 
 import pytest
 
+from poller.exceptions import SourceParseError
 from poller.models import Company, SourceConfig, compute_posting_id
 from poller.sources.smartrecruiters import SmartRecruitersAdapter
 from poller.tests.conftest import MockTransport, json_response, make_mock_client
 
 FIXTURES = Path(__file__).parent / "fixtures" / "smartrecruiters"
 NOW = "2026-08-21T12:00:00Z"
+
+
+@pytest.mark.asyncio
+async def test_total_reset_does_not_hide_later_smartrecruiters_jobs() -> None:
+    pages = []
+    for start, count, total in [(0, 100, 205), (100, 100, 0), (200, 5, 0)]:
+        pages.append({'totalFound': total, 'content': [
+            {'id': str(i), 'name': 'Engineering Intern'} for i in range(start, start + count)
+        ]})
+    client = await make_mock_client(MockTransport([json_response(p) for p in pages]))
+    company = _make_company()
+    try:
+        rows = await SmartRecruitersAdapter().fetch(client, company, company.sources[0])
+        assert len({p.source_job_id for p in rows}) == 205
+    finally:
+        await client.close()
+
+
+@pytest.mark.asyncio
+async def test_smartrecruiters_missing_content_is_not_an_empty_board() -> None:
+    client = await make_mock_client(MockTransport([json_response({'error': 'schema changed'})]))
+    company = _make_company()
+    try:
+        with pytest.raises(SourceParseError):
+            await SmartRecruitersAdapter().fetch(client, company, company.sources[0])
+    finally:
+        await client.close()
 
 
 def _load_fixture(name: str) -> dict[str, Any]:
@@ -73,7 +101,7 @@ class TestSmartRecruitersPagination:
         req1_url = str(transport.requests[0].url)
         req2_url = str(transport.requests[1].url)
         assert "offset=0" in req1_url
-        assert "offset=100" in req2_url
+        assert "offset=5" in req2_url
         assert "limit=100" in req1_url
         assert "limit=100" in req2_url
         await client.close()
@@ -315,7 +343,7 @@ class TestSmartRecruitersParseError:
             await adapter.fetch(client, company, company.sources[0])
         await client.close()
 
-    async def test_malformed_posting_skipped(self) -> None:
+    async def test_malformed_posting_rejects_incomplete_snapshot(self) -> None:
         fixture = {
             "totalFound": 2,
             "content": [
@@ -337,10 +365,8 @@ class TestSmartRecruitersParseError:
         adapter = SmartRecruitersAdapter()
         company = _make_company()
 
-        raw = await adapter.fetch(client, company, company.sources[0])
-
-        assert len(raw) == 1
-        assert raw[0].source_job_id == "good-1"
+        with pytest.raises(SourceParseError, match="malformed"):
+            await adapter.fetch(client, company, company.sources[0])
         await client.close()
 
 

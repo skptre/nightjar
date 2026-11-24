@@ -14,7 +14,7 @@ it.skipIf(!release)('imports every staged public description intact through real
   vi.stubGlobal('fetch', vi.fn(async (input) => {
     const url = new URL(String(input), 'https://release.example');
     const path = url.pathname.replace(/^\/candidate\//, '');
-    if (!/^(?:meta\.json|feed\.json|feed\/(?:[a-z_-]+\.json|details\/(?:descriptions-[a-f0-9]|[a-f0-9-]+)\.json))$/.test(path)) {
+    if (!/^(?:meta\.json|feed\.json|feed\/(?:[a-z_-]+\.json|snapshots\/[a-f0-9]{64}\.json|details\/(?:descriptions-[a-f0-9]|[a-f0-9-]+)\.json))$/.test(path)) {
       return new Response('', { status: 404 });
     }
     try { return new Response(readFileSync(resolve(root, path), 'utf8')); }
@@ -25,7 +25,7 @@ it.skipIf(!release)('imports every staged public description intact through real
     const result = await syncFeed(db, '/candidate');
     expect(result.error).toBeUndefined();
     const rows = await db.query('SELECT id,description FROM postings_cache');
-    expect(rows.length).toBe(Object.keys(feed.postings).length);
+    expect(rows.length).toBe(Object.values(feed.postings).filter(row => !row.closed_at).length);
     let descriptions = 0;
     for (const row of rows) {
       const expected = feed.postings[row.id]?.description_text || null;

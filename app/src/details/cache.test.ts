@@ -41,3 +41,14 @@ it('extracts descriptions offline without requiring a private profile', async ()
   expect(result?.details.sections.responsibilities[0]?.text).toBe('Build avionics software.');
   expect(result?.assessment).toBeNull();
 });
+
+it('repairs corrupt details and reuses structured compensation without rewriting it on warm refresh', async () => {
+  const data = JSON.stringify({title: 'Engineering Intern', source_metadata: {
+    source_compensation: {minimum: 25, maximum: 40, currency: 'USD', interval: 'hour'}}});
+  await db.run("INSERT INTO postings_cache(id,data,description,synced_at) VALUES ('pay',?,'Build things.','now')", [data]);
+  expect(await refreshJobDetails(db, null)).toBe(1);
+  expect(await refreshJobDetails(db, null)).toBe(0);
+  await db.run("UPDATE job_details_cache SET details_json='broken' WHERE posting_id='pay'");
+  expect(await refreshJobDetails(db, null)).toBe(1);
+  expect(await refreshJobDetails(db, null)).toBe(0);
+});

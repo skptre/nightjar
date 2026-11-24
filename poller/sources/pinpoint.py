@@ -25,6 +25,7 @@ class PinpointAdapter(SourceAdapter):
         company: Company,
         source: SourceConfig,
     ) -> list[RawPosting]:
+        self.potentially_truncated = False
         token = source.board_token
         url = PINPOINT_API.format(tenant=token)
 
@@ -41,7 +42,7 @@ class PinpointAdapter(SourceAdapter):
                 f"expected object, got {type(data).__name__}",
             )
 
-        postings_data = data.get("data", [])
+        postings_data = self.listing_items(data, "data", "pinpoint", company.slug)
         if not isinstance(postings_data, list):
             raise SourceParseError(
                 "pinpoint",
@@ -54,6 +55,7 @@ class PinpointAdapter(SourceAdapter):
             try:
                 postings.append(self._parse_posting(item, company, token))
             except (KeyError, TypeError) as exc:
+                self.potentially_truncated = True
                 logger.warning(
                     "[pinpoint:%s] skipping malformed posting: %s",
                     company.slug, exc,

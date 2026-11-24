@@ -4,7 +4,7 @@ import dataclasses
 import hashlib
 import json
 import re
-from datetime import datetime, timedelta
+from datetime import UTC, datetime, timedelta
 from typing import TYPE_CHECKING, Any
 from unittest.mock import patch
 
@@ -275,6 +275,7 @@ class TestFlappingFullCycle:
                 registry_path=registry_path,
                 data_dir=data_dir,
                 skip_simplify=True,
+                now=datetime(2026, 9, 1, 0, tzinfo=UTC),
             )
 
         feed = load_feed(data_dir / "feed.json")
@@ -292,6 +293,7 @@ class TestFlappingFullCycle:
                 registry_path=registry_path,
                 data_dir=data_dir,
                 skip_simplify=True,
+                now=datetime(2026, 9, 1, 6, tzinfo=UTC),
             )
 
         feed = load_feed(data_dir / "feed.json")
@@ -312,6 +314,7 @@ class TestFlappingFullCycle:
                 registry_path=registry_path,
                 data_dir=data_dir,
                 skip_simplify=True,
+                now=datetime(2026, 9, 1, 12, tzinfo=UTC),
             )
 
         feed = load_feed(data_dir / "feed.json")

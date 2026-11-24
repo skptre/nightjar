@@ -68,7 +68,7 @@ describe('Block 10 — App Hardening', () => {
   });
 
   describe('Offline sync skip', () => {
-    it('SyncManager keeps a populated cache without fetching when offline', async () => {
+    it('SyncManager keeps a populated cache available when offline', async () => {
       await db.run("INSERT INTO postings_cache(id,data,synced_at) VALUES ('cached','{}','2026-09-10')");
       const originalOnLine = Object.getOwnPropertyDescriptor(Navigator.prototype, 'onLine');
 

@@ -91,10 +91,14 @@ export function parseWorkspaceBackup(text: string): WorkspaceBackup {
   return result;
 }
 
-export async function createWorkspaceBackup(db: Database): Promise<string> {
+export async function createWorkspaceBackup(db: Database, trackedOnly = false): Promise<string> {
   const rows = {} as WorkspaceBackup['tables'];
   await db.transaction(async tx => {
-    for (const table of tables) rows[table] = await tx.query<Row>(`SELECT ${COLUMNS[table].split(' ').join(',')} FROM ${table}`);
+    for (const table of tables) {
+      const where = trackedOnly && table === 'postings_cache'
+        ? ' WHERE id IN (SELECT posting_id FROM applications)' : '';
+      rows[table] = await tx.query<Row>(`SELECT ${COLUMNS[table].split(' ').join(',')} FROM ${table}${where}`);
+    }
   });
   const text = JSON.stringify({ format: 'nightjar-workspace', version: 1, created_at: new Date().toISOString(), settings: readWorkspaceSettings(), tables: rows });
   parseWorkspaceBackup(text); // Never claim to have created a backup we cannot restore.

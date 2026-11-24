@@ -8,6 +8,14 @@ from poller.models import Company, SourceConfig, SourceHealth
 from poller.registry import VALID_SOURCE_TYPES, is_poll_due, load_registry
 
 
+def test_incomplete_quiet_source_retries_before_the_six_hour_interval() -> None:
+    company = Company(slug="acme", name="Acme", tags=[], sources=[])
+    health = SourceHealth(last_polled_at="2026-10-01T00:00:00Z", healthy=False,
+                          potentially_truncated=True, activity_poll_count=100,
+                          consecutive_unchanged=20)
+    assert is_poll_due(company, health, datetime(2026, 10, 1, 0, 16, tzinfo=UTC))
+
+
 @pytest.fixture()
 def registry_dir(tmp_path: Path) -> Path:
     return tmp_path

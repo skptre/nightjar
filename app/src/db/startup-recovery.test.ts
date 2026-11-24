@@ -1,4 +1,5 @@
 import { afterEach, expect, it, vi } from 'vitest';
+import { BrowserDatabase } from './browser-database';
 import { createDatabase, NightjarDB } from './database';
 import { getSchemaVersion, runMigrations } from './migrations';
 vi.mock('@/lib/platform', () => ({ isTauri: () => false }));
@@ -21,7 +22,7 @@ it.each([true, false])('recovers an interrupted classification migration, missin
 
 it('shares concurrent startup so React remounts cannot race migrations', async () => {
   const db = await NightjarDB.createInMemory();
-  const open = vi.spyOn(NightjarDB, 'create').mockResolvedValue(db);
+  const open = vi.spyOn(BrowserDatabase, 'create').mockResolvedValue(db as unknown as BrowserDatabase);
   try {
     const [first, second] = await Promise.all([createDatabase(), createDatabase()]);
     expect(first).toBe(second);

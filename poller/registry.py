@@ -13,11 +13,29 @@ from poller.models import Company, SourceConfig, SourceHealth
 logger = logging.getLogger(__name__)
 
 VALID_SOURCE_TYPES = {
-    "greenhouse", "lever", "ashby", "workday", "simplify", "smartrecruiters",
-    "google_careers", "microsoft_careers", "usajobs", "icims",
-    "recruitee", "bamboohr", "workable", "breezy",
-    "jazzhr", "teamtailor", "pinpoint", "comeet",
+    "greenhouse",
+    "lever",
+    "ashby",
+    "workday",
+    "simplify",
+    "smartrecruiters",
+    "google_careers",
+    "microsoft_careers",
+    "usajobs",
+    "icims",
+    "recruitee",
+    "bamboohr",
+    "workable",
+    "breezy",
+    "jazzhr",
+    "teamtailor",
+    "pinpoint",
+    "comeet",
     "generic",
+    "eightfold",
+    "public_careers",
+    "oracle_careers",
+    "recruitpro",
 }
 VALID_SEASONAL_PATTERNS = {"fall", "spring", "year_round"}
 DEFAULT_INTERVAL = timedelta(hours=6)
@@ -57,6 +75,7 @@ def load_registry(path: Path | None = None) -> list[Company]:
                 type=s["type"],
                 board_token=s["board_token"],
                 eu=s.get("eu", False),
+                replaces=s.get("replaces", []),
             )
             for s in entry["sources"]
         ]
@@ -97,22 +116,25 @@ def _validate_entry(entry: dict[str, Any], seen_slugs: set[str]) -> None:
 
     seasonal_pattern = entry.get("seasonal_pattern")
     if seasonal_pattern is not None and (
-        not isinstance(seasonal_pattern, str)
-        or seasonal_pattern not in VALID_SEASONAL_PATTERNS
+        not isinstance(seasonal_pattern, str) or seasonal_pattern not in VALID_SEASONAL_PATTERNS
     ):
-        raise ValueError(
-            f"Company '{slug}' has invalid seasonal_pattern: {seasonal_pattern!r}"
-        )
+        raise ValueError(f"Company '{slug}' has invalid seasonal_pattern: {seasonal_pattern!r}")
 
     for source in entry["sources"]:
         if "type" not in source:
             raise ValueError(f"Company '{slug}' has source missing 'type'")
         if source["type"] not in VALID_SOURCE_TYPES:
-            raise ValueError(
-                f"Company '{slug}' has unknown source type: '{source['type']}'"
-            )
+            raise ValueError(f"Company '{slug}' has unknown source type: '{source['type']}'")
         if "board_token" not in source or not source["board_token"]:
             raise ValueError(f"Company '{slug}' has source missing 'board_token'")
+        replacements = source.get("replaces", [])
+        if not isinstance(replacements, list) or any(
+            not isinstance(key, str)
+            or key.split(":", 1)[-1] != slug
+            or key.split(":", 1)[0] not in VALID_SOURCE_TYPES
+            for key in replacements
+        ):
+            raise ValueError(f"Company '{slug}' has invalid source replacement keys")
 
 
 def is_poll_due(
@@ -143,6 +165,8 @@ def _compute_interval(
     source_health: SourceHealth,
     now: datetime,
 ) -> timedelta:
+    if source_health.potentially_truncated:
+        return HOT_INTERVAL
     if is_off_season(company, now):
         return OFF_SEASON_INTERVAL
 
@@ -279,6 +303,7 @@ def prioritize_due_sources(
 
         is_protected = (
             company.high_priority
+            or (health is not None and health.potentially_truncated)
             or (force_include_keys is not None and key in force_include_keys)
             or _is_starving(health, now)
         )

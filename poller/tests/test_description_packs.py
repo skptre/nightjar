@@ -47,7 +47,8 @@ def test_unchanged_documents_keep_pack_identity_when_feed_timestamp_changes(tmp_
         {posting.id: replace(posting, description_text="Updated text.")},
         "2026-09-09T00:00:00Z",
     )
-    assert len(list((tmp_path / "details").glob("*.json"))) == 1
+    # The previous immutable pack remains available during the cache grace period.
+    assert len(list((tmp_path / "details").glob("*.json"))) == 2
     assert load_feed_sharded(tmp_path)[posting.id].description_text == "Updated text."
 
 
@@ -79,8 +80,8 @@ def test_packs_are_bounded_and_legacy_files_are_cleaned_after_save(tmp_path: Pat
         for i in range(100)
     }
     save_feed_sharded(tmp_path, rows, "2026-09-09")
-    assert not legacy.exists()
+    assert legacy.exists()  # Existing references get a bounded retirement grace period.
     assert unrelated.exists()
     assert len(list(details.glob("descriptions-*.json"))) <= 16
-    assert len(list(details.glob("*.json"))) <= 16
+    assert len(list(details.glob("*.json"))) <= 256
     assert load_feed_sharded(tmp_path) == rows

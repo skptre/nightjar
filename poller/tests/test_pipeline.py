@@ -9,7 +9,7 @@ from unittest.mock import patch
 import pytest
 
 from poller.exceptions import SourceFetchError
-from poller.main import run_pipeline
+from poller.main import _poll_source, run_pipeline
 from poller.models import Company, Posting, RawPosting, SourceHealth
 from poller.store import RunState, load_feed, load_state, save_feed, save_state
 from poller.tests.conftest import make_company, make_posting, make_source_health
@@ -550,3 +550,128 @@ class TestStaleSourcePruning:
         state = load_state(data_dir / "state.json")
         assert "simplify:__meta__" in state.sources
         assert "ashby:removed-co" not in state.sources
+
+
+@pytest.mark.asyncio
+async def test_partial_source_never_closes_cached_jobs(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str],
+) -> None:
+    from datetime import UTC, datetime
+    company = make_company()
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    registry = tmp_path / "companies.yaml"
+    _write_registry(registry, [company])
+    posting = make_posting(pid="keep")
+    save_feed(tmp_path / "feed.json", {posting.id: posting}, "2026-09-01T00:00:00Z")
+    _seed_state(tmp_path / "state.json", {"greenhouse:acme": SourceHealth(bootstrapped=True)},
+                active_ids={posting.id})
+    adapter = _FakeAdapter([])
+    adapter.potentially_truncated = True
+    with patch("poller.main.get_adapter", return_value=adapter):
+        for hour in (6, 12, 18):
+            await run_pipeline(dry_run=True, registry_path=registry, data_dir=tmp_path,
+                               skip_simplify=True, force_poll=True,
+                               now=datetime(2026, 9, 1, hour, tzinfo=UTC))
+    kept = load_feed(tmp_path / "feed.json")[posting.id]
+    assert kept.closed_at is None
+    assert kept.last_seen_at == posting.last_seen_at
+    assert load_state(tmp_path / "state.json").sources["greenhouse:acme"].potentially_truncated
+    assert "::warning" in capsys.readouterr().out
+
+
+@pytest.mark.asyncio
+async def test_failed_poll_does_not_refresh_or_erase_an_existing_miss(tmp_path: Path) -> None:
+    from datetime import UTC, datetime
+    company = make_company()
+    registry = tmp_path / "companies.yaml"
+    _write_registry(registry, [company])
+    posting = make_posting(pid="missing")
+    save_feed(tmp_path / "feed.json", {posting.id: posting}, "2026-09-01T00:00:00Z")
+    _seed_state(tmp_path / "state.json", {"greenhouse:acme": SourceHealth(bootstrapped=True)},
+                active_ids={posting.id})
+    for hour, fail in [(6, False), (12, True), (18, False)]:
+        with patch("poller.main.get_adapter", return_value=_FakeAdapter([], fail=fail)):
+            await run_pipeline(dry_run=True, registry_path=registry, data_dir=tmp_path,
+                               skip_simplify=True, force_poll=True,
+                               now=datetime(2026, 9, 1, hour, tzinfo=UTC))
+        if fail:
+            state = load_state(tmp_path / "state.json")
+            assert state.absent_ids.get(posting.id) == "2026-09-01T06:00:00Z"
+            retained = load_feed(tmp_path / "feed.json")[posting.id]
+            assert retained.last_seen_at == posting.last_seen_at
+    assert load_feed(tmp_path / "feed.json")[posting.id].closed_at == "2026-09-01T18:00:00Z"
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("returned_count", [3, 20])
+async def test_large_silent_result_drop_is_quarantined(
+    tmp_path: Path, returned_count: int,
+) -> None:
+    from datetime import UTC, datetime
+    registry = tmp_path / "companies.yaml"
+    _write_registry(registry, [make_company()])
+    posts = [make_posting(pid=str(i), source_job_id=str(i)) for i in range(40)]
+    for hour, rows in [(0, posts), (6, posts[:returned_count]), (12, posts[:returned_count])]:
+        with patch("poller.main.get_adapter", return_value=_FakeAdapter(rows)):
+            await run_pipeline(dry_run=True, registry_path=registry, data_dir=tmp_path,
+                               skip_simplify=True, force_poll=True,
+                               now=datetime(2026, 9, 1, hour, tzinfo=UTC))
+    feed = load_feed(tmp_path / "feed.json")
+    assert sum(p.closed_at is None for p in feed.values()) == 40
+    health = load_state(tmp_path / "state.json").sources["greenhouse:acme"]
+    assert health.potentially_truncated
+    assert "drop" in (health.error or "").lower()
+
+
+@pytest.mark.asyncio
+async def test_unexpected_adapter_schema_exception_is_isolated() -> None:
+    from poller.http import RateLimitedClient
+
+    class BrokenAdapter(_FakeAdapter):
+        async def fetch(self, client: Any, company: Any, source: Any) -> list[RawPosting]:
+            raise ValueError("upstream changed a required field")
+    company = make_company()
+    with patch("poller.main.get_adapter", return_value=BrokenAdapter([])):
+        _key, rows, health, _duration = await _poll_source(
+            RateLimitedClient(), company, company.sources[0],
+            "2026-09-01T00:00:00Z", SourceHealth(),
+        )
+    assert not health.healthy
+    assert not rows
+    assert "required field" in (health.error or "")
+
+
+@pytest.mark.asyncio
+async def test_simplify_uses_its_global_snapshot_for_real_closures(tmp_path: Path) -> None:
+    from datetime import UTC, datetime
+    registry = tmp_path / "companies.yaml"
+    _write_registry(registry, [])
+    posting = make_posting(pid="aggregated", source="simplify")
+    save_feed(tmp_path / "feed.json", {posting.id: posting}, "2026-09-01T00:00:00Z")
+    _seed_state(tmp_path / "state.json", {"simplify:__meta__": SourceHealth(bootstrapped=True)},
+                active_ids={posting.id})
+    for hour in (6, 12):
+        with patch("poller.sources.simplify.SimplifyAdapter.fetch", return_value=[]):
+            await run_pipeline(dry_run=True, registry_path=registry, data_dir=tmp_path,
+                               skip_registry_candidates=True,
+                               now=datetime(2026, 9, 1, hour, tzinfo=UTC))
+    assert load_feed(tmp_path / "feed.json")[posting.id].closed_at == "2026-09-01T12:00:00Z"
+
+
+@pytest.mark.asyncio
+async def test_raw_count_baseline_survives_filtering_and_storage(tmp_path: Path) -> None:
+    from datetime import UTC, datetime
+    registry = tmp_path / "companies.yaml"
+    _write_registry(registry, [make_company()])
+    posts = [make_posting(pid=str(i), source_job_id=str(i),
+                          title="Engineering Intern" if i < 2 else "Senior Engineer")
+             for i in range(40)]
+    for hour, rows in [(0, posts), (6, posts[:3])]:
+        with patch("poller.main.get_adapter", return_value=_FakeAdapter(rows)):
+            await run_pipeline(dry_run=True, registry_path=registry, data_dir=tmp_path,
+                               skip_simplify=True, force_poll=True,
+                               now=datetime(2026, 9, 1, hour, tzinfo=UTC))
+    health = load_state(tmp_path / "state.json").sources["greenhouse:acme"]
+    assert health.potentially_truncated
+    assert health.last_complete_count == 40
+    assert len(load_feed(tmp_path / "feed.json")) == 2

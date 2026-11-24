@@ -25,6 +25,7 @@ class ComeetAdapter(SourceAdapter):
         company: Company,
         source: SourceConfig,
     ) -> list[RawPosting]:
+        self.potentially_truncated = False
         token = source.board_token
         url = COMEET_API.format(uid=token)
 
@@ -46,6 +47,7 @@ class ComeetAdapter(SourceAdapter):
             try:
                 postings.append(self._parse_posting(item, company, token))
             except (KeyError, TypeError) as exc:
+                self.potentially_truncated = True
                 logger.warning(
                     "[comeet:%s] skipping malformed posting: %s",
                     company.slug, exc,

@@ -139,6 +139,7 @@ class SourceConfig:
     type: str
     board_token: str
     eu: bool = False
+    replaces: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -180,3 +181,4 @@ class SourceHealth:
     estimated_poll_cost: float = 0.0
     activity_poll_count: int = 0
     last_content_hash: str | None = None
+    last_complete_count: int | None = None

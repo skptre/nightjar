@@ -6,6 +6,7 @@ from poller.sources.ashby import AshbyAdapter
 from poller.sources.bamboohr import BambooHRAdapter
 from poller.sources.breezy import BreezyAdapter
 from poller.sources.comeet import ComeetAdapter
+from poller.sources.eightfold import EightfoldAdapter
 from poller.sources.generic import GenericAdapter
 from poller.sources.google_careers import GoogleCareersAdapter
 from poller.sources.greenhouse import GreenhouseAdapter
@@ -13,8 +14,11 @@ from poller.sources.icims import ICIMSAdapter
 from poller.sources.jazzhr import JazzHRAdapter
 from poller.sources.lever import LeverAdapter
 from poller.sources.microsoft_careers import MicrosoftCareersAdapter
+from poller.sources.oracle_careers import OracleCareersAdapter
 from poller.sources.pinpoint import PinpointAdapter
+from poller.sources.public_careers import PublicCareersAdapter
 from poller.sources.recruitee import RecruiteeAdapter
+from poller.sources.recruitpro import RecruitProAdapter
 from poller.sources.simplify import SimplifyAdapter
 from poller.sources.smartrecruiters import SmartRecruitersAdapter
 from poller.sources.teamtailor import TeamtailorAdapter
@@ -45,6 +49,10 @@ ADAPTERS: dict[str, type[SourceAdapter]] = {
     "comeet": ComeetAdapter,
     "usajobs": USAJobsAdapter,
     "icims": ICIMSAdapter,
+    "eightfold": EightfoldAdapter,
+    "public_careers": PublicCareersAdapter,
+    "oracle_careers": OracleCareersAdapter,
+    "recruitpro": RecruitProAdapter,
 }
 
 

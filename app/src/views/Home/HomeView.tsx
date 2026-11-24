@@ -14,7 +14,8 @@ interface HomeJob { id: string; company: string; slug: string; title: string; se
 
 export function HomeView(): React.ReactNode {
   const { db } = useDatabase();
-  const { lastSyncedAt, status: syncStatus } = useSync();
+  const { lastSyncedAt, status: syncStatus, dataRevision } = useSync();
+  const dataToken = dataRevision ?? lastSyncedAt;
   const navigate = useNavigate();
   const watched = useWatchlist();
   const [jobs, setJobs] = useState<HomeJob[]>([]);
@@ -31,7 +32,9 @@ export function HomeView(): React.ReactNode {
     let cancelled = false;
     void db.query<{ id: string; data: string; first_seen_at: string; closed_at: string | null; status: string | null;
       next_action: string | null; next_action_at: string | null; deadline: string | null }>(
-      `SELECT p.id,p.data,p.first_seen_at,p.closed_at,a.status,a.next_action,a.next_action_at,a.deadline
+      `SELECT p.id,CASE WHEN json_valid(p.data) THEN json_object('company',json_extract(p.data,'$.company'),
+         'company_slug',json_extract(p.data,'$.company_slug'),'title',json_extract(p.data,'$.title')) ELSE p.data END AS data,
+         p.first_seen_at,p.closed_at,a.status,a.next_action,a.next_action_at,a.deadline
        FROM postings_cache p LEFT JOIN applications a ON p.id=a.posting_id ORDER BY p.first_seen_at DESC`)
       .then(rows => {
         if (cancelled) return;
@@ -44,7 +47,7 @@ export function HomeView(): React.ReactNode {
         })); setLoading(false);
       }).catch(() => { if (!cancelled) { setError(true); setLoading(false); } });
     return () => { cancelled = true; };
-  }, [db, lastSyncedAt]);
+  }, [db, dataToken]);
 
   const companies = useMemo(() => {
     const map = new Map<string, { name: string; slug: string; count: number }>();
@@ -55,13 +58,13 @@ export function HomeView(): React.ReactNode {
     }
     return map;
   }, [jobs]);
-  const attention = jobs.filter(job => job.due && job.status && !['rejected', 'ghosted', 'skipped', 'new'].includes(job.status))
+  const attention = useMemo(() => jobs.filter(job => job.due && job.status && !['rejected', 'ghosted', 'skipped', 'new'].includes(job.status))
     .filter(job => dueDate(job.due!).getTime() < Date.now() + 8 * 86400000)
-    .sort((a, b) => a.due!.localeCompare(b.due!)).slice(0, 3);
-  const fresh = watched.map(company => ({ ...company, count: jobs.filter(job => job.slug === company.slug
-    && !job.closed && job.seen > company.since).length })).filter(company => company.count > 0);
-  const saved = jobs.filter(job => job.status === 'saved').length;
-  const openCount = jobs.filter(job => !job.closed && job.status !== 'skipped' && !job.id.startsWith('local-')).length;
+    .sort((a, b) => a.due!.localeCompare(b.due!)).slice(0, 3), [jobs]);
+  const fresh = useMemo(() => watched.map(company => ({ ...company, count: jobs.filter(job => job.slug === company.slug
+    && !job.closed && job.seen > company.since).length })).filter(company => company.count > 0), [watched, jobs]);
+  const saved = useMemo(() => jobs.filter(job => job.status === 'saved').length, [jobs]);
+  const openCount = useMemo(() => jobs.filter(job => !job.closed && job.status !== 'skipped' && !job.id.startsWith('local-')).length, [jobs]);
   const shownOpen = useTweenedNumber(loading ? 0 : openCount, 1100, 0);
   const suggestions = [...companies.values()]
     .filter(c => !watched.some(w => w.slug === c.slug) && c.name.toLowerCase().includes(query.trim().toLowerCase()))

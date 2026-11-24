@@ -8,7 +8,7 @@ from unittest.mock import AsyncMock, patch
 import httpx
 import pytest
 
-from poller.exceptions import SourceFetchError
+from poller.exceptions import SourceFetchError, SourceParseError
 from poller.models import Company, SourceConfig
 from poller.sources.workday import (
     WORKDAY_PAGE_LIMIT,
@@ -20,6 +20,62 @@ from poller.tests.conftest import MockTransport, json_response, make_mock_client
 
 FIXTURES = Path(__file__).parent / "fixtures" / "workday"
 NOW = "2026-08-21T12:00:00Z"
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize('later_total', [0, None, 10])
+async def test_keeps_first_total_when_later_pages_reset_it(later_total: int | None) -> None:
+    pages = [_load_fixture(f'multipage_page{i}.json') for i in (1, 2, 3)]
+    for page in pages[1:]:
+        if later_total is None:
+            page.pop('total', None)
+        else:
+            page['total'] = later_total
+    client = await make_mock_client(MockTransport([json_response(p) for p in pages]))
+    company = _make_company()
+    try:
+        rows = await WorkdayAdapter().fetch(client, company, company.sources[0])
+        assert len({p.source_job_id for p in rows}) == 55
+    finally:
+        await client.close()
+
+
+@pytest.mark.asyncio
+async def test_repeated_workday_page_is_not_a_complete_board() -> None:
+    page = _load_fixture('multipage_page1.json')
+    client = await make_mock_client(MockTransport([json_response(page)]))
+    company = _make_company()
+    try:
+        adapter = WorkdayAdapter()
+        rows = await adapter.fetch(client, company, company.sources[0])
+        assert rows and adapter.potentially_truncated
+    finally:
+        await client.close()
+
+
+@pytest.mark.asyncio
+async def test_workday_missing_jobs_field_is_not_an_empty_board() -> None:
+    client = await make_mock_client(MockTransport([json_response({'error': 'schema changed'})]))
+    company = _make_company()
+    try:
+        with pytest.raises(SourceParseError):
+            await WorkdayAdapter().fetch(client, company, company.sources[0])
+    finally:
+        await client.close()
+
+
+@pytest.mark.asyncio
+async def test_empty_first_page_retries_when_it_advertises_jobs() -> None:
+    pages = [_load_fixture(f"multipage_page{i}.json") for i in (1, 2, 3)]
+    responses = [{"total": 55, "jobPostings": []}, *pages]
+    client = await make_mock_client(MockTransport([json_response(p) for p in responses]))
+    company = _make_company()
+    try:
+        with patch("poller.sources.workday.asyncio.sleep", new_callable=AsyncMock):
+            rows = await WorkdayAdapter().fetch(client, company, company.sources[0])
+        assert len(rows) == 55
+    finally:
+        await client.close()
 
 
 def _load_fixture(name: str) -> dict[str, Any]:
@@ -218,7 +274,7 @@ class TestThrottleRetry:
         await client.close()
 
     @pytest.mark.asyncio
-    async def test_exhausted_throttle_retries_raises(self) -> None:
+    async def test_exhausted_throttle_retries_retains_partial_discoveries(self) -> None:
         page1 = _load_fixture("multipage_page1.json")
         throttled = _load_fixture("throttle_page2_empty.json")
 
@@ -235,9 +291,9 @@ class TestThrottleRetry:
 
         with (
             patch("poller.sources.workday.asyncio.sleep", new_callable=AsyncMock),
-            pytest.raises(SourceFetchError, match="empty page"),
         ):
-            await adapter.fetch(client, company, company.sources[0])
+            rows = await adapter.fetch(client, company, company.sources[0])
+        assert len(rows) == 20 and adapter.potentially_truncated
         await client.close()
 
 
@@ -421,4 +477,45 @@ class TestHttpError:
             pytest.raises(SourceFetchError),
         ):
             await adapter.fetch(client, company, company.sources[0])
+        await client.close()
+
+
+@pytest.mark.asyncio
+async def test_capped_workday_search_partitions_instead_of_repeating_first_page() -> None:
+    def page(start: int, count: int, total: int) -> dict[str, Any]:
+        return {"total": total, "jobPostings": [
+            {"title": "Engineering Intern", "externalPath": f"/job/US-CA/Intern_JR{i}",
+             "locationsText": "US, CA, Santa Clara"} for i in range(start, start + count)
+        ]}
+    root = page(0, 20, 40)
+    root["facets"] = [{"facetParameter": "jobFamilyGroup", "values": [
+        {"id": "engineering", "count": 30}, {"id": "university", "count": 25},
+    ]}]
+    responses = [root, page(30, 20, 25), page(50, 5, 0),
+                 page(0, 20, 30), page(20, 10, 0)]
+    transport = MockTransport([json_response(p) for p in responses])
+    client = await make_mock_client(transport)
+    company = _make_company()
+    try:
+        with patch("poller.sources.workday.WORKDAY_RESULT_CAP", 40):
+            rows = await WorkdayAdapter().fetch(client, company, company.sources[0])
+        assert len({p.source_job_id for p in rows}) == 55
+        assert "Intern_JR54" in {p.source_job_id for p in rows}
+        bodies = [json.loads(r.content) for r in transport.requests]
+        assert bodies[1]["appliedFacets"] == {"jobFamilyGroup": ["university"]}
+        assert bodies[3]["appliedFacets"] == {"jobFamilyGroup": ["engineering"]}
+    finally:
+        await client.close()
+
+
+@pytest.mark.asyncio
+async def test_unpartitionable_workday_cap_is_not_a_complete_result() -> None:
+    page = _load_fixture("single_page.json")
+    page["total"] = 2000
+    client = await make_mock_client(MockTransport([json_response(page)]))
+    company = _make_company()
+    try:
+        with pytest.raises(SourceParseError, match="cap"):
+            await WorkdayAdapter().fetch(client, company, company.sources[0])
+    finally:
         await client.close()

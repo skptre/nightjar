@@ -8,6 +8,7 @@ import { recomputeAll } from '@/classify/recompute';
 import { trackWorkspaceTask } from '@/lib/maintenance';
 
 interface SyncContextValue {
+  dataRevision: number;
   status: SyncStatus;
   lastSyncedAt: string | null;
   lastError: string | null;
@@ -34,14 +35,22 @@ export function SyncProvider({ children }: { children: ReactNode }): ReactNode {
   const [lastSyncedAt, setLastSyncedAt] = useState<string | null>(null);
   const [lastError, setLastError] = useState<string | null>(null);
   const [newPostingCount, setNewPostingCount] = useState(0);
+  const [dataRevision, setDataRevision] = useState(0);
+  const [profileRevision, setProfileRevision] = useState(0);
   // Monotonic id for the active classification run. A profile change bumps it so
   // a still-running recompute for the previous profile stops rather than writing
   // stale scores over the newer ones.
   const classificationRun = useRef(0);
+  const previousProfile = useRef(profile);
 
   useEffect(() => {
     manager.setProfile(profile);
     manager.setSyncInterval(profile?.sync_interval_ms ?? DEFAULT_SYNC_INTERVAL_MS);
+
+    // Feed sync handles pending rows on launch. A full recompute here would
+    // contend with the initial import and delay new jobs behind the old cache.
+    if (previousProfile.current === profile) return;
+    previousProfile.current = profile;
 
     const runId = classificationRun.current + 1;
     classificationRun.current = runId;
@@ -55,7 +64,9 @@ export function SyncProvider({ children }: { children: ReactNode }): ReactNode {
         : db.run(
           'UPDATE postings_cache SET eligibility = NULL, score = NULL, score_breakdown = NULL',
         );
-      void trackWorkspaceTask<unknown>(refresh).catch((error: unknown) => {
+      void trackWorkspaceTask<unknown>(refresh).then(() => {
+        if (!cancelled()) setProfileRevision(value => value + 1);
+      }).catch((error: unknown) => {
         console.warn('[nightjar] profile classification refresh failed:', error);
       });
     }, 0);
@@ -73,6 +84,7 @@ export function SyncProvider({ children }: { children: ReactNode }): ReactNode {
       setLastSyncedAt(state.lastSyncedAt);
       setLastError(state.lastError);
       setNewPostingCount(state.newPostingCount);
+      setDataRevision(state.dataRevision);
     });
 
     manager.start();
@@ -99,7 +111,7 @@ export function SyncProvider({ children }: { children: ReactNode }): ReactNode {
   const refreshJobs = useCallback(async () => { await manager.doSync(); }, [manager]);
 
   return (
-    <SyncContext.Provider value={{ status, lastSyncedAt, lastError, newPostingCount, clearNewPostingCount, refreshJobs }}>
+    <SyncContext.Provider value={{ status, lastSyncedAt, lastError, newPostingCount, dataRevision: dataRevision + profileRevision, clearNewPostingCount, refreshJobs }}>
       {children}
     </SyncContext.Provider>
   );

@@ -5,6 +5,7 @@ import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'node:url';
 import { publicDataPath } from './scripts/public-data-path.mjs';
+import { bundlePublicFeed } from './scripts/bundle-public-feed.mjs';
 
 const appDirectory = path.dirname(fileURLToPath(import.meta.url));
 
@@ -16,11 +17,7 @@ export default defineConfig({
       apply: 'build',
       writeBundle(options) {
         const output = path.resolve(appDirectory, options.dir ?? 'dist', 'data');
-        fs.mkdirSync(output, { recursive: true });
-        for (const name of ['feed.json', 'meta.json']) {
-          fs.copyFileSync(path.resolve(appDirectory, '..', 'data', name), path.join(output, name));
-        }
-        fs.cpSync(path.resolve(appDirectory, '..', 'data', 'feed'), path.join(output, 'feed'), { recursive: true });
+        bundlePublicFeed(path.resolve(appDirectory, '..', 'data'), output);
       },
     },
     {

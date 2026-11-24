@@ -46,12 +46,14 @@ vi.mock('@/classify/recompute', () => ({
 }));
 
 import { SyncProvider } from './SyncProvider';
+import { recomputeAll } from '@/classify/recompute';
 
 describe('SyncProvider lifecycle', () => {
   beforeEach(() => {
     testState.profile = null;
     testState.managers.length = 0;
     testState.db.run.mockClear();
+    vi.mocked(recomputeAll).mockClear();
   });
 
   it('keeps the same sync manager when profile preferences change', () => {
@@ -64,5 +66,12 @@ describe('SyncProvider lifecycle', () => {
     expect(testState.managers).toHaveLength(1);
     expect(testState.managers[0]!.setProfile).toHaveBeenLastCalledWith(testState.profile);
     expect(testState.managers[0]!.setSyncInterval).toHaveBeenLastCalledWith(60_000);
+  });
+
+  it('does not reclassify the old cache before the first feed sync', () => {
+    testState.profile = { sync_interval_ms: 300_000 } as Profile;
+    render(<SyncProvider><div>content</div></SyncProvider>);
+    expect(recomputeAll).not.toHaveBeenCalled();
+    expect(testState.managers[0]!.start).toHaveBeenCalledOnce();
   });
 });

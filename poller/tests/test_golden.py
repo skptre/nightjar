@@ -120,7 +120,7 @@ class TestGoldenFile:
         await run_golden_pipeline(data_dir, registry_path)
 
         generated = (data_dir / "feed.json").read_bytes()
-        expected = GOLDEN_FEED.read_bytes()
+        expected = GOLDEN_FEED.read_bytes().replace(b"\r\n", b"\n")
 
         if generated != expected:
             gen_data = json.loads(generated)

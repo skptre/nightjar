@@ -204,7 +204,7 @@ class TestLeverPagination:
 
 class TestLeverTruncation:
     @pytest.mark.asyncio
-    async def test_250_postings_sets_truncated_flag(self) -> None:
+    async def test_complete_250_posting_board_is_not_truncated(self) -> None:
         page1 = _load_fixture("truncation_page1.json")
         page2 = _load_fixture("truncation_page2.json")
         page3 = _load_fixture("truncation_page3.json")
@@ -221,7 +221,7 @@ class TestLeverTruncation:
         raw_postings = await adapter.fetch(client, company, source)
 
         assert len(raw_postings) == 250
-        assert adapter.potentially_truncated is True
+        assert adapter.potentially_truncated is False
         await client.close()
 
     @pytest.mark.asyncio

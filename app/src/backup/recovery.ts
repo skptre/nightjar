@@ -11,7 +11,9 @@ export async function loadRecoveryCopy(reason: RecoveryReason): Promise<string> 
   return new TextDecoder().decode(bytes);
 }
 export async function saveRecoveryCopy(db: Database, reason: RecoveryReason): Promise<string> {
-  const content = await createWorkspaceBackup(db);
+  // Public jobs are recoverable from the feed. Automatic recovery protects the
+  // user's complete workspace without copying every public description at launch.
+  const content = await createWorkspaceBackup(db, true);
   if (isTauri()) {
     const { invoke } = await import('@tauri-apps/api/core');
     return invoke<string>('save_recovery_copy', { content, reason });

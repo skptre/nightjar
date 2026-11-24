@@ -25,6 +25,7 @@ class BambooHRAdapter(SourceAdapter):
         company: Company,
         source: SourceConfig,
     ) -> list[RawPosting]:
+        self.potentially_truncated = False
         token = source.board_token
         url = BAMBOOHR_API.format(tenant=token)
 
@@ -41,7 +42,7 @@ class BambooHRAdapter(SourceAdapter):
                 f"expected object, got {type(data).__name__}",
             )
 
-        result = data.get("result", [])
+        result = self.listing_items(data, "result", "bamboohr", company.slug)
         if not isinstance(result, list):
             raise SourceParseError(
                 "bamboohr",
@@ -54,6 +55,7 @@ class BambooHRAdapter(SourceAdapter):
             try:
                 postings.append(self._parse_posting(item, company, token))
             except (KeyError, TypeError) as exc:
+                self.potentially_truncated = True
                 logger.warning(
                     "[bamboohr:%s] skipping malformed posting: %s",
                     company.slug, exc,

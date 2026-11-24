@@ -44,6 +44,16 @@ T_8_DAYS_LATER = "2026-09-09T00:00:00Z"
 T_6_DAYS_LATER = "2026-09-07T00:00:00Z"
 
 
+def test_retry_at_same_poll_timestamp_cannot_confirm_a_closure() -> None:
+    posting = _make_posting(pid="pending")
+    feed, state, _ = compute_diff([], {posting.id: posting},
+                                  RunState(active_ids={posting.id}), T1)
+    feed, state, diff = compute_diff([], feed, state, T1)
+    assert feed[posting.id].closed_at is None
+    assert state.absent_ids == {posting.id: T1}
+    assert not diff.closed_ids
+
+
 class TestNewPostings:
     def test_detects_new_posting(self) -> None:
         p = _make_posting(pid="new1")

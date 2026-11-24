@@ -1,0 +1,41 @@
+{
+  "shard_id": "icims",
+  "updated_at": "2026-10-24T15:47:54Z",
+  "count": 1,
+  "postings": {
+    "0d7863521e259085": {
+      "id": "0d7863521e259085",
+      "company": "Joby Aviation",
+      "company_slug": "joby-aviation",
+      "title": "Technical Program Management Intern",
+      "location": "San Carlos, CA",
+      "locations": [
+        "San Carlos, CA"
+      ],
+      "url": "https://careers-jobyaviation.icims.com/jobs/5345/technical-program-management-intern/job",
+      "source": "icims",
+      "source_job_id": "5345",
+      "ats": "icims",
+      "posted_at": null,
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-10-11T00:22:26Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://careers-jobyaviation.icims.com/jobs/5345/technical-program-management-intern/job?in_iframe=1"
+        }
+      },
+      "description_ref": {
+        "sha256": "068eeb03661bd4998fc8c101ec78b5c1ad49845b5986d57ba73921a8b5c844ca",
+        "pack": "details/06-49fa5b6d936f99bbfbc9b805cbcf6dd76c6658d4ba3aa909d77afb62ae3c46fb.json",
+        "pack_sha256": "49fa5b6d936f99bbfbc9b805cbcf6dd76c6658d4ba3aa909d77afb62ae3c46fb",
+        "status": "stale"
+      }
+    }
+  }
+}

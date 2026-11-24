@@ -25,6 +25,7 @@ class JazzHRAdapter(SourceAdapter):
         company: Company,
         source: SourceConfig,
     ) -> list[RawPosting]:
+        self.potentially_truncated = False
         token = source.board_token
 
         data = await client.get_json(
@@ -46,6 +47,7 @@ class JazzHRAdapter(SourceAdapter):
             try:
                 postings.append(self._parse_posting(item, company, token))
             except (KeyError, TypeError) as exc:
+                self.potentially_truncated = True
                 logger.warning(
                     "[jazzhr:%s] skipping malformed posting: %s",
                     company.slug, exc,

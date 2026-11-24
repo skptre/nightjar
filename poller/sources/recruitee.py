@@ -25,6 +25,7 @@ class RecruiteeAdapter(SourceAdapter):
         company: Company,
         source: SourceConfig,
     ) -> list[RawPosting]:
+        self.potentially_truncated = False
         token = source.board_token
         url = RECRUITEE_API.format(tenant=token)
 
@@ -41,7 +42,7 @@ class RecruiteeAdapter(SourceAdapter):
                 f"expected object, got {type(data).__name__}",
             )
 
-        offers = data.get("offers", [])
+        offers = self.listing_items(data, "offers", "recruitee", company.slug)
         if not isinstance(offers, list):
             raise SourceParseError(
                 "recruitee",
@@ -54,6 +55,7 @@ class RecruiteeAdapter(SourceAdapter):
             try:
                 postings.append(self._parse_posting(item, company, token))
             except (KeyError, TypeError) as exc:
+                self.potentially_truncated = True
                 logger.warning(
                     "[recruitee:%s] skipping malformed posting: %s",
                     company.slug, exc,

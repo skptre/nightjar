@@ -1,7 +1,7 @@
 {
   "shard_id": "workday",
-  "updated_at": "2026-11-25T12:21:42Z",
-  "count": 836,
+  "updated_at": "2026-11-25T21:56:11Z",
+  "count": 840,
   "postings": {
     "0004d9a7c5a80ffe": {
       "id": "0004d9a7c5a80ffe",
@@ -295,8 +295,8 @@
       },
       "description_ref": {
         "sha256": "6e48f639681d0d3be69eae8fe0fa72ba2f41617eb1089f085cea7185106c5aa6",
-        "pack": "details/6e-64431d72d269363c83706a9d6ea67ea6c5e4e37b9f42a22bf575b1841ecb647f.json",
-        "pack_sha256": "64431d72d269363c83706a9d6ea67ea6c5e4e37b9f42a22bf575b1841ecb647f",
+        "pack": "details/6e-944d576044907ff9db76fa1fa810cbb333eba53c1e07233f734fdbfff0bb345d.json",
+        "pack_sha256": "944d576044907ff9db76fa1fa810cbb333eba53c1e07233f734fdbfff0bb345d",
         "status": "stale"
       }
     },
@@ -488,8 +488,8 @@
       },
       "description_ref": {
         "sha256": "c895998dd580f6df4de9a1806b32f6779fc613d156a3e9baa69f7258e37a8c1e",
-        "pack": "details/c8-e2637f558697208da3b5b8cc10c7ce50ba90adb958444b6b07d57b6327d710f3.json",
-        "pack_sha256": "e2637f558697208da3b5b8cc10c7ce50ba90adb958444b6b07d57b6327d710f3",
+        "pack": "details/c8-118e64e48893941e6c098819d13fcc43356f920ddb0d5a13b60e7296c4debdc8.json",
+        "pack_sha256": "118e64e48893941e6c098819d13fcc43356f920ddb0d5a13b60e7296c4debdc8",
         "status": "stale"
       }
     },
@@ -587,8 +587,8 @@
       },
       "description_ref": {
         "sha256": "0a9ed64a9011fce6c32ff128556bd0554e5f0bc347bb26e4761b47e335523845",
-        "pack": "details/0a-eb3d2294766e3eef00c28ab793ad86e6db1de269a03b2169fc67af199e115a43.json",
-        "pack_sha256": "eb3d2294766e3eef00c28ab793ad86e6db1de269a03b2169fc67af199e115a43",
+        "pack": "details/0a-d694efa7c1d86a7d92285e9e05166a36d4189d8994e862eef85133fee9a9f293.json",
+        "pack_sha256": "d694efa7c1d86a7d92285e9e05166a36d4189d8994e862eef85133fee9a9f293",
         "status": "stale"
       }
     },
@@ -607,7 +607,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-23T15:46:26Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -689,7 +689,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -721,8 +721,8 @@
       },
       "description_ref": {
         "sha256": "61edee5eefcb5a22da5af08223cc612b7cf70d4ed73256c8309b3d223865c229",
-        "pack": "details/61-d1c044a11230fbe5f250d3abd32156efc5669b90c885721acc8fdb47e0f98749.json",
-        "pack_sha256": "d1c044a11230fbe5f250d3abd32156efc5669b90c885721acc8fdb47e0f98749",
+        "pack": "details/61-9afbe85e3bbb17302ec23188d853d1123a96837f892fa903025349b05d126b02.json",
+        "pack_sha256": "9afbe85e3bbb17302ec23188d853d1123a96837f892fa903025349b05d126b02",
         "status": "available"
       }
     },
@@ -820,8 +820,8 @@
       },
       "description_ref": {
         "sha256": "a2f7c3bd6b34521951a2092aeba2b974a734f9fd3d33993bce6092d14f093104",
-        "pack": "details/a2-a599db00fd3e6d759a6e112c55f6bb2eba95c80e4fca812ac755c9d3faa3cf84.json",
-        "pack_sha256": "a599db00fd3e6d759a6e112c55f6bb2eba95c80e4fca812ac755c9d3faa3cf84",
+        "pack": "details/a2-5cf09449336852d3241804c201b9dea288b43ed9af803bebd9523ce3326be340.json",
+        "pack_sha256": "5cf09449336852d3241804c201b9dea288b43ed9af803bebd9523ce3326be340",
         "status": "available"
       }
     },
@@ -927,8 +927,8 @@
       },
       "description_ref": {
         "sha256": "1a5cf66e93af0d9dc46cfef28950696d364dcbc8ff5d9fdb29c565db15bb9f6e",
-        "pack": "details/1a-3831023739fecb7a46154d61a3162fe67f857ddf751275967846d559b661e2fe.json",
-        "pack_sha256": "3831023739fecb7a46154d61a3162fe67f857ddf751275967846d559b661e2fe",
+        "pack": "details/1a-5d586bf7e3a26409e876f330e0e4bbdf06c8bd3b3b9a630070d684b68a3fb8ae.json",
+        "pack_sha256": "5d586bf7e3a26409e876f330e0e4bbdf06c8bd3b3b9a630070d684b68a3fb8ae",
         "status": "available"
       }
     },
@@ -1073,7 +1073,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -1139,8 +1139,8 @@
       },
       "description_ref": {
         "sha256": "b47fe95731680d74fbc7938d1793aa38a1ea5400db388bf1ab117431630ab0d3",
-        "pack": "details/b4-d81d23b59f8ae759d1fc389faef46b2effa4592eef81ae268804de5de51edc84.json",
-        "pack_sha256": "d81d23b59f8ae759d1fc389faef46b2effa4592eef81ae268804de5de51edc84",
+        "pack": "details/b4-4761cc736b49347c303ea492c1eb963e794bcff78b3c15ecba533b8f584ef911.json",
+        "pack_sha256": "4761cc736b49347c303ea492c1eb963e794bcff78b3c15ecba533b8f584ef911",
         "status": "stale"
       }
     },
@@ -1279,8 +1279,8 @@
       },
       "description_ref": {
         "sha256": "6e225606f7522ef158c872111543136b7bc7b42c7fa79ba25ffeeec4a1670d3e",
-        "pack": "details/6e-64431d72d269363c83706a9d6ea67ea6c5e4e37b9f42a22bf575b1841ecb647f.json",
-        "pack_sha256": "64431d72d269363c83706a9d6ea67ea6c5e4e37b9f42a22bf575b1841ecb647f",
+        "pack": "details/6e-944d576044907ff9db76fa1fa810cbb333eba53c1e07233f734fdbfff0bb345d.json",
+        "pack_sha256": "944d576044907ff9db76fa1fa810cbb333eba53c1e07233f734fdbfff0bb345d",
         "status": "available"
       }
     },
@@ -1312,8 +1312,8 @@
       },
       "description_ref": {
         "sha256": "f0bcc7b44d957c04fc9621967b1adccdffbbd8bc950ae9f23f7e2f3145c7a477",
-        "pack": "details/f0-d5fc639e6b1bbde35fb2b267989769d3ba3c0104c513a6bfe638fd481af626cd.json",
-        "pack_sha256": "d5fc639e6b1bbde35fb2b267989769d3ba3c0104c513a6bfe638fd481af626cd",
+        "pack": "details/f0-1d2e40dd464a7a1e44be8cde6f2f1e96f46357314a4162bd7f31d81a87742602.json",
+        "pack_sha256": "1d2e40dd464a7a1e44be8cde6f2f1e96f46357314a4162bd7f31d81a87742602",
         "status": "stale"
       }
     },
@@ -1452,8 +1452,8 @@
       },
       "description_ref": {
         "sha256": "5b0fad9893651705ff5e69ca6885c91f307c37149a2d1d2a5ae0d1f939d0bf89",
-        "pack": "details/5b-e5f9a65eebf753e0d78e501f3d1174c14fab599c3f23852e9b3b79518aa71dd1.json",
-        "pack_sha256": "e5f9a65eebf753e0d78e501f3d1174c14fab599c3f23852e9b3b79518aa71dd1",
+        "pack": "details/5b-f4324bfbb1ff8459ad9c7799aa472fafc04ade22958ac0a5e2df95af786262ac.json",
+        "pack_sha256": "f4324bfbb1ff8459ad9c7799aa472fafc04ade22958ac0a5e2df95af786262ac",
         "status": "stale"
       }
     },
@@ -1505,7 +1505,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -1572,8 +1572,8 @@
       },
       "description_ref": {
         "sha256": "f5f1a932eb71b8f678dc5ab8af9504c9a864341ea7a7b2d81b14f3a8329fd012",
-        "pack": "details/f5-76cc3c5a8df84970b4725ba6cefc49bcf80eb40370ad20b84ac04ff7028ba425.json",
-        "pack_sha256": "76cc3c5a8df84970b4725ba6cefc49bcf80eb40370ad20b84ac04ff7028ba425",
+        "pack": "details/f5-0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e.json",
+        "pack_sha256": "0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e",
         "status": "stale"
       }
     },
@@ -1711,7 +1711,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -1747,7 +1747,7 @@
         "sha256": "959568fde814d84fc5942a929f15eebb132866aa9c36fa5bd30c443dcd3878cf",
         "pack": "details/95-4137f202eda447d1c18b2221180490005de8f3152684b74f8df4e22130d909ea.json",
         "pack_sha256": "4137f202eda447d1c18b2221180490005de8f3152684b74f8df4e22130d909ea",
-        "status": "stale"
+        "status": "available"
       }
     },
     "0ecf8b9b61040d19": {
@@ -1904,7 +1904,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-21T14:41:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -2057,8 +2057,8 @@
       },
       "description_ref": {
         "sha256": "6dc752e0a965c66c3d325b3143f5ff852bd6c196c00b3ae9ea49f137a5df6346",
-        "pack": "details/6d-a45d13d20a99a0fbb267361f78a2cdc34b53f461ee65b238e30b631b53421f35.json",
-        "pack_sha256": "a45d13d20a99a0fbb267361f78a2cdc34b53f461ee65b238e30b631b53421f35",
+        "pack": "details/6d-862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f.json",
+        "pack_sha256": "862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f",
         "status": "stale"
       }
     },
@@ -2089,10 +2089,10 @@
         }
       },
       "description_ref": {
-        "sha256": "fab998d9d57a58671fcb96f963ce74e7121e791d90484a3e6faf21f941f57eb7",
-        "pack": "details/fa-875de00e81de6e067e0f223b8b5915cc679664d485902abbfbcd7342e91203b9.json",
-        "pack_sha256": "875de00e81de6e067e0f223b8b5915cc679664d485902abbfbcd7342e91203b9",
-        "status": "stale"
+        "sha256": "28e1f74e4529bb0c20e9d2ed2da8cd03925d5145dd8e3f62688a152dae478e88",
+        "pack": "details/28-e767e62e8f92a2999cac5fe1385680e8b60748195f07eb8c90ba9de5fb789d08.json",
+        "pack_sha256": "e767e62e8f92a2999cac5fe1385680e8b60748195f07eb8c90ba9de5fb789d08",
+        "status": "available"
       }
     },
     "13c6752a144c8c66": {
@@ -2222,8 +2222,8 @@
       },
       "description_ref": {
         "sha256": "7d0f7332c915da8d1e1464122b75bfae4c1f1898bfeba68ca38b882e5dd2f017",
-        "pack": "details/7d-9ae4bd07a8145bb134787f2aae79df06811e07912faefb4618d2a36d7171a777.json",
-        "pack_sha256": "9ae4bd07a8145bb134787f2aae79df06811e07912faefb4618d2a36d7171a777",
+        "pack": "details/7d-df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde.json",
+        "pack_sha256": "df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde",
         "status": "stale"
       }
     },
@@ -2458,8 +2458,8 @@
       },
       "description_ref": {
         "sha256": "5dade6b7553dc9f9c4cc6405c6c384c4c39989b7d775b32823a730c5426de0ae",
-        "pack": "details/5d-845cca942d3abe0026142fe361ce11d9796549337b4d766505c19db0a46b4ad3.json",
-        "pack_sha256": "845cca942d3abe0026142fe361ce11d9796549337b4d766505c19db0a46b4ad3",
+        "pack": "details/5d-5c88b849600f09ede7c365c9b392df12554877306c25b70f3156d7d3adb1c0b2.json",
+        "pack_sha256": "5c88b849600f09ede7c365c9b392df12554877306c25b70f3156d7d3adb1c0b2",
         "status": "stale"
       }
     },
@@ -2557,8 +2557,8 @@
       },
       "description_ref": {
         "sha256": "8d3a43557bfaadcbf0df410deec129fba0a8301b8d9d59d9093827b72515e09f",
-        "pack": "details/8d-b7831b2618cf56969b479a2787f5356ce73c8d19cb8af9582235bd2959a0f1d2.json",
-        "pack_sha256": "b7831b2618cf56969b479a2787f5356ce73c8d19cb8af9582235bd2959a0f1d2",
+        "pack": "details/8d-1b56f72a06d2f9f3f91559e2e067193626f115647cfdcef04e94e46700eef51b.json",
+        "pack_sha256": "1b56f72a06d2f9f3f91559e2e067193626f115647cfdcef04e94e46700eef51b",
         "status": "stale"
       }
     },
@@ -2623,8 +2623,8 @@
       },
       "description_ref": {
         "sha256": "7f8cd24de2d873b3988b8ac07a7ea3b859469a0ec7eeac9098a5795c57c5774e",
-        "pack": "details/7f-c8944e276d389db333f8f077a69d6a12c8866a421dbbdccc5fd26372c00b13ea.json",
-        "pack_sha256": "c8944e276d389db333f8f077a69d6a12c8866a421dbbdccc5fd26372c00b13ea",
+        "pack": "details/7f-7c26f1339de08dd8ec0e7d1b43d6519527527da90140eeafbf94bf136aaeec64.json",
+        "pack_sha256": "7c26f1339de08dd8ec0e7d1b43d6519527527da90140eeafbf94bf136aaeec64",
         "status": "available"
       }
     },
@@ -2738,8 +2738,8 @@
       },
       "description_ref": {
         "sha256": "c4821ef0f8983449c4776eccf8f45a87e84346814fc8492a5e777ae01aa59fcd",
-        "pack": "details/c4-920be70b6f29506c34a39be89a6fbc4825316dcda4886ad1441f061522ce0e5c.json",
-        "pack_sha256": "920be70b6f29506c34a39be89a6fbc4825316dcda4886ad1441f061522ce0e5c",
+        "pack": "details/c4-16f738e591f1cc39a5f6e460a770eab513f2b04777cce01598052bba8d6befc9.json",
+        "pack_sha256": "16f738e591f1cc39a5f6e460a770eab513f2b04777cce01598052bba8d6befc9",
         "status": "available"
       }
     },
@@ -2758,7 +2758,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -3366,8 +3366,8 @@
       },
       "description_ref": {
         "sha256": "c5df9ed2e181220e4639008c5caad7f5efbf89c70aa38168856fe8ae54a6602f",
-        "pack": "details/c5-c9c9c66fcd40596d8017527b58145cdb9b3bcfd1363d62e75e0551ec24d730f9.json",
-        "pack_sha256": "c9c9c66fcd40596d8017527b58145cdb9b3bcfd1363d62e75e0551ec24d730f9",
+        "pack": "details/c5-66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc.json",
+        "pack_sha256": "66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc",
         "status": "available"
       }
     },
@@ -3565,8 +3565,8 @@
       },
       "description_ref": {
         "sha256": "e66dd710dda5eeb680a579e04b519f476d4b9d08f542a88b64d8b71053859c2b",
-        "pack": "details/e6-fb3c365088751d8e7585a0c6dee25a41683769308ad464ea5bf4618af217df02.json",
-        "pack_sha256": "fb3c365088751d8e7585a0c6dee25a41683769308ad464ea5bf4618af217df02",
+        "pack": "details/e6-7377ba4edfffe5647636ece776820710773d3351670ee148e1ce850c7e7e8f6f.json",
+        "pack_sha256": "7377ba4edfffe5647636ece776820710773d3351670ee148e1ce850c7e7e8f6f",
         "status": "stale"
       }
     },
@@ -3639,8 +3639,8 @@
       },
       "description_ref": {
         "sha256": "622e41e908b3bdbcc751091c7937b6e4f4c949b0bff7afc9e9be397f044fc68d",
-        "pack": "details/62-fe58f3f905ee471d0ce3abef4fdd6a832c2eb9c9f50127f6820dba1eec388c77.json",
-        "pack_sha256": "fe58f3f905ee471d0ce3abef4fdd6a832c2eb9c9f50127f6820dba1eec388c77",
+        "pack": "details/62-0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952.json",
+        "pack_sha256": "0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952",
         "status": "available"
       }
     },
@@ -3992,8 +3992,8 @@
       },
       "description_ref": {
         "sha256": "b4a1d55aef52cfd72d9dcc66e9fca689c24509b1e3f8109adcaa6e7397e2b0b2",
-        "pack": "details/b4-d81d23b59f8ae759d1fc389faef46b2effa4592eef81ae268804de5de51edc84.json",
-        "pack_sha256": "d81d23b59f8ae759d1fc389faef46b2effa4592eef81ae268804de5de51edc84",
+        "pack": "details/b4-4761cc736b49347c303ea492c1eb963e794bcff78b3c15ecba533b8f584ef911.json",
+        "pack_sha256": "4761cc736b49347c303ea492c1eb963e794bcff78b3c15ecba533b8f584ef911",
         "status": "stale"
       }
     },
@@ -4025,8 +4025,8 @@
       },
       "description_ref": {
         "sha256": "c554c107abc31189cde5fb92a8e73a75c0304fbfdf5dbc5042fe27cad489995b",
-        "pack": "details/c5-c9c9c66fcd40596d8017527b58145cdb9b3bcfd1363d62e75e0551ec24d730f9.json",
-        "pack_sha256": "c9c9c66fcd40596d8017527b58145cdb9b3bcfd1363d62e75e0551ec24d730f9",
+        "pack": "details/c5-66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc.json",
+        "pack_sha256": "66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc",
         "status": "available"
       }
     },
@@ -4243,8 +4243,8 @@
       },
       "description_ref": {
         "sha256": "632209bc6c6ee37d7f48df756b9b106a53ade199c7231bb3f52b5a99f547623a",
-        "pack": "details/63-567066138532c938dec0488b8a052ef0c766e63f5c431cb048b63dc985b7daea.json",
-        "pack_sha256": "567066138532c938dec0488b8a052ef0c766e63f5c431cb048b63dc985b7daea",
+        "pack": "details/63-d442b718f637051786a176cfe390a0bb31025982d98b2810e5c5e019c6cef11a.json",
+        "pack_sha256": "d442b718f637051786a176cfe390a0bb31025982d98b2810e5c5e019c6cef11a",
         "status": "available"
       }
     },
@@ -4337,7 +4337,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -4369,8 +4369,8 @@
       },
       "description_ref": {
         "sha256": "fe21b5ef2a63609b3b98f7e056e7c037ae7b4960175e27d3ee7a9cefe7ea4554",
-        "pack": "details/fe-593c1e58d2bdc324dfaaf6ad3a1f9764b8e7a8f21d82d570bb209d101e4ee680.json",
-        "pack_sha256": "593c1e58d2bdc324dfaaf6ad3a1f9764b8e7a8f21d82d570bb209d101e4ee680",
+        "pack": "details/fe-2778fc1d96ff974789491314ec6eb764e82e9410472fe12ed294935474b092b2.json",
+        "pack_sha256": "2778fc1d96ff974789491314ec6eb764e82e9410472fe12ed294935474b092b2",
         "status": "stale"
       }
     },
@@ -4468,8 +4468,8 @@
       },
       "description_ref": {
         "sha256": "e68f19b0a4ff30a70a566727a7ae6769bd9af57a49f7476a4c81dd3e9ca7d45e",
-        "pack": "details/e6-fb3c365088751d8e7585a0c6dee25a41683769308ad464ea5bf4618af217df02.json",
-        "pack_sha256": "fb3c365088751d8e7585a0c6dee25a41683769308ad464ea5bf4618af217df02",
+        "pack": "details/e6-7377ba4edfffe5647636ece776820710773d3351670ee148e1ce850c7e7e8f6f.json",
+        "pack_sha256": "7377ba4edfffe5647636ece776820710773d3351670ee148e1ce850c7e7e8f6f",
         "status": "available"
       }
     },
@@ -4488,7 +4488,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -4521,8 +4521,8 @@
       },
       "description_ref": {
         "sha256": "7d343d7e41a37fe5db5da74a061391708b7ce8fbdf8b4aa3ce1e8aff95e2060d",
-        "pack": "details/7d-9ae4bd07a8145bb134787f2aae79df06811e07912faefb4618d2a36d7171a777.json",
-        "pack_sha256": "9ae4bd07a8145bb134787f2aae79df06811e07912faefb4618d2a36d7171a777",
+        "pack": "details/7d-df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde.json",
+        "pack_sha256": "df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde",
         "status": "stale"
       }
     },
@@ -4634,8 +4634,8 @@
       },
       "description_ref": {
         "sha256": "d779567e853a95203f2f57729260263971da7f1ec63b1f3466ae07690ba16d84",
-        "pack": "details/d7-8aa5a45c486631268be8b0e2f63184cfdbe79bc7f6b599a050a9692e3be41bf3.json",
-        "pack_sha256": "8aa5a45c486631268be8b0e2f63184cfdbe79bc7f6b599a050a9692e3be41bf3",
+        "pack": "details/d7-658bb31638c1360eeb2af319b2f6ebe10748496726861d1a87cd442f9fe8a0fe.json",
+        "pack_sha256": "658bb31638c1360eeb2af319b2f6ebe10748496726861d1a87cd442f9fe8a0fe",
         "status": "stale"
       }
     },
@@ -4717,8 +4717,8 @@
       },
       "description_ref": {
         "sha256": "4212f08a1810a2e71614435a478a08d085cb9e1c6d95be15cc199dc442b8d9db",
-        "pack": "details/42-fedb95111b685969b6da9d4a80ffc400fc2bc4854a472c8ca7f29120eb49c836.json",
-        "pack_sha256": "fedb95111b685969b6da9d4a80ffc400fc2bc4854a472c8ca7f29120eb49c836",
+        "pack": "details/42-85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865.json",
+        "pack_sha256": "85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865",
         "status": "stale"
       }
     },
@@ -4822,7 +4822,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-14T16:53:57Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -4845,7 +4845,7 @@
             "source": "simplify",
             "source_job_id": "07314994-8ce1-406a-91bb-b8b31de49a91",
             "url": "https://postman.wd108.myworkdayjobs.com/careers/job/San-Francisco-CA-US/AI-Engineer--Intern_JR1000055",
-            "discovered_at": "2026-11-25T12:21:42Z"
+            "discovered_at": "2026-11-25T21:56:11Z"
           },
           {
             "source": "workday",
@@ -4914,8 +4914,8 @@
       },
       "description_ref": {
         "sha256": "e6fffc29654531752c7697aa4f2f910fcde1d2bf8f4e896401cf418afe4f2e7d",
-        "pack": "details/e6-fb3c365088751d8e7585a0c6dee25a41683769308ad464ea5bf4618af217df02.json",
-        "pack_sha256": "fb3c365088751d8e7585a0c6dee25a41683769308ad464ea5bf4618af217df02",
+        "pack": "details/e6-7377ba4edfffe5647636ece776820710773d3351670ee148e1ce850c7e7e8f6f.json",
+        "pack_sha256": "7377ba4edfffe5647636ece776820710773d3351670ee148e1ce850c7e7e8f6f",
         "status": "stale"
       }
     },
@@ -5013,8 +5013,8 @@
       },
       "description_ref": {
         "sha256": "e34066bff964b0d8c6814687bf6390b2cc0c430c163a1ac8ae5779e4e2379453",
-        "pack": "details/e3-3228c2f14fbda81d93e409a7d41f1c864c6dc07e5683b1787669c8e7407e4e82.json",
-        "pack_sha256": "3228c2f14fbda81d93e409a7d41f1c864c6dc07e5683b1787669c8e7407e4e82",
+        "pack": "details/e3-002aa931cfa5c1fcea8189c3cc130da3e2d1399775736d2d1fa1ce383a14e8b2.json",
+        "pack_sha256": "002aa931cfa5c1fcea8189c3cc130da3e2d1399775736d2d1fa1ce383a14e8b2",
         "status": "available"
       }
     },
@@ -5132,7 +5132,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-27T22:31:02Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5165,8 +5165,8 @@
       },
       "description_ref": {
         "sha256": "ea2da509631daa52f2e4b3bf2dc72a5c461e174575c6735c05c63192ddcc7960",
-        "pack": "details/ea-95a8e0d91d8e48cda0816af9e68edf2c61ced0ecf85eda1cb467042abce7d0ca.json",
-        "pack_sha256": "95a8e0d91d8e48cda0816af9e68edf2c61ced0ecf85eda1cb467042abce7d0ca",
+        "pack": "details/ea-d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b.json",
+        "pack_sha256": "d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b",
         "status": "stale"
       }
     },
@@ -5198,8 +5198,8 @@
       },
       "description_ref": {
         "sha256": "6617051f6f9368b697685de48755914ef2a99b6028d49185d844a6f7cde2561d",
-        "pack": "details/66-139a76f6db1f4c816d23c7cb07ff62425d656f360fd0484d4a500cff8e2a6b40.json",
-        "pack_sha256": "139a76f6db1f4c816d23c7cb07ff62425d656f360fd0484d4a500cff8e2a6b40",
+        "pack": "details/66-d27c46b80ad47c207fac4529eb83395f2917f0a23371c70015d95b28e9b1abaa.json",
+        "pack_sha256": "d27c46b80ad47c207fac4529eb83395f2917f0a23371c70015d95b28e9b1abaa",
         "status": "stale"
       }
     },
@@ -5264,8 +5264,8 @@
       },
       "description_ref": {
         "sha256": "6d14c59082aa10af2df3a4f2293c7ba667222913ce0af3c137a2b858bcb82c60",
-        "pack": "details/6d-a45d13d20a99a0fbb267361f78a2cdc34b53f461ee65b238e30b631b53421f35.json",
-        "pack_sha256": "a45d13d20a99a0fbb267361f78a2cdc34b53f461ee65b238e30b631b53421f35",
+        "pack": "details/6d-862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f.json",
+        "pack_sha256": "862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f",
         "status": "stale"
       }
     },
@@ -5297,8 +5297,8 @@
       },
       "description_ref": {
         "sha256": "7f66b5ba9c2074470c72e3943fbd784629fb33c8255f335ddeacb3c95a7b4b01",
-        "pack": "details/7f-c8944e276d389db333f8f077a69d6a12c8866a421dbbdccc5fd26372c00b13ea.json",
-        "pack_sha256": "c8944e276d389db333f8f077a69d6a12c8866a421dbbdccc5fd26372c00b13ea",
+        "pack": "details/7f-7c26f1339de08dd8ec0e7d1b43d6519527527da90140eeafbf94bf136aaeec64.json",
+        "pack_sha256": "7c26f1339de08dd8ec0e7d1b43d6519527527da90140eeafbf94bf136aaeec64",
         "status": "stale"
       }
     },
@@ -5330,8 +5330,8 @@
       },
       "description_ref": {
         "sha256": "7a5178bd16d4b879712a36ebca3b05e42ed3869b64b46daf4fa67451e18f9354",
-        "pack": "details/7a-1c0cf54537c0ae5b663fb5673ccb87a84952040f904263c9146d191bdc09376e.json",
-        "pack_sha256": "1c0cf54537c0ae5b663fb5673ccb87a84952040f904263c9146d191bdc09376e",
+        "pack": "details/7a-856eb833f9b5cd5fcc67accf853afbfda541807ea8b42f9fcea09cdddf7c553a.json",
+        "pack_sha256": "856eb833f9b5cd5fcc67accf853afbfda541807ea8b42f9fcea09cdddf7c553a",
         "status": "available"
       }
     },
@@ -5416,7 +5416,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5449,8 +5449,8 @@
       },
       "description_ref": {
         "sha256": "a2ac1dd1255cec7f3bcedb7cf4a3de14abd7806cbc686e663a9339339750b973",
-        "pack": "details/a2-a599db00fd3e6d759a6e112c55f6bb2eba95c80e4fca812ac755c9d3faa3cf84.json",
-        "pack_sha256": "a599db00fd3e6d759a6e112c55f6bb2eba95c80e4fca812ac755c9d3faa3cf84",
+        "pack": "details/a2-5cf09449336852d3241804c201b9dea288b43ed9af803bebd9523ce3326be340.json",
+        "pack_sha256": "5cf09449336852d3241804c201b9dea288b43ed9af803bebd9523ce3326be340",
         "status": "stale"
       }
     },
@@ -5535,7 +5535,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-01T21:24:06Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5735,7 +5735,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5945,8 +5945,8 @@
       },
       "description_ref": {
         "sha256": "04addf8eeb7131b90de098dfdaca714fe619defa81f8b5cbd6a6f2d19f3c1c92",
-        "pack": "details/04-ad08e7965f1d8d14619c4bcda9a22f62f6de0920b85c2c60b06fc2d2757d78ad.json",
-        "pack_sha256": "ad08e7965f1d8d14619c4bcda9a22f62f6de0920b85c2c60b06fc2d2757d78ad",
+        "pack": "details/04-dec1e89770d4e6d188da35c8fac55d9e7abf70eb196939981b2def6d1a281e01.json",
+        "pack_sha256": "dec1e89770d4e6d188da35c8fac55d9e7abf70eb196939981b2def6d1a281e01",
         "status": "stale"
       }
     },
@@ -5965,7 +5965,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5997,8 +5997,8 @@
       },
       "description_ref": {
         "sha256": "87fb88ec86062db8624bc4c9d8b7b9567a9c5ce0eeb08aeca6143f6c804106c8",
-        "pack": "details/87-7a6a40660630b228ebb914ba67b845625b46f11041aa5ab34764e6d6beb904dc.json",
-        "pack_sha256": "7a6a40660630b228ebb914ba67b845625b46f11041aa5ab34764e6d6beb904dc",
+        "pack": "details/87-795fb171082757b3b79a95bc85db4c4b6a2c7612dd8aa3d431f4be13b2c26bb3.json",
+        "pack_sha256": "795fb171082757b3b79a95bc85db4c4b6a2c7612dd8aa3d431f4be13b2c26bb3",
         "status": "stale"
       }
     },
@@ -6123,8 +6123,8 @@
       },
       "description_ref": {
         "sha256": "c143ee819d45bb94ba598959b107f18d60a4d35b6fc0f1df92ad7fe1c7fcfb64",
-        "pack": "details/c1-cccccb65b56e734d3373034cb2a13bbb941834ee5643afb1c3273216daa4141f.json",
-        "pack_sha256": "cccccb65b56e734d3373034cb2a13bbb941834ee5643afb1c3273216daa4141f",
+        "pack": "details/c1-6872d32322a42c42d00b60eaac51ec55c1719d9c5eef98c7076a1e3bb23d0fbf.json",
+        "pack_sha256": "6872d32322a42c42d00b60eaac51ec55c1719d9c5eef98c7076a1e3bb23d0fbf",
         "status": "stale"
       }
     },
@@ -6222,8 +6222,8 @@
       },
       "description_ref": {
         "sha256": "094568cbf699c59813392d4b23d1e2e911ad47bd3119a26cac0c6e6714ebd365",
-        "pack": "details/09-53c05eb486c36638d7bc23e97807784565c4383ea2a5a30586d5b55321b1d601.json",
-        "pack_sha256": "53c05eb486c36638d7bc23e97807784565c4383ea2a5a30586d5b55321b1d601",
+        "pack": "details/09-869cdd5e326c745b76d9806d3c909c29a7f34218ba74d39a3688521c81a659d2.json",
+        "pack_sha256": "869cdd5e326c745b76d9806d3c909c29a7f34218ba74d39a3688521c81a659d2",
         "status": "available"
       }
     },
@@ -6271,8 +6271,8 @@
       },
       "description_ref": {
         "sha256": "5b71ca5d874426c5adede13a72c77c0d9c4e9835d50276639f331e69cb5adc9c",
-        "pack": "details/5b-e5f9a65eebf753e0d78e501f3d1174c14fab599c3f23852e9b3b79518aa71dd1.json",
-        "pack_sha256": "e5f9a65eebf753e0d78e501f3d1174c14fab599c3f23852e9b3b79518aa71dd1",
+        "pack": "details/5b-f4324bfbb1ff8459ad9c7799aa472fafc04ade22958ac0a5e2df95af786262ac.json",
+        "pack_sha256": "f4324bfbb1ff8459ad9c7799aa472fafc04ade22958ac0a5e2df95af786262ac",
         "status": "stale"
       }
     },
@@ -6337,8 +6337,8 @@
       },
       "description_ref": {
         "sha256": "632209bc6c6ee37d7f48df756b9b106a53ade199c7231bb3f52b5a99f547623a",
-        "pack": "details/63-567066138532c938dec0488b8a052ef0c766e63f5c431cb048b63dc985b7daea.json",
-        "pack_sha256": "567066138532c938dec0488b8a052ef0c766e63f5c431cb048b63dc985b7daea",
+        "pack": "details/63-d442b718f637051786a176cfe390a0bb31025982d98b2810e5c5e019c6cef11a.json",
+        "pack_sha256": "d442b718f637051786a176cfe390a0bb31025982d98b2810e5c5e019c6cef11a",
         "status": "available"
       }
     },
@@ -6518,8 +6518,8 @@
       },
       "description_ref": {
         "sha256": "984eaf1219e3d59b89d2af12fe0e1ad724753ddad8d35797e4a3eb72e6a3cf20",
-        "pack": "details/98-c1ed5c35c0280cd8bdad08eff5e5ba135a76ff48596b16df68eff07c2fa9306c.json",
-        "pack_sha256": "c1ed5c35c0280cd8bdad08eff5e5ba135a76ff48596b16df68eff07c2fa9306c",
+        "pack": "details/98-8e98aaea4b3d895a5d48a1cbb8a7ff6be16685a84cc868b2da16f0974a80bf17.json",
+        "pack_sha256": "8e98aaea4b3d895a5d48a1cbb8a7ff6be16685a84cc868b2da16f0974a80bf17",
         "status": "stale"
       }
     },
@@ -6585,8 +6585,8 @@
       },
       "description_ref": {
         "sha256": "f327f829f0e5f504223b459553ad81fbf3fd1d21482e9e83f046497f9e300258",
-        "pack": "details/f3-e5d86ba95bed5a8eb29982977ca51a6b5b657a5bb31ea92dcf6eb2b75ed7e2dc.json",
-        "pack_sha256": "e5d86ba95bed5a8eb29982977ca51a6b5b657a5bb31ea92dcf6eb2b75ed7e2dc",
+        "pack": "details/f3-c3a05c5e00d22580d9bfa4f24883e75a296046ef5f4f1259c910dca4ea89a376.json",
+        "pack_sha256": "c3a05c5e00d22580d9bfa4f24883e75a296046ef5f4f1259c910dca4ea89a376",
         "status": "stale"
       }
     },
@@ -6637,8 +6637,8 @@
       },
       "description_ref": {
         "sha256": "d0f1eee033cacdaa69b48c4268409de3458e43587b5b6bcb760d91f0e74605b0",
-        "pack": "details/d0-d49202af9fcc9e184392f02402cfeff7c8ec71c99718cb0c182338162d3c1ded.json",
-        "pack_sha256": "d49202af9fcc9e184392f02402cfeff7c8ec71c99718cb0c182338162d3c1ded",
+        "pack": "details/d0-c0b1027dab5e8e7075c7361cd1fb44095fa7de0308e8836b434d57adc60e626b.json",
+        "pack_sha256": "c0b1027dab5e8e7075c7361cd1fb44095fa7de0308e8836b434d57adc60e626b",
         "status": "stale"
       }
     },
@@ -6874,8 +6874,8 @@
       },
       "description_ref": {
         "sha256": "0ae54bffc594807e53e66bf9c6fac338a7f119888ef86856736c06853adb39f1",
-        "pack": "details/0a-eb3d2294766e3eef00c28ab793ad86e6db1de269a03b2169fc67af199e115a43.json",
-        "pack_sha256": "eb3d2294766e3eef00c28ab793ad86e6db1de269a03b2169fc67af199e115a43",
+        "pack": "details/0a-d694efa7c1d86a7d92285e9e05166a36d4189d8994e862eef85133fee9a9f293.json",
+        "pack_sha256": "d694efa7c1d86a7d92285e9e05166a36d4189d8994e862eef85133fee9a9f293",
         "status": "stale"
       }
     },
@@ -6957,8 +6957,8 @@
       },
       "description_ref": {
         "sha256": "5ded4a75ae5c03f5cdcdc57e75190985fbdca2e86876d2c05d6e147a2f9073c0",
-        "pack": "details/5d-845cca942d3abe0026142fe361ce11d9796549337b4d766505c19db0a46b4ad3.json",
-        "pack_sha256": "845cca942d3abe0026142fe361ce11d9796549337b4d766505c19db0a46b4ad3",
+        "pack": "details/5d-5c88b849600f09ede7c365c9b392df12554877306c25b70f3156d7d3adb1c0b2.json",
+        "pack_sha256": "5c88b849600f09ede7c365c9b392df12554877306c25b70f3156d7d3adb1c0b2",
         "status": "available"
       }
     },
@@ -6990,8 +6990,8 @@
       },
       "description_ref": {
         "sha256": "09ecacdeaa7377a374bd5848568ce3b8f67c86d6545ce25adeb27fc6b2809270",
-        "pack": "details/09-53c05eb486c36638d7bc23e97807784565c4383ea2a5a30586d5b55321b1d601.json",
-        "pack_sha256": "53c05eb486c36638d7bc23e97807784565c4383ea2a5a30586d5b55321b1d601",
+        "pack": "details/09-869cdd5e326c745b76d9806d3c909c29a7f34218ba74d39a3688521c81a659d2.json",
+        "pack_sha256": "869cdd5e326c745b76d9806d3c909c29a7f34218ba74d39a3688521c81a659d2",
         "status": "available"
       }
     },
@@ -7090,8 +7090,8 @@
       },
       "description_ref": {
         "sha256": "10bd135c7809cc953010cf7e3320305c2422a4722d9b424cfdc826c2f4d68422",
-        "pack": "details/10-76d3510f4daa95c7a796ead47aca16378f03f7e3a1c3a55244f4ae1576c20f45.json",
-        "pack_sha256": "76d3510f4daa95c7a796ead47aca16378f03f7e3a1c3a55244f4ae1576c20f45",
+        "pack": "details/10-f0118bd2d088bec0e05a8578ffe28233831c3a736ae1b8ddab6352e98c35486e.json",
+        "pack_sha256": "f0118bd2d088bec0e05a8578ffe28233831c3a736ae1b8ddab6352e98c35486e",
         "status": "available"
       }
     },
@@ -7327,7 +7327,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-15T23:12:44Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -7366,8 +7366,8 @@
       },
       "description_ref": {
         "sha256": "c68fc884f4862f1fb8242996f87e9a5ac3a33795b758f5951f96f3beac25195d",
-        "pack": "details/c6-e2656a580fdb280e0b2e1fa6fbcfe452ef05b5903fdeec1d989ec3ebb1262e93.json",
-        "pack_sha256": "e2656a580fdb280e0b2e1fa6fbcfe452ef05b5903fdeec1d989ec3ebb1262e93",
+        "pack": "details/c6-5e5f456439f34f6b96d088d7147f38c22a17dc7a42b3129193149043616572ad.json",
+        "pack_sha256": "5e5f456439f34f6b96d088d7147f38c22a17dc7a42b3129193149043616572ad",
         "status": "stale"
       }
     },
@@ -7407,8 +7407,8 @@
       },
       "description_ref": {
         "sha256": "77105188fefd220776adabc47f64e7cb3239ddd1f8ae2ee1b234442b1816e02f",
-        "pack": "details/77-6a7ecc6f14366be777b8aa32d6bff6071ec5302c51738e5e4f6ba33fed6f09c4.json",
-        "pack_sha256": "6a7ecc6f14366be777b8aa32d6bff6071ec5302c51738e5e4f6ba33fed6f09c4",
+        "pack": "details/77-b33deeca9c0815b3a09907c7c94ba0eb26dcc1c6301d276203f41f11c63432cd.json",
+        "pack_sha256": "b33deeca9c0815b3a09907c7c94ba0eb26dcc1c6301d276203f41f11c63432cd",
         "status": "available"
       }
     },
@@ -7540,8 +7540,8 @@
       },
       "description_ref": {
         "sha256": "68456193a6806487613ee2e039e9746de09266815cc1476320da68147e6a22ee",
-        "pack": "details/68-f6b51ea02f83982c129548b12511eadd50aea69544ee123153cd2f755ac98e73.json",
-        "pack_sha256": "f6b51ea02f83982c129548b12511eadd50aea69544ee123153cd2f755ac98e73",
+        "pack": "details/68-b3e8769591d72fb3a9d09da424cc7fdc8d498a554ecd0772ad4bcbcd09fc5042.json",
+        "pack_sha256": "b3e8769591d72fb3a9d09da424cc7fdc8d498a554ecd0772ad4bcbcd09fc5042",
         "status": "available"
       }
     },
@@ -7607,8 +7607,8 @@
       },
       "description_ref": {
         "sha256": "0a8837e93faf4f5cf578ce413cb6debef6f6355e52d2fc7b5515aa987f882a12",
-        "pack": "details/0a-eb3d2294766e3eef00c28ab793ad86e6db1de269a03b2169fc67af199e115a43.json",
-        "pack_sha256": "eb3d2294766e3eef00c28ab793ad86e6db1de269a03b2169fc67af199e115a43",
+        "pack": "details/0a-d694efa7c1d86a7d92285e9e05166a36d4189d8994e862eef85133fee9a9f293.json",
+        "pack_sha256": "d694efa7c1d86a7d92285e9e05166a36d4189d8994e862eef85133fee9a9f293",
         "status": "available"
       }
     },
@@ -7908,8 +7908,8 @@
       },
       "description_ref": {
         "sha256": "83b5ca509962d900a4f1be52884b9abb3b41d600393b88d2210b473dc9bae0b5",
-        "pack": "details/83-4e6ddec2f77e26cc7381d5964a3e5463ae0b3fc45ea496e6e224b6d07c78a4ee.json",
-        "pack_sha256": "4e6ddec2f77e26cc7381d5964a3e5463ae0b3fc45ea496e6e224b6d07c78a4ee",
+        "pack": "details/83-3b29badc0165cc2fffd4ae24a1a6ba327289f5c4818109e3ea2ced410749a0ca.json",
+        "pack_sha256": "3b29badc0165cc2fffd4ae24a1a6ba327289f5c4818109e3ea2ced410749a0ca",
         "status": "stale"
       }
     },
@@ -7928,7 +7928,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -8104,7 +8104,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -8139,6 +8139,39 @@
         "pack": "details/73-59ab102c8a04d666802cecc740915a098e6a00c47878e4234b437ce064a1af59.json",
         "pack_sha256": "59ab102c8a04d666802cecc740915a098e6a00c47878e4234b437ce064a1af59",
         "status": "stale"
+      }
+    },
+    "4b8d8c630450fdcf": {
+      "id": "4b8d8c630450fdcf",
+      "company": "Walmart",
+      "company_slug": "walmart",
+      "title": "2025 Intern Conversion - 2026 FT: Senior Analyst, Merchandising Development Program",
+      "location": "Bentonville, AR",
+      "locations": [
+        "Bentonville, AR"
+      ],
+      "url": "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/Bentonville-AR/XMLNAME-2025-Intern-Conversion---2026-FT--Senior-Analyst--Merchandising-Development-Program_R-2251558",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2025-Intern-Conversion---2026-FT--Senior-Analyst--Merchandising-Development-Program_R-2251558",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "061b22201e5de38d7caec9cee7f3cc83ab917f0c22695c8f4a94e8db40605a17",
+        "pack": "details/06-f65cd47797ab1bbca99c70a17cb9ae1b8d0aa190f50e41a93adcd42760801edd.json",
+        "pack_sha256": "f65cd47797ab1bbca99c70a17cb9ae1b8d0aa190f50e41a93adcd42760801edd",
+        "status": "available"
       }
     },
     "4bba260b9969bf61": {
@@ -8251,8 +8284,8 @@
       },
       "description_ref": {
         "sha256": "7b43e7b8ceed95f30a1349f2e35eface8d0f2e3cac6bd759f6269431abcd733e",
-        "pack": "details/7b-77db2abdf376582cfae8f9efe61c671e56879a461e48332050745344af125d58.json",
-        "pack_sha256": "77db2abdf376582cfae8f9efe61c671e56879a461e48332050745344af125d58",
+        "pack": "details/7b-1fb47b2075674801bc8cfe37a781fec04391d0339d88e1d3319b7bb56a07d2ba.json",
+        "pack_sha256": "1fb47b2075674801bc8cfe37a781fec04391d0339d88e1d3319b7bb56a07d2ba",
         "status": "stale"
       }
     },
@@ -8305,7 +8338,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-30T01:16:42Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -8379,8 +8412,8 @@
       },
       "description_ref": {
         "sha256": "c424fc1c3d611698468f0d75e7d7fa59996bb346c24c241b74642feafd04dc31",
-        "pack": "details/c4-920be70b6f29506c34a39be89a6fbc4825316dcda4886ad1441f061522ce0e5c.json",
-        "pack_sha256": "920be70b6f29506c34a39be89a6fbc4825316dcda4886ad1441f061522ce0e5c",
+        "pack": "details/c4-16f738e591f1cc39a5f6e460a770eab513f2b04777cce01598052bba8d6befc9.json",
+        "pack_sha256": "16f738e591f1cc39a5f6e460a770eab513f2b04777cce01598052bba8d6befc9",
         "status": "stale"
       }
     },
@@ -8572,7 +8605,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -8646,8 +8679,8 @@
       },
       "description_ref": {
         "sha256": "6dc752e0a965c66c3d325b3143f5ff852bd6c196c00b3ae9ea49f137a5df6346",
-        "pack": "details/6d-a45d13d20a99a0fbb267361f78a2cdc34b53f461ee65b238e30b631b53421f35.json",
-        "pack_sha256": "a45d13d20a99a0fbb267361f78a2cdc34b53f461ee65b238e30b631b53421f35",
+        "pack": "details/6d-862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f.json",
+        "pack_sha256": "862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f",
         "status": "stale"
       }
     },
@@ -8745,8 +8778,8 @@
       },
       "description_ref": {
         "sha256": "677d1db39cd98b6bd2a47c5dd83d8aeeb1e9d8ad0bbdf56485b872d6e1771e9f",
-        "pack": "details/67-38960986129c5f430f10fdbac6412c2cc8ebdd407f06bf4d6d6bcc2bd51aae6e.json",
-        "pack_sha256": "38960986129c5f430f10fdbac6412c2cc8ebdd407f06bf4d6d6bcc2bd51aae6e",
+        "pack": "details/67-e600bcb31a3f812e816a3388a6c8f15dbe6ad2a5c65171e000e100415f61575d.json",
+        "pack_sha256": "e600bcb31a3f812e816a3388a6c8f15dbe6ad2a5c65171e000e100415f61575d",
         "status": "available"
       }
     },
@@ -9015,7 +9048,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-27T22:31:02Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -9086,8 +9119,8 @@
       },
       "description_ref": {
         "sha256": "2f43aa4b1b71ceaddb25eb757d62e9d6da8f6d32df611387d0125730bc3bc481",
-        "pack": "details/2f-7983a2a015d0ad876c7bb78c969fbb3c7d87bade2c91bbd85dd37d630642bbc8.json",
-        "pack_sha256": "7983a2a015d0ad876c7bb78c969fbb3c7d87bade2c91bbd85dd37d630642bbc8",
+        "pack": "details/2f-8463c34e0035345c6b296ac6a888275a2cbec155781182115975df12b72ee9ae.json",
+        "pack_sha256": "8463c34e0035345c6b296ac6a888275a2cbec155781182115975df12b72ee9ae",
         "status": "available"
       }
     },
@@ -9171,8 +9204,8 @@
       },
       "description_ref": {
         "sha256": "6e04772e394e3b5277f093840a40fb78b935b4b7ced0fad3c0554ea99adf55c5",
-        "pack": "details/6e-64431d72d269363c83706a9d6ea67ea6c5e4e37b9f42a22bf575b1841ecb647f.json",
-        "pack_sha256": "64431d72d269363c83706a9d6ea67ea6c5e4e37b9f42a22bf575b1841ecb647f",
+        "pack": "details/6e-944d576044907ff9db76fa1fa810cbb333eba53c1e07233f734fdbfff0bb345d.json",
+        "pack_sha256": "944d576044907ff9db76fa1fa810cbb333eba53c1e07233f734fdbfff0bb345d",
         "status": "stale"
       }
     },
@@ -9311,8 +9344,8 @@
       },
       "description_ref": {
         "sha256": "dfda4284b95bdd3d96eae931cc510d2cc4fc9dbc7639efa77be3987bad0d31cf",
-        "pack": "details/df-0159554bd086bfbe647848e48f55da55439f230101c2137153682ca9b529b84f.json",
-        "pack_sha256": "0159554bd086bfbe647848e48f55da55439f230101c2137153682ca9b529b84f",
+        "pack": "details/df-00b1b746d6a0e992fef0f585dbf1742cdebba67f4a4959fb9b4911d596517159.json",
+        "pack_sha256": "00b1b746d6a0e992fef0f585dbf1742cdebba67f4a4959fb9b4911d596517159",
         "status": "stale"
       }
     },
@@ -9426,8 +9459,8 @@
       },
       "description_ref": {
         "sha256": "449c024949a23cbd4316b66172068072e2b736fd7e2ff6a8547641fd4efc9ea0",
-        "pack": "details/44-ec91eaf146f73906f289ca16f3d4a3ef0453a72e3debfa6dfbe4ea78551ee17a.json",
-        "pack_sha256": "ec91eaf146f73906f289ca16f3d4a3ef0453a72e3debfa6dfbe4ea78551ee17a",
+        "pack": "details/44-6936957c72b4f3a5be8cdb3adf543cd8a75ae51230179ca60003504b95a51386.json",
+        "pack_sha256": "6936957c72b4f3a5be8cdb3adf543cd8a75ae51230179ca60003504b95a51386",
         "status": "available"
       }
     },
@@ -9479,7 +9512,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -9577,8 +9610,8 @@
       },
       "description_ref": {
         "sha256": "2e47350024ffbed89ac8a4aabbba36be8318c120800eb5c4b69b2da76411ff81",
-        "pack": "details/2e-4a8dbfa6d4d41ec9c756c4031c9290a9ed77129f7f63ea50ff76cbf77d8dfeab.json",
-        "pack_sha256": "4a8dbfa6d4d41ec9c756c4031c9290a9ed77129f7f63ea50ff76cbf77d8dfeab",
+        "pack": "details/2e-8b77283903f622da4d8692c903cf465061688d2b7d93a322bebf814b303d021c.json",
+        "pack_sha256": "8b77283903f622da4d8692c903cf465061688d2b7d93a322bebf814b303d021c",
         "status": "available"
       }
     },
@@ -9610,8 +9643,8 @@
       },
       "description_ref": {
         "sha256": "2895aa9c171d1376f3c6e7b3ce3e432aa89a1ca88fef50f1e01b2f88a725e837",
-        "pack": "details/28-58147b26dffafb87533ad29e3c7541dba283d396063c71f4f4a846d5e613ca6e.json",
-        "pack_sha256": "58147b26dffafb87533ad29e3c7541dba283d396063c71f4f4a846d5e613ca6e",
+        "pack": "details/28-e767e62e8f92a2999cac5fe1385680e8b60748195f07eb8c90ba9de5fb789d08.json",
+        "pack_sha256": "e767e62e8f92a2999cac5fe1385680e8b60748195f07eb8c90ba9de5fb789d08",
         "status": "stale"
       }
     },
@@ -9676,8 +9709,8 @@
       },
       "description_ref": {
         "sha256": "06630d27f1e92b59db0f48ea6e87f523d0f1018ae1c6565451f1d7b3410aef00",
-        "pack": "details/06-ad8572d710225ff2471f2967de20a862f54b13fc963d4db5cc73582ae6c03720.json",
-        "pack_sha256": "ad8572d710225ff2471f2967de20a862f54b13fc963d4db5cc73582ae6c03720",
+        "pack": "details/06-f65cd47797ab1bbca99c70a17cb9ae1b8d0aa190f50e41a93adcd42760801edd.json",
+        "pack_sha256": "f65cd47797ab1bbca99c70a17cb9ae1b8d0aa190f50e41a93adcd42760801edd",
         "status": "stale"
       }
     },
@@ -9775,8 +9808,8 @@
       },
       "description_ref": {
         "sha256": "13904ca24edfc49e3376ca23e4f06bc115fdedf902d71822223498c063b9068c",
-        "pack": "details/13-62d6b00c740a228654f1e47c9d541b11ee301c341156e1225150b2be39119b3d.json",
-        "pack_sha256": "62d6b00c740a228654f1e47c9d541b11ee301c341156e1225150b2be39119b3d",
+        "pack": "details/13-44b083c01b38e19855f9878e55019ede7a65acdd755839b6749dd70bc84e7ae2.json",
+        "pack_sha256": "44b083c01b38e19855f9878e55019ede7a65acdd755839b6749dd70bc84e7ae2",
         "status": "available"
       }
     },
@@ -9795,7 +9828,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -10002,7 +10035,7 @@
         "sha256": "b05c2ee29af91605b9b9c3e7024d826d2d604db6d6d3e161d95c6b531c99eb98",
         "pack": "details/b0-e6c75516a5c997e0b2299ed1d17c0e006ebfdd3899f547fb1d8b100605cf7a9a.json",
         "pack_sha256": "e6c75516a5c997e0b2299ed1d17c0e006ebfdd3899f547fb1d8b100605cf7a9a",
-        "status": "available"
+        "status": "stale"
       }
     },
     "59212cb233a83a77": {
@@ -10033,8 +10066,8 @@
       },
       "description_ref": {
         "sha256": "7ddbc0d3dae674a31c61fedd1331f3b761a04f34f11672d961d1313ff0b37996",
-        "pack": "details/7d-9ae4bd07a8145bb134787f2aae79df06811e07912faefb4618d2a36d7171a777.json",
-        "pack_sha256": "9ae4bd07a8145bb134787f2aae79df06811e07912faefb4618d2a36d7171a777",
+        "pack": "details/7d-df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde.json",
+        "pack_sha256": "df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde",
         "status": "available"
       }
     },
@@ -10152,7 +10185,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-12T23:01:00Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -10271,7 +10304,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-27T22:31:02Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -10423,7 +10456,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-21T22:47:02Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -10489,8 +10522,8 @@
       },
       "description_ref": {
         "sha256": "44431b8f77daca6f158334c537a2b7c9c696b3807c91c9b81acafa6a9ee81c36",
-        "pack": "details/44-ec91eaf146f73906f289ca16f3d4a3ef0453a72e3debfa6dfbe4ea78551ee17a.json",
-        "pack_sha256": "ec91eaf146f73906f289ca16f3d4a3ef0453a72e3debfa6dfbe4ea78551ee17a",
+        "pack": "details/44-6936957c72b4f3a5be8cdb3adf543cd8a75ae51230179ca60003504b95a51386.json",
+        "pack_sha256": "6936957c72b4f3a5be8cdb3adf543cd8a75ae51230179ca60003504b95a51386",
         "status": "stale"
       }
     },
@@ -10522,8 +10555,8 @@
       },
       "description_ref": {
         "sha256": "540d342ccd76020f194adec5f3dbe2824e116517b28c992bfcf64bb6968bb12b",
-        "pack": "details/54-411342ba17dfc446e4712032180c8fbb33e13a763691b62b297a90bebb83bd34.json",
-        "pack_sha256": "411342ba17dfc446e4712032180c8fbb33e13a763691b62b297a90bebb83bd34",
+        "pack": "details/54-7c7e85454ac6cab7f11572fd984b75996ead925d1d0a1042914fdecd6abc050d.json",
+        "pack_sha256": "7c7e85454ac6cab7f11572fd984b75996ead925d1d0a1042914fdecd6abc050d",
         "status": "available"
       }
     },
@@ -10555,8 +10588,8 @@
       },
       "description_ref": {
         "sha256": "c496bbfbb88331c679e0eab5b0a94193758dff351a4ff52ea695823f36548c8c",
-        "pack": "details/c4-920be70b6f29506c34a39be89a6fbc4825316dcda4886ad1441f061522ce0e5c.json",
-        "pack_sha256": "920be70b6f29506c34a39be89a6fbc4825316dcda4886ad1441f061522ce0e5c",
+        "pack": "details/c4-16f738e591f1cc39a5f6e460a770eab513f2b04777cce01598052bba8d6befc9.json",
+        "pack_sha256": "16f738e591f1cc39a5f6e460a770eab513f2b04777cce01598052bba8d6befc9",
         "status": "available"
       }
     },
@@ -10662,8 +10695,8 @@
       },
       "description_ref": {
         "sha256": "7733a61a062fd507ebf4b2bc0f55f0162a36e9e3c66a374e241fa601ef49ab1d",
-        "pack": "details/77-6a7ecc6f14366be777b8aa32d6bff6071ec5302c51738e5e4f6ba33fed6f09c4.json",
-        "pack_sha256": "6a7ecc6f14366be777b8aa32d6bff6071ec5302c51738e5e4f6ba33fed6f09c4",
+        "pack": "details/77-b33deeca9c0815b3a09907c7c94ba0eb26dcc1c6301d276203f41f11c63432cd.json",
+        "pack_sha256": "b33deeca9c0815b3a09907c7c94ba0eb26dcc1c6301d276203f41f11c63432cd",
         "status": "stale"
       }
     },
@@ -10703,8 +10736,8 @@
       },
       "description_ref": {
         "sha256": "13b33fdaf4abbae29d8f29aed50b07006c85960b37bca453779d2f7d55985b54",
-        "pack": "details/13-62d6b00c740a228654f1e47c9d541b11ee301c341156e1225150b2be39119b3d.json",
-        "pack_sha256": "62d6b00c740a228654f1e47c9d541b11ee301c341156e1225150b2be39119b3d",
+        "pack": "details/13-44b083c01b38e19855f9878e55019ede7a65acdd755839b6749dd70bc84e7ae2.json",
+        "pack_sha256": "44b083c01b38e19855f9878e55019ede7a65acdd755839b6749dd70bc84e7ae2",
         "status": "stale"
       }
     },
@@ -10785,8 +10818,8 @@
       },
       "description_ref": {
         "sha256": "eab54b56e4468ba15a307a4bd031fbc9fcbb534f01872a2f3c9b0da0c31d68bf",
-        "pack": "details/ea-95a8e0d91d8e48cda0816af9e68edf2c61ced0ecf85eda1cb467042abce7d0ca.json",
-        "pack_sha256": "95a8e0d91d8e48cda0816af9e68edf2c61ced0ecf85eda1cb467042abce7d0ca",
+        "pack": "details/ea-d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b.json",
+        "pack_sha256": "d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b",
         "status": "stale"
       }
     },
@@ -10805,7 +10838,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-21T22:47:02Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -10903,8 +10936,8 @@
       },
       "description_ref": {
         "sha256": "6e589cf8521f0502e876a26c42f584b5cc63958efad6a7b14548b84273a30055",
-        "pack": "details/6e-64431d72d269363c83706a9d6ea67ea6c5e4e37b9f42a22bf575b1841ecb647f.json",
-        "pack_sha256": "64431d72d269363c83706a9d6ea67ea6c5e4e37b9f42a22bf575b1841ecb647f",
+        "pack": "details/6e-944d576044907ff9db76fa1fa810cbb333eba53c1e07233f734fdbfff0bb345d.json",
+        "pack_sha256": "944d576044907ff9db76fa1fa810cbb333eba53c1e07233f734fdbfff0bb345d",
         "status": "available"
       }
     },
@@ -11022,7 +11055,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-20T21:24:59Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11054,8 +11087,8 @@
       },
       "description_ref": {
         "sha256": "28042b174e6235ac7341a27b97a8bbc41063db286234a89bdb21640f7f76357d",
-        "pack": "details/28-58147b26dffafb87533ad29e3c7541dba283d396063c71f4f4a846d5e613ca6e.json",
-        "pack_sha256": "58147b26dffafb87533ad29e3c7541dba283d396063c71f4f4a846d5e613ca6e",
+        "pack": "details/28-e767e62e8f92a2999cac5fe1385680e8b60748195f07eb8c90ba9de5fb789d08.json",
+        "pack_sha256": "e767e62e8f92a2999cac5fe1385680e8b60748195f07eb8c90ba9de5fb789d08",
         "status": "stale"
       }
     },
@@ -11088,8 +11121,8 @@
       },
       "description_ref": {
         "sha256": "c5a1844f6448e03142161dc51c8f9d224214ad791d1b8d6949af5e470bf677da",
-        "pack": "details/c5-c9c9c66fcd40596d8017527b58145cdb9b3bcfd1363d62e75e0551ec24d730f9.json",
-        "pack_sha256": "c9c9c66fcd40596d8017527b58145cdb9b3bcfd1363d62e75e0551ec24d730f9",
+        "pack": "details/c5-66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc.json",
+        "pack_sha256": "66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc",
         "status": "available"
       }
     },
@@ -11141,8 +11174,8 @@
       },
       "description_ref": {
         "sha256": "d05428f631219944fb404d0c3deaeb4f54be6206dc94a007dbcb0fdf4dffaca3",
-        "pack": "details/d0-d49202af9fcc9e184392f02402cfeff7c8ec71c99718cb0c182338162d3c1ded.json",
-        "pack_sha256": "d49202af9fcc9e184392f02402cfeff7c8ec71c99718cb0c182338162d3c1ded",
+        "pack": "details/d0-c0b1027dab5e8e7075c7361cd1fb44095fa7de0308e8836b434d57adc60e626b.json",
+        "pack_sha256": "c0b1027dab5e8e7075c7361cd1fb44095fa7de0308e8836b434d57adc60e626b",
         "status": "stale"
       }
     },
@@ -11161,7 +11194,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-03T01:49:10Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11280,7 +11313,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11332,7 +11365,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-29T22:52:53Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11399,8 +11432,8 @@
       },
       "description_ref": {
         "sha256": "398f19a1b33de8fa7797a9469f5f1c5f8c12619ab24be4bda00645750fc5f12f",
-        "pack": "details/39-5f93a80b9a9d5c5efba5aa36ca7b2abec317a131407a11be94da6a0c872d0c0c.json",
-        "pack_sha256": "5f93a80b9a9d5c5efba5aa36ca7b2abec317a131407a11be94da6a0c872d0c0c",
+        "pack": "details/39-ae3d8b461d95aca14585fbab36421fc669a39ef31be046f2e823b68737efc23e.json",
+        "pack_sha256": "ae3d8b461d95aca14585fbab36421fc669a39ef31be046f2e823b68737efc23e",
         "status": "available"
       }
     },
@@ -11432,8 +11465,8 @@
       },
       "description_ref": {
         "sha256": "398777c0d7311853ea0b421cddedc977b8cf3e2f483983356fbe0e100608edd4",
-        "pack": "details/39-5f93a80b9a9d5c5efba5aa36ca7b2abec317a131407a11be94da6a0c872d0c0c.json",
-        "pack_sha256": "5f93a80b9a9d5c5efba5aa36ca7b2abec317a131407a11be94da6a0c872d0c0c",
+        "pack": "details/39-ae3d8b461d95aca14585fbab36421fc669a39ef31be046f2e823b68737efc23e.json",
+        "pack_sha256": "ae3d8b461d95aca14585fbab36421fc669a39ef31be046f2e823b68737efc23e",
         "status": "stale"
       }
     },
@@ -11519,7 +11552,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-13T10:58:02Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11618,8 +11651,8 @@
       },
       "description_ref": {
         "sha256": "8d3ff2b0383fd3f480187f3ddbb56dab387ff3bbdec36bd818b93de829876519",
-        "pack": "details/8d-b7831b2618cf56969b479a2787f5356ce73c8d19cb8af9582235bd2959a0f1d2.json",
-        "pack_sha256": "b7831b2618cf56969b479a2787f5356ce73c8d19cb8af9582235bd2959a0f1d2",
+        "pack": "details/8d-1b56f72a06d2f9f3f91559e2e067193626f115647cfdcef04e94e46700eef51b.json",
+        "pack_sha256": "1b56f72a06d2f9f3f91559e2e067193626f115647cfdcef04e94e46700eef51b",
         "status": "available"
       }
     },
@@ -11651,8 +11684,8 @@
       },
       "description_ref": {
         "sha256": "a6226da5ccfaef29fd21992f21f5bc2cf8b124f8c7e28f8d52cd3b6ad522d3b0",
-        "pack": "details/a6-e30bdc20b01217c4b2102f266b4d355087d4ca97d470c689dab3cd36986243a8.json",
-        "pack_sha256": "e30bdc20b01217c4b2102f266b4d355087d4ca97d470c689dab3cd36986243a8",
+        "pack": "details/a6-88d1691d8e4bdbae471b464549595d2e43a7f57e34837de9eda71834079a5ecc.json",
+        "pack_sha256": "88d1691d8e4bdbae471b464549595d2e43a7f57e34837de9eda71834079a5ecc",
         "status": "stale"
       }
     },
@@ -11718,8 +11751,8 @@
       },
       "description_ref": {
         "sha256": "c1831d1b4f490fed8e9e80886b10821cc67860d901957cea684a41c77b1ac21b",
-        "pack": "details/c1-cccccb65b56e734d3373034cb2a13bbb941834ee5643afb1c3273216daa4141f.json",
-        "pack_sha256": "cccccb65b56e734d3373034cb2a13bbb941834ee5643afb1c3273216daa4141f",
+        "pack": "details/c1-6872d32322a42c42d00b60eaac51ec55c1719d9c5eef98c7076a1e3bb23d0fbf.json",
+        "pack_sha256": "6872d32322a42c42d00b60eaac51ec55c1719d9c5eef98c7076a1e3bb23d0fbf",
         "status": "available"
       }
     },
@@ -11831,7 +11864,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11929,8 +11962,8 @@
       },
       "description_ref": {
         "sha256": "f33bf36f14955ac7e989fccd8af176bdf059e093e16dc50fd5a4457126e37dca",
-        "pack": "details/f3-e5d86ba95bed5a8eb29982977ca51a6b5b657a5bb31ea92dcf6eb2b75ed7e2dc.json",
-        "pack_sha256": "e5d86ba95bed5a8eb29982977ca51a6b5b657a5bb31ea92dcf6eb2b75ed7e2dc",
+        "pack": "details/f3-c3a05c5e00d22580d9bfa4f24883e75a296046ef5f4f1259c910dca4ea89a376.json",
+        "pack_sha256": "c3a05c5e00d22580d9bfa4f24883e75a296046ef5f4f1259c910dca4ea89a376",
         "status": "stale"
       }
     },
@@ -12021,9 +12054,9 @@
       },
       "description_ref": {
         "sha256": "7af2da6136ffbc43b25b7cdea09f548f2554106f5f6f395f3aa5e6a832e59070",
-        "pack": "details/7a-1c0cf54537c0ae5b663fb5673ccb87a84952040f904263c9146d191bdc09376e.json",
-        "pack_sha256": "1c0cf54537c0ae5b663fb5673ccb87a84952040f904263c9146d191bdc09376e",
-        "status": "available"
+        "pack": "details/7a-856eb833f9b5cd5fcc67accf853afbfda541807ea8b42f9fcea09cdddf7c553a.json",
+        "pack_sha256": "856eb833f9b5cd5fcc67accf853afbfda541807ea8b42f9fcea09cdddf7c553a",
+        "status": "stale"
       }
     },
     "68301627e7d2e1cd": {
@@ -12054,9 +12087,42 @@
       },
       "description_ref": {
         "sha256": "66d454d5b0f35f20607e5b95eac1e9dd6c4cda9b2fccfcf9a8025a1f17d182fa",
-        "pack": "details/66-139a76f6db1f4c816d23c7cb07ff62425d656f360fd0484d4a500cff8e2a6b40.json",
-        "pack_sha256": "139a76f6db1f4c816d23c7cb07ff62425d656f360fd0484d4a500cff8e2a6b40",
+        "pack": "details/66-d27c46b80ad47c207fac4529eb83395f2917f0a23371c70015d95b28e9b1abaa.json",
+        "pack_sha256": "d27c46b80ad47c207fac4529eb83395f2917f0a23371c70015d95b28e9b1abaa",
         "status": "stale"
+      }
+    },
+    "6857cb16ed2935ef": {
+      "id": "6857cb16ed2935ef",
+      "company": "Walmart",
+      "company_slug": "walmart",
+      "title": "2026 Intern Conversion: 2027 Field Supply Chain - Process Engineer",
+      "location": "(USA) Change Building AR Bentonville Home Office",
+      "locations": [
+        "(USA) Change Building AR Bentonville Home Office"
+      ],
+      "url": "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-Change-Building-AR-Bentonville-Home-Office/XMLNAME-2026-Intern-Conversion--2027-Field-Supply-Chain---Process-Engineer_R-2630040",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2026-Intern-Conversion--2027-Field-Supply-Chain---Process-Engineer_R-2630040",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "0a815cd494ee6e802349d12d021e9bc66e88ec373e3690294e03a54b133a0dd3",
+        "pack": "details/0a-d694efa7c1d86a7d92285e9e05166a36d4189d8994e862eef85133fee9a9f293.json",
+        "pack_sha256": "d694efa7c1d86a7d92285e9e05166a36d4189d8994e862eef85133fee9a9f293",
+        "status": "available"
       }
     },
     "685f9b235146e6b2": {
@@ -12087,8 +12153,8 @@
       },
       "description_ref": {
         "sha256": "4f49c84f889bcccb6676600df81af22d14b7513f2c48195c3d0be1f5d8746781",
-        "pack": "details/4f-8047fca99154f8ea0b9a8898c7307f5172dcdbb0379c3dc9ab062583b988fb84.json",
-        "pack_sha256": "8047fca99154f8ea0b9a8898c7307f5172dcdbb0379c3dc9ab062583b988fb84",
+        "pack": "details/4f-3676f0ae2f6c25f852ba4eaf5012fb0423203a7c20d755b7c5ea08c681867b36.json",
+        "pack_sha256": "3676f0ae2f6c25f852ba4eaf5012fb0423203a7c20d755b7c5ea08c681867b36",
         "status": "stale"
       }
     },
@@ -12123,7 +12189,7 @@
         "sha256": "658577680c5490d6991e31da34f0a51eb1c80e91644549625f0cd27929e61e9c",
         "pack": "details/65-0c57802939466db1994bad4098b1ff368c913c5df80194067bde3d7784282bce.json",
         "pack_sha256": "0c57802939466db1994bad4098b1ff368c913c5df80194067bde3d7784282bce",
-        "status": "available"
+        "status": "stale"
       }
     },
     "689c8de91bc3ccef": {
@@ -12141,7 +12207,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-26T17:33:30Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -12180,9 +12246,9 @@
       },
       "description_ref": {
         "sha256": "61136cb16efdad62d69aebb44a09cc0ca1cf39d87626c180d55d1b9f71d6a68b",
-        "pack": "details/61-d1c044a11230fbe5f250d3abd32156efc5669b90c885721acc8fdb47e0f98749.json",
-        "pack_sha256": "d1c044a11230fbe5f250d3abd32156efc5669b90c885721acc8fdb47e0f98749",
-        "status": "available"
+        "pack": "details/61-9afbe85e3bbb17302ec23188d853d1123a96837f892fa903025349b05d126b02.json",
+        "pack_sha256": "9afbe85e3bbb17302ec23188d853d1123a96837f892fa903025349b05d126b02",
+        "status": "stale"
       }
     },
     "68c3c843e5a5f245": {
@@ -12213,8 +12279,8 @@
       },
       "description_ref": {
         "sha256": "1aa35d09f0954b11bae860f639889ac3d58c0cfbc90b5fac5116ec9f44bc2c35",
-        "pack": "details/1a-3831023739fecb7a46154d61a3162fe67f857ddf751275967846d559b661e2fe.json",
-        "pack_sha256": "3831023739fecb7a46154d61a3162fe67f857ddf751275967846d559b661e2fe",
+        "pack": "details/1a-5d586bf7e3a26409e876f330e0e4bbdf06c8bd3b3b9a630070d684b68a3fb8ae.json",
+        "pack_sha256": "5d586bf7e3a26409e876f330e0e4bbdf06c8bd3b3b9a630070d684b68a3fb8ae",
         "status": "available"
       }
     },
@@ -12336,7 +12402,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-21T18:57:41Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -12369,8 +12435,8 @@
       },
       "description_ref": {
         "sha256": "2e59d00fc43c7d831989b5bb4c2e3c9f060449b6c280be542bc06d4d63766a8c",
-        "pack": "details/2e-4a8dbfa6d4d41ec9c756c4031c9290a9ed77129f7f63ea50ff76cbf77d8dfeab.json",
-        "pack_sha256": "4a8dbfa6d4d41ec9c756c4031c9290a9ed77129f7f63ea50ff76cbf77d8dfeab",
+        "pack": "details/2e-8b77283903f622da4d8692c903cf465061688d2b7d93a322bebf814b303d021c.json",
+        "pack_sha256": "8b77283903f622da4d8692c903cf465061688d2b7d93a322bebf814b303d021c",
         "status": "stale"
       }
     },
@@ -12402,8 +12468,8 @@
       },
       "description_ref": {
         "sha256": "f5dece5028cac479b37605570b22f7b4d379c3772c246559c9dc07478a94ec12",
-        "pack": "details/f5-76cc3c5a8df84970b4725ba6cefc49bcf80eb40370ad20b84ac04ff7028ba425.json",
-        "pack_sha256": "76cc3c5a8df84970b4725ba6cefc49bcf80eb40370ad20b84ac04ff7028ba425",
+        "pack": "details/f5-0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e.json",
+        "pack_sha256": "0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e",
         "status": "stale"
       }
     },
@@ -12564,8 +12630,8 @@
       },
       "description_ref": {
         "sha256": "f34cf1eb87759a3e53cb33948e76b0377aef8a59662d4c2b9cb8b4af5627a3d6",
-        "pack": "details/f3-e5d86ba95bed5a8eb29982977ca51a6b5b657a5bb31ea92dcf6eb2b75ed7e2dc.json",
-        "pack_sha256": "e5d86ba95bed5a8eb29982977ca51a6b5b657a5bb31ea92dcf6eb2b75ed7e2dc",
+        "pack": "details/f3-c3a05c5e00d22580d9bfa4f24883e75a296046ef5f4f1259c910dca4ea89a376.json",
+        "pack_sha256": "c3a05c5e00d22580d9bfa4f24883e75a296046ef5f4f1259c910dca4ea89a376",
         "status": "stale"
       }
     },
@@ -12729,8 +12795,8 @@
       },
       "description_ref": {
         "sha256": "62151c110bc0d08e7d73f889fab54715bb340aabf23379ee2769832e043415e5",
-        "pack": "details/62-fe58f3f905ee471d0ce3abef4fdd6a832c2eb9c9f50127f6820dba1eec388c77.json",
-        "pack_sha256": "fe58f3f905ee471d0ce3abef4fdd6a832c2eb9c9f50127f6820dba1eec388c77",
+        "pack": "details/62-0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952.json",
+        "pack_sha256": "0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952",
         "status": "stale"
       }
     },
@@ -12828,8 +12894,8 @@
       },
       "description_ref": {
         "sha256": "89a0b1aff922cad74e8da6e4781bab0d5ae2039f000d809533fdb435ba69bf21",
-        "pack": "details/89-99e133cb06eb9b04719278a965428665627ae714f9c089bdff54ba971044f922.json",
-        "pack_sha256": "99e133cb06eb9b04719278a965428665627ae714f9c089bdff54ba971044f922",
+        "pack": "details/89-7024702ca407ca6b212ee241862063a33f05aa13de00068853649b14433b16f2.json",
+        "pack_sha256": "7024702ca407ca6b212ee241862063a33f05aa13de00068853649b14433b16f2",
         "status": "stale"
       }
     },
@@ -12861,8 +12927,8 @@
       },
       "description_ref": {
         "sha256": "2e554fab8063eaff59c19e8b003d2d7a11343c3f789d8197a0a0eb6cdda28e6d",
-        "pack": "details/2e-4a8dbfa6d4d41ec9c756c4031c9290a9ed77129f7f63ea50ff76cbf77d8dfeab.json",
-        "pack_sha256": "4a8dbfa6d4d41ec9c756c4031c9290a9ed77129f7f63ea50ff76cbf77d8dfeab",
+        "pack": "details/2e-8b77283903f622da4d8692c903cf465061688d2b7d93a322bebf814b303d021c.json",
+        "pack_sha256": "8b77283903f622da4d8692c903cf465061688d2b7d93a322bebf814b303d021c",
         "status": "stale"
       }
     },
@@ -12894,8 +12960,8 @@
       },
       "description_ref": {
         "sha256": "9a89bf68178b24a282e2dff92797eb985063b2114b923fe8d5faf6854fc10ae2",
-        "pack": "details/9a-a52049cad7376491106aae23438a0833d6373033ea0b08a5b7e6eb145209fb9d.json",
-        "pack_sha256": "a52049cad7376491106aae23438a0833d6373033ea0b08a5b7e6eb145209fb9d",
+        "pack": "details/9a-acea961f48a8c320177fb00c89613508bbb1e09a2817b1f6cb0ff9d6214147c8.json",
+        "pack_sha256": "acea961f48a8c320177fb00c89613508bbb1e09a2817b1f6cb0ff9d6214147c8",
         "status": "available"
       }
     },
@@ -13075,7 +13141,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-21T15:38:36Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -13181,7 +13247,7 @@
         "sha256": "8014fbc1a754763fefaa1bf3a3aa3af8abe8245b84e946e4c89c7ac08363c0fb",
         "pack": "details/80-ec350155b56e3d28bdbe2014a7259acda17ed63a053f8792f5df45e38c6391e0.json",
         "pack_sha256": "ec350155b56e3d28bdbe2014a7259acda17ed63a053f8792f5df45e38c6391e0",
-        "status": "available"
+        "status": "stale"
       }
     },
     "701c1e5732a9cbc0": {
@@ -13212,8 +13278,8 @@
       },
       "description_ref": {
         "sha256": "e8b7e3309b0caa6c9f980e47ae748b77ea359f3a33a5e20760ab42ca3bb9d7ed",
-        "pack": "details/e8-9b670b1a97367434f909311ca669344b6878a7d87c68dc6aac86aeb3c1237189.json",
-        "pack_sha256": "9b670b1a97367434f909311ca669344b6878a7d87c68dc6aac86aeb3c1237189",
+        "pack": "details/e8-ba181f32527b0352393780f4511aee726ba881113790c5d0c4914e6087916032.json",
+        "pack_sha256": "ba181f32527b0352393780f4511aee726ba881113790c5d0c4914e6087916032",
         "status": "available"
       }
     },
@@ -13463,8 +13529,8 @@
       },
       "description_ref": {
         "sha256": "04f5f26e35140fb1eacb618a7d5f7ef189b790ea778369b479abe44a4d8b1e3e",
-        "pack": "details/04-ad08e7965f1d8d14619c4bcda9a22f62f6de0920b85c2c60b06fc2d2757d78ad.json",
-        "pack_sha256": "ad08e7965f1d8d14619c4bcda9a22f62f6de0920b85c2c60b06fc2d2757d78ad",
+        "pack": "details/04-dec1e89770d4e6d188da35c8fac55d9e7abf70eb196939981b2def6d1a281e01.json",
+        "pack_sha256": "dec1e89770d4e6d188da35c8fac55d9e7abf70eb196939981b2def6d1a281e01",
         "status": "stale"
       }
     },
@@ -13599,7 +13665,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-17T21:47:37Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -13639,7 +13705,7 @@
         "sha256": "e56f72c368f0fbaa1eecc4a7c559b92ffee2d375254112e16b6a49fcd91b386c",
         "pack": "details/e5-3638f76126f5905d9f539977ba54a1635dfdb5daf79e185b5ad3c7e41a25733e.json",
         "pack_sha256": "3638f76126f5905d9f539977ba54a1635dfdb5daf79e185b5ad3c7e41a25733e",
-        "status": "available"
+        "status": "stale"
       }
     },
     "731d4a78151e42e3": {
@@ -13797,7 +13863,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -13862,8 +13928,8 @@
       },
       "description_ref": {
         "sha256": "e60801d01ff0adeefc63652c6dbbcfc39e5584ab57bbbfa435fcf7a738f02be1",
-        "pack": "details/e6-fb3c365088751d8e7585a0c6dee25a41683769308ad464ea5bf4618af217df02.json",
-        "pack_sha256": "fb3c365088751d8e7585a0c6dee25a41683769308ad464ea5bf4618af217df02",
+        "pack": "details/e6-7377ba4edfffe5647636ece776820710773d3351670ee148e1ce850c7e7e8f6f.json",
+        "pack_sha256": "7377ba4edfffe5647636ece776820710773d3351670ee148e1ce850c7e7e8f6f",
         "status": "stale"
       }
     },
@@ -13928,8 +13994,8 @@
       },
       "description_ref": {
         "sha256": "c87933f801125f6a502bf2b71b95d6eb2960b12d3813ab9d28489155909065e0",
-        "pack": "details/c8-e2637f558697208da3b5b8cc10c7ce50ba90adb958444b6b07d57b6327d710f3.json",
-        "pack_sha256": "e2637f558697208da3b5b8cc10c7ce50ba90adb958444b6b07d57b6327d710f3",
+        "pack": "details/c8-118e64e48893941e6c098819d13fcc43356f920ddb0d5a13b60e7296c4debdc8.json",
+        "pack_sha256": "118e64e48893941e6c098819d13fcc43356f920ddb0d5a13b60e7296c4debdc8",
         "status": "available"
       }
     },
@@ -13961,8 +14027,8 @@
       },
       "description_ref": {
         "sha256": "5b79601398fab21a8afb8ce385d5b9f471ba02191e32356ad23a305b06cfa5a5",
-        "pack": "details/5b-e5f9a65eebf753e0d78e501f3d1174c14fab599c3f23852e9b3b79518aa71dd1.json",
-        "pack_sha256": "e5f9a65eebf753e0d78e501f3d1174c14fab599c3f23852e9b3b79518aa71dd1",
+        "pack": "details/5b-f4324bfbb1ff8459ad9c7799aa472fafc04ade22958ac0a5e2df95af786262ac.json",
+        "pack_sha256": "f4324bfbb1ff8459ad9c7799aa472fafc04ade22958ac0a5e2df95af786262ac",
         "status": "available"
       }
     },
@@ -13994,8 +14060,8 @@
       },
       "description_ref": {
         "sha256": "5b7da393944a7542e4946a70472ab8cc8c3698c7b76cfc2622b0468400ace4f8",
-        "pack": "details/5b-e5f9a65eebf753e0d78e501f3d1174c14fab599c3f23852e9b3b79518aa71dd1.json",
-        "pack_sha256": "e5f9a65eebf753e0d78e501f3d1174c14fab599c3f23852e9b3b79518aa71dd1",
+        "pack": "details/5b-f4324bfbb1ff8459ad9c7799aa472fafc04ade22958ac0a5e2df95af786262ac.json",
+        "pack_sha256": "f4324bfbb1ff8459ad9c7799aa472fafc04ade22958ac0a5e2df95af786262ac",
         "status": "available"
       }
     },
@@ -14145,8 +14211,8 @@
       },
       "description_ref": {
         "sha256": "68a5c3f8f1728c7f6f39f70edeb5e403b535da457549f25b0f3ed0e04dd849d4",
-        "pack": "details/68-f6b51ea02f83982c129548b12511eadd50aea69544ee123153cd2f755ac98e73.json",
-        "pack_sha256": "f6b51ea02f83982c129548b12511eadd50aea69544ee123153cd2f755ac98e73",
+        "pack": "details/68-b3e8769591d72fb3a9d09da424cc7fdc8d498a554ecd0772ad4bcbcd09fc5042.json",
+        "pack_sha256": "b3e8769591d72fb3a9d09da424cc7fdc8d498a554ecd0772ad4bcbcd09fc5042",
         "status": "stale"
       }
     },
@@ -14178,8 +14244,8 @@
       },
       "description_ref": {
         "sha256": "1a702a7536882ba95dfa37b0141b6082f8ce9df5ee4eee08d867518d3f20ad65",
-        "pack": "details/1a-3831023739fecb7a46154d61a3162fe67f857ddf751275967846d559b661e2fe.json",
-        "pack_sha256": "3831023739fecb7a46154d61a3162fe67f857ddf751275967846d559b661e2fe",
+        "pack": "details/1a-5d586bf7e3a26409e876f330e0e4bbdf06c8bd3b3b9a630070d684b68a3fb8ae.json",
+        "pack_sha256": "5d586bf7e3a26409e876f330e0e4bbdf06c8bd3b3b9a630070d684b68a3fb8ae",
         "status": "stale"
       }
     },
@@ -14211,8 +14277,8 @@
       },
       "description_ref": {
         "sha256": "c5eb4623f61927e6e1d81722c150039590d20a9b73416c76f1a064086056a750",
-        "pack": "details/c5-c9c9c66fcd40596d8017527b58145cdb9b3bcfd1363d62e75e0551ec24d730f9.json",
-        "pack_sha256": "c9c9c66fcd40596d8017527b58145cdb9b3bcfd1363d62e75e0551ec24d730f9",
+        "pack": "details/c5-66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc.json",
+        "pack_sha256": "66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc",
         "status": "stale"
       }
     },
@@ -14252,8 +14318,8 @@
       },
       "description_ref": {
         "sha256": "ea38119f3e0b06854acf29aa7c15fcfcd9b2a724b0c360e1043a1ec111624d9c",
-        "pack": "details/ea-95a8e0d91d8e48cda0816af9e68edf2c61ced0ecf85eda1cb467042abce7d0ca.json",
-        "pack_sha256": "95a8e0d91d8e48cda0816af9e68edf2c61ced0ecf85eda1cb467042abce7d0ca",
+        "pack": "details/ea-d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b.json",
+        "pack_sha256": "d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b",
         "status": "stale"
       }
     },
@@ -14285,8 +14351,8 @@
       },
       "description_ref": {
         "sha256": "c56eee7e89e815c6ffd06ff16bcacae11ad062653e3a0e2657a158052c213438",
-        "pack": "details/c5-c9c9c66fcd40596d8017527b58145cdb9b3bcfd1363d62e75e0551ec24d730f9.json",
-        "pack_sha256": "c9c9c66fcd40596d8017527b58145cdb9b3bcfd1363d62e75e0551ec24d730f9",
+        "pack": "details/c5-66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc.json",
+        "pack_sha256": "66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc",
         "status": "stale"
       }
     },
@@ -14318,8 +14384,8 @@
       },
       "description_ref": {
         "sha256": "1180118d8722294243c2a89947c336b3c3b9a107fb49f860d5233a3e01760c14",
-        "pack": "details/11-b30b0a82c947b2a12914f192fd16538c2203743c5282edd64816a705cd5a0e76.json",
-        "pack_sha256": "b30b0a82c947b2a12914f192fd16538c2203743c5282edd64816a705cd5a0e76",
+        "pack": "details/11-b6fbc6cc4693d458eaca9f509a2251d93e2f56aa93a95049593aa452c916339a.json",
+        "pack_sha256": "b6fbc6cc4693d458eaca9f509a2251d93e2f56aa93a95049593aa452c916339a",
         "status": "stale"
       }
     },
@@ -14400,8 +14466,8 @@
       },
       "description_ref": {
         "sha256": "a275af302d434c0b2f19114aca03539f7c19676393efa92f3aa4c0f39fcec32f",
-        "pack": "details/a2-a599db00fd3e6d759a6e112c55f6bb2eba95c80e4fca812ac755c9d3faa3cf84.json",
-        "pack_sha256": "a599db00fd3e6d759a6e112c55f6bb2eba95c80e4fca812ac755c9d3faa3cf84",
+        "pack": "details/a2-5cf09449336852d3241804c201b9dea288b43ed9af803bebd9523ce3326be340.json",
+        "pack_sha256": "5cf09449336852d3241804c201b9dea288b43ed9af803bebd9523ce3326be340",
         "status": "stale"
       }
     },
@@ -14508,8 +14574,8 @@
       },
       "description_ref": {
         "sha256": "0d31aef2a8c833b11027952d26551527f2727966d3c2a38834c0dedd04a0fff6",
-        "pack": "details/0d-440ebce6c43ad8f0d237504f293882dd9e621690072d5a96b332ec7843b98920.json",
-        "pack_sha256": "440ebce6c43ad8f0d237504f293882dd9e621690072d5a96b332ec7843b98920",
+        "pack": "details/0d-93919056611f72c20fff04ebe24c16648991ea5ff1ad332076bf235084fbf16d.json",
+        "pack_sha256": "93919056611f72c20fff04ebe24c16648991ea5ff1ad332076bf235084fbf16d",
         "status": "stale"
       }
     },
@@ -14628,7 +14694,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -14825,8 +14891,8 @@
       },
       "description_ref": {
         "sha256": "7a8359c6364e2ed9c105bd473f801f2e4c9dce9ad1ff0e6d9dfd0305d3e3207c",
-        "pack": "details/7a-1c0cf54537c0ae5b663fb5673ccb87a84952040f904263c9146d191bdc09376e.json",
-        "pack_sha256": "1c0cf54537c0ae5b663fb5673ccb87a84952040f904263c9146d191bdc09376e",
+        "pack": "details/7a-856eb833f9b5cd5fcc67accf853afbfda541807ea8b42f9fcea09cdddf7c553a.json",
+        "pack_sha256": "856eb833f9b5cd5fcc67accf853afbfda541807ea8b42f9fcea09cdddf7c553a",
         "status": "available"
       }
     },
@@ -14891,8 +14957,8 @@
       },
       "description_ref": {
         "sha256": "0470c6622bed31ef5458db14698858022c57432d2891c3e11925b84c43eb4e88",
-        "pack": "details/04-ad08e7965f1d8d14619c4bcda9a22f62f6de0920b85c2c60b06fc2d2757d78ad.json",
-        "pack_sha256": "ad08e7965f1d8d14619c4bcda9a22f62f6de0920b85c2c60b06fc2d2757d78ad",
+        "pack": "details/04-dec1e89770d4e6d188da35c8fac55d9e7abf70eb196939981b2def6d1a281e01.json",
+        "pack_sha256": "dec1e89770d4e6d188da35c8fac55d9e7abf70eb196939981b2def6d1a281e01",
         "status": "available"
       }
     },
@@ -14911,7 +14977,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-03T01:28:33Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -14943,8 +15009,8 @@
       },
       "description_ref": {
         "sha256": "634e5e7d4dbcfcd24feb7ffa5e1b840bc7a398139426d5b86f7a86bed6af6cf0",
-        "pack": "details/63-567066138532c938dec0488b8a052ef0c766e63f5c431cb048b63dc985b7daea.json",
-        "pack_sha256": "567066138532c938dec0488b8a052ef0c766e63f5c431cb048b63dc985b7daea",
+        "pack": "details/63-d442b718f637051786a176cfe390a0bb31025982d98b2810e5c5e019c6cef11a.json",
+        "pack_sha256": "d442b718f637051786a176cfe390a0bb31025982d98b2810e5c5e019c6cef11a",
         "status": "stale"
       }
     },
@@ -15075,8 +15141,8 @@
       },
       "description_ref": {
         "sha256": "f3bde90ad2540eb0f35d3b60bbdca17183ca23ef42a92f69af1a7765565dd0a8",
-        "pack": "details/f3-e5d86ba95bed5a8eb29982977ca51a6b5b657a5bb31ea92dcf6eb2b75ed7e2dc.json",
-        "pack_sha256": "e5d86ba95bed5a8eb29982977ca51a6b5b657a5bb31ea92dcf6eb2b75ed7e2dc",
+        "pack": "details/f3-c3a05c5e00d22580d9bfa4f24883e75a296046ef5f4f1259c910dca4ea89a376.json",
+        "pack_sha256": "c3a05c5e00d22580d9bfa4f24883e75a296046ef5f4f1259c910dca4ea89a376",
         "status": "available"
       }
     },
@@ -15742,7 +15808,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -15833,7 +15899,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -15997,8 +16063,8 @@
       },
       "description_ref": {
         "sha256": "0d632e170037ae98dfe82fb7e5ca715893cb541e61a1209e7bb0cc98d26bda72",
-        "pack": "details/0d-440ebce6c43ad8f0d237504f293882dd9e621690072d5a96b332ec7843b98920.json",
-        "pack_sha256": "440ebce6c43ad8f0d237504f293882dd9e621690072d5a96b332ec7843b98920",
+        "pack": "details/0d-93919056611f72c20fff04ebe24c16648991ea5ff1ad332076bf235084fbf16d.json",
+        "pack_sha256": "93919056611f72c20fff04ebe24c16648991ea5ff1ad332076bf235084fbf16d",
         "status": "stale"
       }
     },
@@ -16030,8 +16096,8 @@
       },
       "description_ref": {
         "sha256": "62f91b269d44e0b8763c94f8e29a691473822c420726dde4dc0e9df81cbc2f80",
-        "pack": "details/62-fe58f3f905ee471d0ce3abef4fdd6a832c2eb9c9f50127f6820dba1eec388c77.json",
-        "pack_sha256": "fe58f3f905ee471d0ce3abef4fdd6a832c2eb9c9f50127f6820dba1eec388c77",
+        "pack": "details/62-0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952.json",
+        "pack_sha256": "0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952",
         "status": "stale"
       }
     },
@@ -16129,8 +16195,8 @@
       },
       "description_ref": {
         "sha256": "dfed146517a4a7853ca805fb9fdf4fe58156af3109204fd955172ecd281b3bf6",
-        "pack": "details/df-0159554bd086bfbe647848e48f55da55439f230101c2137153682ca9b529b84f.json",
-        "pack_sha256": "0159554bd086bfbe647848e48f55da55439f230101c2137153682ca9b529b84f",
+        "pack": "details/df-00b1b746d6a0e992fef0f585dbf1742cdebba67f4a4959fb9b4911d596517159.json",
+        "pack_sha256": "00b1b746d6a0e992fef0f585dbf1742cdebba67f4a4959fb9b4911d596517159",
         "status": "available"
       }
     },
@@ -16162,8 +16228,8 @@
       },
       "description_ref": {
         "sha256": "ea137c9429f1d6f502ce816920f50207885927769d290820934476e96864268a",
-        "pack": "details/ea-95a8e0d91d8e48cda0816af9e68edf2c61ced0ecf85eda1cb467042abce7d0ca.json",
-        "pack_sha256": "95a8e0d91d8e48cda0816af9e68edf2c61ced0ecf85eda1cb467042abce7d0ca",
+        "pack": "details/ea-d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b.json",
+        "pack_sha256": "d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b",
         "status": "available"
       }
     },
@@ -16228,8 +16294,8 @@
       },
       "description_ref": {
         "sha256": "c5478ea37e1ed8399b030f0e2502e558e62ac81f87a72da4a8a8c0c2c7cca07c",
-        "pack": "details/c5-c9c9c66fcd40596d8017527b58145cdb9b3bcfd1363d62e75e0551ec24d730f9.json",
-        "pack_sha256": "c9c9c66fcd40596d8017527b58145cdb9b3bcfd1363d62e75e0551ec24d730f9",
+        "pack": "details/c5-66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc.json",
+        "pack_sha256": "66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc",
         "status": "stale"
       }
     },
@@ -16261,8 +16327,8 @@
       },
       "description_ref": {
         "sha256": "68991a455f506910d1b400bb16e3b0f1686398443f1093d84234f88e82d494d5",
-        "pack": "details/68-f6b51ea02f83982c129548b12511eadd50aea69544ee123153cd2f755ac98e73.json",
-        "pack_sha256": "f6b51ea02f83982c129548b12511eadd50aea69544ee123153cd2f755ac98e73",
+        "pack": "details/68-b3e8769591d72fb3a9d09da424cc7fdc8d498a554ecd0772ad4bcbcd09fc5042.json",
+        "pack_sha256": "b3e8769591d72fb3a9d09da424cc7fdc8d498a554ecd0772ad4bcbcd09fc5042",
         "status": "available"
       }
     },
@@ -16459,8 +16525,8 @@
       },
       "description_ref": {
         "sha256": "87ca82825164e2699957c75937470ab4cb53e936b3545d81b4837d87637b017d",
-        "pack": "details/87-7a6a40660630b228ebb914ba67b845625b46f11041aa5ab34764e6d6beb904dc.json",
-        "pack_sha256": "7a6a40660630b228ebb914ba67b845625b46f11041aa5ab34764e6d6beb904dc",
+        "pack": "details/87-795fb171082757b3b79a95bc85db4c4b6a2c7612dd8aa3d431f4be13b2c26bb3.json",
+        "pack_sha256": "795fb171082757b3b79a95bc85db4c4b6a2c7612dd8aa3d431f4be13b2c26bb3",
         "status": "available"
       }
     },
@@ -16576,7 +16642,7 @@
         "sha256": "d45510d665604ce2c674893f12c9433a39dfc57678b2b48ae43f0575eb3d2772",
         "pack": "details/d4-8ff351e361dd680e83ee2b8c4909bbbc233ba6c1caef300856eaac4de0f8c396.json",
         "pack_sha256": "8ff351e361dd680e83ee2b8c4909bbbc233ba6c1caef300856eaac4de0f8c396",
-        "status": "available"
+        "status": "stale"
       }
     },
     "8d46f2e67b71687b": {
@@ -16594,7 +16660,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -16656,8 +16722,8 @@
       },
       "description_ref": {
         "sha256": "8923bc5dc1b0e39142439394f4cf7887e3cbf47860981dd8f2ec977fdff4032f",
-        "pack": "details/89-99e133cb06eb9b04719278a965428665627ae714f9c089bdff54ba971044f922.json",
-        "pack_sha256": "99e133cb06eb9b04719278a965428665627ae714f9c089bdff54ba971044f922",
+        "pack": "details/89-7024702ca407ca6b212ee241862063a33f05aa13de00068853649b14433b16f2.json",
+        "pack_sha256": "7024702ca407ca6b212ee241862063a33f05aa13de00068853649b14433b16f2",
         "status": "stale"
       }
     },
@@ -16927,8 +16993,8 @@
       },
       "description_ref": {
         "sha256": "7af86f9c7bce1283c963c13291474f161b8e896f3846c76db96f8e299524d5ef",
-        "pack": "details/7a-1c0cf54537c0ae5b663fb5673ccb87a84952040f904263c9146d191bdc09376e.json",
-        "pack_sha256": "1c0cf54537c0ae5b663fb5673ccb87a84952040f904263c9146d191bdc09376e",
+        "pack": "details/7a-856eb833f9b5cd5fcc67accf853afbfda541807ea8b42f9fcea09cdddf7c553a.json",
+        "pack_sha256": "856eb833f9b5cd5fcc67accf853afbfda541807ea8b42f9fcea09cdddf7c553a",
         "status": "stale"
       }
     },
@@ -16980,7 +17046,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-01T21:24:06Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -17012,8 +17078,8 @@
       },
       "description_ref": {
         "sha256": "2f592794d38520d1b0943e0a4f7b79a781c157fec2e03a4e9f06231d91a15b2f",
-        "pack": "details/2f-7983a2a015d0ad876c7bb78c969fbb3c7d87bade2c91bbd85dd37d630642bbc8.json",
-        "pack_sha256": "7983a2a015d0ad876c7bb78c969fbb3c7d87bade2c91bbd85dd37d630642bbc8",
+        "pack": "details/2f-8463c34e0035345c6b296ac6a888275a2cbec155781182115975df12b72ee9ae.json",
+        "pack_sha256": "8463c34e0035345c6b296ac6a888275a2cbec155781182115975df12b72ee9ae",
         "status": "stale"
       }
     },
@@ -17349,8 +17415,8 @@
       },
       "description_ref": {
         "sha256": "4232dd9b762f04a2024856a281edefc9b4dc7bf142573f1be195a91673d5d7bd",
-        "pack": "details/42-fedb95111b685969b6da9d4a80ffc400fc2bc4854a472c8ca7f29120eb49c836.json",
-        "pack_sha256": "fedb95111b685969b6da9d4a80ffc400fc2bc4854a472c8ca7f29120eb49c836",
+        "pack": "details/42-85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865.json",
+        "pack_sha256": "85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865",
         "status": "available"
       }
     },
@@ -17448,8 +17514,8 @@
       },
       "description_ref": {
         "sha256": "68cfb9869ff7f3be4dd629cd727dd3bc65b2b7291f5c1adb36cf0491fac54681",
-        "pack": "details/68-f6b51ea02f83982c129548b12511eadd50aea69544ee123153cd2f755ac98e73.json",
-        "pack_sha256": "f6b51ea02f83982c129548b12511eadd50aea69544ee123153cd2f755ac98e73",
+        "pack": "details/68-b3e8769591d72fb3a9d09da424cc7fdc8d498a554ecd0772ad4bcbcd09fc5042.json",
+        "pack_sha256": "b3e8769591d72fb3a9d09da424cc7fdc8d498a554ecd0772ad4bcbcd09fc5042",
         "status": "available"
       }
     },
@@ -17496,7 +17562,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -17561,9 +17627,42 @@
       },
       "description_ref": {
         "sha256": "98216b803e60c3f301e7a3dd2e12408fba906594a1787de9e19902bcc1af8096",
-        "pack": "details/98-c1ed5c35c0280cd8bdad08eff5e5ba135a76ff48596b16df68eff07c2fa9306c.json",
-        "pack_sha256": "c1ed5c35c0280cd8bdad08eff5e5ba135a76ff48596b16df68eff07c2fa9306c",
+        "pack": "details/98-8e98aaea4b3d895a5d48a1cbb8a7ff6be16685a84cc868b2da16f0974a80bf17.json",
+        "pack_sha256": "8e98aaea4b3d895a5d48a1cbb8a7ff6be16685a84cc868b2da16f0974a80bf17",
         "status": "stale"
+      }
+    },
+    "96fde943627a4e03": {
+      "id": "96fde943627a4e03",
+      "company": "Walmart",
+      "company_slug": "walmart",
+      "title": "2026 Intern Conversion: 2027 Field Supply Chain - Quality Engineer",
+      "location": "(USA) Change Building AR Bentonville Home Office",
+      "locations": [
+        "(USA) Change Building AR Bentonville Home Office"
+      ],
+      "url": "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-Change-Building-AR-Bentonville-Home-Office/XMLNAME-2026-Intern-Conversion--2027-Field-Supply-Chain---Quality-Engineer_R-2630039-1",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2026-Intern-Conversion--2027-Field-Supply-Chain---Quality-Engineer_R-2630039-1",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "2eac686a8785db95c422d3243a3e447b9f902f1eeb83c667929cfb42b4e855fe",
+        "pack": "details/2e-8b77283903f622da4d8692c903cf465061688d2b7d93a322bebf814b303d021c.json",
+        "pack_sha256": "8b77283903f622da4d8692c903cf465061688d2b7d93a322bebf814b303d021c",
+        "status": "available"
       }
     },
     "976c42de31b7fc27": {
@@ -17594,8 +17693,8 @@
       },
       "description_ref": {
         "sha256": "d7bf8d50377ebb704f7d74565dcdfde5941f62c0515e3a61ecd8eea169725922",
-        "pack": "details/d7-8aa5a45c486631268be8b0e2f63184cfdbe79bc7f6b599a050a9692e3be41bf3.json",
-        "pack_sha256": "8aa5a45c486631268be8b0e2f63184cfdbe79bc7f6b599a050a9692e3be41bf3",
+        "pack": "details/d7-658bb31638c1360eeb2af319b2f6ebe10748496726861d1a87cd442f9fe8a0fe.json",
+        "pack_sha256": "658bb31638c1360eeb2af319b2f6ebe10748496726861d1a87cd442f9fe8a0fe",
         "status": "stale"
       }
     },
@@ -17868,8 +17967,8 @@
       },
       "description_ref": {
         "sha256": "2f8b1b42647ef94d66ae96819c9c10fc01f021d87d2a7e8e604f7fd65c3dc5af",
-        "pack": "details/2f-7983a2a015d0ad876c7bb78c969fbb3c7d87bade2c91bbd85dd37d630642bbc8.json",
-        "pack_sha256": "7983a2a015d0ad876c7bb78c969fbb3c7d87bade2c91bbd85dd37d630642bbc8",
+        "pack": "details/2f-8463c34e0035345c6b296ac6a888275a2cbec155781182115975df12b72ee9ae.json",
+        "pack_sha256": "8463c34e0035345c6b296ac6a888275a2cbec155781182115975df12b72ee9ae",
         "status": "stale"
       }
     },
@@ -17901,8 +18000,8 @@
       },
       "description_ref": {
         "sha256": "7d1f16cf15fe14cfc6011f289f4700dc33bf18764cab4034b4c848a1c04a2c13",
-        "pack": "details/7d-9ae4bd07a8145bb134787f2aae79df06811e07912faefb4618d2a36d7171a777.json",
-        "pack_sha256": "9ae4bd07a8145bb134787f2aae79df06811e07912faefb4618d2a36d7171a777",
+        "pack": "details/7d-df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde.json",
+        "pack_sha256": "df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde",
         "status": "stale"
       }
     },
@@ -17969,8 +18068,8 @@
       },
       "description_ref": {
         "sha256": "62650fe5d3aa9a2e8b050f61716423d649d5666871a17a2cea18739afc15dc99",
-        "pack": "details/62-fe58f3f905ee471d0ce3abef4fdd6a832c2eb9c9f50127f6820dba1eec388c77.json",
-        "pack_sha256": "fe58f3f905ee471d0ce3abef4fdd6a832c2eb9c9f50127f6820dba1eec388c77",
+        "pack": "details/62-0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952.json",
+        "pack_sha256": "0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952",
         "status": "available"
       }
     },
@@ -18035,8 +18134,8 @@
       },
       "description_ref": {
         "sha256": "c1dbd108acc95f3d74ce0bb391600307d5c90f1a643d4459381ffa3e5c88c6df",
-        "pack": "details/c1-cccccb65b56e734d3373034cb2a13bbb941834ee5643afb1c3273216daa4141f.json",
-        "pack_sha256": "cccccb65b56e734d3373034cb2a13bbb941834ee5643afb1c3273216daa4141f",
+        "pack": "details/c1-6872d32322a42c42d00b60eaac51ec55c1719d9c5eef98c7076a1e3bb23d0fbf.json",
+        "pack_sha256": "6872d32322a42c42d00b60eaac51ec55c1719d9c5eef98c7076a1e3bb23d0fbf",
         "status": "stale"
       }
     },
@@ -18181,8 +18280,8 @@
       },
       "description_ref": {
         "sha256": "7188a099dc6e4afa51296e0f27d823c5da94c2b15dbbeb0110980f1be14cffb5",
-        "pack": "details/71-78b1a9b8c27c3f28475f99fa36d810b214e67d9b86ce43314767417a2aedf63a.json",
-        "pack_sha256": "78b1a9b8c27c3f28475f99fa36d810b214e67d9b86ce43314767417a2aedf63a",
+        "pack": "details/71-6791200988e837aa5d3b9009c88ef95f610b370713addefd126f9c15f7a042c6.json",
+        "pack_sha256": "6791200988e837aa5d3b9009c88ef95f610b370713addefd126f9c15f7a042c6",
         "status": "stale"
       }
     },
@@ -18264,8 +18363,8 @@
       },
       "description_ref": {
         "sha256": "54b6762b9c996dc7c5e52effcadb04803b6ff8340cda51c793b8a9b55fd496c8",
-        "pack": "details/54-411342ba17dfc446e4712032180c8fbb33e13a763691b62b297a90bebb83bd34.json",
-        "pack_sha256": "411342ba17dfc446e4712032180c8fbb33e13a763691b62b297a90bebb83bd34",
+        "pack": "details/54-7c7e85454ac6cab7f11572fd984b75996ead925d1d0a1042914fdecd6abc050d.json",
+        "pack_sha256": "7c7e85454ac6cab7f11572fd984b75996ead925d1d0a1042914fdecd6abc050d",
         "status": "available"
       }
     },
@@ -18297,8 +18396,8 @@
       },
       "description_ref": {
         "sha256": "e86a4d78f259a203a73989824ad9316f4c37ffe8c3ad0d6b2ac7d49a200a298f",
-        "pack": "details/e8-9b670b1a97367434f909311ca669344b6878a7d87c68dc6aac86aeb3c1237189.json",
-        "pack_sha256": "9b670b1a97367434f909311ca669344b6878a7d87c68dc6aac86aeb3c1237189",
+        "pack": "details/e8-ba181f32527b0352393780f4511aee726ba881113790c5d0c4914e6087916032.json",
+        "pack_sha256": "ba181f32527b0352393780f4511aee726ba881113790c5d0c4914e6087916032",
         "status": "stale"
       }
     },
@@ -18363,8 +18462,8 @@
       },
       "description_ref": {
         "sha256": "c6c77f2720eea840e9e115d4c402fa2e21a231ceaab1a6b3be5830da88e806d8",
-        "pack": "details/c6-e2656a580fdb280e0b2e1fa6fbcfe452ef05b5903fdeec1d989ec3ebb1262e93.json",
-        "pack_sha256": "e2656a580fdb280e0b2e1fa6fbcfe452ef05b5903fdeec1d989ec3ebb1262e93",
+        "pack": "details/c6-5e5f456439f34f6b96d088d7147f38c22a17dc7a42b3129193149043616572ad.json",
+        "pack_sha256": "5e5f456439f34f6b96d088d7147f38c22a17dc7a42b3129193149043616572ad",
         "status": "available"
       }
     },
@@ -18515,7 +18614,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -18597,7 +18696,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -18817,8 +18916,8 @@
       },
       "description_ref": {
         "sha256": "cb8bcff410a64533206c0035e88aee196281773559c095b6ec431e6fa3608d56",
-        "pack": "details/cb-c0be2df6029ae8327d144be3bc32b6ea89e7eb8c7ff0cb10c88d8bac22a4479c.json",
-        "pack_sha256": "c0be2df6029ae8327d144be3bc32b6ea89e7eb8c7ff0cb10c88d8bac22a4479c",
+        "pack": "details/cb-08b6523f829fe550e76964c5f56e5f069c0d672c3317e161b6eb9703e8130225.json",
+        "pack_sha256": "08b6523f829fe550e76964c5f56e5f069c0d672c3317e161b6eb9703e8130225",
         "status": "stale"
       }
     },
@@ -18850,8 +18949,8 @@
       },
       "description_ref": {
         "sha256": "e34838019fa2f15cce98f7e63aab188a433e8d0e28a61ecafd13b6a30f27c377",
-        "pack": "details/e3-3228c2f14fbda81d93e409a7d41f1c864c6dc07e5683b1787669c8e7407e4e82.json",
-        "pack_sha256": "3228c2f14fbda81d93e409a7d41f1c864c6dc07e5683b1787669c8e7407e4e82",
+        "pack": "details/e3-002aa931cfa5c1fcea8189c3cc130da3e2d1399775736d2d1fa1ce383a14e8b2.json",
+        "pack_sha256": "002aa931cfa5c1fcea8189c3cc130da3e2d1399775736d2d1fa1ce383a14e8b2",
         "status": "available"
       }
     },
@@ -18870,7 +18969,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-23T22:51:38Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -18879,7 +18978,15 @@
           "method": "workday_api",
           "completeness": "available",
           "identity": "provider_job_endpoint"
-        }
+        },
+        "provenance": [
+          {
+            "source": "workday",
+            "source_job_id": "AI-Functional-Intern_R-71008",
+            "url": "https://crowe.wd12.myworkdayjobs.com/external_careers/job/Chicago-IL-USA/AI-Functional-Intern_R-71008",
+            "discovered_at": "2026-09-05T00:50:25Z"
+          }
+        ]
       },
       "description_ref": {
         "sha256": "b393fcb474190a38715dd49ac9b14ea7301de2486e2963cf697e8d6ee9e7a941",
@@ -18903,7 +19010,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-19T21:37:56Z",
-      "last_seen_at": "2026-11-24T18:45:07Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -19122,8 +19229,8 @@
       },
       "description_ref": {
         "sha256": "066179007c4afa3c0d41e43b463ddb36d906d1f44377353ce08f9de99e24a909",
-        "pack": "details/06-ad8572d710225ff2471f2967de20a862f54b13fc963d4db5cc73582ae6c03720.json",
-        "pack_sha256": "ad8572d710225ff2471f2967de20a862f54b13fc963d4db5cc73582ae6c03720",
+        "pack": "details/06-f65cd47797ab1bbca99c70a17cb9ae1b8d0aa190f50e41a93adcd42760801edd.json",
+        "pack_sha256": "f65cd47797ab1bbca99c70a17cb9ae1b8d0aa190f50e41a93adcd42760801edd",
         "status": "available"
       }
     },
@@ -19221,8 +19328,8 @@
       },
       "description_ref": {
         "sha256": "e8621031cc7d0039b14b8512e6e47d7e598143dd21660d09a17b710acee0cb6d",
-        "pack": "details/e8-9b670b1a97367434f909311ca669344b6878a7d87c68dc6aac86aeb3c1237189.json",
-        "pack_sha256": "9b670b1a97367434f909311ca669344b6878a7d87c68dc6aac86aeb3c1237189",
+        "pack": "details/e8-ba181f32527b0352393780f4511aee726ba881113790c5d0c4914e6087916032.json",
+        "pack_sha256": "ba181f32527b0352393780f4511aee726ba881113790c5d0c4914e6087916032",
         "status": "available"
       }
     },
@@ -19295,9 +19402,9 @@
       },
       "description_ref": {
         "sha256": "423e75e6070c8c5dcfb1151f6cee73f0137f41034f05d44fa37732fd22ecd005",
-        "pack": "details/42-fedb95111b685969b6da9d4a80ffc400fc2bc4854a472c8ca7f29120eb49c836.json",
-        "pack_sha256": "fedb95111b685969b6da9d4a80ffc400fc2bc4854a472c8ca7f29120eb49c836",
-        "status": "available"
+        "pack": "details/42-85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865.json",
+        "pack_sha256": "85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865",
+        "status": "stale"
       }
     },
     "a454ff5eebb11587": {
@@ -19328,8 +19435,8 @@
       },
       "description_ref": {
         "sha256": "98ea999a824b69a128c333c0b1bc51aeb14267bc7975e46cf2802ee604c0503c",
-        "pack": "details/98-c1ed5c35c0280cd8bdad08eff5e5ba135a76ff48596b16df68eff07c2fa9306c.json",
-        "pack_sha256": "c1ed5c35c0280cd8bdad08eff5e5ba135a76ff48596b16df68eff07c2fa9306c",
+        "pack": "details/98-8e98aaea4b3d895a5d48a1cbb8a7ff6be16685a84cc868b2da16f0974a80bf17.json",
+        "pack_sha256": "8e98aaea4b3d895a5d48a1cbb8a7ff6be16685a84cc868b2da16f0974a80bf17",
         "status": "stale"
       }
     },
@@ -19526,8 +19633,8 @@
       },
       "description_ref": {
         "sha256": "f397167efea4ebf0278156b2cdf1015365aed88cff7c6c49e5d10fa30aa6d448",
-        "pack": "details/f3-e5d86ba95bed5a8eb29982977ca51a6b5b657a5bb31ea92dcf6eb2b75ed7e2dc.json",
-        "pack_sha256": "e5d86ba95bed5a8eb29982977ca51a6b5b657a5bb31ea92dcf6eb2b75ed7e2dc",
+        "pack": "details/f3-c3a05c5e00d22580d9bfa4f24883e75a296046ef5f4f1259c910dca4ea89a376.json",
+        "pack_sha256": "c3a05c5e00d22580d9bfa4f24883e75a296046ef5f4f1259c910dca4ea89a376",
         "status": "stale"
       }
     },
@@ -19546,7 +19653,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-03T22:18:41Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -19783,8 +19890,8 @@
       },
       "description_ref": {
         "sha256": "cb09b0f4c570653f01cf36533b6b567f0b159127e181182e828bb5cb50fd1cd1",
-        "pack": "details/cb-c0be2df6029ae8327d144be3bc32b6ea89e7eb8c7ff0cb10c88d8bac22a4479c.json",
-        "pack_sha256": "c0be2df6029ae8327d144be3bc32b6ea89e7eb8c7ff0cb10c88d8bac22a4479c",
+        "pack": "details/cb-08b6523f829fe550e76964c5f56e5f069c0d672c3317e161b6eb9703e8130225.json",
+        "pack_sha256": "08b6523f829fe550e76964c5f56e5f069c0d672c3317e161b6eb9703e8130225",
         "status": "stale"
       }
     },
@@ -19882,8 +19989,8 @@
       },
       "description_ref": {
         "sha256": "8969dd519712921172f3a4570b5f64f9e7eec00a1f39287821326cb0e2911d7a",
-        "pack": "details/89-99e133cb06eb9b04719278a965428665627ae714f9c089bdff54ba971044f922.json",
-        "pack_sha256": "99e133cb06eb9b04719278a965428665627ae714f9c089bdff54ba971044f922",
+        "pack": "details/89-7024702ca407ca6b212ee241862063a33f05aa13de00068853649b14433b16f2.json",
+        "pack_sha256": "7024702ca407ca6b212ee241862063a33f05aa13de00068853649b14433b16f2",
         "status": "available"
       }
     },
@@ -20047,8 +20154,8 @@
       },
       "description_ref": {
         "sha256": "a24e84162e77fb63964b46fd641042e36e2e7d3873fdcff34264c644d5d49e68",
-        "pack": "details/a2-a599db00fd3e6d759a6e112c55f6bb2eba95c80e4fca812ac755c9d3faa3cf84.json",
-        "pack_sha256": "a599db00fd3e6d759a6e112c55f6bb2eba95c80e4fca812ac755c9d3faa3cf84",
+        "pack": "details/a2-5cf09449336852d3241804c201b9dea288b43ed9af803bebd9523ce3326be340.json",
+        "pack_sha256": "5cf09449336852d3241804c201b9dea288b43ed9af803bebd9523ce3326be340",
         "status": "available"
       }
     },
@@ -20212,8 +20319,8 @@
       },
       "description_ref": {
         "sha256": "d06f4a89e916683e456553c41f49339cd7d10730056321cff8be276d579e2eac",
-        "pack": "details/d0-d49202af9fcc9e184392f02402cfeff7c8ec71c99718cb0c182338162d3c1ded.json",
-        "pack_sha256": "d49202af9fcc9e184392f02402cfeff7c8ec71c99718cb0c182338162d3c1ded",
+        "pack": "details/d0-c0b1027dab5e8e7075c7361cd1fb44095fa7de0308e8836b434d57adc60e626b.json",
+        "pack_sha256": "c0b1027dab5e8e7075c7361cd1fb44095fa7de0308e8836b434d57adc60e626b",
         "status": "stale"
       }
     },
@@ -20278,8 +20385,8 @@
       },
       "description_ref": {
         "sha256": "8d895eff809f1b39e2f8ff14c58687a8139e1cc44fa3f377197cfc7d45c3a17a",
-        "pack": "details/8d-b7831b2618cf56969b479a2787f5356ce73c8d19cb8af9582235bd2959a0f1d2.json",
-        "pack_sha256": "b7831b2618cf56969b479a2787f5356ce73c8d19cb8af9582235bd2959a0f1d2",
+        "pack": "details/8d-1b56f72a06d2f9f3f91559e2e067193626f115647cfdcef04e94e46700eef51b.json",
+        "pack_sha256": "1b56f72a06d2f9f3f91559e2e067193626f115647cfdcef04e94e46700eef51b",
         "status": "stale"
       }
     },
@@ -20344,8 +20451,8 @@
       },
       "description_ref": {
         "sha256": "420e20319181bc54177fc0f68f4053fc3331907b91346138c450bbf5a69475b5",
-        "pack": "details/42-fedb95111b685969b6da9d4a80ffc400fc2bc4854a472c8ca7f29120eb49c836.json",
-        "pack_sha256": "fedb95111b685969b6da9d4a80ffc400fc2bc4854a472c8ca7f29120eb49c836",
+        "pack": "details/42-85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865.json",
+        "pack_sha256": "85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865",
         "status": "available"
       }
     },
@@ -20550,8 +20657,8 @@
       },
       "description_ref": {
         "sha256": "c424fc1c3d611698468f0d75e7d7fa59996bb346c24c241b74642feafd04dc31",
-        "pack": "details/c4-920be70b6f29506c34a39be89a6fbc4825316dcda4886ad1441f061522ce0e5c.json",
-        "pack_sha256": "920be70b6f29506c34a39be89a6fbc4825316dcda4886ad1441f061522ce0e5c",
+        "pack": "details/c4-16f738e591f1cc39a5f6e460a770eab513f2b04777cce01598052bba8d6befc9.json",
+        "pack_sha256": "16f738e591f1cc39a5f6e460a770eab513f2b04777cce01598052bba8d6befc9",
         "status": "stale"
       }
     },
@@ -20635,8 +20742,8 @@
       },
       "description_ref": {
         "sha256": "7d09e412de20466221f5d38decf22666f4a7c1bc4676819fc813458ea3e60880",
-        "pack": "details/7d-9ae4bd07a8145bb134787f2aae79df06811e07912faefb4618d2a36d7171a777.json",
-        "pack_sha256": "9ae4bd07a8145bb134787f2aae79df06811e07912faefb4618d2a36d7171a777",
+        "pack": "details/7d-df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde.json",
+        "pack_sha256": "df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde",
         "status": "stale"
       }
     },
@@ -20876,8 +20983,8 @@
       },
       "description_ref": {
         "sha256": "6d529883dcdd354b904fe1da348d76179c471cbc1991cc990c7df8979894a0d7",
-        "pack": "details/6d-a45d13d20a99a0fbb267361f78a2cdc34b53f461ee65b238e30b631b53421f35.json",
-        "pack_sha256": "a45d13d20a99a0fbb267361f78a2cdc34b53f461ee65b238e30b631b53421f35",
+        "pack": "details/6d-862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f.json",
+        "pack_sha256": "862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f",
         "status": "stale"
       }
     },
@@ -20962,7 +21069,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -20994,8 +21101,8 @@
       },
       "description_ref": {
         "sha256": "87fb88ec86062db8624bc4c9d8b7b9567a9c5ce0eeb08aeca6143f6c804106c8",
-        "pack": "details/87-7a6a40660630b228ebb914ba67b845625b46f11041aa5ab34764e6d6beb904dc.json",
-        "pack_sha256": "7a6a40660630b228ebb914ba67b845625b46f11041aa5ab34764e6d6beb904dc",
+        "pack": "details/87-795fb171082757b3b79a95bc85db4c4b6a2c7612dd8aa3d431f4be13b2c26bb3.json",
+        "pack_sha256": "795fb171082757b3b79a95bc85db4c4b6a2c7612dd8aa3d431f4be13b2c26bb3",
         "status": "stale"
       }
     },
@@ -21043,8 +21150,8 @@
       },
       "description_ref": {
         "sha256": "62c2ff1a69b5ed3fa7da2e2b58739765c2086fb2a5724e94e336c4517f148d14",
-        "pack": "details/62-fe58f3f905ee471d0ce3abef4fdd6a832c2eb9c9f50127f6820dba1eec388c77.json",
-        "pack_sha256": "fe58f3f905ee471d0ce3abef4fdd6a832c2eb9c9f50127f6820dba1eec388c77",
+        "pack": "details/62-0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952.json",
+        "pack_sha256": "0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952",
         "status": "stale"
       }
     },
@@ -21076,8 +21183,8 @@
       },
       "description_ref": {
         "sha256": "041db252e905b4b5c1e1d14ca39653a4184d458d9bbb8136213fece4cddc12a4",
-        "pack": "details/04-ad08e7965f1d8d14619c4bcda9a22f62f6de0920b85c2c60b06fc2d2757d78ad.json",
-        "pack_sha256": "ad08e7965f1d8d14619c4bcda9a22f62f6de0920b85c2c60b06fc2d2757d78ad",
+        "pack": "details/04-dec1e89770d4e6d188da35c8fac55d9e7abf70eb196939981b2def6d1a281e01.json",
+        "pack_sha256": "dec1e89770d4e6d188da35c8fac55d9e7abf70eb196939981b2def6d1a281e01",
         "status": "stale"
       }
     },
@@ -21170,7 +21277,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-23T16:45:31Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -21203,8 +21310,8 @@
       },
       "description_ref": {
         "sha256": "6e5f54e9bf4622de5555eeadc58b1ac6fcf3ed41ad57f34d10ad159911121a21",
-        "pack": "details/6e-64431d72d269363c83706a9d6ea67ea6c5e4e37b9f42a22bf575b1841ecb647f.json",
-        "pack_sha256": "64431d72d269363c83706a9d6ea67ea6c5e4e37b9f42a22bf575b1841ecb647f",
+        "pack": "details/6e-944d576044907ff9db76fa1fa810cbb333eba53c1e07233f734fdbfff0bb345d.json",
+        "pack_sha256": "944d576044907ff9db76fa1fa810cbb333eba53c1e07233f734fdbfff0bb345d",
         "status": "stale"
       }
     },
@@ -21244,8 +21351,8 @@
       },
       "description_ref": {
         "sha256": "7b5443ade7a4cb58dad690feffaa6571643ae1f84e0061785292fb9d87b8d2c8",
-        "pack": "details/7b-77db2abdf376582cfae8f9efe61c671e56879a461e48332050745344af125d58.json",
-        "pack_sha256": "77db2abdf376582cfae8f9efe61c671e56879a461e48332050745344af125d58",
+        "pack": "details/7b-1fb47b2075674801bc8cfe37a781fec04391d0339d88e1d3319b7bb56a07d2ba.json",
+        "pack_sha256": "1fb47b2075674801bc8cfe37a781fec04391d0339d88e1d3319b7bb56a07d2ba",
         "status": "stale"
       }
     },
@@ -21462,7 +21569,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -21593,8 +21700,8 @@
       },
       "description_ref": {
         "sha256": "6b47e5662f17505457de9df7524036e2c51148c4dd067c090ac89bde685c8204",
-        "pack": "details/6b-eae820a3a5a04e24e2ab0bf006b5139410be0d4c87cc37e9f72c056de336d606.json",
-        "pack_sha256": "eae820a3a5a04e24e2ab0bf006b5139410be0d4c87cc37e9f72c056de336d606",
+        "pack": "details/6b-9342320e8dde50cd9fff49fd41d98ee97b82ce71ccb71716e95b2a5d6833ae37.json",
+        "pack_sha256": "9342320e8dde50cd9fff49fd41d98ee97b82ce71ccb71716e95b2a5d6833ae37",
         "status": "stale"
       }
     },
@@ -21733,8 +21840,8 @@
       },
       "description_ref": {
         "sha256": "cbb34033c5de980668ed392f5e82020f7eee174378e7aed038ef04bddaf615ae",
-        "pack": "details/cb-c0be2df6029ae8327d144be3bc32b6ea89e7eb8c7ff0cb10c88d8bac22a4479c.json",
-        "pack_sha256": "c0be2df6029ae8327d144be3bc32b6ea89e7eb8c7ff0cb10c88d8bac22a4479c",
+        "pack": "details/cb-08b6523f829fe550e76964c5f56e5f069c0d672c3317e161b6eb9703e8130225.json",
+        "pack_sha256": "08b6523f829fe550e76964c5f56e5f069c0d672c3317e161b6eb9703e8130225",
         "status": "stale"
       }
     },
@@ -21818,8 +21925,8 @@
       },
       "description_ref": {
         "sha256": "e36f21b1ad51e5ffabf6790c64d9cb7fea7bba5e4953d9543ed71b0300a42131",
-        "pack": "details/e3-3228c2f14fbda81d93e409a7d41f1c864c6dc07e5683b1787669c8e7407e4e82.json",
-        "pack_sha256": "3228c2f14fbda81d93e409a7d41f1c864c6dc07e5683b1787669c8e7407e4e82",
+        "pack": "details/e3-002aa931cfa5c1fcea8189c3cc130da3e2d1399775736d2d1fa1ce383a14e8b2.json",
+        "pack_sha256": "002aa931cfa5c1fcea8189c3cc130da3e2d1399775736d2d1fa1ce383a14e8b2",
         "status": "available"
       }
     },
@@ -21911,8 +22018,8 @@
       },
       "description_ref": {
         "sha256": "c424fc1c3d611698468f0d75e7d7fa59996bb346c24c241b74642feafd04dc31",
-        "pack": "details/c4-920be70b6f29506c34a39be89a6fbc4825316dcda4886ad1441f061522ce0e5c.json",
-        "pack_sha256": "920be70b6f29506c34a39be89a6fbc4825316dcda4886ad1441f061522ce0e5c",
+        "pack": "details/c4-16f738e591f1cc39a5f6e460a770eab513f2b04777cce01598052bba8d6befc9.json",
+        "pack_sha256": "16f738e591f1cc39a5f6e460a770eab513f2b04777cce01598052bba8d6befc9",
         "status": "available"
       }
     },
@@ -21931,7 +22038,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T00:05:57Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -22029,8 +22136,8 @@
       },
       "description_ref": {
         "sha256": "a2d8d7b25befd3649455d74c5032e17aa19d9594f2ec2b97ee986c0a93e6f185",
-        "pack": "details/a2-a599db00fd3e6d759a6e112c55f6bb2eba95c80e4fca812ac755c9d3faa3cf84.json",
-        "pack_sha256": "a599db00fd3e6d759a6e112c55f6bb2eba95c80e4fca812ac755c9d3faa3cf84",
+        "pack": "details/a2-5cf09449336852d3241804c201b9dea288b43ed9af803bebd9523ce3326be340.json",
+        "pack_sha256": "5cf09449336852d3241804c201b9dea288b43ed9af803bebd9523ce3326be340",
         "status": "available"
       }
     },
@@ -22148,7 +22255,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -22213,8 +22320,8 @@
       },
       "description_ref": {
         "sha256": "627e80867b74ff244ea61b7703e27a170d4ab62a695802a938a3f3b2aa39060e",
-        "pack": "details/62-fe58f3f905ee471d0ce3abef4fdd6a832c2eb9c9f50127f6820dba1eec388c77.json",
-        "pack_sha256": "fe58f3f905ee471d0ce3abef4fdd6a832c2eb9c9f50127f6820dba1eec388c77",
+        "pack": "details/62-0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952.json",
+        "pack_sha256": "0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952",
         "status": "available"
       }
     },
@@ -22279,8 +22386,8 @@
       },
       "description_ref": {
         "sha256": "421d977d0a08f7149dd4154de0ebe9b657453a157d13201884d108b54fe6dc9f",
-        "pack": "details/42-fedb95111b685969b6da9d4a80ffc400fc2bc4854a472c8ca7f29120eb49c836.json",
-        "pack_sha256": "fedb95111b685969b6da9d4a80ffc400fc2bc4854a472c8ca7f29120eb49c836",
+        "pack": "details/42-85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865.json",
+        "pack_sha256": "85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865",
         "status": "available"
       }
     },
@@ -22299,7 +22406,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -22432,8 +22539,8 @@
       },
       "description_ref": {
         "sha256": "eabc053b100cc4eeab0784a3c9f56156c53529b86fdc0288292b3bd609261bde",
-        "pack": "details/ea-95a8e0d91d8e48cda0816af9e68edf2c61ced0ecf85eda1cb467042abce7d0ca.json",
-        "pack_sha256": "95a8e0d91d8e48cda0816af9e68edf2c61ced0ecf85eda1cb467042abce7d0ca",
+        "pack": "details/ea-d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b.json",
+        "pack_sha256": "d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b",
         "status": "stale"
       }
     },
@@ -22597,8 +22704,8 @@
       },
       "description_ref": {
         "sha256": "f5e806512f36e115b7fbdb48a2d4599d4574e2c8f000865a9f47c1a6ceb0b482",
-        "pack": "details/f5-76cc3c5a8df84970b4725ba6cefc49bcf80eb40370ad20b84ac04ff7028ba425.json",
-        "pack_sha256": "76cc3c5a8df84970b4725ba6cefc49bcf80eb40370ad20b84ac04ff7028ba425",
+        "pack": "details/f5-0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e.json",
+        "pack_sha256": "0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e",
         "status": "stale"
       }
     },
@@ -22913,8 +23020,8 @@
       },
       "description_ref": {
         "sha256": "8daaf99f434afc58c82e0250ddd79b070f6491617f73a319928a86a391e97d7f",
-        "pack": "details/8d-b7831b2618cf56969b479a2787f5356ce73c8d19cb8af9582235bd2959a0f1d2.json",
-        "pack_sha256": "b7831b2618cf56969b479a2787f5356ce73c8d19cb8af9582235bd2959a0f1d2",
+        "pack": "details/8d-1b56f72a06d2f9f3f91559e2e067193626f115647cfdcef04e94e46700eef51b.json",
+        "pack_sha256": "1b56f72a06d2f9f3f91559e2e067193626f115647cfdcef04e94e46700eef51b",
         "status": "stale"
       }
     },
@@ -23045,8 +23152,8 @@
       },
       "description_ref": {
         "sha256": "f35d00b83a095cffb1f0045aaf500f25bc91498d46816ed8fa0dea91f2f4e0e1",
-        "pack": "details/f3-e5d86ba95bed5a8eb29982977ca51a6b5b657a5bb31ea92dcf6eb2b75ed7e2dc.json",
-        "pack_sha256": "e5d86ba95bed5a8eb29982977ca51a6b5b657a5bb31ea92dcf6eb2b75ed7e2dc",
+        "pack": "details/f3-c3a05c5e00d22580d9bfa4f24883e75a296046ef5f4f1259c910dca4ea89a376.json",
+        "pack_sha256": "c3a05c5e00d22580d9bfa4f24883e75a296046ef5f4f1259c910dca4ea89a376",
         "status": "stale"
       }
     },
@@ -23065,7 +23172,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-27T18:20:10Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -23160,8 +23267,8 @@
       },
       "description_ref": {
         "sha256": "0a238f1f34598748282ee6b604e095c90d080f993ca32725ed845df0775c72df",
-        "pack": "details/0a-eb3d2294766e3eef00c28ab793ad86e6db1de269a03b2169fc67af199e115a43.json",
-        "pack_sha256": "eb3d2294766e3eef00c28ab793ad86e6db1de269a03b2169fc67af199e115a43",
+        "pack": "details/0a-d694efa7c1d86a7d92285e9e05166a36d4189d8994e862eef85133fee9a9f293.json",
+        "pack_sha256": "d694efa7c1d86a7d92285e9e05166a36d4189d8994e862eef85133fee9a9f293",
         "status": "stale"
       }
     },
@@ -23488,8 +23595,8 @@
       },
       "description_ref": {
         "sha256": "879cd7cd52290f9e2766df30e30195a08683febd0862472fff80ddad1086bddd",
-        "pack": "details/87-7a6a40660630b228ebb914ba67b845625b46f11041aa5ab34764e6d6beb904dc.json",
-        "pack_sha256": "7a6a40660630b228ebb914ba67b845625b46f11041aa5ab34764e6d6beb904dc",
+        "pack": "details/87-795fb171082757b3b79a95bc85db4c4b6a2c7612dd8aa3d431f4be13b2c26bb3.json",
+        "pack_sha256": "795fb171082757b3b79a95bc85db4c4b6a2c7612dd8aa3d431f4be13b2c26bb3",
         "status": "available"
       }
     },
@@ -23521,8 +23628,8 @@
       },
       "description_ref": {
         "sha256": "6165c6af827cc6055dc876b79b3bde851a34d6ef3b3869954736c04aa542ae88",
-        "pack": "details/61-d1c044a11230fbe5f250d3abd32156efc5669b90c885721acc8fdb47e0f98749.json",
-        "pack_sha256": "d1c044a11230fbe5f250d3abd32156efc5669b90c885721acc8fdb47e0f98749",
+        "pack": "details/61-9afbe85e3bbb17302ec23188d853d1123a96837f892fa903025349b05d126b02.json",
+        "pack_sha256": "9afbe85e3bbb17302ec23188d853d1123a96837f892fa903025349b05d126b02",
         "status": "available"
       }
     },
@@ -23541,7 +23648,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-19T20:06:44Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -23574,8 +23681,8 @@
       },
       "description_ref": {
         "sha256": "df7df3de3b2a7c9e39d9f03e3e4b065f89b11dc3cc9a113c511f6a268b76787d",
-        "pack": "details/df-0159554bd086bfbe647848e48f55da55439f230101c2137153682ca9b529b84f.json",
-        "pack_sha256": "0159554bd086bfbe647848e48f55da55439f230101c2137153682ca9b529b84f",
+        "pack": "details/df-00b1b746d6a0e992fef0f585dbf1742cdebba67f4a4959fb9b4911d596517159.json",
+        "pack_sha256": "00b1b746d6a0e992fef0f585dbf1742cdebba67f4a4959fb9b4911d596517159",
         "status": "stale"
       }
     },
@@ -23607,8 +23714,8 @@
       },
       "description_ref": {
         "sha256": "a2f601fa8516119da4c05c1606ea097e8479128741cf04938a9b44b926c5e387",
-        "pack": "details/a2-a599db00fd3e6d759a6e112c55f6bb2eba95c80e4fca812ac755c9d3faa3cf84.json",
-        "pack_sha256": "a599db00fd3e6d759a6e112c55f6bb2eba95c80e4fca812ac755c9d3faa3cf84",
+        "pack": "details/a2-5cf09449336852d3241804c201b9dea288b43ed9af803bebd9523ce3326be340.json",
+        "pack_sha256": "5cf09449336852d3241804c201b9dea288b43ed9af803bebd9523ce3326be340",
         "status": "available"
       }
     },
@@ -23640,8 +23747,8 @@
       },
       "description_ref": {
         "sha256": "dfed146517a4a7853ca805fb9fdf4fe58156af3109204fd955172ecd281b3bf6",
-        "pack": "details/df-0159554bd086bfbe647848e48f55da55439f230101c2137153682ca9b529b84f.json",
-        "pack_sha256": "0159554bd086bfbe647848e48f55da55439f230101c2137153682ca9b529b84f",
+        "pack": "details/df-00b1b746d6a0e992fef0f585dbf1742cdebba67f4a4959fb9b4911d596517159.json",
+        "pack_sha256": "00b1b746d6a0e992fef0f585dbf1742cdebba67f4a4959fb9b4911d596517159",
         "status": "available"
       }
     },
@@ -23706,8 +23813,8 @@
       },
       "description_ref": {
         "sha256": "7d93141a19a7038cda485d0b951d316b1128d0a66533b8362fc0be8131a257d0",
-        "pack": "details/7d-9ae4bd07a8145bb134787f2aae79df06811e07912faefb4618d2a36d7171a777.json",
-        "pack_sha256": "9ae4bd07a8145bb134787f2aae79df06811e07912faefb4618d2a36d7171a777",
+        "pack": "details/7d-df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde.json",
+        "pack_sha256": "df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde",
         "status": "available"
       }
     },
@@ -23726,7 +23833,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -23901,7 +24008,7 @@
         "sha256": "b36a399c82732d4f0b203a3cd74e9d2be3b7a020f84070e0e8495ed999aabc27",
         "pack": "details/b3-6260078dc1063401d89b468a56068aa672cba8466036bb4445aa656f5793c286.json",
         "pack_sha256": "6260078dc1063401d89b468a56068aa672cba8466036bb4445aa656f5793c286",
-        "status": "available"
+        "status": "stale"
       }
     },
     "cb50846555811f80": {
@@ -24105,8 +24212,8 @@
       },
       "description_ref": {
         "sha256": "872b0c38473e8119387a366b66df2e1ecf26b3c339e1cd0db762411f197ce810",
-        "pack": "details/87-7a6a40660630b228ebb914ba67b845625b46f11041aa5ab34764e6d6beb904dc.json",
-        "pack_sha256": "7a6a40660630b228ebb914ba67b845625b46f11041aa5ab34764e6d6beb904dc",
+        "pack": "details/87-795fb171082757b3b79a95bc85db4c4b6a2c7612dd8aa3d431f4be13b2c26bb3.json",
+        "pack_sha256": "795fb171082757b3b79a95bc85db4c4b6a2c7612dd8aa3d431f4be13b2c26bb3",
         "status": "available"
       }
     },
@@ -24191,7 +24298,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -24404,8 +24511,8 @@
       },
       "description_ref": {
         "sha256": "622f52f79e3bd5b9624714c2d3226cad876202747f818c4cd685b96ce8bac4b4",
-        "pack": "details/62-fe58f3f905ee471d0ce3abef4fdd6a832c2eb9c9f50127f6820dba1eec388c77.json",
-        "pack_sha256": "fe58f3f905ee471d0ce3abef4fdd6a832c2eb9c9f50127f6820dba1eec388c77",
+        "pack": "details/62-0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952.json",
+        "pack_sha256": "0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952",
         "status": "available"
       }
     },
@@ -24478,8 +24585,8 @@
       },
       "description_ref": {
         "sha256": "c893845fc8766c3f441563af03ea39d59763bd48a3392c7f969352a1155e95d1",
-        "pack": "details/c8-e2637f558697208da3b5b8cc10c7ce50ba90adb958444b6b07d57b6327d710f3.json",
-        "pack_sha256": "e2637f558697208da3b5b8cc10c7ce50ba90adb958444b6b07d57b6327d710f3",
+        "pack": "details/c8-118e64e48893941e6c098819d13fcc43356f920ddb0d5a13b60e7296c4debdc8.json",
+        "pack_sha256": "118e64e48893941e6c098819d13fcc43356f920ddb0d5a13b60e7296c4debdc8",
         "status": "stale"
       }
     },
@@ -24552,8 +24659,8 @@
       },
       "description_ref": {
         "sha256": "f5dd135eadde7737ff34f1ff0c916516fc613fd96135251ae5906488ed12c74d",
-        "pack": "details/f5-76cc3c5a8df84970b4725ba6cefc49bcf80eb40370ad20b84ac04ff7028ba425.json",
-        "pack_sha256": "76cc3c5a8df84970b4725ba6cefc49bcf80eb40370ad20b84ac04ff7028ba425",
+        "pack": "details/f5-0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e.json",
+        "pack_sha256": "0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e",
         "status": "available"
       }
     },
@@ -24718,8 +24825,8 @@
       },
       "description_ref": {
         "sha256": "d0cc434525ec3f37c8ced3dfa3f7cbb2757adfa54c58109523db113349ecb4c7",
-        "pack": "details/d0-d49202af9fcc9e184392f02402cfeff7c8ec71c99718cb0c182338162d3c1ded.json",
-        "pack_sha256": "d49202af9fcc9e184392f02402cfeff7c8ec71c99718cb0c182338162d3c1ded",
+        "pack": "details/d0-c0b1027dab5e8e7075c7361cd1fb44095fa7de0308e8836b434d57adc60e626b.json",
+        "pack_sha256": "c0b1027dab5e8e7075c7361cd1fb44095fa7de0308e8836b434d57adc60e626b",
         "status": "available"
       }
     },
@@ -24871,7 +24978,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -24903,8 +25010,8 @@
       },
       "description_ref": {
         "sha256": "87fb88ec86062db8624bc4c9d8b7b9567a9c5ce0eeb08aeca6143f6c804106c8",
-        "pack": "details/87-7a6a40660630b228ebb914ba67b845625b46f11041aa5ab34764e6d6beb904dc.json",
-        "pack_sha256": "7a6a40660630b228ebb914ba67b845625b46f11041aa5ab34764e6d6beb904dc",
+        "pack": "details/87-795fb171082757b3b79a95bc85db4c4b6a2c7612dd8aa3d431f4be13b2c26bb3.json",
+        "pack_sha256": "795fb171082757b3b79a95bc85db4c4b6a2c7612dd8aa3d431f4be13b2c26bb3",
         "status": "stale"
       }
     },
@@ -24936,8 +25043,8 @@
       },
       "description_ref": {
         "sha256": "d0f1eee033cacdaa69b48c4268409de3458e43587b5b6bcb760d91f0e74605b0",
-        "pack": "details/d0-d49202af9fcc9e184392f02402cfeff7c8ec71c99718cb0c182338162d3c1ded.json",
-        "pack_sha256": "d49202af9fcc9e184392f02402cfeff7c8ec71c99718cb0c182338162d3c1ded",
+        "pack": "details/d0-c0b1027dab5e8e7075c7361cd1fb44095fa7de0308e8836b434d57adc60e626b.json",
+        "pack_sha256": "c0b1027dab5e8e7075c7361cd1fb44095fa7de0308e8836b434d57adc60e626b",
         "status": "stale"
       }
     },
@@ -25076,8 +25183,8 @@
       },
       "description_ref": {
         "sha256": "5bac6cbbecd2d06d2362a01b4655b19f3367022935be945b7fb22993bcb99142",
-        "pack": "details/5b-e5f9a65eebf753e0d78e501f3d1174c14fab599c3f23852e9b3b79518aa71dd1.json",
-        "pack_sha256": "e5f9a65eebf753e0d78e501f3d1174c14fab599c3f23852e9b3b79518aa71dd1",
+        "pack": "details/5b-f4324bfbb1ff8459ad9c7799aa472fafc04ade22958ac0a5e2df95af786262ac.json",
+        "pack_sha256": "f4324bfbb1ff8459ad9c7799aa472fafc04ade22958ac0a5e2df95af786262ac",
         "status": "available"
       }
     },
@@ -25109,8 +25216,8 @@
       },
       "description_ref": {
         "sha256": "c5a27a857e0fb2c031a45d5c9cd82a37cd66ecca141f070688de205405a4b1e4",
-        "pack": "details/c5-c9c9c66fcd40596d8017527b58145cdb9b3bcfd1363d62e75e0551ec24d730f9.json",
-        "pack_sha256": "c9c9c66fcd40596d8017527b58145cdb9b3bcfd1363d62e75e0551ec24d730f9",
+        "pack": "details/c5-66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc.json",
+        "pack_sha256": "66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc",
         "status": "stale"
       }
     },
@@ -25175,8 +25282,8 @@
       },
       "description_ref": {
         "sha256": "44a821e6e63491eae31ab5746bb3adcaa4a8d8af9e663b0086815ccd0bc8777a",
-        "pack": "details/44-ec91eaf146f73906f289ca16f3d4a3ef0453a72e3debfa6dfbe4ea78551ee17a.json",
-        "pack_sha256": "ec91eaf146f73906f289ca16f3d4a3ef0453a72e3debfa6dfbe4ea78551ee17a",
+        "pack": "details/44-6936957c72b4f3a5be8cdb3adf543cd8a75ae51230179ca60003504b95a51386.json",
+        "pack_sha256": "6936957c72b4f3a5be8cdb3adf543cd8a75ae51230179ca60003504b95a51386",
         "status": "stale"
       }
     },
@@ -25241,8 +25348,8 @@
       },
       "description_ref": {
         "sha256": "df174ef9186b610599611bd5cc312c37dbef98f24ee6042cbd1a878367e369fd",
-        "pack": "details/df-0159554bd086bfbe647848e48f55da55439f230101c2137153682ca9b529b84f.json",
-        "pack_sha256": "0159554bd086bfbe647848e48f55da55439f230101c2137153682ca9b529b84f",
+        "pack": "details/df-00b1b746d6a0e992fef0f585dbf1742cdebba67f4a4959fb9b4911d596517159.json",
+        "pack_sha256": "00b1b746d6a0e992fef0f585dbf1742cdebba67f4a4959fb9b4911d596517159",
         "status": "available"
       }
     },
@@ -25261,7 +25368,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -25293,8 +25400,8 @@
       },
       "description_ref": {
         "sha256": "5dc3bb939c14253bc88824aff9a285c7f27771e1be800e2af13aa88547db743a",
-        "pack": "details/5d-845cca942d3abe0026142fe361ce11d9796549337b4d766505c19db0a46b4ad3.json",
-        "pack_sha256": "845cca942d3abe0026142fe361ce11d9796549337b4d766505c19db0a46b4ad3",
+        "pack": "details/5d-5c88b849600f09ede7c365c9b392df12554877306c25b70f3156d7d3adb1c0b2.json",
+        "pack_sha256": "5c88b849600f09ede7c365c9b392df12554877306c25b70f3156d7d3adb1c0b2",
         "status": "stale"
       }
     },
@@ -25345,8 +25452,8 @@
       },
       "description_ref": {
         "sha256": "06e951559a4201596f8e59b5b6cc7dc609cedb39011c294905ce10591e717426",
-        "pack": "details/06-ad8572d710225ff2471f2967de20a862f54b13fc963d4db5cc73582ae6c03720.json",
-        "pack_sha256": "ad8572d710225ff2471f2967de20a862f54b13fc963d4db5cc73582ae6c03720",
+        "pack": "details/06-f65cd47797ab1bbca99c70a17cb9ae1b8d0aa190f50e41a93adcd42760801edd.json",
+        "pack_sha256": "f65cd47797ab1bbca99c70a17cb9ae1b8d0aa190f50e41a93adcd42760801edd",
         "status": "stale"
       }
     },
@@ -25510,8 +25617,8 @@
       },
       "description_ref": {
         "sha256": "f59b5feda44bb3296965746252493fcb7cec3b3be5a1676f07d00554e9455463",
-        "pack": "details/f5-76cc3c5a8df84970b4725ba6cefc49bcf80eb40370ad20b84ac04ff7028ba425.json",
-        "pack_sha256": "76cc3c5a8df84970b4725ba6cefc49bcf80eb40370ad20b84ac04ff7028ba425",
+        "pack": "details/f5-0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e.json",
+        "pack_sha256": "0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e",
         "status": "stale"
       }
     },
@@ -25530,7 +25637,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-09T20:09:29Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -25562,8 +25669,8 @@
       },
       "description_ref": {
         "sha256": "c5ae24e83d7fa8d0f224f104deb4d46f0820b2baa9b65f37646e0e930f838405",
-        "pack": "details/c5-c9c9c66fcd40596d8017527b58145cdb9b3bcfd1363d62e75e0551ec24d730f9.json",
-        "pack_sha256": "c9c9c66fcd40596d8017527b58145cdb9b3bcfd1363d62e75e0551ec24d730f9",
+        "pack": "details/c5-66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc.json",
+        "pack_sha256": "66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc",
         "status": "stale"
       }
     },
@@ -25615,8 +25722,8 @@
       },
       "description_ref": {
         "sha256": "67fae8f36d9b115fa5462a10a09d3d0ecfd20cdfcee0c3457b5f71367184b9d1",
-        "pack": "details/67-38960986129c5f430f10fdbac6412c2cc8ebdd407f06bf4d6d6bcc2bd51aae6e.json",
-        "pack_sha256": "38960986129c5f430f10fdbac6412c2cc8ebdd407f06bf4d6d6bcc2bd51aae6e",
+        "pack": "details/67-e600bcb31a3f812e816a3388a6c8f15dbe6ad2a5c65171e000e100415f61575d.json",
+        "pack_sha256": "e600bcb31a3f812e816a3388a6c8f15dbe6ad2a5c65171e000e100415f61575d",
         "status": "stale"
       }
     },
@@ -25650,7 +25757,7 @@
         "sha256": "8c83ee98c424a2b1672cd2a285653e770bc396ef42d535a82efcd6a4a4765b8c",
         "pack": "details/8c-0cbc48dfb903020c4ec982a0b035dfd6ed5035e945a98b507b94646c953cf040.json",
         "pack_sha256": "0cbc48dfb903020c4ec982a0b035dfd6ed5035e945a98b507b94646c953cf040",
-        "status": "available"
+        "status": "stale"
       }
     },
     "dc0759fc22e8f000": {
@@ -25879,8 +25986,8 @@
       },
       "description_ref": {
         "sha256": "fe2c4ab58a9d1d9caea1f1bec979dd6ec22d73ad5b01813e11e2037c97d4fc33",
-        "pack": "details/fe-593c1e58d2bdc324dfaaf6ad3a1f9764b8e7a8f21d82d570bb209d101e4ee680.json",
-        "pack_sha256": "593c1e58d2bdc324dfaaf6ad3a1f9764b8e7a8f21d82d570bb209d101e4ee680",
+        "pack": "details/fe-2778fc1d96ff974789491314ec6eb764e82e9410472fe12ed294935474b092b2.json",
+        "pack_sha256": "2778fc1d96ff974789491314ec6eb764e82e9410472fe12ed294935474b092b2",
         "status": "available"
       }
     },
@@ -26085,7 +26192,7 @@
         "sha256": "7857798aaab6f994a0af02718f03573303641b1ac2fb17e850a4df9eeb42cf60",
         "pack": "details/78-87ccdc8d7213e249440df84b1e726db0364d394bbec6bf4b0529acc25fa68999.json",
         "pack_sha256": "87ccdc8d7213e249440df84b1e726db0364d394bbec6bf4b0529acc25fa68999",
-        "status": "available"
+        "status": "stale"
       }
     },
     "e0c81200ff4f44aa": {
@@ -26118,7 +26225,7 @@
         "sha256": "14548563a5871eca34feeb489d4b423937aad7c0d0381f72ff995bc4305186b1",
         "pack": "details/14-fdbbc3aa7dc9ba2f8fbcdbee49738fe2ec82769f3b4ff0da7ee465a4b0bf892f.json",
         "pack_sha256": "fdbbc3aa7dc9ba2f8fbcdbee49738fe2ec82769f3b4ff0da7ee465a4b0bf892f",
-        "status": "available"
+        "status": "stale"
       }
     },
     "e0d9ee79a38e4d0d": {
@@ -26221,7 +26328,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -26283,8 +26390,8 @@
       },
       "description_ref": {
         "sha256": "11c35e40bd0bdb3c29958bce414f632747f1800ae723f33f1a13d5b7b99f2d6b",
-        "pack": "details/11-b30b0a82c947b2a12914f192fd16538c2203743c5282edd64816a705cd5a0e76.json",
-        "pack_sha256": "b30b0a82c947b2a12914f192fd16538c2203743c5282edd64816a705cd5a0e76",
+        "pack": "details/11-b6fbc6cc4693d458eaca9f509a2251d93e2f56aa93a95049593aa452c916339a.json",
+        "pack_sha256": "b6fbc6cc4693d458eaca9f509a2251d93e2f56aa93a95049593aa452c916339a",
         "status": "stale"
       }
     },
@@ -26363,7 +26470,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-20T02:38:50Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -26554,8 +26661,8 @@
       },
       "description_ref": {
         "sha256": "b9b37d043b3808e211dea5d9cd823d5508b02325fe9d28db3959a6cdf6805814",
-        "pack": "details/b9-1bc9aa2dfd6ca3e2923586c8e595accdab2e4ddfad8ec78d4768a31202a86a20.json",
-        "pack_sha256": "1bc9aa2dfd6ca3e2923586c8e595accdab2e4ddfad8ec78d4768a31202a86a20",
+        "pack": "details/b9-922d4c6337e7248ebf69edd54292d14037b8fae7236ef7003bc0857e48e3fe26.json",
+        "pack_sha256": "922d4c6337e7248ebf69edd54292d14037b8fae7236ef7003bc0857e48e3fe26",
         "status": "stale"
       }
     },
@@ -26997,8 +27104,8 @@
       },
       "description_ref": {
         "sha256": "6e85b62e40a49fb2dff63ce0ce45b93c1aa50e13ec3f2a10a0fd99ab061e0557",
-        "pack": "details/6e-64431d72d269363c83706a9d6ea67ea6c5e4e37b9f42a22bf575b1841ecb647f.json",
-        "pack_sha256": "64431d72d269363c83706a9d6ea67ea6c5e4e37b9f42a22bf575b1841ecb647f",
+        "pack": "details/6e-944d576044907ff9db76fa1fa810cbb333eba53c1e07233f734fdbfff0bb345d.json",
+        "pack_sha256": "944d576044907ff9db76fa1fa810cbb333eba53c1e07233f734fdbfff0bb345d",
         "status": "available"
       }
     },
@@ -27096,9 +27203,9 @@
       },
       "description_ref": {
         "sha256": "b91101b57b72465f3df908876190c80e47129be4906fc4e62c333368be90f631",
-        "pack": "details/b9-1bc9aa2dfd6ca3e2923586c8e595accdab2e4ddfad8ec78d4768a31202a86a20.json",
-        "pack_sha256": "1bc9aa2dfd6ca3e2923586c8e595accdab2e4ddfad8ec78d4768a31202a86a20",
-        "status": "available"
+        "pack": "details/b9-922d4c6337e7248ebf69edd54292d14037b8fae7236ef7003bc0857e48e3fe26.json",
+        "pack_sha256": "922d4c6337e7248ebf69edd54292d14037b8fae7236ef7003bc0857e48e3fe26",
+        "status": "stale"
       }
     },
     "e993727666a75b6f": {
@@ -27218,8 +27325,8 @@
       },
       "description_ref": {
         "sha256": "230480b1ec8e1ddb979592bba3bfed1704c569bdc252d4b8c5b951d85afe62cb",
-        "pack": "details/23-3351f8befaeeeea777aebcb9fdf0275f1ad43eeec3d9c6ea4fb23b238350f660.json",
-        "pack_sha256": "3351f8befaeeeea777aebcb9fdf0275f1ad43eeec3d9c6ea4fb23b238350f660",
+        "pack": "details/23-a3735c72fac2a0062006ee3a3078f29002665dfca3b57a61a79e2ab61d2ea687.json",
+        "pack_sha256": "a3735c72fac2a0062006ee3a3078f29002665dfca3b57a61a79e2ab61d2ea687",
         "status": "stale"
       }
     },
@@ -27284,8 +27391,8 @@
       },
       "description_ref": {
         "sha256": "c18f56bcaf3cb51c1aae9ea93e5980c1e126839fa331f4083deb6e3afa3fcec7",
-        "pack": "details/c1-cccccb65b56e734d3373034cb2a13bbb941834ee5643afb1c3273216daa4141f.json",
-        "pack_sha256": "cccccb65b56e734d3373034cb2a13bbb941834ee5643afb1c3273216daa4141f",
+        "pack": "details/c1-6872d32322a42c42d00b60eaac51ec55c1719d9c5eef98c7076a1e3bb23d0fbf.json",
+        "pack_sha256": "6872d32322a42c42d00b60eaac51ec55c1719d9c5eef98c7076a1e3bb23d0fbf",
         "status": "available"
       }
     },
@@ -27383,8 +27490,8 @@
       },
       "description_ref": {
         "sha256": "f0bcc7b44d957c04fc9621967b1adccdffbbd8bc950ae9f23f7e2f3145c7a477",
-        "pack": "details/f0-d5fc639e6b1bbde35fb2b267989769d3ba3c0104c513a6bfe638fd481af626cd.json",
-        "pack_sha256": "d5fc639e6b1bbde35fb2b267989769d3ba3c0104c513a6bfe638fd481af626cd",
+        "pack": "details/f0-1d2e40dd464a7a1e44be8cde6f2f1e96f46357314a4162bd7f31d81a87742602.json",
+        "pack_sha256": "1d2e40dd464a7a1e44be8cde6f2f1e96f46357314a4162bd7f31d81a87742602",
         "status": "stale"
       }
     },
@@ -27416,8 +27523,8 @@
       },
       "description_ref": {
         "sha256": "63d0a1c04606b21e5c6cc08bbb131ca457a018d30b82c4223fe22ff5868eabf4",
-        "pack": "details/63-567066138532c938dec0488b8a052ef0c766e63f5c431cb048b63dc985b7daea.json",
-        "pack_sha256": "567066138532c938dec0488b8a052ef0c766e63f5c431cb048b63dc985b7daea",
+        "pack": "details/63-d442b718f637051786a176cfe390a0bb31025982d98b2810e5c5e019c6cef11a.json",
+        "pack_sha256": "d442b718f637051786a176cfe390a0bb31025982d98b2810e5c5e019c6cef11a",
         "status": "stale"
       }
     },
@@ -27677,6 +27784,39 @@
       "closed_at": null,
       "description_status": "unavailable"
     },
+    "ed8a09906a271ec2": {
+      "id": "ed8a09906a271ec2",
+      "company": "Walmart",
+      "company_slug": "walmart",
+      "title": "2026 Intern Conversion - 2027 FT: Senior Analyst, Merchandising Development Program",
+      "location": "(USA) Hula Building Bentonville AR Home Office",
+      "locations": [
+        "(USA) Hula Building Bentonville AR Home Office"
+      ],
+      "url": "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-Hula-Building-Bentonville-AR-Home-Office/XMLNAME-2026-Intern-Conversion---2027-FT--Senior-Analyst--Merchandising-Development-Program_R-2630130",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2026-Intern-Conversion---2027-FT--Senior-Analyst--Merchandising-Development-Program_R-2630130",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "115d263f6c1a8a1ef5f3adf2caf066acea08ee90942e28491bda0e5717cb7871",
+        "pack": "details/11-b6fbc6cc4693d458eaca9f509a2251d93e2f56aa93a95049593aa452c916339a.json",
+        "pack_sha256": "b6fbc6cc4693d458eaca9f509a2251d93e2f56aa93a95049593aa452c916339a",
+        "status": "available"
+      }
+    },
     "ee1401d474e2d97c": {
       "id": "ee1401d474e2d97c",
       "company": "Palo Alto Networks",
@@ -27705,8 +27845,8 @@
       },
       "description_ref": {
         "sha256": "98ea999a824b69a128c333c0b1bc51aeb14267bc7975e46cf2802ee604c0503c",
-        "pack": "details/98-c1ed5c35c0280cd8bdad08eff5e5ba135a76ff48596b16df68eff07c2fa9306c.json",
-        "pack_sha256": "c1ed5c35c0280cd8bdad08eff5e5ba135a76ff48596b16df68eff07c2fa9306c",
+        "pack": "details/98-8e98aaea4b3d895a5d48a1cbb8a7ff6be16685a84cc868b2da16f0974a80bf17.json",
+        "pack_sha256": "8e98aaea4b3d895a5d48a1cbb8a7ff6be16685a84cc868b2da16f0974a80bf17",
         "status": "stale"
       }
     },
@@ -27938,8 +28078,8 @@
       },
       "description_ref": {
         "sha256": "f595c2176276a86eda92958f335144789097234a6121ec31ca5434a4503603aa",
-        "pack": "details/f5-76cc3c5a8df84970b4725ba6cefc49bcf80eb40370ad20b84ac04ff7028ba425.json",
-        "pack_sha256": "76cc3c5a8df84970b4725ba6cefc49bcf80eb40370ad20b84ac04ff7028ba425",
+        "pack": "details/f5-0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e.json",
+        "pack_sha256": "0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e",
         "status": "available"
       }
     },
@@ -28057,8 +28197,8 @@
       },
       "description_ref": {
         "sha256": "eaefea89b17ef6bcb4c730ae1cb5d76332b3837dc7b4c02d72c442ee1b269ad5",
-        "pack": "details/ea-95a8e0d91d8e48cda0816af9e68edf2c61ced0ecf85eda1cb467042abce7d0ca.json",
-        "pack_sha256": "95a8e0d91d8e48cda0816af9e68edf2c61ced0ecf85eda1cb467042abce7d0ca",
+        "pack": "details/ea-d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b.json",
+        "pack_sha256": "d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b",
         "status": "available"
       }
     },
@@ -28175,9 +28315,9 @@
       },
       "description_ref": {
         "sha256": "6e009af625966b7f0218d5d3265d8c03cf97d963062ef181636bdcdaec02e379",
-        "pack": "details/6e-64431d72d269363c83706a9d6ea67ea6c5e4e37b9f42a22bf575b1841ecb647f.json",
-        "pack_sha256": "64431d72d269363c83706a9d6ea67ea6c5e4e37b9f42a22bf575b1841ecb647f",
-        "status": "stale"
+        "pack": "details/6e-944d576044907ff9db76fa1fa810cbb333eba53c1e07233f734fdbfff0bb345d.json",
+        "pack_sha256": "944d576044907ff9db76fa1fa810cbb333eba53c1e07233f734fdbfff0bb345d",
+        "status": "available"
       }
     },
     "f1078c74201e9701": {
@@ -28307,8 +28447,8 @@
       },
       "description_ref": {
         "sha256": "c607215b9bf699be8297ab07742c96e44ec13524a4e2c7c1a2c3d61e51a6a912",
-        "pack": "details/c6-e2656a580fdb280e0b2e1fa6fbcfe452ef05b5903fdeec1d989ec3ebb1262e93.json",
-        "pack_sha256": "e2656a580fdb280e0b2e1fa6fbcfe452ef05b5903fdeec1d989ec3ebb1262e93",
+        "pack": "details/c6-5e5f456439f34f6b96d088d7147f38c22a17dc7a42b3129193149043616572ad.json",
+        "pack_sha256": "5e5f456439f34f6b96d088d7147f38c22a17dc7a42b3129193149043616572ad",
         "status": "stale"
       }
     },
@@ -28348,8 +28488,8 @@
       },
       "description_ref": {
         "sha256": "9a70ac26b2fe812fbf34de08b1ba6f7721a34b0ce6d2a8afa077e9df3a556a9b",
-        "pack": "details/9a-a52049cad7376491106aae23438a0833d6373033ea0b08a5b7e6eb145209fb9d.json",
-        "pack_sha256": "a52049cad7376491106aae23438a0833d6373033ea0b08a5b7e6eb145209fb9d",
+        "pack": "details/9a-acea961f48a8c320177fb00c89613508bbb1e09a2817b1f6cb0ff9d6214147c8.json",
+        "pack_sha256": "acea961f48a8c320177fb00c89613508bbb1e09a2817b1f6cb0ff9d6214147c8",
         "status": "stale"
       }
     },
@@ -28646,8 +28786,8 @@
       },
       "description_ref": {
         "sha256": "394db1e7f78604dc3be37d6717a833e555ce282b92ba02de92cf82fd7ddb717e",
-        "pack": "details/39-5f93a80b9a9d5c5efba5aa36ca7b2abec317a131407a11be94da6a0c872d0c0c.json",
-        "pack_sha256": "5f93a80b9a9d5c5efba5aa36ca7b2abec317a131407a11be94da6a0c872d0c0c",
+        "pack": "details/39-ae3d8b461d95aca14585fbab36421fc669a39ef31be046f2e823b68737efc23e.json",
+        "pack_sha256": "ae3d8b461d95aca14585fbab36421fc669a39ef31be046f2e823b68737efc23e",
         "status": "stale"
       }
     },
@@ -28759,7 +28899,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-13T18:06:47Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -28792,8 +28932,8 @@
       },
       "description_ref": {
         "sha256": "685fa81d60b96850a564804cb5fb27ebe3f8305e07a973571e71e4a1e58709b7",
-        "pack": "details/68-f6b51ea02f83982c129548b12511eadd50aea69544ee123153cd2f755ac98e73.json",
-        "pack_sha256": "f6b51ea02f83982c129548b12511eadd50aea69544ee123153cd2f755ac98e73",
+        "pack": "details/68-b3e8769591d72fb3a9d09da424cc7fdc8d498a554ecd0772ad4bcbcd09fc5042.json",
+        "pack_sha256": "b3e8769591d72fb3a9d09da424cc7fdc8d498a554ecd0772ad4bcbcd09fc5042",
         "status": "stale"
       }
     },
@@ -28812,7 +28952,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-21T22:47:02Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -28897,8 +29037,8 @@
       },
       "description_ref": {
         "sha256": "77cabc0fc08ed35763b36f39da45ad96ab4adf89c227d4acd5d789bea27ff0fb",
-        "pack": "details/77-6a7ecc6f14366be777b8aa32d6bff6071ec5302c51738e5e4f6ba33fed6f09c4.json",
-        "pack_sha256": "6a7ecc6f14366be777b8aa32d6bff6071ec5302c51738e5e4f6ba33fed6f09c4",
+        "pack": "details/77-b33deeca9c0815b3a09907c7c94ba0eb26dcc1c6301d276203f41f11c63432cd.json",
+        "pack_sha256": "b33deeca9c0815b3a09907c7c94ba0eb26dcc1c6301d276203f41f11c63432cd",
         "status": "stale"
       }
     },
@@ -28917,7 +29057,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-19T20:06:44Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -29123,7 +29263,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-12T22:24:30Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -29222,8 +29362,8 @@
       },
       "description_ref": {
         "sha256": "5daa400547abd06302160ad8d28cacbc05ddc06d9903ad606549e05c7c01f829",
-        "pack": "details/5d-845cca942d3abe0026142fe361ce11d9796549337b4d766505c19db0a46b4ad3.json",
-        "pack_sha256": "845cca942d3abe0026142fe361ce11d9796549337b4d766505c19db0a46b4ad3",
+        "pack": "details/5d-5c88b849600f09ede7c365c9b392df12554877306c25b70f3156d7d3adb1c0b2.json",
+        "pack_sha256": "5c88b849600f09ede7c365c9b392df12554877306c25b70f3156d7d3adb1c0b2",
         "status": "available"
       }
     },
@@ -29242,7 +29382,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-25T21:56:11Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -29315,8 +29455,8 @@
       },
       "description_ref": {
         "sha256": "06c7455847dc37db3ae68e44ab748e80e1c4da3b5c9b8f29d29958ccb9010b47",
-        "pack": "details/06-ad8572d710225ff2471f2967de20a862f54b13fc963d4db5cc73582ae6c03720.json",
-        "pack_sha256": "ad8572d710225ff2471f2967de20a862f54b13fc963d4db5cc73582ae6c03720",
+        "pack": "details/06-f65cd47797ab1bbca99c70a17cb9ae1b8d0aa190f50e41a93adcd42760801edd.json",
+        "pack_sha256": "f65cd47797ab1bbca99c70a17cb9ae1b8d0aa190f50e41a93adcd42760801edd",
         "status": "stale"
       }
     },
@@ -29430,8 +29570,8 @@
       },
       "description_ref": {
         "sha256": "9ab00c5d453fb0049d49c68b687960129ef417e2039387812f0c493ae02f9e95",
-        "pack": "details/9a-a52049cad7376491106aae23438a0833d6373033ea0b08a5b7e6eb145209fb9d.json",
-        "pack_sha256": "a52049cad7376491106aae23438a0833d6373033ea0b08a5b7e6eb145209fb9d",
+        "pack": "details/9a-acea961f48a8c320177fb00c89613508bbb1e09a2817b1f6cb0ff9d6214147c8.json",
+        "pack_sha256": "acea961f48a8c320177fb00c89613508bbb1e09a2817b1f6cb0ff9d6214147c8",
         "status": "stale"
       }
     },
@@ -29464,8 +29604,8 @@
       },
       "description_ref": {
         "sha256": "6b2dae5675cd3a7082ba680c8045a16737274d31a6d3db2b9f39c8d3ed6719f3",
-        "pack": "details/6b-eae820a3a5a04e24e2ab0bf006b5139410be0d4c87cc37e9f72c056de336d606.json",
-        "pack_sha256": "eae820a3a5a04e24e2ab0bf006b5139410be0d4c87cc37e9f72c056de336d606",
+        "pack": "details/6b-9342320e8dde50cd9fff49fd41d98ee97b82ce71ccb71716e95b2a5d6833ae37.json",
+        "pack_sha256": "9342320e8dde50cd9fff49fd41d98ee97b82ce71ccb71716e95b2a5d6833ae37",
         "status": "available"
       }
     },
@@ -29497,8 +29637,8 @@
       },
       "description_ref": {
         "sha256": "f0bcc7b44d957c04fc9621967b1adccdffbbd8bc950ae9f23f7e2f3145c7a477",
-        "pack": "details/f0-d5fc639e6b1bbde35fb2b267989769d3ba3c0104c513a6bfe638fd481af626cd.json",
-        "pack_sha256": "d5fc639e6b1bbde35fb2b267989769d3ba3c0104c513a6bfe638fd481af626cd",
+        "pack": "details/f0-1d2e40dd464a7a1e44be8cde6f2f1e96f46357314a4162bd7f31d81a87742602.json",
+        "pack_sha256": "1d2e40dd464a7a1e44be8cde6f2f1e96f46357314a4162bd7f31d81a87742602",
         "status": "stale"
       }
     },
@@ -29714,8 +29854,8 @@
       },
       "description_ref": {
         "sha256": "6d37a5a65d3e2d5374843666b2518161d559aefd0db738977dcff8e54df3792b",
-        "pack": "details/6d-a45d13d20a99a0fbb267361f78a2cdc34b53f461ee65b238e30b631b53421f35.json",
-        "pack_sha256": "a45d13d20a99a0fbb267361f78a2cdc34b53f461ee65b238e30b631b53421f35",
+        "pack": "details/6d-862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f.json",
+        "pack_sha256": "862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f",
         "status": "stale"
       }
     },
@@ -29780,8 +29920,8 @@
       },
       "description_ref": {
         "sha256": "6861888c4e23ab43bb34f3d26fa87b5d089a4e676ae42e98cfe26ccc2baf2383",
-        "pack": "details/68-f6b51ea02f83982c129548b12511eadd50aea69544ee123153cd2f755ac98e73.json",
-        "pack_sha256": "f6b51ea02f83982c129548b12511eadd50aea69544ee123153cd2f755ac98e73",
+        "pack": "details/68-b3e8769591d72fb3a9d09da424cc7fdc8d498a554ecd0772ad4bcbcd09fc5042.json",
+        "pack_sha256": "b3e8769591d72fb3a9d09da424cc7fdc8d498a554ecd0772ad4bcbcd09fc5042",
         "status": "available"
       }
     },

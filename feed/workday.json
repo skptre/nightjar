@@ -1,7 +1,7 @@
 {
   "shard_id": "workday",
-  "updated_at": "2026-11-25T21:56:11Z",
-  "count": 840,
+  "updated_at": "2026-11-26T04:02:10Z",
+  "count": 865,
   "postings": {
     "0004d9a7c5a80ffe": {
       "id": "0004d9a7c5a80ffe",
@@ -229,8 +229,8 @@
       },
       "description_ref": {
         "sha256": "2de8f89bd0aaa2c5f20ec8d5ed077461965901c9194bcbe043e20226d33c3cbd",
-        "pack": "details/2d-2ca758a9563d89e284c74e6c5b9b5e53204d3a1cfdec3de66128d00c65529556.json",
-        "pack_sha256": "2ca758a9563d89e284c74e6c5b9b5e53204d3a1cfdec3de66128d00c65529556",
+        "pack": "details/2d-caf9fbf8a8853030bd704f87249c1a31794b26d5ef4990e53f648f9621e2b9b6.json",
+        "pack_sha256": "caf9fbf8a8853030bd704f87249c1a31794b26d5ef4990e53f648f9621e2b9b6",
         "status": "stale"
       }
     },
@@ -607,7 +607,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-23T15:46:26Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -689,7 +689,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -721,9 +721,9 @@
       },
       "description_ref": {
         "sha256": "61edee5eefcb5a22da5af08223cc612b7cf70d4ed73256c8309b3d223865c229",
-        "pack": "details/61-9afbe85e3bbb17302ec23188d853d1123a96837f892fa903025349b05d126b02.json",
-        "pack_sha256": "9afbe85e3bbb17302ec23188d853d1123a96837f892fa903025349b05d126b02",
-        "status": "available"
+        "pack": "details/61-6bf6a3aee404de3625cbb629c2ad05415cf8acf473a5d369faefd35291f5f4c8.json",
+        "pack_sha256": "6bf6a3aee404de3625cbb629c2ad05415cf8acf473a5d369faefd35291f5f4c8",
+        "status": "stale"
       }
     },
     "069fcc60ea8f8c26": {
@@ -853,8 +853,8 @@
       },
       "description_ref": {
         "sha256": "d21bfa2e731b0e5b4c9da1a511dafa7526f5bd3728b788dd955b10e9e842860c",
-        "pack": "details/d2-ec0174ef19346af41fccf000cfe0d1fdb17e09d18dae1986cd94315a5d0f82dd.json",
-        "pack_sha256": "ec0174ef19346af41fccf000cfe0d1fdb17e09d18dae1986cd94315a5d0f82dd",
+        "pack": "details/d2-49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7.json",
+        "pack_sha256": "49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7",
         "status": "available"
       }
     },
@@ -894,8 +894,8 @@
       },
       "description_ref": {
         "sha256": "cd62779dd5bc41f53a4c1994fc10303d7ca2879782d59b58ebf8c6ce822b9d3b",
-        "pack": "details/cd-063a77f52301f505bbec601b12cd9af30a7a90d2525d438c6b7a4d2730d6a498.json",
-        "pack_sha256": "063a77f52301f505bbec601b12cd9af30a7a90d2525d438c6b7a4d2730d6a498",
+        "pack": "details/cd-e505f1c321641acf8631ecabc8985b51b50ed4ccfa4ca1dbd52878779ee16589.json",
+        "pack_sha256": "e505f1c321641acf8631ecabc8985b51b50ed4ccfa4ca1dbd52878779ee16589",
         "status": "stale"
       }
     },
@@ -1073,7 +1073,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -1419,8 +1419,8 @@
       },
       "description_ref": {
         "sha256": "3eacec11c1a0de2898a371aaeab9156c823dc0307ee924de996d66fc32cc99e4",
-        "pack": "details/3e-2cd5ddc292d992e9818a3b500ac93d3c65817a19c0bcb17a94e144e795f8bf95.json",
-        "pack_sha256": "2cd5ddc292d992e9818a3b500ac93d3c65817a19c0bcb17a94e144e795f8bf95",
+        "pack": "details/3e-62a4922e0eb1b945d13902673587f0fdccd7b706725be626aed7b481629e43a7.json",
+        "pack_sha256": "62a4922e0eb1b945d13902673587f0fdccd7b706725be626aed7b481629e43a7",
         "status": "available"
       }
     },
@@ -1505,7 +1505,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -1572,8 +1572,8 @@
       },
       "description_ref": {
         "sha256": "f5f1a932eb71b8f678dc5ab8af9504c9a864341ea7a7b2d81b14f3a8329fd012",
-        "pack": "details/f5-0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e.json",
-        "pack_sha256": "0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e",
+        "pack": "details/f5-ca3669ac3d374811397aa1f0341e67be0351d8959e95cdd8acd8f2fefd2f6d46.json",
+        "pack_sha256": "ca3669ac3d374811397aa1f0341e67be0351d8959e95cdd8acd8f2fefd2f6d46",
         "status": "stale"
       }
     },
@@ -1711,7 +1711,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -1904,7 +1904,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-21T14:41:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -2161,6 +2161,39 @@
         "status": "stale"
       }
     },
+    "13f29c6737a8718c": {
+      "id": "13f29c6737a8718c",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Intern Test & Evaluation Oklahoma City (Part-Time)",
+      "location": "United States-Oklahoma-Oklahoma City",
+      "locations": [
+        "United States-Oklahoma-Oklahoma City"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Oklahoma-Oklahoma-City/XMLNAME-2027-Intern-Test---Evaluation-Oklahoma-City--Part-Time-_R10261915",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Intern-Test---Evaluation-Oklahoma-City--Part-Time-_R10261915",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "090f69e015f389d2909dad01b3f1b615e0ffa09e8d05aa4dcf255e2d4db423a5",
+        "pack": "details/09-27b6fa0e194e4c3dfb9120a45d0456d4db441ed4419682cc9e069e20b14bd610.json",
+        "pack_sha256": "27b6fa0e194e4c3dfb9120a45d0456d4db441ed4419682cc9e069e20b14bd610",
+        "status": "available"
+      }
+    },
     "1416cf3cc89c4a4c": {
       "id": "1416cf3cc89c4a4c",
       "company": "Tencent",
@@ -2194,6 +2227,39 @@
         "status": "stale"
       }
     },
+    "14272826d28651ad": {
+      "id": "14272826d28651ad",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Human Resource Intern - Rolling Meadows IL",
+      "location": "United States-Illinois-Rolling Meadows",
+      "locations": [
+        "United States-Illinois-Rolling Meadows"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Illinois-Rolling-Meadows/XMLNAME-2027-Human-Resource-Intern---Rolling-Meadows-IL_R10262063",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Human-Resource-Intern---Rolling-Meadows-IL_R10262063",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "efc7d5ca3f59edbf5f40ab5284e1442dd9a1ea04cf03f8999a2c638cf92aea9c",
+        "pack": "details/ef-c61b91dc1a8818e9c4bd4b65c22f7acf8e10d3cc96753ef633c52a5695194c81.json",
+        "pack_sha256": "c61b91dc1a8818e9c4bd4b65c22f7acf8e10d3cc96753ef633c52a5695194c81",
+        "status": "available"
+      }
+    },
     "145bcfc76ee2aaf3": {
       "id": "145bcfc76ee2aaf3",
       "company": "Micron Technology",
@@ -2221,10 +2287,10 @@
         }
       },
       "description_ref": {
-        "sha256": "7d0f7332c915da8d1e1464122b75bfae4c1f1898bfeba68ca38b882e5dd2f017",
-        "pack": "details/7d-df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde.json",
-        "pack_sha256": "df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde",
-        "status": "stale"
+        "sha256": "726efe046367753c5539cf2779a633f3f7d9cb0511f82000a3d3fde66c050cbe",
+        "pack": "details/72-3de2527051dedec346eba9141ba39e754d7aee03c73bc8ebe9b2ef5152a7888b.json",
+        "pack_sha256": "3de2527051dedec346eba9141ba39e754d7aee03c73bc8ebe9b2ef5152a7888b",
+        "status": "available"
       }
     },
     "146b8a0979771107": {
@@ -2408,7 +2474,7 @@
         "sha256": "254cb2135aee121aa8f64a819720803e00f641a6b103478055ce6199b5fdf965",
         "pack": "details/25-6552a6d0c84e5ecb3e42a180e58a972a8fbd2cf5d6648e1221bbc8120c9ab4a2.json",
         "pack_sha256": "6552a6d0c84e5ecb3e42a180e58a972a8fbd2cf5d6648e1221bbc8120c9ab4a2",
-        "status": "stale"
+        "status": "available"
       }
     },
     "14fd51566f3e0283": {
@@ -2429,6 +2495,39 @@
       "last_seen_at": "2026-11-24T06:51:27Z",
       "closed_at": null,
       "description_status": "unavailable"
+    },
+    "1551e415f3d2faeb": {
+      "id": "1551e415f3d2faeb",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Software Engineer Intern - Linthicum Maryland",
+      "location": "United States-Maryland-Linthicum",
+      "locations": [
+        "United States-Maryland-Linthicum"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Maryland-Linthicum/XMLNAME-2027-Software-Engineer-Intern---Linthicum-Maryland_R10248910",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Software-Engineer-Intern---Linthicum-Maryland_R10248910",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "dd9bf4823201452d73e0546ce0261f6868c2218b6ed6b21c883b8ac32bfb5da2",
+        "pack": "details/dd-b9f68163c53969e291dd37bfb9fe969c48bce7eb5e1dbe9c339e9a0f80e12c34.json",
+        "pack_sha256": "b9f68163c53969e291dd37bfb9fe969c48bce7eb5e1dbe9c339e9a0f80e12c34",
+        "status": "available"
+      }
     },
     "158784e134b35bc0": {
       "id": "158784e134b35bc0",
@@ -2458,8 +2557,8 @@
       },
       "description_ref": {
         "sha256": "5dade6b7553dc9f9c4cc6405c6c384c4c39989b7d775b32823a730c5426de0ae",
-        "pack": "details/5d-5c88b849600f09ede7c365c9b392df12554877306c25b70f3156d7d3adb1c0b2.json",
-        "pack_sha256": "5c88b849600f09ede7c365c9b392df12554877306c25b70f3156d7d3adb1c0b2",
+        "pack": "details/5d-09b49a658c9d9c35ccf2788d39a4b6f04f09702ec1200190c9aad28f5d7e3d3a.json",
+        "pack_sha256": "09b49a658c9d9c35ccf2788d39a4b6f04f09702ec1200190c9aad28f5d7e3d3a",
         "status": "stale"
       }
     },
@@ -2758,7 +2857,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -2823,8 +2922,8 @@
       },
       "description_ref": {
         "sha256": "49fc3e5844298dcb0187ab5c6d61e777a28e46d790d7746e9250f340f60e9dad",
-        "pack": "details/49-c9980bec37288daa324f01a6c9ead0761fd3a2e159281049615e937f937c538a.json",
-        "pack_sha256": "c9980bec37288daa324f01a6c9ead0761fd3a2e159281049615e937f937c538a",
+        "pack": "details/49-648aad7b8672d0a0a2e80e5364a6a11e169b27fdfc159cb7d004fd650cee0353.json",
+        "pack_sha256": "648aad7b8672d0a0a2e80e5364a6a11e169b27fdfc159cb7d004fd650cee0353",
         "status": "available"
       }
     },
@@ -2843,7 +2942,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-12T22:24:30Z",
-      "last_seen_at": "2026-11-23T22:51:38Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -2852,7 +2951,15 @@
           "method": "workday_api",
           "completeness": "available",
           "identity": "provider_job_endpoint"
-        }
+        },
+        "provenance": [
+          {
+            "source": "workday",
+            "source_job_id": "XMLNAME-2027-Systems-Engineering-Intern---Graduate-Level---Plymouth-MN_R10260431",
+            "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Minnesota-Plymouth/XMLNAME-2027-Systems-Engineering-Intern---Graduate-Level---Plymouth-MN_R10260431",
+            "discovered_at": "2026-11-12T22:24:30Z"
+          }
+        ]
       },
       "description_ref": {
         "sha256": "81e16e155c5d172fd2dba1994b377af5dda687b1f2cd06624907dedf33d855e4",
@@ -2996,8 +3103,8 @@
       },
       "description_ref": {
         "sha256": "adc6e535889008354a7228a3e7f7a81354797cf6e1667a4a924951ea0f1fea27",
-        "pack": "details/ad-c771d0641b123d60bfd49156c03e9db1254dd908104a6df2dc83422d74d9728b.json",
-        "pack_sha256": "c771d0641b123d60bfd49156c03e9db1254dd908104a6df2dc83422d74d9728b",
+        "pack": "details/ad-c289e6fa586f03d975a3a6e6b4cd6a967dc5076e1eeddf027e1aec15df167129.json",
+        "pack_sha256": "c289e6fa586f03d975a3a6e6b4cd6a967dc5076e1eeddf027e1aec15df167129",
         "status": "stale"
       }
     },
@@ -3150,6 +3257,39 @@
         "pack": "details/02-a3849cd27e36401f06580ec07951a076c3d2701909f6b00494a120b807a469c1.json",
         "pack_sha256": "a3849cd27e36401f06580ec07951a076c3d2701909f6b00494a120b807a469c1",
         "status": "stale"
+      }
+    },
+    "1d7ee89386239080": {
+      "id": "1d7ee89386239080",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Fall Co-op Tooling Engineer",
+      "location": "United States-Mississippi-Iuka",
+      "locations": [
+        "United States-Mississippi-Iuka"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Mississippi-Iuka/XMLNAME-2027-Fall-Co-op-Tooling-Engineer_R10261559",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Fall-Co-op-Tooling-Engineer_R10261559",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "496fa6454de2454ae399f8f47e72e1f20f4896eb898f3e544374e0172dd72627",
+        "pack": "details/49-648aad7b8672d0a0a2e80e5364a6a11e169b27fdfc159cb7d004fd650cee0353.json",
+        "pack_sha256": "648aad7b8672d0a0a2e80e5364a6a11e169b27fdfc159cb7d004fd650cee0353",
+        "status": "available"
       }
     },
     "1e26a03e4fc0321a": {
@@ -3366,8 +3506,8 @@
       },
       "description_ref": {
         "sha256": "c5df9ed2e181220e4639008c5caad7f5efbf89c70aa38168856fe8ae54a6602f",
-        "pack": "details/c5-66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc.json",
-        "pack_sha256": "66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc",
+        "pack": "details/c5-583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3.json",
+        "pack_sha256": "583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3",
         "status": "available"
       }
     },
@@ -3498,8 +3638,8 @@
       },
       "description_ref": {
         "sha256": "e48f51e5052d2dd7825574c17efa072d6d6b7a0eb57fc97343a2bd62cf65dfb5",
-        "pack": "details/e4-339218746cc135a95422ac8f2f9b04cc3c29a0184f2ada3f3ff2a32cebca8a0b.json",
-        "pack_sha256": "339218746cc135a95422ac8f2f9b04cc3c29a0184f2ada3f3ff2a32cebca8a0b",
+        "pack": "details/e4-6954a8b03eddbfd0913b13c6b38aadd70fa024797a25434352220ee1631761d8.json",
+        "pack_sha256": "6954a8b03eddbfd0913b13c6b38aadd70fa024797a25434352220ee1631761d8",
         "status": "stale"
       }
     },
@@ -3956,6 +4096,39 @@
         "status": "stale"
       }
     },
+    "227fe1359d04cced": {
+      "id": "227fe1359d04cced",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Guidance Navigation and Controls Intern - Chandler AZ",
+      "location": "United States-Arizona-Chandler",
+      "locations": [
+        "United States-Arizona-Chandler"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Arizona-Chandler/XMLNAME-2027-Guidance-Navigation-and-Controls-Intern---Chandler-AZ_R10262021",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Guidance-Navigation-and-Controls-Intern---Chandler-AZ_R10262021",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "8e4dcfdd959bc8d2e1cdb43f5da2fc5f11621fdc674c963a4499436d204d410e",
+        "pack": "details/8e-ee0107f8354943c614ddcbbbf5bec4a38385131b9a52b3c96f57af36e99fc075.json",
+        "pack_sha256": "ee0107f8354943c614ddcbbbf5bec4a38385131b9a52b3c96f57af36e99fc075",
+        "status": "available"
+      }
+    },
     "22afdd8a2895ba1f": {
       "id": "22afdd8a2895ba1f",
       "company": "HNTB",
@@ -4025,8 +4198,8 @@
       },
       "description_ref": {
         "sha256": "c554c107abc31189cde5fb92a8e73a75c0304fbfdf5dbc5042fe27cad489995b",
-        "pack": "details/c5-66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc.json",
-        "pack_sha256": "66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc",
+        "pack": "details/c5-583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3.json",
+        "pack_sha256": "583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3",
         "status": "available"
       }
     },
@@ -4276,8 +4449,8 @@
       },
       "description_ref": {
         "sha256": "e0f853341f8e1396843a932e094b3a0cd71480444582250cbe8442a6e2af91c5",
-        "pack": "details/e0-9ad026242d7a88eaffbd387708f80a28b9726653c665cdf7a36dd39733b9704b.json",
-        "pack_sha256": "9ad026242d7a88eaffbd387708f80a28b9726653c665cdf7a36dd39733b9704b",
+        "pack": "details/e0-c77760c79b5378e6aa537f089ca76eeedfa804541fd6eb5d9ab6163b67398113.json",
+        "pack_sha256": "c77760c79b5378e6aa537f089ca76eeedfa804541fd6eb5d9ab6163b67398113",
         "status": "available"
       }
     },
@@ -4337,7 +4510,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -4369,8 +4542,8 @@
       },
       "description_ref": {
         "sha256": "fe21b5ef2a63609b3b98f7e056e7c037ae7b4960175e27d3ee7a9cefe7ea4554",
-        "pack": "details/fe-2778fc1d96ff974789491314ec6eb764e82e9410472fe12ed294935474b092b2.json",
-        "pack_sha256": "2778fc1d96ff974789491314ec6eb764e82e9410472fe12ed294935474b092b2",
+        "pack": "details/fe-2b55f5b488284c761d38d53d63b38a5dad3215a9ad82f8c773f2e628f95537fe.json",
+        "pack_sha256": "2b55f5b488284c761d38d53d63b38a5dad3215a9ad82f8c773f2e628f95537fe",
         "status": "stale"
       }
     },
@@ -4404,6 +4577,39 @@
         "sha256": "a74092ceb20530115b96dd428ac625e11084be56a23019df83085fcd2ccf1af3",
         "pack": "details/a7-8f47201d923bafc6c5dedf2150a5ab8b473ace0dc3d478c1a5c5bd61a6a26212.json",
         "pack_sha256": "8f47201d923bafc6c5dedf2150a5ab8b473ace0dc3d478c1a5c5bd61a6a26212",
+        "status": "available"
+      }
+    },
+    "273802fda7911d15": {
+      "id": "273802fda7911d15",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Electronics Engineer Intern - Manhattan Beach CA",
+      "location": "United States-California-Manhattan Beach",
+      "locations": [
+        "United States-California-Manhattan Beach"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-California-Manhattan-Beach/XMLNAME-2027-Electronics-Engineer-Intern---Manhattan-Beach-CA_R10262075",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Electronics-Engineer-Intern---Manhattan-Beach-CA_R10262075",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "decaccf8ba4d476c835d1353343aea6b2d4aab3e38132e475af294a3ab60ca5a",
+        "pack": "details/de-6ee5f65c22aee10b976fad77baf3553cdaf5d3e97eafc0eeb74f4e247ea9fe6c.json",
+        "pack_sha256": "6ee5f65c22aee10b976fad77baf3553cdaf5d3e97eafc0eeb74f4e247ea9fe6c",
         "status": "available"
       }
     },
@@ -4488,7 +4694,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -4521,8 +4727,8 @@
       },
       "description_ref": {
         "sha256": "7d343d7e41a37fe5db5da74a061391708b7ce8fbdf8b4aa3ce1e8aff95e2060d",
-        "pack": "details/7d-df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde.json",
-        "pack_sha256": "df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde",
+        "pack": "details/7d-d66fd36713b95fd69b79510303778cef9680f0b7631c33861399a64b3f3179d9.json",
+        "pack_sha256": "d66fd36713b95fd69b79510303778cef9680f0b7631c33861399a64b3f3179d9",
         "status": "stale"
       }
     },
@@ -4822,7 +5028,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-14T16:53:57Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -4947,8 +5153,8 @@
       },
       "description_ref": {
         "sha256": "5908b9c2775ed1e8e2797d35d4bde2328fe6de7e41aa50fafa764a5dc9430d35",
-        "pack": "details/59-5eb7eba95e42597102bd8a4e7722b00f274b943bf9b0dede5349873294d44d0d.json",
-        "pack_sha256": "5eb7eba95e42597102bd8a4e7722b00f274b943bf9b0dede5349873294d44d0d",
+        "pack": "details/59-608abe5b73c6df9258b3b9e433b8ff4577eceb7cbc7eb44dcc42415a97f4bba9.json",
+        "pack_sha256": "608abe5b73c6df9258b3b9e433b8ff4577eceb7cbc7eb44dcc42415a97f4bba9",
         "status": "stale"
       }
     },
@@ -5013,8 +5219,8 @@
       },
       "description_ref": {
         "sha256": "e34066bff964b0d8c6814687bf6390b2cc0c430c163a1ac8ae5779e4e2379453",
-        "pack": "details/e3-002aa931cfa5c1fcea8189c3cc130da3e2d1399775736d2d1fa1ce383a14e8b2.json",
-        "pack_sha256": "002aa931cfa5c1fcea8189c3cc130da3e2d1399775736d2d1fa1ce383a14e8b2",
+        "pack": "details/e3-4d20b177559c8430ff4dceb57b81e688f8b4e98cf2c8a5774ba79144346d3e70.json",
+        "pack_sha256": "4d20b177559c8430ff4dceb57b81e688f8b4e98cf2c8a5774ba79144346d3e70",
         "status": "available"
       }
     },
@@ -5132,7 +5338,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-27T22:31:02Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5165,8 +5371,8 @@
       },
       "description_ref": {
         "sha256": "ea2da509631daa52f2e4b3bf2dc72a5c461e174575c6735c05c63192ddcc7960",
-        "pack": "details/ea-d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b.json",
-        "pack_sha256": "d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b",
+        "pack": "details/ea-9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7.json",
+        "pack_sha256": "9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7",
         "status": "stale"
       }
     },
@@ -5198,8 +5404,8 @@
       },
       "description_ref": {
         "sha256": "6617051f6f9368b697685de48755914ef2a99b6028d49185d844a6f7cde2561d",
-        "pack": "details/66-d27c46b80ad47c207fac4529eb83395f2917f0a23371c70015d95b28e9b1abaa.json",
-        "pack_sha256": "d27c46b80ad47c207fac4529eb83395f2917f0a23371c70015d95b28e9b1abaa",
+        "pack": "details/66-b9f71e758953e9d31965d9a8378d76cacf1b87a0bb3de0ab836aa0964ca99214.json",
+        "pack_sha256": "b9f71e758953e9d31965d9a8378d76cacf1b87a0bb3de0ab836aa0964ca99214",
         "status": "stale"
       }
     },
@@ -5416,7 +5622,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5535,7 +5741,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-01T21:24:06Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5680,8 +5886,8 @@
       },
       "description_ref": {
         "sha256": "2d11048f895f303de24b94a22fa226410458548e3533a605469816e3ac9ca616",
-        "pack": "details/2d-2ca758a9563d89e284c74e6c5b9b5e53204d3a1cfdec3de66128d00c65529556.json",
-        "pack_sha256": "2ca758a9563d89e284c74e6c5b9b5e53204d3a1cfdec3de66128d00c65529556",
+        "pack": "details/2d-caf9fbf8a8853030bd704f87249c1a31794b26d5ef4990e53f648f9621e2b9b6.json",
+        "pack_sha256": "caf9fbf8a8853030bd704f87249c1a31794b26d5ef4990e53f648f9621e2b9b6",
         "status": "stale"
       }
     },
@@ -5735,7 +5941,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5860,8 +6066,8 @@
       },
       "description_ref": {
         "sha256": "53fa648ef96ff9673cd2ae5d0a2010954d5c5465af8421a361aaeddbf7d328f1",
-        "pack": "details/53-59fcfbf52bcc9d3258f32372203cdfd67e700224a85a44c1294582ca988e73b5.json",
-        "pack_sha256": "59fcfbf52bcc9d3258f32372203cdfd67e700224a85a44c1294582ca988e73b5",
+        "pack": "details/53-dcc5f755ed22eb133cc87c1f1885a43a1f13417b95aaaef5ef0c7e2ac28b664b.json",
+        "pack_sha256": "dcc5f755ed22eb133cc87c1f1885a43a1f13417b95aaaef5ef0c7e2ac28b664b",
         "status": "stale"
       }
     },
@@ -5950,6 +6156,39 @@
         "status": "stale"
       }
     },
+    "35378980b3c69aa4": {
+      "id": "35378980b3c69aa4",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Computer Systems Intern - Linthicum MD",
+      "location": "United States-Maryland-Linthicum",
+      "locations": [
+        "United States-Maryland-Linthicum"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Maryland-Linthicum/XMLNAME-2027-Computer-Systems-Intern---Linthicum-MD_R10261959",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Computer-Systems-Intern---Linthicum-MD_R10261959",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "55a4e181ea4ae3a74db87f29767924b2a5aa9e6327581c20da45ae0e56295acf",
+        "pack": "details/55-ba786f599f7c22cd06a882fd573effd05224038e8534975ff90e2c98cfc374aa.json",
+        "pack_sha256": "ba786f599f7c22cd06a882fd573effd05224038e8534975ff90e2c98cfc374aa",
+        "status": "available"
+      }
+    },
     "3540dc14201a96f0": {
       "id": "3540dc14201a96f0",
       "company": "Palo Alto Networks",
@@ -5965,7 +6204,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -6123,8 +6362,8 @@
       },
       "description_ref": {
         "sha256": "c143ee819d45bb94ba598959b107f18d60a4d35b6fc0f1df92ad7fe1c7fcfb64",
-        "pack": "details/c1-6872d32322a42c42d00b60eaac51ec55c1719d9c5eef98c7076a1e3bb23d0fbf.json",
-        "pack_sha256": "6872d32322a42c42d00b60eaac51ec55c1719d9c5eef98c7076a1e3bb23d0fbf",
+        "pack": "details/c1-047089fe60c6c8ae7f8cdaec7d15a18286f89498b5fe1044964a4ff507d5270d.json",
+        "pack_sha256": "047089fe60c6c8ae7f8cdaec7d15a18286f89498b5fe1044964a4ff507d5270d",
         "status": "stale"
       }
     },
@@ -6222,8 +6461,8 @@
       },
       "description_ref": {
         "sha256": "094568cbf699c59813392d4b23d1e2e911ad47bd3119a26cac0c6e6714ebd365",
-        "pack": "details/09-869cdd5e326c745b76d9806d3c909c29a7f34218ba74d39a3688521c81a659d2.json",
-        "pack_sha256": "869cdd5e326c745b76d9806d3c909c29a7f34218ba74d39a3688521c81a659d2",
+        "pack": "details/09-27b6fa0e194e4c3dfb9120a45d0456d4db441ed4419682cc9e069e20b14bd610.json",
+        "pack_sha256": "27b6fa0e194e4c3dfb9120a45d0456d4db441ed4419682cc9e069e20b14bd610",
         "status": "available"
       }
     },
@@ -6419,8 +6658,8 @@
       },
       "description_ref": {
         "sha256": "2d11048f895f303de24b94a22fa226410458548e3533a605469816e3ac9ca616",
-        "pack": "details/2d-2ca758a9563d89e284c74e6c5b9b5e53204d3a1cfdec3de66128d00c65529556.json",
-        "pack_sha256": "2ca758a9563d89e284c74e6c5b9b5e53204d3a1cfdec3de66128d00c65529556",
+        "pack": "details/2d-caf9fbf8a8853030bd704f87249c1a31794b26d5ef4990e53f648f9621e2b9b6.json",
+        "pack_sha256": "caf9fbf8a8853030bd704f87249c1a31794b26d5ef4990e53f648f9621e2b9b6",
         "status": "stale"
       }
     },
@@ -6452,8 +6691,8 @@
       },
       "description_ref": {
         "sha256": "8e7af902bcb808585f46a4740fc5ca2bb9d8415fcd205abf5a96e3cb9019a863",
-        "pack": "details/8e-dba8126bc8cdb76c2c8c01f382ef3160374e54889309ddd0c7d875a6417bc80c.json",
-        "pack_sha256": "dba8126bc8cdb76c2c8c01f382ef3160374e54889309ddd0c7d875a6417bc80c",
+        "pack": "details/8e-ee0107f8354943c614ddcbbbf5bec4a38385131b9a52b3c96f57af36e99fc075.json",
+        "pack_sha256": "ee0107f8354943c614ddcbbbf5bec4a38385131b9a52b3c96f57af36e99fc075",
         "status": "available"
       }
     },
@@ -6485,8 +6724,8 @@
       },
       "description_ref": {
         "sha256": "adb88e31de4403aeaa9473ee6399f9d982ff9ea7ca89296765dfe66f5cadd1e2",
-        "pack": "details/ad-c771d0641b123d60bfd49156c03e9db1254dd908104a6df2dc83422d74d9728b.json",
-        "pack_sha256": "c771d0641b123d60bfd49156c03e9db1254dd908104a6df2dc83422d74d9728b",
+        "pack": "details/ad-c289e6fa586f03d975a3a6e6b4cd6a967dc5076e1eeddf027e1aec15df167129.json",
+        "pack_sha256": "c289e6fa586f03d975a3a6e6b4cd6a967dc5076e1eeddf027e1aec15df167129",
         "status": "stale"
       }
     },
@@ -6609,6 +6848,39 @@
       "closed_at": null,
       "description_status": "unavailable"
     },
+    "3bc94b6726c5f857": {
+      "id": "3bc94b6726c5f857",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Configuration Management Data Analyst Intern - Falls Church VA",
+      "location": "United States-Virginia-Falls Church",
+      "locations": [
+        "United States-Virginia-Falls Church"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Virginia-Falls-Church/XMLNAME-2027-Configuration-Management-Data-Analyst-Intern---Falls-Church-VA_R10262117",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Configuration-Management-Data-Analyst-Intern---Falls-Church-VA_R10262117",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "c5141ebb715049511c56d94465e1ba1b8d398b339f6a8f51cd6e254e487543d5",
+        "pack": "details/c5-583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3.json",
+        "pack_sha256": "583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3",
+        "status": "available"
+      }
+    },
     "3beda1ad3b60103f": {
       "id": "3beda1ad3b60103f",
       "company": "Sierra Nevada Corporation",
@@ -6723,8 +6995,8 @@
       },
       "description_ref": {
         "sha256": "3e7b2bd5771d3591568903dc546b73ed7b483a4767f4e929c025da054c366ef2",
-        "pack": "details/3e-2cd5ddc292d992e9818a3b500ac93d3c65817a19c0bcb17a94e144e795f8bf95.json",
-        "pack_sha256": "2cd5ddc292d992e9818a3b500ac93d3c65817a19c0bcb17a94e144e795f8bf95",
+        "pack": "details/3e-62a4922e0eb1b945d13902673587f0fdccd7b706725be626aed7b481629e43a7.json",
+        "pack_sha256": "62a4922e0eb1b945d13902673587f0fdccd7b706725be626aed7b481629e43a7",
         "status": "stale"
       }
     },
@@ -6841,8 +7113,8 @@
       },
       "description_ref": {
         "sha256": "ef8212007336cb670246412bb866431f4aae7939a4ab978092773a6978497a4b",
-        "pack": "details/ef-072b34a61a63137e960ab5652e76add35450361c3fbdfbb1690fd9cc6a9cfb2c.json",
-        "pack_sha256": "072b34a61a63137e960ab5652e76add35450361c3fbdfbb1690fd9cc6a9cfb2c",
+        "pack": "details/ef-c61b91dc1a8818e9c4bd4b65c22f7acf8e10d3cc96753ef633c52a5695194c81.json",
+        "pack_sha256": "c61b91dc1a8818e9c4bd4b65c22f7acf8e10d3cc96753ef633c52a5695194c81",
         "status": "stale"
       }
     },
@@ -6957,8 +7229,8 @@
       },
       "description_ref": {
         "sha256": "5ded4a75ae5c03f5cdcdc57e75190985fbdca2e86876d2c05d6e147a2f9073c0",
-        "pack": "details/5d-5c88b849600f09ede7c365c9b392df12554877306c25b70f3156d7d3adb1c0b2.json",
-        "pack_sha256": "5c88b849600f09ede7c365c9b392df12554877306c25b70f3156d7d3adb1c0b2",
+        "pack": "details/5d-09b49a658c9d9c35ccf2788d39a4b6f04f09702ec1200190c9aad28f5d7e3d3a.json",
+        "pack_sha256": "09b49a658c9d9c35ccf2788d39a4b6f04f09702ec1200190c9aad28f5d7e3d3a",
         "status": "available"
       }
     },
@@ -6990,8 +7262,8 @@
       },
       "description_ref": {
         "sha256": "09ecacdeaa7377a374bd5848568ce3b8f67c86d6545ce25adeb27fc6b2809270",
-        "pack": "details/09-869cdd5e326c745b76d9806d3c909c29a7f34218ba74d39a3688521c81a659d2.json",
-        "pack_sha256": "869cdd5e326c745b76d9806d3c909c29a7f34218ba74d39a3688521c81a659d2",
+        "pack": "details/09-27b6fa0e194e4c3dfb9120a45d0456d4db441ed4419682cc9e069e20b14bd610.json",
+        "pack_sha256": "27b6fa0e194e4c3dfb9120a45d0456d4db441ed4419682cc9e069e20b14bd610",
         "status": "available"
       }
     },
@@ -7057,8 +7329,8 @@
       },
       "description_ref": {
         "sha256": "84afd6e7c369707ed8d4f3d3f880521edab544f340bcbed91a1ca773b32e0de2",
-        "pack": "details/84-8bf241f871b39cdc931bec640d86fa6494830baef7eabd4598bd0b4dbfe828bc.json",
-        "pack_sha256": "8bf241f871b39cdc931bec640d86fa6494830baef7eabd4598bd0b4dbfe828bc",
+        "pack": "details/84-6c36cad5484f40b704de848c21aadff6710bfb1ed35b052e0c0a7e200ce533fb.json",
+        "pack_sha256": "6c36cad5484f40b704de848c21aadff6710bfb1ed35b052e0c0a7e200ce533fb",
         "status": "available"
       }
     },
@@ -7090,8 +7362,8 @@
       },
       "description_ref": {
         "sha256": "10bd135c7809cc953010cf7e3320305c2422a4722d9b424cfdc826c2f4d68422",
-        "pack": "details/10-f0118bd2d088bec0e05a8578ffe28233831c3a736ae1b8ddab6352e98c35486e.json",
-        "pack_sha256": "f0118bd2d088bec0e05a8578ffe28233831c3a736ae1b8ddab6352e98c35486e",
+        "pack": "details/10-e6e9dea2237a9e4740302c62c195b6eb6fcd292b0e7f6e721c9aff94d7f5f42b.json",
+        "pack_sha256": "e6e9dea2237a9e4740302c62c195b6eb6fcd292b0e7f6e721c9aff94d7f5f42b",
         "status": "available"
       }
     },
@@ -7175,8 +7447,8 @@
       },
       "description_ref": {
         "sha256": "72f903b8f9a2d7a016f055ecca7ab32bf39ff1e2566cbb96a2d5f76848351e27",
-        "pack": "details/72-99dfd3866a80f3fb5d9e27ccde3e4a16d2cce35b347ade08c381ecbbe370ef9e.json",
-        "pack_sha256": "99dfd3866a80f3fb5d9e27ccde3e4a16d2cce35b347ade08c381ecbbe370ef9e",
+        "pack": "details/72-3de2527051dedec346eba9141ba39e754d7aee03c73bc8ebe9b2ef5152a7888b.json",
+        "pack_sha256": "3de2527051dedec346eba9141ba39e754d7aee03c73bc8ebe9b2ef5152a7888b",
         "status": "available"
       }
     },
@@ -7327,7 +7599,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-15T23:12:44Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -7409,6 +7681,39 @@
         "sha256": "77105188fefd220776adabc47f64e7cb3239ddd1f8ae2ee1b234442b1816e02f",
         "pack": "details/77-b33deeca9c0815b3a09907c7c94ba0eb26dcc1c6301d276203f41f11c63432cd.json",
         "pack_sha256": "b33deeca9c0815b3a09907c7c94ba0eb26dcc1c6301d276203f41f11c63432cd",
+        "status": "available"
+      }
+    },
+    "4341fb344e9d02df": {
+      "id": "4341fb344e9d02df",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 AI/ML Engineering Intern - Morrisville NC",
+      "location": "United States-North Carolina-Morrisville",
+      "locations": [
+        "United States-North Carolina-Morrisville"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-North-Carolina-Morrisville/XMLNAME-2027-AI-ML-Engineering-Intern---Morrisville-NC_R10261585-1",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-AI-ML-Engineering-Intern---Morrisville-NC_R10261585-1",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "643b96f09110d478bc577a2d78093a2fa68436c29377728344f847fdacd7e3c8",
+        "pack": "details/64-188e7575b3d10aed1f5e43afc1f28b96e3a910be34862ddc6b794ea7b3f8bc68.json",
+        "pack_sha256": "188e7575b3d10aed1f5e43afc1f28b96e3a910be34862ddc6b794ea7b3f8bc68",
         "status": "available"
       }
     },
@@ -7506,8 +7811,8 @@
       },
       "description_ref": {
         "sha256": "d20413db8a06603dcf7a28950dec208885d03b004b656fbb96a1acf39daff574",
-        "pack": "details/d2-ec0174ef19346af41fccf000cfe0d1fdb17e09d18dae1986cd94315a5d0f82dd.json",
-        "pack_sha256": "ec0174ef19346af41fccf000cfe0d1fdb17e09d18dae1986cd94315a5d0f82dd",
+        "pack": "details/d2-49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7.json",
+        "pack_sha256": "49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7",
         "status": "available"
       }
     },
@@ -7678,6 +7983,25 @@
         "status": "stale"
       }
     },
+    "45d2dbb6a9f0111c": {
+      "id": "45d2dbb6a9f0111c",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Human Resources Intern - Linthicum MD",
+      "location": "United States-Maryland-Linthicum",
+      "locations": [
+        "United States-Maryland-Linthicum"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Maryland-Linthicum/XMLNAME-2027-Human-Resources-Intern---Linthicum-MD_R10262072",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Human-Resources-Intern---Linthicum-MD_R10262072",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable"
+    },
     "460617d1c504a9b5": {
       "id": "460617d1c504a9b5",
       "company": "Walmart",
@@ -7740,8 +8064,8 @@
       },
       "description_ref": {
         "sha256": "4969749d4741b33e2744cc45505674d031a8d487fffbbf9abae14b7071c28f41",
-        "pack": "details/49-c9980bec37288daa324f01a6c9ead0761fd3a2e159281049615e937f937c538a.json",
-        "pack_sha256": "c9980bec37288daa324f01a6c9ead0761fd3a2e159281049615e937f937c538a",
+        "pack": "details/49-648aad7b8672d0a0a2e80e5364a6a11e169b27fdfc159cb7d004fd650cee0353.json",
+        "pack_sha256": "648aad7b8672d0a0a2e80e5364a6a11e169b27fdfc159cb7d004fd650cee0353",
         "status": "available"
       }
     },
@@ -7928,7 +8252,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -8104,7 +8428,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -8338,7 +8662,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-30T01:16:42Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -8511,8 +8835,8 @@
       },
       "description_ref": {
         "sha256": "21442c87471d10c55b7152d6ed34458b6d9f255e09d334b52b758906a0f3d2e7",
-        "pack": "details/21-71a02c539524086aba1cb5b9521906bd4da27fecca297f833ec8cc91582114e1.json",
-        "pack_sha256": "71a02c539524086aba1cb5b9521906bd4da27fecca297f833ec8cc91582114e1",
+        "pack": "details/21-f1c7b25998ad751e27a218af77ea24bd318376ca81a1527b6b445cfa6bcbc7ef.json",
+        "pack_sha256": "f1c7b25998ad751e27a218af77ea24bd318376ca81a1527b6b445cfa6bcbc7ef",
         "status": "available"
       }
     },
@@ -8605,7 +8929,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -8745,8 +9069,8 @@
       },
       "description_ref": {
         "sha256": "e182aa8129826c3a7939ab26afa21af8a44871d39fe5d00b599f1b296f7718ad",
-        "pack": "details/e1-65f33568e624b867c34bcebbd73859e7a61db3d37b8ae909969efc97bd95ce7e.json",
-        "pack_sha256": "65f33568e624b867c34bcebbd73859e7a61db3d37b8ae909969efc97bd95ce7e",
+        "pack": "details/e1-ae7f8b33b25365516d83bd4fe1314e1e6f62d9a74c4e28c903fe11df3fbf0909.json",
+        "pack_sha256": "ae7f8b33b25365516d83bd4fe1314e1e6f62d9a74c4e28c903fe11df3fbf0909",
         "status": "available"
       }
     },
@@ -9048,7 +9372,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-27T22:31:02Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -9270,8 +9594,8 @@
       },
       "description_ref": {
         "sha256": "14548563a5871eca34feeb489d4b423937aad7c0d0381f72ff995bc4305186b1",
-        "pack": "details/14-fdbbc3aa7dc9ba2f8fbcdbee49738fe2ec82769f3b4ff0da7ee465a4b0bf892f.json",
-        "pack_sha256": "fdbbc3aa7dc9ba2f8fbcdbee49738fe2ec82769f3b4ff0da7ee465a4b0bf892f",
+        "pack": "details/14-6aaad2279840e71d2d5d19b9bd1b809ac34ae02e9ed3231643197bb3d0a9a849.json",
+        "pack_sha256": "6aaad2279840e71d2d5d19b9bd1b809ac34ae02e9ed3231643197bb3d0a9a849",
         "status": "stale"
       }
     },
@@ -9426,8 +9750,8 @@
       },
       "description_ref": {
         "sha256": "21af5cfe216e2ea7086abe4957a53921dad484273b3d3f5c75aeb0d496fa65bd",
-        "pack": "details/21-71a02c539524086aba1cb5b9521906bd4da27fecca297f833ec8cc91582114e1.json",
-        "pack_sha256": "71a02c539524086aba1cb5b9521906bd4da27fecca297f833ec8cc91582114e1",
+        "pack": "details/21-f1c7b25998ad751e27a218af77ea24bd318376ca81a1527b6b445cfa6bcbc7ef.json",
+        "pack_sha256": "f1c7b25998ad751e27a218af77ea24bd318376ca81a1527b6b445cfa6bcbc7ef",
         "status": "available"
       }
     },
@@ -9512,7 +9836,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -9808,8 +10132,8 @@
       },
       "description_ref": {
         "sha256": "13904ca24edfc49e3376ca23e4f06bc115fdedf902d71822223498c063b9068c",
-        "pack": "details/13-44b083c01b38e19855f9878e55019ede7a65acdd755839b6749dd70bc84e7ae2.json",
-        "pack_sha256": "44b083c01b38e19855f9878e55019ede7a65acdd755839b6749dd70bc84e7ae2",
+        "pack": "details/13-6fd7252e7162bc676301b3c97e87eea552c67f99fa51b893e3c19f1d243d3877.json",
+        "pack_sha256": "6fd7252e7162bc676301b3c97e87eea552c67f99fa51b893e3c19f1d243d3877",
         "status": "available"
       }
     },
@@ -9828,7 +10152,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -10066,8 +10390,8 @@
       },
       "description_ref": {
         "sha256": "7ddbc0d3dae674a31c61fedd1331f3b761a04f34f11672d961d1313ff0b37996",
-        "pack": "details/7d-df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde.json",
-        "pack_sha256": "df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde",
+        "pack": "details/7d-d66fd36713b95fd69b79510303778cef9680f0b7631c33861399a64b3f3179d9.json",
+        "pack_sha256": "d66fd36713b95fd69b79510303778cef9680f0b7631c33861399a64b3f3179d9",
         "status": "available"
       }
     },
@@ -10185,7 +10509,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-12T23:01:00Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -10304,7 +10628,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-27T22:31:02Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -10340,6 +10664,40 @@
         "pack": "details/03-e228e8425cea16dee87c8e1036625977a3cb7e9f6244a3aa4d9732b64b231448.json",
         "pack_sha256": "e228e8425cea16dee87c8e1036625977a3cb7e9f6244a3aa4d9732b64b231448",
         "status": "stale"
+      }
+    },
+    "5b2dd81a95342040": {
+      "id": "5b2dd81a95342040",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Industrial Engineering Internship - Baltimore MD",
+      "location": "United States-Maryland-Baltimore",
+      "locations": [
+        "United States-Maryland-Baltimore"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Maryland-Baltimore/XMLNAME-2027-Industrial-Engineering-Internship---Baltimore-MD_R10262103",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Industrial-Engineering-Internship---Baltimore-MD_R10262103",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Maryland-Baltimore/XMLNAME-2027-Industrial-Engineering-Internship---Baltimore-MD_R10262103"
+        }
+      },
+      "description_ref": {
+        "sha256": "acbaa63f9f3147893fbbddb7916167e8e1d8bdd8f42564c29c30bb2fcc8a1569",
+        "pack": "details/ac-5a54fdfe6bffbc12800f6eb4c117de81a117405212de425e75eff3473ec20d85.json",
+        "pack_sha256": "5a54fdfe6bffbc12800f6eb4c117de81a117405212de425e75eff3473ec20d85",
+        "status": "available"
       }
     },
     "5b623037a8f0ee8c": {
@@ -10403,8 +10761,8 @@
       },
       "description_ref": {
         "sha256": "d2ce6b5321798624406f0b54133341d0434a8d0fc22d6419ace3ad36f42c76f0",
-        "pack": "details/d2-ec0174ef19346af41fccf000cfe0d1fdb17e09d18dae1986cd94315a5d0f82dd.json",
-        "pack_sha256": "ec0174ef19346af41fccf000cfe0d1fdb17e09d18dae1986cd94315a5d0f82dd",
+        "pack": "details/d2-49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7.json",
+        "pack_sha256": "49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7",
         "status": "available"
       }
     },
@@ -10456,7 +10814,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-21T22:47:02Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -10489,8 +10847,8 @@
       },
       "description_ref": {
         "sha256": "5596b44252d16d9861388301c93f650e63aad0b644efa5ce452d5b46b9ebe1bc",
-        "pack": "details/55-39a17115a828ca405a0bba9681ebb7da731854c5674456053e9a26d2f04808a8.json",
-        "pack_sha256": "39a17115a828ca405a0bba9681ebb7da731854c5674456053e9a26d2f04808a8",
+        "pack": "details/55-ba786f599f7c22cd06a882fd573effd05224038e8534975ff90e2c98cfc374aa.json",
+        "pack_sha256": "ba786f599f7c22cd06a882fd573effd05224038e8534975ff90e2c98cfc374aa",
         "status": "stale"
       }
     },
@@ -10736,8 +11094,8 @@
       },
       "description_ref": {
         "sha256": "13b33fdaf4abbae29d8f29aed50b07006c85960b37bca453779d2f7d55985b54",
-        "pack": "details/13-44b083c01b38e19855f9878e55019ede7a65acdd755839b6749dd70bc84e7ae2.json",
-        "pack_sha256": "44b083c01b38e19855f9878e55019ede7a65acdd755839b6749dd70bc84e7ae2",
+        "pack": "details/13-6fd7252e7162bc676301b3c97e87eea552c67f99fa51b893e3c19f1d243d3877.json",
+        "pack_sha256": "6fd7252e7162bc676301b3c97e87eea552c67f99fa51b893e3c19f1d243d3877",
         "status": "stale"
       }
     },
@@ -10818,8 +11176,8 @@
       },
       "description_ref": {
         "sha256": "eab54b56e4468ba15a307a4bd031fbc9fcbb534f01872a2f3c9b0da0c31d68bf",
-        "pack": "details/ea-d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b.json",
-        "pack_sha256": "d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b",
+        "pack": "details/ea-9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7.json",
+        "pack_sha256": "9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7",
         "status": "stale"
       }
     },
@@ -10838,7 +11196,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-21T22:47:02Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11035,8 +11393,8 @@
       },
       "description_ref": {
         "sha256": "720cc1696b00db4964766b5d88e381a97b8834f4a8708440f8620faea9a53efb",
-        "pack": "details/72-99dfd3866a80f3fb5d9e27ccde3e4a16d2cce35b347ade08c381ecbbe370ef9e.json",
-        "pack_sha256": "99dfd3866a80f3fb5d9e27ccde3e4a16d2cce35b347ade08c381ecbbe370ef9e",
+        "pack": "details/72-3de2527051dedec346eba9141ba39e754d7aee03c73bc8ebe9b2ef5152a7888b.json",
+        "pack_sha256": "3de2527051dedec346eba9141ba39e754d7aee03c73bc8ebe9b2ef5152a7888b",
         "status": "stale"
       }
     },
@@ -11055,7 +11413,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-20T21:24:59Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11121,8 +11479,8 @@
       },
       "description_ref": {
         "sha256": "c5a1844f6448e03142161dc51c8f9d224214ad791d1b8d6949af5e470bf677da",
-        "pack": "details/c5-66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc.json",
-        "pack_sha256": "66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc",
+        "pack": "details/c5-583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3.json",
+        "pack_sha256": "583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3",
         "status": "available"
       }
     },
@@ -11194,7 +11552,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-03T01:49:10Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11313,7 +11671,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11365,7 +11723,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-29T22:52:53Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11552,7 +11910,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-13T10:58:02Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11684,8 +12042,8 @@
       },
       "description_ref": {
         "sha256": "a6226da5ccfaef29fd21992f21f5bc2cf8b124f8c7e28f8d52cd3b6ad522d3b0",
-        "pack": "details/a6-88d1691d8e4bdbae471b464549595d2e43a7f57e34837de9eda71834079a5ecc.json",
-        "pack_sha256": "88d1691d8e4bdbae471b464549595d2e43a7f57e34837de9eda71834079a5ecc",
+        "pack": "details/a6-4be19007452eabb1bce6372b114d51ad9a6f027e73b370e8255daa4234487358.json",
+        "pack_sha256": "4be19007452eabb1bce6372b114d51ad9a6f027e73b370e8255daa4234487358",
         "status": "stale"
       }
     },
@@ -11751,10 +12109,29 @@
       },
       "description_ref": {
         "sha256": "c1831d1b4f490fed8e9e80886b10821cc67860d901957cea684a41c77b1ac21b",
-        "pack": "details/c1-6872d32322a42c42d00b60eaac51ec55c1719d9c5eef98c7076a1e3bb23d0fbf.json",
-        "pack_sha256": "6872d32322a42c42d00b60eaac51ec55c1719d9c5eef98c7076a1e3bb23d0fbf",
+        "pack": "details/c1-047089fe60c6c8ae7f8cdaec7d15a18286f89498b5fe1044964a4ff507d5270d.json",
+        "pack_sha256": "047089fe60c6c8ae7f8cdaec7d15a18286f89498b5fe1044964a4ff507d5270d",
         "status": "available"
       }
+    },
+    "661a31913e3a6d49": {
+      "id": "661a31913e3a6d49",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Electrical Engineer Intern - Gilbert AZ",
+      "location": "United States-Arizona-Gilbert",
+      "locations": [
+        "United States-Arizona-Gilbert"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Arizona-Gilbert/XMLNAME-2027-Electrical-Engineer-Intern---Gilbert-AZ_R10262079",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Electrical-Engineer-Intern---Gilbert-AZ_R10262079",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable"
     },
     "6626f1cf24532ba8": {
       "id": "6626f1cf24532ba8",
@@ -11864,7 +12241,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -12015,7 +12392,7 @@
         "sha256": "3ceac8573161571e63d212bbecade7b3639f4aabc2c00b48f098a9cd1d3035e8",
         "pack": "details/3c-7ce62dae980d11065424b5412152596fc620d5e16968aca7c76d5db16a2c3f90.json",
         "pack_sha256": "7ce62dae980d11065424b5412152596fc620d5e16968aca7c76d5db16a2c3f90",
-        "status": "available"
+        "status": "stale"
       }
     },
     "681955bf1d8a2449": {
@@ -12087,8 +12464,8 @@
       },
       "description_ref": {
         "sha256": "66d454d5b0f35f20607e5b95eac1e9dd6c4cda9b2fccfcf9a8025a1f17d182fa",
-        "pack": "details/66-d27c46b80ad47c207fac4529eb83395f2917f0a23371c70015d95b28e9b1abaa.json",
-        "pack_sha256": "d27c46b80ad47c207fac4529eb83395f2917f0a23371c70015d95b28e9b1abaa",
+        "pack": "details/66-b9f71e758953e9d31965d9a8378d76cacf1b87a0bb3de0ab836aa0964ca99214.json",
+        "pack_sha256": "b9f71e758953e9d31965d9a8378d76cacf1b87a0bb3de0ab836aa0964ca99214",
         "status": "stale"
       }
     },
@@ -12207,7 +12584,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-26T17:33:30Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -12246,8 +12623,8 @@
       },
       "description_ref": {
         "sha256": "61136cb16efdad62d69aebb44a09cc0ca1cf39d87626c180d55d1b9f71d6a68b",
-        "pack": "details/61-9afbe85e3bbb17302ec23188d853d1123a96837f892fa903025349b05d126b02.json",
-        "pack_sha256": "9afbe85e3bbb17302ec23188d853d1123a96837f892fa903025349b05d126b02",
+        "pack": "details/61-6bf6a3aee404de3625cbb629c2ad05415cf8acf473a5d369faefd35291f5f4c8.json",
+        "pack_sha256": "6bf6a3aee404de3625cbb629c2ad05415cf8acf473a5d369faefd35291f5f4c8",
         "status": "stale"
       }
     },
@@ -12402,7 +12779,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-21T18:57:41Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -12468,8 +12845,8 @@
       },
       "description_ref": {
         "sha256": "f5dece5028cac479b37605570b22f7b4d379c3772c246559c9dc07478a94ec12",
-        "pack": "details/f5-0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e.json",
-        "pack_sha256": "0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e",
+        "pack": "details/f5-ca3669ac3d374811397aa1f0341e67be0351d8959e95cdd8acd8f2fefd2f6d46.json",
+        "pack_sha256": "ca3669ac3d374811397aa1f0341e67be0351d8959e95cdd8acd8f2fefd2f6d46",
         "status": "stale"
       }
     },
@@ -12960,8 +13337,8 @@
       },
       "description_ref": {
         "sha256": "9a89bf68178b24a282e2dff92797eb985063b2114b923fe8d5faf6854fc10ae2",
-        "pack": "details/9a-acea961f48a8c320177fb00c89613508bbb1e09a2817b1f6cb0ff9d6214147c8.json",
-        "pack_sha256": "acea961f48a8c320177fb00c89613508bbb1e09a2817b1f6cb0ff9d6214147c8",
+        "pack": "details/9a-9a4249314db34c3650f5754e8ba7d03cfaa5c61be291616f2c67ebf1a8ddcae2.json",
+        "pack_sha256": "9a4249314db34c3650f5754e8ba7d03cfaa5c61be291616f2c67ebf1a8ddcae2",
         "status": "available"
       }
     },
@@ -12993,8 +13370,8 @@
       },
       "description_ref": {
         "sha256": "7ed76f273a07b5e55e55b89f1b99ad620322055d49cc6e517c6237576e1bcb89",
-        "pack": "details/7e-bc83e389854a0c73b6cdb1a4c50b55125f4a0c0f1260c679c4b8cd8dc937d97c.json",
-        "pack_sha256": "bc83e389854a0c73b6cdb1a4c50b55125f4a0c0f1260c679c4b8cd8dc937d97c",
+        "pack": "details/7e-621f9ed776e711048688d5b71e3ed11ac39b3c6c655d0706abca7544472645c2.json",
+        "pack_sha256": "621f9ed776e711048688d5b71e3ed11ac39b3c6c655d0706abca7544472645c2",
         "status": "available"
       }
     },
@@ -13141,7 +13518,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-21T15:38:36Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -13179,8 +13556,8 @@
       },
       "description_ref": {
         "sha256": "efe44e16c2917d32c517c7b24d3f1433f8ff99f054e9a133a2e2c470c785d0b8",
-        "pack": "details/ef-072b34a61a63137e960ab5652e76add35450361c3fbdfbb1690fd9cc6a9cfb2c.json",
-        "pack_sha256": "072b34a61a63137e960ab5652e76add35450361c3fbdfbb1690fd9cc6a9cfb2c",
+        "pack": "details/ef-c61b91dc1a8818e9c4bd4b65c22f7acf8e10d3cc96753ef633c52a5695194c81.json",
+        "pack_sha256": "c61b91dc1a8818e9c4bd4b65c22f7acf8e10d3cc96753ef633c52a5695194c81",
         "status": "available"
       }
     },
@@ -13496,8 +13873,8 @@
       },
       "description_ref": {
         "sha256": "570e7abe2e083b22a50723990e7d216b066c04162b21438787a97595a325f319",
-        "pack": "details/57-e7077f3d6ac3477aa65e4e3f4381ae567dff6a439a299d0dcc2b94ec45bc14e9.json",
-        "pack_sha256": "e7077f3d6ac3477aa65e4e3f4381ae567dff6a439a299d0dcc2b94ec45bc14e9",
+        "pack": "details/57-7647614dd9aa644f01c39a7d1f8a297e65b20a07270865005b6e5a192f9d8a57.json",
+        "pack_sha256": "7647614dd9aa644f01c39a7d1f8a297e65b20a07270865005b6e5a192f9d8a57",
         "status": "stale"
       }
     },
@@ -13665,7 +14042,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-17T21:47:37Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -13810,8 +14187,8 @@
       },
       "description_ref": {
         "sha256": "4e19170eb0fe8cfc2b900f0dccb5e116333edfa183409d1962171d2bb548cc6a",
-        "pack": "details/4e-5f02cdaed3e2251682e684407cba12061bf9b979c2d4f7c9670079de1b303b7b.json",
-        "pack_sha256": "5f02cdaed3e2251682e684407cba12061bf9b979c2d4f7c9670079de1b303b7b",
+        "pack": "details/4e-8db1ccc95ae98c7e9eefe8cd59ed34f85b6e73d809f456ed031fed1d3a14293a.json",
+        "pack_sha256": "8db1ccc95ae98c7e9eefe8cd59ed34f85b6e73d809f456ed031fed1d3a14293a",
         "status": "available"
       }
     },
@@ -13863,7 +14240,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -14277,8 +14654,8 @@
       },
       "description_ref": {
         "sha256": "c5eb4623f61927e6e1d81722c150039590d20a9b73416c76f1a064086056a750",
-        "pack": "details/c5-66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc.json",
-        "pack_sha256": "66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc",
+        "pack": "details/c5-583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3.json",
+        "pack_sha256": "583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3",
         "status": "stale"
       }
     },
@@ -14318,8 +14695,8 @@
       },
       "description_ref": {
         "sha256": "ea38119f3e0b06854acf29aa7c15fcfcd9b2a724b0c360e1043a1ec111624d9c",
-        "pack": "details/ea-d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b.json",
-        "pack_sha256": "d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b",
+        "pack": "details/ea-9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7.json",
+        "pack_sha256": "9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7",
         "status": "stale"
       }
     },
@@ -14351,8 +14728,8 @@
       },
       "description_ref": {
         "sha256": "c56eee7e89e815c6ffd06ff16bcacae11ad062653e3a0e2657a158052c213438",
-        "pack": "details/c5-66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc.json",
-        "pack_sha256": "66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc",
+        "pack": "details/c5-583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3.json",
+        "pack_sha256": "583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3",
         "status": "stale"
       }
     },
@@ -14574,8 +14951,8 @@
       },
       "description_ref": {
         "sha256": "0d31aef2a8c833b11027952d26551527f2727966d3c2a38834c0dedd04a0fff6",
-        "pack": "details/0d-93919056611f72c20fff04ebe24c16648991ea5ff1ad332076bf235084fbf16d.json",
-        "pack_sha256": "93919056611f72c20fff04ebe24c16648991ea5ff1ad332076bf235084fbf16d",
+        "pack": "details/0d-8885f4ec9ade217951b6ea98d35cebf251a84473a4a1aa5ccff17ddb752b038a.json",
+        "pack_sha256": "8885f4ec9ade217951b6ea98d35cebf251a84473a4a1aa5ccff17ddb752b038a",
         "status": "stale"
       }
     },
@@ -14641,8 +15018,8 @@
       },
       "description_ref": {
         "sha256": "d2c12d9a4d77b00d1810b706dd4f7710c4da1025b1409550805a56c620e7c46c",
-        "pack": "details/d2-ec0174ef19346af41fccf000cfe0d1fdb17e09d18dae1986cd94315a5d0f82dd.json",
-        "pack_sha256": "ec0174ef19346af41fccf000cfe0d1fdb17e09d18dae1986cd94315a5d0f82dd",
+        "pack": "details/d2-49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7.json",
+        "pack_sha256": "49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7",
         "status": "stale"
       }
     },
@@ -14674,8 +15051,8 @@
       },
       "description_ref": {
         "sha256": "72826aa9bb90a6b1d572144a619e0b6f136b2a7570aa61329b293f9bd7fd56df",
-        "pack": "details/72-99dfd3866a80f3fb5d9e27ccde3e4a16d2cce35b347ade08c381ecbbe370ef9e.json",
-        "pack_sha256": "99dfd3866a80f3fb5d9e27ccde3e4a16d2cce35b347ade08c381ecbbe370ef9e",
+        "pack": "details/72-3de2527051dedec346eba9141ba39e754d7aee03c73bc8ebe9b2ef5152a7888b.json",
+        "pack_sha256": "3de2527051dedec346eba9141ba39e754d7aee03c73bc8ebe9b2ef5152a7888b",
         "status": "available"
       }
     },
@@ -14694,7 +15071,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -14792,8 +15169,8 @@
       },
       "description_ref": {
         "sha256": "7e393b9fe13d52bc8107c53f2ad3e93abe0c37eed66d72091adf458a76cab649",
-        "pack": "details/7e-bc83e389854a0c73b6cdb1a4c50b55125f4a0c0f1260c679c4b8cd8dc937d97c.json",
-        "pack_sha256": "bc83e389854a0c73b6cdb1a4c50b55125f4a0c0f1260c679c4b8cd8dc937d97c",
+        "pack": "details/7e-621f9ed776e711048688d5b71e3ed11ac39b3c6c655d0706abca7544472645c2.json",
+        "pack_sha256": "621f9ed776e711048688d5b71e3ed11ac39b3c6c655d0706abca7544472645c2",
         "status": "available"
       }
     },
@@ -14977,7 +15354,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-03T01:28:33Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -15215,8 +15592,8 @@
       },
       "description_ref": {
         "sha256": "acf3c5d4157442ab3dbe43b34bd98dcf82d3a8e7b04b35fcefd090b9cd51ac6c",
-        "pack": "details/ac-e23f124123de3f3662f41452c3d5c5008edf8855e9754b1993669e6bf0f09c2e.json",
-        "pack_sha256": "e23f124123de3f3662f41452c3d5c5008edf8855e9754b1993669e6bf0f09c2e",
+        "pack": "details/ac-5a54fdfe6bffbc12800f6eb4c117de81a117405212de425e75eff3473ec20d85.json",
+        "pack_sha256": "5a54fdfe6bffbc12800f6eb4c117de81a117405212de425e75eff3473ec20d85",
         "status": "stale"
       }
     },
@@ -15248,8 +15625,8 @@
       },
       "description_ref": {
         "sha256": "902c9e4ece53c01e4d39a063f4cee831525b5a48038730ab0a4315dd35993e28",
-        "pack": "details/90-a024dbd639aa5737cda036608a4ba4a3974c9d673bce3cc6a455e82305837837.json",
-        "pack_sha256": "a024dbd639aa5737cda036608a4ba4a3974c9d673bce3cc6a455e82305837837",
+        "pack": "details/90-aec024e11c05d9126472ba1d775d55215741c52aefaeb0eed6d5045412c778c2.json",
+        "pack_sha256": "aec024e11c05d9126472ba1d775d55215741c52aefaeb0eed6d5045412c778c2",
         "status": "available"
       }
     },
@@ -15631,8 +16008,41 @@
       },
       "description_ref": {
         "sha256": "9040c4e9d2602772ef59e85cb1771b1139259d303c37dc4e363e2f50a2dbb82b",
-        "pack": "details/90-a024dbd639aa5737cda036608a4ba4a3974c9d673bce3cc6a455e82305837837.json",
-        "pack_sha256": "a024dbd639aa5737cda036608a4ba4a3974c9d673bce3cc6a455e82305837837",
+        "pack": "details/90-aec024e11c05d9126472ba1d775d55215741c52aefaeb0eed6d5045412c778c2.json",
+        "pack_sha256": "aec024e11c05d9126472ba1d775d55215741c52aefaeb0eed6d5045412c778c2",
+        "status": "available"
+      }
+    },
+    "81f77994189f789b": {
+      "id": "81f77994189f789b",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Enterprise Productivity Solutions Intern - Falls Church VA",
+      "location": "United States-Virginia-Falls Church",
+      "locations": [
+        "United States-Virginia-Falls Church"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Virginia-Falls-Church/XMLNAME-2027-Enterprise-Productivity-Solutions-Intern---Falls-Church-VA_R10262125",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Enterprise-Productivity-Solutions-Intern---Falls-Church-VA_R10262125",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "e47912aded526394ac1c832324aa110efac5912b27bebf1147f69465f71004e1",
+        "pack": "details/e4-6954a8b03eddbfd0913b13c6b38aadd70fa024797a25434352220ee1631761d8.json",
+        "pack_sha256": "6954a8b03eddbfd0913b13c6b38aadd70fa024797a25434352220ee1631761d8",
         "status": "available"
       }
     },
@@ -15788,8 +16198,41 @@
       },
       "description_ref": {
         "sha256": "e0899e0388d3088092bba6e6ddf967ce162b483f4149fb37c849c48f31727e39",
-        "pack": "details/e0-9ad026242d7a88eaffbd387708f80a28b9726653c665cdf7a36dd39733b9704b.json",
-        "pack_sha256": "9ad026242d7a88eaffbd387708f80a28b9726653c665cdf7a36dd39733b9704b",
+        "pack": "details/e0-c77760c79b5378e6aa537f089ca76eeedfa804541fd6eb5d9ab6163b67398113.json",
+        "pack_sha256": "c77760c79b5378e6aa537f089ca76eeedfa804541fd6eb5d9ab6163b67398113",
+        "status": "available"
+      }
+    },
+    "84af080a4625ecfb": {
+      "id": "84af080a4625ecfb",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Financial Reporting Intern - McLean VA",
+      "location": "United States-Virginia-McLean",
+      "locations": [
+        "United States-Virginia-McLean"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Virginia-McLean/XMLNAME-2027-Financial-Reporting-Intern---McLean-VA_R10261891",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Financial-Reporting-Intern---McLean-VA_R10261891",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "9adcb10d5e5f1c6ce933d05fbf63fcd1d162c946118cf7e3016bb1de03232120",
+        "pack": "details/9a-9a4249314db34c3650f5754e8ba7d03cfaa5c61be291616f2c67ebf1a8ddcae2.json",
+        "pack_sha256": "9a4249314db34c3650f5754e8ba7d03cfaa5c61be291616f2c67ebf1a8ddcae2",
         "status": "available"
       }
     },
@@ -15808,7 +16251,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -15879,8 +16322,8 @@
       },
       "description_ref": {
         "sha256": "d1d86523afdfb9be8e4b454506975aaf5f6430c1fdacd57bae3df2c8f606746a",
-        "pack": "details/d1-192c8045f2aae39bc91c5bf0538a292efe218429af966329481063ea4b517e9e.json",
-        "pack_sha256": "192c8045f2aae39bc91c5bf0538a292efe218429af966329481063ea4b517e9e",
+        "pack": "details/d1-5f30b860d13afc4e1de1a107d8f9b64099ead37939edd7f1b7290b1edd4c1b36.json",
+        "pack_sha256": "5f30b860d13afc4e1de1a107d8f9b64099ead37939edd7f1b7290b1edd4c1b36",
         "status": "available"
       }
     },
@@ -15899,7 +16342,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -16063,8 +16506,8 @@
       },
       "description_ref": {
         "sha256": "0d632e170037ae98dfe82fb7e5ca715893cb541e61a1209e7bb0cc98d26bda72",
-        "pack": "details/0d-93919056611f72c20fff04ebe24c16648991ea5ff1ad332076bf235084fbf16d.json",
-        "pack_sha256": "93919056611f72c20fff04ebe24c16648991ea5ff1ad332076bf235084fbf16d",
+        "pack": "details/0d-8885f4ec9ade217951b6ea98d35cebf251a84473a4a1aa5ccff17ddb752b038a.json",
+        "pack_sha256": "8885f4ec9ade217951b6ea98d35cebf251a84473a4a1aa5ccff17ddb752b038a",
         "status": "stale"
       }
     },
@@ -16228,8 +16671,8 @@
       },
       "description_ref": {
         "sha256": "ea137c9429f1d6f502ce816920f50207885927769d290820934476e96864268a",
-        "pack": "details/ea-d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b.json",
-        "pack_sha256": "d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b",
+        "pack": "details/ea-9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7.json",
+        "pack_sha256": "9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7",
         "status": "available"
       }
     },
@@ -16261,8 +16704,8 @@
       },
       "description_ref": {
         "sha256": "640f96fed9e44c61d03e1d019ac31115d8e0f1cb60e4ae5d2d6d2aa031dc40e7",
-        "pack": "details/64-a0f65defad7c07031be75ff70007dfd16bc2b833471e992ca0806770086aa3ab.json",
-        "pack_sha256": "a0f65defad7c07031be75ff70007dfd16bc2b833471e992ca0806770086aa3ab",
+        "pack": "details/64-188e7575b3d10aed1f5e43afc1f28b96e3a910be34862ddc6b794ea7b3f8bc68.json",
+        "pack_sha256": "188e7575b3d10aed1f5e43afc1f28b96e3a910be34862ddc6b794ea7b3f8bc68",
         "status": "available"
       }
     },
@@ -16294,8 +16737,8 @@
       },
       "description_ref": {
         "sha256": "c5478ea37e1ed8399b030f0e2502e558e62ac81f87a72da4a8a8c0c2c7cca07c",
-        "pack": "details/c5-66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc.json",
-        "pack_sha256": "66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc",
+        "pack": "details/c5-583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3.json",
+        "pack_sha256": "583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3",
         "status": "stale"
       }
     },
@@ -16395,7 +16838,7 @@
         "sha256": "86145a55154d140b2546508783b408678a0149bf35fa8cb9db3c75acfd71a747",
         "pack": "details/86-3cd579017f8ebe75b8b48e283bb02d3a8c10d66903c30ba93d3a65d90da32d45.json",
         "pack_sha256": "3cd579017f8ebe75b8b48e283bb02d3a8c10d66903c30ba93d3a65d90da32d45",
-        "status": "available"
+        "status": "stale"
       }
     },
     "8a7be8e90b96a25a": {
@@ -16660,7 +17103,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -17031,6 +17474,39 @@
         "status": "stale"
       }
     },
+    "90667e3de094f08a": {
+      "id": "90667e3de094f08a",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Electronics Engineer Intern - Manhattan Beach CA",
+      "location": "United States-California-Manhattan Beach",
+      "locations": [
+        "United States-California-Manhattan Beach"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-California-Manhattan-Beach/XMLNAME-2027-Electronics-Engineer-Intern---Manhattan-Beach-CA_R10262095",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Electronics-Engineer-Intern---Manhattan-Beach-CA_R10262095",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "61f383b8ae7eeea4c27191384240e119c857b33b05fe20aa790d84cd8545c0f2",
+        "pack": "details/61-6bf6a3aee404de3625cbb629c2ad05415cf8acf473a5d369faefd35291f5f4c8.json",
+        "pack_sha256": "6bf6a3aee404de3625cbb629c2ad05415cf8acf473a5d369faefd35291f5f4c8",
+        "status": "available"
+      }
+    },
     "906924f5cf6818f2": {
       "id": "906924f5cf6818f2",
       "company": "Marvell Technology",
@@ -17046,7 +17522,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-01T21:24:06Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -17231,8 +17707,8 @@
       },
       "description_ref": {
         "sha256": "14ba3ae5cad078f815ee5f96df620991dde5136cd82720ea7bcf5e41707efadf",
-        "pack": "details/14-fdbbc3aa7dc9ba2f8fbcdbee49738fe2ec82769f3b4ff0da7ee465a4b0bf892f.json",
-        "pack_sha256": "fdbbc3aa7dc9ba2f8fbcdbee49738fe2ec82769f3b4ff0da7ee465a4b0bf892f",
+        "pack": "details/14-6aaad2279840e71d2d5d19b9bd1b809ac34ae02e9ed3231643197bb3d0a9a849.json",
+        "pack_sha256": "6aaad2279840e71d2d5d19b9bd1b809ac34ae02e9ed3231643197bb3d0a9a849",
         "status": "available"
       }
     },
@@ -17562,7 +18038,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -17727,8 +18203,8 @@
       },
       "description_ref": {
         "sha256": "552d997fbfd6fc902944e502ee6a5dcb101d04590be1b90b7d284c84b1c8ed0c",
-        "pack": "details/55-39a17115a828ca405a0bba9681ebb7da731854c5674456053e9a26d2f04808a8.json",
-        "pack_sha256": "39a17115a828ca405a0bba9681ebb7da731854c5674456053e9a26d2f04808a8",
+        "pack": "details/55-ba786f599f7c22cd06a882fd573effd05224038e8534975ff90e2c98cfc374aa.json",
+        "pack_sha256": "ba786f599f7c22cd06a882fd573effd05224038e8534975ff90e2c98cfc374aa",
         "status": "available"
       }
     },
@@ -17860,8 +18336,8 @@
       },
       "description_ref": {
         "sha256": "57982e63ff36793da07adc949d91cd43806e71eae0d26b8efc7bbf7ce9e9192d",
-        "pack": "details/57-e7077f3d6ac3477aa65e4e3f4381ae567dff6a439a299d0dcc2b94ec45bc14e9.json",
-        "pack_sha256": "e7077f3d6ac3477aa65e4e3f4381ae567dff6a439a299d0dcc2b94ec45bc14e9",
+        "pack": "details/57-7647614dd9aa644f01c39a7d1f8a297e65b20a07270865005b6e5a192f9d8a57.json",
+        "pack_sha256": "7647614dd9aa644f01c39a7d1f8a297e65b20a07270865005b6e5a192f9d8a57",
         "status": "stale"
       }
     },
@@ -18000,8 +18476,8 @@
       },
       "description_ref": {
         "sha256": "7d1f16cf15fe14cfc6011f289f4700dc33bf18764cab4034b4c848a1c04a2c13",
-        "pack": "details/7d-df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde.json",
-        "pack_sha256": "df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde",
+        "pack": "details/7d-d66fd36713b95fd69b79510303778cef9680f0b7631c33861399a64b3f3179d9.json",
+        "pack_sha256": "d66fd36713b95fd69b79510303778cef9680f0b7631c33861399a64b3f3179d9",
         "status": "stale"
       }
     },
@@ -18134,8 +18610,8 @@
       },
       "description_ref": {
         "sha256": "c1dbd108acc95f3d74ce0bb391600307d5c90f1a643d4459381ffa3e5c88c6df",
-        "pack": "details/c1-6872d32322a42c42d00b60eaac51ec55c1719d9c5eef98c7076a1e3bb23d0fbf.json",
-        "pack_sha256": "6872d32322a42c42d00b60eaac51ec55c1719d9c5eef98c7076a1e3bb23d0fbf",
+        "pack": "details/c1-047089fe60c6c8ae7f8cdaec7d15a18286f89498b5fe1044964a4ff507d5270d.json",
+        "pack_sha256": "047089fe60c6c8ae7f8cdaec7d15a18286f89498b5fe1044964a4ff507d5270d",
         "status": "stale"
       }
     },
@@ -18167,8 +18643,8 @@
       },
       "description_ref": {
         "sha256": "56196df511094476eb1cac703924e3edd76b83e7dd541daddac832522209dc66",
-        "pack": "details/56-c001be4c5244939c6ea1dc8ba1b9df3d9d92ccc047106b5207d6ba47e9de63d3.json",
-        "pack_sha256": "c001be4c5244939c6ea1dc8ba1b9df3d9d92ccc047106b5207d6ba47e9de63d3",
+        "pack": "details/56-a0bea55f6a0515eedd8610c895c2ae65783a2291ec4279f62f71e7af1ce335da.json",
+        "pack_sha256": "a0bea55f6a0515eedd8610c895c2ae65783a2291ec4279f62f71e7af1ce335da",
         "status": "available"
       }
     },
@@ -18204,6 +18680,25 @@
         "pack_sha256": "5a03b13ccfadd89a363bdf2dcc196fe5205cd568ca944c7f86b33ec6c874290c",
         "status": "stale"
       }
+    },
+    "9b2429f7785ccc76": {
+      "id": "9b2429f7785ccc76",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Human Resource Intern - Linthicum MD",
+      "location": "United States-Maryland-Linthicum",
+      "locations": [
+        "United States-Maryland-Linthicum"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Maryland-Linthicum/XMLNAME-2027-Human-Resource-Intern---Linthicum-MD_R10262069",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Human-Resource-Intern---Linthicum-MD_R10262069",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable"
     },
     "9b58b2325c0521a1": {
       "id": "9b58b2325c0521a1",
@@ -18528,8 +19023,8 @@
       },
       "description_ref": {
         "sha256": "07c5f2f99d190eb94a2030b0eff5c3934d1424547208220f43ac24ff476f4c39",
-        "pack": "details/07-f3bde41e4ea0968b234175531c81496c038acf4ee944393c56e750055902e49d.json",
-        "pack_sha256": "f3bde41e4ea0968b234175531c81496c038acf4ee944393c56e750055902e49d",
+        "pack": "details/07-13eb1daee4f41d0151120e5164b057d5a9544e37633312a298c15c8838027211.json",
+        "pack_sha256": "13eb1daee4f41d0151120e5164b057d5a9544e37633312a298c15c8838027211",
         "status": "stale"
       }
     },
@@ -18614,7 +19109,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -18643,8 +19138,8 @@
       },
       "description_ref": {
         "sha256": "53868f055dc6779b6d02a4c4032ab3c3058ba04b861d44f7b0483de0eb3fa935",
-        "pack": "details/53-59fcfbf52bcc9d3258f32372203cdfd67e700224a85a44c1294582ca988e73b5.json",
-        "pack_sha256": "59fcfbf52bcc9d3258f32372203cdfd67e700224a85a44c1294582ca988e73b5",
+        "pack": "details/53-dcc5f755ed22eb133cc87c1f1885a43a1f13417b95aaaef5ef0c7e2ac28b664b.json",
+        "pack_sha256": "dcc5f755ed22eb133cc87c1f1885a43a1f13417b95aaaef5ef0c7e2ac28b664b",
         "status": "available"
       }
     },
@@ -18696,7 +19191,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -18949,8 +19444,8 @@
       },
       "description_ref": {
         "sha256": "e34838019fa2f15cce98f7e63aab188a433e8d0e28a61ecafd13b6a30f27c377",
-        "pack": "details/e3-002aa931cfa5c1fcea8189c3cc130da3e2d1399775736d2d1fa1ce383a14e8b2.json",
-        "pack_sha256": "002aa931cfa5c1fcea8189c3cc130da3e2d1399775736d2d1fa1ce383a14e8b2",
+        "pack": "details/e3-4d20b177559c8430ff4dceb57b81e688f8b4e98cf2c8a5774ba79144346d3e70.json",
+        "pack_sha256": "4d20b177559c8430ff4dceb57b81e688f8b4e98cf2c8a5774ba79144346d3e70",
         "status": "available"
       }
     },
@@ -19130,8 +19625,8 @@
       },
       "description_ref": {
         "sha256": "901c63cb7a82ed3dc45a3e26c5e74ce902a02c4441178ad07a6671bcaa24fd87",
-        "pack": "details/90-a024dbd639aa5737cda036608a4ba4a3974c9d673bce3cc6a455e82305837837.json",
-        "pack_sha256": "a024dbd639aa5737cda036608a4ba4a3974c9d673bce3cc6a455e82305837837",
+        "pack": "details/90-aec024e11c05d9126472ba1d775d55215741c52aefaeb0eed6d5045412c778c2.json",
+        "pack_sha256": "aec024e11c05d9126472ba1d775d55215741c52aefaeb0eed6d5045412c778c2",
         "status": "available"
       }
     },
@@ -19440,6 +19935,25 @@
         "status": "stale"
       }
     },
+    "a4a4f3952aa5ca77": {
+      "id": "a4a4f3952aa5ca77",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Software Test Engineering Intern - Roy UT",
+      "location": "United States-Utah-Roy",
+      "locations": [
+        "United States-Utah-Roy"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Utah-Roy/XMLNAME-2027-Software-Test-Engineering-Intern---Roy-UT_R10261728",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Software-Test-Engineering-Intern---Roy-UT_R10261728",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable"
+    },
     "a4b22e4eb331480d": {
       "id": "a4b22e4eb331480d",
       "company": "Micron Technology",
@@ -19468,8 +19982,8 @@
       },
       "description_ref": {
         "sha256": "55ac1353d69592099a53893590afe8cf17b238b378f54972d376fa718b018fbd",
-        "pack": "details/55-39a17115a828ca405a0bba9681ebb7da731854c5674456053e9a26d2f04808a8.json",
-        "pack_sha256": "39a17115a828ca405a0bba9681ebb7da731854c5674456053e9a26d2f04808a8",
+        "pack": "details/55-ba786f599f7c22cd06a882fd573effd05224038e8534975ff90e2c98cfc374aa.json",
+        "pack_sha256": "ba786f599f7c22cd06a882fd573effd05224038e8534975ff90e2c98cfc374aa",
         "status": "stale"
       }
     },
@@ -19569,7 +20083,7 @@
         "sha256": "bb79677667bb462ff0374f670e33f8c5437ee9ca8ce9d3ad0e3c28fa8ae9f673",
         "pack": "details/bb-3c8fc76d726095b6ef45e56ec7be73370e62a316acbdb89b9dc66f6f6a20f2cd.json",
         "pack_sha256": "3c8fc76d726095b6ef45e56ec7be73370e62a316acbdb89b9dc66f6f6a20f2cd",
-        "status": "available"
+        "status": "stale"
       }
     },
     "a54ae8233a75d753": {
@@ -19604,6 +20118,25 @@
         "pack_sha256": "253b19ca502ddd402c4823f57890d81bac2c1d33920af356969c05c2b9998d99",
         "status": "stale"
       }
+    },
+    "a55b496c068c24a7": {
+      "id": "a55b496c068c24a7",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Electromechanical Engineer Intern - Manhattan Beach CA",
+      "location": "United States-California-Manhattan Beach",
+      "locations": [
+        "United States-California-Manhattan Beach"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-California-Manhattan-Beach/XMLNAME-2027-Electromechanical-Engineer-Intern---Manhattan-Beach-CA_R10262100",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Electromechanical-Engineer-Intern---Manhattan-Beach-CA_R10262100",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable"
     },
     "a571db16b58cd740": {
       "id": "a571db16b58cd740",
@@ -19653,7 +20186,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-03T22:18:41Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -19824,8 +20357,8 @@
       },
       "description_ref": {
         "sha256": "de2d004a0386c118f6e6c733d78c511a366a0ff8254d89ce7f24caf0b14cf7b6",
-        "pack": "details/de-2f2ca7bc5ef7282aecd3e8804f63d9a76e6dbe6ad6ff6dfdaa106b9dc07bab3e.json",
-        "pack_sha256": "2f2ca7bc5ef7282aecd3e8804f63d9a76e6dbe6ad6ff6dfdaa106b9dc07bab3e",
+        "pack": "details/de-6ee5f65c22aee10b976fad77baf3553cdaf5d3e97eafc0eeb74f4e247ea9fe6c.json",
+        "pack_sha256": "6ee5f65c22aee10b976fad77baf3553cdaf5d3e97eafc0eeb74f4e247ea9fe6c",
         "status": "stale"
       }
     },
@@ -20453,7 +20986,7 @@
         "sha256": "420e20319181bc54177fc0f68f4053fc3331907b91346138c450bbf5a69475b5",
         "pack": "details/42-85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865.json",
         "pack_sha256": "85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865",
-        "status": "available"
+        "status": "stale"
       }
     },
     "acf557e42b664bb7": {
@@ -20484,8 +21017,42 @@
       },
       "description_ref": {
         "sha256": "d1e5d7d235b4319899f30227156a603e23b2c4544704a88027a33573541bb278",
-        "pack": "details/d1-192c8045f2aae39bc91c5bf0538a292efe218429af966329481063ea4b517e9e.json",
-        "pack_sha256": "192c8045f2aae39bc91c5bf0538a292efe218429af966329481063ea4b517e9e",
+        "pack": "details/d1-5f30b860d13afc4e1de1a107d8f9b64099ead37939edd7f1b7290b1edd4c1b36.json",
+        "pack_sha256": "5f30b860d13afc4e1de1a107d8f9b64099ead37939edd7f1b7290b1edd4c1b36",
+        "status": "available"
+      }
+    },
+    "ad150335786dda4a": {
+      "id": "ad150335786dda4a",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Cybersecurity Intern - Linthicum MD",
+      "location": "United States-Maryland-Linthicum",
+      "locations": [
+        "United States-Maryland-Linthicum"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Maryland-Linthicum/XMLNAME-2027-Cybersecurity-Intern---Linthicum-MD_R10261960",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Cybersecurity-Intern---Linthicum-MD_R10261960",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Maryland-Linthicum/XMLNAME-2027-Cybersecurity-Intern---Linthicum-MD_R10261960"
+        }
+      },
+      "description_ref": {
+        "sha256": "0d6a60dca00b4b775781a8e0dce377faf37df9d2a3c8f65e9486afee4ebf618f",
+        "pack": "details/0d-8885f4ec9ade217951b6ea98d35cebf251a84473a4a1aa5ccff17ddb752b038a.json",
+        "pack_sha256": "8885f4ec9ade217951b6ea98d35cebf251a84473a4a1aa5ccff17ddb752b038a",
         "status": "available"
       }
     },
@@ -20550,8 +21117,8 @@
       },
       "description_ref": {
         "sha256": "145a43dfd5a22f708553e663096108d60fc223117c09b07b8b78d529e0da4d4a",
-        "pack": "details/14-fdbbc3aa7dc9ba2f8fbcdbee49738fe2ec82769f3b4ff0da7ee465a4b0bf892f.json",
-        "pack_sha256": "fdbbc3aa7dc9ba2f8fbcdbee49738fe2ec82769f3b4ff0da7ee465a4b0bf892f",
+        "pack": "details/14-6aaad2279840e71d2d5d19b9bd1b809ac34ae02e9ed3231643197bb3d0a9a849.json",
+        "pack_sha256": "6aaad2279840e71d2d5d19b9bd1b809ac34ae02e9ed3231643197bb3d0a9a849",
         "status": "stale"
       }
     },
@@ -20742,9 +21309,43 @@
       },
       "description_ref": {
         "sha256": "7d09e412de20466221f5d38decf22666f4a7c1bc4676819fc813458ea3e60880",
-        "pack": "details/7d-df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde.json",
-        "pack_sha256": "df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde",
+        "pack": "details/7d-d66fd36713b95fd69b79510303778cef9680f0b7631c33861399a64b3f3179d9.json",
+        "pack_sha256": "d66fd36713b95fd69b79510303778cef9680f0b7631c33861399a64b3f3179d9",
         "status": "stale"
+      }
+    },
+    "b010dd119ef2d4ae": {
+      "id": "b010dd119ef2d4ae",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Software Engineering Intern - Boulder CO",
+      "location": "United States-Colorado-Boulder",
+      "locations": [
+        "United States-Colorado-Boulder"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Boulder/XMLNAME-2027-Software-Engineering-Intern---Boulder-CO_R10257798",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Software-Engineering-Intern---Boulder-CO_R10257798",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Boulder/XMLNAME-2027-Software-Engineering-Intern---Boulder-CO_R10257798"
+        }
+      },
+      "description_ref": {
+        "sha256": "dbb99a78024895697769469bb02e8d8888ab8517e8e063889ef8d0862840f5ae",
+        "pack": "details/db-e75e8081b78ec086b7a43f0eaf865ccc75f4a7a0ca2bab98fc031d8f1ef003f1.json",
+        "pack_sha256": "e75e8081b78ec086b7a43f0eaf865ccc75f4a7a0ca2bab98fc031d8f1ef003f1",
+        "status": "available"
       }
     },
     "b05781b53e08e477": {
@@ -20775,8 +21376,8 @@
       },
       "description_ref": {
         "sha256": "d16d1a54e294f76d14a6434ecb91bd08d249c71ac27686af199ee1930ea5604f",
-        "pack": "details/d1-192c8045f2aae39bc91c5bf0538a292efe218429af966329481063ea4b517e9e.json",
-        "pack_sha256": "192c8045f2aae39bc91c5bf0538a292efe218429af966329481063ea4b517e9e",
+        "pack": "details/d1-5f30b860d13afc4e1de1a107d8f9b64099ead37939edd7f1b7290b1edd4c1b36.json",
+        "pack_sha256": "5f30b860d13afc4e1de1a107d8f9b64099ead37939edd7f1b7290b1edd4c1b36",
         "status": "available"
       }
     },
@@ -21016,8 +21617,8 @@
       },
       "description_ref": {
         "sha256": "57460dd0b63e1fe3addc651cc5012de76131c31e45905c9835bf0234008cc8eb",
-        "pack": "details/57-e7077f3d6ac3477aa65e4e3f4381ae567dff6a439a299d0dcc2b94ec45bc14e9.json",
-        "pack_sha256": "e7077f3d6ac3477aa65e4e3f4381ae567dff6a439a299d0dcc2b94ec45bc14e9",
+        "pack": "details/57-7647614dd9aa644f01c39a7d1f8a297e65b20a07270865005b6e5a192f9d8a57.json",
+        "pack_sha256": "7647614dd9aa644f01c39a7d1f8a297e65b20a07270865005b6e5a192f9d8a57",
         "status": "available"
       }
     },
@@ -21069,7 +21670,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -21224,8 +21825,8 @@
       },
       "description_ref": {
         "sha256": "213b47c2e4ebbfb06b395df2457b2eb27e6c696f220ac80eeae09998457e4dcf",
-        "pack": "details/21-71a02c539524086aba1cb5b9521906bd4da27fecca297f833ec8cc91582114e1.json",
-        "pack_sha256": "71a02c539524086aba1cb5b9521906bd4da27fecca297f833ec8cc91582114e1",
+        "pack": "details/21-f1c7b25998ad751e27a218af77ea24bd318376ca81a1527b6b445cfa6bcbc7ef.json",
+        "pack_sha256": "f1c7b25998ad751e27a218af77ea24bd318376ca81a1527b6b445cfa6bcbc7ef",
         "status": "available"
       }
     },
@@ -21277,7 +21878,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-23T16:45:31Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -21521,6 +22122,39 @@
         "status": "available"
       }
     },
+    "b54d8afec857c664": {
+      "id": "b54d8afec857c664",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Digital Engineer Intern - Manhattan Beach CA",
+      "location": "United States-California-Manhattan Beach",
+      "locations": [
+        "United States-California-Manhattan Beach"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-California-Manhattan-Beach/XMLNAME-2027-Digital-Engineer-Intern---Manhattan-Beach-CA_R10262090",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Digital-Engineer-Intern---Manhattan-Beach-CA_R10262090",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "90f9639617fce85d34a616c6389ddb04ac5907bf694dda460d08036c13593cca",
+        "pack": "details/90-aec024e11c05d9126472ba1d775d55215741c52aefaeb0eed6d5045412c778c2.json",
+        "pack_sha256": "aec024e11c05d9126472ba1d775d55215741c52aefaeb0eed6d5045412c778c2",
+        "status": "available"
+      }
+    },
     "b5567c2cc31f961c": {
       "id": "b5567c2cc31f961c",
       "company": "Merck",
@@ -21569,7 +22203,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -21774,8 +22408,8 @@
       },
       "description_ref": {
         "sha256": "d2a4b737acbff7c03519d3ae435ce22d1dc0ac616294759644eeaa1cc2cd47cb",
-        "pack": "details/d2-ec0174ef19346af41fccf000cfe0d1fdb17e09d18dae1986cd94315a5d0f82dd.json",
-        "pack_sha256": "ec0174ef19346af41fccf000cfe0d1fdb17e09d18dae1986cd94315a5d0f82dd",
+        "pack": "details/d2-49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7.json",
+        "pack_sha256": "49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7",
         "status": "stale"
       }
     },
@@ -21925,8 +22559,8 @@
       },
       "description_ref": {
         "sha256": "e36f21b1ad51e5ffabf6790c64d9cb7fea7bba5e4953d9543ed71b0300a42131",
-        "pack": "details/e3-002aa931cfa5c1fcea8189c3cc130da3e2d1399775736d2d1fa1ce383a14e8b2.json",
-        "pack_sha256": "002aa931cfa5c1fcea8189c3cc130da3e2d1399775736d2d1fa1ce383a14e8b2",
+        "pack": "details/e3-4d20b177559c8430ff4dceb57b81e688f8b4e98cf2c8a5774ba79144346d3e70.json",
+        "pack_sha256": "4d20b177559c8430ff4dceb57b81e688f8b4e98cf2c8a5774ba79144346d3e70",
         "status": "available"
       }
     },
@@ -22038,7 +22672,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T00:05:57Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -22103,8 +22737,8 @@
       },
       "description_ref": {
         "sha256": "7ef31481046cae8674dc9bf100e8bc376c09502441a9824e0a7521630eb39dd0",
-        "pack": "details/7e-bc83e389854a0c73b6cdb1a4c50b55125f4a0c0f1260c679c4b8cd8dc937d97c.json",
-        "pack_sha256": "bc83e389854a0c73b6cdb1a4c50b55125f4a0c0f1260c679c4b8cd8dc937d97c",
+        "pack": "details/7e-621f9ed776e711048688d5b71e3ed11ac39b3c6c655d0706abca7544472645c2.json",
+        "pack_sha256": "621f9ed776e711048688d5b71e3ed11ac39b3c6c655d0706abca7544472645c2",
         "status": "available"
       }
     },
@@ -22255,7 +22889,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -22322,7 +22956,7 @@
         "sha256": "627e80867b74ff244ea61b7703e27a170d4ab62a695802a938a3f3b2aa39060e",
         "pack": "details/62-0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952.json",
         "pack_sha256": "0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952",
-        "status": "available"
+        "status": "stale"
       }
     },
     "bc8e2145e9a095ad": {
@@ -22406,7 +23040,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -22440,8 +23074,8 @@
       },
       "description_ref": {
         "sha256": "7ea905586052ba6ce9a70c9132f0cafa53331377ffe5edb36033e4f98631e266",
-        "pack": "details/7e-bc83e389854a0c73b6cdb1a4c50b55125f4a0c0f1260c679c4b8cd8dc937d97c.json",
-        "pack_sha256": "bc83e389854a0c73b6cdb1a4c50b55125f4a0c0f1260c679c4b8cd8dc937d97c",
+        "pack": "details/7e-621f9ed776e711048688d5b71e3ed11ac39b3c6c655d0706abca7544472645c2.json",
+        "pack_sha256": "621f9ed776e711048688d5b71e3ed11ac39b3c6c655d0706abca7544472645c2",
         "status": "stale"
       }
     },
@@ -22539,8 +23173,8 @@
       },
       "description_ref": {
         "sha256": "eabc053b100cc4eeab0784a3c9f56156c53529b86fdc0288292b3bd609261bde",
-        "pack": "details/ea-d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b.json",
-        "pack_sha256": "d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b",
+        "pack": "details/ea-9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7.json",
+        "pack_sha256": "9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7",
         "status": "stale"
       }
     },
@@ -22605,8 +23239,8 @@
       },
       "description_ref": {
         "sha256": "55ba1fefb112123d0858de3485dc350bbc457375836c0147ebf7bfed51ff4094",
-        "pack": "details/55-39a17115a828ca405a0bba9681ebb7da731854c5674456053e9a26d2f04808a8.json",
-        "pack_sha256": "39a17115a828ca405a0bba9681ebb7da731854c5674456053e9a26d2f04808a8",
+        "pack": "details/55-ba786f599f7c22cd06a882fd573effd05224038e8534975ff90e2c98cfc374aa.json",
+        "pack_sha256": "ba786f599f7c22cd06a882fd573effd05224038e8534975ff90e2c98cfc374aa",
         "status": "stale"
       }
     },
@@ -22704,8 +23338,8 @@
       },
       "description_ref": {
         "sha256": "f5e806512f36e115b7fbdb48a2d4599d4574e2c8f000865a9f47c1a6ceb0b482",
-        "pack": "details/f5-0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e.json",
-        "pack_sha256": "0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e",
+        "pack": "details/f5-ca3669ac3d374811397aa1f0341e67be0351d8959e95cdd8acd8f2fefd2f6d46.json",
+        "pack_sha256": "ca3669ac3d374811397aa1f0341e67be0351d8959e95cdd8acd8f2fefd2f6d46",
         "status": "stale"
       }
     },
@@ -22737,8 +23371,8 @@
       },
       "description_ref": {
         "sha256": "ad704a6ad46327fd2dd10a22bbf0ba7ceeafd336cfdf7bdb48f3adfbaf1f24a5",
-        "pack": "details/ad-c771d0641b123d60bfd49156c03e9db1254dd908104a6df2dc83422d74d9728b.json",
-        "pack_sha256": "c771d0641b123d60bfd49156c03e9db1254dd908104a6df2dc83422d74d9728b",
+        "pack": "details/ad-c289e6fa586f03d975a3a6e6b4cd6a967dc5076e1eeddf027e1aec15df167129.json",
+        "pack_sha256": "c289e6fa586f03d975a3a6e6b4cd6a967dc5076e1eeddf027e1aec15df167129",
         "status": "stale"
       }
     },
@@ -22803,8 +23437,8 @@
       },
       "description_ref": {
         "sha256": "591c30416213cbf7734645a72740e17ae205fa122e24d75e42132011596bdfab",
-        "pack": "details/59-5eb7eba95e42597102bd8a4e7722b00f274b943bf9b0dede5349873294d44d0d.json",
-        "pack_sha256": "5eb7eba95e42597102bd8a4e7722b00f274b943bf9b0dede5349873294d44d0d",
+        "pack": "details/59-608abe5b73c6df9258b3b9e433b8ff4577eceb7cbc7eb44dcc42415a97f4bba9.json",
+        "pack_sha256": "608abe5b73c6df9258b3b9e433b8ff4577eceb7cbc7eb44dcc42415a97f4bba9",
         "status": "available"
       }
     },
@@ -22855,8 +23489,8 @@
       },
       "description_ref": {
         "sha256": "64093ed1ca1baaff65dc0ba76f8b4bee4bd9bef9f489eb905c88d8f2de088283",
-        "pack": "details/64-a0f65defad7c07031be75ff70007dfd16bc2b833471e992ca0806770086aa3ab.json",
-        "pack_sha256": "a0f65defad7c07031be75ff70007dfd16bc2b833471e992ca0806770086aa3ab",
+        "pack": "details/64-188e7575b3d10aed1f5e43afc1f28b96e3a910be34862ddc6b794ea7b3f8bc68.json",
+        "pack_sha256": "188e7575b3d10aed1f5e43afc1f28b96e3a910be34862ddc6b794ea7b3f8bc68",
         "status": "available"
       }
     },
@@ -22956,6 +23590,39 @@
         "sha256": "a75ba99981b349c2723f27bbfbfc9c737cfb726bcfe9e4d226d53c41859f3232",
         "pack": "details/a7-8f47201d923bafc6c5dedf2150a5ab8b473ace0dc3d478c1a5c5bd61a6a26212.json",
         "pack_sha256": "8f47201d923bafc6c5dedf2150a5ab8b473ace0dc3d478c1a5c5bd61a6a26212",
+        "status": "available"
+      }
+    },
+    "c31e00aa42fae5bd": {
+      "id": "c31e00aa42fae5bd",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Electronics Engineer Intern - Azusa CA",
+      "location": "United States-California-Azusa",
+      "locations": [
+        "United States-California-Azusa"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-California-Azusa/XMLNAME-2027-Electronics-Engineer-Intern---Azusa-CA_R10262073-1",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Electronics-Engineer-Intern---Azusa-CA_R10262073-1",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "c1a0d1b011ab60ce8734b42225ff06dc0b8d16605de2e40cda3ae5c37a89860d",
+        "pack": "details/c1-047089fe60c6c8ae7f8cdaec7d15a18286f89498b5fe1044964a4ff507d5270d.json",
+        "pack_sha256": "047089fe60c6c8ae7f8cdaec7d15a18286f89498b5fe1044964a4ff507d5270d",
         "status": "available"
       }
     },
@@ -23086,8 +23753,8 @@
       },
       "description_ref": {
         "sha256": "53c7549dee2410096d69b369676343c3c342bc4218f17fc2ae840bfe12a323a7",
-        "pack": "details/53-59fcfbf52bcc9d3258f32372203cdfd67e700224a85a44c1294582ca988e73b5.json",
-        "pack_sha256": "59fcfbf52bcc9d3258f32372203cdfd67e700224a85a44c1294582ca988e73b5",
+        "pack": "details/53-dcc5f755ed22eb133cc87c1f1885a43a1f13417b95aaaef5ef0c7e2ac28b664b.json",
+        "pack_sha256": "dcc5f755ed22eb133cc87c1f1885a43a1f13417b95aaaef5ef0c7e2ac28b664b",
         "status": "stale"
       }
     },
@@ -23172,7 +23839,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-27T18:20:10Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -23628,8 +24295,8 @@
       },
       "description_ref": {
         "sha256": "6165c6af827cc6055dc876b79b3bde851a34d6ef3b3869954736c04aa542ae88",
-        "pack": "details/61-9afbe85e3bbb17302ec23188d853d1123a96837f892fa903025349b05d126b02.json",
-        "pack_sha256": "9afbe85e3bbb17302ec23188d853d1123a96837f892fa903025349b05d126b02",
+        "pack": "details/61-6bf6a3aee404de3625cbb629c2ad05415cf8acf473a5d369faefd35291f5f4c8.json",
+        "pack_sha256": "6bf6a3aee404de3625cbb629c2ad05415cf8acf473a5d369faefd35291f5f4c8",
         "status": "available"
       }
     },
@@ -23648,7 +24315,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-19T20:06:44Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -23785,6 +24452,39 @@
         "status": "stale"
       }
     },
+    "c92ccbd2a62b7ac4": {
+      "id": "c92ccbd2a62b7ac4",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Software Engineering Intern - Colorado Springs CO",
+      "location": "United States-Colorado-Colorado Springs",
+      "locations": [
+        "United States-Colorado-Colorado Springs"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Colorado-Colorado-Springs/XMLNAME-2027-Software-Engineering-Intern---Colorado-Springs-CO_R10261918",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Software-Engineering-Intern---Colorado-Springs-CO_R10261918",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "0759794deac652662d7f36773258cba260cd4b3aed256ef5dae3efeb03482358",
+        "pack": "details/07-13eb1daee4f41d0151120e5164b057d5a9544e37633312a298c15c8838027211.json",
+        "pack_sha256": "13eb1daee4f41d0151120e5164b057d5a9544e37633312a298c15c8838027211",
+        "status": "available"
+      }
+    },
     "c95fe9c2e6d58334": {
       "id": "c95fe9c2e6d58334",
       "company": "Walmart",
@@ -23813,8 +24513,8 @@
       },
       "description_ref": {
         "sha256": "7d93141a19a7038cda485d0b951d316b1128d0a66533b8362fc0be8131a257d0",
-        "pack": "details/7d-df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde.json",
-        "pack_sha256": "df3eb427629005e99a2b6ec3958fc6ce60d2e0e2013bee995e352ec5c8f45dde",
+        "pack": "details/7d-d66fd36713b95fd69b79510303778cef9680f0b7631c33861399a64b3f3179d9.json",
+        "pack_sha256": "d66fd36713b95fd69b79510303778cef9680f0b7631c33861399a64b3f3179d9",
         "status": "available"
       }
     },
@@ -23833,7 +24533,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -24171,8 +24871,8 @@
       },
       "description_ref": {
         "sha256": "ad24693c86c71cd5bc48aa53a5a64244a72fc9e624a05a3e931ede6007b33c0c",
-        "pack": "details/ad-c771d0641b123d60bfd49156c03e9db1254dd908104a6df2dc83422d74d9728b.json",
-        "pack_sha256": "c771d0641b123d60bfd49156c03e9db1254dd908104a6df2dc83422d74d9728b",
+        "pack": "details/ad-c289e6fa586f03d975a3a6e6b4cd6a967dc5076e1eeddf027e1aec15df167129.json",
+        "pack_sha256": "c289e6fa586f03d975a3a6e6b4cd6a967dc5076e1eeddf027e1aec15df167129",
         "status": "available"
       }
     },
@@ -24298,7 +24998,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -24370,9 +25070,9 @@
       },
       "description_ref": {
         "sha256": "14ac99a1232dd87594cf40814cb80aec5af5209c764f23f09baef020ae8ee41b",
-        "pack": "details/14-fdbbc3aa7dc9ba2f8fbcdbee49738fe2ec82769f3b4ff0da7ee465a4b0bf892f.json",
-        "pack_sha256": "fdbbc3aa7dc9ba2f8fbcdbee49738fe2ec82769f3b4ff0da7ee465a4b0bf892f",
-        "status": "available"
+        "pack": "details/14-6aaad2279840e71d2d5d19b9bd1b809ac34ae02e9ed3231643197bb3d0a9a849.json",
+        "pack_sha256": "6aaad2279840e71d2d5d19b9bd1b809ac34ae02e9ed3231643197bb3d0a9a849",
+        "status": "stale"
       }
     },
     "ce23057d9328a54f": {
@@ -24478,8 +25178,8 @@
       },
       "description_ref": {
         "sha256": "ad52b98c8c442347c1cd4df2d9de4af47222e699a826fc71bad8516dad237531",
-        "pack": "details/ad-c771d0641b123d60bfd49156c03e9db1254dd908104a6df2dc83422d74d9728b.json",
-        "pack_sha256": "c771d0641b123d60bfd49156c03e9db1254dd908104a6df2dc83422d74d9728b",
+        "pack": "details/ad-c289e6fa586f03d975a3a6e6b4cd6a967dc5076e1eeddf027e1aec15df167129.json",
+        "pack_sha256": "c289e6fa586f03d975a3a6e6b4cd6a967dc5076e1eeddf027e1aec15df167129",
         "status": "available"
       }
     },
@@ -24513,7 +25213,7 @@
         "sha256": "622f52f79e3bd5b9624714c2d3226cad876202747f818c4cd685b96ce8bac4b4",
         "pack": "details/62-0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952.json",
         "pack_sha256": "0c1f72fbc71a940c04e8fe2940d77837823e2f896431b5dcb0e4af29c101e952",
-        "status": "available"
+        "status": "stale"
       }
     },
     "ceea50dd46a9216d": {
@@ -24659,8 +25359,8 @@
       },
       "description_ref": {
         "sha256": "f5dd135eadde7737ff34f1ff0c916516fc613fd96135251ae5906488ed12c74d",
-        "pack": "details/f5-0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e.json",
-        "pack_sha256": "0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e",
+        "pack": "details/f5-ca3669ac3d374811397aa1f0341e67be0351d8959e95cdd8acd8f2fefd2f6d46.json",
+        "pack_sha256": "ca3669ac3d374811397aa1f0341e67be0351d8959e95cdd8acd8f2fefd2f6d46",
         "status": "available"
       }
     },
@@ -24958,8 +25658,8 @@
       },
       "description_ref": {
         "sha256": "904ac1e393c04112a0d506817e5fb134f013bffbea375b2ad4ac4dc3e7c3be34",
-        "pack": "details/90-a024dbd639aa5737cda036608a4ba4a3974c9d673bce3cc6a455e82305837837.json",
-        "pack_sha256": "a024dbd639aa5737cda036608a4ba4a3974c9d673bce3cc6a455e82305837837",
+        "pack": "details/90-aec024e11c05d9126472ba1d775d55215741c52aefaeb0eed6d5045412c778c2.json",
+        "pack_sha256": "aec024e11c05d9126472ba1d775d55215741c52aefaeb0eed6d5045412c778c2",
         "status": "stale"
       }
     },
@@ -24978,7 +25678,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -25216,8 +25916,8 @@
       },
       "description_ref": {
         "sha256": "c5a27a857e0fb2c031a45d5c9cd82a37cd66ecca141f070688de205405a4b1e4",
-        "pack": "details/c5-66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc.json",
-        "pack_sha256": "66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc",
+        "pack": "details/c5-583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3.json",
+        "pack_sha256": "583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3",
         "status": "stale"
       }
     },
@@ -25368,7 +26068,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -25400,8 +26100,8 @@
       },
       "description_ref": {
         "sha256": "5dc3bb939c14253bc88824aff9a285c7f27771e1be800e2af13aa88547db743a",
-        "pack": "details/5d-5c88b849600f09ede7c365c9b392df12554877306c25b70f3156d7d3adb1c0b2.json",
-        "pack_sha256": "5c88b849600f09ede7c365c9b392df12554877306c25b70f3156d7d3adb1c0b2",
+        "pack": "details/5d-09b49a658c9d9c35ccf2788d39a4b6f04f09702ec1200190c9aad28f5d7e3d3a.json",
+        "pack_sha256": "09b49a658c9d9c35ccf2788d39a4b6f04f09702ec1200190c9aad28f5d7e3d3a",
         "status": "stale"
       }
     },
@@ -25551,8 +26251,8 @@
       },
       "description_ref": {
         "sha256": "e1f9c2632c5f0a832d96c817d5a45ea3b627d2ceca84c27fb4023bc29cba8a42",
-        "pack": "details/e1-65f33568e624b867c34bcebbd73859e7a61db3d37b8ae909969efc97bd95ce7e.json",
-        "pack_sha256": "65f33568e624b867c34bcebbd73859e7a61db3d37b8ae909969efc97bd95ce7e",
+        "pack": "details/e1-ae7f8b33b25365516d83bd4fe1314e1e6f62d9a74c4e28c903fe11df3fbf0909.json",
+        "pack_sha256": "ae7f8b33b25365516d83bd4fe1314e1e6f62d9a74c4e28c903fe11df3fbf0909",
         "status": "stale"
       }
     },
@@ -25617,8 +26317,8 @@
       },
       "description_ref": {
         "sha256": "f59b5feda44bb3296965746252493fcb7cec3b3be5a1676f07d00554e9455463",
-        "pack": "details/f5-0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e.json",
-        "pack_sha256": "0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e",
+        "pack": "details/f5-ca3669ac3d374811397aa1f0341e67be0351d8959e95cdd8acd8f2fefd2f6d46.json",
+        "pack_sha256": "ca3669ac3d374811397aa1f0341e67be0351d8959e95cdd8acd8f2fefd2f6d46",
         "status": "stale"
       }
     },
@@ -25637,7 +26337,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-09T20:09:29Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -25669,8 +26369,8 @@
       },
       "description_ref": {
         "sha256": "c5ae24e83d7fa8d0f224f104deb4d46f0820b2baa9b65f37646e0e930f838405",
-        "pack": "details/c5-66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc.json",
-        "pack_sha256": "66f6a4d150002795f70c4a787d58059db83d00358edd1b5837711128912263bc",
+        "pack": "details/c5-583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3.json",
+        "pack_sha256": "583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3",
         "status": "stale"
       }
     },
@@ -25986,8 +26686,8 @@
       },
       "description_ref": {
         "sha256": "fe2c4ab58a9d1d9caea1f1bec979dd6ec22d73ad5b01813e11e2037c97d4fc33",
-        "pack": "details/fe-2778fc1d96ff974789491314ec6eb764e82e9410472fe12ed294935474b092b2.json",
-        "pack_sha256": "2778fc1d96ff974789491314ec6eb764e82e9410472fe12ed294935474b092b2",
+        "pack": "details/fe-2b55f5b488284c761d38d53d63b38a5dad3215a9ad82f8c773f2e628f95537fe.json",
+        "pack_sha256": "2b55f5b488284c761d38d53d63b38a5dad3215a9ad82f8c773f2e628f95537fe",
         "status": "available"
       }
     },
@@ -26073,7 +26773,7 @@
         "sha256": "260cf05b446f356099e636a81a6cf137f787c2548287e1df267ce9a4533365c1",
         "pack": "details/26-322e11fa6f240395824d9841679198dbc51206026ae6639b01cf8444096ac368.json",
         "pack_sha256": "322e11fa6f240395824d9841679198dbc51206026ae6639b01cf8444096ac368",
-        "status": "available"
+        "status": "stale"
       }
     },
     "dfe638a4973fd732": {
@@ -26223,8 +26923,8 @@
       },
       "description_ref": {
         "sha256": "14548563a5871eca34feeb489d4b423937aad7c0d0381f72ff995bc4305186b1",
-        "pack": "details/14-fdbbc3aa7dc9ba2f8fbcdbee49738fe2ec82769f3b4ff0da7ee465a4b0bf892f.json",
-        "pack_sha256": "fdbbc3aa7dc9ba2f8fbcdbee49738fe2ec82769f3b4ff0da7ee465a4b0bf892f",
+        "pack": "details/14-6aaad2279840e71d2d5d19b9bd1b809ac34ae02e9ed3231643197bb3d0a9a849.json",
+        "pack_sha256": "6aaad2279840e71d2d5d19b9bd1b809ac34ae02e9ed3231643197bb3d0a9a849",
         "status": "stale"
       }
     },
@@ -26328,7 +27028,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -26357,8 +27057,8 @@
       },
       "description_ref": {
         "sha256": "84c4343dd6de592b238a1f2d2d8c09bcd049f602c8c4602e1290108523b82fbc",
-        "pack": "details/84-8bf241f871b39cdc931bec640d86fa6494830baef7eabd4598bd0b4dbfe828bc.json",
-        "pack_sha256": "8bf241f871b39cdc931bec640d86fa6494830baef7eabd4598bd0b4dbfe828bc",
+        "pack": "details/84-6c36cad5484f40b704de848c21aadff6710bfb1ed35b052e0c0a7e200ce533fb.json",
+        "pack_sha256": "6c36cad5484f40b704de848c21aadff6710bfb1ed35b052e0c0a7e200ce533fb",
         "status": "stale"
       }
     },
@@ -26470,7 +27170,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-20T02:38:50Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -26836,8 +27536,8 @@
       },
       "description_ref": {
         "sha256": "de030d42c14c2cde11ad93290910bd9b2edadf3b5ea0eda28457920492090de2",
-        "pack": "details/de-2f2ca7bc5ef7282aecd3e8804f63d9a76e6dbe6ad6ff6dfdaa106b9dc07bab3e.json",
-        "pack_sha256": "2f2ca7bc5ef7282aecd3e8804f63d9a76e6dbe6ad6ff6dfdaa106b9dc07bab3e",
+        "pack": "details/de-6ee5f65c22aee10b976fad77baf3553cdaf5d3e97eafc0eeb74f4e247ea9fe6c.json",
+        "pack_sha256": "6ee5f65c22aee10b976fad77baf3553cdaf5d3e97eafc0eeb74f4e247ea9fe6c",
         "status": "available"
       }
     },
@@ -27137,9 +27837,9 @@
       },
       "description_ref": {
         "sha256": "de4a139ebba1ee3ca43bcf263ceeb4f5d29f7826d20724dffe3685c1960c6cf3",
-        "pack": "details/de-2f2ca7bc5ef7282aecd3e8804f63d9a76e6dbe6ad6ff6dfdaa106b9dc07bab3e.json",
-        "pack_sha256": "2f2ca7bc5ef7282aecd3e8804f63d9a76e6dbe6ad6ff6dfdaa106b9dc07bab3e",
-        "status": "available"
+        "pack": "details/de-6ee5f65c22aee10b976fad77baf3553cdaf5d3e97eafc0eeb74f4e247ea9fe6c.json",
+        "pack_sha256": "6ee5f65c22aee10b976fad77baf3553cdaf5d3e97eafc0eeb74f4e247ea9fe6c",
+        "status": "stale"
       }
     },
     "e942aa5bb82df7e6": {
@@ -27269,8 +27969,8 @@
       },
       "description_ref": {
         "sha256": "5c7a8ff84d2b176556d2001b5c1916c916809fe9477df979f5ea500d33d0e2ef",
-        "pack": "details/5c-1d1a6cea0b85c9afa13fd15122762232e1de69bfdf1439ca03ce76d6f06978de.json",
-        "pack_sha256": "1d1a6cea0b85c9afa13fd15122762232e1de69bfdf1439ca03ce76d6f06978de",
+        "pack": "details/5c-ca0aab1a541f30083a553764924533b387827860ad47b0dff9af35e93542c04e.json",
+        "pack_sha256": "ca0aab1a541f30083a553764924533b387827860ad47b0dff9af35e93542c04e",
         "status": "stale"
       }
     },
@@ -27358,8 +28058,8 @@
       },
       "description_ref": {
         "sha256": "dbc4cc1e2db22f59eea32f607dd4e27652a4cdad0c74019c4c2bf769eb2316e3",
-        "pack": "details/db-141805e7446fc9b2644053f2fa26e06e264ad4ccffaf93043d7a329c32f0f428.json",
-        "pack_sha256": "141805e7446fc9b2644053f2fa26e06e264ad4ccffaf93043d7a329c32f0f428",
+        "pack": "details/db-e75e8081b78ec086b7a43f0eaf865ccc75f4a7a0ca2bab98fc031d8f1ef003f1.json",
+        "pack_sha256": "e75e8081b78ec086b7a43f0eaf865ccc75f4a7a0ca2bab98fc031d8f1ef003f1",
         "status": "available"
       }
     },
@@ -27391,8 +28091,8 @@
       },
       "description_ref": {
         "sha256": "c18f56bcaf3cb51c1aae9ea93e5980c1e126839fa331f4083deb6e3afa3fcec7",
-        "pack": "details/c1-6872d32322a42c42d00b60eaac51ec55c1719d9c5eef98c7076a1e3bb23d0fbf.json",
-        "pack_sha256": "6872d32322a42c42d00b60eaac51ec55c1719d9c5eef98c7076a1e3bb23d0fbf",
+        "pack": "details/c1-047089fe60c6c8ae7f8cdaec7d15a18286f89498b5fe1044964a4ff507d5270d.json",
+        "pack_sha256": "047089fe60c6c8ae7f8cdaec7d15a18286f89498b5fe1044964a4ff507d5270d",
         "status": "available"
       }
     },
@@ -27457,8 +28157,8 @@
       },
       "description_ref": {
         "sha256": "e410660d0830ad9561dfcdf976dff3ab3dea5ba2d8f38e5e9b46a178c9858e71",
-        "pack": "details/e4-339218746cc135a95422ac8f2f9b04cc3c29a0184f2ada3f3ff2a32cebca8a0b.json",
-        "pack_sha256": "339218746cc135a95422ac8f2f9b04cc3c29a0184f2ada3f3ff2a32cebca8a0b",
+        "pack": "details/e4-6954a8b03eddbfd0913b13c6b38aadd70fa024797a25434352220ee1631761d8.json",
+        "pack_sha256": "6954a8b03eddbfd0913b13c6b38aadd70fa024797a25434352220ee1631761d8",
         "status": "stale"
       }
     },
@@ -27674,6 +28374,39 @@
       "last_seen_at": "2026-11-24T18:45:07Z",
       "closed_at": null,
       "description_status": "unavailable"
+    },
+    "ecb3931ba8d2b39e": {
+      "id": "ecb3931ba8d2b39e",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Systems Engineer Intern - Chantilly VA",
+      "location": "United States-Virginia-Chantilly",
+      "locations": [
+        "United States-Virginia-Chantilly"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Virginia-Chantilly/XMLNAME-2027-Software-Engineer-Intern---Chantilly-VA_R10255633",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Software-Engineer-Intern---Chantilly-VA_R10255633",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "workday_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
+        }
+      },
+      "description_ref": {
+        "sha256": "101fb60eb440b4c53368a876f3df156d54635c68ac6be26e06ba09d3111ab0c6",
+        "pack": "details/10-e6e9dea2237a9e4740302c62c195b6eb6fcd292b0e7f6e721c9aff94d7f5f42b.json",
+        "pack_sha256": "e6e9dea2237a9e4740302c62c195b6eb6fcd292b0e7f6e721c9aff94d7f5f42b",
+        "status": "available"
+      }
     },
     "ecb667de6807bb9d": {
       "id": "ecb667de6807bb9d",
@@ -27911,8 +28644,8 @@
       },
       "description_ref": {
         "sha256": "e1041a1c03d06f26f5e594fa06b24cb48fcde10aa754a86fcbc4ab88386dbe0f",
-        "pack": "details/e1-65f33568e624b867c34bcebbd73859e7a61db3d37b8ae909969efc97bd95ce7e.json",
-        "pack_sha256": "65f33568e624b867c34bcebbd73859e7a61db3d37b8ae909969efc97bd95ce7e",
+        "pack": "details/e1-ae7f8b33b25365516d83bd4fe1314e1e6f62d9a74c4e28c903fe11df3fbf0909.json",
+        "pack_sha256": "ae7f8b33b25365516d83bd4fe1314e1e6f62d9a74c4e28c903fe11df3fbf0909",
         "status": "stale"
       }
     },
@@ -27977,8 +28710,8 @@
       },
       "description_ref": {
         "sha256": "e15b41d41ca3c45226b0e420756fa49d568d3ca9037249934b76c66857c7f0e2",
-        "pack": "details/e1-65f33568e624b867c34bcebbd73859e7a61db3d37b8ae909969efc97bd95ce7e.json",
-        "pack_sha256": "65f33568e624b867c34bcebbd73859e7a61db3d37b8ae909969efc97bd95ce7e",
+        "pack": "details/e1-ae7f8b33b25365516d83bd4fe1314e1e6f62d9a74c4e28c903fe11df3fbf0909.json",
+        "pack_sha256": "ae7f8b33b25365516d83bd4fe1314e1e6f62d9a74c4e28c903fe11df3fbf0909",
         "status": "stale"
       }
     },
@@ -28078,8 +28811,8 @@
       },
       "description_ref": {
         "sha256": "f595c2176276a86eda92958f335144789097234a6121ec31ca5434a4503603aa",
-        "pack": "details/f5-0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e.json",
-        "pack_sha256": "0c209a69f5e54fc71965f72d2440b9de2bcebe37abce592020427df2f1b5c36e",
+        "pack": "details/f5-ca3669ac3d374811397aa1f0341e67be0351d8959e95cdd8acd8f2fefd2f6d46.json",
+        "pack_sha256": "ca3669ac3d374811397aa1f0341e67be0351d8959e95cdd8acd8f2fefd2f6d46",
         "status": "available"
       }
     },
@@ -28131,8 +28864,8 @@
       },
       "description_ref": {
         "sha256": "72684da6de5325fde599f23c6d54831ee4ee8ef7f9fef50949365783d8c00a92",
-        "pack": "details/72-99dfd3866a80f3fb5d9e27ccde3e4a16d2cce35b347ade08c381ecbbe370ef9e.json",
-        "pack_sha256": "99dfd3866a80f3fb5d9e27ccde3e4a16d2cce35b347ade08c381ecbbe370ef9e",
+        "pack": "details/72-3de2527051dedec346eba9141ba39e754d7aee03c73bc8ebe9b2ef5152a7888b.json",
+        "pack_sha256": "3de2527051dedec346eba9141ba39e754d7aee03c73bc8ebe9b2ef5152a7888b",
         "status": "available"
       }
     },
@@ -28164,8 +28897,8 @@
       },
       "description_ref": {
         "sha256": "d1ab265ade59bccb0416c96c894f83e52222184f47add858cf800995919c78ce",
-        "pack": "details/d1-192c8045f2aae39bc91c5bf0538a292efe218429af966329481063ea4b517e9e.json",
-        "pack_sha256": "192c8045f2aae39bc91c5bf0538a292efe218429af966329481063ea4b517e9e",
+        "pack": "details/d1-5f30b860d13afc4e1de1a107d8f9b64099ead37939edd7f1b7290b1edd4c1b36.json",
+        "pack_sha256": "5f30b860d13afc4e1de1a107d8f9b64099ead37939edd7f1b7290b1edd4c1b36",
         "status": "available"
       }
     },
@@ -28197,8 +28930,8 @@
       },
       "description_ref": {
         "sha256": "eaefea89b17ef6bcb4c730ae1cb5d76332b3837dc7b4c02d72c442ee1b269ad5",
-        "pack": "details/ea-d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b.json",
-        "pack_sha256": "d8a492e9ab6e1b6c0559d57dab0cc66d537c8384f4e967c8bf2236af8e7dbf7b",
+        "pack": "details/ea-9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7.json",
+        "pack_sha256": "9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7",
         "status": "available"
       }
     },
@@ -28488,8 +29221,8 @@
       },
       "description_ref": {
         "sha256": "9a70ac26b2fe812fbf34de08b1ba6f7721a34b0ce6d2a8afa077e9df3a556a9b",
-        "pack": "details/9a-acea961f48a8c320177fb00c89613508bbb1e09a2817b1f6cb0ff9d6214147c8.json",
-        "pack_sha256": "acea961f48a8c320177fb00c89613508bbb1e09a2817b1f6cb0ff9d6214147c8",
+        "pack": "details/9a-9a4249314db34c3650f5754e8ba7d03cfaa5c61be291616f2c67ebf1a8ddcae2.json",
+        "pack_sha256": "9a4249314db34c3650f5754e8ba7d03cfaa5c61be291616f2c67ebf1a8ddcae2",
         "status": "stale"
       }
     },
@@ -28899,7 +29632,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-13T18:06:47Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -28952,7 +29685,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-21T22:47:02Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -29057,7 +29790,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-19T20:06:44Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -29147,6 +29880,25 @@
         "pack_sha256": "ed359ad3596b5d75135f97a4da12a49e01b4157b0ab81aec7dcedb49937262cd",
         "status": "available"
       }
+    },
+    "f785337ae07c7ceb": {
+      "id": "f785337ae07c7ceb",
+      "company": "Northrop Grumman",
+      "company_slug": "northrop-grumman",
+      "title": "2027 Cyber Systems Engineer Intern - Roy UT",
+      "location": "United States-Utah-Roy",
+      "locations": [
+        "United States-Utah-Roy"
+      ],
+      "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Utah-Roy/XMLNAME-2027-Cyber-Systems-Engineer-Intern---Roy-UT_R10249471",
+      "source": "workday",
+      "source_job_id": "XMLNAME-2027-Cyber-Systems-Engineer-Intern---Roy-UT_R10249471",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
+      "closed_at": null,
+      "description_status": "unavailable"
     },
     "f7db3c31567ce024": {
       "id": "f7db3c31567ce024",
@@ -29245,7 +29997,7 @@
         "sha256": "7cbb372ec230a169b04ee20a1503df36d2f7b24993a2b449d9b1fbe975050708",
         "pack": "details/7c-07e9998139c7f07bfcfd4c96479069b93aa22c549a8209f6e5a7b91e497a25b7.json",
         "pack_sha256": "07e9998139c7f07bfcfd4c96479069b93aa22c549a8209f6e5a7b91e497a25b7",
-        "status": "available"
+        "status": "stale"
       }
     },
     "f8b671fe2815fbd7": {
@@ -29263,7 +30015,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-12T22:24:30Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -29354,16 +30106,15 @@
       "description_version": 5,
       "source_metadata": {
         "description_acquisition": {
-          "method": "json_ld",
+          "method": "workday_api",
           "completeness": "available",
-          "identity": "matched_url_and_title",
-          "resolved_url": "https://hntb.wd5.myworkdayjobs.com/hntb_university_careers/job/New-York-NY/Intern-Engineer--Bridge-Inspection---Summer-2027_R-31825-2"
+          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
-        "sha256": "5daa400547abd06302160ad8d28cacbc05ddc06d9903ad606549e05c7c01f829",
-        "pack": "details/5d-5c88b849600f09ede7c365c9b392df12554877306c25b70f3156d7d3adb1c0b2.json",
-        "pack_sha256": "5c88b849600f09ede7c365c9b392df12554877306c25b70f3156d7d3adb1c0b2",
+        "sha256": "cdb3372ef248d2d42db55bb218d3378d0ad4d17a4e643f3b9d8ff5150f5557c4",
+        "pack": "details/cd-e505f1c321641acf8631ecabc8985b51b50ed4ccfa4ca1dbd52878779ee16589.json",
+        "pack_sha256": "e505f1c321641acf8631ecabc8985b51b50ed4ccfa4ca1dbd52878779ee16589",
         "status": "available"
       }
     },
@@ -29382,7 +30133,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T21:56:11Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -29529,8 +30280,8 @@
       },
       "description_ref": {
         "sha256": "5501b67b6483cceb1dd7f59b5c91bc687a18aa9967bf58fce928e3326f543c7c",
-        "pack": "details/55-39a17115a828ca405a0bba9681ebb7da731854c5674456053e9a26d2f04808a8.json",
-        "pack_sha256": "39a17115a828ca405a0bba9681ebb7da731854c5674456053e9a26d2f04808a8",
+        "pack": "details/55-ba786f599f7c22cd06a882fd573effd05224038e8534975ff90e2c98cfc374aa.json",
+        "pack_sha256": "ba786f599f7c22cd06a882fd573effd05224038e8534975ff90e2c98cfc374aa",
         "status": "stale"
       }
     },
@@ -29570,8 +30321,8 @@
       },
       "description_ref": {
         "sha256": "9ab00c5d453fb0049d49c68b687960129ef417e2039387812f0c493ae02f9e95",
-        "pack": "details/9a-acea961f48a8c320177fb00c89613508bbb1e09a2817b1f6cb0ff9d6214147c8.json",
-        "pack_sha256": "acea961f48a8c320177fb00c89613508bbb1e09a2817b1f6cb0ff9d6214147c8",
+        "pack": "details/9a-9a4249314db34c3650f5754e8ba7d03cfaa5c61be291616f2c67ebf1a8ddcae2.json",
+        "pack_sha256": "9a4249314db34c3650f5754e8ba7d03cfaa5c61be291616f2c67ebf1a8ddcae2",
         "status": "stale"
       }
     },
@@ -29676,7 +30427,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-28T19:47:07Z",
-      "last_seen_at": "2026-11-23T22:51:38Z",
+      "last_seen_at": "2026-11-26T04:02:10Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -29685,12 +30436,20 @@
           "method": "workday_api",
           "completeness": "available",
           "identity": "provider_job_endpoint"
-        }
+        },
+        "provenance": [
+          {
+            "source": "workday",
+            "source_job_id": "XMLNAME-2027-Intern-Facilities-Management---San-Diego-CA_R10258075",
+            "url": "https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-California-San-Diego/XMLNAME-2027-Intern-Facilities-Management---San-Diego-CA_R10258075",
+            "discovered_at": "2026-10-28T19:47:07Z"
+          }
+        ]
       },
       "description_ref": {
         "sha256": "574202ed4c6803471c4b4e223983327214e717b6eb552e2c5fc5cded219714c7",
-        "pack": "details/57-e7077f3d6ac3477aa65e4e3f4381ae567dff6a439a299d0dcc2b94ec45bc14e9.json",
-        "pack_sha256": "e7077f3d6ac3477aa65e4e3f4381ae567dff6a439a299d0dcc2b94ec45bc14e9",
+        "pack": "details/57-7647614dd9aa644f01c39a7d1f8a297e65b20a07270865005b6e5a192f9d8a57.json",
+        "pack_sha256": "7647614dd9aa644f01c39a7d1f8a297e65b20a07270865005b6e5a192f9d8a57",
         "status": "stale"
       }
     },
@@ -29788,8 +30547,8 @@
       },
       "description_ref": {
         "sha256": "59ac2bf06700108b79c7fabbd202bbb776b8c434276234bcfe4259bd6009e6cc",
-        "pack": "details/59-5eb7eba95e42597102bd8a4e7722b00f274b943bf9b0dede5349873294d44d0d.json",
-        "pack_sha256": "5eb7eba95e42597102bd8a4e7722b00f274b943bf9b0dede5349873294d44d0d",
+        "pack": "details/59-608abe5b73c6df9258b3b9e433b8ff4577eceb7cbc7eb44dcc42415a97f4bba9.json",
+        "pack_sha256": "608abe5b73c6df9258b3b9e433b8ff4577eceb7cbc7eb44dcc42415a97f4bba9",
         "status": "stale"
       }
     },

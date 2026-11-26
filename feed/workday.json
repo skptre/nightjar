@@ -1,7 +1,7 @@
 {
   "shard_id": "workday",
-  "updated_at": "2026-11-26T13:46:34Z",
-  "count": 890,
+  "updated_at": "2026-11-26T22:38:31Z",
+  "count": 894,
   "postings": {
     "0004d9a7c5a80ffe": {
       "id": "0004d9a7c5a80ffe",
@@ -262,8 +262,8 @@
       },
       "description_ref": {
         "sha256": "a5fc5e7387dee6cdb369cc14b568318577a92f5a39b809e77409f7c9a18f077e",
-        "pack": "details/a5-01002db3de3e123c4e1fec181bcdcbf9034629d7303f42b6df77ae46d82231bb.json",
-        "pack_sha256": "01002db3de3e123c4e1fec181bcdcbf9034629d7303f42b6df77ae46d82231bb",
+        "pack": "details/a5-1e1eae691f83a635a7127e58b9cf4a63327d85350ecb5350938e035d0d9c3557.json",
+        "pack_sha256": "1e1eae691f83a635a7127e58b9cf4a63327d85350ecb5350938e035d0d9c3557",
         "status": "stale"
       }
     },
@@ -607,7 +607,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-23T15:46:26Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -689,7 +689,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -758,6 +758,25 @@
         "pack_sha256": "8ff351e361dd680e83ee2b8c4909bbbc233ba6c1caef300856eaac4de0f8c396",
         "status": "stale"
       }
+    },
+    "06b1807ac398a5fd": {
+      "id": "06b1807ac398a5fd",
+      "company": "Generac",
+      "company_slug": "generac",
+      "title": "Intern AI Engineering",
+      "location": "Waukesha, WI - USA",
+      "locations": [
+        "Waukesha, WI - USA"
+      ],
+      "url": "https://generac.wd5.myworkdayjobs.com/external/job/Waukesha-WI---USA/Intern-AI-Engineering_JR17511",
+      "source": "workday",
+      "source_job_id": "Intern-AI-Engineering_JR17511",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
+      "closed_at": null,
+      "description_status": "unavailable"
     },
     "06dc17136430307e": {
       "id": "06dc17136430307e",
@@ -1093,7 +1112,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -1525,7 +1544,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -1731,7 +1750,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -1891,7 +1910,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-25T02:47:25Z",
-      "last_seen_at": "2026-11-25T02:47:25Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -1904,8 +1923,8 @@
       },
       "description_ref": {
         "sha256": "1cb4e1b4f91e2ee95e02f95d489807a419b2cb859e844fe3211844007c1a0216",
-        "pack": "details/1c-3c4243c0e87a15ad7336bee8fe7e005faaafe8c3874d434c8e1b385b6556c5f0.json",
-        "pack_sha256": "3c4243c0e87a15ad7336bee8fe7e005faaafe8c3874d434c8e1b385b6556c5f0",
+        "pack": "details/1c-cc332a1f44eb98707b010b90c24867ba5301f714a4d3c3dd2d796375169104c2.json",
+        "pack_sha256": "cc332a1f44eb98707b010b90c24867ba5301f714a4d3c3dd2d796375169104c2",
         "status": "available"
       }
     },
@@ -1924,7 +1943,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-21T14:41:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -1962,8 +1981,8 @@
       },
       "description_ref": {
         "sha256": "17dee73e99de912606ab84c094d0726326003d95d7c79ab6a787345ac2925e78",
-        "pack": "details/17-b5063eda5a076df1b0900df61cf5abdf6062571d1fc1b57d23560f6ae702c770.json",
-        "pack_sha256": "b5063eda5a076df1b0900df61cf5abdf6062571d1fc1b57d23560f6ae702c770",
+        "pack": "details/17-7204b896066b32568fdd1d0efe3a996c12c9e13c9a45c912afbc25c6c8de18d9.json",
+        "pack_sha256": "7204b896066b32568fdd1d0efe3a996c12c9e13c9a45c912afbc25c6c8de18d9",
         "status": "stale"
       }
     },
@@ -2077,10 +2096,29 @@
       },
       "description_ref": {
         "sha256": "6dc752e0a965c66c3d325b3143f5ff852bd6c196c00b3ae9ea49f137a5df6346",
-        "pack": "details/6d-862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f.json",
-        "pack_sha256": "862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f",
+        "pack": "details/6d-1d0d541e446b52a1b646693dec4fae8d864c7d8f477eaebb408f372a191c8364.json",
+        "pack_sha256": "1d0d541e446b52a1b646693dec4fae8d864c7d8f477eaebb408f372a191c8364",
         "status": "stale"
       }
+    },
+    "12e3976b080e7da1": {
+      "id": "12e3976b080e7da1",
+      "company": "American Fidelity",
+      "company_slug": "american-fidelity",
+      "title": "Videographer Intern",
+      "location": "Oklahoma City, Oklahoma",
+      "locations": [
+        "Oklahoma City, Oklahoma"
+      ],
+      "url": "https://americanfidelity.wd5.myworkdayjobs.com/External/job/Oklahoma-City-Oklahoma/Intern_JR1206",
+      "source": "workday",
+      "source_job_id": "Intern_JR1206",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
+      "closed_at": null,
+      "description_status": "unavailable"
     },
     "12e69a71c1a73c9f": {
       "id": "12e69a71c1a73c9f",
@@ -2097,7 +2135,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -2609,8 +2647,8 @@
       },
       "description_ref": {
         "sha256": "5dade6b7553dc9f9c4cc6405c6c384c4c39989b7d775b32823a730c5426de0ae",
-        "pack": "details/5d-ddebcf39233b71f41b8b3f270a1c2898e3569b87d2449c730caa2579ea9a2aea.json",
-        "pack_sha256": "ddebcf39233b71f41b8b3f270a1c2898e3569b87d2449c730caa2579ea9a2aea",
+        "pack": "details/5d-8f222471079f0c0efa2ce1d29287b0a07fc90326ffa5b30ad3ab07525623a8d3.json",
+        "pack_sha256": "8f222471079f0c0efa2ce1d29287b0a07fc90326ffa5b30ad3ab07525623a8d3",
         "status": "stale"
       }
     },
@@ -2675,8 +2713,8 @@
       },
       "description_ref": {
         "sha256": "166a6c027f3255acbcfb10515bc10717a7894b1f1e31a963c4c6590328904560",
-        "pack": "details/16-212c91a192e5eaef86f20a4252bdbc8f1cc1ea8296b8505558369da14a848dd4.json",
-        "pack_sha256": "212c91a192e5eaef86f20a4252bdbc8f1cc1ea8296b8505558369da14a848dd4",
+        "pack": "details/16-ab5b0ad9a8b67ecb416d5ec55d28321259dd34b559de34150ad053f06f7bd824.json",
+        "pack_sha256": "ab5b0ad9a8b67ecb416d5ec55d28321259dd34b559de34150ad053f06f7bd824",
         "status": "available"
       }
     },
@@ -2909,7 +2947,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -3071,7 +3109,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-25T02:47:25Z",
-      "last_seen_at": "2026-11-25T02:47:25Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -3388,7 +3426,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-08-31T00:00:06Z",
-      "last_seen_at": "2026-11-25T02:47:25Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -3417,8 +3455,8 @@
       },
       "description_ref": {
         "sha256": "17f52baaa1c090698f8ddb1872426473da649a9600b172b2ff1b6431365e87d2",
-        "pack": "details/17-b5063eda5a076df1b0900df61cf5abdf6062571d1fc1b57d23560f6ae702c770.json",
-        "pack_sha256": "b5063eda5a076df1b0900df61cf5abdf6062571d1fc1b57d23560f6ae702c770",
+        "pack": "details/17-7204b896066b32568fdd1d0efe3a996c12c9e13c9a45c912afbc25c6c8de18d9.json",
+        "pack_sha256": "7204b896066b32568fdd1d0efe3a996c12c9e13c9a45c912afbc25c6c8de18d9",
         "status": "stale"
       }
     },
@@ -3624,8 +3662,8 @@
       },
       "description_ref": {
         "sha256": "ce46050352833350d0e5ce98870aeed1c371e55e269e0054b1dd7203d468a2ce",
-        "pack": "details/ce-74cd298d1558b2d1c0c766dfbc20522d70fbcd18e9a43397aee7268097598574.json",
-        "pack_sha256": "74cd298d1558b2d1c0c766dfbc20522d70fbcd18e9a43397aee7268097598574",
+        "pack": "details/ce-04026b2005a9192bef97b2fec3a8cd5b4c870a56a12c8146f10e0992070903eb.json",
+        "pack_sha256": "04026b2005a9192bef97b2fec3a8cd5b4c870a56a12c8146f10e0992070903eb",
         "status": "stale"
       }
     },
@@ -3723,8 +3761,8 @@
       },
       "description_ref": {
         "sha256": "c3beb205cb15d3e4ed1619a3c1619df13dd30c468c8f71bc29c174d6b969d0c4",
-        "pack": "details/c3-fd947beb797f66b3a47cd2ffe1b6e479903b65b32c2c0b3f5913af5b6cc7a8e3.json",
-        "pack_sha256": "fd947beb797f66b3a47cd2ffe1b6e479903b65b32c2c0b3f5913af5b6cc7a8e3",
+        "pack": "details/c3-ca1bc20bbc95adf99a7ebdd8dab3df2a385e381a3a838a8b5a7a6a360a0acb4c.json",
+        "pack_sha256": "ca1bc20bbc95adf99a7ebdd8dab3df2a385e381a3a838a8b5a7a6a360a0acb4c",
         "status": "available"
       }
     },
@@ -4644,7 +4682,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -4836,7 +4874,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5065,8 +5103,8 @@
       },
       "description_ref": {
         "sha256": "4212f08a1810a2e71614435a478a08d085cb9e1c6d95be15cc199dc442b8d9db",
-        "pack": "details/42-85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865.json",
-        "pack_sha256": "85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865",
+        "pack": "details/42-e2aea444fb51039cf59d3544f9223254037567d27b19fe0bf92d7e65cb9cde90.json",
+        "pack_sha256": "e2aea444fb51039cf59d3544f9223254037567d27b19fe0bf92d7e65cb9cde90",
         "status": "stale"
       }
     },
@@ -5180,7 +5218,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-14T16:53:57Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5203,7 +5241,13 @@
             "source": "simplify",
             "source_job_id": "07314994-8ce1-406a-91bb-b8b31de49a91",
             "url": "https://postman.wd108.myworkdayjobs.com/careers/job/San-Francisco-CA-US/AI-Engineer--Intern_JR1000055",
-            "discovered_at": "2026-11-26T13:46:34Z"
+            "discovered_at": "2026-11-26T22:38:31Z"
+          },
+          {
+            "source": "workday",
+            "source_job_id": "AI-Engineer--Intern_JR1000055",
+            "url": "https://postman.wd108.myworkdayjobs.com/careers/job/San-Francisco-CA-US/AI-Engineer--Intern_JR1000055",
+            "discovered_at": "2026-11-14T16:53:57Z"
           }
         ],
         "description_acquisition": {
@@ -5484,7 +5528,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-27T22:31:02Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5550,8 +5594,8 @@
       },
       "description_ref": {
         "sha256": "6617051f6f9368b697685de48755914ef2a99b6028d49185d844a6f7cde2561d",
-        "pack": "details/66-b9f71e758953e9d31965d9a8378d76cacf1b87a0bb3de0ab836aa0964ca99214.json",
-        "pack_sha256": "b9f71e758953e9d31965d9a8378d76cacf1b87a0bb3de0ab836aa0964ca99214",
+        "pack": "details/66-c6743269f05227ad2187f710fe34e8d3d257a51cf2ffe4a7328c8480c8e4331c.json",
+        "pack_sha256": "c6743269f05227ad2187f710fe34e8d3d257a51cf2ffe4a7328c8480c8e4331c",
         "status": "stale"
       }
     },
@@ -5616,8 +5660,8 @@
       },
       "description_ref": {
         "sha256": "6d14c59082aa10af2df3a4f2293c7ba667222913ce0af3c137a2b858bcb82c60",
-        "pack": "details/6d-862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f.json",
-        "pack_sha256": "862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f",
+        "pack": "details/6d-1d0d541e446b52a1b646693dec4fae8d864c7d8f477eaebb408f372a191c8364.json",
+        "pack_sha256": "1d0d541e446b52a1b646693dec4fae8d864c7d8f477eaebb408f372a191c8364",
         "status": "stale"
       }
     },
@@ -5776,7 +5820,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5842,8 +5886,8 @@
       },
       "description_ref": {
         "sha256": "3dc8e753b3eb7fd061faed6de58206986741d124c9bce7133edde527e93f86a8",
-        "pack": "details/3d-1fe72fd0f0664990511eb25520464a3d0ee9e627c360dc5a818a66f6cdf448fb.json",
-        "pack_sha256": "1fe72fd0f0664990511eb25520464a3d0ee9e627c360dc5a818a66f6cdf448fb",
+        "pack": "details/3d-17f2c827fe7c39540d1b79422b0d00caaa59ed0841925e344c97c0add0501dca.json",
+        "pack_sha256": "17f2c827fe7c39540d1b79422b0d00caaa59ed0841925e344c97c0add0501dca",
         "status": "stale"
       }
     },
@@ -5895,7 +5939,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-01T21:24:06Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5928,8 +5972,8 @@
       },
       "description_ref": {
         "sha256": "202457d9068e7c7ee8cfbeeddd14bc03c83ea6dcea71f7422fe438304000c135",
-        "pack": "details/20-e2e773b8cfa94d8aeae431376879d4dfa0c558f7609fcc480a038f2d986bc274.json",
-        "pack_sha256": "e2e773b8cfa94d8aeae431376879d4dfa0c558f7609fcc480a038f2d986bc274",
+        "pack": "details/20-b5053993594d842f04c8bb5719a143bc439305c41ad7b879a46f1cf4a88547e7.json",
+        "pack_sha256": "b5053993594d842f04c8bb5719a143bc439305c41ad7b879a46f1cf4a88547e7",
         "status": "stale"
       }
     },
@@ -6029,7 +6073,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-26T04:02:10Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -6157,7 +6201,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -6367,8 +6411,8 @@
       },
       "description_ref": {
         "sha256": "04addf8eeb7131b90de098dfdaca714fe619defa81f8b5cbd6a6f2d19f3c1c92",
-        "pack": "details/04-dec1e89770d4e6d188da35c8fac55d9e7abf70eb196939981b2def6d1a281e01.json",
-        "pack_sha256": "dec1e89770d4e6d188da35c8fac55d9e7abf70eb196939981b2def6d1a281e01",
+        "pack": "details/04-d4a6087260c1f0e0a696f3ccf5124f2ca18637651b40429fa75bc85271d0d711.json",
+        "pack_sha256": "d4a6087260c1f0e0a696f3ccf5124f2ca18637651b40429fa75bc85271d0d711",
         "status": "stale"
       }
     },
@@ -6428,7 +6472,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -6767,8 +6811,8 @@
       },
       "description_ref": {
         "sha256": "a58743c333ab22548a2623dc754867b81b7dcd966cda3bc18786faa5fb61ff16",
-        "pack": "details/a5-01002db3de3e123c4e1fec181bcdcbf9034629d7303f42b6df77ae46d82231bb.json",
-        "pack_sha256": "01002db3de3e123c4e1fec181bcdcbf9034629d7303f42b6df77ae46d82231bb",
+        "pack": "details/a5-1e1eae691f83a635a7127e58b9cf4a63327d85350ecb5350938e035d0d9c3557.json",
+        "pack_sha256": "1e1eae691f83a635a7127e58b9cf4a63327d85350ecb5350938e035d0d9c3557",
         "status": "available"
       }
     },
@@ -6828,7 +6872,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T02:47:25Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -7374,7 +7418,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-30T23:35:05Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -7522,8 +7566,8 @@
       },
       "description_ref": {
         "sha256": "5ded4a75ae5c03f5cdcdc57e75190985fbdca2e86876d2c05d6e147a2f9073c0",
-        "pack": "details/5d-ddebcf39233b71f41b8b3f270a1c2898e3569b87d2449c730caa2579ea9a2aea.json",
-        "pack_sha256": "ddebcf39233b71f41b8b3f270a1c2898e3569b87d2449c730caa2579ea9a2aea",
+        "pack": "details/5d-8f222471079f0c0efa2ce1d29287b0a07fc90326ffa5b30ad3ab07525623a8d3.json",
+        "pack_sha256": "8f222471079f0c0efa2ce1d29287b0a07fc90326ffa5b30ad3ab07525623a8d3",
         "status": "available"
       }
     },
@@ -7622,8 +7666,8 @@
       },
       "description_ref": {
         "sha256": "84afd6e7c369707ed8d4f3d3f880521edab544f340bcbed91a1ca773b32e0de2",
-        "pack": "details/84-6c36cad5484f40b704de848c21aadff6710bfb1ed35b052e0c0a7e200ce533fb.json",
-        "pack_sha256": "6c36cad5484f40b704de848c21aadff6710bfb1ed35b052e0c0a7e200ce533fb",
+        "pack": "details/84-d8331c793e3ed48a0a8c5d756091586a17b884036ed62bcee6050f4108cdcb9c.json",
+        "pack_sha256": "d8331c793e3ed48a0a8c5d756091586a17b884036ed62bcee6050f4108cdcb9c",
         "status": "available"
       }
     },
@@ -7902,7 +7946,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-15T23:12:44Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -8056,8 +8100,8 @@
       },
       "description_ref": {
         "sha256": "dc09e35310a49bdd544b4f2df63e0bb3272a4a0221e8e84491aa927416c5989f",
-        "pack": "details/dc-18d362018c6b76a90771ed35a2724160acfa585fe2d1ebddc3c8526c10a786f4.json",
-        "pack_sha256": "18d362018c6b76a90771ed35a2724160acfa585fe2d1ebddc3c8526c10a786f4",
+        "pack": "details/dc-fc057baaf3342a73f45ec58c94064bc75804e0c0e82345d408d9117bc6fa8fca.json",
+        "pack_sha256": "fc057baaf3342a73f45ec58c94064bc75804e0c0e82345d408d9117bc6fa8fca",
         "status": "stale"
       }
     },
@@ -8089,8 +8133,8 @@
       },
       "description_ref": {
         "sha256": "168be9c33c6809757d1e0ab4adb926f7f952c371b99161824ef73a73101069e5",
-        "pack": "details/16-212c91a192e5eaef86f20a4252bdbc8f1cc1ea8296b8505558369da14a848dd4.json",
-        "pack_sha256": "212c91a192e5eaef86f20a4252bdbc8f1cc1ea8296b8505558369da14a848dd4",
+        "pack": "details/16-ab5b0ad9a8b67ecb416d5ec55d28321259dd34b559de34150ad053f06f7bd824.json",
+        "pack_sha256": "ab5b0ad9a8b67ecb416d5ec55d28321259dd34b559de34150ad053f06f7bd824",
         "status": "stale"
       }
     },
@@ -8371,7 +8415,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-25T02:47:25Z",
-      "last_seen_at": "2026-11-25T02:47:25Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -8381,7 +8425,15 @@
           "completeness": "available",
           "identity": "matched_url_and_title",
           "resolved_url": "https://rfcuny.wd108.myworkdayjobs.com/RFCUNY/job/New-York-NY/Senior-Program-Manager-Internship-to-Employment_JR4492"
-        }
+        },
+        "provenance": [
+          {
+            "source": "workday",
+            "source_job_id": "Senior-Program-Manager-Internship-to-Employment_JR4492",
+            "url": "https://rfcuny.wd108.myworkdayjobs.com/RFCUNY/job/New-York-NY/Senior-Program-Manager-Internship-to-Employment_JR4492",
+            "discovered_at": "2026-11-25T02:47:25Z"
+          }
+        ]
       },
       "description_ref": {
         "sha256": "4969749d4741b33e2744cc45505674d031a8d487fffbbf9abae14b7071c28f41",
@@ -8581,7 +8633,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -8757,7 +8809,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -8999,7 +9051,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-30T01:16:42Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -9211,8 +9263,8 @@
       },
       "description_ref": {
         "sha256": "166771745beb42de90e68656114afb526c55b5e2e62488b745a1d4eae09427f9",
-        "pack": "details/16-212c91a192e5eaef86f20a4252bdbc8f1cc1ea8296b8505558369da14a848dd4.json",
-        "pack_sha256": "212c91a192e5eaef86f20a4252bdbc8f1cc1ea8296b8505558369da14a848dd4",
+        "pack": "details/16-ab5b0ad9a8b67ecb416d5ec55d28321259dd34b559de34150ad053f06f7bd824.json",
+        "pack_sha256": "ab5b0ad9a8b67ecb416d5ec55d28321259dd34b559de34150ad053f06f7bd824",
         "status": "available"
       }
     },
@@ -9272,7 +9324,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -9346,8 +9398,8 @@
       },
       "description_ref": {
         "sha256": "6dc752e0a965c66c3d325b3143f5ff852bd6c196c00b3ae9ea49f137a5df6346",
-        "pack": "details/6d-862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f.json",
-        "pack_sha256": "862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f",
+        "pack": "details/6d-1d0d541e446b52a1b646693dec4fae8d864c7d8f477eaebb408f372a191c8364.json",
+        "pack_sha256": "1d0d541e446b52a1b646693dec4fae8d864c7d8f477eaebb408f372a191c8364",
         "status": "stale"
       }
     },
@@ -9703,8 +9755,8 @@
       },
       "description_ref": {
         "sha256": "1ca91028d4759413bd166ac2725fe111e6c2a7f58d695c6d034aacd8bef43bfc",
-        "pack": "details/1c-3c4243c0e87a15ad7336bee8fe7e005faaafe8c3874d434c8e1b385b6556c5f0.json",
-        "pack_sha256": "3c4243c0e87a15ad7336bee8fe7e005faaafe8c3874d434c8e1b385b6556c5f0",
+        "pack": "details/1c-cc332a1f44eb98707b010b90c24867ba5301f714a4d3c3dd2d796375169104c2.json",
+        "pack_sha256": "cc332a1f44eb98707b010b90c24867ba5301f714a4d3c3dd2d796375169104c2",
         "status": "stale"
       }
     },
@@ -9723,7 +9775,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-27T22:31:02Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -9761,8 +9813,8 @@
       },
       "description_ref": {
         "sha256": "207221a685d683543d98a67126160674790f68ce79bf8fd164982c59659bc215",
-        "pack": "details/20-e2e773b8cfa94d8aeae431376879d4dfa0c558f7609fcc480a038f2d986bc274.json",
-        "pack_sha256": "e2e773b8cfa94d8aeae431376879d4dfa0c558f7609fcc480a038f2d986bc274",
+        "pack": "details/20-b5053993594d842f04c8bb5719a143bc439305c41ad7b879a46f1cf4a88547e7.json",
+        "pack_sha256": "b5053993594d842f04c8bb5719a143bc439305c41ad7b879a46f1cf4a88547e7",
         "status": "stale"
       }
     },
@@ -9973,7 +10025,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T02:47:25Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -10047,7 +10099,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-25T02:47:25Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -10195,7 +10247,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -10511,7 +10563,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -10650,8 +10702,8 @@
       },
       "description_ref": {
         "sha256": "c3d9f45a9f04db53825af5abc300c83e771670b0959da1e462e6e18e17afe0f5",
-        "pack": "details/c3-fd947beb797f66b3a47cd2ffe1b6e479903b65b32c2c0b3f5913af5b6cc7a8e3.json",
-        "pack_sha256": "fd947beb797f66b3a47cd2ffe1b6e479903b65b32c2c0b3f5913af5b6cc7a8e3",
+        "pack": "details/c3-ca1bc20bbc95adf99a7ebdd8dab3df2a385e381a3a838a8b5a7a6a360a0acb4c.json",
+        "pack_sha256": "ca1bc20bbc95adf99a7ebdd8dab3df2a385e381a3a838a8b5a7a6a360a0acb4c",
         "status": "stale"
       }
     },
@@ -10683,8 +10735,8 @@
       },
       "description_ref": {
         "sha256": "a5e9f7142ef27eb7b4f7ea68904f1f16ad4de4766ac5e51969ad6c35a89fa80e",
-        "pack": "details/a5-01002db3de3e123c4e1fec181bcdcbf9034629d7303f42b6df77ae46d82231bb.json",
-        "pack_sha256": "01002db3de3e123c4e1fec181bcdcbf9034629d7303f42b6df77ae46d82231bb",
+        "pack": "details/a5-1e1eae691f83a635a7127e58b9cf4a63327d85350ecb5350938e035d0d9c3557.json",
+        "pack_sha256": "1e1eae691f83a635a7127e58b9cf4a63327d85350ecb5350938e035d0d9c3557",
         "status": "available"
       }
     },
@@ -10823,8 +10875,8 @@
       },
       "description_ref": {
         "sha256": "a5bbfca616c02b6928a69e9688927b893c9dacfeb5a6f713332206757ce84bed",
-        "pack": "details/a5-01002db3de3e123c4e1fec181bcdcbf9034629d7303f42b6df77ae46d82231bb.json",
-        "pack_sha256": "01002db3de3e123c4e1fec181bcdcbf9034629d7303f42b6df77ae46d82231bb",
+        "pack": "details/a5-1e1eae691f83a635a7127e58b9cf4a63327d85350ecb5350938e035d0d9c3557.json",
+        "pack_sha256": "1e1eae691f83a635a7127e58b9cf4a63327d85350ecb5350938e035d0d9c3557",
         "status": "stale"
       }
     },
@@ -10876,7 +10928,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-12T23:01:00Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -10995,7 +11047,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-27T22:31:02Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11070,8 +11122,8 @@
       },
       "description_ref": {
         "sha256": "acbaa63f9f3147893fbbddb7916167e8e1d8bdd8f42564c29c30bb2fcc8a1569",
-        "pack": "details/ac-5a54fdfe6bffbc12800f6eb4c117de81a117405212de425e75eff3473ec20d85.json",
-        "pack_sha256": "5a54fdfe6bffbc12800f6eb4c117de81a117405212de425e75eff3473ec20d85",
+        "pack": "details/ac-5cebe3b9883a532279145aa23489004eb8bade575bcfc13851eee54ff4b9c972.json",
+        "pack_sha256": "5cebe3b9883a532279145aa23489004eb8bade575bcfc13851eee54ff4b9c972",
         "status": "available"
       }
     },
@@ -11189,7 +11241,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-21T22:47:02Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11288,8 +11340,8 @@
       },
       "description_ref": {
         "sha256": "540d342ccd76020f194adec5f3dbe2824e116517b28c992bfcf64bb6968bb12b",
-        "pack": "details/54-7c7e85454ac6cab7f11572fd984b75996ead925d1d0a1042914fdecd6abc050d.json",
-        "pack_sha256": "7c7e85454ac6cab7f11572fd984b75996ead925d1d0a1042914fdecd6abc050d",
+        "pack": "details/54-0826b04c4b4ba830aa55da9b04e176cf6c4089bdd593a430febf2c0723ea70de.json",
+        "pack_sha256": "0826b04c4b4ba830aa55da9b04e176cf6c4089bdd593a430febf2c0723ea70de",
         "status": "available"
       }
     },
@@ -11530,7 +11582,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-23T22:50:02Z",
-      "last_seen_at": "2026-11-25T02:47:25Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11571,7 +11623,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-21T22:47:02Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11788,7 +11840,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-20T21:24:59Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11927,7 +11979,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-03T01:49:10Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -12046,7 +12098,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -12098,7 +12150,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-29T22:52:53Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -12285,7 +12337,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-13T10:58:02Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -12636,7 +12688,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -12859,8 +12911,8 @@
       },
       "description_ref": {
         "sha256": "66d454d5b0f35f20607e5b95eac1e9dd6c4cda9b2fccfcf9a8025a1f17d182fa",
-        "pack": "details/66-b9f71e758953e9d31965d9a8378d76cacf1b87a0bb3de0ab836aa0964ca99214.json",
-        "pack_sha256": "b9f71e758953e9d31965d9a8378d76cacf1b87a0bb3de0ab836aa0964ca99214",
+        "pack": "details/66-c6743269f05227ad2187f710fe34e8d3d257a51cf2ffe4a7328c8480c8e4331c.json",
+        "pack_sha256": "c6743269f05227ad2187f710fe34e8d3d257a51cf2ffe4a7328c8480c8e4331c",
         "status": "stale"
       }
     },
@@ -12987,7 +13039,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-26T17:33:30Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -13182,7 +13234,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-21T18:57:41Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -13376,8 +13428,8 @@
       },
       "description_ref": {
         "sha256": "2042e826833ab3cb4511bad921172f0250f0ab268192a724fc004cf72a89e49d",
-        "pack": "details/20-e2e773b8cfa94d8aeae431376879d4dfa0c558f7609fcc480a038f2d986bc274.json",
-        "pack_sha256": "e2e773b8cfa94d8aeae431376879d4dfa0c558f7609fcc480a038f2d986bc274",
+        "pack": "details/20-b5053993594d842f04c8bb5719a143bc439305c41ad7b879a46f1cf4a88547e7.json",
+        "pack_sha256": "b5053993594d842f04c8bb5719a143bc439305c41ad7b879a46f1cf4a88547e7",
         "status": "stale"
       }
     },
@@ -13542,8 +13594,8 @@
       },
       "description_ref": {
         "sha256": "17211f6af1856cd2bb9f5feb1033d005f7e3c1d93c479bc75f019689ff6f9542",
-        "pack": "details/17-b5063eda5a076df1b0900df61cf5abdf6062571d1fc1b57d23560f6ae702c770.json",
-        "pack_sha256": "b5063eda5a076df1b0900df61cf5abdf6062571d1fc1b57d23560f6ae702c770",
+        "pack": "details/17-7204b896066b32568fdd1d0efe3a996c12c9e13c9a45c912afbc25c6c8de18d9.json",
+        "pack_sha256": "7204b896066b32568fdd1d0efe3a996c12c9e13c9a45c912afbc25c6c8de18d9",
         "status": "stale"
       }
     },
@@ -13929,7 +13981,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-21T15:38:36Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -14119,7 +14171,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-23T22:51:38Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -14128,12 +14180,20 @@
           "method": "workday_api",
           "completeness": "available",
           "identity": "provider_job_endpoint"
-        }
+        },
+        "provenance": [
+          {
+            "source": "workday",
+            "source_job_id": "Privacy--Data-Protection-and-Compliance-Intern_R-71032",
+            "url": "https://crowe.wd12.myworkdayjobs.com/external_careers/job/Chicago-IL-USA/Privacy--Data-Protection-and-Compliance-Intern_R-71032",
+            "discovered_at": "2026-09-05T00:50:25Z"
+          }
+        ]
       },
       "description_ref": {
         "sha256": "a44a3f2900437a1e5ec756cdef82734bd437847886d39a2856a7243deeff7f3e",
-        "pack": "details/a4-04f1ba53ee26bb441bebe7f34b109814e373c84daee843ce43659c878da77fcf.json",
-        "pack_sha256": "04f1ba53ee26bb441bebe7f34b109814e373c84daee843ce43659c878da77fcf",
+        "pack": "details/a4-87e5ff7385db7a1673771e992e089183532dabe5fa4e0643d0cb8ed4db027984.json",
+        "pack_sha256": "87e5ff7385db7a1673771e992e089183532dabe5fa4e0643d0cb8ed4db027984",
         "status": "stale"
       }
     },
@@ -14317,8 +14377,8 @@
       },
       "description_ref": {
         "sha256": "04f5f26e35140fb1eacb618a7d5f7ef189b790ea778369b479abe44a4d8b1e3e",
-        "pack": "details/04-dec1e89770d4e6d188da35c8fac55d9e7abf70eb196939981b2def6d1a281e01.json",
-        "pack_sha256": "dec1e89770d4e6d188da35c8fac55d9e7abf70eb196939981b2def6d1a281e01",
+        "pack": "details/04-d4a6087260c1f0e0a696f3ccf5124f2ca18637651b40429fa75bc85271d0d711.json",
+        "pack_sha256": "d4a6087260c1f0e0a696f3ccf5124f2ca18637651b40429fa75bc85271d0d711",
         "status": "stale"
       }
     },
@@ -14453,7 +14513,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-17T21:47:37Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -14584,8 +14644,8 @@
       },
       "description_ref": {
         "sha256": "cec49ee198543601bf3d2929760ccfec5f3ee1ba9be633954a48bf480d31a017",
-        "pack": "details/ce-74cd298d1558b2d1c0c766dfbc20522d70fbcd18e9a43397aee7268097598574.json",
-        "pack_sha256": "74cd298d1558b2d1c0c766dfbc20522d70fbcd18e9a43397aee7268097598574",
+        "pack": "details/ce-04026b2005a9192bef97b2fec3a8cd5b4c870a56a12c8146f10e0992070903eb.json",
+        "pack_sha256": "04026b2005a9192bef97b2fec3a8cd5b4c870a56a12c8146f10e0992070903eb",
         "status": "stale"
       }
     },
@@ -14617,8 +14677,8 @@
       },
       "description_ref": {
         "sha256": "4e19170eb0fe8cfc2b900f0dccb5e116333edfa183409d1962171d2bb548cc6a",
-        "pack": "details/4e-8db1ccc95ae98c7e9eefe8cd59ed34f85b6e73d809f456ed031fed1d3a14293a.json",
-        "pack_sha256": "8db1ccc95ae98c7e9eefe8cd59ed34f85b6e73d809f456ed031fed1d3a14293a",
+        "pack": "details/4e-71221d5ff9c47d03a5d883043fd9ceee45c0bd4575c94249767b1cb930b8254e.json",
+        "pack_sha256": "71221d5ff9c47d03a5d883043fd9ceee45c0bd4575c94249767b1cb930b8254e",
         "status": "available"
       }
     },
@@ -14637,7 +14697,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -15487,7 +15547,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -15750,8 +15810,8 @@
       },
       "description_ref": {
         "sha256": "0470c6622bed31ef5458db14698858022c57432d2891c3e11925b84c43eb4e88",
-        "pack": "details/04-dec1e89770d4e6d188da35c8fac55d9e7abf70eb196939981b2def6d1a281e01.json",
-        "pack_sha256": "dec1e89770d4e6d188da35c8fac55d9e7abf70eb196939981b2def6d1a281e01",
+        "pack": "details/04-d4a6087260c1f0e0a696f3ccf5124f2ca18637651b40429fa75bc85271d0d711.json",
+        "pack_sha256": "d4a6087260c1f0e0a696f3ccf5124f2ca18637651b40429fa75bc85271d0d711",
         "status": "available"
       }
     },
@@ -15770,7 +15830,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-03T01:28:33Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -15876,8 +15936,8 @@
       },
       "description_ref": {
         "sha256": "1c69b0d826e61aaecc1f6375f313d9b9ca278179ec45a314280fdb8a4722bed5",
-        "pack": "details/1c-3c4243c0e87a15ad7336bee8fe7e005faaafe8c3874d434c8e1b385b6556c5f0.json",
-        "pack_sha256": "3c4243c0e87a15ad7336bee8fe7e005faaafe8c3874d434c8e1b385b6556c5f0",
+        "pack": "details/1c-cc332a1f44eb98707b010b90c24867ba5301f714a4d3c3dd2d796375169104c2.json",
+        "pack_sha256": "cc332a1f44eb98707b010b90c24867ba5301f714a4d3c3dd2d796375169104c2",
         "status": "stale"
       }
     },
@@ -16016,8 +16076,8 @@
       },
       "description_ref": {
         "sha256": "acf3c5d4157442ab3dbe43b34bd98dcf82d3a8e7b04b35fcefd090b9cd51ac6c",
-        "pack": "details/ac-5a54fdfe6bffbc12800f6eb4c117de81a117405212de425e75eff3473ec20d85.json",
-        "pack_sha256": "5a54fdfe6bffbc12800f6eb4c117de81a117405212de425e75eff3473ec20d85",
+        "pack": "details/ac-5cebe3b9883a532279145aa23489004eb8bade575bcfc13851eee54ff4b9c972.json",
+        "pack_sha256": "5cebe3b9883a532279145aa23489004eb8bade575bcfc13851eee54ff4b9c972",
         "status": "stale"
       }
     },
@@ -16201,8 +16261,8 @@
       },
       "description_ref": {
         "sha256": "a4e2f904f5ea7438488f99e940affd9b1f32c467c1317bcbab30646e3da2ffb4",
-        "pack": "details/a4-04f1ba53ee26bb441bebe7f34b109814e373c84daee843ce43659c878da77fcf.json",
-        "pack_sha256": "04f1ba53ee26bb441bebe7f34b109814e373c84daee843ce43659c878da77fcf",
+        "pack": "details/a4-87e5ff7385db7a1673771e992e089183532dabe5fa4e0643d0cb8ed4db027984.json",
+        "pack_sha256": "87e5ff7385db7a1673771e992e089183532dabe5fa4e0643d0cb8ed4db027984",
         "status": "available"
       }
     },
@@ -16780,7 +16840,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -16818,8 +16878,8 @@
       },
       "description_ref": {
         "sha256": "170ac565c8794a33f359255d94ed844bfb33ba3b944fb61e3cdf2a37cc340fa0",
-        "pack": "details/17-b5063eda5a076df1b0900df61cf5abdf6062571d1fc1b57d23560f6ae702c770.json",
-        "pack_sha256": "b5063eda5a076df1b0900df61cf5abdf6062571d1fc1b57d23560f6ae702c770",
+        "pack": "details/17-7204b896066b32568fdd1d0efe3a996c12c9e13c9a45c912afbc25c6c8de18d9.json",
+        "pack_sha256": "7204b896066b32568fdd1d0efe3a996c12c9e13c9a45c912afbc25c6c8de18d9",
         "status": "stale"
       }
     },
@@ -16871,7 +16931,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -17101,8 +17161,8 @@
       },
       "description_ref": {
         "sha256": "a560a8f630212dccb427b25a9833e6e0d51da12dfcdd95c92f0737bd67f0f267",
-        "pack": "details/a5-01002db3de3e123c4e1fec181bcdcbf9034629d7303f42b6df77ae46d82231bb.json",
-        "pack_sha256": "01002db3de3e123c4e1fec181bcdcbf9034629d7303f42b6df77ae46d82231bb",
+        "pack": "details/a5-1e1eae691f83a635a7127e58b9cf4a63327d85350ecb5350938e035d0d9c3557.json",
+        "pack_sha256": "1e1eae691f83a635a7127e58b9cf4a63327d85350ecb5350938e035d0d9c3557",
         "status": "stale"
       }
     },
@@ -17368,7 +17428,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-12T07:37:02Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -17556,8 +17616,8 @@
       },
       "description_ref": {
         "sha256": "cec6643a0c062556b2a910bca1817d1ad997794fcf99ba777aadd51a215096e9",
-        "pack": "details/ce-74cd298d1558b2d1c0c766dfbc20522d70fbcd18e9a43397aee7268097598574.json",
-        "pack_sha256": "74cd298d1558b2d1c0c766dfbc20522d70fbcd18e9a43397aee7268097598574",
+        "pack": "details/ce-04026b2005a9192bef97b2fec3a8cd5b4c870a56a12c8146f10e0992070903eb.json",
+        "pack_sha256": "04026b2005a9192bef97b2fec3a8cd5b4c870a56a12c8146f10e0992070903eb",
         "status": "available"
       }
     },
@@ -17724,7 +17784,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -18157,7 +18217,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-01T21:24:06Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -18532,8 +18592,8 @@
       },
       "description_ref": {
         "sha256": "4232dd9b762f04a2024856a281edefc9b4dc7bf142573f1be195a91673d5d7bd",
-        "pack": "details/42-85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865.json",
-        "pack_sha256": "85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865",
+        "pack": "details/42-e2aea444fb51039cf59d3544f9223254037567d27b19fe0bf92d7e65cb9cde90.json",
+        "pack_sha256": "e2aea444fb51039cf59d3544f9223254037567d27b19fe0bf92d7e65cb9cde90",
         "status": "stale"
       }
     },
@@ -18679,7 +18739,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -18711,8 +18771,8 @@
       },
       "description_ref": {
         "sha256": "1744d78e03731c30beaa86d0e00a9c55100cdb8fc5ed6acd8dea9c1338fd7a55",
-        "pack": "details/17-b5063eda5a076df1b0900df61cf5abdf6062571d1fc1b57d23560f6ae702c770.json",
-        "pack_sha256": "b5063eda5a076df1b0900df61cf5abdf6062571d1fc1b57d23560f6ae702c770",
+        "pack": "details/17-7204b896066b32568fdd1d0efe3a996c12c9e13c9a45c912afbc25c6c8de18d9.json",
+        "pack_sha256": "7204b896066b32568fdd1d0efe3a996c12c9e13c9a45c912afbc25c6c8de18d9",
         "status": "stale"
       }
     },
@@ -18766,9 +18826,19 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-26T13:46:34Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
-      "description_status": "unavailable"
+      "description_status": "unavailable",
+      "source_metadata": {
+        "provenance": [
+          {
+            "source": "workday",
+            "source_job_id": "Finance-and-Compliance-Intern_R-71054",
+            "url": "https://crowe.wd12.myworkdayjobs.com/external_careers/job/Chicago-IL-USA/Finance-and-Compliance-Intern_R-71054",
+            "discovered_at": "2026-11-26T13:46:34Z"
+          }
+        ]
+      }
     },
     "95fb88c613a27cdd": {
       "id": "95fb88c613a27cdd",
@@ -19488,9 +19558,8 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-26T13:46:34Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
-      "closed_at": null,
-      "description_status": "unavailable"
+      "last_seen_at": "2026-11-26T22:38:31Z",
+      "closed_at": null
     },
     "9bbbd32b89b1b50c": {
       "id": "9bbbd32b89b1b50c",
@@ -19603,8 +19672,8 @@
       },
       "description_ref": {
         "sha256": "54b6762b9c996dc7c5e52effcadb04803b6ff8340cda51c793b8a9b55fd496c8",
-        "pack": "details/54-7c7e85454ac6cab7f11572fd984b75996ead925d1d0a1042914fdecd6abc050d.json",
-        "pack_sha256": "7c7e85454ac6cab7f11572fd984b75996ead925d1d0a1042914fdecd6abc050d",
+        "pack": "details/54-0826b04c4b4ba830aa55da9b04e176cf6c4089bdd593a430febf2c0723ea70de.json",
+        "pack_sha256": "0826b04c4b4ba830aa55da9b04e176cf6c4089bdd593a430febf2c0723ea70de",
         "status": "available"
       }
     },
@@ -19735,8 +19804,8 @@
       },
       "description_ref": {
         "sha256": "17481759712d06920aae1ce3469ba0954143dde25958840b970e81150ce91c65",
-        "pack": "details/17-b5063eda5a076df1b0900df61cf5abdf6062571d1fc1b57d23560f6ae702c770.json",
-        "pack_sha256": "b5063eda5a076df1b0900df61cf5abdf6062571d1fc1b57d23560f6ae702c770",
+        "pack": "details/17-7204b896066b32568fdd1d0efe3a996c12c9e13c9a45c912afbc25c6c8de18d9.json",
+        "pack_sha256": "7204b896066b32568fdd1d0efe3a996c12c9e13c9a45c912afbc25c6c8de18d9",
         "status": "available"
       }
     },
@@ -19874,7 +19943,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -19962,7 +20031,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -20034,6 +20103,25 @@
         "pack_sha256": "fe8efb6aaae260f6697bc2dd30d09141dc2309678068b15e408966c6452c48e5",
         "status": "stale"
       }
+    },
+    "9f389bd8ae83a645": {
+      "id": "9f389bd8ae83a645",
+      "company": "Generac",
+      "company_slug": "generac",
+      "title": "Consumer Experience Data Analyst Intern",
+      "location": "Pewaukee, WI - USA",
+      "locations": [
+        "Pewaukee, WI - USA"
+      ],
+      "url": "https://generac.wd5.myworkdayjobs.com/external/job/Pewaukee-WI---USA/Consumer-Experience-Data-Analyst-Intern_JR17206",
+      "source": "workday",
+      "source_job_id": "Consumer-Experience-Data-Analyst-Intern_JR17206",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
+      "closed_at": null,
+      "description_status": "unavailable"
     },
     "9f6db02e74038d9b": {
       "id": "9f6db02e74038d9b",
@@ -20235,7 +20323,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -20276,7 +20364,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-19T21:37:56Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -20668,8 +20756,8 @@
       },
       "description_ref": {
         "sha256": "423e75e6070c8c5dcfb1151f6cee73f0137f41034f05d44fa37732fd22ecd005",
-        "pack": "details/42-85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865.json",
-        "pack_sha256": "85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865",
+        "pack": "details/42-e2aea444fb51039cf59d3544f9223254037567d27b19fe0bf92d7e65cb9cde90.json",
+        "pack_sha256": "e2aea444fb51039cf59d3544f9223254037567d27b19fe0bf92d7e65cb9cde90",
         "status": "stale"
       }
     },
@@ -20967,7 +21055,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-03T22:18:41Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -21072,8 +21160,8 @@
       },
       "description_ref": {
         "sha256": "a43fd1e402838229359ea1958da45a10be36208cae17d16d9be4d73c49ba7a0d",
-        "pack": "details/a4-04f1ba53ee26bb441bebe7f34b109814e373c84daee843ce43659c878da77fcf.json",
-        "pack_sha256": "04f1ba53ee26bb441bebe7f34b109814e373c84daee843ce43659c878da77fcf",
+        "pack": "details/a4-87e5ff7385db7a1673771e992e089183532dabe5fa4e0643d0cb8ed4db027984.json",
+        "pack_sha256": "87e5ff7385db7a1673771e992e089183532dabe5fa4e0643d0cb8ed4db027984",
         "status": "available"
       }
     },
@@ -21105,8 +21193,8 @@
       },
       "description_ref": {
         "sha256": "165c620139a1f948d4493f1b8edc28484798cab00666719a535a68ae71d833a7",
-        "pack": "details/16-212c91a192e5eaef86f20a4252bdbc8f1cc1ea8296b8505558369da14a848dd4.json",
-        "pack_sha256": "212c91a192e5eaef86f20a4252bdbc8f1cc1ea8296b8505558369da14a848dd4",
+        "pack": "details/16-ab5b0ad9a8b67ecb416d5ec55d28321259dd34b559de34150ad053f06f7bd824.json",
+        "pack_sha256": "ab5b0ad9a8b67ecb416d5ec55d28321259dd34b559de34150ad053f06f7bd824",
         "status": "stale"
       }
     },
@@ -21534,8 +21622,8 @@
       },
       "description_ref": {
         "sha256": "1c4686bd5a3e8bca1efab10b77615da25225e89a6b77d666069e664dd750465b",
-        "pack": "details/1c-3c4243c0e87a15ad7336bee8fe7e005faaafe8c3874d434c8e1b385b6556c5f0.json",
-        "pack_sha256": "3c4243c0e87a15ad7336bee8fe7e005faaafe8c3874d434c8e1b385b6556c5f0",
+        "pack": "details/1c-cc332a1f44eb98707b010b90c24867ba5301f714a4d3c3dd2d796375169104c2.json",
+        "pack_sha256": "cc332a1f44eb98707b010b90c24867ba5301f714a4d3c3dd2d796375169104c2",
         "status": "stale"
       }
     },
@@ -21676,7 +21764,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-26T13:46:34Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable"
     },
@@ -21840,8 +21928,8 @@
       },
       "description_ref": {
         "sha256": "420e20319181bc54177fc0f68f4053fc3331907b91346138c450bbf5a69475b5",
-        "pack": "details/42-85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865.json",
-        "pack_sha256": "85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865",
+        "pack": "details/42-e2aea444fb51039cf59d3544f9223254037567d27b19fe0bf92d7e65cb9cde90.json",
+        "pack_sha256": "e2aea444fb51039cf59d3544f9223254037567d27b19fe0bf92d7e65cb9cde90",
         "status": "stale"
       }
     },
@@ -22019,6 +22107,75 @@
         "status": "stale"
       }
     },
+    "af4013277a5c1563": {
+      "id": "af4013277a5c1563",
+      "company": "Crowe",
+      "company_slug": "crowe",
+      "title": "Machine Learning Intern",
+      "location": "Chicago IL USA",
+      "locations": [
+        "Chicago IL USA",
+        "Washington DC USA",
+        "Tallahassee FL USA",
+        "Sarasota FL USA",
+        "Hartford CT USA",
+        "Nashville TN USA",
+        "Costa Mesa CA USA",
+        "San Jose CA USA",
+        "Boston MA USA",
+        "Burlington VT USA",
+        "Cleveland OH USA",
+        "Columbus OH USA",
+        "Dallas TX USA",
+        "Denver CO USA",
+        "Fort Wayne IN USA",
+        "Grand Rapids MI USA",
+        "Indianapolis IN USA",
+        "Knoxville TN USA",
+        "Lexington KY USA",
+        "Plano TX USA",
+        "Livingston NJ USA",
+        "Louisville KY USA",
+        "Miami FL USA",
+        "Los Angeles CA USA",
+        "Woodlands TX USA",
+        "New York NY USA",
+        "Oakbrook Terrace IL USA",
+        "Sacramento CA USA",
+        "San Francisco CA USA",
+        "South Bend IN USA",
+        "Springfield IL USA",
+        "Tampa FL USA",
+        "Boca Raton FL USA",
+        "Houston TX USA",
+        "Austin TX USA",
+        "Charlotte NC USA"
+      ],
+      "url": "https://crowe.wd12.myworkdayjobs.com/external_careers/job/Chicago-IL-USA/Machine-Learning-Intern_R-71005",
+      "source": "workday",
+      "source_job_id": "Machine-Learning-Intern_R-71005",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
+      "closed_at": null,
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://crowe.wd12.myworkdayjobs.com/external_careers/job/Chicago-IL-USA/Machine-Learning-Intern_R-71005"
+        }
+      },
+      "description_ref": {
+        "sha256": "ab111f71cba4422973362593273a1478c742e72bbb17daabd8c81f718256e55b",
+        "pack": "details/ab-d5e6a43143c70179373b1466f1e354a954ffb9fc003356f721f3e32b682120ca.json",
+        "pack_sha256": "d5e6a43143c70179373b1466f1e354a954ffb9fc003356f721f3e32b682120ca",
+        "status": "available"
+      }
+    },
     "af4a16192f23a614": {
       "id": "af4a16192f23a614",
       "company": "Walmart",
@@ -22047,8 +22204,8 @@
       },
       "description_ref": {
         "sha256": "1712b82cfa25372f00c93f002b6f08eceaf49c07d3922f37e49bb020765ccf33",
-        "pack": "details/17-b5063eda5a076df1b0900df61cf5abdf6062571d1fc1b57d23560f6ae702c770.json",
-        "pack_sha256": "b5063eda5a076df1b0900df61cf5abdf6062571d1fc1b57d23560f6ae702c770",
+        "pack": "details/17-7204b896066b32568fdd1d0efe3a996c12c9e13c9a45c912afbc25c6c8de18d9.json",
+        "pack_sha256": "7204b896066b32568fdd1d0efe3a996c12c9e13c9a45c912afbc25c6c8de18d9",
         "status": "available"
       }
     },
@@ -22268,7 +22425,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-12T16:18:49Z",
-      "last_seen_at": "2026-11-23T22:51:38Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -22277,7 +22434,15 @@
           "method": "workday_api",
           "completeness": "available",
           "identity": "provider_job_endpoint"
-        }
+        },
+        "provenance": [
+          {
+            "source": "workday",
+            "source_job_id": "Salesforce-Intern--Oklahoma-City-Office-_JR1182",
+            "url": "https://americanfidelity.wd5.myworkdayjobs.com/External/job/Oklahoma-City-Oklahoma/Salesforce-Intern--Oklahoma-City-Office-_JR1182",
+            "discovered_at": "2026-11-12T16:18:49Z"
+          }
+        ]
       },
       "description_ref": {
         "sha256": "60318198dcea34a318a33609e6dfe81e254ab1a71a516421577731c669d36dfd",
@@ -22456,8 +22621,8 @@
       },
       "description_ref": {
         "sha256": "6d529883dcdd354b904fe1da348d76179c471cbc1991cc990c7df8979894a0d7",
-        "pack": "details/6d-862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f.json",
-        "pack_sha256": "862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f",
+        "pack": "details/6d-1d0d541e446b52a1b646693dec4fae8d864c7d8f477eaebb408f372a191c8364.json",
+        "pack_sha256": "1d0d541e446b52a1b646693dec4fae8d864c7d8f477eaebb408f372a191c8364",
         "status": "stale"
       }
     },
@@ -22542,7 +22707,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -22662,8 +22827,8 @@
       },
       "description_ref": {
         "sha256": "041db252e905b4b5c1e1d14ca39653a4184d458d9bbb8136213fece4cddc12a4",
-        "pack": "details/04-dec1e89770d4e6d188da35c8fac55d9e7abf70eb196939981b2def6d1a281e01.json",
-        "pack_sha256": "dec1e89770d4e6d188da35c8fac55d9e7abf70eb196939981b2def6d1a281e01",
+        "pack": "details/04-d4a6087260c1f0e0a696f3ccf5124f2ca18637651b40429fa75bc85271d0d711.json",
+        "pack_sha256": "d4a6087260c1f0e0a696f3ccf5124f2ca18637651b40429fa75bc85271d0d711",
         "status": "stale"
       }
     },
@@ -22756,7 +22921,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-23T16:45:31Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -22962,8 +23127,8 @@
       },
       "description_ref": {
         "sha256": "ce6bb52c9e560acfd31dbb4579717af1151b724d89b54d332e6b9a8efd04b36d",
-        "pack": "details/ce-74cd298d1558b2d1c0c766dfbc20522d70fbcd18e9a43397aee7268097598574.json",
-        "pack_sha256": "74cd298d1558b2d1c0c766dfbc20522d70fbcd18e9a43397aee7268097598574",
+        "pack": "details/ce-04026b2005a9192bef97b2fec3a8cd5b4c870a56a12c8146f10e0992070903eb.json",
+        "pack_sha256": "04026b2005a9192bef97b2fec3a8cd5b4c870a56a12c8146f10e0992070903eb",
         "status": "stale"
       }
     },
@@ -23089,7 +23254,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -23558,7 +23723,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T00:05:57Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -23775,7 +23940,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -23906,8 +24071,8 @@
       },
       "description_ref": {
         "sha256": "421d977d0a08f7149dd4154de0ebe9b657453a157d13201884d108b54fe6dc9f",
-        "pack": "details/42-85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865.json",
-        "pack_sha256": "85def7ac9b8d0e3bc859a8201fb52e76fd14758df55d1ef417307ab80b762865",
+        "pack": "details/42-e2aea444fb51039cf59d3544f9223254037567d27b19fe0bf92d7e65cb9cde90.json",
+        "pack_sha256": "e2aea444fb51039cf59d3544f9223254037567d27b19fe0bf92d7e65cb9cde90",
         "status": "available"
       }
     },
@@ -23926,7 +24091,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -24439,8 +24604,8 @@
       },
       "description_ref": {
         "sha256": "abc17dd4a1b1809c3e7184c45684f828999004ee627db68a3def242a8d2fcadf",
-        "pack": "details/ab-34163efb9e8c390695089dbd785b1419dc047855772c9d79dded154f345d56cb.json",
-        "pack_sha256": "34163efb9e8c390695089dbd785b1419dc047855772c9d79dded154f345d56cb",
+        "pack": "details/ab-d5e6a43143c70179373b1466f1e354a954ffb9fc003356f721f3e32b682120ca.json",
+        "pack_sha256": "d5e6a43143c70179373b1466f1e354a954ffb9fc003356f721f3e32b682120ca",
         "status": "available"
       }
     },
@@ -24764,7 +24929,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-27T18:20:10Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -24892,8 +25057,8 @@
       },
       "description_ref": {
         "sha256": "0ff7b20c7e81da7722a18c3e07f9d9dcb4310dfaba114b4aff2f1bd0c1573653",
-        "pack": "details/0f-0ba819e756a773f6aed45c9c6e1c793310f050f02b9c97559cf8f3a4f315e621.json",
-        "pack_sha256": "0ba819e756a773f6aed45c9c6e1c793310f050f02b9c97559cf8f3a4f315e621",
+        "pack": "details/0f-95344c0b64b4995b5250d8e95cc8a2e1f0d2998bbb7b08a69e2f4ef2983ef390.json",
+        "pack_sha256": "95344c0b64b4995b5250d8e95cc8a2e1f0d2998bbb7b08a69e2f4ef2983ef390",
         "status": "stale"
       }
     },
@@ -25240,7 +25405,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-19T20:06:44Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -25493,7 +25658,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -25958,7 +26123,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -26662,7 +26827,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -27052,7 +27217,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -27084,8 +27249,8 @@
       },
       "description_ref": {
         "sha256": "5dc3bb939c14253bc88824aff9a285c7f27771e1be800e2af13aa88547db743a",
-        "pack": "details/5d-ddebcf39233b71f41b8b3f270a1c2898e3569b87d2449c730caa2579ea9a2aea.json",
-        "pack_sha256": "ddebcf39233b71f41b8b3f270a1c2898e3569b87d2449c730caa2579ea9a2aea",
+        "pack": "details/5d-8f222471079f0c0efa2ce1d29287b0a07fc90326ffa5b30ad3ab07525623a8d3.json",
+        "pack_sha256": "8f222471079f0c0efa2ce1d29287b0a07fc90326ffa5b30ad3ab07525623a8d3",
         "status": "stale"
       }
     },
@@ -27126,7 +27291,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-26T13:46:34Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -27395,7 +27560,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-09T20:09:29Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -27689,7 +27854,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-26T13:46:34Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -27702,8 +27867,8 @@
       },
       "description_ref": {
         "sha256": "a4671ca756405f63e65ef9599de5619d40c5369b1ab4babfa03e9620b7310126",
-        "pack": "details/a4-04f1ba53ee26bb441bebe7f34b109814e373c84daee843ce43659c878da77fcf.json",
-        "pack_sha256": "04f1ba53ee26bb441bebe7f34b109814e373c84daee843ce43659c878da77fcf",
+        "pack": "details/a4-87e5ff7385db7a1673771e992e089183532dabe5fa4e0643d0cb8ed4db027984.json",
+        "pack_sha256": "87e5ff7385db7a1673771e992e089183532dabe5fa4e0643d0cb8ed4db027984",
         "status": "available"
       }
     },
@@ -28153,7 +28318,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -28182,8 +28347,8 @@
       },
       "description_ref": {
         "sha256": "84c4343dd6de592b238a1f2d2d8c09bcd049f602c8c4602e1290108523b82fbc",
-        "pack": "details/84-6c36cad5484f40b704de848c21aadff6710bfb1ed35b052e0c0a7e200ce533fb.json",
-        "pack_sha256": "6c36cad5484f40b704de848c21aadff6710bfb1ed35b052e0c0a7e200ce533fb",
+        "pack": "details/84-d8331c793e3ed48a0a8c5d756091586a17b884036ed62bcee6050f4108cdcb9c.json",
+        "pack_sha256": "d8331c793e3ed48a0a8c5d756091586a17b884036ed62bcee6050f4108cdcb9c",
         "status": "stale"
       }
     },
@@ -28275,8 +28440,8 @@
       },
       "description_ref": {
         "sha256": "dcc33df5d99040059ea21335923e53cd7d22e753b289b2c479fe1fef02b1e9db",
-        "pack": "details/dc-18d362018c6b76a90771ed35a2724160acfa585fe2d1ebddc3c8526c10a786f4.json",
-        "pack_sha256": "18d362018c6b76a90771ed35a2724160acfa585fe2d1ebddc3c8526c10a786f4",
+        "pack": "details/dc-fc057baaf3342a73f45ec58c94064bc75804e0c0e82345d408d9117bc6fa8fca.json",
+        "pack_sha256": "fc057baaf3342a73f45ec58c94064bc75804e0c0e82345d408d9117bc6fa8fca",
         "status": "stale"
       }
     },
@@ -28295,7 +28460,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-20T02:38:50Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -29397,7 +29562,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-23T22:51:38Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -29406,7 +29571,15 @@
           "method": "workday_api",
           "completeness": "available",
           "identity": "provider_job_endpoint"
-        }
+        },
+        "provenance": [
+          {
+            "source": "workday",
+            "source_job_id": "NetSuite-Implementation-Intern_R-71040",
+            "url": "https://crowe.wd12.myworkdayjobs.com/external_careers/job/Chicago-IL-USA/NetSuite-Implementation-Intern_R-71040",
+            "discovered_at": "2026-09-05T00:50:25Z"
+          }
+        ]
       },
       "description_ref": {
         "sha256": "1fd46c64f7ec22b734645c6fa47ba8c2694861824983cd6456d188ff8388f65d",
@@ -29569,8 +29742,8 @@
       },
       "description_ref": {
         "sha256": "3d45ebb7000b0c1cd97234e28eece9ab29b082d6c3ba38dfc84ae00dc17ca3cb",
-        "pack": "details/3d-1fe72fd0f0664990511eb25520464a3d0ee9e627c360dc5a818a66f6cdf448fb.json",
-        "pack_sha256": "1fe72fd0f0664990511eb25520464a3d0ee9e627c360dc5a818a66f6cdf448fb",
+        "pack": "details/3d-17f2c827fe7c39540d1b79422b0d00caaa59ed0841925e344c97c0add0501dca.json",
+        "pack_sha256": "17f2c827fe7c39540d1b79422b0d00caaa59ed0841925e344c97c0add0501dca",
         "status": "stale"
       }
     },
@@ -29589,9 +29762,19 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-25T02:47:25Z",
-      "last_seen_at": "2026-11-25T02:47:25Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
-      "description_status": "unavailable"
+      "description_status": "unavailable",
+      "source_metadata": {
+        "provenance": [
+          {
+            "source": "workday",
+            "source_job_id": "Project-Design-and-Construction-Management-Intern_JR4249",
+            "url": "https://rfcuny.wd108.myworkdayjobs.com/RFCUNY/job/New-York-NY/Project-Design-and-Construction-Management-Intern_JR4249",
+            "discovered_at": "2026-11-25T02:47:25Z"
+          }
+        ]
+      }
     },
     "ed07a97fb62cb4b2": {
       "id": "ed07a97fb62cb4b2",
@@ -30288,8 +30471,8 @@
       },
       "description_ref": {
         "sha256": "1cd1d4b742e7518281017ad2f692ecfbf9ff2ff9c423bc39d3af3e81695c13f2",
-        "pack": "details/1c-3c4243c0e87a15ad7336bee8fe7e005faaafe8c3874d434c8e1b385b6556c5f0.json",
-        "pack_sha256": "3c4243c0e87a15ad7336bee8fe7e005faaafe8c3874d434c8e1b385b6556c5f0",
+        "pack": "details/1c-cc332a1f44eb98707b010b90c24867ba5301f714a4d3c3dd2d796375169104c2.json",
+        "pack_sha256": "cc332a1f44eb98707b010b90c24867ba5301f714a4d3c3dd2d796375169104c2",
         "status": "stale"
       }
     },
@@ -30748,7 +30931,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -30789,7 +30972,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-13T18:06:47Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -30842,7 +31025,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-21T22:47:02Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -30947,7 +31130,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-19T20:06:44Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -31190,7 +31373,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-12T22:24:30Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -31308,7 +31491,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -31330,7 +31513,7 @@
             "source": "simplify",
             "source_job_id": "09855ad6-f11c-4939-b41a-39ff8df98ee6",
             "url": "https://chevron.wd5.myworkdayjobs.com/University/job/Houston-Texas-United-States-of-America/XMLNAME-2026-2027-Information-Technology---Software-Engineer---Intern_R000072398-1",
-            "discovered_at": "2026-11-25T02:47:25Z"
+            "discovered_at": "2026-11-26T22:38:31Z"
           },
           {
             "source": "workday",
@@ -31422,8 +31605,8 @@
       },
       "description_ref": {
         "sha256": "e2e1bb16a27b5fef6fa628add1719351a251493e873ee169cbb26b6dc7a2ba95",
-        "pack": "details/e2-75d2619aea843b2ab5dabb2f181ca508c6659489ef27397770d0498d05536944.json",
-        "pack_sha256": "75d2619aea843b2ab5dabb2f181ca508c6659489ef27397770d0498d05536944",
+        "pack": "details/e2-681b7161e945559fca6bb1921d80a8a6700842c24f3445e84ddddac31ff5213f.json",
+        "pack_sha256": "681b7161e945559fca6bb1921d80a8a6700842c24f3445e84ddddac31ff5213f",
         "status": "stale"
       }
     },
@@ -31787,7 +31970,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-26T13:46:34Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-26T22:38:31Z",
       "closed_at": null,
       "description_status": "unavailable"
     },
@@ -31852,8 +32035,8 @@
       },
       "description_ref": {
         "sha256": "6d37a5a65d3e2d5374843666b2518161d559aefd0db738977dcff8e54df3792b",
-        "pack": "details/6d-862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f.json",
-        "pack_sha256": "862788096b3a990a53a04a76b71f167b864ab2f16b92684dbad34228e705b56f",
+        "pack": "details/6d-1d0d541e446b52a1b646693dec4fae8d864c7d8f477eaebb408f372a191c8364.json",
+        "pack_sha256": "1d0d541e446b52a1b646693dec4fae8d864c7d8f477eaebb408f372a191c8364",
         "status": "stale"
       }
     },

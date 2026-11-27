@@ -1,38 +1,38 @@
 {
-  "updated_at": "2026-11-27T04:34:55Z",
-  "sha256": "d6d76cfc167d904044e2aed2f357e282da0432a884ab8ae1f6a387f3ded1a503",
-  "count": 11784,
+  "updated_at": "2026-11-27T05:22:41Z",
+  "sha256": "ac410705d18ff291b99fa2b5a083939c63ef47d1f41fb07935db84b27d5e7f0b",
+  "count": 11787,
   "sharded": true,
   "shards": {
     "ashby": {
-      "sha256": "b5078bac1faf65acfca5103747227e8d8ae6e1ef6fc92ae2cd57b82043d52955",
+      "sha256": "ac2a18090ca718675f6b01ec31e1ba6c0314d3731aed5b01fd643d485b06faa5",
       "count": 194,
-      "updated_at": "2026-11-27T04:34:55Z",
-      "path": "snapshots/b5078bac1faf65acfca5103747227e8d8ae6e1ef6fc92ae2cd57b82043d52955.json"
+      "updated_at": "2026-11-27T05:22:41Z",
+      "path": "snapshots/ac2a18090ca718675f6b01ec31e1ba6c0314d3731aed5b01fd643d485b06faa5.json"
     },
     "eightfold": {
-      "sha256": "9b59d5b5dc34ca309959ba589f1517c30433851c43405e9e1e5aac2b9237c215",
+      "sha256": "9cdd8c09beb557ff7d90f553e644ec47853dba60d5cb391469f96a1379e92f73",
       "count": 60,
-      "updated_at": "2026-11-27T04:34:55Z",
-      "path": "snapshots/9b59d5b5dc34ca309959ba589f1517c30433851c43405e9e1e5aac2b9237c215.json"
+      "updated_at": "2026-11-27T05:22:41Z",
+      "path": "snapshots/9cdd8c09beb557ff7d90f553e644ec47853dba60d5cb391469f96a1379e92f73.json"
     },
     "greenhouse": {
-      "sha256": "e6582290981c1bd5d105cc529ed90fc192017f2818aa6eb7a9f38ef39d0e3253",
-      "count": 877,
-      "updated_at": "2026-11-27T04:34:55Z",
-      "path": "snapshots/e6582290981c1bd5d105cc529ed90fc192017f2818aa6eb7a9f38ef39d0e3253.json"
+      "sha256": "01e8af0999a63fc7804a0a8211e02a9a732850628ded4de52860e9d75faf204d",
+      "count": 873,
+      "updated_at": "2026-11-27T05:22:41Z",
+      "path": "snapshots/01e8af0999a63fc7804a0a8211e02a9a732850628ded4de52860e9d75faf204d.json"
     },
     "icims": {
-      "sha256": "6b6875a10589b7616471b94aa7fc1eb4b114511054e8ffa12dfc0719be77d855",
+      "sha256": "12a6c2d351bdf052cd0b516d9d377ad2dbf06b19e7b3fe426b3c1713ca63f27c",
       "count": 4,
-      "updated_at": "2026-11-26T04:02:10Z",
-      "path": "snapshots/6b6875a10589b7616471b94aa7fc1eb4b114511054e8ffa12dfc0719be77d855.json"
+      "updated_at": "2026-11-27T05:22:41Z",
+      "path": "snapshots/12a6c2d351bdf052cd0b516d9d377ad2dbf06b19e7b3fe426b3c1713ca63f27c.json"
     },
     "lever": {
-      "sha256": "d659c553a4ed1d44b56cd4333a804b8cc46ef0f1aa6bb984edd324e434cb31ef",
+      "sha256": "91ec803164189007d12bb909061e63c883eaf508d553861a4197e2f3fff2d680",
       "count": 147,
-      "updated_at": "2026-11-27T04:34:55Z",
-      "path": "snapshots/d659c553a4ed1d44b56cd4333a804b8cc46ef0f1aa6bb984edd324e434cb31ef.json"
+      "updated_at": "2026-11-27T05:22:41Z",
+      "path": "snapshots/91ec803164189007d12bb909061e63c883eaf508d553861a4197e2f3fff2d680.json"
     },
     "oracle_careers": {
       "sha256": "6bef8457fbc3ab202eb616256a145d461ae97d9476516583c8edf6c84cbc2a58",
@@ -41,28 +41,28 @@
       "path": "snapshots/6bef8457fbc3ab202eb616256a145d461ae97d9476516583c8edf6c84cbc2a58.json"
     },
     "public_careers": {
-      "sha256": "22b6e47e1349c37da0af94656c5297cb05671016ba797533bc614ff89fd2765c",
+      "sha256": "f9d9dc4ff266d9e98b2f39947991ade246881d69b20a1436690432fa368de212",
       "count": 136,
-      "updated_at": "2026-11-27T04:34:55Z",
-      "path": "snapshots/22b6e47e1349c37da0af94656c5297cb05671016ba797533bc614ff89fd2765c.json"
+      "updated_at": "2026-11-27T05:22:41Z",
+      "path": "snapshots/f9d9dc4ff266d9e98b2f39947991ade246881d69b20a1436690432fa368de212.json"
     },
     "simplify": {
-      "sha256": "af50c8d004477dcbcdc134b4ceb6de6b1397458ab2f4012c24be6cc7aa0640fc",
-      "count": 9261,
-      "updated_at": "2026-11-27T04:34:55Z",
-      "path": "snapshots/af50c8d004477dcbcdc134b4ceb6de6b1397458ab2f4012c24be6cc7aa0640fc.json"
+      "sha256": "f7a2536e174a4c1c8ab800f9e529683ba4b94a25154ccf2c6a4bc25cfab22c6b",
+      "count": 9265,
+      "updated_at": "2026-11-27T05:22:41Z",
+      "path": "snapshots/f7a2536e174a4c1c8ab800f9e529683ba4b94a25154ccf2c6a4bc25cfab22c6b.json"
     },
     "smartrecruiters": {
-      "sha256": "cb589837d8ff930b9688ebca71fcda1c2da53e71258422b608a99753e2de51fe",
+      "sha256": "fb502d1a7ebe34764110b61914d364ebd6adcd12ced68b86afbff6f52354db6e",
       "count": 206,
-      "updated_at": "2026-11-27T04:34:55Z",
-      "path": "snapshots/cb589837d8ff930b9688ebca71fcda1c2da53e71258422b608a99753e2de51fe.json"
+      "updated_at": "2026-11-27T05:22:41Z",
+      "path": "snapshots/fb502d1a7ebe34764110b61914d364ebd6adcd12ced68b86afbff6f52354db6e.json"
     },
     "workday": {
-      "sha256": "0a7f8b3055a0f2bbdad5cf6e62ee8dc9597f2b8e17db923e129080a980f9c140",
-      "count": 895,
-      "updated_at": "2026-11-27T04:34:55Z",
-      "path": "snapshots/0a7f8b3055a0f2bbdad5cf6e62ee8dc9597f2b8e17db923e129080a980f9c140.json"
+      "sha256": "06bd958f753259a95ccc2639ee94ff038c04dddf45ca1c1d1b4243f0b9332d0d",
+      "count": 898,
+      "updated_at": "2026-11-27T05:22:41Z",
+      "path": "snapshots/06bd958f753259a95ccc2639ee94ff038c04dddf45ca1c1d1b4243f0b9332d0d.json"
     }
   }
 }

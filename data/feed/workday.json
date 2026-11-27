@@ -1,7 +1,7 @@
 {
   "shard_id": "workday",
-  "updated_at": "2026-11-26T22:38:31Z",
-  "count": 894,
+  "updated_at": "2026-11-27T04:34:55Z",
+  "count": 895,
   "postings": {
     "0004d9a7c5a80ffe": {
       "id": "0004d9a7c5a80ffe",
@@ -163,8 +163,8 @@
       },
       "description_ref": {
         "sha256": "38a7b1eac88fecdb3314e45153e21c4af8efc2567c45f26c9ea72b1fdd0d5753",
-        "pack": "details/38-66d0eb6be4415add8fcc070c1e02200ab29bbf4b67894cfb7563d7d55939e288.json",
-        "pack_sha256": "66d0eb6be4415add8fcc070c1e02200ab29bbf4b67894cfb7563d7d55939e288",
+        "pack": "details/38-ca3998fa53efc874cfe115fe51f9187112a34b92eb806387622bad8838f53527.json",
+        "pack_sha256": "ca3998fa53efc874cfe115fe51f9187112a34b92eb806387622bad8838f53527",
         "status": "stale"
       }
     },
@@ -196,8 +196,8 @@
       },
       "description_ref": {
         "sha256": "fc56423b90efa9aff6e7c491b38546b84c69b1adb48e2bb8c459338d9e07fe0e",
-        "pack": "details/fc-640f9f9e1bf7dba95270c6fbb7109aef6b9113b595a02ad51d0d5fde057fdb7c.json",
-        "pack_sha256": "640f9f9e1bf7dba95270c6fbb7109aef6b9113b595a02ad51d0d5fde057fdb7c",
+        "pack": "details/fc-77dfaea1b73849ee419592eb415cb23203f8a14994058366b30aef91cc763fef.json",
+        "pack_sha256": "77dfaea1b73849ee419592eb415cb23203f8a14994058366b30aef91cc763fef",
         "status": "stale"
       }
     },
@@ -422,8 +422,8 @@
       },
       "description_ref": {
         "sha256": "5fb4be2c6302075dcf721decfa178a677512b54ed205f4b7bdb2da67bd13a9ec",
-        "pack": "details/5f-89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566.json",
-        "pack_sha256": "89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566",
+        "pack": "details/5f-07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300.json",
+        "pack_sha256": "07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300",
         "status": "available"
       }
     },
@@ -607,7 +607,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-23T15:46:26Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -689,7 +689,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -872,8 +872,8 @@
       },
       "description_ref": {
         "sha256": "d21bfa2e731b0e5b4c9da1a511dafa7526f5bd3728b788dd955b10e9e842860c",
-        "pack": "details/d2-49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7.json",
-        "pack_sha256": "49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7",
+        "pack": "details/d2-0145cd3526c7c27cbc8a3e33b4034e44bd67b5a8d141d7ca85a59a78a19a9991.json",
+        "pack_sha256": "0145cd3526c7c27cbc8a3e33b4034e44bd67b5a8d141d7ca85a59a78a19a9991",
         "status": "available"
       }
     },
@@ -933,8 +933,8 @@
       },
       "description_ref": {
         "sha256": "cd62779dd5bc41f53a4c1994fc10303d7ca2879782d59b58ebf8c6ce822b9d3b",
-        "pack": "details/cd-e505f1c321641acf8631ecabc8985b51b50ed4ccfa4ca1dbd52878779ee16589.json",
-        "pack_sha256": "e505f1c321641acf8631ecabc8985b51b50ed4ccfa4ca1dbd52878779ee16589",
+        "pack": "details/cd-41d27ecc8cc79a171794c7c696a23a1b3fab493f5e7d9146b812d1fbbc4a88be.json",
+        "pack_sha256": "41d27ecc8cc79a171794c7c696a23a1b3fab493f5e7d9146b812d1fbbc4a88be",
         "status": "stale"
       }
     },
@@ -1007,8 +1007,8 @@
       },
       "description_ref": {
         "sha256": "dab9b0ee42390949a7b5c60f5f884ecb5ac145b25c243cc4f1b6589b061facbc",
-        "pack": "details/da-fe22167ae4b8be4922e36816b3d844d23702af05fcc55495477dfd11a782bd4d.json",
-        "pack_sha256": "fe22167ae4b8be4922e36816b3d844d23702af05fcc55495477dfd11a782bd4d",
+        "pack": "details/da-1d19c48eaacf0e6bb548254701593380b620b2a68348237556c05cc6e46ae236.json",
+        "pack_sha256": "1d19c48eaacf0e6bb548254701593380b620b2a68348237556c05cc6e46ae236",
         "status": "available"
       }
     },
@@ -1112,7 +1112,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -1511,7 +1511,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-24T18:45:07Z",
-      "last_seen_at": "2026-11-24T18:45:07Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -1520,7 +1520,15 @@
           "method": "workday_api",
           "completeness": "available",
           "identity": "provider_job_endpoint"
-        }
+        },
+        "provenance": [
+          {
+            "source": "workday",
+            "source_job_id": "Pharmacy-Grad-Intern--Hrly-_R-2675574",
+            "url": "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-NM-FARMINGTON-03428-WM-SUPERCENTER/Pharmacy-Grad-Intern--Hrly-_R-2675574",
+            "discovered_at": "2026-11-24T18:45:07Z"
+          }
+        ]
       },
       "description_ref": {
         "sha256": "82cdc777c0f25d6df78534d4153a58f24e18945b444add70031f76855648d812",
@@ -1544,7 +1552,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -1750,7 +1758,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -1850,8 +1858,8 @@
       },
       "description_ref": {
         "sha256": "2b2fc1fce55f4c84008c5d417fb9af53255332d4b18686594d315cd4af80d381",
-        "pack": "details/2b-68bd72576936292ee49edec51e97b2dd10c5b821ca8273d026be9e9155a238dc.json",
-        "pack_sha256": "68bd72576936292ee49edec51e97b2dd10c5b821ca8273d026be9e9155a238dc",
+        "pack": "details/2b-bced9b44f9b8013f740c07d3612d1523b4dd45e6b49026c0343f2b7bc638009f.json",
+        "pack_sha256": "bced9b44f9b8013f740c07d3612d1523b4dd45e6b49026c0343f2b7bc638009f",
         "status": "stale"
       }
     },
@@ -1943,7 +1951,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-21T14:41:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -2680,8 +2688,8 @@
       },
       "description_ref": {
         "sha256": "966e43e5dcd4a870ddd52c61d72e6f5aec3ef4830d31210427230c7988fd1859",
-        "pack": "details/96-09556fa2789f31764bc8495e162bb05cb10082a5d527b9735f76fefa02eb37d7.json",
-        "pack_sha256": "09556fa2789f31764bc8495e162bb05cb10082a5d527b9735f76fefa02eb37d7",
+        "pack": "details/96-4536bb8657206a469600857b25018bc466418bfebce4462cf8f1e32b994df409.json",
+        "pack_sha256": "4536bb8657206a469600857b25018bc466418bfebce4462cf8f1e32b994df409",
         "status": "stale"
       }
     },
@@ -2713,8 +2721,8 @@
       },
       "description_ref": {
         "sha256": "166a6c027f3255acbcfb10515bc10717a7894b1f1e31a963c4c6590328904560",
-        "pack": "details/16-ab5b0ad9a8b67ecb416d5ec55d28321259dd34b559de34150ad053f06f7bd824.json",
-        "pack_sha256": "ab5b0ad9a8b67ecb416d5ec55d28321259dd34b559de34150ad053f06f7bd824",
+        "pack": "details/16-445f8ff7c784e26bf85b53fa0e14bbb2da26bb44e4a1228b80bd3efd4088197b.json",
+        "pack_sha256": "445f8ff7c784e26bf85b53fa0e14bbb2da26bb44e4a1228b80bd3efd4088197b",
         "status": "available"
       }
     },
@@ -2947,7 +2955,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -3564,7 +3572,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-26T13:46:34Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable"
     },
@@ -4429,8 +4437,8 @@
       },
       "description_ref": {
         "sha256": "ee7240ee3ec4780112eabc9b92649719d8a21e833d504019642612ba1604f9b7",
-        "pack": "details/ee-e47a1456f6931e162b9b3df59cfaa544e55942077061f9a70e9bf78e91726d6e.json",
-        "pack_sha256": "e47a1456f6931e162b9b3df59cfaa544e55942077061f9a70e9bf78e91726d6e",
+        "pack": "details/ee-3f46d59a3e00d8fbd327f1350d2b1296ca494fbd8dbc8c0009f6fc851a6feaf2.json",
+        "pack_sha256": "3f46d59a3e00d8fbd327f1350d2b1296ca494fbd8dbc8c0009f6fc851a6feaf2",
         "status": "stale"
       }
     },
@@ -4662,8 +4670,8 @@
       },
       "description_ref": {
         "sha256": "96c8bf786dc0f760a12369b145a6b797cce0c2e7c9a0053862ed5c4cf47d1f92",
-        "pack": "details/96-09556fa2789f31764bc8495e162bb05cb10082a5d527b9735f76fefa02eb37d7.json",
-        "pack_sha256": "09556fa2789f31764bc8495e162bb05cb10082a5d527b9735f76fefa02eb37d7",
+        "pack": "details/96-4536bb8657206a469600857b25018bc466418bfebce4462cf8f1e32b994df409.json",
+        "pack_sha256": "4536bb8657206a469600857b25018bc466418bfebce4462cf8f1e32b994df409",
         "status": "stale"
       }
     },
@@ -4682,7 +4690,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -4874,7 +4882,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5070,8 +5078,8 @@
       },
       "description_ref": {
         "sha256": "8b21c24162aad16d8e34068d7f5dcb7bb441f3115ef74058c72ac2105d887317",
-        "pack": "details/8b-9ed374100e35334036c81c91f102cdd225a2b0c54198ee9fa6eb5203bb903adb.json",
-        "pack_sha256": "9ed374100e35334036c81c91f102cdd225a2b0c54198ee9fa6eb5203bb903adb",
+        "pack": "details/8b-01f3f0fc4957d70cbe781e6839806621a9347afd168d01596c1c651a7577cc37.json",
+        "pack_sha256": "01f3f0fc4957d70cbe781e6839806621a9347afd168d01596c1c651a7577cc37",
         "status": "stale"
       }
     },
@@ -5189,7 +5197,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "source_metadata": {
@@ -5218,7 +5226,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-14T16:53:57Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5241,7 +5249,7 @@
             "source": "simplify",
             "source_job_id": "07314994-8ce1-406a-91bb-b8b31de49a91",
             "url": "https://postman.wd108.myworkdayjobs.com/careers/job/San-Francisco-CA-US/AI-Engineer--Intern_JR1000055",
-            "discovered_at": "2026-11-26T22:38:31Z"
+            "discovered_at": "2026-11-27T04:34:55Z"
           },
           {
             "source": "workday",
@@ -5528,7 +5536,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-27T22:31:02Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5561,8 +5569,8 @@
       },
       "description_ref": {
         "sha256": "ea2da509631daa52f2e4b3bf2dc72a5c461e174575c6735c05c63192ddcc7960",
-        "pack": "details/ea-9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7.json",
-        "pack_sha256": "9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7",
+        "pack": "details/ea-67a87216decb0f847bf1617f828033051aebadaa7dac3a4d5f932dea6f29142e.json",
+        "pack_sha256": "67a87216decb0f847bf1617f828033051aebadaa7dac3a4d5f932dea6f29142e",
         "status": "stale"
       }
     },
@@ -5820,7 +5828,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -5939,7 +5947,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-01T21:24:06Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -6073,7 +6081,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-26T04:02:10Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -6179,8 +6187,8 @@
       },
       "description_ref": {
         "sha256": "2c962edf89fc1eb8f644779f23a87345158328f8fb42055a5ea055dfa871f35d",
-        "pack": "details/2c-2a9f9ad1be2c8c400fe32d1f0a6940f52a933d6800dc5c556f435c6482ada1f2.json",
-        "pack_sha256": "2a9f9ad1be2c8c400fe32d1f0a6940f52a933d6800dc5c556f435c6482ada1f2",
+        "pack": "details/2c-090523d11deb39d451a791e8f8ca501276bd845f35a1a00dbf4af01ba2af908f.json",
+        "pack_sha256": "090523d11deb39d451a791e8f8ca501276bd845f35a1a00dbf4af01ba2af908f",
         "status": "stale"
       }
     },
@@ -6201,7 +6209,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -6233,8 +6241,8 @@
       },
       "description_ref": {
         "sha256": "96873bb7b2d55e88d8c3e84e82e2103fa68edb6754fbc3210cdb2bc762d53db9",
-        "pack": "details/96-09556fa2789f31764bc8495e162bb05cb10082a5d527b9735f76fefa02eb37d7.json",
-        "pack_sha256": "09556fa2789f31764bc8495e162bb05cb10082a5d527b9735f76fefa02eb37d7",
+        "pack": "details/96-4536bb8657206a469600857b25018bc466418bfebce4462cf8f1e32b994df409.json",
+        "pack_sha256": "4536bb8657206a469600857b25018bc466418bfebce4462cf8f1e32b994df409",
         "status": "available"
       }
     },
@@ -6472,7 +6480,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -6597,8 +6605,8 @@
       },
       "description_ref": {
         "sha256": "fc5970e84cd71bf2939eb4d0efa673baaecca576254fdef169e3d2f0629dab6d",
-        "pack": "details/fc-640f9f9e1bf7dba95270c6fbb7109aef6b9113b595a02ad51d0d5fde057fdb7c.json",
-        "pack_sha256": "640f9f9e1bf7dba95270c6fbb7109aef6b9113b595a02ad51d0d5fde057fdb7c",
+        "pack": "details/fc-77dfaea1b73849ee419592eb415cb23203f8a14994058366b30aef91cc763fef.json",
+        "pack_sha256": "77dfaea1b73849ee419592eb415cb23203f8a14994058366b30aef91cc763fef",
         "status": "stale"
       }
     },
@@ -7193,8 +7201,8 @@
       },
       "description_ref": {
         "sha256": "d0f1eee033cacdaa69b48c4268409de3458e43587b5b6bcb760d91f0e74605b0",
-        "pack": "details/d0-dc5f2c116bb9d0ab9ff11be49c5b9135eb9aadc9e7e746cf246ab3b167dcbbaf.json",
-        "pack_sha256": "dc5f2c116bb9d0ab9ff11be49c5b9135eb9aadc9e7e746cf246ab3b167dcbbaf",
+        "pack": "details/d0-5ea2d494d323962f3b0d820960f5e3698341e749b23b641264ac12a41199518e.json",
+        "pack_sha256": "5ea2d494d323962f3b0d820960f5e3698341e749b23b641264ac12a41199518e",
         "status": "stale"
       }
     },
@@ -7364,8 +7372,8 @@
       },
       "description_ref": {
         "sha256": "ee5377b393889635cc0711a4b130f07a12359d7f3037c5a38a57abffa425a349",
-        "pack": "details/ee-e47a1456f6931e162b9b3df59cfaa544e55942077061f9a70e9bf78e91726d6e.json",
-        "pack_sha256": "e47a1456f6931e162b9b3df59cfaa544e55942077061f9a70e9bf78e91726d6e",
+        "pack": "details/ee-3f46d59a3e00d8fbd327f1350d2b1296ca494fbd8dbc8c0009f6fc851a6feaf2.json",
+        "pack_sha256": "3f46d59a3e00d8fbd327f1350d2b1296ca494fbd8dbc8c0009f6fc851a6feaf2",
         "status": "stale"
       }
     },
@@ -7418,7 +7426,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-30T23:35:05Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -7633,8 +7641,8 @@
       },
       "description_ref": {
         "sha256": "fcd89dba5db90568e42c120b50c20baafbb54ee6fd678740b79651df6ede9d85",
-        "pack": "details/fc-640f9f9e1bf7dba95270c6fbb7109aef6b9113b595a02ad51d0d5fde057fdb7c.json",
-        "pack_sha256": "640f9f9e1bf7dba95270c6fbb7109aef6b9113b595a02ad51d0d5fde057fdb7c",
+        "pack": "details/fc-77dfaea1b73849ee419592eb415cb23203f8a14994058366b30aef91cc763fef.json",
+        "pack_sha256": "77dfaea1b73849ee419592eb415cb23203f8a14994058366b30aef91cc763fef",
         "status": "available"
       }
     },
@@ -7719,7 +7727,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "source_metadata": {
@@ -7860,8 +7868,8 @@
       },
       "description_ref": {
         "sha256": "ec5180ec0eebbb014975b24900365465bea969a9f387dbd81298760cd2f524c2",
-        "pack": "details/ec-b1290601e5b3e80684b402e64ae1368e498f7a316000a4374b069f7ecfdd2763.json",
-        "pack_sha256": "b1290601e5b3e80684b402e64ae1368e498f7a316000a4374b069f7ecfdd2763",
+        "pack": "details/ec-41aabcc9ff2206be1ccdcaf4eea28fef82eb147f419967ac2d94c98b4e873447.json",
+        "pack_sha256": "41aabcc9ff2206be1ccdcaf4eea28fef82eb147f419967ac2d94c98b4e873447",
         "status": "available"
       }
     },
@@ -7926,8 +7934,8 @@
       },
       "description_ref": {
         "sha256": "2b70823e8c12b816648bf4554e868429f0be3e0074cd7743bcaefe7c9673c9a4",
-        "pack": "details/2b-68bd72576936292ee49edec51e97b2dd10c5b821ca8273d026be9e9155a238dc.json",
-        "pack_sha256": "68bd72576936292ee49edec51e97b2dd10c5b821ca8273d026be9e9155a238dc",
+        "pack": "details/2b-bced9b44f9b8013f740c07d3612d1523b4dd45e6b49026c0343f2b7bc638009f.json",
+        "pack_sha256": "bced9b44f9b8013f740c07d3612d1523b4dd45e6b49026c0343f2b7bc638009f",
         "status": "stale"
       }
     },
@@ -7946,7 +7954,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-15T23:12:44Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -8133,8 +8141,8 @@
       },
       "description_ref": {
         "sha256": "168be9c33c6809757d1e0ab4adb926f7f952c371b99161824ef73a73101069e5",
-        "pack": "details/16-ab5b0ad9a8b67ecb416d5ec55d28321259dd34b559de34150ad053f06f7bd824.json",
-        "pack_sha256": "ab5b0ad9a8b67ecb416d5ec55d28321259dd34b559de34150ad053f06f7bd824",
+        "pack": "details/16-445f8ff7c784e26bf85b53fa0e14bbb2da26bb44e4a1228b80bd3efd4088197b.json",
+        "pack_sha256": "445f8ff7c784e26bf85b53fa0e14bbb2da26bb44e4a1228b80bd3efd4088197b",
         "status": "stale"
       }
     },
@@ -8166,8 +8174,8 @@
       },
       "description_ref": {
         "sha256": "d20413db8a06603dcf7a28950dec208885d03b004b656fbb96a1acf39daff574",
-        "pack": "details/d2-49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7.json",
-        "pack_sha256": "49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7",
+        "pack": "details/d2-0145cd3526c7c27cbc8a3e33b4034e44bd67b5a8d141d7ca85a59a78a19a9991.json",
+        "pack_sha256": "0145cd3526c7c27cbc8a3e33b4034e44bd67b5a8d141d7ca85a59a78a19a9991",
         "status": "available"
       }
     },
@@ -8470,8 +8478,8 @@
       },
       "description_ref": {
         "sha256": "346e74769ac0787bee98f73c44fa3e380ae8010d3e07c5c5bdfb26b03feab257",
-        "pack": "details/34-ab72a047f8abb8c5c29355da49f190310b0584b74dd0475007652a364eb5c651.json",
-        "pack_sha256": "ab72a047f8abb8c5c29355da49f190310b0584b74dd0475007652a364eb5c651",
+        "pack": "details/34-db71bb27be317320fe193b414a632a9a99fe48d63e03a50aa1b3731271fda8ce.json",
+        "pack_sha256": "db71bb27be317320fe193b414a632a9a99fe48d63e03a50aa1b3731271fda8ce",
         "status": "available"
       }
     },
@@ -8633,7 +8641,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -8809,7 +8817,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -8861,7 +8869,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-25T21:56:11Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -9051,7 +9059,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-30T01:16:42Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -9090,8 +9098,8 @@
       },
       "description_ref": {
         "sha256": "5fb004f192379a68103a011202d9393c66a7d306934607ce5de905966c3e2893",
-        "pack": "details/5f-89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566.json",
-        "pack_sha256": "89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566",
+        "pack": "details/5f-07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300.json",
+        "pack_sha256": "07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300",
         "status": "available"
       }
     },
@@ -9263,8 +9271,8 @@
       },
       "description_ref": {
         "sha256": "166771745beb42de90e68656114afb526c55b5e2e62488b745a1d4eae09427f9",
-        "pack": "details/16-ab5b0ad9a8b67ecb416d5ec55d28321259dd34b559de34150ad053f06f7bd824.json",
-        "pack_sha256": "ab5b0ad9a8b67ecb416d5ec55d28321259dd34b559de34150ad053f06f7bd824",
+        "pack": "details/16-445f8ff7c784e26bf85b53fa0e14bbb2da26bb44e4a1228b80bd3efd4088197b.json",
+        "pack_sha256": "445f8ff7c784e26bf85b53fa0e14bbb2da26bb44e4a1228b80bd3efd4088197b",
         "status": "available"
       }
     },
@@ -9324,7 +9332,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -9775,7 +9783,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-27T22:31:02Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -10120,8 +10128,8 @@
       },
       "description_ref": {
         "sha256": "34ec6d53934cc4c679e88b73362c52f16c753b41e3ac9afd92cd9471f36d990e",
-        "pack": "details/34-ab72a047f8abb8c5c29355da49f190310b0584b74dd0475007652a364eb5c651.json",
-        "pack_sha256": "ab72a047f8abb8c5c29355da49f190310b0584b74dd0475007652a364eb5c651",
+        "pack": "details/34-db71bb27be317320fe193b414a632a9a99fe48d63e03a50aa1b3731271fda8ce.json",
+        "pack_sha256": "db71bb27be317320fe193b414a632a9a99fe48d63e03a50aa1b3731271fda8ce",
         "status": "stale"
       }
     },
@@ -10247,7 +10255,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -10510,8 +10518,8 @@
       },
       "description_ref": {
         "sha256": "fcd118c3feb23e6e597a4426cb40362d8ff274fb51e344f1646db09b50f3db0d",
-        "pack": "details/fc-640f9f9e1bf7dba95270c6fbb7109aef6b9113b595a02ad51d0d5fde057fdb7c.json",
-        "pack_sha256": "640f9f9e1bf7dba95270c6fbb7109aef6b9113b595a02ad51d0d5fde057fdb7c",
+        "pack": "details/fc-77dfaea1b73849ee419592eb415cb23203f8a14994058366b30aef91cc763fef.json",
+        "pack_sha256": "77dfaea1b73849ee419592eb415cb23203f8a14994058366b30aef91cc763fef",
         "status": "stale"
       }
     },
@@ -10563,7 +10571,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -10636,8 +10644,8 @@
       },
       "description_ref": {
         "sha256": "2be6cdc3793a474e58fc75f0f3f0364cd4bb268b6d3a4e3cd2bd8f3d64eace06",
-        "pack": "details/2b-68bd72576936292ee49edec51e97b2dd10c5b821ca8273d026be9e9155a238dc.json",
-        "pack_sha256": "68bd72576936292ee49edec51e97b2dd10c5b821ca8273d026be9e9155a238dc",
+        "pack": "details/2b-bced9b44f9b8013f740c07d3612d1523b4dd45e6b49026c0343f2b7bc638009f.json",
+        "pack_sha256": "bced9b44f9b8013f740c07d3612d1523b4dd45e6b49026c0343f2b7bc638009f",
         "status": "available"
       }
     },
@@ -10928,7 +10936,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-12T23:01:00Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11047,7 +11055,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-27T22:31:02Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11188,8 +11196,8 @@
       },
       "description_ref": {
         "sha256": "d2ce6b5321798624406f0b54133341d0434a8d0fc22d6419ace3ad36f42c76f0",
-        "pack": "details/d2-49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7.json",
-        "pack_sha256": "49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7",
+        "pack": "details/d2-0145cd3526c7c27cbc8a3e33b4034e44bd67b5a8d141d7ca85a59a78a19a9991.json",
+        "pack_sha256": "0145cd3526c7c27cbc8a3e33b4034e44bd67b5a8d141d7ca85a59a78a19a9991",
         "status": "available"
       }
     },
@@ -11241,7 +11249,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-21T22:47:02Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11562,8 +11570,8 @@
       },
       "description_ref": {
         "sha256": "5fa60cc60b1eab484baf79a0ab56ecbc45f0fecb1c3136151c9abbc4c4abf7f7",
-        "pack": "details/5f-89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566.json",
-        "pack_sha256": "89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566",
+        "pack": "details/5f-07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300.json",
+        "pack_sha256": "07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300",
         "status": "available"
       }
     },
@@ -11603,8 +11611,8 @@
       },
       "description_ref": {
         "sha256": "eab54b56e4468ba15a307a4bd031fbc9fcbb534f01872a2f3c9b0da0c31d68bf",
-        "pack": "details/ea-9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7.json",
-        "pack_sha256": "9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7",
+        "pack": "details/ea-67a87216decb0f847bf1617f828033051aebadaa7dac3a4d5f932dea6f29142e.json",
+        "pack_sha256": "67a87216decb0f847bf1617f828033051aebadaa7dac3a4d5f932dea6f29142e",
         "status": "stale"
       }
     },
@@ -11623,7 +11631,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-21T22:47:02Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11688,8 +11696,8 @@
       },
       "description_ref": {
         "sha256": "fc5970e84cd71bf2939eb4d0efa673baaecca576254fdef169e3d2f0629dab6d",
-        "pack": "details/fc-640f9f9e1bf7dba95270c6fbb7109aef6b9113b595a02ad51d0d5fde057fdb7c.json",
-        "pack_sha256": "640f9f9e1bf7dba95270c6fbb7109aef6b9113b595a02ad51d0d5fde057fdb7c",
+        "pack": "details/fc-77dfaea1b73849ee419592eb415cb23203f8a14994058366b30aef91cc763fef.json",
+        "pack_sha256": "77dfaea1b73849ee419592eb415cb23203f8a14994058366b30aef91cc763fef",
         "status": "stale"
       }
     },
@@ -11840,7 +11848,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-20T21:24:59Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -11959,8 +11967,8 @@
       },
       "description_ref": {
         "sha256": "d05428f631219944fb404d0c3deaeb4f54be6206dc94a007dbcb0fdf4dffaca3",
-        "pack": "details/d0-dc5f2c116bb9d0ab9ff11be49c5b9135eb9aadc9e7e746cf246ab3b167dcbbaf.json",
-        "pack_sha256": "dc5f2c116bb9d0ab9ff11be49c5b9135eb9aadc9e7e746cf246ab3b167dcbbaf",
+        "pack": "details/d0-5ea2d494d323962f3b0d820960f5e3698341e749b23b641264ac12a41199518e.json",
+        "pack_sha256": "5ea2d494d323962f3b0d820960f5e3698341e749b23b641264ac12a41199518e",
         "status": "stale"
       }
     },
@@ -11979,7 +11987,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-03T01:49:10Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -12045,8 +12053,8 @@
       },
       "description_ref": {
         "sha256": "2b6bcd2aee070d50c2c03fcbb00b4805a5be07cd1b0a6de5c534fe75378d23ec",
-        "pack": "details/2b-68bd72576936292ee49edec51e97b2dd10c5b821ca8273d026be9e9155a238dc.json",
-        "pack_sha256": "68bd72576936292ee49edec51e97b2dd10c5b821ca8273d026be9e9155a238dc",
+        "pack": "details/2b-bced9b44f9b8013f740c07d3612d1523b4dd45e6b49026c0343f2b7bc638009f.json",
+        "pack_sha256": "bced9b44f9b8013f740c07d3612d1523b4dd45e6b49026c0343f2b7bc638009f",
         "status": "stale"
       }
     },
@@ -12098,7 +12106,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -12150,7 +12158,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-29T22:52:53Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -12283,8 +12291,8 @@
       },
       "description_ref": {
         "sha256": "fc5970e84cd71bf2939eb4d0efa673baaecca576254fdef169e3d2f0629dab6d",
-        "pack": "details/fc-640f9f9e1bf7dba95270c6fbb7109aef6b9113b595a02ad51d0d5fde057fdb7c.json",
-        "pack_sha256": "640f9f9e1bf7dba95270c6fbb7109aef6b9113b595a02ad51d0d5fde057fdb7c",
+        "pack": "details/fc-77dfaea1b73849ee419592eb415cb23203f8a14994058366b30aef91cc763fef.json",
+        "pack_sha256": "77dfaea1b73849ee419592eb415cb23203f8a14994058366b30aef91cc763fef",
         "status": "available"
       }
     },
@@ -12337,7 +12345,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-13T10:58:02Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -12688,7 +12696,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -12753,8 +12761,8 @@
       },
       "description_ref": {
         "sha256": "5f707e4d51aa65d1fa7e1b181a2cf264b29ca3a075b2d6edf6e29a55d1248553",
-        "pack": "details/5f-89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566.json",
-        "pack_sha256": "89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566",
+        "pack": "details/5f-07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300.json",
+        "pack_sha256": "07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300",
         "status": "stale"
       }
     },
@@ -12931,7 +12939,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-25T21:56:11Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -12985,8 +12993,8 @@
       },
       "description_ref": {
         "sha256": "4f49c84f889bcccb6676600df81af22d14b7513f2c48195c3d0be1f5d8746781",
-        "pack": "details/4f-3676f0ae2f6c25f852ba4eaf5012fb0423203a7c20d755b7c5ea08c681867b36.json",
-        "pack_sha256": "3676f0ae2f6c25f852ba4eaf5012fb0423203a7c20d755b7c5ea08c681867b36",
+        "pack": "details/4f-febf35163d8eab65ecada22972ce9ea7876bb98a05ea2e27997a01486c792e17.json",
+        "pack_sha256": "febf35163d8eab65ecada22972ce9ea7876bb98a05ea2e27997a01486c792e17",
         "status": "stale"
       }
     },
@@ -13039,7 +13047,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-26T17:33:30Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -13082,6 +13090,25 @@
         "pack_sha256": "6bf6a3aee404de3625cbb629c2ad05415cf8acf473a5d369faefd35291f5f4c8",
         "status": "stale"
       }
+    },
+    "68c13a8b9f332fce": {
+      "id": "68c13a8b9f332fce",
+      "company": "Stryker",
+      "company_slug": "stryker",
+      "title": "Intern, Mechanical Engineering",
+      "location": "Portage, Michigan",
+      "locations": [
+        "Portage, Michigan"
+      ],
+      "url": "https://stryker.wd1.myworkdayjobs.com/StrykerCareers/job/Portage-Michigan/Intern--Mechanical-Engineering_R572896",
+      "source": "workday",
+      "source_job_id": "Intern--Mechanical-Engineering_R572896",
+      "ats": "workday",
+      "posted_at": null,
+      "first_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
+      "closed_at": null,
+      "description_status": "unavailable"
     },
     "68c3c843e5a5f245": {
       "id": "68c3c843e5a5f245",
@@ -13234,7 +13261,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-21T18:57:41Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -13693,8 +13720,8 @@
       },
       "description_ref": {
         "sha256": "2c5839688f08a4ed75392956fcd82e039313d7f2445239fb87538c66dfa8a29f",
-        "pack": "details/2c-2a9f9ad1be2c8c400fe32d1f0a6940f52a933d6800dc5c556f435c6482ada1f2.json",
-        "pack_sha256": "2a9f9ad1be2c8c400fe32d1f0a6940f52a933d6800dc5c556f435c6482ada1f2",
+        "pack": "details/2c-090523d11deb39d451a791e8f8ca501276bd845f35a1a00dbf4af01ba2af908f.json",
+        "pack_sha256": "090523d11deb39d451a791e8f8ca501276bd845f35a1a00dbf4af01ba2af908f",
         "status": "stale"
       }
     },
@@ -13899,8 +13926,8 @@
       },
       "description_ref": {
         "sha256": "8bb2ad0b99b9c56c38dbdff0bd54899f3278537ec1c9176410d17dfc55ce68ba",
-        "pack": "details/8b-9ed374100e35334036c81c91f102cdd225a2b0c54198ee9fa6eb5203bb903adb.json",
-        "pack_sha256": "9ed374100e35334036c81c91f102cdd225a2b0c54198ee9fa6eb5203bb903adb",
+        "pack": "details/8b-01f3f0fc4957d70cbe781e6839806621a9347afd168d01596c1c651a7577cc37.json",
+        "pack_sha256": "01f3f0fc4957d70cbe781e6839806621a9347afd168d01596c1c651a7577cc37",
         "status": "available"
       }
     },
@@ -13981,7 +14008,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-21T15:38:36Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -14118,8 +14145,8 @@
       },
       "description_ref": {
         "sha256": "e8b7e3309b0caa6c9f980e47ae748b77ea359f3a33a5e20760ab42ca3bb9d7ed",
-        "pack": "details/e8-ba181f32527b0352393780f4511aee726ba881113790c5d0c4914e6087916032.json",
-        "pack_sha256": "ba181f32527b0352393780f4511aee726ba881113790c5d0c4914e6087916032",
+        "pack": "details/e8-fc2af0a5d0329d74e7a6d21bc57cf5b2c6a5ac0fe104444aad5120d7bb1824bd.json",
+        "pack_sha256": "fc2af0a5d0329d74e7a6d21bc57cf5b2c6a5ac0fe104444aad5120d7bb1824bd",
         "status": "available"
       }
     },
@@ -14460,8 +14487,8 @@
       },
       "description_ref": {
         "sha256": "5f94d3168261ceaae27761ebcbcc5b72a4bb99b65624821dbadceadf1c67bd12",
-        "pack": "details/5f-89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566.json",
-        "pack_sha256": "89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566",
+        "pack": "details/5f-07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300.json",
+        "pack_sha256": "07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300",
         "status": "stale"
       }
     },
@@ -14513,7 +14540,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-17T21:47:37Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -14677,8 +14704,8 @@
       },
       "description_ref": {
         "sha256": "4e19170eb0fe8cfc2b900f0dccb5e116333edfa183409d1962171d2bb548cc6a",
-        "pack": "details/4e-71221d5ff9c47d03a5d883043fd9ceee45c0bd4575c94249767b1cb930b8254e.json",
-        "pack_sha256": "71221d5ff9c47d03a5d883043fd9ceee45c0bd4575c94249767b1cb930b8254e",
+        "pack": "details/4e-cafb5eb8d280c5b677136992022048a9197c51cad2a8d979d2c855d5aa742a81.json",
+        "pack_sha256": "cafb5eb8d280c5b677136992022048a9197c51cad2a8d979d2c855d5aa742a81",
         "status": "available"
       }
     },
@@ -14697,7 +14724,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -14927,8 +14954,8 @@
       },
       "description_ref": {
         "sha256": "5f480bbd5fb148bfe9bdc59a81ad039dadf6c0bd77b5da3ea4b3242e0d2b8ef3",
-        "pack": "details/5f-89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566.json",
-        "pack_sha256": "89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566",
+        "pack": "details/5f-07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300.json",
+        "pack_sha256": "07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300",
         "status": "stale"
       }
     },
@@ -15152,8 +15179,8 @@
       },
       "description_ref": {
         "sha256": "ea38119f3e0b06854acf29aa7c15fcfcd9b2a724b0c360e1043a1ec111624d9c",
-        "pack": "details/ea-9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7.json",
-        "pack_sha256": "9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7",
+        "pack": "details/ea-67a87216decb0f847bf1617f828033051aebadaa7dac3a4d5f932dea6f29142e.json",
+        "pack_sha256": "67a87216decb0f847bf1617f828033051aebadaa7dac3a4d5f932dea6f29142e",
         "status": "stale"
       }
     },
@@ -15494,8 +15521,8 @@
       },
       "description_ref": {
         "sha256": "d2c12d9a4d77b00d1810b706dd4f7710c4da1025b1409550805a56c620e7c46c",
-        "pack": "details/d2-49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7.json",
-        "pack_sha256": "49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7",
+        "pack": "details/d2-0145cd3526c7c27cbc8a3e33b4034e44bd67b5a8d141d7ca85a59a78a19a9991.json",
+        "pack_sha256": "0145cd3526c7c27cbc8a3e33b4034e44bd67b5a8d141d7ca85a59a78a19a9991",
         "status": "stale"
       }
     },
@@ -15547,7 +15574,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -15777,8 +15804,8 @@
       },
       "description_ref": {
         "sha256": "9b17cbcf3ca559d50f957ad7e49a0c1bcb4b75720fc11bf8a32d2bd01309a9f6",
-        "pack": "details/9b-e2d1e1ecca2830cc1df5bd36b6e921ec8c1c2600f727e977e82da9a850d7bdff.json",
-        "pack_sha256": "e2d1e1ecca2830cc1df5bd36b6e921ec8c1c2600f727e977e82da9a850d7bdff",
+        "pack": "details/9b-235baac0fbe4129257d79ade0437874f66fa6620ce20bc9abb7a9002f37bc29b.json",
+        "pack_sha256": "235baac0fbe4129257d79ade0437874f66fa6620ce20bc9abb7a9002f37bc29b",
         "status": "stale"
       }
     },
@@ -15830,7 +15857,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-03T01:28:33Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -16196,9 +16223,19 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-21T21:12:41Z",
-      "last_seen_at": "2026-11-23T22:51:38Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
-      "description_status": "unavailable"
+      "description_status": "unavailable",
+      "source_metadata": {
+        "provenance": [
+          {
+            "source": "workday",
+            "source_job_id": "Corporate-Finance-Intern_R-175404-1",
+            "url": "https://mdlz.wd3.myworkdayjobs.com/External/job/East-Hanover-New-Jersey-United-States/Corporate-Finance-Intern_R-175404-1",
+            "discovered_at": "2026-11-21T21:12:41Z"
+          }
+        ]
+      }
     },
     "80612389d0322b24": {
       "id": "80612389d0322b24",
@@ -16228,8 +16265,8 @@
       },
       "description_ref": {
         "sha256": "da2fff94280e7bbc3dd36e5799f87ddf8d93a1b422f6a5d6fc7d96cd770f1d36",
-        "pack": "details/da-fe22167ae4b8be4922e36816b3d844d23702af05fcc55495477dfd11a782bd4d.json",
-        "pack_sha256": "fe22167ae4b8be4922e36816b3d844d23702af05fcc55495477dfd11a782bd4d",
+        "pack": "details/da-1d19c48eaacf0e6bb548254701593380b620b2a68348237556c05cc6e46ae236.json",
+        "pack_sha256": "1d19c48eaacf0e6bb548254701593380b620b2a68348237556c05cc6e46ae236",
         "status": "available"
       }
     },
@@ -16733,7 +16770,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-26T13:46:34Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -16742,7 +16779,15 @@
           "method": "workday_api",
           "completeness": "available",
           "identity": "provider_job_endpoint"
-        }
+        },
+        "provenance": [
+          {
+            "source": "workday",
+            "source_job_id": "XMLNAME-2027-Summer-Internship---Materials-Engineering_R26569-1",
+            "url": "https://sierraspace.wd1.myworkdayjobs.com/Sierra_Space_External_Career_Site/job/Centennial-CO/XMLNAME-2027-Summer-Internship---Materials-Engineering_R26569-1",
+            "discovered_at": "2026-11-26T13:46:34Z"
+          }
+        ]
       },
       "description_ref": {
         "sha256": "3f54a19ba874771ad362ed2a33ad3e336ac20f182a510ea2820e91aecf26f31f",
@@ -16840,7 +16885,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -16931,7 +16976,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -17268,8 +17313,8 @@
       },
       "description_ref": {
         "sha256": "ea137c9429f1d6f502ce816920f50207885927769d290820934476e96864268a",
-        "pack": "details/ea-9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7.json",
-        "pack_sha256": "9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7",
+        "pack": "details/ea-67a87216decb0f847bf1617f828033051aebadaa7dac3a4d5f932dea6f29142e.json",
+        "pack_sha256": "67a87216decb0f847bf1617f828033051aebadaa7dac3a4d5f932dea6f29142e",
         "status": "available"
       }
     },
@@ -17428,7 +17473,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-12T07:37:02Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -17784,7 +17829,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -17938,7 +17983,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "source_metadata": {
@@ -18156,8 +18201,8 @@
       },
       "description_ref": {
         "sha256": "8b56be2a6a87ecf4a3c6854bd7ba6c9abd3021bd70142e2c17e7d68a74d94c3d",
-        "pack": "details/8b-9ed374100e35334036c81c91f102cdd225a2b0c54198ee9fa6eb5203bb903adb.json",
-        "pack_sha256": "9ed374100e35334036c81c91f102cdd225a2b0c54198ee9fa6eb5203bb903adb",
+        "pack": "details/8b-01f3f0fc4957d70cbe781e6839806621a9347afd168d01596c1c651a7577cc37.json",
+        "pack_sha256": "01f3f0fc4957d70cbe781e6839806621a9347afd168d01596c1c651a7577cc37",
         "status": "stale"
       }
     },
@@ -18217,7 +18262,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-01T21:24:06Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -18375,8 +18420,8 @@
       },
       "description_ref": {
         "sha256": "5fb6d7d257a96bbf5d54b3bdddee2d8f6c33787cdf23107c35e9119ff5bf458d",
-        "pack": "details/5f-89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566.json",
-        "pack_sha256": "89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566",
+        "pack": "details/5f-07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300.json",
+        "pack_sha256": "07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300",
         "status": "stale"
       }
     },
@@ -18460,8 +18505,8 @@
       },
       "description_ref": {
         "sha256": "da8cf6a4a91d5a39fbf84b3a89aa77c741b74af110a5ea3d9ff8cb4cf46f5af3",
-        "pack": "details/da-fe22167ae4b8be4922e36816b3d844d23702af05fcc55495477dfd11a782bd4d.json",
-        "pack_sha256": "fe22167ae4b8be4922e36816b3d844d23702af05fcc55495477dfd11a782bd4d",
+        "pack": "details/da-1d19c48eaacf0e6bb548254701593380b620b2a68348237556c05cc6e46ae236.json",
+        "pack_sha256": "1d19c48eaacf0e6bb548254701593380b620b2a68348237556c05cc6e46ae236",
         "status": "stale"
       }
     },
@@ -18559,8 +18604,8 @@
       },
       "description_ref": {
         "sha256": "346e74769ac0787bee98f73c44fa3e380ae8010d3e07c5c5bdfb26b03feab257",
-        "pack": "details/34-ab72a047f8abb8c5c29355da49f190310b0584b74dd0475007652a364eb5c651.json",
-        "pack_sha256": "ab72a047f8abb8c5c29355da49f190310b0584b74dd0475007652a364eb5c651",
+        "pack": "details/34-db71bb27be317320fe193b414a632a9a99fe48d63e03a50aa1b3731271fda8ce.json",
+        "pack_sha256": "db71bb27be317320fe193b414a632a9a99fe48d63e03a50aa1b3731271fda8ce",
         "status": "available"
       }
     },
@@ -18739,7 +18784,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -18859,9 +18904,19 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-26T13:46:34Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
-      "description_status": "unavailable"
+      "description_status": "unavailable",
+      "source_metadata": {
+        "provenance": [
+          {
+            "source": "workday",
+            "source_job_id": "XMLNAME-2027-Summer-Internship---Electrical-Engineering_R26563-1",
+            "url": "https://sierraspace.wd1.myworkdayjobs.com/Sierra_Space_External_Career_Site/job/Centennial-CO/XMLNAME-2027-Summer-Internship---Electrical-Engineering_R26563-1",
+            "discovered_at": "2026-11-26T13:46:34Z"
+          }
+        ]
+      }
     },
     "96fde943627a4e03": {
       "id": "96fde943627a4e03",
@@ -18878,7 +18933,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-25T21:56:11Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -18999,8 +19054,8 @@
       },
       "description_ref": {
         "sha256": "961311eadabdb3316bf813d38813484a74941e9d1988cae99187158cf40cc983",
-        "pack": "details/96-09556fa2789f31764bc8495e162bb05cb10082a5d527b9735f76fefa02eb37d7.json",
-        "pack_sha256": "09556fa2789f31764bc8495e162bb05cb10082a5d527b9735f76fefa02eb37d7",
+        "pack": "details/96-4536bb8657206a469600857b25018bc466418bfebce4462cf8f1e32b994df409.json",
+        "pack_sha256": "4536bb8657206a469600857b25018bc466418bfebce4462cf8f1e32b994df409",
         "status": "stale"
       }
     },
@@ -19023,7 +19078,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-26T13:46:34Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable"
     },
@@ -19705,8 +19760,8 @@
       },
       "description_ref": {
         "sha256": "e86a4d78f259a203a73989824ad9316f4c37ffe8c3ad0d6b2ac7d49a200a298f",
-        "pack": "details/e8-ba181f32527b0352393780f4511aee726ba881113790c5d0c4914e6087916032.json",
-        "pack_sha256": "ba181f32527b0352393780f4511aee726ba881113790c5d0c4914e6087916032",
+        "pack": "details/e8-fc2af0a5d0329d74e7a6d21bc57cf5b2c6a5ac0fe104444aad5120d7bb1824bd.json",
+        "pack_sha256": "fc2af0a5d0329d74e7a6d21bc57cf5b2c6a5ac0fe104444aad5120d7bb1824bd",
         "status": "stale"
       }
     },
@@ -19890,8 +19945,8 @@
       },
       "description_ref": {
         "sha256": "5ff609c40d77c4eb2299b1b60eafd9d142dedffd77dba9e97072c414305ba0c9",
-        "pack": "details/5f-89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566.json",
-        "pack_sha256": "89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566",
+        "pack": "details/5f-07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300.json",
+        "pack_sha256": "07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300",
         "status": "stale"
       }
     },
@@ -19923,8 +19978,8 @@
       },
       "description_ref": {
         "sha256": "b571b2ddd1223e0ef45ddd088b52fa6d94010108381f6a0e04cc51b10df368cd",
-        "pack": "details/b5-06466392a5914a86ea21325963013a579b0003925d479ea1a6dd2d3d20897c20.json",
-        "pack_sha256": "06466392a5914a86ea21325963013a579b0003925d479ea1a6dd2d3d20897c20",
+        "pack": "details/b5-4f64d3bf5e674333791b18bc5c006ab0222859fe25c1c3a812a9f78488845dd0.json",
+        "pack_sha256": "4f64d3bf5e674333791b18bc5c006ab0222859fe25c1c3a812a9f78488845dd0",
         "status": "stale"
       }
     },
@@ -19943,7 +19998,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -20031,7 +20086,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -20171,8 +20226,8 @@
       },
       "description_ref": {
         "sha256": "9b32fb5d634e5a1ec4a2b6edbef953ff6ddf2104ed8b6b4df5213d5a557783e5",
-        "pack": "details/9b-e2d1e1ecca2830cc1df5bd36b6e921ec8c1c2600f727e977e82da9a850d7bdff.json",
-        "pack_sha256": "e2d1e1ecca2830cc1df5bd36b6e921ec8c1c2600f727e977e82da9a850d7bdff",
+        "pack": "details/9b-235baac0fbe4129257d79ade0437874f66fa6620ce20bc9abb7a9002f37bc29b.json",
+        "pack_sha256": "235baac0fbe4129257d79ade0437874f66fa6620ce20bc9abb7a9002f37bc29b",
         "status": "stale"
       }
     },
@@ -20290,7 +20345,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-24T18:45:07Z",
-      "last_seen_at": "2026-11-24T18:45:07Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -20299,7 +20354,15 @@
           "method": "workday_api",
           "completeness": "available",
           "identity": "provider_job_endpoint"
-        }
+        },
+        "provenance": [
+          {
+            "source": "workday",
+            "source_job_id": "Pre-Grad-Intern---Sam-s_R-2693459",
+            "url": "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/Thornton-CO/Pre-Grad-Intern---Sam-s_R-2693459",
+            "discovered_at": "2026-11-24T18:45:07Z"
+          }
+        ]
       },
       "description_ref": {
         "sha256": "e34838019fa2f15cce98f7e63aab188a433e8d0e28a61ecafd13b6a30f27c377",
@@ -20364,7 +20427,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-19T21:37:56Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -20517,8 +20580,8 @@
       },
       "description_ref": {
         "sha256": "da7cf021583a76a039742e13b91b9378c3a262821a44c2527b76be26d09f0886",
-        "pack": "details/da-fe22167ae4b8be4922e36816b3d844d23702af05fcc55495477dfd11a782bd4d.json",
-        "pack_sha256": "fe22167ae4b8be4922e36816b3d844d23702af05fcc55495477dfd11a782bd4d",
+        "pack": "details/da-1d19c48eaacf0e6bb548254701593380b620b2a68348237556c05cc6e46ae236.json",
+        "pack_sha256": "1d19c48eaacf0e6bb548254701593380b620b2a68348237556c05cc6e46ae236",
         "status": "stale"
       }
     },
@@ -20682,8 +20745,8 @@
       },
       "description_ref": {
         "sha256": "e8621031cc7d0039b14b8512e6e47d7e598143dd21660d09a17b710acee0cb6d",
-        "pack": "details/e8-ba181f32527b0352393780f4511aee726ba881113790c5d0c4914e6087916032.json",
-        "pack_sha256": "ba181f32527b0352393780f4511aee726ba881113790c5d0c4914e6087916032",
+        "pack": "details/e8-fc2af0a5d0329d74e7a6d21bc57cf5b2c6a5ac0fe104444aad5120d7bb1824bd.json",
+        "pack_sha256": "fc2af0a5d0329d74e7a6d21bc57cf5b2c6a5ac0fe104444aad5120d7bb1824bd",
         "status": "available"
       }
     },
@@ -21055,7 +21118,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-03T22:18:41Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -21193,8 +21256,8 @@
       },
       "description_ref": {
         "sha256": "165c620139a1f948d4493f1b8edc28484798cab00666719a535a68ae71d833a7",
-        "pack": "details/16-ab5b0ad9a8b67ecb416d5ec55d28321259dd34b559de34150ad053f06f7bd824.json",
-        "pack_sha256": "ab5b0ad9a8b67ecb416d5ec55d28321259dd34b559de34150ad053f06f7bd824",
+        "pack": "details/16-445f8ff7c784e26bf85b53fa0e14bbb2da26bb44e4a1228b80bd3efd4088197b.json",
+        "pack_sha256": "445f8ff7c784e26bf85b53fa0e14bbb2da26bb44e4a1228b80bd3efd4088197b",
         "status": "stale"
       }
     },
@@ -21655,8 +21718,8 @@
       },
       "description_ref": {
         "sha256": "2c160d45154196d48d9070c33acb94c8c861ee733f664490666be5e9c6793bc1",
-        "pack": "details/2c-2a9f9ad1be2c8c400fe32d1f0a6940f52a933d6800dc5c556f435c6482ada1f2.json",
-        "pack_sha256": "2a9f9ad1be2c8c400fe32d1f0a6940f52a933d6800dc5c556f435c6482ada1f2",
+        "pack": "details/2c-090523d11deb39d451a791e8f8ca501276bd845f35a1a00dbf4af01ba2af908f.json",
+        "pack_sha256": "090523d11deb39d451a791e8f8ca501276bd845f35a1a00dbf4af01ba2af908f",
         "status": "available"
       }
     },
@@ -21796,8 +21859,8 @@
       },
       "description_ref": {
         "sha256": "d06f4a89e916683e456553c41f49339cd7d10730056321cff8be276d579e2eac",
-        "pack": "details/d0-dc5f2c116bb9d0ab9ff11be49c5b9135eb9aadc9e7e746cf246ab3b167dcbbaf.json",
-        "pack_sha256": "dc5f2c116bb9d0ab9ff11be49c5b9135eb9aadc9e7e746cf246ab3b167dcbbaf",
+        "pack": "details/d0-5ea2d494d323962f3b0d820960f5e3698341e749b23b641264ac12a41199518e.json",
+        "pack_sha256": "5ea2d494d323962f3b0d820960f5e3698341e749b23b641264ac12a41199518e",
         "status": "stale"
       }
     },
@@ -22297,8 +22360,8 @@
       },
       "description_ref": {
         "sha256": "9b3ab5a590aee340270b99ee7250603e4cbe9f12116e1a9fb6e348303b1bf3b5",
-        "pack": "details/9b-e2d1e1ecca2830cc1df5bd36b6e921ec8c1c2600f727e977e82da9a850d7bdff.json",
-        "pack_sha256": "e2d1e1ecca2830cc1df5bd36b6e921ec8c1c2600f727e977e82da9a850d7bdff",
+        "pack": "details/9b-235baac0fbe4129257d79ade0437874f66fa6620ce20bc9abb7a9002f37bc29b.json",
+        "pack_sha256": "235baac0fbe4129257d79ade0437874f66fa6620ce20bc9abb7a9002f37bc29b",
         "status": "available"
       }
     },
@@ -22707,7 +22770,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -22921,7 +22984,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-23T16:45:31Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -23254,7 +23317,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -23459,8 +23522,8 @@
       },
       "description_ref": {
         "sha256": "d2a4b737acbff7c03519d3ae435ce22d1dc0ac616294759644eeaa1cc2cd47cb",
-        "pack": "details/d2-49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7.json",
-        "pack_sha256": "49059a47d8dd4b43b1b9d34f5bc014c706c9be3247ae38937bfbbdb7a01646f7",
+        "pack": "details/d2-0145cd3526c7c27cbc8a3e33b4034e44bd67b5a8d141d7ca85a59a78a19a9991.json",
+        "pack_sha256": "0145cd3526c7c27cbc8a3e33b4034e44bd67b5a8d141d7ca85a59a78a19a9991",
         "status": "stale"
       }
     },
@@ -23723,7 +23786,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T00:05:57Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -23940,7 +24003,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -24091,7 +24154,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-05T20:48:36Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -24191,8 +24254,8 @@
       },
       "description_ref": {
         "sha256": "1bd35bbef3a81a865ad7070fb8768b8a4e137e6df84ae5b46c09c0d4355c8b2a",
-        "pack": "details/1b-2b5d3226712270b45e84dc8918fd0c00bdbc65608f11ad5285485e637ab108c5.json",
-        "pack_sha256": "2b5d3226712270b45e84dc8918fd0c00bdbc65608f11ad5285485e637ab108c5",
+        "pack": "details/1b-e225850e65ec07dc70c7bd21d32d4cf30c399a880880707faabe1395a90a7d7a.json",
+        "pack_sha256": "e225850e65ec07dc70c7bd21d32d4cf30c399a880880707faabe1395a90a7d7a",
         "status": "stale"
       }
     },
@@ -24224,8 +24287,8 @@
       },
       "description_ref": {
         "sha256": "eabc053b100cc4eeab0784a3c9f56156c53529b86fdc0288292b3bd609261bde",
-        "pack": "details/ea-9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7.json",
-        "pack_sha256": "9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7",
+        "pack": "details/ea-67a87216decb0f847bf1617f828033051aebadaa7dac3a4d5f932dea6f29142e.json",
+        "pack_sha256": "67a87216decb0f847bf1617f828033051aebadaa7dac3a4d5f932dea6f29142e",
         "status": "stale"
       }
     },
@@ -24421,7 +24484,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-26T13:46:34Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable"
     },
@@ -24929,7 +24992,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-27T18:20:10Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -25405,7 +25468,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-19T20:06:44Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -25658,7 +25721,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -25930,8 +25993,8 @@
       },
       "description_ref": {
         "sha256": "2b6bcd2aee070d50c2c03fcbb00b4805a5be07cd1b0a6de5c534fe75378d23ec",
-        "pack": "details/2b-68bd72576936292ee49edec51e97b2dd10c5b821ca8273d026be9e9155a238dc.json",
-        "pack_sha256": "68bd72576936292ee49edec51e97b2dd10c5b821ca8273d026be9e9155a238dc",
+        "pack": "details/2b-bced9b44f9b8013f740c07d3612d1523b4dd45e6b49026c0343f2b7bc638009f.json",
+        "pack_sha256": "bced9b44f9b8013f740c07d3612d1523b4dd45e6b49026c0343f2b7bc638009f",
         "status": "stale"
       }
     },
@@ -26123,7 +26186,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -26625,8 +26688,8 @@
       },
       "description_ref": {
         "sha256": "eec4332301855fc85650f756a5bc92c7d70c26a1cd052287266c15c44b86e2c5",
-        "pack": "details/ee-e47a1456f6931e162b9b3df59cfaa544e55942077061f9a70e9bf78e91726d6e.json",
-        "pack_sha256": "e47a1456f6931e162b9b3df59cfaa544e55942077061f9a70e9bf78e91726d6e",
+        "pack": "details/ee-3f46d59a3e00d8fbd327f1350d2b1296ca494fbd8dbc8c0009f6fc851a6feaf2.json",
+        "pack_sha256": "3f46d59a3e00d8fbd327f1350d2b1296ca494fbd8dbc8c0009f6fc851a6feaf2",
         "status": "stale"
       }
     },
@@ -26666,8 +26729,8 @@
       },
       "description_ref": {
         "sha256": "d0cc434525ec3f37c8ced3dfa3f7cbb2757adfa54c58109523db113349ecb4c7",
-        "pack": "details/d0-dc5f2c116bb9d0ab9ff11be49c5b9135eb9aadc9e7e746cf246ab3b167dcbbaf.json",
-        "pack_sha256": "dc5f2c116bb9d0ab9ff11be49c5b9135eb9aadc9e7e746cf246ab3b167dcbbaf",
+        "pack": "details/d0-5ea2d494d323962f3b0d820960f5e3698341e749b23b641264ac12a41199518e.json",
+        "pack_sha256": "5ea2d494d323962f3b0d820960f5e3698341e749b23b641264ac12a41199518e",
         "status": "available"
       }
     },
@@ -26827,7 +26890,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -26892,8 +26955,8 @@
       },
       "description_ref": {
         "sha256": "d0f1eee033cacdaa69b48c4268409de3458e43587b5b6bcb760d91f0e74605b0",
-        "pack": "details/d0-dc5f2c116bb9d0ab9ff11be49c5b9135eb9aadc9e7e746cf246ab3b167dcbbaf.json",
-        "pack_sha256": "dc5f2c116bb9d0ab9ff11be49c5b9135eb9aadc9e7e746cf246ab3b167dcbbaf",
+        "pack": "details/d0-5ea2d494d323962f3b0d820960f5e3698341e749b23b641264ac12a41199518e.json",
+        "pack_sha256": "5ea2d494d323962f3b0d820960f5e3698341e749b23b641264ac12a41199518e",
         "status": "stale"
       }
     },
@@ -27098,8 +27161,8 @@
       },
       "description_ref": {
         "sha256": "fc219afd7bdae3d07cd6b5d52445f74e02e0a9648f1da0086c70847a654af788",
-        "pack": "details/fc-640f9f9e1bf7dba95270c6fbb7109aef6b9113b595a02ad51d0d5fde057fdb7c.json",
-        "pack_sha256": "640f9f9e1bf7dba95270c6fbb7109aef6b9113b595a02ad51d0d5fde057fdb7c",
+        "pack": "details/fc-77dfaea1b73849ee419592eb415cb23203f8a14994058366b30aef91cc763fef.json",
+        "pack_sha256": "77dfaea1b73849ee419592eb415cb23203f8a14994058366b30aef91cc763fef",
         "status": "available"
       }
     },
@@ -27217,7 +27280,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -27560,7 +27623,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-09T20:09:29Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -27594,7 +27657,7 @@
         "sha256": "c5ae24e83d7fa8d0f224f104deb4d46f0820b2baa9b65f37646e0e930f838405",
         "pack": "details/c5-583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3.json",
         "pack_sha256": "583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3",
-        "status": "stale"
+        "status": "available"
       }
     },
     "db471b0f5720ad7c": {
@@ -27613,7 +27676,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-25T12:21:42Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable"
     },
@@ -27933,8 +27996,8 @@
       },
       "description_ref": {
         "sha256": "5f6c0e3f19a2d909cbd25d21052244ac9582f4650c10f51a6b5705eda844a725",
-        "pack": "details/5f-89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566.json",
-        "pack_sha256": "89868c220d590bf41d63b06b3dc9ce668368274bf56bcf6fddd29beae0887566",
+        "pack": "details/5f-07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300.json",
+        "pack_sha256": "07c8265e3314315d9ac3ce0d79a5afe21f88407f3f2a7e1814365ee8b20f0300",
         "status": "stale"
       }
     },
@@ -28147,8 +28210,8 @@
       },
       "description_ref": {
         "sha256": "8bdb9fadc1e794acf841bb8ba81b356f3e07d21e5457c9fa0040ab6189edd811",
-        "pack": "details/8b-9ed374100e35334036c81c91f102cdd225a2b0c54198ee9fa6eb5203bb903adb.json",
-        "pack_sha256": "9ed374100e35334036c81c91f102cdd225a2b0c54198ee9fa6eb5203bb903adb",
+        "pack": "details/8b-01f3f0fc4957d70cbe781e6839806621a9347afd168d01596c1c651a7577cc37.json",
+        "pack_sha256": "01f3f0fc4957d70cbe781e6839806621a9347afd168d01596c1c651a7577cc37",
         "status": "stale"
       }
     },
@@ -28318,7 +28381,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -28460,7 +28523,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-20T02:38:50Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -28933,8 +28996,8 @@
       },
       "description_ref": {
         "sha256": "daf8eb62aabb3218a29a7a428eaa8dfff19ae4b8651a4feb3ab7df5e4fdc60fb",
-        "pack": "details/da-fe22167ae4b8be4922e36816b3d844d23702af05fcc55495477dfd11a782bd4d.json",
-        "pack_sha256": "fe22167ae4b8be4922e36816b3d844d23702af05fcc55495477dfd11a782bd4d",
+        "pack": "details/da-1d19c48eaacf0e6bb548254701593380b620b2a68348237556c05cc6e46ae236.json",
+        "pack_sha256": "1d19c48eaacf0e6bb548254701593380b620b2a68348237556c05cc6e46ae236",
         "status": "stale"
       }
     },
@@ -29848,7 +29911,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-25T21:56:11Z",
-      "last_seen_at": "2026-11-26T13:46:34Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -30254,8 +30317,8 @@
       },
       "description_ref": {
         "sha256": "eaefea89b17ef6bcb4c730ae1cb5d76332b3837dc7b4c02d72c442ee1b269ad5",
-        "pack": "details/ea-9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7.json",
-        "pack_sha256": "9c80954b2e1bb65b21e47237693c673521cec25b5797ccfb9c564cb24fea8ed7",
+        "pack": "details/ea-67a87216decb0f847bf1617f828033051aebadaa7dac3a4d5f932dea6f29142e.json",
+        "pack_sha256": "67a87216decb0f847bf1617f828033051aebadaa7dac3a4d5f932dea6f29142e",
         "status": "available"
       }
     },
@@ -30972,7 +31035,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-13T18:06:47Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -31025,7 +31088,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-21T22:47:02Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -31130,7 +31193,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-10-19T20:06:44Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -31320,8 +31383,8 @@
       },
       "description_ref": {
         "sha256": "34357f17b0eb8ed24515e2b8df6087eb71c511b9528983873cbd0229d7c23274",
-        "pack": "details/34-ab72a047f8abb8c5c29355da49f190310b0584b74dd0475007652a364eb5c651.json",
-        "pack_sha256": "ab72a047f8abb8c5c29355da49f190310b0584b74dd0475007652a364eb5c651",
+        "pack": "details/34-db71bb27be317320fe193b414a632a9a99fe48d63e03a50aa1b3731271fda8ce.json",
+        "pack_sha256": "db71bb27be317320fe193b414a632a9a99fe48d63e03a50aa1b3731271fda8ce",
         "status": "stale"
       }
     },
@@ -31373,7 +31436,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-11-12T22:24:30Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -31471,8 +31534,8 @@
       },
       "description_ref": {
         "sha256": "cdb3372ef248d2d42db55bb218d3378d0ad4d17a4e643f3b9d8ff5150f5557c4",
-        "pack": "details/cd-e505f1c321641acf8631ecabc8985b51b50ed4ccfa4ca1dbd52878779ee16589.json",
-        "pack_sha256": "e505f1c321641acf8631ecabc8985b51b50ed4ccfa4ca1dbd52878779ee16589",
+        "pack": "details/cd-41d27ecc8cc79a171794c7c696a23a1b3fab493f5e7d9146b812d1fbbc4a88be.json",
+        "pack_sha256": "41d27ecc8cc79a171794c7c696a23a1b3fab493f5e7d9146b812d1fbbc4a88be",
         "status": "available"
       }
     },
@@ -31491,7 +31554,7 @@
       "ats": "workday",
       "posted_at": null,
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "description_status": "unavailable",
       "description_version": 5,
@@ -31533,7 +31596,7 @@
         "sha256": "31708b409568f6aff6f71300d22123b834893e93837380a5562ca142b399610d",
         "pack": "details/31-9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2.json",
         "pack_sha256": "9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2",
-        "status": "available"
+        "status": "stale"
       }
     },
     "f9a8be7d23c9a91e": {
@@ -32002,8 +32065,8 @@
       },
       "description_ref": {
         "sha256": "2c1dd616ae864b7c446af3915d24890273ba72dcea016c4902d865a46aa139d3",
-        "pack": "details/2c-2a9f9ad1be2c8c400fe32d1f0a6940f52a933d6800dc5c556f435c6482ada1f2.json",
-        "pack_sha256": "2a9f9ad1be2c8c400fe32d1f0a6940f52a933d6800dc5c556f435c6482ada1f2",
+        "pack": "details/2c-090523d11deb39d451a791e8f8ca501276bd845f35a1a00dbf4af01ba2af908f.json",
+        "pack_sha256": "090523d11deb39d451a791e8f8ca501276bd845f35a1a00dbf4af01ba2af908f",
         "status": "available"
       }
     },

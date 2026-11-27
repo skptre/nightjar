@@ -1,0 +1,2792 @@
+{
+  "shard_id": "eightfold",
+  "updated_at": "2026-11-27T22:52:11Z",
+  "count": 60,
+  "postings": {
+    "03d5059d470094da": {
+      "id": "03d5059d470094da",
+      "company": "Netflix",
+      "company_slug": "netflix",
+      "title": "Strategy MBA Internship, Summer 2027",
+      "location": "Los Angeles,California,United States of America",
+      "locations": [
+        "Los Angeles,California,United States of America"
+      ],
+      "url": "https://explore.jobs.netflix.net/careers/job/790319427586",
+      "source": "eightfold",
+      "source_job_id": "790319427586",
+      "ats": "eightfold",
+      "posted_at": "2026-11-09T00:00:00+00:00",
+      "first_seen_at": "2026-11-24T06:51:27Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Engineering"
+    },
+    "054e22247f6d8f6f": {
+      "id": "054e22247f6d8f6f",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Applied Science: PhD Internship Opportunities - Multiple Locations",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond",
+        "United States, California, Mountain View"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393556986140",
+      "source": "eightfold",
+      "source_job_id": "1970393556986140",
+      "ats": "eightfold",
+      "posted_at": "2026-11-11T18:38:09+00:00",
+      "first_seen_at": "2026-09-03T05:53:16Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Applied Sciences",
+      "merged_from": [
+        "02e29aa2be6adbac"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Winter 2026"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "549cf0cc-9150-4b08-9120-b87fc4510590",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393556986140",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "41ce882e0eaafd84dfe556d77f982108fbd49d894d5933b7f2c88679c2b622dd",
+        "pack": "details/41-4e2166048c8a4d51c0aa7b5248f245a0bd6fa49ebec36e81d2b5cd34d02e9789.json",
+        "pack_sha256": "4e2166048c8a4d51c0aa7b5248f245a0bd6fa49ebec36e81d2b5cd34d02e9789",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "07088dd0e117a0f7": {
+      "id": "07088dd0e117a0f7",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - AI & Human Systems",
+      "location": "United States, New York, New York",
+      "locations": [
+        "United States, New York, New York",
+        "United States, Massachusetts, Cambridge"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557056017",
+      "source": "eightfold",
+      "source_job_id": "1970393557056017",
+      "ats": "eightfold",
+      "posted_at": "2026-11-06T22:58:21+00:00",
+      "first_seen_at": "2026-11-24T06:51:27Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://apply.careers.microsoft.com/careers/job/1970393557056017"
+        },
+        "provenance": [
+          {
+            "source": "eightfold",
+            "source_job_id": "1970393557056017",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557056017",
+            "discovered_at": "2026-11-24T06:51:27Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "5698c1883cbc4266280d4234e628aae4d153aa34a1a785d5a422c314768a3d8d",
+        "pack": "details/56-a0bea55f6a0515eedd8610c895c2ae65783a2291ec4279f62f71e7af1ce335da.json",
+        "pack_sha256": "a0bea55f6a0515eedd8610c895c2ae65783a2291ec4279f62f71e7af1ce335da",
+        "status": "stale"
+      }
+    },
+    "129bf40858aaf69a": {
+      "id": "129bf40858aaf69a",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Researcher Intern, CoreAI",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond",
+        "United States, California, Mountain View"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557027387",
+      "source": "eightfold",
+      "source_job_id": "1970393557027387",
+      "ats": "eightfold",
+      "posted_at": "2026-11-23T23:04:15+00:00",
+      "first_seen_at": "2026-10-15T12:40:18Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "d1355cb5ef0429cc"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Summer 2027"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "2f809092-b7fc-460f-a4e3-0bb90bdac60b",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557027387",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "a7ae42c0d39fac977bdfbf32f167aed7ed0bba532470d7f568b3d1cb0f585eca",
+        "pack": "details/a7-ed3ad46fd2f8c0e6796365a48b25b4fa3971cb3896bbec89299dee2fdd3f8025.json",
+        "pack_sha256": "ed3ad46fd2f8c0e6796365a48b25b4fa3971cb3896bbec89299dee2fdd3f8025",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "1732f440aa39605f": {
+      "id": "1732f440aa39605f",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Quantum Algorithms",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557021663",
+      "source": "eightfold",
+      "source_job_id": "1970393557021663",
+      "ats": "eightfold",
+      "posted_at": "2026-09-30T21:33:15+00:00",
+      "first_seen_at": "2026-10-01T02:28:02Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "d22efa5ba93fbfb1"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Summer 2026"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "d7ab1759-a0d7-497e-a48c-0a4d84524626",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557021663",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "bb3fca729e9be519f3125b504dae0ad6735c1bc2f103d4fd96dbfd119ab323ca",
+        "pack": "details/bb-3c8fc76d726095b6ef45e56ec7be73370e62a316acbdb89b9dc66f6f6a20f2cd.json",
+        "pack_sha256": "3c8fc76d726095b6ef45e56ec7be73370e62a316acbdb89b9dc66f6f6a20f2cd",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "18746f45681640d0": {
+      "id": "18746f45681640d0",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Applied Science: Internship Opportunities - Redmond",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393556986141",
+      "source": "eightfold",
+      "source_job_id": "1970393556986141",
+      "ats": "eightfold",
+      "posted_at": "2026-11-12T18:46:17+00:00",
+      "first_seen_at": "2026-10-08T02:51:50Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Applied Sciences",
+      "merged_from": [
+        "45b97389de618243"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "Bachelor's",
+          "Master's"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "d4e3c76d-f9b8-472c-9d21-a01ad5a58623",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393556986141",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "cfe7d782dae1d9e567c1508b197eb4b48d3f258b9353fda8ccd0a87a1f867d96",
+        "pack": "details/cf-86945578233ab60a6f5ab3445c51d4ebcc97dda8b0a6982f41a3edfc8b0b08a8.json",
+        "pack_sha256": "86945578233ab60a6f5ab3445c51d4ebcc97dda8b0a6982f41a3edfc8b0b08a8",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "1c996631de8e94c4": {
+      "id": "1c996631de8e94c4",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Frontier Tuning",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond",
+        "United States, California, Mountain View",
+        "United States, California, San Francisco",
+        "United States, California, Sunnyvale",
+        "United States, Maryland, Baltimore",
+        "United States, New York, New York",
+        "United States, Massachusetts, Boston"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557075074",
+      "source": "eightfold",
+      "source_job_id": "1970393557075074",
+      "ats": "eightfold",
+      "posted_at": "2026-11-17T21:26:55+00:00",
+      "first_seen_at": "2026-11-18T00:00:23Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "7dd1290870d00227"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Summer 2027"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "b0a65ac1-33c7-4ae4-a6e5-f8891c8b8bb2",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557075074",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "3121834c338cabcd6e9f0785f3338b04b02b76207b1b9456cb9b1383809a981a",
+        "pack": "details/31-9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2.json",
+        "pack_sha256": "9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "1cfa434966f9f8cb": {
+      "id": "1cfa434966f9f8cb",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Algorithms Group: Generative Modeling",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557043740",
+      "source": "eightfold",
+      "source_job_id": "1970393557043740",
+      "ats": "eightfold",
+      "posted_at": "2026-10-19T21:51:36+00:00",
+      "first_seen_at": "2026-10-19T23:44:05Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "546bbf25c61814a6"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "Master's",
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "9a83a82e-0789-4e56-8944-40f3428f8630",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557043740",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "4625fe4f6ba9e009d8af6ed8025a6b9982313f789416557ed6d083d4ebaa9eba",
+        "pack": "details/46-2603ae6e7369d715491f771366d9e65a4d1069ef0d9383fd5181a1f6101391e3.json",
+        "pack_sha256": "2603ae6e7369d715491f771366d9e65a4d1069ef0d9383fd5181a1f6101391e3",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "1f69fa2002d3b717": {
+      "id": "1f69fa2002d3b717",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Memory Pathfinding",
+      "location": "United States, California, Mountain View",
+      "locations": [
+        "United States, California, Mountain View"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557079448",
+      "source": "eightfold",
+      "source_job_id": "1970393557079448",
+      "ats": "eightfold",
+      "posted_at": "2026-11-25T01:01:22+00:00",
+      "first_seen_at": "2026-11-25T02:47:25Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "merged_from": [
+        "f88b039021d7ce5c"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Summer 2026"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "Software",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "e5e856c3-4982-40e5-92e4-b5dae10efbab",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557079448",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ],
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://apply.careers.microsoft.com/careers/job/1970393557079448"
+        }
+      },
+      "description_ref": {
+        "sha256": "afa8de84f9ffc335547802f2dd95b7405ec05abe7887044c291145ad2c84d9c5",
+        "pack": "details/af-a30dffb41407dd599c8cebdb7e2fab5dc76910cbe6d738a0863a051fe4b2a6d0.json",
+        "pack_sha256": "a30dffb41407dd599c8cebdb7e2fab5dc76910cbe6d738a0863a051fe4b2a6d0",
+        "status": "available"
+      }
+    },
+    "2d235f8ba9eea3af": {
+      "id": "2d235f8ba9eea3af",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Business Program Manager, Global Intern Experience & Innovation",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557043712",
+      "source": "eightfold",
+      "source_job_id": "1970393557043712",
+      "ats": "eightfold",
+      "posted_at": "2026-11-02T15:15:44+00:00",
+      "first_seen_at": "2026-11-24T06:51:27Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Business Program Management",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://apply.careers.microsoft.com/careers/job/1970393557043712"
+        },
+        "provenance": [
+          {
+            "source": "eightfold",
+            "source_job_id": "1970393557043712",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557043712",
+            "discovered_at": "2026-11-24T06:51:27Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "3c97133424db22e80f02c8cc03492a4c1c9b2259ab6a68a81cffe15cbab20bdb",
+        "pack": "details/3c-cbe184a7b0f1501e8701aec53f44265b10ff01281f00ad1f9c0461e5597c6d59.json",
+        "pack_sha256": "cbe184a7b0f1501e8701aec53f44265b10ff01281f00ad1f9c0461e5597c6d59",
+        "status": "stale"
+      }
+    },
+    "31c4b42913bf2784": {
+      "id": "31c4b42913bf2784",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Extended Perception Interaction Cognition (EPIC)",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557043754",
+      "source": "eightfold",
+      "source_job_id": "1970393557043754",
+      "ats": "eightfold",
+      "posted_at": "2026-10-19T21:50:14+00:00",
+      "first_seen_at": "2026-10-24T10:36:21Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "38d10430f9277893"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "a6a45fbf-b6a2-4f6b-8387-744c60b29d18",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557043754",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "2b2ace799db2646d09e8d491a3f69c1905de206d3d5a0a5fa0eda0def22de637",
+        "pack": "details/2b-bced9b44f9b8013f740c07d3612d1523b4dd45e6b49026c0343f2b7bc638009f.json",
+        "pack_sha256": "bced9b44f9b8013f740c07d3612d1523b4dd45e6b49026c0343f2b7bc638009f",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "33911dc5b03b4d28": {
+      "id": "33911dc5b03b4d28",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Applied Science: PhD Internship Opportunities, Turing",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557050154",
+      "source": "eightfold",
+      "source_job_id": "1970393557050154",
+      "ats": "eightfold",
+      "posted_at": "2026-10-29T13:09:01+00:00",
+      "first_seen_at": "2026-10-30T01:16:42Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Applied Sciences",
+      "merged_from": [
+        "1de6ad54eb2d37d3"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "1f1a4ec9-6b11-40b4-9bcd-f8fd1b305d61",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557050154",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "a37dbaff74578151bfe089f453b61550386b494972504c83eca7b25a2a7618b1",
+        "pack": "details/a3-008ac43ab0a8030f7c4b8430c662cd0be39d581a8908faadfa89488593e7aca0.json",
+        "pack_sha256": "008ac43ab0a8030f7c4b8430c662cd0be39d581a8908faadfa89488593e7aca0",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "34ab031dcffcf1bb": {
+      "id": "34ab031dcffcf1bb",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Quantum Applications",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557076525",
+      "source": "eightfold",
+      "source_job_id": "1970393557076525",
+      "ats": "eightfold",
+      "posted_at": "2026-11-20T21:16:55+00:00",
+      "first_seen_at": "2026-11-21T00:41:26Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "9d82f62a87659101"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Summer 2027"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "64a27bb1-56d9-4534-a69b-3c743cf72633",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557076525",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "3620574b166c4d759bd8dbb7bdd94efe19df69f48660a0e029c9cfe02123d559",
+        "pack": "details/36-98ff4ec48cd30aeee9ccd2db38d6304b0ea13b009862427e4154bf1ed139ad79.json",
+        "pack_sha256": "98ff4ec48cd30aeee9ccd2db38d6304b0ea13b009862427e4154bf1ed139ad79",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "3be4682508e0ba1c": {
+      "id": "3be4682508e0ba1c",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Software Engineer, Teamwork Experiences Internship Opportunities",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557037859",
+      "source": "eightfold",
+      "source_job_id": "1970393557037859",
+      "ats": "eightfold",
+      "posted_at": "2026-11-03T19:07:53+00:00",
+      "first_seen_at": "2026-11-04T02:35:39Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Software Engineering",
+      "merged_from": [
+        "35c2aa73e9b7626c"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Summer 2027"
+        ],
+        "degrees": [
+          "Bachelor's",
+          "Master's"
+        ],
+        "category": "Software",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "6ad57247-699c-41de-9362-2395f80865d4",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557037859",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "c5ad19cc62f3be40d8358507f9c5cfcc17028f40b8307b16fddffdb9f666d2e9",
+        "pack": "details/c5-583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3.json",
+        "pack_sha256": "583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "3d87fecf1534b774": {
+      "id": "3d87fecf1534b774",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Software Engineering Intern - CTJ - TS",
+      "location": "United States, Virginia, Reston",
+      "locations": [
+        "United States, Virginia, Reston"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393556983223",
+      "source": "eightfold",
+      "source_job_id": "1970393556983223",
+      "ats": "eightfold",
+      "posted_at": "2026-09-11T18:39:32+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Software Engineering",
+      "merged_from": [
+        "8ffa2bc7a45929bf"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Winter 2026"
+        ],
+        "degrees": [
+          "Bachelor's",
+          "Master's"
+        ],
+        "category": "Software",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "b1f436d0-d239-4a06-ac5f-7643c6643563",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393556983223",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "8a94f06a748f4bb77dd156d8885d6a67949ef403100010f5530c13d163ad5f59",
+        "pack": "details/8a-f0fd668dfbe520fcf4e78bbe00778ead59cf252afaf6a432a24ff1ef9dc05aae.json",
+        "pack_sha256": "f0fd668dfbe520fcf4e78bbe00778ead59cf252afaf6a432a24ff1ef9dc05aae",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "48b49871d75f9730": {
+      "id": "48b49871d75f9730",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Machine Learning at MSR NYC",
+      "location": "United States, New York, New York",
+      "locations": [
+        "United States, New York, New York",
+        "United States, Massachusetts, Cambridge"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557042145",
+      "source": "eightfold",
+      "source_job_id": "1970393557042145",
+      "ats": "eightfold",
+      "posted_at": "2026-10-16T17:35:35+00:00",
+      "first_seen_at": "2026-10-17T00:13:18Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "269166bb2dcc0343"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Summer 2026"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "5771f38d-2069-4503-b8b4-3e17a6228ede",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557042145",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "762a305f1cf372d3b3c79da7f31d53fe7525bae742d218c456a34aa1e957db6e",
+        "pack": "details/76-e863472254f183a9ea6797c53684dc940ad407855377f9c4f7262ed3684ccb1a.json",
+        "pack_sha256": "e863472254f183a9ea6797c53684dc940ad407855377f9c4f7262ed3684ccb1a",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "49ce5fa13607360d": {
+      "id": "49ce5fa13607360d",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - AI Safety, Alignment, and Post-Training",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond",
+        "United States, California, Mountain View"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557076142",
+      "source": "eightfold",
+      "source_job_id": "1970393557076142",
+      "ats": "eightfold",
+      "posted_at": "2026-11-19T20:28:09+00:00",
+      "first_seen_at": "2026-11-20T02:38:50Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "dc69481db09939e5"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Summer 2026"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "ecdc0b9f-9d54-4907-b060-93493d0650bd",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557076142",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "35155796a04b7b20a74aaeb5c3cb31f969e57ce9ed628f381befdf87e781b8d2",
+        "pack": "details/35-45423d3b94a87d5e143d7179d688bbc777604211c318ff9ab6e4dcbd65cc1928.json",
+        "pack_sha256": "45423d3b94a87d5e143d7179d688bbc777604211c318ff9ab6e4dcbd65cc1928",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "5015a87f8821f2bd": {
+      "id": "5015a87f8821f2bd",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Gray Systems Lab (GSL)",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond",
+        "United States, California, Mountain View"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557045445",
+      "source": "eightfold",
+      "source_job_id": "1970393557045445",
+      "ats": "eightfold",
+      "posted_at": "2026-10-22T20:38:37+00:00",
+      "first_seen_at": "2026-10-22T22:38:35Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "c992080df339a66b"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "6fd97bab-5b56-4ecc-bdb4-b88b61b70ede",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557045445",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "8f468575b1d98bdf7163c441f34382b74460de27b7c1a2ecfb1dc816008ea7cc",
+        "pack": "details/8f-d55b59994f46d9d4c969aabaa374dec7f7422c00a1e3998fe8e00dc0b201af32.json",
+        "pack_sha256": "d55b59994f46d9d4c969aabaa374dec7f7422c00a1e3998fe8e00dc0b201af32",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "52c1231eb9db567a": {
+      "id": "52c1231eb9db567a",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - AI System Architecture Modeling and Performance",
+      "location": "United States, Oregon, Hillsboro",
+      "locations": [
+        "United States, Oregon, Hillsboro"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557077583",
+      "source": "eightfold",
+      "source_job_id": "1970393557077583",
+      "ats": "eightfold",
+      "posted_at": "2026-11-20T23:27:12+00:00",
+      "first_seen_at": "2026-11-21T07:43:47Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "33b1c94fdc8b0e37"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Summer 2026"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "Hardware",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "16db2d2f-ebe2-4ccb-8526-7d28df513068",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557077583",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "3121834c338cabcd6e9f0785f3338b04b02b76207b1b9456cb9b1383809a981a",
+        "pack": "details/31-9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2.json",
+        "pack_sha256": "9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "57ab9974bd02d0e8": {
+      "id": "57ab9974bd02d0e8",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Office of Applied Research",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond",
+        "United States, New York, New York"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557051409",
+      "source": "eightfold",
+      "source_job_id": "1970393557051409",
+      "ats": "eightfold",
+      "posted_at": "2026-10-30T21:40:04+00:00",
+      "first_seen_at": "2026-10-30T23:07:35Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "ada672b114386470"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "65c35c20-efcf-4c73-8b69-84bf4f90577b",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557051409",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "21240dd5f94c287e7fd9c5d054343624a34fa6b0b7382b766f67f85b576f354c",
+        "pack": "details/21-f1c7b25998ad751e27a218af77ea24bd318376ca81a1527b6b445cfa6bcbc7ef.json",
+        "pack_sha256": "f1c7b25998ad751e27a218af77ea24bd318376ca81a1527b6b445cfa6bcbc7ef",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "5fcdebf4f18ad11a": {
+      "id": "5fcdebf4f18ad11a",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - AI /Machine Learning Numerics & Efficiency",
+      "location": "United States, California, Mountain View",
+      "locations": [
+        "United States, California, Mountain View",
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557076215",
+      "source": "eightfold",
+      "source_job_id": "1970393557076215",
+      "ats": "eightfold",
+      "posted_at": "2026-11-20T19:58:54+00:00",
+      "first_seen_at": "2026-11-21T00:41:26Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "4b911034f70644e5"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "345f4ca0-e9df-4ce7-8726-b732420f841d",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557076215",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "0d2fb665c0e2230eff5ee24b79828d1a91d25a82989dee9a9014f9a429688f66",
+        "pack": "details/0d-8885f4ec9ade217951b6ea98d35cebf251a84473a4a1aa5ccff17ddb752b038a.json",
+        "pack_sha256": "8885f4ec9ade217951b6ea98d35cebf251a84473a4a1aa5ccff17ddb752b038a",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "5fd71a4ceba9168c": {
+      "id": "5fd71a4ceba9168c",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Document Intelligence and Content Understanding",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557037649",
+      "source": "eightfold",
+      "source_job_id": "1970393557037649",
+      "ats": "eightfold",
+      "posted_at": "2026-10-09T17:49:00+00:00",
+      "first_seen_at": "2026-10-10T00:53:51Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "7d3264f7b36f4eeb"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "2388f5c0-f4ed-4f97-a130-7d2b82020b8f",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557037649",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "c9f000bc5efa7e9ad6ca1baa8873a2277fba07d8cdefc9a1e509ee6722f77ea4",
+        "pack": "details/c9-8c84bbf2489df5ffeb7dc56535ce3e72528ee25002bc81b481507e2842525773.json",
+        "pack_sha256": "8c84bbf2489df5ffeb7dc56535ce3e72528ee25002bc81b481507e2842525773",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "5fef7e1c04e6aed7": {
+      "id": "5fef7e1c04e6aed7",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Machine Learning and Optimization - Redmond",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557049981",
+      "source": "eightfold",
+      "source_job_id": "1970393557049981",
+      "ats": "eightfold",
+      "posted_at": "2026-10-28T15:23:31+00:00",
+      "first_seen_at": "2026-10-28T23:38:15Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "04e75941eb50909d"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "b2d678a2-878e-4693-b3c8-b8bdd80450aa",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557049981",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "8d57e0b96cd98e7b268c097414d5a863b1bdd7b95fe929f705ee51fd91f7559c",
+        "pack": "details/8d-1b56f72a06d2f9f3f91559e2e067193626f115647cfdcef04e94e46700eef51b.json",
+        "pack_sha256": "1b56f72a06d2f9f3f91559e2e067193626f115647cfdcef04e94e46700eef51b",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "6488627fe6fc763d": {
+      "id": "6488627fe6fc763d",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Data Center and AI Networking",
+      "location": "United States, California, Mountain View",
+      "locations": [
+        "United States, California, Mountain View",
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557075457",
+      "source": "eightfold",
+      "source_job_id": "1970393557075457",
+      "ats": "eightfold",
+      "posted_at": "2026-11-18T21:30:16+00:00",
+      "first_seen_at": "2026-11-24T06:51:27Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://apply.careers.microsoft.com/careers/job/1970393557075457"
+        },
+        "provenance": [
+          {
+            "source": "eightfold",
+            "source_job_id": "1970393557075457",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557075457",
+            "discovered_at": "2026-11-24T06:51:27Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "ccdbeb6c8537015ef18214ca006e3ffcc2573398b6db4abbeb8a6ba54d5034ab",
+        "pack": "details/cc-05a4bab85b657a553b9e287040486b5858dd9802e47dc8ce7adb4562eada2da8.json",
+        "pack_sha256": "05a4bab85b657a553b9e287040486b5858dd9802e47dc8ce7adb4562eada2da8",
+        "status": "stale"
+      }
+    },
+    "64db732bbc939f77": {
+      "id": "64db732bbc939f77",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Machine Learning for Biology and Healthcare",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557097217",
+      "source": "eightfold",
+      "source_job_id": "1970393557097217",
+      "ats": "eightfold",
+      "posted_at": "2026-11-25T23:02:09+00:00",
+      "first_seen_at": "2026-11-26T04:02:10Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "merged_from": [
+        "7e3554c6eb3e8ab3"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "18d68763-3c47-4ab5-b01f-6be06b7897f9",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557097217",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ],
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://apply.careers.microsoft.com/careers/job/1970393557097217"
+        }
+      },
+      "description_ref": {
+        "sha256": "3121834c338cabcd6e9f0785f3338b04b02b76207b1b9456cb9b1383809a981a",
+        "pack": "details/31-9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2.json",
+        "pack_sha256": "9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2",
+        "status": "available"
+      }
+    },
+    "6546835962a3b4c3": {
+      "id": "6546835962a3b4c3",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - AI Software Systems",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557075527",
+      "source": "eightfold",
+      "source_job_id": "1970393557075527",
+      "ats": "eightfold",
+      "posted_at": "2026-11-18T22:37:50+00:00",
+      "first_seen_at": "2026-11-19T04:04:51Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "ae73728a5d3e055e"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "eb52e15d-a3e3-4233-8b3c-d5b48aac5b3b",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557075527",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "3121834c338cabcd6e9f0785f3338b04b02b76207b1b9456cb9b1383809a981a",
+        "pack": "details/31-9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2.json",
+        "pack_sha256": "9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "66c083db764b5aa3": {
+      "id": "66c083db764b5aa3",
+      "company": "Netflix",
+      "company_slug": "netflix",
+      "title": "Software Engineer Intern - Summer 2027",
+      "location": "Los Gatos,California,United States of America",
+      "locations": [
+        "Los Gatos,California,United States of America"
+      ],
+      "url": "https://explore.jobs.netflix.net/careers/job/790318904468",
+      "source": "eightfold",
+      "source_job_id": "790318904468",
+      "ats": "eightfold",
+      "posted_at": "2026-10-13T00:00:00+00:00",
+      "first_seen_at": "2026-10-13T22:47:07Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Engineering",
+      "merged_from": [
+        "73e9636c7f787aef"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Summer 2027"
+        ],
+        "degrees": [
+          "Bachelor's",
+          "Master's"
+        ],
+        "category": "Software",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "fa621e40-4b60-4912-8246-670d0d5554a6",
+            "url": "https://explore.jobs.netflix.net/careers/job/790318904468",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      }
+    },
+    "89aa0187d3ea022b": {
+      "id": "89aa0187d3ea022b",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Foundational Models & Agent",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557052982",
+      "source": "eightfold",
+      "source_job_id": "1970393557052982",
+      "ats": "eightfold",
+      "posted_at": "2026-11-02T19:16:30+00:00",
+      "first_seen_at": "2026-11-03T01:49:10Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "d1be2f70acecf718"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "5cbbef3c-c5a1-47a0-9772-22bb958a3000",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557052982",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "4a8087e6c1a9a39222cc22ee5bf4723b1cfd3ecefa1b6f8f7347567a55b121a3",
+        "pack": "details/4a-9de62472667714a2595f598661153c944669c97d04a12f9eed4583f49ff13a6c.json",
+        "pack_sha256": "9de62472667714a2595f598661153c944669c97d04a12f9eed4583f49ff13a6c",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "8cbb71ce11c07370": {
+      "id": "8cbb71ce11c07370",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Applied Scientist: Internship Opportunities, Turing",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557050150",
+      "source": "eightfold",
+      "source_job_id": "1970393557050150",
+      "ats": "eightfold",
+      "posted_at": "2026-10-29T13:10:43+00:00",
+      "first_seen_at": "2026-10-30T01:16:42Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Applied Sciences",
+      "merged_from": [
+        "37a810b5a62f8218"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "Bachelor's",
+          "Master's"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "174d8f03-3985-4a53-9676-969637ea6ea3",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557050150",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "c59664b9cedcb9dae2682887eeb87cd542342b7e016d52f4cd887e434154f541",
+        "pack": "details/c5-583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3.json",
+        "pack_sha256": "583f7d0924609ab6aa9633bb03fe13b8ee4ced510c9e7817495728850b6170c3",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "8cf3f6b5b7983269": {
+      "id": "8cf3f6b5b7983269",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Efficient AI Software Systems",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557041731",
+      "source": "eightfold",
+      "source_job_id": "1970393557041731",
+      "ats": "eightfold",
+      "posted_at": "2026-10-15T23:47:03+00:00",
+      "first_seen_at": "2026-10-16T06:13:39Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "1553927d204a7168"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "07e0bf88-e6fa-4fba-b37a-bcd7c39532ea",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557041731",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "82323355327657c4564107560bc24caa0b68fe7c2afa3323c9c4cc4c9bd6fd67",
+        "pack": "details/82-694b1d03ebd8762739cf86efd9ea43470ade73d6a2a1e83365bea7f652bd5f09.json",
+        "pack_sha256": "694b1d03ebd8762739cf86efd9ea43470ade73d6a2a1e83365bea7f652bd5f09",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "8f61f2f0d770a5a5": {
+      "id": "8f61f2f0d770a5a5",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Coding Agents & Post-Training Optimization",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557053024",
+      "source": "eightfold",
+      "source_job_id": "1970393557053024",
+      "ats": "eightfold",
+      "posted_at": "2026-11-02T21:00:03+00:00",
+      "first_seen_at": "2026-11-03T01:49:10Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "ebaefc5adcda7252"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "846c4e5a-933d-4167-b1ad-a14e3c158e99",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557053024",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "5aa4071048a627915ca2e3f002d4628a30c0f79aea8c965fee9abb22ec0211b2",
+        "pack": "details/5a-f9d143cfc88c598b55a521a38d39541263234cfc0f4d1dae49a552949ab75704.json",
+        "pack_sha256": "f9d143cfc88c598b55a521a38d39541263234cfc0f4d1dae49a552949ab75704",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "97a2106fd1a3300f": {
+      "id": "97a2106fd1a3300f",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Software Engineering Intern - CTJ - TS",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393556983221",
+      "source": "eightfold",
+      "source_job_id": "1970393556983221",
+      "ats": "eightfold",
+      "posted_at": "2026-09-11T18:38:27+00:00",
+      "first_seen_at": "2026-09-15T16:26:04Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Software Engineering",
+      "merged_from": [
+        "04cc347b831a315b"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Winter 2026"
+        ],
+        "degrees": [
+          "Bachelor's",
+          "Master's"
+        ],
+        "category": "Software",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "ebc7d1a1-b5b8-4837-b209-d99b4aa18795",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393556983221",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "8a94f06a748f4bb77dd156d8885d6a67949ef403100010f5530c13d163ad5f59",
+        "pack": "details/8a-f0fd668dfbe520fcf4e78bbe00778ead59cf252afaf6a432a24ff1ef9dc05aae.json",
+        "pack_sha256": "f0fd668dfbe520fcf4e78bbe00778ead59cf252afaf6a432a24ff1ef9dc05aae",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "980ee50132d4a2ce": {
+      "id": "980ee50132d4a2ce",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Data Science - Forward Deployed Engineer: PhD Internship Opportunities",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557040991",
+      "source": "eightfold",
+      "source_job_id": "1970393557040991",
+      "ats": "eightfold",
+      "posted_at": "2026-11-19T18:40:38+00:00",
+      "first_seen_at": "2026-10-20T13:01:42Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Data Science",
+      "merged_from": [
+        "bf214380030f0798"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "cac4012f-81b7-43f8-a2fd-c655e91ac0b8",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557040991",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "487bc27960747dcd90536f773d9f8320ed5c178dc73379c101b78e2da774a6ab",
+        "pack": "details/48-1dcf19d7aba5e331bc8769fea1ff4c56380b726f2844bfc6f5023205287098f2.json",
+        "pack_sha256": "1dcf19d7aba5e331bc8769fea1ff4c56380b726f2844bfc6f5023205287098f2",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "997ad95f3832e8fa": {
+      "id": "997ad95f3832e8fa",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Agentic Data Memory",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557040344",
+      "source": "eightfold",
+      "source_job_id": "1970393557040344",
+      "ats": "eightfold",
+      "posted_at": "2026-10-16T17:49:48+00:00",
+      "first_seen_at": "2026-10-13T22:47:07Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "a6c48fde087ecf7c"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "aa14d682-dee4-485b-afd9-989398c047be",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557040344",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "fd58af3471b73be428e801fbbc71f35ff02d985db4c3a1a2aa62ba26a8246a37",
+        "pack": "details/fd-74d543fdd1e424199490cc0d40fae683b747ff2133003e8cdb902da4aaf151c7.json",
+        "pack_sha256": "74d543fdd1e424199490cc0d40fae683b747ff2133003e8cdb902da4aaf151c7",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "9e260e33333b0102": {
+      "id": "9e260e33333b0102",
+      "company": "Netflix",
+      "company_slug": "netflix",
+      "title": "Video Algorithms Intern, Video Coding (Gaussian Splatting), Fall 2026",
+      "location": "Los Gatos,California,United States of America",
+      "locations": [
+        "Los Gatos,California,United States of America"
+      ],
+      "url": "https://explore.jobs.netflix.net/careers/job/790315673635",
+      "source": "eightfold",
+      "source_job_id": "790315673635",
+      "ats": "eightfold",
+      "posted_at": "2026-04-24T00:00:00+00:00",
+      "first_seen_at": "2026-08-31T00:00:06Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Engineering",
+      "merged_from": [
+        "0d09e23645cddb68"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Fall 2026"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "7248f7be-bf62-4a1b-a01b-3e4f27918644",
+            "url": "https://explore.jobs.netflix.net/careers/job/790315673635",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      }
+    },
+    "9e6ad3e8841ded76": {
+      "id": "9e6ad3e8841ded76",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Self-Improving & Secure AI Agents - Microsoft Research",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557075136",
+      "source": "eightfold",
+      "source_job_id": "1970393557075136",
+      "ats": "eightfold",
+      "posted_at": "2026-11-18T17:34:07+00:00",
+      "first_seen_at": "2026-11-19T04:04:51Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "6e062963a935f187"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "ba01acfc-f330-48b0-a332-bdd38db24456",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557075136",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "50e91bd5ee48c9785a2ec47319b1aa891cdae63df3da8792351f7822f75ce888",
+        "pack": "details/50-cfa2b97ec74ff4624178aafad17f187ecf81daf816fdcf26d7e84611f6724e8a.json",
+        "pack_sha256": "cfa2b97ec74ff4624178aafad17f187ecf81daf816fdcf26d7e84611f6724e8a",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "9fddb2cefb4e1b52": {
+      "id": "9fddb2cefb4e1b52",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - MSR Software-Hardware Co-design",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557073455",
+      "source": "eightfold",
+      "source_job_id": "1970393557073455",
+      "ats": "eightfold",
+      "posted_at": "2026-11-13T21:47:16+00:00",
+      "first_seen_at": "2026-11-14T03:36:49Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "8ab387899ad61ee2"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "Software",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "6b73a3bf-eeb9-4318-84af-2f7f53519b89",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557073455",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "3121834c338cabcd6e9f0785f3338b04b02b76207b1b9456cb9b1383809a981a",
+        "pack": "details/31-9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2.json",
+        "pack_sha256": "9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "a2ed597142cba859": {
+      "id": "a2ed597142cba859",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Computer Vision and Deep Learning",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557075490",
+      "source": "eightfold",
+      "source_job_id": "1970393557075490",
+      "ats": "eightfold",
+      "posted_at": "2026-11-18T22:21:51+00:00",
+      "first_seen_at": "2026-11-19T04:04:51Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "c6165324c4b94cbe"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "Master's",
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "d16f4e61-d921-404b-a8b6-2ab3cdad885e",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557075490",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "057b5098c29c81dab88602a63f340eec15bc105545819504e0a96011061475b3",
+        "pack": "details/05-1de3e8b14620a0f8afb73f6a3983a9d3512c881f74d711ac9627329bd2d3f302.json",
+        "pack_sha256": "1de3e8b14620a0f8afb73f6a3983a9d3512c881f74d711ac9627329bd2d3f302",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "af4eba60f4aeb441": {
+      "id": "af4eba60f4aeb441",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Data Systems",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557008574",
+      "source": "eightfold",
+      "source_job_id": "1970393557008574",
+      "ats": "eightfold",
+      "posted_at": "2026-09-25T22:50:51+00:00",
+      "first_seen_at": "2026-10-04T18:03:14Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "0d3b583d2b82a251"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "63fae893-cd8b-4a05-b724-2e6878fb2308",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557008574",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "1df6d40b2ae0d84e65c106bb758948b32079add7932d7977ecdc9113f392ba9d",
+        "pack": "details/1d-7c0fb286bcf330fe4d14d1f1689820e2cadfdbdd412be77b23db42ecff3d453f.json",
+        "pack_sha256": "7c0fb286bcf330fe4d14d1f1689820e2cadfdbdd412be77b23db42ecff3d453f",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "b3cca8a6b25a8d2a": {
+      "id": "b3cca8a6b25a8d2a",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Audio and Acoustics",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557027326",
+      "source": "eightfold",
+      "source_job_id": "1970393557027326",
+      "ats": "eightfold",
+      "posted_at": "2026-10-08T16:58:41+00:00",
+      "first_seen_at": "2026-10-09T02:26:46Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "8321863f9899e041"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Summer 2026"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "73991760-c68e-4b47-874e-ec12e4f7e356",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557027326",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "06c4d25e1b04bd68b6431899a09aa13299c7aa7f93ae28ece93d4b8393bc4213",
+        "pack": "details/06-f71db79efca9cd92ad9d4395e80f4256b6b47042dc6d9f0401858504ef0f3ed9.json",
+        "pack_sha256": "f71db79efca9cd92ad9d4395e80f4256b6b47042dc6d9f0401858504ef0f3ed9",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "ba6f42e341aecd79": {
+      "id": "ba6f42e341aecd79",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - AI Coding Agents",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557073416",
+      "source": "eightfold",
+      "source_job_id": "1970393557073416",
+      "ats": "eightfold",
+      "posted_at": "2026-11-13T20:33:43+00:00",
+      "first_seen_at": "2026-11-14T03:36:49Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "5a9e886a3f5ed8e2"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "c68b88e0-4d45-43f7-b99f-cf02ddad18c3",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557073416",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "01a34003f1f47b74018b05a4ee08d837def28b2d14636359d3777dc51ff9d527",
+        "pack": "details/01-ca265dac0320e07d5c704c5e0586926963a1daf985bf306386290a3c1d70dcc5.json",
+        "pack_sha256": "ca265dac0320e07d5c704c5e0586926963a1daf985bf306386290a3c1d70dcc5",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "bbc6b6540d1866aa": {
+      "id": "bbc6b6540d1866aa",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Agentic Graph Learning",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557039243",
+      "source": "eightfold",
+      "source_job_id": "1970393557039243",
+      "ats": "eightfold",
+      "posted_at": "2026-10-12T22:00:52+00:00",
+      "first_seen_at": "2026-10-13T03:29:27Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "a9c4e6bca848ff2c"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "3bd2d84e-91bd-4fff-98d3-0336ba44f6d0",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557039243",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "bcedc4d9300d7aea4e94e30b80e153367713b8f40ccf885aa56a8a6078683d28",
+        "pack": "details/bc-5a03b13ccfadd89a363bdf2dcc196fe5205cd568ca944c7f86b33ec6c874290c.json",
+        "pack_sha256": "5a03b13ccfadd89a363bdf2dcc196fe5205cd568ca944c7f86b33ec6c874290c",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "c0f58a17e7de22f4": {
+      "id": "c0f58a17e7de22f4",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Interactive Multimodal Futures Group (Situated, Social & Ubiquitous Computing)",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557041012",
+      "source": "eightfold",
+      "source_job_id": "1970393557041012",
+      "ats": "eightfold",
+      "posted_at": "2026-10-14T21:12:11+00:00",
+      "first_seen_at": "2026-10-14T23:46:50Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "272c0b0c053d42de"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "92c6c447-d7fb-4cd9-9aa9-9cfbf26ab161",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557041012",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "992c399b018ce0558144a872a1ab32d0306f685eea31c854ce0c06fa5c0639f5",
+        "pack": "details/99-745ed7befd03ea890cedf24119bce3f285624dc20d875e15ea2d7bb06ab853be.json",
+        "pack_sha256": "745ed7befd03ea890cedf24119bce3f285624dc20d875e15ea2d7bb06ab853be",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "c770cd2c12165327": {
+      "id": "c770cd2c12165327",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Brain-Computer Interfaces",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557027378",
+      "source": "eightfold",
+      "source_job_id": "1970393557027378",
+      "ats": "eightfold",
+      "posted_at": "2026-10-08T17:55:25+00:00",
+      "first_seen_at": "2026-10-09T02:26:46Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "b50863650d110905"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Summer 2026"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "b217e2af-9105-4579-b5e6-4e5e7a8bd904",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557027378",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "fa81846ecaa36aa5672e6abe0adff5603fc6a6ce5d3ae05494babe7a069e1224",
+        "pack": "details/fa-42a0c7ae2273cfb67b68ec4327fcb4e77ae3b31dfbd20c5f3a19ade31b42f53c.json",
+        "pack_sha256": "42a0c7ae2273cfb67b68ec4327fcb4e77ae3b31dfbd20c5f3a19ade31b42f53c",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "cd6be1083ba63095": {
+      "id": "cd6be1083ba63095",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Firmware Security",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557075140",
+      "source": "eightfold",
+      "source_job_id": "1970393557075140",
+      "ats": "eightfold",
+      "posted_at": "2026-11-17T23:22:30+00:00",
+      "first_seen_at": "2026-11-18T07:08:01Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "630f7c439630826c"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "Master's",
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "9a47f7a1-f214-444d-99aa-90af3e2efe5c",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557075140",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "020e709fc075922f31e779aba092d83734dac0d503520146080858a7a5491f11",
+        "pack": "details/02-d41e28795de615abac70758e7b38344470ab0b6ad759c70fe084f16bfd25d97f.json",
+        "pack_sha256": "d41e28795de615abac70758e7b38344470ab0b6ad759c70fe084f16bfd25d97f",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "cff5119ee51b3061": {
+      "id": "cff5119ee51b3061",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Security Research: PhD Internship Opportunities",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557074642",
+      "source": "eightfold",
+      "source_job_id": "1970393557074642",
+      "ats": "eightfold",
+      "posted_at": "2026-11-17T19:28:34+00:00",
+      "first_seen_at": "2026-11-24T06:51:27Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Security Research",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://apply.careers.microsoft.com/careers/job/1970393557074642"
+        },
+        "provenance": [
+          {
+            "source": "eightfold",
+            "source_job_id": "1970393557074642",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557074642",
+            "discovered_at": "2026-11-24T06:51:27Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "3121834c338cabcd6e9f0785f3338b04b02b76207b1b9456cb9b1383809a981a",
+        "pack": "details/31-9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2.json",
+        "pack_sha256": "9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2",
+        "status": "available"
+      }
+    },
+    "d014ec5e9dbb0378": {
+      "id": "d014ec5e9dbb0378",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - CXL Memory",
+      "location": "United States, California, Mountain View",
+      "locations": [
+        "United States, California, Mountain View"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557079445",
+      "source": "eightfold",
+      "source_job_id": "1970393557079445",
+      "ats": "eightfold",
+      "posted_at": "2026-11-25T00:42:21+00:00",
+      "first_seen_at": "2026-11-25T02:47:25Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "merged_from": [
+        "1e2d46841f3c1f24"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "Hardware",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "a25c6fcf-1b2b-4b7f-be99-31a8e0e14608",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557079445",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ],
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://apply.careers.microsoft.com/careers/job/1970393557079445"
+        }
+      },
+      "description_ref": {
+        "sha256": "3121834c338cabcd6e9f0785f3338b04b02b76207b1b9456cb9b1383809a981a",
+        "pack": "details/31-9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2.json",
+        "pack_sha256": "9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2",
+        "status": "available"
+      }
+    },
+    "d04f63a64912d474": {
+      "id": "d04f63a64912d474",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - MSR AI Interaction and Learning",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond",
+        "United States, New York, New York"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557042156",
+      "source": "eightfold",
+      "source_job_id": "1970393557042156",
+      "ats": "eightfold",
+      "posted_at": "2026-10-16T17:34:19+00:00",
+      "first_seen_at": "2026-10-17T00:13:18Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "99147d9428ca4ce1"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "f33e2c12-8c3e-48b4-9cb5-8e6a6b1a22ff",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557042156",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "22994d9fc4689f62dff1d77799f65d7e76133b7a3a72fd2537d2658df3c23774",
+        "pack": "details/22-eab78931d9ac6f47bf374f2f772052e7235f3c81a9511eaa48e839e494191f2c.json",
+        "pack_sha256": "eab78931d9ac6f47bf374f2f772052e7235f3c81a9511eaa48e839e494191f2c",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "d76382b10c4ad67a": {
+      "id": "d76382b10c4ad67a",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Machine Learning for Biology and Healthcare",
+      "location": "United States, Massachusetts, Cambridge",
+      "locations": [
+        "United States, Massachusetts, Cambridge"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557040333",
+      "source": "eightfold",
+      "source_job_id": "1970393557040333",
+      "ats": "eightfold",
+      "posted_at": "2026-10-13T18:58:36+00:00",
+      "first_seen_at": "2026-10-13T22:47:07Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "7f48d54603e21782"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "88c5a395-c548-42ca-a91a-698827c2c32c",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557040333",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "262d56270431d31b23eb7bd1791b9445ec8d95de405571b64c38d5524c675366",
+        "pack": "details/26-322e11fa6f240395824d9841679198dbc51206026ae6639b01cf8444096ac368.json",
+        "pack_sha256": "322e11fa6f240395824d9841679198dbc51206026ae6639b01cf8444096ac368",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "d94760c48df42783": {
+      "id": "d94760c48df42783",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - MSR Systems Research Group - Redmond",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557050039",
+      "source": "eightfold",
+      "source_job_id": "1970393557050039",
+      "ats": "eightfold",
+      "posted_at": "2026-10-28T17:28:00+00:00",
+      "first_seen_at": "2026-10-28T23:38:15Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "471ddf5bc590d6b6"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "cc95f424-ceae-43ca-95ba-0cc276090f2a",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557050039",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "b24ba8ef4669b78df7a5204264a0271ac8831cb4d998d84b13f92c72d90d5a41",
+        "pack": "details/b2-66aca55728a12b8bd3240097b07b5f1db6ac7abd9b41e3fd0279cb70ac0f1d2d.json",
+        "pack_sha256": "66aca55728a12b8bd3240097b07b5f1db6ac7abd9b41e3fd0279cb70ac0f1d2d",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "dd5cff6f22be4217": {
+      "id": "dd5cff6f22be4217",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - AI Systems Architecture and Efficient LLM Inference",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557079428",
+      "source": "eightfold",
+      "source_job_id": "1970393557079428",
+      "ats": "eightfold",
+      "posted_at": "2026-11-24T23:23:39+00:00",
+      "first_seen_at": "2026-11-25T02:47:25Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "merged_from": [
+        "f17f8409d08a27e2"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Summer 2026"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "8b4b2bce-20ad-45a0-bf4e-a27a396c5f72",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557079428",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ],
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://apply.careers.microsoft.com/careers/job/1970393557079428"
+        }
+      },
+      "description_ref": {
+        "sha256": "3121834c338cabcd6e9f0785f3338b04b02b76207b1b9456cb9b1383809a981a",
+        "pack": "details/31-9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2.json",
+        "pack_sha256": "9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2",
+        "status": "available"
+      }
+    },
+    "e31e7dc905e24f1a": {
+      "id": "e31e7dc905e24f1a",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Deep Learning Group",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557076095",
+      "source": "eightfold",
+      "source_job_id": "1970393557076095",
+      "ats": "eightfold",
+      "posted_at": "2026-11-19T18:52:03+00:00",
+      "first_seen_at": "2026-11-20T02:38:50Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "5c129d9a67e56401"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Summer 2027"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "a25956ba-3ed6-4f4c-86b1-999dbee31f1e",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557076095",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "3121834c338cabcd6e9f0785f3338b04b02b76207b1b9456cb9b1383809a981a",
+        "pack": "details/31-9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2.json",
+        "pack_sha256": "9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "e581ba30ae576047": {
+      "id": "e581ba30ae576047",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Next-Generation AI Agents",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557070079",
+      "source": "eightfold",
+      "source_job_id": "1970393557070079",
+      "ats": "eightfold",
+      "posted_at": "2026-11-09T21:15:49+00:00",
+      "first_seen_at": "2026-11-10T02:45:19Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "aafebee523ac9e89"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "cdd157c9-0e3a-4484-8da7-4b22e771dd2b",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557070079",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "80c6b88a0f76f24a83b38d0b733d436f9ad155e070038a1e5c17a7b2fd186b60",
+        "pack": "details/80-ec350155b56e3d28bdbe2014a7259acda17ed63a053f8792f5df45e38c6391e0.json",
+        "pack_sha256": "ec350155b56e3d28bdbe2014a7259acda17ed63a053f8792f5df45e38c6391e0",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "e7a8436a50a0b7b7": {
+      "id": "e7a8436a50a0b7b7",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Research in Software Engineering, ML Systems, Agents",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557054069",
+      "source": "eightfold",
+      "source_job_id": "1970393557054069",
+      "ats": "eightfold",
+      "posted_at": "2026-11-05T00:20:59+00:00",
+      "first_seen_at": "2026-11-05T03:39:19Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "cf86cd2ee8694a06"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "Summer 2026"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "Software",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "769407b8-2e91-43e9-ab04-5f4eab5bf5e3",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557054069",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "d2a0fcf900bc649bde18d97ac24ce49ac8f1905a5786ad38cc86e585a1b5a934",
+        "pack": "details/d2-0145cd3526c7c27cbc8a3e33b4034e44bd67b5a8d141d7ca85a59a78a19a9991.json",
+        "pack_sha256": "0145cd3526c7c27cbc8a3e33b4034e44bd67b5a8d141d7ca85a59a78a19a9991",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "e8fa83f66472ee92": {
+      "id": "e8fa83f66472ee92",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Algorithms Group: Theory",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557045963",
+      "source": "eightfold",
+      "source_job_id": "1970393557045963",
+      "ats": "eightfold",
+      "posted_at": "2026-10-23T18:05:57+00:00",
+      "first_seen_at": "2026-11-24T06:51:27Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://apply.careers.microsoft.com/careers/job/1970393557045963"
+        },
+        "provenance": [
+          {
+            "source": "eightfold",
+            "source_job_id": "1970393557045963",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557045963",
+            "discovered_at": "2026-11-24T06:51:27Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "277751cd857ed86c54a19402e597151bdd9b74717d8bc61241c993a3abb54f81",
+        "pack": "details/27-5cc670df53425eb69c703d6423fb38ba4d1a94942261bae4829f956521750f28.json",
+        "pack_sha256": "5cc670df53425eb69c703d6423fb38ba4d1a94942261bae4829f956521750f28",
+        "status": "available"
+      }
+    },
+    "e99f8a338a451eff": {
+      "id": "e99f8a338a451eff",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Machine Learning and Statistics",
+      "location": "United States, Massachusetts, Cambridge",
+      "locations": [
+        "United States, Massachusetts, Cambridge",
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557040502",
+      "source": "eightfold",
+      "source_job_id": "1970393557040502",
+      "ats": "eightfold",
+      "posted_at": "2026-10-13T23:45:04+00:00",
+      "first_seen_at": "2026-10-14T06:34:59Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "1ed864bfd51afdee"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "a1c55b73-73c9-45c2-955d-be598673876c",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557040502",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "b349136dcd597ec82d857c4abbe2417351a93503b526a5e8706cee11230e4844",
+        "pack": "details/b3-6260078dc1063401d89b468a56068aa672cba8466036bb4445aa656f5793c286.json",
+        "pack_sha256": "6260078dc1063401d89b468a56068aa672cba8466036bb4445aa656f5793c286",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "f8013e0ce288cb5e": {
+      "id": "f8013e0ce288cb5e",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - AI /Machine Learning Numerics & Efficiency",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond",
+        "United States, California, Mountain View"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557076159",
+      "source": "eightfold",
+      "source_job_id": "1970393557076159",
+      "ats": "eightfold",
+      "posted_at": "2026-11-19T22:54:35+00:00",
+      "first_seen_at": "2026-11-20T02:38:50Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "561eed4cedf9b819"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "b4dd516e-0f31-4c31-a6e3-d5560a9ea552",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557076159",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "3121834c338cabcd6e9f0785f3338b04b02b76207b1b9456cb9b1383809a981a",
+        "pack": "details/31-9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2.json",
+        "pack_sha256": "9d65af9ebfc9a41c9afda8ea270dfc2e24ca9d2d1c12d917868ef07f1aecc8a2",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "fa4ddce09dae1a94": {
+      "id": "fa4ddce09dae1a94",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Security Research Group, Microsoft Research Redmond",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557022480",
+      "source": "eightfold",
+      "source_job_id": "1970393557022480",
+      "ats": "eightfold",
+      "posted_at": "2026-10-01T20:55:14+00:00",
+      "first_seen_at": "2026-11-24T06:51:27Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "description_status": "unavailable",
+      "description_version": 5,
+      "source_metadata": {
+        "description_acquisition": {
+          "method": "json_ld",
+          "completeness": "available",
+          "identity": "matched_url_and_title",
+          "resolved_url": "https://apply.careers.microsoft.com/careers/job/1970393557022480"
+        },
+        "provenance": [
+          {
+            "source": "eightfold",
+            "source_job_id": "1970393557022480",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557022480",
+            "discovered_at": "2026-11-24T06:51:27Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "aed9f54f84372b2e8a89a5b932984b8eea12baa3b609e71aaf8781541e7d2c67",
+        "pack": "details/ae-81c9f888e6bf804425d3d0a444a806189cea7ec34209ceaa7d95a9b29e97d2f2.json",
+        "pack_sha256": "81c9f888e6bf804425d3d0a444a806189cea7ec34209ceaa7d95a9b29e97d2f2",
+        "status": "available"
+      }
+    },
+    "fa64dfc08f41aa7c": {
+      "id": "fa64dfc08f41aa7c",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Research Intern - Speech Processing",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393557053016",
+      "source": "eightfold",
+      "source_job_id": "1970393557053016",
+      "ats": "eightfold",
+      "posted_at": "2026-11-02T20:13:48+00:00",
+      "first_seen_at": "2026-11-03T01:49:10Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Research Sciences",
+      "merged_from": [
+        "8c6bd8c17b7d2b1b"
+      ],
+      "source_metadata": {
+        "sponsorship": "Other",
+        "terms": [
+          "N/A"
+        ],
+        "degrees": [
+          "PhD"
+        ],
+        "category": "AI/ML/Data",
+        "provenance": [
+          {
+            "source": "simplify",
+            "source_job_id": "d0d38c94-eddc-4343-a7da-74408530f7d4",
+            "url": "https://apply.careers.microsoft.com/careers/job/1970393557053016",
+            "discovered_at": "2026-11-27T22:52:11Z"
+          }
+        ]
+      },
+      "description_ref": {
+        "sha256": "0484d2e7d3d2e260f10157a4b03e9cbd33b66dcbdfe5cf0c49dfb725909cfb17",
+        "pack": "details/04-d4a6087260c1f0e0a696f3ccf5124f2ca18637651b40429fa75bc85271d0d711.json",
+        "pack_sha256": "d4a6087260c1f0e0a696f3ccf5124f2ca18637651b40429fa75bc85271d0d711",
+        "status": null
+      },
+      "description_status": "unavailable"
+    },
+    "fed383fc93f6baea": {
+      "id": "fed383fc93f6baea",
+      "company": "Microsoft",
+      "company_slug": "microsoft",
+      "title": "Electrical Engineering INTERN (PhD)",
+      "location": "United States, Washington, Redmond",
+      "locations": [
+        "United States, Washington, Redmond"
+      ],
+      "url": "https://apply.careers.microsoft.com/careers/job/1970393556986148",
+      "source": "eightfold",
+      "source_job_id": "1970393556986148",
+      "ats": "eightfold",
+      "posted_at": "2026-11-17T07:25:09+00:00",
+      "first_seen_at": "2026-09-30T01:54:10Z",
+      "last_seen_at": "2026-11-27T22:52:11Z",
+      "closed_at": null,
+      "department": "Electrical Engineering",
+      "merged_from": [
+        "6b163d2893bd4df2"
+      ],
+      "description_ref": {
+        "sha256": "51ca0fc5376c253d716a0d6947691474e30d72f57e3ede6462c750df26f457a3",
+        "pack": "details/51-d4083b659bd8c6383289e9889a8acaf9bde304e50eed1eaa3b2bf676fc169eba.json",
+        "pack_sha256": "d4083b659bd8c6383289e9889a8acaf9bde304e50eed1eaa3b2bf676fc169eba",
+        "status": null
+      },
+      "description_status": "unavailable"
+    }
+  }
+}

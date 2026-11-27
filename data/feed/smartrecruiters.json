@@ -1,6 +1,6 @@
 {
   "shard_id": "smartrecruiters",
-  "updated_at": "2026-11-27T04:34:55Z",
+  "updated_at": "2026-11-27T05:22:41Z",
   "count": 206,
   "postings": {
     "008753f37c9dcd7a": {
@@ -18,7 +18,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-08T14:13:17.488Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -180,8 +180,8 @@
       },
       "description_ref": {
         "sha256": "fa9cb9ce32a475b9e3239a096f4f9ae655b68a59a723d9d01f0a60a3ee187cc6",
-        "pack": "details/fa-875de00e81de6e067e0f223b8b5915cc679664d485902abbfbcd7342e91203b9.json",
-        "pack_sha256": "875de00e81de6e067e0f223b8b5915cc679664d485902abbfbcd7342e91203b9",
+        "pack": "details/fa-299d1e54b2e7f9dd386e829f3cfe963a57656aeb4e3c684a035400364de31109.json",
+        "pack_sha256": "299d1e54b2e7f9dd386e829f3cfe963a57656aeb4e3c684a035400364de31109",
         "status": "stale"
       }
     },
@@ -200,7 +200,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-10T21:53:00.115Z",
       "first_seen_at": "2026-11-10T23:24:47Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -244,6 +244,8 @@
       "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "employment_type": "Intern",
+      "description_status": "unavailable",
+      "description_version": 5,
       "merged_from": [
         "8528281892607508"
       ],
@@ -254,15 +256,19 @@
           "board": "Mapjectscom",
           "job_id": "78665247",
           "eu": "false"
+        },
+        "description_acquisition": {
+          "method": "smartrecruiters_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
         "sha256": "653b79275e27f89cc7bdcbc5c9cf5bad31e8f97e66815b8110b6b73ffd203a43",
         "pack": "details/65-0c57802939466db1994bad4098b1ff368c913c5df80194067bde3d7784282bce.json",
         "pack_sha256": "0c57802939466db1994bad4098b1ff368c913c5df80194067bde3d7784282bce",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "available"
+      }
     },
     "0beb4c4ceed4c33e": {
       "id": "0beb4c4ceed4c33e",
@@ -402,7 +408,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-06T20:37:47.689Z",
       "first_seen_at": "2026-10-06T23:59:46Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -493,7 +499,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-09T21:30:00.903Z",
       "first_seen_at": "2026-11-10T02:45:19Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -616,7 +622,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2025-12-16T15:36:13.216Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -781,7 +787,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-06-01T17:22:11.906Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -822,7 +828,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-08-03T19:53:32.546Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -863,7 +869,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-22T14:23:23.122Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -1028,7 +1034,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-19T21:56:20.866Z",
       "first_seen_at": "2026-11-20T02:38:50Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -1563,7 +1569,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-08-31T20:07:02.139Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -1604,7 +1610,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-10T21:58:27.850Z",
       "first_seen_at": "2026-11-10T23:24:47Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -1645,7 +1651,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-05-26T10:18:56.010Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -1727,7 +1733,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-02T13:49:45.252Z",
       "first_seen_at": "2026-10-02T18:42:49Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -1768,7 +1774,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-08T13:55:18.881Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -1797,8 +1803,8 @@
       },
       "description_ref": {
         "sha256": "4556cffd708137bab7c7aba14896dde46171c33e013412ad2df38410f99c2ec4",
-        "pack": "details/45-846a865b5211f666cc46d2c64a4e9f3a47af3a258489f2a3d679ced73a946e54.json",
-        "pack_sha256": "846a865b5211f666cc46d2c64a4e9f3a47af3a258489f2a3d679ced73a946e54",
+        "pack": "details/45-2211e3b0410dabf0aeac69a05d6049d4190fd165b98c03e15129e03726f84a06.json",
+        "pack_sha256": "2211e3b0410dabf0aeac69a05d6049d4190fd165b98c03e15129e03726f84a06",
         "status": "available"
       }
     },
@@ -1820,6 +1826,8 @@
       "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "employment_type": "Intern",
+      "description_status": "unavailable",
+      "description_version": 5,
       "merged_from": [
         "866458a37e1bd471"
       ],
@@ -1830,15 +1838,19 @@
           "board": "FannieMae1SB",
           "job_id": "743999731568800",
           "eu": "false"
+        },
+        "description_acquisition": {
+          "method": "smartrecruiters_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
         "sha256": "ad60d7edd7d1c3fc4fbb26426b80d6b29cd5d0aac25be4e2db800d173848d04a",
         "pack": "details/ad-c289e6fa586f03d975a3a6e6b4cd6a967dc5076e1eeddf027e1aec15df167129.json",
         "pack_sha256": "c289e6fa586f03d975a3a6e6b4cd6a967dc5076e1eeddf027e1aec15df167129",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "available"
+      }
     },
     "4381a26d72519640": {
       "id": "4381a26d72519640",
@@ -1855,7 +1867,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-04T02:41:48.624Z",
       "first_seen_at": "2026-11-04T09:54:07Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -1915,7 +1927,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-18T16:47:38.244Z",
       "first_seen_at": "2026-11-18T23:01:30Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Engineering & Product",
@@ -1950,7 +1962,7 @@
             "source": "simplify",
             "source_job_id": "0590c67b-538d-436a-97a1-2344effdb7cb",
             "url": "https://jobs.smartrecruiters.com/WesternDigital/744000162353069",
-            "discovered_at": "2026-11-27T04:34:55Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ]
       },
@@ -2079,7 +2091,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-30T18:16:50.801Z",
       "first_seen_at": "2026-10-30T19:27:51Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -2120,7 +2132,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-19T13:39:35.798Z",
       "first_seen_at": "2026-10-19T14:28:22Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -2146,7 +2158,7 @@
             "source": "simplify",
             "source_job_id": "b5bb6e1a-1206-4c9a-aea9-5df782a0e67c",
             "url": "https://jobs.smartrecruiters.com/BoschGroup/744000156323136",
-            "discovered_at": "2026-11-26T22:38:31Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ],
         "description_acquisition": {
@@ -2218,7 +2230,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-08T19:53:57.390Z",
       "first_seen_at": "2026-10-08T22:19:28Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -2259,7 +2271,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-08T21:56:19.510Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Finance",
@@ -2399,7 +2411,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-08T14:11:58.228Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -2564,7 +2576,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-08T14:15:05.169Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -2605,7 +2617,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-28T18:07:28.384Z",
       "first_seen_at": "2026-09-28T21:14:54Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -2747,7 +2759,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-10T17:52:00.499Z",
       "first_seen_at": "2026-11-10T18:07:44Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -2788,7 +2800,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-08T14:13:44.624Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -2829,7 +2841,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-11T20:38:53.098Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Engineering & Product",
@@ -2861,7 +2873,7 @@
             "source": "simplify",
             "source_job_id": "9d16dec0-7e09-4419-b3a9-25b6cb8beb7b",
             "url": "https://jobs.smartrecruiters.com/WesternDigital/744000149106240",
-            "discovered_at": "2026-11-27T04:34:55Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ],
         "description_acquisition": {
@@ -2892,7 +2904,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-08T14:15:38.013Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -2974,7 +2986,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-08-18T17:27:51.535Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -3015,7 +3027,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-10T17:54:47.537Z",
       "first_seen_at": "2026-11-10T18:07:44Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -3056,7 +3068,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-07-16T20:09:54.795Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Global Operations & Supply Chain",
@@ -3114,7 +3126,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-16T15:28:53.371Z",
       "first_seen_at": "2026-11-16T16:29:28Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -3143,7 +3155,7 @@
             "source": "simplify",
             "source_job_id": "76493083-8144-4671-8730-436be1cbd186",
             "url": "https://jobs.smartrecruiters.com/BoschGroup/744000161841434",
-            "discovered_at": "2026-11-26T22:38:31Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ],
         "description_acquisition": {
@@ -3174,7 +3186,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-20T19:45:27.389Z",
       "first_seen_at": "2026-10-20T21:24:59Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -3298,7 +3310,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-05-19T14:47:49.142Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -3380,7 +3392,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-16T00:04:13.256Z",
       "first_seen_at": "2026-09-16T05:19:36Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -3461,8 +3473,8 @@
       },
       "description_ref": {
         "sha256": "542df1f24d009a1bef884b30cd956ce1d9486d4c9c78fa997d956db4a16b94e4",
-        "pack": "details/54-0826b04c4b4ba830aa55da9b04e176cf6c4089bdd593a430febf2c0723ea70de.json",
-        "pack_sha256": "0826b04c4b4ba830aa55da9b04e176cf6c4089bdd593a430febf2c0723ea70de",
+        "pack": "details/54-fdd098b44af0a229831eab3d56df1959241065758d1ab4e676a7441548529729.json",
+        "pack_sha256": "fdd098b44af0a229831eab3d56df1959241065758d1ab4e676a7441548529729",
         "status": "available"
       }
     },
@@ -3663,7 +3675,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-08T19:55:08.653Z",
       "first_seen_at": "2026-10-08T22:19:28Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -3704,7 +3716,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-21T17:27:53.917Z",
       "first_seen_at": "2026-10-21T18:57:41Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -3827,7 +3839,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2025-03-07T12:51:55.670Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -3991,7 +4003,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-23T19:14:51.191Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -4073,7 +4085,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-28T03:21:34.357Z",
       "first_seen_at": "2026-10-28T07:29:24Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Part-time",
       "description_status": "unavailable",
@@ -4102,7 +4114,7 @@
             "source": "simplify",
             "source_job_id": "be409c15-d7f8-4de9-a9eb-56f6fd1af705",
             "url": "https://jobs.smartrecruiters.com/Wabtec/3743990016452226",
-            "discovered_at": "2026-11-27T04:34:55Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ],
         "description_acquisition": {
@@ -4177,6 +4189,8 @@
       "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "employment_type": "Intern",
+      "description_status": "unavailable",
+      "description_version": 5,
       "merged_from": [
         "c553316d0e0765b0"
       ],
@@ -4187,15 +4201,19 @@
           "board": "Mapjectscom",
           "job_id": "79400823",
           "eu": "false"
+        },
+        "description_acquisition": {
+          "method": "smartrecruiters_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
         "sha256": "c37fc5e1dda2613c25024508df1e2e5e4d4ffd563d3e06aeeb6d82ddabc51cc3",
         "pack": "details/c3-ca1bc20bbc95adf99a7ebdd8dab3df2a385e381a3a838a8b5a7a6a360a0acb4c.json",
         "pack_sha256": "ca1bc20bbc95adf99a7ebdd8dab3df2a385e381a3a838a8b5a7a6a360a0acb4c",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "available"
+      }
     },
     "833d24dffbd0c5e3": {
       "id": "833d24dffbd0c5e3",
@@ -4256,6 +4274,8 @@
       "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "employment_type": "Intern",
+      "description_status": "unavailable",
+      "description_version": 5,
       "merged_from": [
         "363fb74906d2e834"
       ],
@@ -4266,15 +4286,19 @@
           "board": "Mapjectscom",
           "job_id": "79183345",
           "eu": "false"
+        },
+        "description_acquisition": {
+          "method": "smartrecruiters_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
         "sha256": "6d78646dfc443392584e0bc7a68dcfa7c38a234c2d6c3f01c8a6089fe59f095c",
         "pack": "details/6d-1d0d541e446b52a1b646693dec4fae8d864c7d8f477eaebb408f372a191c8364.json",
         "pack_sha256": "1d0d541e446b52a1b646693dec4fae8d864c7d8f477eaebb408f372a191c8364",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "available"
+      }
     },
     "84cb4727122d7dd4": {
       "id": "84cb4727122d7dd4",
@@ -4291,7 +4315,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-29T17:09:20.142Z",
       "first_seen_at": "2026-10-29T21:20:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -4373,7 +4397,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-11T14:45:57.463Z",
       "first_seen_at": "2026-11-11T18:00:32Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -4455,7 +4479,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-09T22:25:38.092Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Sales & Marketing",
@@ -4518,8 +4542,8 @@
       },
       "description_ref": {
         "sha256": "e07466c968fbb88a15361fc8e5c49f00f052f57bb6dd733eb22e9e81e14513da",
-        "pack": "details/e0-c77760c79b5378e6aa537f089ca76eeedfa804541fd6eb5d9ab6163b67398113.json",
-        "pack_sha256": "c77760c79b5378e6aa537f089ca76eeedfa804541fd6eb5d9ab6163b67398113",
+        "pack": "details/e0-7110fc1fa28cf56fbf07614f2b1bce8f1860aeb4ce7aaacb5eec152e1138c6b0.json",
+        "pack_sha256": "7110fc1fa28cf56fbf07614f2b1bce8f1860aeb4ce7aaacb5eec152e1138c6b0",
         "status": "available"
       }
     },
@@ -4538,7 +4562,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-18T19:28:56.065Z",
       "first_seen_at": "2026-11-18T23:01:30Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -4579,7 +4603,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-23T19:59:48.618Z",
       "first_seen_at": "2026-11-23T22:51:38Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -4661,7 +4685,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-12T01:41:55.284Z",
       "first_seen_at": "2026-10-12T06:36:06Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -4691,7 +4715,7 @@
             "source": "simplify",
             "source_job_id": "ba7ed36a-7da0-4b9e-bed8-8f369041684d",
             "url": "https://jobs.smartrecruiters.com/BoschGroup/744000154911489",
-            "discovered_at": "2026-11-26T22:38:31Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ],
         "description_acquisition": {
@@ -4722,7 +4746,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-20T00:24:20.702Z",
       "first_seen_at": "2026-11-20T02:38:50Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -4930,7 +4954,7 @@
         "sha256": "e345c37f184431ddc96740f6601df2760701b4fdd7bab54b01eef6060a38a0dc",
         "pack": "details/e3-4d20b177559c8430ff4dceb57b81e688f8b4e98cf2c8a5774ba79144346d3e70.json",
         "pack_sha256": "4d20b177559c8430ff4dceb57b81e688f8b4e98cf2c8a5774ba79144346d3e70",
-        "status": "stale"
+        "status": "available"
       }
     },
     "9f70299de4ad4fe4": {
@@ -4948,7 +4972,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2025-03-31T14:52:39.125Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -5030,7 +5054,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-06T14:13:22.983Z",
       "first_seen_at": "2026-11-06T14:52:35Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -5064,7 +5088,7 @@
             "source": "simplify",
             "source_job_id": "28aebc28-8053-49a1-82cd-f57734a9e64d",
             "url": "https://jobs.smartrecruiters.com/BoschGroup/744000160212170",
-            "discovered_at": "2026-11-26T22:38:31Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ]
       },
@@ -5131,7 +5155,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-15T15:50:54.600Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -5193,8 +5217,8 @@
       },
       "description_ref": {
         "sha256": "45cd6b84706ea4d61daf4a7405ebc08bb3dd1dc993664de4aed406fe4fc5238e",
-        "pack": "details/45-846a865b5211f666cc46d2c64a4e9f3a47af3a258489f2a3d679ced73a946e54.json",
-        "pack_sha256": "846a865b5211f666cc46d2c64a4e9f3a47af3a258489f2a3d679ced73a946e54",
+        "pack": "details/45-2211e3b0410dabf0aeac69a05d6049d4190fd165b98c03e15129e03726f84a06.json",
+        "pack_sha256": "2211e3b0410dabf0aeac69a05d6049d4190fd165b98c03e15129e03726f84a06",
         "status": "stale"
       }
     },
@@ -5213,7 +5237,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-28T08:21:51.863Z",
       "first_seen_at": "2026-09-28T15:08:50Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -5254,7 +5278,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-30T15:13:20.260Z",
       "first_seen_at": "2026-10-30T19:27:51Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -5419,7 +5443,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2025-12-16T15:34:35.740Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -5463,6 +5487,8 @@
       "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "employment_type": "Intern",
+      "description_status": "unavailable",
+      "description_version": 5,
       "merged_from": [
         "62aa5c4918942eed"
       ],
@@ -5473,15 +5499,19 @@
           "board": "Mapjectscom",
           "job_id": "79253426",
           "eu": "false"
+        },
+        "description_acquisition": {
+          "method": "smartrecruiters_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
         "sha256": "a89d788e870a429d4efb4935b6be7a9b821c76701cf0a982430e30d37215cd38",
         "pack": "details/a8-ca4e15e6fa1d60520d058f1507b2291dc649ec5b2f41fdcc086cb9f2dd0586de.json",
         "pack_sha256": "ca4e15e6fa1d60520d058f1507b2291dc649ec5b2f41fdcc086cb9f2dd0586de",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "available"
+      }
     },
     "aa487be89d611ffe": {
       "id": "aa487be89d611ffe",
@@ -5498,7 +5528,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-12T16:12:36.849Z",
       "first_seen_at": "2026-11-12T16:18:49Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -5532,7 +5562,7 @@
             "source": "simplify",
             "source_job_id": "c9cd8a2c-b2a1-4fdc-8da8-ac6280af7873",
             "url": "https://jobs.smartrecruiters.com/BoschGroup/744000161339309",
-            "discovered_at": "2026-11-26T22:38:31Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ]
       },
@@ -5558,7 +5588,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2025-12-16T15:32:53.219Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -5640,7 +5670,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-08-03T19:53:18.704Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -5722,7 +5752,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-08-18T17:24:32.753Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -5804,7 +5834,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-02T14:53:20.996Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -5845,7 +5875,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-18T17:08:17.451Z",
       "first_seen_at": "2026-11-18T23:01:30Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -5886,7 +5916,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-09T18:27:01.312Z",
       "first_seen_at": "2026-10-09T21:09:20Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -5921,7 +5951,7 @@
             "source": "simplify",
             "source_job_id": "16b61d0f-fc3f-4be6-91dc-7dbdb0ba1a21",
             "url": "https://jobs.smartrecruiters.com/BoschGroup/744000154759734",
-            "discovered_at": "2026-11-26T22:38:31Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ]
       },
@@ -5947,7 +5977,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-08-18T17:30:30.712Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -6070,7 +6100,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-08-18T18:30:56.836Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -6111,7 +6141,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-16T15:29:09.642Z",
       "first_seen_at": "2026-11-16T16:29:28Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -6140,7 +6170,7 @@
             "source": "simplify",
             "source_job_id": "5d8b5a71-c3cc-4f5f-b6ca-c6784175532c",
             "url": "https://jobs.smartrecruiters.com/BoschGroup/744000161844052",
-            "discovered_at": "2026-11-26T22:38:31Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ],
         "description_acquisition": {
@@ -6212,7 +6242,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-08-03T19:52:57.625Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -6335,7 +6365,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-09T17:36:48.354Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -6366,7 +6396,7 @@
             "source": "simplify",
             "source_job_id": "9ad24c3c-3daf-41ba-a2f7-83ac94fb4d92",
             "url": "https://jobs.smartrecruiters.com/BoschGroup/744000148575999",
-            "discovered_at": "2026-11-26T22:38:31Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ],
         "description_acquisition": {
@@ -6438,7 +6468,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-30T14:48:55.661Z",
       "first_seen_at": "2026-09-30T14:56:42Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -6479,7 +6509,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-08T14:11:26.686Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -6520,7 +6550,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-23T14:02:35.070Z",
       "first_seen_at": "2026-10-23T15:46:26Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -6555,7 +6585,7 @@
             "source": "simplify",
             "source_job_id": "167db85e-f882-442a-a140-67ddb1c5b800",
             "url": "https://jobs.smartrecruiters.com/BoschGroup/744000157483412",
-            "discovered_at": "2026-11-26T22:38:31Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ]
       },
@@ -6581,7 +6611,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-28T10:52:25.580Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -6622,7 +6652,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2025-12-16T15:36:42.658Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -6704,7 +6734,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-20T19:53:19.645Z",
       "first_seen_at": "2026-10-20T21:24:59Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -6739,7 +6769,7 @@
             "source": "simplify",
             "source_job_id": "7cbcd7b6-0d36-4f4e-b474-5a37bdb49090",
             "url": "https://jobs.smartrecruiters.com/BoschGroup/744000156648989",
-            "discovered_at": "2026-11-26T22:38:31Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ]
       },
@@ -6807,7 +6837,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-29T23:59:43.459Z",
       "first_seen_at": "2026-10-30T01:16:42Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Part-time",
       "description_status": "unavailable",
@@ -6848,7 +6878,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2025-04-10T09:25:45.658Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -6892,6 +6922,8 @@
       "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "employment_type": "Intern",
+      "description_status": "unavailable",
+      "description_version": 5,
       "merged_from": [
         "99312cde39f7972d"
       ],
@@ -6902,15 +6934,19 @@
           "board": "Mapjectscom",
           "job_id": "79183538",
           "eu": "false"
+        },
+        "description_acquisition": {
+          "method": "smartrecruiters_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
         "sha256": "6af525727d673cf746cb8118e35736ec5509e3080d65503474759666588702c1",
         "pack": "details/6a-f4b0e483284d3f7cd01207c64af2c9bf5b9e4340abcb1573102e89207d80b73e.json",
         "pack_sha256": "f4b0e483284d3f7cd01207c64af2c9bf5b9e4340abcb1573102e89207d80b73e",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "available"
+      }
     },
     "cbfeaab7c664de18": {
       "id": "cbfeaab7c664de18",
@@ -7009,7 +7045,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-06T13:56:59.298Z",
       "first_seen_at": "2026-11-06T14:52:35Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -7044,14 +7080,14 @@
             "source": "simplify",
             "source_job_id": "5ef8daf8-ad4f-4cea-b963-be50d5d118f4",
             "url": "https://jobs.smartrecruiters.com/BoschGroup/744000160208440",
-            "discovered_at": "2026-11-26T22:38:31Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ]
       },
       "description_ref": {
         "sha256": "c67aa1dd571001b4232c2bda85ce5d0ee4e8e130691b9355302bafb075742a43",
-        "pack": "details/c6-5e5f456439f34f6b96d088d7147f38c22a17dc7a42b3129193149043616572ad.json",
-        "pack_sha256": "5e5f456439f34f6b96d088d7147f38c22a17dc7a42b3129193149043616572ad",
+        "pack": "details/c6-3c7779f87d6bf8b7b73e5e223843981ff0c20b2ad903cea0895ace17bd57109c.json",
+        "pack_sha256": "3c7779f87d6bf8b7b73e5e223843981ff0c20b2ad903cea0895ace17bd57109c",
         "status": "stale"
       }
     },
@@ -7114,6 +7150,8 @@
       "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "employment_type": "Intern",
+      "description_status": "unavailable",
+      "description_version": 5,
       "merged_from": [
         "1fc3b3365f2af28f"
       ],
@@ -7124,15 +7162,19 @@
           "board": "Mapjectscom",
           "job_id": "78913939",
           "eu": "false"
+        },
+        "description_acquisition": {
+          "method": "smartrecruiters_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
         "sha256": "01f911a137b5192316f7059b3eaaee9c0e6e7534eb600398e4cb81429a3d85c2",
         "pack": "details/01-1862d0810013cf025e5a738e3375924aa79f9505e09f48b2a4e6ccfce6431826.json",
         "pack_sha256": "1862d0810013cf025e5a738e3375924aa79f9505e09f48b2a4e6ccfce6431826",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "available"
+      }
     },
     "d22a0c481406ec8c": {
       "id": "d22a0c481406ec8c",
@@ -7190,7 +7232,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2025-03-10T15:03:09.854Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -7231,7 +7273,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-17T16:58:48.047Z",
       "first_seen_at": "2026-11-17T17:47:45Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -7313,7 +7355,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-30T15:10:16.840Z",
       "first_seen_at": "2026-10-30T19:27:51Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -7354,7 +7396,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-19T12:56:21.904Z",
       "first_seen_at": "2026-10-19T14:28:22Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -7384,7 +7426,7 @@
             "source": "simplify",
             "source_job_id": "d19bf91f-90c0-4799-9c56-302b3703168a",
             "url": "https://jobs.smartrecruiters.com/BoschGroup/744000156311682",
-            "discovered_at": "2026-11-26T22:38:31Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ],
         "description_acquisition": {
@@ -7415,7 +7457,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-12T21:48:51.415Z",
       "first_seen_at": "2026-10-12T23:01:00Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -7456,7 +7498,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-18T01:47:31.939Z",
       "first_seen_at": "2026-11-18T07:08:01Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -7485,7 +7527,7 @@
             "source": "simplify",
             "source_job_id": "0a6bcf68-1dac-49d0-a6da-1adca0fd22c3",
             "url": "https://jobs.smartrecruiters.com/BoschGroup/744000162212029",
-            "discovered_at": "2026-11-26T22:38:31Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ],
         "description_acquisition": {
@@ -7496,8 +7538,8 @@
       },
       "description_ref": {
         "sha256": "6fc405b4ff84c781a29b0014e9949f61830a7e5896b7318b8fbeb47dde6ca695",
-        "pack": "details/6f-39353d133a3d09c8a7ee41f62ccd118259ea0baf3ecc5185f32e23e78fa93a74.json",
-        "pack_sha256": "39353d133a3d09c8a7ee41f62ccd118259ea0baf3ecc5185f32e23e78fa93a74",
+        "pack": "details/6f-755e7adaa3c523d72302c6d673d89fc7391b7f920c9d50b79731626bf86f2031.json",
+        "pack_sha256": "755e7adaa3c523d72302c6d673d89fc7391b7f920c9d50b79731626bf86f2031",
         "status": "stale"
       }
     },
@@ -7598,7 +7640,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-19T14:46:11.051Z",
       "first_seen_at": "2026-10-19T20:06:44Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -7699,7 +7741,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-05-26T12:55:49.230Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -7879,7 +7921,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2025-12-16T15:35:49.761Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -7920,7 +7962,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-02T20:07:45.295Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -7961,7 +8003,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-08-18T17:15:19.133Z",
       "first_seen_at": "2026-09-05T00:50:25Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -8043,7 +8085,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-27T14:14:53.138Z",
       "first_seen_at": "2026-10-27T18:20:10Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -8084,7 +8126,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-08T19:55:56.698Z",
       "first_seen_at": "2026-10-08T22:19:28Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -8105,8 +8147,8 @@
       },
       "description_ref": {
         "sha256": "54ba6d8f710fb5db6f94234d0c5eb556e08ab64d60ff262bea9faa5dc1ad3535",
-        "pack": "details/54-0826b04c4b4ba830aa55da9b04e176cf6c4089bdd593a430febf2c0723ea70de.json",
-        "pack_sha256": "0826b04c4b4ba830aa55da9b04e176cf6c4089bdd593a430febf2c0723ea70de",
+        "pack": "details/54-fdd098b44af0a229831eab3d56df1959241065758d1ab4e676a7441548529729.json",
+        "pack_sha256": "fdd098b44af0a229831eab3d56df1959241065758d1ab4e676a7441548529729",
         "status": "stale"
       }
     },
@@ -8207,7 +8249,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2023-04-24T15:18:16.417Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -8248,7 +8290,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-08T21:58:40.909Z",
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "department": "Human Resources",
@@ -8352,8 +8394,8 @@
       },
       "description_ref": {
         "sha256": "e07466c968fbb88a15361fc8e5c49f00f052f57bb6dd733eb22e9e81e14513da",
-        "pack": "details/e0-c77760c79b5378e6aa537f089ca76eeedfa804541fd6eb5d9ab6163b67398113.json",
-        "pack_sha256": "c77760c79b5378e6aa537f089ca76eeedfa804541fd6eb5d9ab6163b67398113",
+        "pack": "details/e0-7110fc1fa28cf56fbf07614f2b1bce8f1860aeb4ce7aaacb5eec152e1138c6b0.json",
+        "pack_sha256": "7110fc1fa28cf56fbf07614f2b1bce8f1860aeb4ce7aaacb5eec152e1138c6b0",
         "status": "stale"
       }
     },
@@ -8416,6 +8458,8 @@
       "last_seen_at": "2026-11-27T04:34:55Z",
       "closed_at": null,
       "employment_type": "Intern",
+      "description_status": "unavailable",
+      "description_version": 5,
       "merged_from": [
         "994d51af7fe98e04"
       ],
@@ -8426,15 +8470,19 @@
           "board": "Mapjectscom",
           "job_id": "79770294",
           "eu": "false"
+        },
+        "description_acquisition": {
+          "method": "smartrecruiters_api",
+          "completeness": "available",
+          "identity": "provider_job_endpoint"
         }
       },
       "description_ref": {
         "sha256": "6af525727d673cf746cb8118e35736ec5509e3080d65503474759666588702c1",
         "pack": "details/6a-f4b0e483284d3f7cd01207c64af2c9bf5b9e4340abcb1573102e89207d80b73e.json",
         "pack_sha256": "f4b0e483284d3f7cd01207c64af2c9bf5b9e4340abcb1573102e89207d80b73e",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "available"
+      }
     },
     "f504f8873fec6e3b": {
       "id": "f504f8873fec6e3b",
@@ -8492,7 +8540,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-09-28T19:47:06.751Z",
       "first_seen_at": "2026-09-28T21:14:54Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -8526,7 +8574,7 @@
             "source": "simplify",
             "source_job_id": "0c761c45-7bbc-4508-bc5d-a8fc400dfe37",
             "url": "https://jobs.smartrecruiters.com/WesternDigital/744000152261929",
-            "discovered_at": "2026-11-27T04:34:55Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ]
       },
@@ -8732,7 +8780,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-12T01:31:49.485Z",
       "first_seen_at": "2026-10-12T06:36:06Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -8773,7 +8821,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-12T17:06:54.779Z",
       "first_seen_at": "2026-11-12T22:24:30Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -8814,7 +8862,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-10-02T14:47:26.357Z",
       "first_seen_at": "2026-10-02T18:42:49Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Full-time",
       "description_status": "unavailable",
@@ -8855,7 +8903,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2026-11-04T14:36:10.784Z",
       "first_seen_at": "2026-11-04T17:51:43Z",
-      "last_seen_at": "2026-11-27T04:34:55Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",
@@ -8885,7 +8933,7 @@
             "source": "simplify",
             "source_job_id": "ce532e1e-900b-4395-b485-90b14f6687f5",
             "url": "https://jobs.smartrecruiters.com/BoschGroup/744000159649749",
-            "discovered_at": "2026-11-26T22:38:31Z"
+            "discovered_at": "2026-11-27T05:22:41Z"
           }
         ],
         "description_acquisition": {
@@ -8916,7 +8964,7 @@
       "ats": "smartrecruiters",
       "posted_at": "2025-01-23T11:57:21.519Z",
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-26T22:38:31Z",
+      "last_seen_at": "2026-11-27T05:22:41Z",
       "closed_at": null,
       "employment_type": "Intern",
       "description_status": "unavailable",

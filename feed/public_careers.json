@@ -1,6 +1,6 @@
 {
   "shard_id": "public_careers",
-  "updated_at": "2026-11-27T05:22:41Z",
+  "updated_at": "2026-11-27T14:25:00Z",
   "count": 136,
   "postings": {
     "02370dc5bd75db75": {
@@ -18,7 +18,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -48,8 +48,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -57,9 +58,8 @@
         "sha256": "c78dc39c97a69a1992747d1728c4b74f02d56b9abda4fafb68922fc419d44499",
         "pack": "details/c7-04be0c2f917e3ac5108b398062a1223fc5e89243fdf7713d5e9edea314129801.json",
         "pack_sha256": "04be0c2f917e3ac5108b398062a1223fc5e89243fdf7713d5e9edea314129801",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "047f6e2e26995f4c": {
       "id": "047f6e2e26995f4c",
@@ -77,18 +77,18 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
       "description_ref": {
         "sha256": "91d4d3c2944156a9de0c83411c66adbce7c9501b2d051f23da10f58886283b11",
-        "pack": "details/91-abe6c5b6afdd5454e5e62d7ac1e567cd9c7ffb843de7ddbc0a9acd5985f28483.json",
-        "pack_sha256": "abe6c5b6afdd5454e5e62d7ac1e567cd9c7ffb843de7ddbc0a9acd5985f28483",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "pack": "details/91-49894fefa472216e3dbd56a7cf3aaef1e043015b8063348cf9ac581bf2a19cff.json",
+        "pack_sha256": "49894fefa472216e3dbd56a7cf3aaef1e043015b8063348cf9ac581bf2a19cff",
+        "status": "stale"
+      }
     },
     "04ab70529236906c": {
       "id": "04ab70529236906c",
@@ -105,7 +105,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -164,7 +164,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "description_status": "unavailable",
       "merged_from": [
@@ -185,7 +185,13 @@
             "source": "simplify",
             "source_job_id": "0bd3b5e2-7522-4160-93d9-aa94c49da2cd",
             "url": "https://www.google.com/about/careers/applications/jobs/results/97352132356645574",
-            "discovered_at": "2026-11-27T05:22:41Z"
+            "discovered_at": "2026-11-27T14:25:00Z"
+          },
+          {
+            "source": "public_careers",
+            "source_job_id": "97352132356645574",
+            "url": "https://www.google.com/about/careers/applications/jobs/results/97352132356645574",
+            "discovered_at": "2026-09-15T16:26:04Z"
           }
         ]
       },
@@ -215,8 +221,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -224,9 +231,8 @@
         "sha256": "c388891105911fb8621ca3b9dc39e37a79b0e93fd9df3db97ec84b15d4de97ff",
         "pack": "details/c3-ca1bc20bbc95adf99a7ebdd8dab3df2a385e381a3a838a8b5a7a6a360a0acb4c.json",
         "pack_sha256": "ca1bc20bbc95adf99a7ebdd8dab3df2a385e381a3a838a8b5a7a6a360a0acb4c",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "0aaa2052a664d6ef": {
       "id": "0aaa2052a664d6ef",
@@ -250,8 +256,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -259,9 +266,8 @@
         "sha256": "5e858d2ab6d612e7a6ec14bc7fdddac4482a01585e63471ba706654ec0466db7",
         "pack": "details/5e-2ce8fc817f5cdf3ecd6d37951d53c990001a1f686f0eafe6ced8bdf207256720.json",
         "pack_sha256": "2ce8fc817f5cdf3ecd6d37951d53c990001a1f686f0eafe6ced8bdf207256720",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "0b27376f5a4ddc80": {
       "id": "0b27376f5a4ddc80",
@@ -284,7 +290,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-25T21:56:11Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -313,8 +319,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -322,9 +329,8 @@
         "sha256": "2577010721fd875460390662fbd0c4dd799687e8b6b3307d5ca8909cb07b0593",
         "pack": "details/25-6552a6d0c84e5ecb3e42a180e58a972a8fbd2cf5d6648e1221bbc8120c9ab4a2.json",
         "pack_sha256": "6552a6d0c84e5ecb3e42a180e58a972a8fbd2cf5d6648e1221bbc8120c9ab4a2",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "0ed7803eded87a08": {
       "id": "0ed7803eded87a08",
@@ -370,7 +376,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-08-31T00:00:06Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "description_status": "unavailable",
       "merged_from": [
@@ -391,7 +397,13 @@
             "source": "simplify",
             "source_job_id": "cd7682b8-7722-4a26-9813-42ece290a387",
             "url": "https://www.google.com/about/careers/applications/jobs/results/91436104816698054",
-            "discovered_at": "2026-11-27T05:22:41Z"
+            "discovered_at": "2026-11-27T14:25:00Z"
+          },
+          {
+            "source": "public_careers",
+            "source_job_id": "91436104816698054",
+            "url": "https://www.google.com/about/careers/applications/jobs/results/91436104816698054",
+            "discovered_at": "2026-08-31T00:00:06Z"
           }
         ]
       },
@@ -417,7 +429,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -456,8 +468,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -465,9 +478,8 @@
         "sha256": "e97322bc84bdb6d231588451052006ebca461d4ec1d45aacd83beb3d4502aaf3",
         "pack": "details/e9-c782b5d7bba35f161190ce12575ef19a8d3e2154924dacb45d4ed77a253ae084.json",
         "pack_sha256": "c782b5d7bba35f161190ce12575ef19a8d3e2154924dacb45d4ed77a253ae084",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "115365803f4c02bd": {
       "id": "115365803f4c02bd",
@@ -485,8 +497,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -494,9 +507,8 @@
         "sha256": "6820350d169bad41e62827270f5704304a9ffd1a8d0887d242eb67fd2d6f8626",
         "pack": "details/68-b3e8769591d72fb3a9d09da424cc7fdc8d498a554ecd0772ad4bcbcd09fc5042.json",
         "pack_sha256": "b3e8769591d72fb3a9d09da424cc7fdc8d498a554ecd0772ad4bcbcd09fc5042",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "12c68d1acb8ec865": {
       "id": "12c68d1acb8ec865",
@@ -513,7 +525,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -542,7 +554,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -551,8 +563,8 @@
       },
       "description_ref": {
         "sha256": "ef8381b3d13dc75145d97f836127f85835b1d7fb543a33c9bb8de6fcd210db1d",
-        "pack": "details/ef-c61b91dc1a8818e9c4bd4b65c22f7acf8e10d3cc96753ef633c52a5695194c81.json",
-        "pack_sha256": "c61b91dc1a8818e9c4bd4b65c22f7acf8e10d3cc96753ef633c52a5695194c81",
+        "pack": "details/ef-3db71641e339538c61bb050680b9765e7eff9e98250b6c9ab710748b776eea5b.json",
+        "pack_sha256": "3db71641e339538c61bb050680b9765e7eff9e98250b6c9ab710748b776eea5b",
         "status": "stale"
       }
     },
@@ -574,8 +586,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -583,9 +596,8 @@
         "sha256": "d6fb2295efabaa745ca5ed98c59acc6b03da110b6bc213cfc02a87a5cf122590",
         "pack": "details/d6-178cab5079f9a5f6407b99555e8febc3cfdf499ab838a37000b3e416dc1a8764.json",
         "pack_sha256": "178cab5079f9a5f6407b99555e8febc3cfdf499ab838a37000b3e416dc1a8764",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "1367fee7ac134bc6": {
       "id": "1367fee7ac134bc6",
@@ -602,7 +614,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -641,18 +653,18 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
       "description_ref": {
         "sha256": "faeb894bc6863050aea90239540a729d0e7af27b21daf19adbf8eb219feabaa6",
-        "pack": "details/fa-299d1e54b2e7f9dd386e829f3cfe963a57656aeb4e3c684a035400364de31109.json",
-        "pack_sha256": "299d1e54b2e7f9dd386e829f3cfe963a57656aeb4e3c684a035400364de31109",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "pack": "details/fa-875de00e81de6e067e0f223b8b5915cc679664d485902abbfbcd7342e91203b9.json",
+        "pack_sha256": "875de00e81de6e067e0f223b8b5915cc679664d485902abbfbcd7342e91203b9",
+        "status": "stale"
+      }
     },
     "1542a9fe915fabef": {
       "id": "1542a9fe915fabef",
@@ -670,18 +682,18 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
       "description_ref": {
         "sha256": "f4fc23dcfd234467dda9e589fe431a763900141db2a7502f5044624fe28880a8",
-        "pack": "details/f4-e5883813157a7fa910d473ab7c877cf0d410d3cb554805ed8bd7794e8ea944c7.json",
-        "pack_sha256": "e5883813157a7fa910d473ab7c877cf0d410d3cb554805ed8bd7794e8ea944c7",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "pack": "details/f4-1952e89c2662874f2e4babf9ce6cefd52316490136bf46dac5b09e3fad9c36c2.json",
+        "pack_sha256": "1952e89c2662874f2e4babf9ce6cefd52316490136bf46dac5b09e3fad9c36c2",
+        "status": "stale"
+      }
     },
     "1925affda4ef0e9e": {
       "id": "1925affda4ef0e9e",
@@ -705,8 +717,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -714,9 +727,8 @@
         "sha256": "9849ba30c92ddd38ce7042785d0479a6134eea0c5d80b5486d56ff52baae5c6e",
         "pack": "details/98-8e98aaea4b3d895a5d48a1cbb8a7ff6be16685a84cc868b2da16f0974a80bf17.json",
         "pack_sha256": "8e98aaea4b3d895a5d48a1cbb8a7ff6be16685a84cc868b2da16f0974a80bf17",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "1a71e94ce9417e80": {
       "id": "1a71e94ce9417e80",
@@ -751,7 +763,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-09-01T22:32:36Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "description_status": "unavailable",
       "merged_from": [
@@ -772,7 +784,13 @@
             "source": "simplify",
             "source_job_id": "1af2873b-32c5-4dac-9ccb-9af00aa0c9a3",
             "url": "https://www.google.com/about/careers/applications/jobs/results/83535564552184518",
-            "discovered_at": "2026-11-27T05:22:41Z"
+            "discovered_at": "2026-11-27T14:25:00Z"
+          },
+          {
+            "source": "public_careers",
+            "source_job_id": "83535564552184518",
+            "url": "https://www.google.com/about/careers/applications/jobs/results/83535564552184518",
+            "discovered_at": "2026-09-01T22:32:36Z"
           }
         ]
       },
@@ -799,8 +817,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -808,9 +827,8 @@
         "sha256": "df2659f405b30ceae8474ab10871f7a231fb241c7ba6371bb39a02dbc52564ee",
         "pack": "details/df-00b1b746d6a0e992fef0f585dbf1742cdebba67f4a4959fb9b4911d596517159.json",
         "pack_sha256": "00b1b746d6a0e992fef0f585dbf1742cdebba67f4a4959fb9b4911d596517159",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "1cde963a11ba3c23": {
       "id": "1cde963a11ba3c23",
@@ -857,7 +875,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "description_status": "unavailable",
       "merged_from": [
@@ -878,14 +896,20 @@
             "source": "simplify",
             "source_job_id": "0a3f57fc-708c-4b77-9a27-a3fcff485267",
             "url": "https://www.google.com/about/careers/applications/jobs/results/89965613241246406",
-            "discovered_at": "2026-11-27T05:22:41Z"
+            "discovered_at": "2026-11-27T14:25:00Z"
+          },
+          {
+            "source": "public_careers",
+            "source_job_id": "89965613241246406",
+            "url": "https://www.google.com/about/careers/applications/jobs/results/89965613241246406",
+            "discovered_at": "2026-09-15T16:26:04Z"
           }
         ]
       },
       "description_ref": {
         "sha256": "1600ddc72f1eacbce0d0ef0b0e8308106bff9910b4d503504a70701642ff61d4",
-        "pack": "details/16-445f8ff7c784e26bf85b53fa0e14bbb2da26bb44e4a1228b80bd3efd4088197b.json",
-        "pack_sha256": "445f8ff7c784e26bf85b53fa0e14bbb2da26bb44e4a1228b80bd3efd4088197b",
+        "pack": "details/16-d2d602390c3bd82c8012f7ddb7d35b8cbcba0477992f39897342985c445beaa2.json",
+        "pack_sha256": "d2d602390c3bd82c8012f7ddb7d35b8cbcba0477992f39897342985c445beaa2",
         "status": "stale"
       }
     },
@@ -904,7 +928,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -913,8 +937,8 @@
       },
       "description_ref": {
         "sha256": "1b2c497efcceebe3111da90f305fed5ac89dd936e13cb43131f719b3941c2048",
-        "pack": "details/1b-e225850e65ec07dc70c7bd21d32d4cf30c399a880880707faabe1395a90a7d7a.json",
-        "pack_sha256": "e225850e65ec07dc70c7bd21d32d4cf30c399a880880707faabe1395a90a7d7a",
+        "pack": "details/1b-5e23cb99db30fa69d42402441135a9748f530f63913bb81d1981eadab54a5d3b.json",
+        "pack_sha256": "5e23cb99db30fa69d42402441135a9748f530f63913bb81d1981eadab54a5d3b",
         "status": "stale"
       }
     },
@@ -943,18 +967,18 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
       "description_ref": {
         "sha256": "1bde6075a728b4ec93f1ee540c1475f87a78b853555143f11f8796f2b7ec6b37",
-        "pack": "details/1b-e225850e65ec07dc70c7bd21d32d4cf30c399a880880707faabe1395a90a7d7a.json",
-        "pack_sha256": "e225850e65ec07dc70c7bd21d32d4cf30c399a880880707faabe1395a90a7d7a",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "pack": "details/1b-5e23cb99db30fa69d42402441135a9748f530f63913bb81d1981eadab54a5d3b.json",
+        "pack_sha256": "5e23cb99db30fa69d42402441135a9748f530f63913bb81d1981eadab54a5d3b",
+        "status": "stale"
+      }
     },
     "2a073a4a3c2f6b44": {
       "id": "2a073a4a3c2f6b44",
@@ -972,8 +996,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -981,9 +1006,8 @@
         "sha256": "982ba46a86ffbaa5f8dfa88aa90c71073156476b32c509908f5e558a46dc9580",
         "pack": "details/98-8e98aaea4b3d895a5d48a1cbb8a7ff6be16685a84cc868b2da16f0974a80bf17.json",
         "pack_sha256": "8e98aaea4b3d895a5d48a1cbb8a7ff6be16685a84cc868b2da16f0974a80bf17",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "2a82986c02c65b0b": {
       "id": "2a82986c02c65b0b",
@@ -1001,18 +1025,18 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
       "description_ref": {
         "sha256": "1f699301dac00457188ac8c8d8da75dcfb0442b8cd18c1d2ca71bf5617a28242",
-        "pack": "details/1f-a520e2645b62cb213c7c75153e641d3c710fb9a322acc3624ba468b5d2141a85.json",
-        "pack_sha256": "a520e2645b62cb213c7c75153e641d3c710fb9a322acc3624ba468b5d2141a85",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "pack": "details/1f-987d99b98987c3e91b433eb51ba7afa6a6b2a4f4c4a46715e5ebfa3689d5e385.json",
+        "pack_sha256": "987d99b98987c3e91b433eb51ba7afa6a6b2a4f4c4a46715e5ebfa3689d5e385",
+        "status": "stale"
+      }
     },
     "2b4565b04c291f63": {
       "id": "2b4565b04c291f63",
@@ -1030,8 +1054,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1039,9 +1064,8 @@
         "sha256": "be0cdace42ff9d5a6b6444bd00bf7a8f7e3f3f2ffafda2b7656df0a374d9ae04",
         "pack": "details/be-aed6150cad85036848acc659c88d0d35b102578554952aebbb5b2c37c877b628.json",
         "pack_sha256": "aed6150cad85036848acc659c88d0d35b102578554952aebbb5b2c37c877b628",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "2dfdf89083c240d9": {
       "id": "2dfdf89083c240d9",
@@ -1059,8 +1083,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1068,9 +1093,8 @@
         "sha256": "8bf93fb0144ed80d958869e7971ef642d2233db9e8a0e3e9f654d303d8a69cb3",
         "pack": "details/8b-01f3f0fc4957d70cbe781e6839806621a9347afd168d01596c1c651a7577cc37.json",
         "pack_sha256": "01f3f0fc4957d70cbe781e6839806621a9347afd168d01596c1c651a7577cc37",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "304aefdf5b5be301": {
       "id": "304aefdf5b5be301",
@@ -1087,7 +1111,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -1096,8 +1120,8 @@
       },
       "description_ref": {
         "sha256": "1b2c497efcceebe3111da90f305fed5ac89dd936e13cb43131f719b3941c2048",
-        "pack": "details/1b-e225850e65ec07dc70c7bd21d32d4cf30c399a880880707faabe1395a90a7d7a.json",
-        "pack_sha256": "e225850e65ec07dc70c7bd21d32d4cf30c399a880880707faabe1395a90a7d7a",
+        "pack": "details/1b-5e23cb99db30fa69d42402441135a9748f530f63913bb81d1981eadab54a5d3b.json",
+        "pack_sha256": "5e23cb99db30fa69d42402441135a9748f530f63913bb81d1981eadab54a5d3b",
         "status": "stale"
       }
     },
@@ -1116,7 +1140,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -1145,7 +1169,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -1184,8 +1208,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1193,9 +1218,8 @@
         "sha256": "5d401097c9a34008fd12df660a973c71916bdf59b4840d033fc81e5fd83088a8",
         "pack": "details/5d-8f222471079f0c0efa2ce1d29287b0a07fc90326ffa5b30ad3ab07525623a8d3.json",
         "pack_sha256": "8f222471079f0c0efa2ce1d29287b0a07fc90326ffa5b30ad3ab07525623a8d3",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "341dfed7b9910178": {
       "id": "341dfed7b9910178",
@@ -1216,8 +1240,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1225,9 +1250,8 @@
         "sha256": "122606717aecda5de204657a895618556b1a0bb3e607ce947a427e56fe421020",
         "pack": "details/12-0150666a8124729ea48e0772d3ef13c81e8d73f1758ae2dc125de34ead3ca62f.json",
         "pack_sha256": "0150666a8124729ea48e0772d3ef13c81e8d73f1758ae2dc125de34ead3ca62f",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "35cd240c64a16375": {
       "id": "35cd240c64a16375",
@@ -1247,8 +1271,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1256,9 +1281,8 @@
         "sha256": "9cfd907fbe2925d76472deacba6adc02a33831d14152cdc093a0cba7442900f4",
         "pack": "details/9c-b9ea4d79f96224b762491a73e2d2a6b9d6817d9ad6897414145b66175a44c751.json",
         "pack_sha256": "b9ea4d79f96224b762491a73e2d2a6b9d6817d9ad6897414145b66175a44c751",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "35ec0fcd96528e54": {
       "id": "35ec0fcd96528e54",
@@ -1277,8 +1301,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1286,9 +1311,8 @@
         "sha256": "4ae04240fd47d17a69dcf53bcc6a8cdf397bbec8d049200bb9469052c56276fc",
         "pack": "details/4a-9de62472667714a2595f598661153c944669c97d04a12f9eed4583f49ff13a6c.json",
         "pack_sha256": "9de62472667714a2595f598661153c944669c97d04a12f9eed4583f49ff13a6c",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "38e3e7cf45e89d82": {
       "id": "38e3e7cf45e89d82",
@@ -1306,8 +1330,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1315,9 +1340,8 @@
         "sha256": "1d44a319641f9fe16f24573acb53c1ae97f1c492e5e0848adfee16dccd1bc464",
         "pack": "details/1d-7c0fb286bcf330fe4d14d1f1689820e2cadfdbdd412be77b23db42ecff3d453f.json",
         "pack_sha256": "7c0fb286bcf330fe4d14d1f1689820e2cadfdbdd412be77b23db42ecff3d453f",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "3a59c669a1bf740c": {
       "id": "3a59c669a1bf740c",
@@ -1340,8 +1364,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1349,9 +1374,8 @@
         "sha256": "f01316a7e743117e9a6bf7bbc0c8916cf6598574a184aea72955c01f7b48450c",
         "pack": "details/f0-8e5e3eec9d0aed2e0289bdb2868eadac3eef15b402e41be2aa1b2d5478b037f0.json",
         "pack_sha256": "8e5e3eec9d0aed2e0289bdb2868eadac3eef15b402e41be2aa1b2d5478b037f0",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "3c5ed4151ab2c90c": {
       "id": "3c5ed4151ab2c90c",
@@ -1376,8 +1400,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1385,9 +1410,8 @@
         "sha256": "04fbcb83e48473df3406006ede33f7426517e41c1c1243f844c83b8e7b8d071c",
         "pack": "details/04-d4a6087260c1f0e0a696f3ccf5124f2ca18637651b40429fa75bc85271d0d711.json",
         "pack_sha256": "d4a6087260c1f0e0a696f3ccf5124f2ca18637651b40429fa75bc85271d0d711",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "3e717a5c81f8b607": {
       "id": "3e717a5c81f8b607",
@@ -1414,8 +1438,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1423,9 +1448,8 @@
         "sha256": "eee5a357196b1b24af69c9ba99ce17ef8e31f31aaa474af08ee48c1a6635909d",
         "pack": "details/ee-3f46d59a3e00d8fbd327f1350d2b1296ca494fbd8dbc8c0009f6fc851a6feaf2.json",
         "pack_sha256": "3f46d59a3e00d8fbd327f1350d2b1296ca494fbd8dbc8c0009f6fc851a6feaf2",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "3fd7bacb8f431904": {
       "id": "3fd7bacb8f431904",
@@ -1442,7 +1466,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -1472,8 +1496,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1481,9 +1506,8 @@
         "sha256": "294d07bfbb3c691dbceee41a5d99085c4606bd48380842d1d166809660cc1de0",
         "pack": "details/29-1e935e11321f75beacbeb8dcbc9b5f766d95e4194121e810f5ef07c7ff33c745.json",
         "pack_sha256": "1e935e11321f75beacbeb8dcbc9b5f766d95e4194121e810f5ef07c7ff33c745",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "442f3cea39565fe9": {
       "id": "442f3cea39565fe9",
@@ -1502,8 +1526,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1511,9 +1536,8 @@
         "sha256": "5deefdeea93a813befab8b86e44684296f30f61a909b59fd6db93033eb5c92b5",
         "pack": "details/5d-8f222471079f0c0efa2ce1d29287b0a07fc90326ffa5b30ad3ab07525623a8d3.json",
         "pack_sha256": "8f222471079f0c0efa2ce1d29287b0a07fc90326ffa5b30ad3ab07525623a8d3",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "4456b71c6e76d125": {
       "id": "4456b71c6e76d125",
@@ -1531,8 +1555,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1540,9 +1565,8 @@
         "sha256": "233a8a5dd90a31eb39e8dd75f2cf6047ab961190e736ec142480f6f084ebb979",
         "pack": "details/23-a3735c72fac2a0062006ee3a3078f29002665dfca3b57a61a79e2ab61d2ea687.json",
         "pack_sha256": "a3735c72fac2a0062006ee3a3078f29002665dfca3b57a61a79e2ab61d2ea687",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "47ed6742ba294911": {
       "id": "47ed6742ba294911",
@@ -1560,8 +1584,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1569,9 +1594,8 @@
         "sha256": "4c262ed2cce2d2ff5e0b1cc2e60887cc84d6593ef63746678675b537382287ef",
         "pack": "details/4c-79bed39f5fa04142f96f92342559fa2cef34bd582795e50fb31fca9ba7352c9c.json",
         "pack_sha256": "79bed39f5fa04142f96f92342559fa2cef34bd582795e50fb31fca9ba7352c9c",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "4d9d01f3d8a0fdf6": {
       "id": "4d9d01f3d8a0fdf6",
@@ -1590,8 +1614,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1599,9 +1624,8 @@
         "sha256": "26dff0a191a1ccbe34065cdf35f3ac22c72877e2e8989ef9b944ec22f3e07c17",
         "pack": "details/26-322e11fa6f240395824d9841679198dbc51206026ae6639b01cf8444096ac368.json",
         "pack_sha256": "322e11fa6f240395824d9841679198dbc51206026ae6639b01cf8444096ac368",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "520b5170e88970e5": {
       "id": "520b5170e88970e5",
@@ -1624,18 +1648,18 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
       "description_ref": {
         "sha256": "6accb2211815313310db85e5e121991ed17aa59ec611262ddf72ae07425f29b2",
-        "pack": "details/6a-f4b0e483284d3f7cd01207c64af2c9bf5b9e4340abcb1573102e89207d80b73e.json",
-        "pack_sha256": "f4b0e483284d3f7cd01207c64af2c9bf5b9e4340abcb1573102e89207d80b73e",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "pack": "details/6a-e2f8ef08e2623f1970a1d36e0178ab234196a8e34e535a3b6daddb2efe8f0c63.json",
+        "pack_sha256": "e2f8ef08e2623f1970a1d36e0178ab234196a8e34e535a3b6daddb2efe8f0c63",
+        "status": "stale"
+      }
     },
     "569bac6b575d4e85": {
       "id": "569bac6b575d4e85",
@@ -1683,7 +1707,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "description_status": "unavailable",
       "merged_from": [
@@ -1704,7 +1728,13 @@
             "source": "simplify",
             "source_job_id": "ec5c4c16-d094-43ba-bd78-5d3ad61ff729",
             "url": "https://www.google.com/about/careers/applications/jobs/results/136529930677560006",
-            "discovered_at": "2026-11-27T05:22:41Z"
+            "discovered_at": "2026-11-27T14:25:00Z"
+          },
+          {
+            "source": "public_careers",
+            "source_job_id": "136529930677560006",
+            "url": "https://www.google.com/about/careers/applications/jobs/results/136529930677560006",
+            "discovered_at": "2026-09-15T16:26:04Z"
           }
         ]
       },
@@ -1731,8 +1761,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1740,9 +1771,8 @@
         "sha256": "bf03c69e489cb9b11405a85217bf36205fb542104e919e916511a2f6e4c00557",
         "pack": "details/bf-79888c3a6d849b8708acae13d241d8057db94f618dfb9a2ab2c5f578d155b13e.json",
         "pack_sha256": "79888c3a6d849b8708acae13d241d8057db94f618dfb9a2ab2c5f578d155b13e",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "5b86d5f20ce493ea": {
       "id": "5b86d5f20ce493ea",
@@ -1760,8 +1790,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1769,9 +1800,8 @@
         "sha256": "0a6cccdff3bd2e9d54a1915aeae81b59f3b0f8e66abf93ec2a337e3f5c0c48b1",
         "pack": "details/0a-d694efa7c1d86a7d92285e9e05166a36d4189d8994e862eef85133fee9a9f293.json",
         "pack_sha256": "d694efa7c1d86a7d92285e9e05166a36d4189d8994e862eef85133fee9a9f293",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "5c8492b3b2e86dc7": {
       "id": "5c8492b3b2e86dc7",
@@ -1789,8 +1819,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1798,9 +1829,8 @@
         "sha256": "4cc1f14cf33f45a8348b73cc66f89e2cec177e390e1e5117e5a072449167ae3f",
         "pack": "details/4c-79bed39f5fa04142f96f92342559fa2cef34bd582795e50fb31fca9ba7352c9c.json",
         "pack_sha256": "79bed39f5fa04142f96f92342559fa2cef34bd582795e50fb31fca9ba7352c9c",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "5d54f7b068191bb0": {
       "id": "5d54f7b068191bb0",
@@ -1818,8 +1848,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1827,9 +1858,8 @@
         "sha256": "397ac96b9200801a4fbd0bc072010a95836f5742ee7d7ed8cb761bcd3c62fc69",
         "pack": "details/39-ae3d8b461d95aca14585fbab36421fc669a39ef31be046f2e823b68737efc23e.json",
         "pack_sha256": "ae3d8b461d95aca14585fbab36421fc669a39ef31be046f2e823b68737efc23e",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "6016c33ba9f2f3d0": {
       "id": "6016c33ba9f2f3d0",
@@ -1846,7 +1876,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -1875,7 +1905,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -1884,8 +1914,8 @@
       },
       "description_ref": {
         "sha256": "ef8381b3d13dc75145d97f836127f85835b1d7fb543a33c9bb8de6fcd210db1d",
-        "pack": "details/ef-c61b91dc1a8818e9c4bd4b65c22f7acf8e10d3cc96753ef633c52a5695194c81.json",
-        "pack_sha256": "c61b91dc1a8818e9c4bd4b65c22f7acf8e10d3cc96753ef633c52a5695194c81",
+        "pack": "details/ef-3db71641e339538c61bb050680b9765e7eff9e98250b6c9ab710748b776eea5b.json",
+        "pack_sha256": "3db71641e339538c61bb050680b9765e7eff9e98250b6c9ab710748b776eea5b",
         "status": "stale"
       }
     },
@@ -1931,7 +1961,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-09-01T12:47:04Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "description_status": "unavailable",
       "merged_from": [
@@ -1952,7 +1982,13 @@
             "source": "simplify",
             "source_job_id": "e3dc5e7f-9828-4121-8b6f-6d45091a92a4",
             "url": "https://www.google.com/about/careers/applications/jobs/results/86701057991680710",
-            "discovered_at": "2026-11-27T05:22:41Z"
+            "discovered_at": "2026-11-27T14:25:00Z"
+          },
+          {
+            "source": "public_careers",
+            "source_job_id": "86701057991680710",
+            "url": "https://www.google.com/about/careers/applications/jobs/results/86701057991680710",
+            "discovered_at": "2026-09-01T12:47:04Z"
           }
         ]
       },
@@ -1983,8 +2019,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -1992,9 +2029,8 @@
         "sha256": "26a2086e9445eaa648c35970123ea55df1083edc180b8a5f99dfc66dca5e0c9d",
         "pack": "details/26-322e11fa6f240395824d9841679198dbc51206026ae6639b01cf8444096ac368.json",
         "pack_sha256": "322e11fa6f240395824d9841679198dbc51206026ae6639b01cf8444096ac368",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "6353c44a6f0d3da4": {
       "id": "6353c44a6f0d3da4",
@@ -2015,8 +2051,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -2024,9 +2061,8 @@
         "sha256": "8c973096e0a5ddfa2f15903413d82a99e1b9a36ba2a17c83b054f2cf5ab1f0a0",
         "pack": "details/8c-0cbc48dfb903020c4ec982a0b035dfd6ed5035e945a98b507b94646c953cf040.json",
         "pack_sha256": "0cbc48dfb903020c4ec982a0b035dfd6ed5035e945a98b507b94646c953cf040",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "668b9c071e0ed964": {
       "id": "668b9c071e0ed964",
@@ -2044,8 +2080,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -2053,9 +2090,8 @@
         "sha256": "f383647d234420334c969bc3e08869823e29a72a8fc17b7db8e1c2b38e83ec0d",
         "pack": "details/f3-c3a05c5e00d22580d9bfa4f24883e75a296046ef5f4f1259c910dca4ea89a376.json",
         "pack_sha256": "c3a05c5e00d22580d9bfa4f24883e75a296046ef5f4f1259c910dca4ea89a376",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "6781f2e21ef83f64": {
       "id": "6781f2e21ef83f64",
@@ -2077,8 +2113,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -2086,9 +2123,8 @@
         "sha256": "40a8a605d23753969b384b7c0c32978aab443f9f78fe540a9454e39049b32b09",
         "pack": "details/40-57ee6e609e728e80edab8c350066b7095d4b7a5df7c958871fc6334e5e071536.json",
         "pack_sha256": "57ee6e609e728e80edab8c350066b7095d4b7a5df7c958871fc6334e5e071536",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "686c035b57f0a72a": {
       "id": "686c035b57f0a72a",
@@ -2107,8 +2143,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -2116,9 +2153,8 @@
         "sha256": "90b186551cdca970cd0da42e61e4b1aac3d2ed216fd25afd5da83dc01c132d6c",
         "pack": "details/90-aec024e11c05d9126472ba1d775d55215741c52aefaeb0eed6d5045412c778c2.json",
         "pack_sha256": "aec024e11c05d9126472ba1d775d55215741c52aefaeb0eed6d5045412c778c2",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "69bc7082f67329c5": {
       "id": "69bc7082f67329c5",
@@ -2159,11 +2195,19 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "description_status": "unavailable",
       "source_metadata": {
-        "public_contract": "google_ssr"
+        "public_contract": "google_ssr",
+        "provenance": [
+          {
+            "source": "public_careers",
+            "source_job_id": "131518356678156998",
+            "url": "https://www.google.com/about/careers/applications/jobs/results/131518356678156998",
+            "discovered_at": "2026-11-24T06:51:27Z"
+          }
+        ]
       },
       "description_ref": {
         "sha256": "e5f3a2f4019511c0929939672ee7e8462a7b825cd267685ec0b223df6f4c64a0",
@@ -2188,8 +2232,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -2197,9 +2242,8 @@
         "sha256": "1317a552b1d7abe1c3aefcecef0973e5ed55aef5ca117aac9ad22ba18ecbcc5d",
         "pack": "details/13-6fd7252e7162bc676301b3c97e87eea552c67f99fa51b893e3c19f1d243d3877.json",
         "pack_sha256": "6fd7252e7162bc676301b3c97e87eea552c67f99fa51b893e3c19f1d243d3877",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "6b6319835dd0b34e": {
       "id": "6b6319835dd0b34e",
@@ -2220,8 +2264,9 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
@@ -2229,9 +2274,8 @@
         "sha256": "37329117040abef4b0b9d2b812f1ab789023b7352451e92e2c2ee2d4d4cdfd0e",
         "pack": "details/37-ec12bcaa195b46a7a9dbd043aa6b2bcedbf0d0ce6c2c762dd55ad13a242ea1ba.json",
         "pack_sha256": "ec12bcaa195b46a7a9dbd043aa6b2bcedbf0d0ce6c2c762dd55ad13a242ea1ba",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "status": "stale"
+      }
     },
     "6cf149397c9dd26f": {
       "id": "6cf149397c9dd26f",
@@ -2252,18 +2296,18 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
+      "description_status": "unavailable",
       "source_metadata": {
         "public_contract": "amazon_json"
       },
       "description_ref": {
         "sha256": "f868d745483d3ed53438b723f0148f9128bbfc70f781c9fb3cf81c2f9050215d",
-        "pack": "details/f8-64e0f0878f220d471e5c0df41d62e00e313d4fe3bad03c30ecd7b3c45af9d982.json",
-        "pack_sha256": "64e0f0878f220d471e5c0df41d62e00e313d4fe3bad03c30ecd7b3c45af9d982",
-        "status": null
-      },
-      "description_status": "unavailable"
+        "pack": "details/f8-f35e16a99f8b6c602f8ceef28fbb227d763b1fcdc77c4294701251401fe99bdb.json",
+        "pack_sha256": "f35e16a99f8b6c602f8ceef28fbb227d763b1fcdc77c4294701251401fe99bdb",
+        "status": "stale"
+      }
     },
     "6fdfe28b70f931d5": {
       "id": "6fdfe28b70f931d5",
@@ -2281,7 +2325,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -2312,7 +2356,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-25T02:47:25Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -2341,15 +2385,15 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
       },
       "description_ref": {
         "sha256": "503aa3f6febc6260c00026eb9729905d15bbfe4a3357eb0bd1fb7a0d03a64807",
-        "pack": "details/50-5c3a16d6c2236984a0724f0326e3f8468496082a6ce568e9267982c854c6e898.json",
-        "pack_sha256": "5c3a16d6c2236984a0724f0326e3f8468496082a6ce568e9267982c854c6e898",
+        "pack": "details/50-cfa2b97ec74ff4624178aafad17f187ecf81daf816fdcf26d7e84611f6724e8a.json",
+        "pack_sha256": "cfa2b97ec74ff4624178aafad17f187ecf81daf816fdcf26d7e84611f6724e8a",
         "status": null
       },
       "description_status": "unavailable"
@@ -2371,7 +2415,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -2400,7 +2444,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -2435,7 +2479,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -2467,7 +2511,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -2495,7 +2539,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -2524,7 +2568,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -2533,8 +2577,8 @@
       },
       "description_ref": {
         "sha256": "f87a4ca043c05964135f49b2fa905fdf27860edfa8531a35c02bee30bb630fdc",
-        "pack": "details/f8-64e0f0878f220d471e5c0df41d62e00e313d4fe3bad03c30ecd7b3c45af9d982.json",
-        "pack_sha256": "64e0f0878f220d471e5c0df41d62e00e313d4fe3bad03c30ecd7b3c45af9d982",
+        "pack": "details/f8-f35e16a99f8b6c602f8ceef28fbb227d763b1fcdc77c4294701251401fe99bdb.json",
+        "pack_sha256": "f35e16a99f8b6c602f8ceef28fbb227d763b1fcdc77c4294701251401fe99bdb",
         "status": "stale"
       }
     },
@@ -2554,7 +2598,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -2582,7 +2626,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -2591,8 +2635,8 @@
       },
       "description_ref": {
         "sha256": "f87a4ca043c05964135f49b2fa905fdf27860edfa8531a35c02bee30bb630fdc",
-        "pack": "details/f8-64e0f0878f220d471e5c0df41d62e00e313d4fe3bad03c30ecd7b3c45af9d982.json",
-        "pack_sha256": "64e0f0878f220d471e5c0df41d62e00e313d4fe3bad03c30ecd7b3c45af9d982",
+        "pack": "details/f8-f35e16a99f8b6c602f8ceef28fbb227d763b1fcdc77c4294701251401fe99bdb.json",
+        "pack_sha256": "f35e16a99f8b6c602f8ceef28fbb227d763b1fcdc77c4294701251401fe99bdb",
         "status": "stale"
       }
     },
@@ -2640,16 +2684,24 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "description_status": "unavailable",
       "source_metadata": {
-        "public_contract": "google_ssr"
+        "public_contract": "google_ssr",
+        "provenance": [
+          {
+            "source": "public_careers",
+            "source_job_id": "137409539979780806",
+            "url": "https://www.google.com/about/careers/applications/jobs/results/137409539979780806",
+            "discovered_at": "2026-11-24T06:51:27Z"
+          }
+        ]
       },
       "description_ref": {
         "sha256": "fa05ffadb6f181d22a4e43539b554dd1f658a779eabbb376261defb8c99e3433",
-        "pack": "details/fa-299d1e54b2e7f9dd386e829f3cfe963a57656aeb4e3c684a035400364de31109.json",
-        "pack_sha256": "299d1e54b2e7f9dd386e829f3cfe963a57656aeb4e3c684a035400364de31109",
+        "pack": "details/fa-875de00e81de6e067e0f223b8b5915cc679664d485902abbfbcd7342e91203b9.json",
+        "pack_sha256": "875de00e81de6e067e0f223b8b5915cc679664d485902abbfbcd7342e91203b9",
         "status": "stale"
       }
     },
@@ -2670,7 +2722,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -2702,7 +2754,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -2754,7 +2806,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "description_status": "unavailable",
       "merged_from": [
@@ -2775,7 +2827,13 @@
             "source": "simplify",
             "source_job_id": "05b3642e-a1c8-4a0a-b252-24530e109900",
             "url": "https://www.google.com/about/careers/applications/jobs/results/117572151191446214",
-            "discovered_at": "2026-11-27T05:22:41Z"
+            "discovered_at": "2026-11-27T14:25:00Z"
+          },
+          {
+            "source": "public_careers",
+            "source_job_id": "117572151191446214",
+            "url": "https://www.google.com/about/careers/applications/jobs/results/117572151191446214",
+            "discovered_at": "2026-09-15T16:26:04Z"
           }
         ]
       },
@@ -2802,7 +2860,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -2860,7 +2918,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "description_status": "unavailable",
       "merged_from": [
@@ -2881,7 +2939,13 @@
             "source": "simplify",
             "source_job_id": "747b784e-260a-408e-9aaa-b44aae10b4e9",
             "url": "https://www.google.com/about/careers/applications/jobs/results/134577198026629830",
-            "discovered_at": "2026-11-27T05:22:41Z"
+            "discovered_at": "2026-11-27T14:25:00Z"
+          },
+          {
+            "source": "public_careers",
+            "source_job_id": "134577198026629830",
+            "url": "https://www.google.com/about/careers/applications/jobs/results/134577198026629830",
+            "discovered_at": "2026-09-15T16:26:04Z"
           }
         ]
       },
@@ -2907,7 +2971,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -2916,8 +2980,8 @@
       },
       "description_ref": {
         "sha256": "1b2c497efcceebe3111da90f305fed5ac89dd936e13cb43131f719b3941c2048",
-        "pack": "details/1b-e225850e65ec07dc70c7bd21d32d4cf30c399a880880707faabe1395a90a7d7a.json",
-        "pack_sha256": "e225850e65ec07dc70c7bd21d32d4cf30c399a880880707faabe1395a90a7d7a",
+        "pack": "details/1b-5e23cb99db30fa69d42402441135a9748f530f63913bb81d1981eadab54a5d3b.json",
+        "pack_sha256": "5e23cb99db30fa69d42402441135a9748f530f63913bb81d1981eadab54a5d3b",
         "status": "stale"
       }
     },
@@ -2945,7 +3009,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -2997,7 +3061,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-09-15T16:26:04Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "description_status": "unavailable",
       "merged_from": [
@@ -3018,7 +3082,13 @@
             "source": "simplify",
             "source_job_id": "9850b5dd-6e6b-4fb0-81b2-240f12f59dd7",
             "url": "https://www.google.com/about/careers/applications/jobs/results/134313315235963590",
-            "discovered_at": "2026-11-27T05:22:41Z"
+            "discovered_at": "2026-11-27T14:25:00Z"
+          },
+          {
+            "source": "public_careers",
+            "source_job_id": "134313315235963590",
+            "url": "https://www.google.com/about/careers/applications/jobs/results/134313315235963590",
+            "discovered_at": "2026-09-15T16:26:04Z"
           }
         ]
       },
@@ -3044,7 +3114,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -3053,8 +3123,8 @@
       },
       "description_ref": {
         "sha256": "91ff72979dc14142f297fda09b1f20cde102a32de7dc7f5f3eedec34d466d824",
-        "pack": "details/91-abe6c5b6afdd5454e5e62d7ac1e567cd9c7ffb843de7ddbc0a9acd5985f28483.json",
-        "pack_sha256": "abe6c5b6afdd5454e5e62d7ac1e567cd9c7ffb843de7ddbc0a9acd5985f28483",
+        "pack": "details/91-49894fefa472216e3dbd56a7cf3aaef1e043015b8063348cf9ac581bf2a19cff.json",
+        "pack_sha256": "49894fefa472216e3dbd56a7cf3aaef1e043015b8063348cf9ac581bf2a19cff",
         "status": "stale"
       }
     },
@@ -3074,7 +3144,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -3112,7 +3182,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -3141,7 +3211,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -3170,7 +3240,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -3199,15 +3269,15 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
       },
       "description_ref": {
         "sha256": "f8c914cda7f8739a51ef37394cb58ce23df398b7d84be6563408ec3fbed4941a",
-        "pack": "details/f8-64e0f0878f220d471e5c0df41d62e00e313d4fe3bad03c30ecd7b3c45af9d982.json",
-        "pack_sha256": "64e0f0878f220d471e5c0df41d62e00e313d4fe3bad03c30ecd7b3c45af9d982",
+        "pack": "details/f8-f35e16a99f8b6c602f8ceef28fbb227d763b1fcdc77c4294701251401fe99bdb.json",
+        "pack_sha256": "f35e16a99f8b6c602f8ceef28fbb227d763b1fcdc77c4294701251401fe99bdb",
         "status": null
       },
       "description_status": "unavailable"
@@ -3231,7 +3301,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-18T16:28:34Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "description_status": "unavailable",
       "merged_from": [
@@ -3252,7 +3322,13 @@
             "source": "simplify",
             "source_job_id": "3c660071-514f-4ae0-933a-05082c35f633",
             "url": "https://www.google.com/about/careers/applications/jobs/results/81809776362562246",
-            "discovered_at": "2026-11-27T05:22:41Z"
+            "discovered_at": "2026-11-27T14:25:00Z"
+          },
+          {
+            "source": "public_careers",
+            "source_job_id": "81809776362562246",
+            "url": "https://www.google.com/about/careers/applications/jobs/results/81809776362562246",
+            "discovered_at": "2026-11-18T16:28:34Z"
           }
         ]
       },
@@ -3279,7 +3355,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -3308,7 +3384,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -3345,7 +3421,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -3374,7 +3450,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -3408,15 +3484,15 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
       },
       "description_ref": {
         "sha256": "02e57e3d43787d15bee899b48e5cc8d5f20b881686107482805d5dddfaed3c1c",
-        "pack": "details/02-a3849cd27e36401f06580ec07951a076c3d2701909f6b00494a120b807a469c1.json",
-        "pack_sha256": "a3849cd27e36401f06580ec07951a076c3d2701909f6b00494a120b807a469c1",
+        "pack": "details/02-d41e28795de615abac70758e7b38344470ab0b6ad759c70fe084f16bfd25d97f.json",
+        "pack_sha256": "d41e28795de615abac70758e7b38344470ab0b6ad759c70fe084f16bfd25d97f",
         "status": null
       },
       "description_status": "unavailable"
@@ -3446,7 +3522,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -3475,15 +3551,15 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
       },
       "description_ref": {
         "sha256": "a5ed58be98e71ed17b6538c0e4cd24c815dbb7861cd1df86dcd94a58862a5aff",
-        "pack": "details/a5-1e1eae691f83a635a7127e58b9cf4a63327d85350ecb5350938e035d0d9c3557.json",
-        "pack_sha256": "1e1eae691f83a635a7127e58b9cf4a63327d85350ecb5350938e035d0d9c3557",
+        "pack": "details/a5-aa37375eaf56b23d25a12cf43709aa87f0d6aff39741a91c7b9ee826b07f8275.json",
+        "pack_sha256": "aa37375eaf56b23d25a12cf43709aa87f0d6aff39741a91c7b9ee826b07f8275",
         "status": null
       },
       "description_status": "unavailable"
@@ -3511,7 +3587,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -3540,7 +3616,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -3576,15 +3652,15 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
       },
       "description_ref": {
         "sha256": "c86699251485f753ea8ac8eacb97455036c3897013e85c53bfeaa1a26944fb66",
-        "pack": "details/c8-118e64e48893941e6c098819d13fcc43356f920ddb0d5a13b60e7296c4debdc8.json",
-        "pack_sha256": "118e64e48893941e6c098819d13fcc43356f920ddb0d5a13b60e7296c4debdc8",
+        "pack": "details/c8-409880c38cdc9c31f53e6ce93d522151b519d986bbfbb96ed80dbd02a3bcdb5c.json",
+        "pack_sha256": "409880c38cdc9c31f53e6ce93d522151b519d986bbfbb96ed80dbd02a3bcdb5c",
         "status": null
       },
       "description_status": "unavailable"
@@ -3622,11 +3698,19 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "description_status": "unavailable",
       "source_metadata": {
-        "public_contract": "google_ssr"
+        "public_contract": "google_ssr",
+        "provenance": [
+          {
+            "source": "public_careers",
+            "source_job_id": "132362676918461126",
+            "url": "https://www.google.com/about/careers/applications/jobs/results/132362676918461126",
+            "discovered_at": "2026-11-24T06:51:27Z"
+          }
+        ]
       },
       "description_ref": {
         "sha256": "4f058db09cdd70b421acf74d602174fbd1602bd792e66012c535804b362e87c0",
@@ -3650,7 +3734,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -3682,7 +3766,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -3711,7 +3795,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -3739,7 +3823,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -3768,7 +3852,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -3798,7 +3882,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -3826,7 +3910,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -3856,7 +3940,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -3885,7 +3969,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -3916,15 +4000,15 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
       },
       "description_ref": {
         "sha256": "fe4319ea06724b69a13cb5d5e5b8bb33a9006d57de183f02bc1c7833ec8ac075",
-        "pack": "details/fe-2b55f5b488284c761d38d53d63b38a5dad3215a9ad82f8c773f2e628f95537fe.json",
-        "pack_sha256": "2b55f5b488284c761d38d53d63b38a5dad3215a9ad82f8c773f2e628f95537fe",
+        "pack": "details/fe-2372af1cd6b5bf686ba8ca55a967f2c6ac0d3c8d998d6fcd15587b9097c2f8cb.json",
+        "pack_sha256": "2372af1cd6b5bf686ba8ca55a967f2c6ac0d3c8d998d6fcd15587b9097c2f8cb",
         "status": null
       },
       "description_status": "unavailable"
@@ -3954,7 +4038,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -3983,11 +4067,19 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "description_status": "unavailable",
       "source_metadata": {
-        "public_contract": "google_ssr"
+        "public_contract": "google_ssr",
+        "provenance": [
+          {
+            "source": "public_careers",
+            "source_job_id": "121628144896484038",
+            "url": "https://www.google.com/about/careers/applications/jobs/results/121628144896484038",
+            "discovered_at": "2026-11-24T06:51:27Z"
+          }
+        ]
       },
       "description_ref": {
         "sha256": "bbf8597fcdab8b064790c69a57950bb5637198b338958c460604b898acc1e5d1",
@@ -4015,15 +4107,15 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
       },
       "description_ref": {
         "sha256": "c8174a8b9162073a50f521442d535ace537a9cb9d7679264c6d0da8c1c002582",
-        "pack": "details/c8-118e64e48893941e6c098819d13fcc43356f920ddb0d5a13b60e7296c4debdc8.json",
-        "pack_sha256": "118e64e48893941e6c098819d13fcc43356f920ddb0d5a13b60e7296c4debdc8",
+        "pack": "details/c8-409880c38cdc9c31f53e6ce93d522151b519d986bbfbb96ed80dbd02a3bcdb5c.json",
+        "pack_sha256": "409880c38cdc9c31f53e6ce93d522151b519d986bbfbb96ed80dbd02a3bcdb5c",
         "status": null
       },
       "description_status": "unavailable"
@@ -4044,7 +4136,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -4072,7 +4164,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -4102,7 +4194,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -4131,7 +4223,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -4160,7 +4252,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -4192,7 +4284,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -4230,7 +4322,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -4267,7 +4359,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -4296,7 +4388,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -4325,7 +4417,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -4355,7 +4447,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -4383,7 +4475,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -4418,7 +4510,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -4446,7 +4538,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "employment_type": "Internship",
       "description_status": "unavailable",
@@ -4477,15 +4569,15 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
       },
       "description_ref": {
         "sha256": "c62118f5447f56ff1a300bee080fcda397c042cd63579a0637aaa7d529b68fd2",
-        "pack": "details/c6-3c7779f87d6bf8b7b73e5e223843981ff0c20b2ad903cea0895ace17bd57109c.json",
-        "pack_sha256": "3c7779f87d6bf8b7b73e5e223843981ff0c20b2ad903cea0895ace17bd57109c",
+        "pack": "details/c6-5e5f456439f34f6b96d088d7147f38c22a17dc7a42b3129193149043616572ad.json",
+        "pack_sha256": "5e5f456439f34f6b96d088d7147f38c22a17dc7a42b3129193149043616572ad",
         "status": null
       },
       "description_status": "unavailable"
@@ -4506,7 +4598,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -4535,7 +4627,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -4564,7 +4656,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -4596,7 +4688,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
@@ -4627,7 +4719,7 @@
       "ats": "other",
       "posted_at": null,
       "first_seen_at": "2026-11-24T06:51:27Z",
-      "last_seen_at": "2026-11-27T05:22:41Z",
+      "last_seen_at": "2026-11-27T14:25:00Z",
       "closed_at": null,
       "source_metadata": {
         "public_contract": "amazon_json"
